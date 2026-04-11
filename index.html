@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laminono Stories - Immersive Reading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.95)), 
+                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: #e50914;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #ff0a16;
+        }
+
+        .stories-section {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #e5e5e5;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .story-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            background: #1a1a1a;
+            aspect-ratio: 2/3;
+        }
+
+        .story-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-info {
+            padding: 20px;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .story-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .story-meta {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .story-genre {
+            display: inline-block;
+            background: #e50914;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 10px;
+        }
+
+        .read-page {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #141414;
+            min-height: 100vh;
+        }
+
+        .read-page.active {
+            display: block;
+        }
+
+        .back-btn {
+            color: #999;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: white;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .story-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .story-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #d4d4d4;
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+            text-indent: 30px;
+        }
+
+        .main-page.hidden {
+            display: none;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .story-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-page" id="mainPage">
+        <section class="hero">
+            <h1>Laminono Stories</h1>
+            <p>Immersive narratives that unfold like cinema. Every story is a journey, every page a scene.</p>
+            <a href="#stories" class="cta-button">Explore Stories</a>
+            <div class="scroll-indicator">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                </svg>
+            </div>
+        </section>
+
+        <section class="stories-section" id="stories">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="story-grid">
+                
+                <div class="story-card" onclick="openStory('midnight-train')">
+                    <img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=600" alt="Midnight Train">
+                    <div class="story-info">
+                        <div>
+                            <div class="story-title">The Midnight Train</div>
+                            <div class="story-meta">12 min read • Thriller</div>
+                        </div>
+                        <span class="story-genre">Mystery</span>
+                    </div>
+                </div>
+
+                <div class="story-card" onclick="openStory('neon-dreams')">
+                    <img src="https://images.unsplash.com/photo-1565626424178-c699f6601afd?w=600" alt="Neon Dreams">
+                    <div class="story-info">
+                        <div>
+                            <div class="story-title">Neon Dreams</div>
+                            <div class="story-meta">8 min read • Sci-Fi</div>
+                        </div>
+                        <span class="story-genre">Cyberpunk</span>
+                    </div>
+                </div>
+
+                <div class="story-card" onclick="openStory('last-summer')">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="Last Summer">
+                    <div class="story-info">
+                        <div>
+                            <div class="story-title">The Last Summer</div>
+                            <div class="story-meta">15 min read • Drama</div>
+                        </div>
+                        <span class="story-genre">Romance</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="read-page" id="readPage">
+        <a href="#" class="back-btn" onclick="goBack()">← Back to Browse</a>
+        <div class="story-header">
+            <h1 id="readTitle">Story Title</h1>
+            <p id="readMeta">Genre • Reading time</p>
+        </div>
+        <div class="story-content" id="readContent"></div>
+    </div>
+
+    <script>
+        const stories = {
+            'midnight-train': {
+                title: 'The Midnight Train',
+                meta: 'Mystery • 12 min read',
+                content: `
+                    <p>The train whistle screamed through the fog as Sarah stepped onto platform 4. It was 11:47 PM, and she was the only passenger waiting. The station lights flickered, casting long shadows across the wet concrete.</p>
+                    <p>She checked her phone. No signal. Of course. The email had been specific: <em>Be there at midnight. Come alone. The truth about your sister awaits.</em></p>
+                    <p>The train approached silently—too silently for something so massive. Its black cars absorbed the station lights, windows dark as voids. When it stopped, a single door hissed open.</p>
+                    <p>Sarah hesitated. The email could be a trap. But after three years of searching for Emma, she would follow any lead, even one that led into darkness.</p>
+                    <p>Inside, the car was empty except for one figure at the far end. Hood pulled low. Waiting.</p>
+                    <p>"You came," the voice said. Female. Familiar. "I wasn't sure you would."</p>
+                    <p>Sarah's breath caught. She knew that voice. She'd heard it in a thousand childhood memories, in songs they made up, in promises whispered before sleep.</p>
+                    <p>"Emma?"</p>
+                    <p>The figure looked up. The face was wrong—older, scarred, eyes carrying weight no one should carry—but it was her. It was Emma.</p>
+                    <p>"You shouldn't have come, Sarah. Now you know too much. Now you can't ever leave."</p>
+                    <p>The doors locked. The train lurched forward, into the fog, into the night, into a mystery that would take 300 pages to unravel.</p>
+                `
+            },
+            'neon-dreams': {
+                title: 'Neon Dreams',
+                meta: 'Cyberpunk • 8 min read',
+                content: `
+                    <p>The rain in Neo-Tokyo 2087 falls upward. It's something about the atmospheric processors, the way they recycle moisture. Citizens barely notice anymore. They walk with heads down, neural implants glowing soft blue behind their ears, lost in digital worlds while their bodies navigate the physical one.</p>
+                    <p>Kai was different. Kai was a "flat"—no implants, no augments, no neural lace. Just organic brain, organic eyes, organic fear. It made him invisible to the grid, and that made him valuable.</p>
+                    <p>He stood on the corner of 5th and Neon, watching the holographic geisha cycle through her programmed routine. Bow. Smile. Vanish. Repeat. She was beautiful and dead, like everything in this city.</p>
+                    <p>The client approached from the shadows. Corporate suit, real silk, probably cost more than Kai made in a year. "You have the package?"</p>
+                    <p>Kai tapped his temple—old school, no tech. "Memories. Whole life. Corporate espionage, affair with the CEO's wife, the works. All up here."</p>
+                    <p>"And you haven't—"</p>
+                    <p>"Looked? I'm a professional. Your secrets are safe in my meat-brain."</p>
+                    <p>The suit smiled, teeth too perfect to be natural. "Good. Because if you had looked, we'd have to kill you. Twice. Once for the body, once for the backup."</p>
+                    <p>Kai handed over the data chip, took his credits, and melted back into the crowd. Another job done. Another secret kept. Another night surviving in a city that wanted to digest him and turn him into something synthetic.</p>
+                    <p>But as he walked, he felt the memory stirring. The one he'd promised not to access. The one that showed this client murdering someone. The one that made Kai a witness.</p>
+                    <p>Being flat had advantages. But it also meant he couldn't delete what he'd seen. And now they knew his face.</p>
+                    <p>The chase was about to begin.</p>
+                `
+            },
+            'last-summer': {
+                title: 'The Last Summer',
+                meta: 'Romance • 15 min read',
+                content: `
+                    <p>The lake house hadn't changed in twenty years. The same weathered dock, the same tire swing hanging from the oak, the same screen door that squeaked at 3 AM when someone was sneaking back from a midnight swim.</p>
+                    <p>Elena stood on the porch, keys in hand, afraid to insert them. This place held too much. The summer she was sixteen. The boy with the crooked smile. The promises that dissolved like morning mist.</p>
+                    <p>She'd inherited it from Aunt Mara, the family's keeper of secrets. "You'll understand when you're older," Mara used to say, watching Elena and Jake from the kitchen window. "Some summers are meant to stay with you."</p>
+                    <p>Elena was thirty-six now. Divorced. Childless. Successful by every metric that didn't matter. And Jake—she didn't know where Jake was. They'd lost touch after college, after life, after the slow drift that separates people who once couldn't breathe without each other.</p>
+                    <p>The key turned. The door opened. Dust motes danced in afternoon light.</p>
+                    <p>And there, on the kitchen table, sat a letter. Fresh. No stamp, no address. Just her name in handwriting she recognized instantly.</p>
+                    <p><em>"I heard about Mara. I'm sorry. I know you don't want to see me, but the dock needs fixing and I promised her I'd always take care of it. I'll come by Thursday. If you're there, you're there. If you're not, I'll understand. —J"</em></p>
+                    <p>Today was Thursday.</p>
+                    <p>Elena looked at the clock. 2 PM. She had hours to decide: stay and face the ghost of every choice she'd made, or run and keep wondering.</p>
+                    <p>Outside, the lake shimmered. The tire swing swayed in a breeze that smelled like pine and possibility. And somewhere in the distance, she heard a car approaching on the gravel road.</p>
+                    <p>Some summers, it seemed, weren't content to stay in the past. Some summers came back, demanding to be finished.</p>
+                `
+            }
+        };
+
+        function openStory(storyId) {
+            const story = stories[storyId];
+            if (story) {
+                document.getElementById('readTitle').textContent = story.title;
+                document.getElementById('readMeta').textContent = story.meta;
+                document.getElementById('readContent').innerHTML = story.content;
+                document.getElementById('mainPage').classList.add('hidden');
+                document.getElementById('readPage').classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function goBack() {
+            document.getElementById('mainPage').classList.remove('hidden');
+            document.getElementById('readPage').classList.remove('active');
+            return false;
+        }
+    </script>
+
+</body>
+</html>
