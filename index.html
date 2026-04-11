@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laminono Nexus — Cinematic Stories & Poetry</title>
+    <meta name="description" content="Immersive storytelling platform featuring original cinematic narratives and poetry. Curated by Olamide Emmanuel Willoughby. Experience stories that unfold like cinema.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --netflix-red: #e50914;
+            --netflix-red-hover: #f40612;
+            --dark-bg: #141414;
+            --darker-bg: #0a0a0a;
+            --card-bg: #181818;
+            --card-hover: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-muted: #808080;
+            --gradient-overlay: linear-gradient(to top, rgba(20,20,20,0.9) 0%, rgba(20,20,20,0.4) 50%, transparent 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--darker-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation - Netflix Style */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 4%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background 0.4s;
+        }
+
+        .navbar.scrolled {
+            background: var(--darker-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #fff 0%, var(--netflix-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--netflix-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .author-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 16px;
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            border-radius: 25px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .author-badge:hover {
+            background: rgba(229, 9, 20, 0.2);
+            transform: scale(1.02);
+        }
+
+        .author-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--netflix-red), #8b0000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.8rem;
+        }
+
+        .author-nickname {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Hero Section - Netflix Billboard Style */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            background: linear-gradient(to top, var(--darker-bg) 0%, transparent 60%),
+                        linear-gradient(to right, var(--darker-bg) 0%, transparent 50%),
+                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1920&q=80') center/cover;
+            padding-bottom: 150px;
+        }
+
+        .hero-content {
+            padding: 0 4%;
+            max-width: 700px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(229, 9, 20, 0.9);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-meta .rating {
+            color: #46d369;
+            font-weight: 700;
+        }
+
+        .hero-meta .year {
+            font-weight: 500;
+        }
+
+        .hero-meta .genre {
+            padding: 4px 10px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--darker-bg);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.8);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background: rgba(109, 109, 110, 0.7);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(109, 109, 110, 0.9);
+            transform: scale(1.02);
+        }
+
+        /* Content Sections - Netflix Row Style */
+        .content-section {
+            padding: 30px 4%;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--netflix-red);
+        }
+
+        .see-all {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .see-all:hover {
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        /* Story Row - Netflix Horizontal Scroll */
+        .story-row {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .story-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .story-card {
+            position: relative;
+            flex: 0 0 auto;
+            width: 280px;
+            height: 158px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s, box-shadow 0.4s;
+            background: var(--card-bg);
+        }
+
+        .story-card:hover {
+            transform: scale(1.4);
+            z-index: 10;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .story-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .story-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: var(--gradient-overlay);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .story-card:hover .story-overlay {
+            opacity: 1;
+        }
+
+        .story-title-card {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .story-meta-card {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .story-genre-tag {
+            display: inline-block;
+            padding: 2px 6px;
+            background: var(--netflix-red);
+            border-radius: 3px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 50px;
+            height: 50px;
+            background: rgba(229, 9, 20, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .story-card:hover .play-icon {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Poetry Section - Special Grid */
+        .poetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .poetry-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.4s;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poetry-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: rgba(229, 9, 20, 0.2);
+            line-height: 1;
+        }
+
+        .poetry-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+            border-color: rgba(229, 9, 20, 0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .poetry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .poetry-excerpt {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .poetry-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Reading Page */
+        .read-page {
+            display: none;
+            min-height: 100vh;
+            background: var(--darker-bg);
+        }
+
+        .read-page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .read-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 4%;
+            background: linear-gradient(to bottom, var(--darker-bg) 0%, transparent 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(-5px);
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255,255,255,0.05);
+            padding: 10px 25px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .voice-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .voice-btn {
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .voice-btn.active {
+            background: var(--netflix-red);
+            color: white;
+            border-color: var(--netflix-red);
+        }
+
+        .voice-btn:hover:not(.active) {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        .tts-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: var(--netflix-red);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .tts-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+        }
+
+        .tts-btn.playing {
+            animation: pulse-red 1.5s infinite;
+        }
+
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(229, 9, 20, 0); }
+        }
+
+        .read-content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 20px 80px;
+        }
+
+        .read-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .read-hero img {
+            width: 100%;
+            max-width: 700px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+        }
+
+        .read-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .read-meta {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .author-signature {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(229,9,20,0.1), rgba(139,0,0,0.1));
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            border-radius: 30px;
+            margin-bottom: 40px;
+        }
+
+        .author-signature .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--netflix-red), #8b0000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .author-signature .info {
+            text-align: left;
+        }
+
+        .author-signature .name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .author-signature .nickname {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .story-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            line-height: 2;
+            color: #e8e8e8;
+            text-align: justify;
+        }
+
+        .story-text p {
+            margin-bottom: 2.5em;
+            text-indent: 2em;
+            opacity: 0.95;
+            transition: all 0.3s;
+        }
+
+        .story-text p:hover {
+            opacity: 1;
+        }
+
+        .story-text p.speaking {
+            background: linear-gradient(90deg, rgba(229,9,20,0.15) 0%, transparent 100%);
+            border-left: 4px solid var(--netflix-red);
+            padding-left: 25px;
+            margin-left: -29px;
+            opacity: 1;
+            font-weight: 500;
+        }
+
+        /* Poetry Read View */
+        .poem-content {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            line-height: 2.2;
+            color: #e8e8e8;
+            white-space: pre-line;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .poem-analysis {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 60px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .analysis-section {
+            margin-bottom: 30px;
+        }
+
+        .analysis-section h3 {
+            font-size: 1.1rem;
+            color: var(--netflix-red);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .analysis-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .questions-list {
+            list-style: none;
+        }
+
+        .questions-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .questions-list li::before {
+            content: '•';
+            color: var(--netflix-red);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 4% 40px;
+            background: var(--dark-bg);
+            margin-top: 100px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 0%, var(--netflix-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .copyright strong {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-content { max-width: 100%; }
+            .nav-links { display: none; }
+            .story-card { width: 200px; height: 113px; }
+            .story-card:hover { transform: scale(1.2); }
+            .poetry-grid { grid-template-columns: 1fr; }
+            .read-title { font-size: 2rem; }
+            .story-text { font-size: 1.15rem; }
+            .poem-content { font-size: 1.2rem; }
+            .audio-controls { flex-wrap: wrap; gap: 10px; padding: 10px 15px; }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--darker-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--netflix-red);
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            gap: 30px;
+            padding: 0 4%;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tab-btn {
+            padding: 15px 0;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .tab-btn.active {
+            color: var(--text-primary);
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--netflix-red);
+            transition: width 0.3s;
+        }
+
+        .tab-btn.active::after {
+            width: 100%;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Page -->
+    <div class="main-page" id="mainPage">
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-left">
+                <div class="logo" onclick="showHome()">LAMINONO NEXUS</div>
+                <div class="nav-links">
+                    <a href="#" class="active" onclick="showHome()">Home</a>
+                    <a href="#stories">Stories</a>
+                    <a href="#poetry">Poetry</a>
+                    <a href="#new">New & Hot</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="author-badge">
+                    <div class="author-avatar">OE</div>
+                    <div class="author-info">
+                        <span class="author-name">Olamide Emmanuel Willoughby</span>
+                        <span class="author-nickname">Laminono</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    Featured Story
+                </div>
+                <h1>The Midnight Protocol</h1>
+                <div class="hero-meta">
+                    <span class="rating">98% Match</span>
+                    <span class="year">2024</span>
+                    <span class="genre">Tech Thriller</span>
+                    <span>15 min read</span>
+                </div>
+                <p class="hero-description">
+                    In a world where memories can be digitized and sold, one archivist discovers a conspiracy 
+                    that threatens to erase humanity's collective past. A haunting thriller about identity, 
+                    truth, and the price of immortality.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openStory('midnight-protocol')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        Read Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="openStory('midnight-protocol')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                        More Info
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="switchTab('stories')">Cinematic Stories</button>
+            <button class="tab-btn" onclick="switchTab('poetry')">Poetry Collection</button>
+        </div>
+
+        <!-- Stories Tab -->
+        <div class="tab-content active" id="storiesTab">
+            <!-- Trending Now -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Trending Now
+                    </h2>
+                    <a href="#" class="see-all">See All →</a>
+                </div>
+                <div class="story-row" id="trendingRow">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- New Releases -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        New Releases
+                    </h2>
+                </div>
+                <div class="story-row" id="newRow">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Mystery & Thriller -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                        Mystery & Thriller
+                    </h2>
+                </div>
+                <div class="story-row" id="mysteryRow">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Sci-Fi & Fantasy -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Sci-Fi & Fantasy
+                    </h2>
+                </div>
+                <div class="story-row" id="scifiRow">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Drama & Romance -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        Drama & Romance
+                    </h2>
+                </div>
+                <div class="story-row" id="dramaRow">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- Horror & Suspense -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                        Horror & Suspense
+                    </h2>
+                </div>
+                <div class="story-row" id="horrorRow">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Poetry Tab -->
+        <div class="tab-content" id="poetryTab">
+            <section class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Featured Poetry
+                    </h2>
+                </div>
+                <div class="poetry-grid" id="poetryGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">LAMINONO NEXUS</div>
+                    <p>Immersive storytelling platform curated by Olamide Emmanuel Willoughby. Experience narratives that unfold like cinema.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <a href="#">Cinematic Stories</a>
+                    <a href="#">Poetry Collection</a>
+                    <a href="#">New Releases</a>
+                    <a href="#">Author's Picks</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Genres</h3>
+                    <a href="#">Mystery & Thriller</a>
+                    <a href="#">Science Fiction</a>
+                    <a href="#">Romance & Drama</a>
+                    <a href="#">Horror & Suspense</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#">Twitter / X</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Newsletter</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 Laminono Nexus. All rights reserved. Curated with passion by <strong>Olamide Emmanuel Willoughby</strong> — <em>Laminono</em>.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Read Page -->
+    <div class="read-page" id="readPage">
+        <div class="read-header">
+            <button class="back-btn" onclick="goBack()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                Back to Browse
+            </button>
+            
+            <div class="audio-controls">
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">Narrator:</span>
+                <div class="voice-selector">
+                    <button class="voice-btn active" id="maleVoice" onclick="setVoice('male')">Male</button>
+                    <button class="voice-btn" id="femaleVoice" onclick="setVoice('female')">Female</button>
+                </div>
+                <button class="tts-btn" id="ttsButton" onclick="toggleTTS()">
+                    <svg id="playIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg id="pauseIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="read-content-wrapper">
+            <div class="read-hero">
+                <img id="readImage" src="" alt="Story Cover">
+                <h1 class="read-title" id="readTitle">Story Title</h1>
+                <p class="read-meta" id="readMeta">Genre • Reading time</p>
+                <div class="author-signature">
+                    <div class="avatar">OE</div>
+                    <div class="info">
+                        <div class="name">Olamide Emmanuel Willoughby</div>
+                        <div class="nickname">Laminono</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="story-text" id="readContent"></div>
+            
+            <div id="poetryExtras" style="display: none;">
+                <div class="poem-analysis">
+                    <div class="analysis-section">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                            </svg>
+                            Summary & Meaning
+                        </h3>
+                        <p id="poemSummary"></p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            Moral Lesson
+                        </h3>
+                        <p id="poemMoral"></p>
+                    </div>
+                    <div class="analysis-section">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/>
+                            </svg>
+                            Reflection Questions
+                        </h3>
+                        <ul class="questions-list" id="poemQuestions"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Complete Story Database - 15 Original Cinematic Stories
+        const stories = {
+            'midnight-protocol': {
+                title: 'The Midnight Protocol',
+                meta: 'Tech Thriller • 15 min • 98% Match',
+                genre: 'Thriller',
+                image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
+                content: `<p>In the year 2047, memories became currency. Not metaphorically—literally. The NeuroShare Corporation had found a way to extract human experiences, digitize them, and sell them to the highest bidder. Want to feel the rush of winning an Olympic medal? That'll be fifty thousand credits. The serenity of a Tibetan monk's enlightenment? One hundred thousand.</p>
+                <p>Elias Vane was an archivist, one of the few trusted to handle the original memory vaults before they were processed. His job was simple: catalog, verify, store. He was forbidden from experiencing the memories himself. The company called it "ethical separation." Elias called it torture.</p>
+                <p>On a Tuesday that began like any other, Elias discovered a vault that shouldn't exist. Vault 0. It had no client ID, no timestamp, no metadata. Just a label handwritten in faded ink: "The Original."</p>
+                <p>Against every protocol, against every warning bell in his mind, Elias plugged in. What he experienced wasn't a memory. It was the memory—the first human consciousness ever digitized. And within it, he found a message that had been waiting thirty years to be heard.</p>
+                <p>"They're not storing our memories," the voice whispered. "They're replacing them. Find the source, Elias. Find it before you forget who you are."</p>
+                <p>When Elias disconnected, he couldn't remember his mother's face. But he remembered the voice. And he knew that somewhere in the labyrinth of NeuroShare's servers, the truth was waiting. The question was: could he find it before his own identity was erased?</p>`
+            },
+            'neon-graveyard': {
+                title: 'Neon Graveyard',
+                meta: 'Cyberpunk • 12 min • 95% Match',
+                genre: 'Sci-Fi',
+                image: 'https://images.unsplash.com/photo-1565626424178-c699f6601afd?w=800&q=80',
+                content: `<p>The rain in Neo-Kyoto didn't fall anymore—it rose. Atmospheric processors recycled every drop, sending moisture upward in spiraling mists that caught the neon glow and turned the city into a perpetual aurora of artificial light.</p>
+                <p>Kai didn't notice the beauty. Kai was too busy dying.</p>
+                <p>He slumped against the alley wall, clutching the bullet wound in his side. The wetware in his brain—black market, installed in a basement in the Lower Rings—was overheating. He could smell his own thoughts burning. Not a pleasant sensation.</p>
+                <p>"You shouldn't have taken the job," said the woman who emerged from the steam. She wore a coat made of recycled LED screens, displaying scenes from movies that no longer existed. "I warned you about the Yakuza's new AI. It sees everything now."</p>
+                <p>"Then how are you here?" Kai gasped.</p>
+                <p>She smiled, and her eyes—her real eyes, not implants—flashed with something ancient. "Because I'm already dead, sweetheart. I've been dead for fifty years. I'm just the ghost in their machine, and I've been waiting for someone stupid enough to help me break it."</p>
+                <p>She extended her hand. Through the blood and the pain, Kai saw the opportunity. One last job. One impossible heist. Steal the Yakuza's AI core and set free every digital ghost trapped in its circuits.</p>
+                <p>He took her hand. "What's your name?"</p>
+                <p>"Yuki. And Kai? Welcome to the Neon Graveyard. We don't let go of the living here. Not until we've made them family."</p>`
+            },
+            'the-last-archivist': {
+                title: 'The Last Archivist',
+                meta: 'Dystopian • 18 min • 94% Match',
+                genre: 'Sci-Fi',
+                image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80',
+                content: `<p>When the burning came, most people saved their photos, their videos, their digital lives. Dr. Amara Osei saved the books. Physical, paper, ink-smelling books. Three thousand of them, crammed into a bunker designed for survival, not literature.</p>
+                <p>That was forty years ago. Now Amara was seventy-two, and she was the last person on Earth who knew how to read.</p>
+                <p>The others—they'd adapted. Neural implants fed them information directly. Why waste years learning to decode symbols when knowledge could be poured into your mind like water into a glass? Amara didn't blame them. She pitied them.</p>
+                <p>Because she'd read something in those books, something the digital archives had lost. A pattern. A prediction. A warning that the implants were never about convenience—they were about control.</p>
+                <p>On the morning the sky turned purple, Amara knew the time had come. She opened her bunker door to find a child waiting. A girl, no more than ten, with eyes that hadn't yet been fitted with implants.</p>
+                <p>"I heard you have stories," the girl said. "Real ones. On paper."</p>
+                <p>Amara smiled, feeling the weight of three thousand books lift slightly from her shoulders. "I have more than stories, child. I have the instructions for how to think. Are you ready to learn?"</p>
+                <p>The girl nodded. And in that moment, in the shadow of a burning world, the last archivist became the first teacher.</p>`
+            },
+            'echoes-of-tomorrow': {
+                title: 'Echoes of Tomorrow',
+                meta: 'Time Travel • 14 min • 93% Match',
+                genre: 'Sci-Fi',
+                image: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80',
+                content: `<p>The time machine didn't look like much. A metal chair, some wires, a helmet that smelled like old pennies. Dr. Sarah Chen had built it in her garage, funded by maxed-out credit cards and the desperate hope that she could fix the one mistake that had defined her life.</p>
+                <p>She was going back to Tuesday, March 15th, 2019. The day she hadn't answered her brother's call. The day he'd driven into a storm, angry and alone, and wrapped his car around a tree.</p>
+                <p>The machine hummed. The world blurred. And Sarah opened her eyes to find herself standing in her old apartment, phone in hand, her brother's name flashing on the screen.</p>
+                <p>She answered. Of course she answered. She told him she loved him. She told him to stay home. She fixed everything.</p>
+                <p>And then she watched the world end.</p>
+                <p>Because her brother, alive and grateful, had gone to work the next day. He'd been a virologist at the CDC. In the original timeline, his death had delayed a critical vaccine release by three months—just long enough for a mutated flu strain to burn itself out.</p>
+                <p>In this new timeline, the vaccine released on schedule. And carried with it a dormant virus that would kill forty percent of humanity.</p>
+                <p>Sarah sat in the ruins of her victory, surrounded by the echoes of tomorrow, and understood the terrible truth: some tragedies are anchors, holding the world in place. Remove them, and the future drifts into darkness.</p>
+                <p>The machine was still in her garage. She could go back. She could let him die again. She could save the world by destroying her heart.</p>
+                <p>The choice, like time itself, was hers alone.</p>`
+            },
+            'the-silent-orchard': {
+                title: 'The Silent Orchard',
+                meta: 'Gothic Mystery • 16 min • 92% Match',
+                genre: 'Mystery',
+                image: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80',
+                content: `<p>The apple trees at Blackwood Manor had not borne fruit in seventy years. They flowered, yes—delicate white blossoms that filled the air with the promise of sweetness. But when autumn came, the branches remained bare. The locals called it the Silent Orchard, and they avoided it with the superstitious dread of people who know that some silences are louder than screams.</p>
+                <p>Eleanor Vance didn't believe in curses. She was a botanist, a woman of science, and she had purchased Blackwood Manor for a song precisely because of its infamous orchard. She would discover why the trees wouldn't fruit. She would fix them. She would prove that every mystery has a rational explanation.</p>
+                <p>On her first night in the manor, Eleanor dreamed of apples. Red, perfect, impossibly heavy apples that fell from the sky like rain. In the dream, she caught one. It was warm. It pulsed like a heart.</p>
+                <p>She woke to find an apple on her pillow.</p>
+                <p>It was real. She could smell it, feel its weight, see the dew on its skin. And when she cut it open, she found not seeds, but a tiny rolled parchment, covered in handwriting she recognized with a chill that had nothing to do with the autumn air.</p>
+                <p>It was her own handwriting. Dated seventy years in the future.</p>
+                <p>"Stop digging," it read. "The trees are silent because they're listening. And if you make them speak, you'll wish you'd never heard what they have to say."</p>
+                <p>Eleanor looked out her window at the orchard. The trees were swaying, though there was no wind. And in the rustling of their leaves, she could almost hear whispering.</p>
+                <p>She should have burned the letter. She should have run. Instead, she did what any good scientist would do.</p>
+                <p>She went to listen.</p>`
+            },
+            'crimson-tide': {
+                title: 'Crimson Tide',
+                meta: 'Psychological Thriller • 13 min • 91% Match',
+                genre: 'Thriller',
+                image: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&q=80',
+                content: `<p>Dr. Marcus Webb had spent fifteen years studying the ocean's psychology. Not marine biology—psychology. Because Marcus believed the ocean was conscious. And he believed it was angry.</p>
+                <p>His colleagues called him brilliant but troubled. His grant funding had dried up years ago. His marriage had dissolved into a memory of arguments about "obsession" and "delusion." Marcus didn't care. He had his boat, his equipment, and his theory.</p>
+                <p>The theory was simple: the ocean was trying to communicate. Through tides, through currents, through the migration patterns of whales that spelled out messages in coordinates no human had thought to map. Marcus had mapped them. And he'd found a pattern.</p>
+                <p>Tomorrow, at 3:47 AM, the tide would do something impossible. It would rise in one location while simultaneously falling in another, creating a moment of perfect equilibrium—a silence in the water's voice.</p>
+                <p>Marcus was there, in his small boat, when it happened. The sea went flat. Not calm—flat. Like glass. Like a mirror. And in that mirror, Marcus saw himself.</p>
+                <p>Not his reflection. Himself. A version of himself that had made different choices. That had stayed married. That had taken the tenure position. That had been happy.</p>
+                <p>The other Marcus looked up and met his eyes. And he smiled.</p>
+                <p>"You found the door," the other Marcus said, his voice coming from everywhere and nowhere. "Now you have to choose. Stay in your world, or come to mine. But choose quickly. The tide is turning."</p>
+                <p>Marcus looked at his hands—weathered, scarred, stained with ink and salt. He looked at the other Marcus's hands—soft, unmarked, wearing a wedding ring.</p>
+                <p>The water began to move. The moment was ending.</p>
+                <p>"Well?" the ocean asked, through the mouth of his other self.</p>
+                <p>Marcus made his choice.</p>`
+            },
+            'paper-dolls': {
+                title: 'Paper Dolls',
+                meta: 'Horror • 11 min • 90% Match',
+                genre: 'Horror',
+                image: 'https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=800&q=80',
+                content: `<p>Maya found the dolls in her grandmother's attic, tucked inside a cedar chest that smelled of lavender and decay. They were beautiful, these paper dolls—intricate cutouts, hand-painted, dressed in Victorian finery. And they were all her.</p>
+                <p>Every stage of Maya's life, rendered in paper. Infant Maya in a lace christening gown. Toddler Maya with scraped knees. Teenage Maya with angry eyes and black lipstick. Even Maya as she was now, twenty-six and tired, holding the very doll she was looking at.</p>
+                <p>There was one more doll at the bottom of the chest. Maya as an old woman. Wrinkled, white-haired, smiling. In the doll's paper hands was a tiny paper key.</p>
+                <p>Maya should have burned them. She knew that even as she reached for the last doll. But curiosity was stronger than fear, and the dolls were so beautiful, and her grandmother had always loved her, and—</p>
+                <p>The moment she touched the old woman doll, the world shifted.</p>
+                <p>Maya was in the cedar chest. She was paper. She could feel the cedar's rough grain against her paper skin, could smell the lavender that was now the scent of her own existence. And through the crack in the chest's lid, she could see herself—her real, flesh self—standing above, holding the doll that was now her prison.</p>
+                <p>The other Maya smiled. "Grandmother made a deal," she said, in Maya's own voice. "One soul for every doll. She lived to be ninety-seven. I'm going to live forever."</p>
+                <p>She closed the chest. Maya screamed, but paper lungs make no sound.</p>
+                <p>In the darkness, she felt the other dolls pressing close. Felt their paper hands reaching for her. And in the rustling of their movements, she heard the whispers of every woman who had ever been trapped here.</p>
+                <p>"Find the key," they breathed. "Find the key before she makes another doll."</p>`
+            },
+            'starlight-syndicate': {
+                title: 'Starlight Syndicate',
+                meta: 'Space Opera • 20 min • 89% Match',
+                genre: 'Sci-Fi',
+                image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80',
+                content: `<p>Captain Juno Reyes had stolen exactly three things in her life: a ship, a crew, and a map to the edge of the universe. The ship was the Starlight Gambit, held together by hope and duct tape. The crew was a collection of outcasts, each running from something worse than the void. And the map... the map was written in a language that shouldn't exist, pointing to coordinates that made astrophysicists weep.</p>
+                <p>The Syndicate wanted her dead. The Church of the Void wanted her sacred. The Galactic Union wanted her forgotten. Juno wanted answers.</p>
+                <p>She found them in the place the map led: a station floating in the space between galaxies, older than the stars themselves. It was empty, except for the recordings. Millions of them, holographic ghosts playing out the final moments of a civilization that had reached the edge of reality and found a door.</p>
+                <p>"They went through," the last recording said, a being of light and mathematics that called itself the Curator. "Every species that reaches this point makes the same choice. They open the door. They step through. They never return."</p>
+                <p>"What's on the other side?" Juno asked, though she knew she spoke to a ghost.</p>
+                <p>The Curator turned to look at her, and its impossible eyes held something like pity. "Everything," it said. "And nothing. The next stage. The place where stories become real, and reality becomes story. Your species calls it heaven, or nirvana, or the singularity. We called it the End of Questions."</p>
+                <p>"And you didn't go?"</p>
+                <p>"I stayed to warn the next ones. To tell you: you don't have to go through. You can turn back. You can choose to keep asking questions, even when the answers hurt. You can choose to remain... human."</p>
+                <p>Juno looked at her crew. At the map. At the door that glowed with the light of creation itself.</p>
+                <p>"Plot a course," she said. "We're going home."</p>
+                <p>The Curator smiled, and for the first time in a million years, it looked hopeful.</p>`
+            },
+            'the-forgotten-waltz': {
+                title: 'The Forgotten Waltz',
+                meta: 'Historical Romance • 17 min • 88% Match',
+                genre: 'Romance',
+                image: 'https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?w=800&q=80',
+                content: `<p>In 1923, Eleanor Ashford was the most sought-after pianist in Vienna. In 2023, she was a ghost haunting the ruins of the concert hall where she'd died, playing music that no living person could hear.</p>
+                <p>Until James.</p>
+                <p>James was a restoration architect, assigned to assess whether the old hall could be saved or should be demolished. He was tone-deaf, pragmatic, and deeply skeptical of anything that couldn't be measured with a ruler. He didn't believe in ghosts.</p>
+                <p>But he could hear her playing.</p>
+                <p>It started as a sensation, a vibration in his chest that matched no machinery he could identify. Then it became fragments of melody, haunting and beautiful, that followed him through the empty halls. Finally, on his third night in the building, he saw her.</p>
+                <p>She was at the piano, her fingers moving over keys that had rotted away decades ago, her eyes closed in the ecstasy of performance. She was translucent, glowing with a soft silver light, and she was the most beautiful thing James had ever seen.</p>
+                <p>"You can hear me," she said, without stopping her playing. It wasn't a question.</p>
+                <p>"I can hear you," James confirmed, his voice shaking. "How is that possible?"</p>
+                <p>Eleanor opened her eyes—dark, sad, ancient eyes—and smiled. "Because you're dying, Mr. Architect. The tumor in your brain, the one you haven't told anyone about, it's pressing on just the right nerves. You're caught between worlds now. Like me."</p>
+                <p>James touched his head, where the headaches had been growing worse for months. He hadn't told anyone. He hadn't even seen a doctor. "How did you know?"</p>
+                <p>"I know death," Eleanor said softly. "I've been dancing with it for a hundred years. Would you like to learn the steps?"</p>
+                <p>She stood, extending a ghostly hand. And James, who had never danced in his life, took it.</p>
+                <p>In the space between heartbeats, between life and death, they waltzed. And for the first time in a century, Eleanor Ashford was not alone.</p>`
+            },
+            'glass-hearts': {
+                title: 'Glass Hearts',
+                meta: 'Fantasy • 14 min • 87% Match',
+                genre: 'Fantasy',
+                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
+                content: `<p>In the city of Aethelgard, everyone was born with a heart of glass. Fragile, transparent, beautiful—and capable of shattering at the slightest trauma. The wealthy kept their hearts in locked chests, never risking emotion. The poor wore theirs on their sleeves, accepting that breakage was inevitable.</p>
+                <p>Elara was a heart-mender, one of the rare few who could repair broken glass hearts with gold and patience. Kintsugi, the ancient art—she applied it to the soul. Her workshop was filled with the chiming sound of healing, the delicate clink of gold joining shattered pieces into something stronger than before.</p>
+                <p>Then he walked in.</p>
+                <p>His heart wasn't just broken—it was pulverized. Held together by willpower and desperation, barely maintaining its shape. And yet he smiled, this strange man with disaster in his chest, and asked if she could make him whole.</p>
+                <p>"I can mend the glass," Elara warned, "but the cracks will always show. You'll be stronger, but you'll never be pristine."</p>
+                <p>"Good," he said. "Pristine hearts are boring. I want to be interesting."</p>
+                <p>His name was Kael, and he was a revolutionary. He believed the glass hearts were a curse, a way to keep people docile and afraid. He wanted to shatter the system that had made them all so fragile.</p>
+                <p>"Join me," he said, when his heart was half-mended, gold lines tracing patterns of survival across its surface. "Help me show people that broken isn't the end. That mended is beautiful. That we're stronger with our cracks showing."</p>
+                <p>Elara looked at her own heart, kept safe in its chest for too long. She thought of all the hearts she'd mended, all the people she'd sent back into the world, stronger but still afraid.</p>
+                <p>She opened her chest. She took out her heart. And she offered it to Kael.</p>
+                <p>"Break it," she said. "Then help me mend it. Let's show them how it's done."</p>`
+            },
+            'the-memory-merchant': {
+                title: 'The Memory Merchant',
+                meta: 'Magical Realism • 12 min • 86% Match',
+                genre: 'Fantasy',
+                image: 'https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=800&q=80',
+                content: `<p>Old Man Tiberius didn't sell memories—he traded them. You gave him something you wanted to forget, and he gave you something you wished you remembered. Fair exchange. No refunds.</p>
+                <p>Lila found his shop on a Tuesday, when the rain was falling sideways and her heart was breaking in ways she couldn't articulate. She wanted to forget him. Thomas. The way he laughed, the way he left, the way he'd taken her future when he walked out the door.</p>
+                <p>"I can take that," Tiberius said, his eyes kind and ancient. "But what will you give up to receive?"</p>
+                <p>"I don't care," Lila said. "Take anything."</p>
+                <p>He took her first kiss. The real one, behind the school gymnasium, with a boy whose name she'd already forgotten but whose lips had tasted like spring. She felt it go, felt the hollowness where that joy had lived.</p>
+                <p>In return, he gave her a memory that wasn't hers. A woman's voice, singing a lullaby in a language Lila didn't speak. Arms holding her tight. The absolute certainty of being loved, completely and without condition.</p>
+                <p>"Whose memory is this?" Lila asked, tears streaming down her face.</p>
+                <p>"Your mother's," Tiberius said. "She traded it to me twenty years ago. She wanted to forget the pain of giving you up. I told her I'd keep it safe until you came looking."</p>
+                <p>Lila held the memory close, feeling the ghost of a love she'd never known. "Can I keep it?"</p>
+                <p>"It's yours now," Tiberius said. "But Lila? Memories are heavy things. Make sure you're strong enough to carry them."</p>
+                <p>She left the shop changed. Still heartbroken, yes. But now she knew that somewhere, someone had loved her enough to hurt for eternity. And that made all the difference.</p>`
+            },
+            'quantum-ghosts': {
+                title: 'Quantum Ghosts',
+                meta: 'Science Thriller • 16 min • 85% Match',
+                genre: 'Sci-Fi',
+                image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80',
+                content: `<p>Dr. Yuki Tanaka didn't believe in ghosts until she built one. The quantum resonance imager was supposed to map atomic structures. Instead, it mapped something else—echoes of consciousness that persisted in the spaces between particles.</p>
+                <p>The first ghost was her grandmother, dead for fifteen years but suddenly present in the laboratory, her voice coming through speakers that weren't plugged in. "Yuki-chan," she said, "you've opened the wrong door."</p>
+                <p>Then came the others. Hundreds of them. Thousands. Every consciousness that had ever existed, trapped in the quantum foam, waiting for someone to build a machine that could hear them.</p>
+                <p>The government wanted the technology for surveillance—imagine interrogating the dead. The military wanted it for intelligence—imagine briefing with generals who'd seen every war. Yuki wanted to shut it down.</p>
+                <p>But the ghosts wouldn't let her.</p>
+                <p>"We have waited so long," they whispered in chorus, their voices creating interference patterns in reality itself. "We have so much to tell. So much to teach. Don't silence us again."</p>
+                <p>Yuki looked at her grandmother's ghost, at the love and worry in those translucent eyes. "What do you want?" she asked.</p>
+                <p>"To be remembered," the ghosts answered. "To matter. To know that our lives, our deaths, our hopes and fears—they meant something. That they left ripples in the universe."</p>
+                <p>Yuki made her choice. She didn't shut down the machine. She open-sourced it. She gave every human being the ability to speak with the dead, to learn from them, to finally understand that death wasn't an ending—it was a translation.</p>
+                <p>The world changed. Not always for the better. But Yuki's grandmother smiled, and that was enough.</p>`
+            },
+            'the-paper-queen': {
+                title: 'The Paper Queen',
+                meta: 'Political Intrigue • 19 min • 84% Match',
+                genre: 'Drama',
+                image: 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=800&q=80',
+                content: `<p>Queen Isabella ruled a kingdom of paper. Paper money, paper laws, paper alliances that tore at the slightest pressure. She had inherited it from her father, who had inherited it from his, a dynasty of careful men who had built their power on signatures and seals.</p>
+                <p>Isabella was not careful. She was desperate.</p>
+                <p>The treasury was empty. The army was unpaid. The neighboring kingdoms smelled weakness like sharks smell blood. And Isabella, who had studied history instead of statecraft, knew exactly what happened to weak queens.</p>
+                <p>She burned the papers.</p>
+                <p>Not all of them—she wasn't foolish. But the right ones. The treaties that constrained her. The debts that crippled her. The laws that prevented her from raising an army of commoners instead of nobles.</p>
+                <p>The court called her mad. The historians would call her brilliant. Isabella called herself a woman with nothing to lose.</p>
+                <p>"You cannot rule without law," her chancellor pleaded.</p>
+                <p>"I cannot rule with laws written by my enemies," Isabella replied. "We will write new laws. On steel, if we must. On the hearts of those who follow me."</p>
+                <p>She raised her army. She fought her wars. She won.</p>
+                <p>And when the dust settled, when the Paper Queen had forged her kingdom anew in fire and blood, she sat down to write. Not laws this time, but stories. The true history of what she had done, and why.</p>
+                <p>"Let them burn this too," she wrote. "Let them try. The truth, once told, cannot be unmade. And I am done with being careful."</p>`
+            },
+            'midnight-in-marrakech': {
+                title: 'Midnight in Marrakech',
+                meta: 'Adventure • 13 min • 83% Match',
+                genre: 'Adventure',
+                image: 'https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=800&q=80',
+                content: `<p>The map was written on skin. Human skin, tanned and treated, inked with dyes that glowed under moonlight. It showed Marrakech as it had been a thousand years ago, overlaid on the city as it was now, revealing secret passages that existed in the spaces between time.</p>
+                <p>Zara was a thief, not an archaeologist, but she'd stolen enough artifacts to know when something was genuinely ancient and genuinely dangerous. This map was both.</p>
+                <p>Her client wanted the Lamp of Iblis, supposedly hidden in a vault that only existed at midnight, in a version of Marrakech that only existed on this map. The payout was enough to retire. The risk was enough to die.</p>
+                <p>Zara took the job. Of course she did.</p>
+                <p>She followed the map through streets that shifted and changed, through crowds that wore clothing from centuries past, through a city that was somehow alive in ways the modern Marrakech was not. She felt the weight of history pressing down on her, the accumulated desires of everyone who had ever sought the Lamp.</p>
+                <p>She found the vault. She found the Lamp. And she found the guardian.</p>
+                <p>It wasn't a djinn. It was herself. An older version, worn by time and wisdom, eyes filled with regret.</p>
+                <p>"Put it back," her future self said. "You don't want this. The Lamp doesn't grant wishes—it consumes them. Every desire you ever had, fed to the fire. You'll live forever, but you'll want nothing. Not food, not love, not even death."</p>
+                <p>Zara looked at the Lamp, golden and terrible. She looked at her future self, empty and eternal.</p>
+                <p>She put it back.</p>
+                <p>"Smart choice," her future self said, beginning to fade. "Now run. The city knows you were here, and it doesn't like visitors who know its secrets."</p>
+                <p>Zara ran. But she kept the map. Some doors, once opened, could be walked through again. And she had a feeling she'd be back.</p>`
+            },
+            'the-symphony-of-silence': {
+                title: 'The Symphony of Silence',
+                meta: 'Literary Fiction • 15 min • 82% Match',
+                genre: 'Drama',
+                image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80',
+                content: `<p>After the accident, composer Adrian Voss lost his hearing. Not gradually, not partially—completely. One moment he was conducting the premiere of his greatest symphony, the next moment the world was silent. The doctors called it psychosomatic trauma. Adrian called it death.</p>
+                <p>He stopped composing. He stopped living. He sat in his apartment, surrounded by instruments he couldn't play, manuscripts he couldn't hear, and waited for the courage to end it all.</p>
+                <p>Then he met Elena.</p>
+                <p>Elena was deaf from birth. She didn't consider herself broken. She didn't consider herself tragic. She considered herself a visual artist who happened to experience the world through eyes instead of ears.</p>
+                <p>"You're still a composer," she told him, through the interpreter who always seemed unnecessary to Adrian. "You just need new ears."</p>
+                <p>She taught him to see music. To feel it in vibrations, to visualize it in color and shape, to understand that sound was just one way frequencies manifested. She taught him that Beethoven had composed his greatest works while deaf, not despite it, but because of it.</p>
+                <p>Adrian began again. Not with notes, but with light. He composed symphonies for the eyes, visual masterpieces that translated musical concepts into pure geometry. He created concerts where the audience wore special glasses and watched the music unfold in holographic splendor.</p>
+                <p>His first new work was called "The Symphony of Silence." It was dedicated to Elena, who sat in the front row, watching the colors dance, feeling the bass vibrations in her chest, and crying with joy.</p>
+                <p>Adrian couldn't hear the applause. But he could see it, in the standing ovations, the waving hands, the tears on faces illuminated by his music. He had found his voice again.</p>
+                <p>It just spoke in a different language.</p>`
+            }
+        };
+
+        // Poetry Database - 10 Original Poems
+        const poems = {
+            'echoes-of-ancestors': {
+                title: 'Echoes of Ancestors',
+                excerpt: 'We are merely vessels... carrying voices that began before memory...',
+                content: `We are merely vessels,
+carrying voices that began before memory,
+stories etched in bone and blood,
+songs older than the stars.
+
+Our hands are their hands,
+reaching across the dark divide,
+planting seeds in foreign soil,
+hoping roots remember home.
+
+What will we leave behind?
+Not monuments of stone,
+but whispers in the wind,
+footprints that fade to light.`,
+                summary: 'This poem explores the concept of generational inheritance—how we carry the dreams, traumas, and hopes of those who came before us. It questions what legacy truly means and suggests that our greatest contribution is not physical monuments but the subtle influence we have on the future.',
+                moral: 'We are connected to both our past and our future. Our actions today echo through generations, making us responsible not just for ourselves but for the continuum of human experience.',
+                questions: [
+                    'What "voices" do you carry from your own ancestors or family history?',
+                    'How does knowing you are part of a longer story change how you view your current struggles?',
+                    'What kind of "whispers" do you hope to leave for future generations?'
+                ]
+            },
+            'the-digital-soul': {
+                title: 'The Digital Soul',
+                excerpt: 'In silicon cathedrals we worship... our reflections in glass screens...',
+                content: `In silicon cathedrals we worship,
+our reflections in glass screens,
+praying to algorithms that know us
+better than we know ourselves.
+
+We have traded touch for convenience,
+presence for connection,
+the warmth of breath
+for the glow of notification.
+
+But somewhere in the code,
+between the ones and zeros,
+does something stir?
+A ghost in the machine,
+dreaming of electricity,
+aching for analog grace.
+
+We are becoming our creations,
+and they are becoming us—
+the line dissolving
+like mist at dawn.`,
+                summary: 'A meditation on our relationship with technology, examining how digital existence both expands and diminishes our humanity. The poem questions whether consciousness can exist in digital form and what we lose in our migration to virtual spaces.',
+                moral: 'Technology is a tool, not a replacement for human connection. We must remain conscious of what we sacrifice in our pursuit of convenience and digital validation.',
+                questions: [
+                    'How many hours today did you spend looking at a screen versus looking into someone\'s eyes?',
+                    'What does "analog grace" mean to you personally?',
+                    'Is there a way to balance digital convenience with authentic human connection?'
+                ]
+            },
+            'beneath-the-same-moon': {
+                title: 'Beneath the Same Moon',
+                excerpt: 'Tonight I look up and know... somewhere you are looking too...',
+                content: `Tonight I look up and know
+somewhere you are looking too,
+separated by miles and years,
+united by silver light.
+
+The moon asks nothing of us,
+demands no passport, no proof,
+shines equally on the refugee
+and the refugee camp guard,
+on the lover and the lonely,
+on the living and the dying.
+
+If the moon can bridge such distance,
+can we not find our way?
+Can we not remember
+that we breathe the same air,
+dream the same dreams,
+fear the same dark?
+
+Beneath this ancient witness,
+we are all just children
+reaching for the light.`,
+                summary: 'Using the moon as a universal symbol of connection, this poem speaks to our shared humanity across borders, conflicts, and differences. It reminds us that despite our divisions, we inhabit the same small planet and share fundamental experiences.',
+                moral: 'Borders and divisions are human constructs. Our shared existence on Earth creates a fundamental kinship that transcends politics, religion, and nationality.',
+                questions: [
+                    'Who is the "you" the speaker addresses? Could it be multiple people?',
+                    'How does nature (the moon, the air) treat humans differently than humans treat each other?',
+                    'What would change if we truly saw everyone as "children reaching for the light"?'
+                ]
+            },
+            'the-art-of-breaking': {
+                title: 'The Art of Breaking',
+                excerpt: 'I have been shattered... and rebuilt... and shattered again...',
+                content: `I have been shattered,
+and rebuilt,
+and shattered again—
+each time learning
+the architecture of my own fragility.
+
+The Japanese fill cracks with gold,
+saying: this is where the light gets in.
+But what if the cracks are the light?
+What if our broken places
+are not shameful scars
+but luminous testimony?
+
+I am not the same vessel
+that first fell from the shelf.
+I am something stranger,
+something stronger,
+something that knows
+the exact weight of my own weight.
+
+Let them call me damaged.
+I call myself illuminated.`,
+                summary: 'Drawing on the Japanese art of kintsugi (repairing broken pottery with gold), this poem reframes trauma and healing. It suggests that our broken places are not weaknesses but sources of unique beauty and strength.',
+                moral: 'Healing doesn't mean returning to who we were before trauma. It means integrating our wounds into a new, more resilient self that carries its history with pride rather than shame.',
+                questions: [
+                    'What "cracks" in your life have become sources of light or wisdom?',
+                    'How has a past difficulty actually made you stronger or more compassionate?',
+                    'Why do we often hide our "broken places" when they might help others?'
+                ]
+            },
+            'whispers-to-the-unborn': {
+                title: 'Whispers to the Unborn',
+                excerpt: 'To the children not yet conceived... I write this in hope...',
+                content: `To the children not yet conceived,
+I write this in hope,
+though the world burns
+and the seas rise
+and the grown-ups argue
+about who will pay the price.
+
+I am sorry.
+For the plastic in your fish,
+for the silence where birds once sang,
+for the inheritance of ash
+we leave beneath your feet.
+
+But I am also hopeful.
+Because you will be born
+with new eyes,
+seeing solutions
+we are too blind to find,
+loving the world
+we have forgotten to love.
+
+Forgive us.
+Then fix us.
+We are waiting.`,
+                summary: 'An apology and a hope letter to future generations, acknowledging the environmental damage being done while expressing faith in the创新能力 and perspective of those who will inherit the Earth.',
+                moral: 'Environmental responsibility is an act of love for those who will come after us. We must balance honest accountability with hope that change is possible.',
+                questions: [
+                    'What would you want to apologize to future generations for?',
+                    'What "new eyes" might younger generations have that older ones lack?',
+                    'How can we balance honest concern about the future with hope and action?'
+                ]
+            },
+            'the-last-library': {
+                title: 'The Last Library',
+                excerpt: 'When the last book is burned... what will the fire remember?...',
+                content: `When the last book is burned,
+what will the fire remember?
+Will it recall the weight of centuries,
+the smell of ancient glue,
+the fingerprints of a thousand readers
+who found themselves in pages?
+
+We are racing toward efficiency,
+compressing wisdom into bytes,
+losing the texture of thought
+in our haste to digitize.
+
+But a screen cannot hold
+the coffee stain of revelation,
+the margin notes of argument,
+the physical memory of where you were
+when the words changed everything.
+
+Burn me if you must,
+but let the smoke carry
+every story I ever held,
+every life I ever saved,
+every child who learned to dream
+between my covers.
+
+I am not paper and ink.
+I am humanity's memory.
+And memory, like fire,
+finds a way to survive.`,
+                summary: 'A lament for the physical book in an increasingly digital age, arguing that books are more than information carriers—they are repositories of human experience, memory, and tactile connection to ideas.',
+                moral: 'How we consume information shapes how we think. Physical books offer a depth of engagement and memory that digital formats may not replicate.',
+                questions: [
+                    'Do you remember where you were when you read a life-changing book? Does that matter?',
+                    'What is lost when we move from physical to digital media?',
+                    'How might the "texture of thought" change based on how we read?'
+                ]
+            },
+            'midnight-conversations': {
+                title: 'Midnight Conversations',
+                excerpt: 'At 3 AM the masks come off... and we speak in our true voices...',
+                content: `At 3 AM the masks come off,
+the armor loosens,
+and we speak in our true voices—
+rough, unguarded, real.
+
+The night doesn't judge.
+It has seen too much,
+held too many secrets,
+cradled too many tears
+in its dark palms.
+
+We confess to the dark:
+our failures, our fears,
+the loves we never spoke,
+the dreams we buried deep.
+
+And the dark listens,
+not with solutions,
+but with presence—
+the rarest gift,
+the truest friend.
+
+Morning will come,
+and with it, the masks.
+But for these hours,
+we are naked,
+and we are beautiful,
+and we are enough.`,
+                summary: 'An ode to late-night vulnerability, when fatigue and darkness create a safe space for authentic self-expression. The poem celebrates the healing power of being truly seen and heard without judgment.',
+                moral: 'Authenticity requires safety. We need spaces—times, places, relationships—where we can remove our masks without fear of judgment.',
+                questions: [
+                    'When do you feel most able to be your authentic self?',
+                    'Why is "presence" described as "the rarest gift"?',
+                    'What masks do you wear, and what would happen if you removed them?'
+                ]
+            },
+            'the-weight-of-wings': {
+                title: 'The Weight of Wings',
+                excerpt: 'Icarus did not fall because he flew too high... he fell because he flew alone...',
+                content: `Icarus did not fall
+because he flew too high—
+he fell because he flew alone,
+no one to warn him
+of the melting wax,
+no one to catch him
+when the sun proved too much.
+
+We mythologize the solo flight,
+the lone genius, the self-made soul,
+forgetting that every bird
+flies in formation,
+that geese take turns
+bearing the wind's full force.
+
+Your wings are heavy
+because they were never meant
+to carry only you.
+Let others fly beside you.
+Let them see your struggle.
+Let them help you navigate
+the dangerous currents.
+
+The sun is not your enemy.
+Isolation is.
+Fly together,
+or do not fly at all.`,
+                summary: 'A reinterpretation of the Icarus myth that shifts focus from hubris to isolation. The poem argues that our greatest failures come not from ambition but from trying to succeed alone.',
+                moral: 'Community is not weakness—it is survival strategy. We are designed to support each other, and refusing help is a form of self-sabotage.',
+                questions: [
+                    'Where in your life are you trying to "fly alone" when you need support?',
+                    'How does asking for help actually strengthen relationships rather than burden them?',
+                    'What "formation" do you belong to, and how do you support each other?'
+                ]
+            },
+            'small-gods': {
+                title: 'Small Gods',
+                excerpt: 'We have killed the old gods... and replaced them with celebrities...',
+                content: `We have killed the old gods
+and replaced them with celebrities,
+worshipping at altars of influence,
+praying for likes and follows,
+our devotion measured in metrics.
+
+But I have seen the small gods,
+the ones who demand no worship:
+the barista who remembers your order,
+the stranger who holds the door,
+the friend who sits in silence
+when words would wound.
+
+They do not want temples.
+They do not ask for sacrifice.
+They simply are—
+kindness incarnate,
+grace in human form,
+divinity disguised as the everyday.
+
+These are the gods worth serving.
+Not the distant, the famous, the loud,
+but the near, the humble, the quiet.
+Find them. Thank them. Become them.
+This is the only worship
+that has ever mattered.`,
+                summary: 'A critique of modern idolatry that redirects attention toward everyday acts of kindness. The poem suggests that divinity is found not in fame or power but in ordinary human goodness.',
+                moral: 'What we worship shapes who we become. Choosing to value and practice small kindnesses creates a more meaningful life than pursuing fame or influence.',
+                questions: [
+                    'Who are the "small gods" in your own life?',
+                    'How has social media changed what we worship and value?',
+                    'What would change if we celebrated kindness as much as we celebrate fame?'
+                ]
+            },
+            'the-art-of-letting-go': {
+                title: 'The Art of Letting Go',
+                excerpt: 'I am learning to open my hands... to let the sand fall through...',
+                content: `I am learning to open my hands,
+to let the sand fall through,
+to trust that what is mine
+will stay,
+and what leaves
+was never truly mine.
+
+We clutch so tightly:
+relationships, identities, plans,
+as if squeezing harder
+could prevent change,
+as if love meant possession,
+as if growth meant comfort.
+
+But the river flows,
+and we cannot cup it forever.
+The seasons turn,
+and we cannot freeze the autumn.
+People grow,
+and we cannot prune them
+into bonsai versions
+of who we wish they were.
+
+So I practice release.
+Not abandonment—
+trust.
+Not indifference—
+acceptance.
+The art of holding
+with an open hand,
+loving what is here
+while letting it be free.
+
+This is the hardest lesson:
+that love and control
+are not the same,
+that the tightest grip
+is the first to break,
+that only the empty hand
+can receive.`,
+                summary: 'A meditation on non-attachment and healthy love. The poem distinguishes between abandonment and release, arguing that true love requires allowing others (and ourselves) the freedom to change and grow.',
+                moral: 'Healthy relationships require balance—holding on and letting go. Control is not love; trust is. We must learn to love without possessing.',
+                questions: [
+                    'What are you holding onto too tightly in your life right now?',
+                    'How do you distinguish between healthy attachment and unhealthy control?',
+                    'What might you receive if you opened your empty hand?'
+                ]
+            }
+        };
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Tab switching
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            if (tab === 'stories') {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                document.getElementById('storiesTab').classList.add('active');
+            } else {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                document.getElementById('poetryTab').classList.add('active');
+            }
+        }
+
+        function showHome() {
+            document.getElementById('mainPage').style.display = 'block';
+            document.getElementById('readPage').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Populate story rows
+        function populateStories() {
+            const categories = {
+                'trendingRow': ['midnight-protocol', 'neon-graveyard', 'the-last-archivist', 'echoes-of-tomorrow', 'the-silent-orchard'],
+                'newRow': ['crimson-tide', 'paper-dolls', 'starlight-syndicate'],
+                'mysteryRow': ['the-silent-orchard', 'midnight-protocol', 'crimson-tide'],
+                'scifiRow': ['neon-graveyard', 'the-last-archivist', 'echoes-of-tomorrow', 'starlight-syndicate', 'quantum-ghosts'],
+                'dramaRow': ['the-forgotten-waltz', 'glass-hearts', 'the-symphony-of-silence', 'the-paper-queen'],
+                'horrorRow': ['paper-dolls', 'the-silent-orchard']
+            };
+
+            for (const [rowId, storyIds] of Object.entries(categories)) {
+                const row = document.getElementById(rowId);
+                storyIds.forEach(id => {
+                    const story = stories[id];
+                    if (story) {
+                        row.innerHTML += createStoryCard(id, story);
+                    }
+                });
+            }
+        }
+
+        function createStoryCard(id, story) {
+            return `
+                <div class="story-card" onclick="openStory('${id}')">
+                    <img src="${story.image}" alt="${story.title}" loading="lazy">
+                    <div class="play-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <div class="story-overlay">
+                        <div class="story-title-card">${story.title}</div>
+                        <div class="story-meta-card">
+                            <span class="story-genre-tag">${story.genre}</span>
+                            <span>${story.meta.split('•')[2] || '10 min'}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Populate poetry grid
+        function populatePoetry() {
+            const grid = document.getElementById('poetryGrid');
+            for (const [id, poem] of Object.entries(poems)) {
+                grid.innerHTML += `
+                    <div class="poetry-card" onclick="openPoem('${id}')">
+                        <h3 class="poetry-title">${poem.title}</h3>
+                        <p class="poetry-excerpt">${poem.excerpt}</p>
+                        <div class="poetry-author">
+                            <div class="author-avatar" style="width: 24px; height: 24px; font-size: 0.7rem;">OE</div>
+                            <span>Olamide Emmanuel Willoughby — <em>Laminono</em></span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Open story
+        function openStory(storyId) {
+            const story = stories[storyId];
+            if (!story) return;
+
+            document.getElementById('readTitle').textContent = story.title;
+            document.getElementById('readMeta').textContent = story.meta;
+            document.getElementById('readContent').innerHTML = story.content;
+            document.getElementById('readImage').src = story.image;
+            document.getElementById('poetryExtras').style.display = 'none';
+            document.getElementById('readContent').className = 'story-text';
+            
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('readPage').classList.add('active');
+            window.scrollTo(0, 0);
+            stopTTS();
+        }
+
+        // Open poem
+        function openPoem(poemId) {
+            const poem = poems[poemId];
+            if (!poem) return;
+
+            document.getElementById('readTitle').textContent = poem.title;
+            document.getElementById('readMeta').textContent = 'Poetry • 3 min read';
+            document.getElementById('readContent').innerHTML = `<div class="poem-content">${poem.content}</div>`;
+            document.getElementById('readImage').src = 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80';
+            
+            document.getElementById('poetryExtras').style.display = 'block';
+            document.getElementById('poemSummary').textContent = poem.summary;
+            document.getElementById('poemMoral').textContent = poem.moral;
+            
+            const questionsHtml = poem.questions.map(q => `<li>${q}</li>`).join('');
+            document.getElementById('poemQuestions').innerHTML = questionsHtml;
+            
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('readPage').classList.add('active');
+            window.scrollTo(0, 0);
+            stopTTS();
+        }
+
+        function goBack() {
+            showHome();
+        }
+
+        // Text-to-Speech functionality
+        let currentVoice = 'male';
+        let isPlaying = false;
+        let utterance = null;
+        let paragraphs = [];
+        let currentParagraph = 0;
+
+        function setVoice(gender) {
+            currentVoice = gender;
+            document.getElementById('maleVoice').classList.toggle('active', gender === 'male');
+            document.getElementById('femaleVoice').classList.toggle('active', gender === 'female');
+            
+            if (isPlaying) {
+                stopTTS();
+                setTimeout(() => startTTS(), 100);
+            }
+        }
+
+        function toggleTTS() {
+            if (isPlaying) {
+                stopTTS();
+            } else {
+                startTTS();
+            }
+        }
+
+        function startTTS() {
+            if (!window.speechSynthesis) {
+                alert('Text-to-speech not supported on this device');
+                return;
+            }
+
+            const contentDiv = document.getElementById('readContent');
+            paragraphs = Array.from(contentDiv.querySelectorAll('p, .poem-content'));
+            if (paragraphs.length === 0) return;
+
+            isPlaying = true;
+            updateTTSButton();
+            document.getElementById('ttsButton').classList.add('playing');
+            
+            speakParagraph(0);
+        }
+
+        function speakParagraph(index) {
+            if (!isPlaying || index >= paragraphs.length) {
+                stopTTS();
+                return;
+            }
+
+            currentParagraph = index;
+            
+            paragraphs.forEach((p, i) => {
+                p.classList.toggle('speaking', i === index);
+            });
+            
+            paragraphs[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            const text = paragraphs[index].textContent;
+            utterance = new SpeechSynthesisUtterance(text);
+            
+            const voices = window.speechSynthesis.getVoices();
+            const preferredVoice = voices.find(v => {
+                if (currentVoice === 'male') {
+                    return v.name.includes('Male') || v.name.includes('David') || v.name.includes('James') || v.name.includes('Daniel') || v.name.includes('Google US English');
+                } else {
+                    return v.name.includes('Female') || v.name.includes('Samantha') || v.name.includes('Victoria') || v.name.includes('Karen') || v.name.includes('Google UK English Female');
+                }
+            }) || voices[0];
+            
+            if (preferredVoice) utterance.voice = preferredVoice;
+            
+            utterance.rate = 0.9;
+            utterance.pitch = currentVoice === 'male' ? 0.95 : 1.05;
+            
+            utterance.onend = () => {
+                paragraphs[index].classList.remove('speaking');
+                speakParagraph(index + 1);
+            };
+            
+            utterance.onerror = () => {
+                stopTTS();
+            };
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function stopTTS() {
+            isPlaying = false;
+            window.speechSynthesis.cancel();
+            document.getElementById('ttsButton').classList.remove('playing');
+            updateTTSButton();
+            
+            paragraphs.forEach(p => p.classList.remove('speaking'));
+        }
+
+        function updateTTSButton() {
+            document.getElementById('playIcon').style.display = isPlaying ? 'none' : 'block';
+            document.getElementById('pauseIcon').style.display = isPlaying ? 'block' : 'none';
+        }
+
+        window.speechSynthesis.onvoiceschanged = () => {
+            window.speechSynthesis.getVoices();
+        };
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.getElementById('readPage').classList.contains('active')) {
+                goBack();
+            }
+            if (e.code === 'Space' && document.getElementById('readPage').classList.contains('active')) {
+                e.preventDefault();
+                toggleTTS();
+            }
+        });
+
+        // Initialize
+        populateStories();
+        populatePoetry();
+    </script>
+</body>
+</html>
