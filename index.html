@@ -70,7 +70,6 @@ function openP(i){const p=poems[i];document.getElementById('rimg').src='https://
 function goBack(){document.getElementById('main').style.display='block';document.getElementById('read').classList.remove('active');window.scrollTo(0,0);}
 function switchT(n){document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===n));}
 render();addChronos();
-function addChronos(){document.getElementById('trending').innerHTML='<div class="card" onclick="location.href=\'chronos-part1.html\'"><img src="https://images.unsplash.com/photo-1506452301184-3a040400659c?w=600" loading="lazy"><div class="card-content"><h3>The Chronos Protocol — Part 1</h3><span>Time Travel Thriller • 4 min • NEW SERIES</span><div class="tag">Featured</div></div></div>'+document.getElementById('trending').innerHTML;}
 </script>
 </body>
 </html>
