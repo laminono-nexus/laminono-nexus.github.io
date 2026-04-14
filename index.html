@@ -1218,6 +1218,143 @@
             font-weight: 600;
             text-transform: uppercase;
         }
+           /* Admin Bio Modal */
+        .admin-bio-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .admin-bio-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+
+        .admin-bio-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        }
+
+        .admin-bio-header {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: -50px;
+        }
+
+        .admin-bio-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--bg-card);
+            object-fit: cover;
+            margin-bottom: -75px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .admin-bio-body {
+            padding: 90px 40px 40px;
+            text-align: center;
+        }
+
+        .admin-bio-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .admin-bio-nickname {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .admin-bio-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .admin-bio-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .admin-bio-close:hover {
+            background: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .admin-badge {
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .admin-badge:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .admin-bio-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .admin-stat {
+            text-align: center;
+        }
+
+        .admin-stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .admin-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        } 
     </style>
 </head>
 <body>
@@ -1231,7 +1368,7 @@
             <a href="#featured">Featured</a>
             <a href="#about">About</a>
         </div>
-        <div class="nav-profile">
+               <div class="nav-profile" onclick="openAdminBio()" style="cursor: pointer;">
             <span class="admin-badge">Admin</span>
             <span style="font-size: 0.9rem; color: var(--text-secondary);">Laminono</span>
         </div>
@@ -1442,6 +1579,45 @@
         <span id="toastMessage">Notification</span>
     </div>
 
+            // Admin Bio Modal Functions
+        function openAdminBio() {
+            const modal = document.getElementById('adminBioModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Update stats
+            document.getElementById('storyCount').textContent = stories.length;
+            
+            // Calculate total readers from localStorage
+            let totalReaders = 0;
+            Object.values(storyRatings).forEach(rating => {
+                totalReaders += rating.total;
+            });
+            document.getElementById('readerCount').textContent = totalReaders;
+            
+            // Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_admin_bio', {
+                    'event_category': 'engagement',
+                    'event_label': 'Admin Profile'
+                });
+            }
+        }
+
+        function closeAdminBio(event) {
+            if (!event || event.target.id === 'adminBioModal' || event.target.tagName === 'BUTTON') {
+                const modal = document.getElementById('adminBioModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAdminBio();
+            }
+        });
     <script>
         // Story Data
         const stories = [
@@ -2225,6 +2401,46 @@ P.S. The seal is still here. I visit its grave every spring. The grass grows thi
         
         <div class="all-stories-grid" id="allStoriesGrid">
             <!-- Stories loaded here -->
+        </div>
+    </div>
+    <!-- Admin Bio Modal -->
+    <div class="admin-bio-modal" id="adminBioModal" onclick="closeAdminBio(event)">
+        <div class="admin-bio-content" onclick="event.stopPropagation()">
+            <button class="admin-bio-close" onclick="closeAdminBio()">×</button>
+            
+            <div class="admin-bio-header">
+                <img src="laminono.jpeg" alt="Olamide Emmanuel Willoughby" class="admin-bio-image">
+            </div>
+            
+            <div class="admin-bio-body">
+                <h2 class="admin-bio-name">Olamide Emmanuel Willoughby</h2>
+                <p class="admin-bio-nickname">Laminono — The Storyteller</p>
+                
+                <div class="admin-bio-stats">
+                    <div class="admin-stat">
+                        <div class="admin-stat-number" id="storyCount">5</div>
+                        <div class="admin-stat-label">Stories</div>
+                    </div>
+                    <div class="admin-stat">
+                        <div class="admin-stat-number" id="readerCount">0</div>
+                        <div class="admin-stat-label">Readers</div>
+                    </div>
+                    <div class="admin-stat">
+                        <div class="admin-stat-number">∞</div>
+                        <div class="admin-stat-label">Imagination</div>
+                    </div>
+                </div>
+                
+                <p class="admin-bio-text">
+                    Laminono is more than a name—it's a creative identity. Founded by Olamide Emmanuel Willoughby, Laminono blends storytelling, visual creativity, and digital strategy to craft powerful experiences.
+                    <br><br>
+                    From emotionally driven stories to high-converting social media content, every creation is designed to resonate, inspire, and influence. Each story you read here is crafted with intention, designed to transport you to worlds both familiar and strange.
+                    <br><br>
+                    <em>"Stories are the currency of human connection. I aim to make us all rich."</em>
+                    <br><br>
+                    — Laminono
+                </p>
+            </div>
         </div>
     </div>
 </body>
