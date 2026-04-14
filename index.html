@@ -1072,7 +1072,7 @@
     <section class="content-section">
         <div class="section-header">
             <h2 class="section-title">New Releases</h2>
-            <span class="explore-all">View All →</span>
+            <span class="explore-all" onclick="showAllStories('all')" style="cursor: pointer;">View All →</span>
         </div>
         <div class="story-row" id="newReleasesRow">
             <!-- Stories injected by JS -->
@@ -1708,6 +1708,92 @@ P.S. The seal is still here. I visit its grave every spring. The grass grows thi
                 }
             });
         });
+            // All Stories Page Functions
+        function showAllStories(type) {
+            // Hide main content
+            document.querySelector('.hero').classList.add('hidden');
+            document.querySelectorAll('.content-section').forEach(section => section.classList.add('hidden'));
+            document.querySelector('.admin-section').classList.add('hidden');
+            document.querySelector('footer').classList.add('hidden');
+            
+            // Show all stories page
+            const page = document.getElementById('allStoriesPage');
+            page.classList.remove('hidden');
+            
+            // Set title
+            const title = type === 'trending' ? 'Trending Stories' : 'All Stories';
+            document.getElementById('allStoriesTitle').textContent = title;
+            
+            // Load stories
+            filterStories('all');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function backToHome() {
+            // Show main content
+            document.querySelector('.hero').classList.remove('hidden');
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('hidden'));
+            document.querySelector('.admin-section').classList.remove('hidden');
+            document.querySelector('footer').classList.remove('hidden');
+            
+            // Hide all stories page
+            document.getElementById('allStoriesPage').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function filterStories(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === category || (category === 'all' && btn.textContent === 'All')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Filter stories
+            let filtered = stories;
+            if (category !== 'all') {
+                filtered = stories.filter(s => s.genre === category);
+            }
+            
+            // Render grid
+            const grid = document.getElementById('allStoriesGrid');
+            grid.innerHTML = filtered.map(story => `
+                <div class="story-card" onclick="openStory('${story.id}')" style="height: 400px;">
+                    <img src="${story.image}" alt="${story.title}" class="story-card-image" style="height: 65%;" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+                    <div class="story-card-overlay" style="padding: 25px;">
+                        <div class="story-genre">${story.genre}</div>
+                        <h3 class="story-title" style="font-size: 1.4rem;">${story.title}</h3>
+                        <p class="story-excerpt" style="opacity: 1; transform: none; -webkit-line-clamp: 3;">${story.excerpt}</p>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 10px;">⏱ ${story.readTime} read</p>
+                    </div>
+                </div>
+            `).join('');
+        }
     </script>
+    <!-- All Stories Page (Hidden by default) -->
+    <div id="allStoriesPage" class="hidden">
+        <div class="all-stories-header">
+            <a href="#" class="back-btn" onclick="backToHome()">← Back to Home</a>
+            <h1 id="allStoriesTitle">All Stories</h1>
+            <p style="color: var(--text-secondary); margin-top: 10px;">Curated by Olamide Emmanuel Willoughby</p>
+            
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterStories('all')">All</button>
+                <button class="filter-btn" onclick="filterStories('Drama')">Drama</button>
+                <button class="filter-btn" onclick="filterStories('Romance')">Romance</button>
+                <button class="filter-btn" onclick="filterStories('Sci-Fi')">Sci-Fi</button>
+                <button class="filter-btn" onclick="filterStories('Dystopian')">Dystopian</button>
+            </div>
+        </div>
+        
+        <div class="all-stories-grid" id="allStoriesGrid">
+            <!-- Stories loaded here -->
+        </div>
+    </div>
 </body>
 </html>
