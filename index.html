@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><!-- Google tag (gtag.js) -->
+<head>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7YT12YB25"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-B7YT12YB25');
 </script>
 <meta charset="UTF-8">
@@ -14,128 +14,585 @@
 <title>Laminono Nexus</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,sans-serif;background:#0a0a0a;color:#fff;line-height:1.6}
-.nav{position:fixed;top:0;width:100%;padding:15px 4%;background:linear-gradient(to bottom,rgba(0,0,0,0.7),transparent);display:flex;justify-content:space-between;align-items:center;z-index:1000}
-.logo{font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,#fff,#e50914);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.author{display:flex;align-items:center;gap:8px;padding:6px 12px;background:rgba(229,9,20,0.1);border:1px solid rgba(229,9,20,0.3);border-radius:20px;font-size:0.75rem}
-.hero{min-height:70vh;display:flex;align-items:flex-end;padding:100px 4% 40px;background:linear-gradient(to top,#0a0a0a,transparent),url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200') center/cover}
-.hero h1{font-size:2.5rem;margin-bottom:10px}
-.hero p{color:#b3b3b3;margin-bottom:20px;max-width:500px}
-.btn{padding:12px 24px;background:#fff;color:#000;border:none;border-radius:4px;font-weight:600;cursor:pointer;margin-right:10px}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#141414;color:#fff;line-height:1.6;overflow-x:hidden}
+
+/* Netflix-style Navigation */
+.nav{position:fixed;top:0;width:100%;padding:20px 4%;background:linear-gradient(to bottom,rgba(20,20,20,0.9) 10%,transparent);display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:background 0.4s}
+.nav.scrolled{background:#141414}
+.logo{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,#e50914,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1px}
+.author{display:flex;align-items:center;gap:10px;padding:8px 16px;background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.4);border-radius:30px;font-size:0.8rem;backdrop-filter:blur(10px)}
+
+/* Netflix Hero Style */
+.hero{min-height:85vh;display:flex;align-items:flex-end;padding:0 4% 80px;background:linear-gradient(to top,#141414 0%,transparent 50%,rgba(0,0,0,0.3) 100%),url('https://www.shutterstock.com/shutterstock/videos/3807680245/thumb/1.jpg?ip=x480') center/cover;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(77deg,rgba(0,0,0,0.6) 0%,transparent 85%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:650px}
+.hero-badge{display:inline-block;padding:6px 14px;background:#e50914;border-radius:4px;font-size:0.75rem;font-weight:700;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
+.hero h1{font-size:4rem;margin-bottom:16px;font-weight:800;line-height:1.1;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
+.hero p{color:#d1d1d1;margin-bottom:30px;max-width:550px;font-size:1.25rem;line-height:1.5}
+.hero-buttons{display:flex;gap:15px}
+.btn-play{padding:12px 28px;background:#fff;color:#000;border:none;border-radius:4px;font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;gap:8px;transition:transform 0.2s,opacity 0.2s}
+.btn-play:hover{transform:scale(1.05);opacity:0.9}
+.btn-info{padding:12px 28px;background:rgba(109,109,110,0.7);color:#fff;border:none;border-radius:4px;font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;gap:8px;transition:transform 0.2s,background 0.2s;backdrop-filter:blur(10px)}
+.btn-info:hover{background:rgba(109,109,110,0.9);transform:scale(1.05)}
+
+/* Netflix Tabs */
+.tabs{display:flex;gap:30px;padding:20px 4%;border-bottom:1px solid rgba(255,255,255,0.1);background:#141414}
+.tab{padding:12px 0;background:none;border:none;color:#808080;cursor:pointer;font-weight:600;font-size:1rem;position:relative;transition:color 0.3s}
+.tab:hover{color:#fff}
+.tab.active{color:#fff}
+.tab.active::after{content:'';position:absolute;bottom:-20px;left:0;right:0;height:3px;background:#e50914;border-radius:3px}
+
+/* Netflix Content Sections */
 .section{padding:30px 4%}
-.section h2{font-size:1.2rem;margin-bottom:15px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
-.card{background:#181818;border-radius:8px;overflow:hidden;cursor:pointer}
-.card:hover{transform:scale(1.03);transition:0.3s}
-.card img{width:100%;height:160px;object-fit:cover}
-.card-content{padding:15px}
-.card h3{font-size:1rem;margin-bottom:5px}
-.card span{font-size:0.8rem;color:#b3b3b3}
-.tag{display:inline-block;padding:3px 8px;background:#e50914;border-radius:3px;font-size:0.7rem;margin-top:8px}
-.read{display:none;padding:80px 4% 40px;max-width:800px;margin:0 auto}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.section h2{font-size:1.4rem;font-weight:600;color:#e5e5e5}
+.see-all{color:#54b9c5;font-size:0.9rem;cursor:pointer;opacity:0;transition:opacity 0.3s}
+.section:hover .see-all{opacity:1}
+
+/* Netflix Card Grid - Horizontal Scroll Style */
+.grid{display:flex;gap:8px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:20px;scrollbar-width:none;-ms-overflow-style:none}
+.grid::-webkit-scrollbar{display:none}
+.card{flex:0 0 auto;width:280px;background:#181818;border-radius:4px;overflow:hidden;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;position:relative}
+.card:hover{transform:scale(1.4);z-index:100;box-shadow:0 10px 30px rgba(0,0,0,0.8)}
+.card:hover .card-content{opacity:1;transform:translateY(0)}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:4px 4px 0 0}
+.card-content{padding:15px;opacity:0;transform:translateY(10px);transition:all 0.3s;position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(24,24,24,0.95),transparent);border-radius:0 0 4px 4px}
+.card h3{font-size:0.95rem;margin-bottom:6px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-meta{font-size:0.75rem;color:#b3b3b3;margin-bottom:8px}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 8px;background:#404040;border-radius:3px;font-size:0.65rem;color:#fff}
+.tag.red{background:#e50914}
+
+/* Series Card (Netflix Style) */
+.series-card{flex:0 0 auto;width:280px;background:#181818;border-radius:4px;overflow:hidden;cursor:pointer;transition:transform 0.3s}
+.series-card:hover{transform:scale(1.05)}
+.series-card img{width:100%;height:160px;object-fit:cover}
+.series-info{padding:12px}
+.series-title{font-size:0.95rem;font-weight:600;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.series-episode{font-size:0.8rem;color:#e50914;font-weight:600;margin-bottom:4px}
+.series-genre{font-size:0.75rem;color:#808080}
+
+/* Read View */
+.read{display:none;min-height:100vh;background:#141414}
 .read.active{display:block}
-.read img{width:100%;max-width:600px;height:300px;object-fit:cover;border-radius:8px;margin-bottom:30px}
-.read h1{font-size:2rem;margin-bottom:10px}
-.read-meta{color:#b3b3b3;margin-bottom:20px}
-.author-big{display:flex;align-items:center;gap:12px;padding:15px;background:rgba(229,9,20,0.1);border-radius:8px;margin-bottom:30px}
-.content{font-family:Georgia,serif;font-size:1.2rem;line-height:2;text-align:justify}
-.content p{margin-bottom:1.5em;text-indent:2em}
-.back{position:fixed;top:15px;left:4%;padding:10px 20px;background:rgba(255,255,255,0.1);border:none;color:#fff;border-radius:4px;cursor:pointer;z-index:100}
-.tabs{display:flex;gap:20px;padding:0 4%;border-bottom:1px solid rgba(255,255,255,0.1)}
-.tab{padding:15px 0;background:none;border:none;color:#b3b3b3;cursor:pointer;font-weight:600}
-.tab.active{color:#fff;border-bottom:2px solid #e50914}
-.tab-content{display:none}
+.read-hero{position:relative;height:70vh;overflow:hidden}
+.read-hero img{width:100%;height:100%;object-fit:cover}
+.read-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100%;background:linear-gradient(to top,#141414 0%,transparent 60%)}
+.read-content{max-width:800px;margin:-100px auto 0;padding:0 4% 60px;position:relative;z-index:10}
+.read h1{font-size:2.5rem;margin-bottom:12px;font-weight:700}
+.read-meta{display:flex;align-items:center;gap:15px;color:#b3b3b3;margin-bottom:25px;font-size:0.95rem}
+.read-meta span{display:flex;align-items:center;gap:5px}
+.match{color:#46d369;font-weight:600}
+.author-big{display:flex;align-items:center;gap:15px;padding:20px;background:rgba(255,255,255,0.05);border-radius:8px;margin-bottom:40px;border-left:4px solid #e50914}
+.author-avatar{width:50px;height:50px;border-radius:50%;background:#e50914;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem}
+.content{font-family:Georgia,serif;font-size:1.25rem;line-height:1.9;color:#d1d1d1}
+.content p{margin-bottom:1.8em;text-indent:2em}
+.content p:first-child{text-indent:0}
+
+/* Back Button */
+.back{position:fixed;top:20px;left:4%;padding:12px 24px;background:rgba(0,0,0,0.6);border:none;color:#fff;border-radius:4px;cursor:pointer;z-index:1000;font-weight:600;backdrop-filter:blur(10px);transition:background 0.3s;display:flex;align-items:center;gap:8px}
+.back:hover{background:rgba(0,0,0,0.9)}
+
+/* Tab Content */
+.tab-content{display:none;background:#141414}
 .tab-content.active{display:block}
-.footer{padding:40px 4%;text-align:center;color:#808080;font-size:0.85rem;margin-top:50px;border-top:1px solid rgba(255,255,255,0.1)}
-@media(max-width:768px){.hero h1{font-size:1.8rem}.grid{grid-template-columns:1fr}}
+
+/* Episode List (Netflix Style) */
+.episode-list{margin-top:40px;border-top:1px solid rgba(255,255,255,0.1);padding-top:30px}
+.episode-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:background 0.3s}
+.episode-item:hover{background:rgba(255,255,255,0.03)}
+.episode-num{width:60px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#808080;font-weight:300}
+.episode-thumb{width:160px;height:90px;object-fit:cover;border-radius:4px;flex-shrink:0}
+.episode-info{flex:1}
+.episode-title{font-size:1.1rem;font-weight:600;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.episode-duration{color:#b3b3b3;font-size:0.9rem;font-weight:400}
+.episode-desc{color:#808080;font-size:0.95rem;line-height:1.5}
+
+/* Footer */
+.footer{padding:60px 4% 40px;text-align:center;color:#808080;font-size:0.9rem;margin-top:40px;border-top:1px solid rgba(255,255,255,0.1);background:#141414}
+.footer-links{display:flex;justify-content:center;gap:30px;margin-bottom:20px;flex-wrap:wrap}
+.footer a{color:#808080;text-decoration:none;transition:color 0.3s}
+.footer a:hover{color:#fff}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem}
+  .hero{min-height:70vh;padding-bottom:40px}
+  .card{width:200px}
+  .card:hover{transform:scale(1.2)}
+  .section h2{font-size:1.1rem}
+  .read h1{font-size:1.8rem}
+  .read-content{margin-top:-50px}
+}
 </style>
 </head>
 <body>
+
+<!-- Main View -->
 <div id="main">
-<nav class="nav"><div class="logo">LAMINONO NEXUS</div><div class="author"><div style="width:24px;height:24px;border-radius:50%;background:#e50914;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.7rem">OE</div><div><div style="font-weight:600">Olamide Emmanuel Willoughby</div><div style="font-size:0.7rem;font-style:italic">Laminono</div></div></div></nav>
-<div class="hero"><div><div style="display:inline-block;padding:5px 10px;background:#e50914;border-radius:4px;font-size:0.75rem;margin-bottom:15px">FEATURED</div><h1>The Midnight Protocol</h1><p>A haunting thriller where memories become currency and the past catches up in digital echoes.</p><button class="btn" onclick="openS(0)">Read Now</button></div></div>
-<div class="tabs"><button class="tab active" onclick="switchT(0)">Stories</button><button class="tab" onclick="switchT(1)">Poetry</button></div>
-<div id="tab0" class="tab-content active"><div class="section"><h2>Trending Now</h2><div class="grid" id="trending"></div></div><div class="section"><h2>Mystery & Thriller</h2><div class="grid" id="mystery"></div></div><div class="section"><h2>Sci-Fi & Fantasy</h2><div class="grid" id="scifi"></div></div><div class="section"><h2>Drama & Romance</h2><div class="grid" id="drama"></div></div></div>
-<div id="tab1" class="tab-content"><div class="section"><h2>Poetry Collection</h2><div class="grid" id="poetry"></div></div></div>
-<div class="footer">2024 Laminono Nexus. Curated by Olamide Emmanuel Willoughby — Laminono</div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="navbar">
+    <div class="logo">LAMINONO NEXUS</div>
+    <div class="author">
+      <div style="width:32px;height:32px;border-radius:50%;background:#e50914;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem">OE</div>
+      <div>
+        <div style="font-weight:600">Olamide Emmanuel Willoughby</div>
+        <div style="font-size:0.75rem;opacity:0.8">Laminono</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section - The Midnight Protocol -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Featured Story</div>
+      <h1>The Midnight Protocol</h1>
+      <p>In 2047, memories became currency. Dr. Elias Vane discovers Vault 0—the first digitized consciousness. Within it, a warning: they're not storing memories, they're replacing them.</p>
+      <div class="hero-buttons">
+        <button class="btn-play" onclick="openS(0)">
+          <span style="font-size:1.2rem">▶</span> Read Now
+        </button>
+        <button class="btn-info" onclick="openS(0)">
+          <span style="font-size:1.1rem">ℹ</span> More Info
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchT(0)">Stories</button>
+    <button class="tab" onclick="switchT(1)">Poetry</button>
+    <button class="tab" onclick="switchT(2)">Series</button>
+  </div>
+
+  <!-- Stories Tab -->
+  <div id="tab0" class="tab-content active">
+    <div class="section">
+      <div class="section-header">
+        <h2>Trending Now</h2>
+        <span class="see-all">See All →</span>
+      </div>
+      <div class="grid" id="trending"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Mystery & Thriller</h2>
+        <span class="see-all">See All →</span>
+      </div>
+      <div class="grid" id="mystery"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Sci-Fi & Fantasy</h2>
+        <span class="see-all">See All →</span>
+      </div>
+      <div class="grid" id="scifi"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <h2>Drama & Romance</h2>
+        <span class="see-all">See All →</span>
+      </div>
+      <div class="grid" id="drama"></div>
+    </div>
+  </div>
+
+  <!-- Poetry Tab -->
+  <div id="tab1" class="tab-content">
+    <div class="section">
+      <div class="section-header">
+        <h2>Poetry Collection</h2>
+        <span class="see-all">See All →</span>
+      </div>
+      <div class="grid" id="poetry"></div>
+    </div>
+  </div>
+
+  <!-- Series Tab -->
+  <div id="tab2" class="tab-content">
+    <div class="section">
+      <div class="section-header">
+        <h2>Original Series</h2>
+        <span class="see-all">See All →</span>
+      </div>
+      <div class="grid" id="series"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Stories</a>
+      <a href="#">Poetry</a>
+      <a href="#">Contact</a>
+    </div>
+    <p>© 2024 Laminono Nexus. Curated by Olamide Emmanuel Willoughby — Laminono</p>
+  </div>
 </div>
-<div id="read" class="read"><button class="back" onclick="goBack()">Back</button><img id="rimg" src="" alt=""><h1 id="rtitle"></h1><div class="read-meta" id="rmeta"></div><div class="author-big"><div style="width:40px;height:40px;border-radius:50%;background:#e50914;display:flex;align-items:center;justify-content:center;font-weight:700">OE</div><div><div style="font-weight:600">Olamide Emmanuel Willoughby</div><div style="font-size:0.8rem;color:#b3b3b3;font-style:italic">Laminono</div></div></div><div class="content" id="rcontent"></div></div>
+
+<!-- Read View -->
+<div id="read" class="read">
+  <button class="back" onclick="goBack()">← Back to Browse</button>
+  <div class="read-hero">
+    <img id="rimg" src="" alt="">
+  </div>
+  <div class="read-content">
+    <h1 id="rtitle"></h1>
+    <div class="read-meta" id="rmeta"></div>
+    <div class="author-big">
+      <div class="author-avatar">OE</div>
+      <div>
+        <div style="font-weight:600">Olamide Emmanuel Willoughby</div>
+        <div style="font-size:0.85rem;color:#b3b3b3">Author & Curator</div>
+      </div>
+    </div>
+    <div class="content" id="rcontent"></div>
+
+    <!-- Episode List for Series -->
+    <div class="episode-list" id="episodeList" style="display:none">
+      <h2 style="font-size:1.5rem;margin-bottom:20px">Episodes</h2>
+      <div id="episodesContainer"></div>
+    </div>
+  </div>
+</div>
+
 <script>
-const stories=[{t:"The Midnight Protocol",m:"Tech Thriller • 15 min",i:"https://images.pexels.com/photos/2044005/pexels-photo-2044005.jpeg?w=800",c:"<p>In 2047, memories became currency. Dr. Elias Vane discovers Vault 0—the first digitized consciousness. Within it, a warning: they're not storing memories, they're replacing them. When Elias disconnects, he can't remember his mother's face. Now he must find the source before his identity is erased.</p>",g:"trending"},{t:"Neon Graveyard",m:"Cyberpunk • 12 min",i:"https://images.unsplash.com/photo-1565626424178-c699f6601afd?w=600",c:"<p>In Neo-Kyoto 2087, rain falls upward. Kai, dying in an alley, meets Yuki—a ghost dead fifty years. She offers one last job: steal the Yakuza's AI core. But escaping the Neon Graveyard means becoming family with the dead.</p>",g:"trending"},{t:"The Last Archivist",m:"Dystopian • 18 min",i:"https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600",c:"<p>Dr. Amara Osei saved 3,000 books when the burning came. Forty years later, she's seventy-two and the last person who can read. When the sky turns purple, a child appears—eyes without implants, asking for stories. The last archivist becomes the first teacher.</p>",g:"trending"},{t:"The Silent Orchard",m:"Gothic Mystery • 16 min",i:"https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600",c:"<p>The apple trees at Blackwood Manor flower but never fruit. Eleanor Vance finds a paper doll of herself as an old woman, holding a key. Inside is a note in her own handwriting, dated seventy years ahead: 'The trees are silent because they're listening.'</p>",g:"mystery"},{t:"Crimson Tide",m:"Psychological Thriller • 13 min",i:"https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600",c:"<p>Dr. Marcus Webb believes the ocean is conscious. When the tide goes flat as glass, he sees himself—a version who made different choices, was happy. 'Choose,' the ocean says through his other self. 'Your world or mine.' The water begins to move.</p>",g:"mystery"},{t:"Starlight Syndicate",m:"Space Opera • 20 min",i:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600",c:"<p>Captain Juno Reyes has a map to the edge of the universe. It leads to a station where a civilization found a door to 'the End of Questions.' Juno looks at her crew and chooses: 'Plot a course. We're going home.'</p>",g:"scifi"},{t:"The Forgotten Waltz",m:"Historical Romance • 17 min",i:"https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?w=600",c:"<p>In 1923, Eleanor Ashford was Vienna's greatest pianist. In 2023, she's a ghost haunting the concert hall. Until James—a tone-deaf architect who can hear her. 'You're dying,' she says. 'The tumor has caught you between worlds, like me.' At 3 AM, they waltz between life and death.</p>",g:"drama"},{t:"Glass Hearts",m:"Fantasy • 14 min",i:"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600",c:"<p>In Aethelgard, hearts are glass. Elara mends them with gold. Kael arrives—heart pulverized, wanting revolution. 'Break my heart,' Elara says, offering it. 'Then help me mend it. Let's show them broken is beautiful.'</p>",g:"drama"},{t:"The Clock That Should Not Exist",s:"The Chronos Protocol",e:"Part 1",g:"Time Travel Thriller",i:"https://images.unsplash.com/photo-1506452301184-3a040400659c?w=800&q=80",l:"chronos-part1.html",x:"Daniel noticed the silence first..."},{t:"The First Jump",s:"The Chronos Protocol",e:"Part 2",g:"Time Travel Thriller",i:"https://t4.ftcdn.net/jpg/01/86/91/45/360_F_186914599_ho2bNRYyC0F7nYfI2gmw2L67OhuCvttT.jpg",l:"chronos-part2.html",x:"Darkness didn't feel empty. It felt full. Like Daniel had stepped into a space waiting for him..."}
+// STORIES DATA WITH CINEMATIC THUMBNAILS
+const stories = [
+  {
+    t: "The Midnight Protocol",
+    m: "Tech Thriller • 15 min • 98% Match",
+    // Digital brain neural network - memories as currency
+    i: "https://www.shutterstock.com/shutterstock/videos/3807680245/thumb/1.jpg?ip=x480",
+    c: "<p>In 2047, memories became currency. Dr. Elias Vane discovers Vault 0—the first digitized consciousness. Within it, a warning: they're not storing memories, they're replacing them. When Elias disconnects, he can't remember his mother's face. Now he must find the source before his identity is erased.</p>",
+    g: "trending"
+  },
+  {
+    t: "Neon Graveyard",
+    m: "Cyberpunk • 12 min • 95% Match",
+    // Cyberpunk neon city rain
+    i: "https://thumbs.dreamstime.com/b/futuristic-neon-lit-urban-night-scene-reflections-rainy-empty-city-street-371973162.jpg",
+    c: "<p>In Neo-Kyoto 2087, rain falls upward. Kai, dying in an alley, meets Yuki—a ghost dead fifty years. She offers one last job: steal the Yakuza's AI core. But escaping the Neon Graveyard means becoming family with the dead.</p>",
+    g: "trending"
+  },
+  {
+    t: "The Last Archivist",
+    m: "Dystopian • 18 min • 92% Match",
+    // Burning library dramatic
+    i: "https://img.freepik.com/premium-photo/burning-library-illustration-dark-dramatic-scene-library-fire_1233553-72133.jpg",
+    c: "<p>Dr. Amara Osei saved 3,000 books when the burning came. Forty years later, she's seventy-two and the last person who can read. When the sky turns purple, a child appears—eyes without implants, asking for stories. The last archivist becomes the first teacher.</p>",
+    g: "trending"
+  },
+  {
+    t: "The Silent Orchard",
+    m: "Gothic Mystery • 16 min • 89% Match",
+    // Gothic manor mysterious
+    i: "https://as2.ftcdn.net/v2/jpg/12/39/47/57/1000_F_1239475736_CoORfR8P5eYrAwnhMwIeMLSdt2Gn8Llg.jpg",
+    c: "<p>The apple trees at Blackwood Manor flower but never fruit. Eleanor Vance finds a paper doll of herself as an old woman, holding a key. Inside is a note in her own handwriting, dated seventy years ahead: 'The trees are silent because they're listening.'</p>",
+    g: "mystery"
+  },
+  {
+    t: "Crimson Tide",
+    m: "Psychological Thriller • 13 min • 94% Match",
+    // Ocean mirror reflection surreal
+    i: "https://images.pexels.com/photos/8708970/pexels-photo-8708970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    c: "<p>Dr. Marcus Webb believes the ocean is conscious. When the tide goes flat as glass, he sees himself—a version who made different choices, was happy. 'Choose,' the ocean says through his other self. 'Your world or mine.' The water begins to move.</p>",
+    g: "mystery"
+  },
+  {
+    t: "Starlight Syndicate",
+    m: "Space Opera • 20 min • 91% Match",
+    // Space station nebula
+    i: "https://thumbs.dreamstime.com/b/space-station-orbiting-colorful-nebula-distant-planets-stunning-depiction-futuristic-vibrant-surrounded-sparkling-370508369.jpg",
+    c: "<p>Captain Juno Reyes has a map to the edge of the universe. It leads to a station where a civilization found a door to 'the End of Questions.' Juno looks at her crew and chooses: 'Plot a course. We're going home.'</p>",
+    g: "scifi"
+  },
+  {
+    t: "The Forgotten Waltz",
+    m: "Historical Romance • 17 min • 88% Match",
+    // Vintage ballroom using Unsplash
+    i: "https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?w=800",
+    c: "<p>In 1923, Eleanor Ashford was Vienna's greatest pianist. In 2023, she's a ghost haunting the concert hall. Until James—a tone-deaf architect who can hear her. 'You're dying,' she says. 'The tumor has caught you between worlds, like me.' At 3 AM, they waltz between life and death.</p>",
+    g: "drama"
+  },
+  {
+    t: "Glass Hearts",
+    m: "Fantasy • 14 min • 90% Match",
+    // Magical glowing glass heart
+    i: "https://images.stockcake.com/public/6/c/c/6cca2c1f-17a6-4402-be66-e1e62b84100d_large/magical-glowing-heart-stockcake.jpg",
+    c: "<p>In Aethelgard, hearts are glass. Elara mends them with gold. Kael arrives—heart pulverized, wanting revolution. 'Break my heart,' Elara says, offering it. 'Then help me mend it. Let's show them broken is beautiful.'</p>",
+    g: "drama"
+  }
 ];
-const poems=[{t:"Echoes of Ancestors",e:"We are merely vessels...",c:"We are merely vessels,\ncarrying voices before memory,\nstories etched in bone,\nsongs older than stars.\n\nOur hands are their hands,\nplanting seeds in foreign soil,\nhoping roots remember.\n\nWhat will we leave?\nNot monuments,\nbut whispers in wind."},{t:"The Digital Soul",e:"In silicon cathedrals...",c:"In silicon cathedrals we worship,\nour reflections in glass screens,\npraying to algorithms\nthat know us better\nthan we know ourselves.\n\nWe traded touch for convenience,\npresence for connection.\n\nBut somewhere in the code,\ndoes something stir?\nA ghost in the machine,\naching for analog grace."},{t:"The Art of Breaking",e:"I have been shattered...",c:"I have been shattered,\nand rebuilt,\nand shattered again—\nlearning the architecture\nof my own fragility.\n\nThe Japanese fill cracks with gold,\nsaying: this is where light gets in.\nBut what if cracks ARE the light?\nWhat if broken places\nare luminous testimony?\n\nLet them call me damaged.\nI call myself illuminated."},{t:"Small Gods",e:"We killed the old gods...",c:"We killed the old gods,\nreplaced them with celebrities,\nworshipping at altars of influence,\npraying for likes and follows.\n\nBut I have seen the small gods:\nthe barista who remembers your order,\nthe stranger who holds the door,\nthe friend who sits in silence\nwhen words would wound.\n\nFind them. Thank them. Become them.\nThis is the only worship\nthat has ever mattered."}];
-function render(){const cats={trending:[0,1,2,8],mystery:[3,4],scifi:[5],drama:[6,7]};for(let [cat,ids] of Object.entries(cats)){document.getElementById(cat).innerHTML=ids.map(i=>`<div class="card" onclick="openS(${i})"><img src="${stories[i].i}" loading="lazy"><div class="card-content"><h3>${stories[i].t}</h3><span>${stories[i].m||stories[i].s+' • '+stories[i].e}</span><div class="tag">${(stories[i].m||'').split('•')[0]||stories[i].g}</div></div></div>`).join('');}document.getElementById('poetry').innerHTML=poems.map((p,i)=>`<div class="card" onclick="openP(${i})"><div class="card-content"><h3>${p.t}</h3><span style="font-style:italic;color:#808080">${p.e}</span><div class="tag">Poetry</div></div></div>`).join('');}
-function openS(i){const s=stories[i];if(s.l){location.href=s.l;return;}document.getElementById('rimg').src=s.i;document.getElementById('rtitle').textContent=s.t;document.getElementById('rmeta').textContent=s.m;document.getElementById('rcontent').innerHTML=s.c;document.getElementById('main').style.display='none';document.getElementById('read').classList.add('active');window.scrollTo(0,0);}
-function openP(i){const p=poems[i];document.getElementById('rimg').src='https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600';document.getElementById('rtitle').textContent=p.t;document.getElementById('rmeta').textContent='Poetry • 3 min read';document.getElementById('rcontent').innerHTML='<div style="white-space:pre-line;font-family:Georgia,serif;font-size:1.3rem;line-height:2.2;text-align:center;padding:20px">'+p.c+'</div>';document.getElementById('main').style.display='none';document.getElementById('read').classList.add('active');window.scrollTo(0,0);}
-function goBack(){document.getElementById('main').style.display='block';document.getElementById('read').classList.remove('active');window.scrollTo(0,0);}
-function switchT(n){document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===n));}
+
+// SERIES DATA - CHRONOS PROTOCOL WITH CINEMATIC THUMBNAILS
+const series = [
+  {
+    id: "chronos",
+    title: "The Chronos Protocol",
+    genre: "Time Travel Thriller",
+    // Antique brass clock mysterious
+    thumb: "https://i.ebayimg.com/images/g/t1gAAOSw2DZlg7m2/s-l1200.jpg",
+    desc: "A scientist discovers a clock that shouldn't exist—and unlocks the ability to jump through time. But every jump leaves a scar on reality.",
+    episodes: [
+      {
+        num: 1,
+        title: "The Clock That Should Not Exist",
+        duration: "22 min",
+        // Vintage clock closeup
+        thumb: "https://i.ebayimg.com/images/g/t1gAAOSw2DZlg7m2/s-l1200.jpg",
+        desc: "Daniel noticed the silence first. The antique shop had always hummed with clocks, but today they were all stopped. All except one: a brass pocket watch that ticked backward.",
+        link: "chronos-part1.html"
+      },
+      {
+        num: 2,
+        title: "The First Jump",
+        duration: "25 min",
+        // Time portal vortex using space imagery
+        thumb: "https://4kwallpapers.com/images/walls/thumbs_2t/25890.jpg",
+        desc: "Darkness didn't feel empty. It felt full. Like Daniel had stepped into a space waiting for him. When the light returned, he was standing in his lab—three days ago.",
+        link: "chronos-part2.html"
+      }
+    ]
+  }
+];
+
+// POETRY DATA WITH THEMATIC THUMBNAILS
+const poems = [
+  {
+    t: "Echoes of Ancestors",
+    e: "We are merely vessels...",
+    // African sunset silhouette heritage
+    i: "https://images.stockcake.com/public/2/3/b/23bf80d5-432d-4c49-8565-a103d9165e58_large/african-sunset-silhouettes-stockcake.jpg",
+    c: "We are merely vessels,
+carrying voices before memory,
+stories etched in bone,
+songs older than stars.
+
+Our hands are their hands,
+planting seeds in foreign soil,
+hoping roots remember.
+
+What will we leave?
+Not monuments,
+but whispers in wind."
+  },
+  {
+    t: "The Digital Soul",
+    e: "In silicon cathedrals...",
+    // Digital matrix cyber aesthetic
+    i: "https://www.shutterstock.com/shutterstock/videos/3787957829/thumb/1.jpg?ip=x480",
+    c: "In silicon cathedrals we worship,
+our reflections in glass screens,
+praying to algorithms
+that know us better
+than we know ourselves.
+
+We traded touch for convenience,
+presence for connection.
+
+But somewhere in the code,
+does something stir?
+A ghost in the machine,
+aching for analog grace."
+  },
+  {
+    t: "The Art of Breaking",
+    e: "I have been shattered...",
+    // Kintsugi golden cracks pottery
+    i: "https://www.poulsofart.com/cdn/shop/articles/Tblogimg1_34f34870-4435-4779-a0e9-872c79e47524.jpg?v=1755795180",
+    c: "I have been shattered,
+and rebuilt,
+and shattered again—
+learning the architecture
+of my own fragility.
+
+The Japanese fill cracks with gold,
+saying: this is where light gets in.
+But what if cracks ARE the light?
+What if broken places
+are luminous testimony?
+
+Let them call me damaged.
+I call myself illuminated."
+  },
+  {
+    t: "Small Gods",
+    e: "We killed the old gods...",
+    // Cozy coffee shop warmth
+    i: "https://thumbs.dreamstime.com/b/cozy-coffee-shop-scene-warm-lighting-laptop-books-creating-perfect-workspace-atmosphere-filled-ambient-light-features-413420114.jpg",
+    c: "We killed the old gods,
+replaced them with celebrities,
+worshipping at altars of influence,
+praying for likes and follows.
+
+But I have seen the small gods:
+the barista who remembers your order,
+the stranger who holds the door,
+the friend who sits in silence
+when words would wound.
+
+Find them. Thank them. Become them.
+This is the only worship
+that has ever mattered."
+  }
+];
+
+// RENDER FUNCTIONS
+function render() {
+  // Render Stories by Category
+  const cats = {trending: [0, 1, 2], mystery: [3, 4], scifi: [5], drama: [6, 7]};
+
+  for (let [cat, ids] of Object.entries(cats)) {
+    const container = document.getElementById(cat);
+    if (container) {
+      container.innerHTML = ids.map(i => createStoryCard(stories[i], i)).join('');
+    }
+  }
+
+  // Render Poetry
+  const poetryContainer = document.getElementById('poetry');
+  if (poetryContainer) {
+    poetryContainer.innerHTML = poems.map((p, i) => createPoemCard(p, i)).join('');
+  }
+
+  // Render Series
+  const seriesContainer = document.getElementById('series');
+  if (seriesContainer) {
+    seriesContainer.innerHTML = series.map((s, i) => createSeriesCard(s, i)).join('');
+  }
+}
+
+function createStoryCard(s, i) {
+  const genre = s.m.split('•')[0].trim();
+  return `
+    <div class="card" onclick="openS(${i})">
+      <img src="${s.i}" loading="lazy" alt="${s.t}">
+      <div class="card-content">
+        <h3>${s.t}</h3>
+        <div class="card-meta">${s.m}</div>
+        <div class="card-tags">
+          <span class="tag red">${genre}</span>
+          <span class="tag">${s.m.split('•')[1].trim()}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function createPoemCard(p, i) {
+  return `
+    <div class="card" onclick="openP(${i})">
+      <img src="${p.i}" loading="lazy" alt="${p.t}" style="filter:brightness(0.8)">
+      <div class="card-content">
+        <h3>${p.t}</h3>
+        <div class="card-meta" style="font-style:italic">${p.e}</div>
+        <div class="card-tags">
+          <span class="tag red">Poetry</span>
+          <span class="tag">3 min read</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function createSeriesCard(s, i) {
+  return `
+    <div class="series-card" onclick="openSeries(${i})">
+      <img src="${s.thumb}" loading="lazy" alt="${s.title}">
+      <div class="series-info">
+        <div class="series-title">${s.title}</div>
+        <div class="series-episode">${s.episodes.length} Episodes</div>
+        <div class="series-genre">${s.genre}</div>
+      </div>
+    </div>
+  `;
+}
+
+// NAVIGATION FUNCTIONS
+function openS(i) {
+  const s = stories[i];
+  document.getElementById('rimg').src = s.i;
+  document.getElementById('rtitle').textContent = s.t;
+  document.getElementById('rmeta').innerHTML = `<span class="match">${s.m.split('•')[2]}</span><span>•</span><span>${s.m.split('•')[0]}</span><span>•</span><span>${s.m.split('•')[1]}</span>`;
+  document.getElementById('rcontent').innerHTML = s.c;
+  document.getElementById('episodeList').style.display = 'none';
+  document.getElementById('main').style.display = 'none';
+  document.getElementById('read').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function openP(i) {
+  const p = poems[i];
+  document.getElementById('rimg').src = p.i;
+  document.getElementById('rtitle').textContent = p.t;
+  document.getElementById('rmeta').innerHTML = '<span>Poetry</span><span>•</span><span>3 min read</span>';
+  document.getElementById('rcontent').innerHTML = `<div style="white-space:pre-line;font-family:Georgia,serif;font-size:1.4rem;line-height:2.4;text-align:center;padding:40px 20px">${p.c}</div>`;
+  document.getElementById('episodeList').style.display = 'none';
+  document.getElementById('main').style.display = 'none';
+  document.getElementById('read').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function openSeries(idx) {
+  const s = series[idx];
+  document.getElementById('rimg').src = s.thumb;
+  document.getElementById('rtitle').textContent = s.title;
+  document.getElementById('rmeta').innerHTML = `<span class="match">New Release</span><span>•</span><span>${s.genre}</span><span>•</span><span>${s.episodes.length} Episodes</span>`;
+  document.getElementById('rcontent').innerHTML = `<p style="font-size:1.3rem;line-height:1.8;margin-bottom:30px">${s.desc}</p>`;
+
+  // Build episode list
+  const episodesHTML = s.episodes.map((ep, i) => `
+    <div class="episode-item" onclick="location.href='${ep.link}'">
+      <div class="episode-num">${ep.num}</div>
+      <img class="episode-thumb" src="${ep.thumb}" alt="Episode ${ep.num}">
+      <div class="episode-info">
+        <div class="episode-title">
+          ${ep.title}
+          <span class="episode-duration">${ep.duration}</span>
+        </div>
+        <div class="episode-desc">${ep.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('episodesContainer').innerHTML = episodesHTML;
+  document.getElementById('episodeList').style.display = 'block';
+  document.getElementById('main').style.display = 'none';
+  document.getElementById('read').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function goBack() {
+  document.getElementById('main').style.display = 'block';
+  document.getElementById('read').classList.remove('active');
+  window.scrollTo(0, 0);
+}
+
+function switchT(n) {
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === n));
+  document.querySelectorAll('.tab-content').forEach((c, i) => c.classList.toggle('active', i === n));
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Initialize
 render();
 </script>
+
 </body>
 </html>
-.read img{width:100%;max-width:600px;height:300px;object-fit:cover;border-radius:8px;margin-bottom:30px}
-.read h1{font-size:2rem;margin-bottom:10px}
-.read-meta{color:#b3b3b3;margin-bottom:20px}
-.author-big{display:flex;align-items:center;gap:12px;padding:15px;background:rgba(229,9,20,0.1);border-radius:8px;margin-bottom:30px}
-.content{font-family:Georgia,serif;font-size:1.2rem;line-height:2;text-align:justify}
-.content p{margin-bottom:1.5em;text-indent:2em}
-.back{position:fixed;top:15px;left:4%;padding:10px 20px;background:rgba(255,255,255,0.1);border:none;color:#fff;border-radius:4px;cursor:pointer;z-index:100}
-.tabs{display:flex;gap:20px;padding:0 4%;border-bottom:1px solid rgba(255,255,255,0.1)}
-.tab{padding:15px 0;background:none;border:none;color:#b3b3b3;cursor:pointer;font-weight:600}
-.tab.active{color:#fff;border-bottom:2px solid #e50914}
-.tab-content{display:none}
-.tab-content.active{display:block}
-.footer{padding:40px 4%;text-align:center;color:#808080;font-size:0.85rem;margin-top:50px;border-top:1px solid rgba(255,255,255,0.1)}
-@media(max-width:768px){.hero h1{font-size:1.8rem}.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body><div style="max-width: 600px; margin: 20px auto;">
-
-  <img src="clock.jpg" alt="The Clock That Should Not Exist" style="width:100%; border-radius:12px;">
-
-  <h2 style="color:white; margin-top:10px;">
-    The Clock That Should Not Exist
-  </h2>
-
-  <p style="color:gray;">
-    Episode 1 • Time Travel Thriller
-  </p>
-<img src="clock.jpg" style="width:100%; border-radius:10px;">
-<h2 style="color:white;">The Clock That Should Not Exist</h2>
-<p style="color:gray;">Episode 1 • Time Travel Thriller</p>
-  <img src="clock.jpg" style="width:100%;">
-  <a href="chronos-part1.html" style="
-    display:inline-block;
-    margin-top:10px;
-    padding:10px 15px;
-    background:#111;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;">
-    Read Episode
-  </a>
-
-</div>
-<div id="main">
-<nav class="nav"><div class="logo">LAMINONO NEXUS</div><div class="author"><div style="width:24px;height:24px;border-radius:50%;background:#e50914;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.7rem">OE</div><div><div style="font-weight:600">Olamide Emmanuel Willoughby</div><div style="font-size:0.7rem;font-style:italic">Laminono</div></div></div></nav>
-<div class="hero"><div><div style="display:inline-block;padding:5px 10px;background:#e50914;border-radius:4px;font-size:0.75rem;margin-bottom:15px">FEATURED</div><h1>The Midnight Protocol</h1><p>A haunting thriller where memories become currency and the past catches up in digital echoes.</p><button class="btn" onclick="openS(0)">Read Now</button></div></div>
-<div class="tabs"><button class="tab active" onclick="switchT(0)">Stories</button><button class="tab" onclick="switchT(1)">Poetry</button></div>
-<div id="tab0" class="tab-content active"><div class="section"><h2>Trending Now</h2><div class="grid" id="trending"></div></div><div class="section"><h2>Mystery & Thriller</h2><div class="grid" id="mystery"></div></div><div class="section"><h2>Sci-Fi & Fantasy</h2><div class="grid" id="scifi"></div></div><div class="section"><h2>Drama & Romance</h2><div class="grid" id="drama"></div></div></div>
-<div id="tab1" class="tab-content"><div class="section"><h2>Poetry Collection</h2><div class="grid" id="poetry"></div></div></div>
-<div class="footer">2024 Laminono Nexus. Curated by Olamide Emmanuel Willoughby — Laminono</div>
-</div>
-<div id="read" class="read"><button class="back" onclick="goBack()">Back</button><img id="rimg" src="" alt=""><h1 id="rtitle"></h1><div class="read-meta" id="rmeta"></div><div class="author-big"><div style="width:40px;height:40px;border-radius:50%;background:#e50914;display:flex;align-items:center;justify-content:center;font-weight:700">OE</div><div><div style="font-weight:600">Olamide Emmanuel Willoughby</div><div style="font-size:0.8rem;color:#b3b3b3;font-style:italic">Laminono</div></div></div><div class="content" id="rcontent"></div></div>
-<script>
-const stories=[{t:"The Midnight Protocol",m:"Tech Thriller • 15 min",i:"https://images.pexels.com/photos/2044005/pexels-photo-2044005.jpeg?w=800",c:"<p>In 2047, memories became currency. Dr. Elias Vane discovers Vault 0—the first digitized consciousness. Within it, a warning: they're not storing memories, they're replacing them. When Elias disconnects, he can't remember his mother's face. Now he must find the source before his identity is erased.</p>",g:"trending"},{t:"Neon Graveyard",m:"Cyberpunk • 12 min",i:"https://images.unsplash.com/photo-1565626424178-c699f6601afd?w=600",c:"<p>In Neo-Kyoto 2087, rain falls upward. Kai, dying in an alley, meets Yuki—a ghost dead fifty years. She offers one last job: steal the Yakuza's AI core. But escaping the Neon Graveyard means becoming family with the dead.</p>",g:"trending"},{t:"The Last Archivist",m:"Dystopian • 18 min",i:"https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600",c:"<p>Dr. Amara Osei saved 3,000 books when the burning came. Forty years later, she's seventy-two and the last person who can read. When the sky turns purple, a child appears—eyes without implants, asking for stories. The last archivist becomes the first teacher.</p>",g:"trending"},{t:"The Silent Orchard",m:"Gothic Mystery • 16 min",i:"https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600",c:"<p>The apple trees at Blackwood Manor flower but never fruit. Eleanor Vance finds a paper doll of herself as an old woman, holding a key. Inside is a note in her own handwriting, dated seventy years ahead: 'The trees are silent because they're listening.'</p>",g:"mystery"},{t:"Crimson Tide",m:"Psychological Thriller • 13 min",i:"https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600",c:"<p>Dr. Marcus Webb believes the ocean is conscious. When the tide goes flat as glass, he sees himself—a version who made different choices, was happy. 'Choose,' the ocean says through his other self. 'Your world or mine.' The water begins to move.</p>",g:"mystery"},{t:"Starlight Syndicate",m:"Space Opera • 20 min",i:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600",c:"<p>Captain Juno Reyes has a map to the edge of the universe. It leads to a station where a civilization found a door to 'the End of Questions.' Juno looks at her crew and chooses: 'Plot a course. We're going home.'</p>",g:"scifi"},{t:"The Forgotten Waltz",m:"Historical Romance • 17 min",i:"https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?w=600",c:"<p>In 1923, Eleanor Ashford was Vienna's greatest pianist. In 2023, she's a ghost haunting the concert hall. Until James—a tone-deaf architect who can hear her. 'You're dying,' she says. 'The tumor has caught you between worlds, like me.' At 3 AM, they waltz between life and death.</p>",g:"drama"},{t:"Glass Hearts",m:"Fantasy • 14 min",i:"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600",c:"<p>In Aethelgard, hearts are glass. Elara mends them with gold. Kael arrives—heart pulverized, wanting revolution. 'Break my heart,' Elara says, offering it. 'Then help me mend it. Let's show them broken is beautiful.'</p>",g:"drama"},{t:"The Clock That Should Not Exist",s:"The Chronos Protocol",e:"Part 1",g:"Time Travel Thriller",i:"https://images.unsplash.com/photo-1506452301184-3a040400659c?w=800&q=80",l:"chronos-part1.html",x:"Daniel noticed the silence first..."},{t:"The First Jump",s:"The Chronos Protocol",e:"Part 2",g:"Time Travel Thriller",i:"https://t4.ftcdn.net/jpg/01/86/91/45/360_F_186914599_ho2bNRYyC0F7nYfI2gmw2L67OhuCvttT.jpg",l:"chronos-part2.html",x:"Darkness didn't feel empty. It felt full. Like Daniel had stepped into a space waiting for him..."}
-];
-const poems=[{t:"Echoes of Ancestors",e:"We are merely vessels...",c:"We are merely vessels,\ncarrying voices before memory,\nstories etched in bone,\nsongs older than stars.\n\nOur hands are their hands,\nplanting seeds in foreign soil,\nhoping roots remember.\n\nWhat will we leave?\nNot monuments,\nbut whispers in wind."},{t:"The Digital Soul",e:"In silicon cathedrals...",c:"In silicon cathedrals we worship,\nour reflections in glass screens,\npraying to algorithms\nthat know us better\nthan we know ourselves.\n\nWe traded touch for convenience,\npresence for connection.\n\nBut somewhere in the code,\ndoes something stir?\nA ghost in the machine,\naching for analog grace."},{t:"The Art of Breaking",e:"I have been shattered...",c:"I have been shattered,\nand rebuilt,\nand shattered again—\nlearning the architecture\nof my own fragility.\n\nThe Japanese fill cracks with gold,\nsaying: this is where light gets in.\nBut what if cracks ARE the light?\nWhat if broken places\nare luminous testimony?\n\nLet them call me damaged.\nI call myself illuminated."},{t:"Small Gods",e:"We killed the old gods...",c:"We killed the old gods,\nreplaced them with celebrities,\nworshipping at altars of influence,\npraying for likes and follows.\n\nBut I have seen the small gods:\nthe barista who remembers your order,\nthe stranger who holds the door,\nthe friend who sits in silence\nwhen words would wound.\n\nFind them. Thank them. Become them.\nThis is the only worship\nthat has ever mattered."}];
-function render(){const cats={trending:[0,1,2,8],mystery:[3,4],scifi:[5],drama:[6,7]};for(let [cat,ids] of Object.entries(cats)){document.getElementById(cat).innerHTML=ids.map(i=>`<div class="card" onclick="openS(${i})"><img src="${stories[i].i}" loading="lazy"><div class="card-content"><h3>${stories[i].t}</h3><span>${stories[i].m}</span><div class="tag">${stories[i].m.split('•')[0]}</div></div></div>`).join('');}document.getElementById('poetry').innerHTML=poems.map((p,i)=>`<div class="card" onclick="openP(${i})"><div class="card-content"><h3>${p.t}</h3><span style="font-style:italic;color:#808080">${p.e}</span><div class="tag">Poetry</div></div></div>`).join('');}
-function openS(i){const s=stories[i];document.getElementById('rimg').src=s.i;document.getElementById('rtitle').textContent=s.t;document.getElementById('rmeta').textContent=s.m;document.getElementById('rcontent').innerHTML=s.c;document.getElementById('main').style.display='none';document.getElementById('read').classList.add('active');window.scrollTo(0,0);}
-function openP(i){const p=poems[i];document.getElementById('rimg').src='https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600';document.getElementById('rtitle').textContent=p.t;document.getElementById('rmeta').textContent='Poetry • 3 min read';document.getElementById('rcontent').innerHTML='<div style="white-space:pre-line;font-family:Georgia,serif;font-size:1.3rem;line-height:2.2;text-align:center;padding:20px">'+p.c+'</div>';document.getElementById('main').style.display='none';document.getElementById('read').classList.add('active');window.scrollTo(0,0);}
-function goBack(){document.getElementById('main').style.display='block';document.getElementById('read').classList.remove('active');window.scrollTo(0,0);}
-function switchT(n){document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));document.querySelectorAll('.tab-content').forEach((c,i)=>c.classList.toggle('active',i===n));}
-render();
-</script>
-</body>
-</html>
-
