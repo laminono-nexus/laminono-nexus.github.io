@@ -1,1 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laminono Nexus - Premium Storytelling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E50914;
+            --primary-dark: #B20710;
+            --bg-dark: #141414;
+            --bg-darker: #0A0A0A;
+            --bg-card: #1F1F1F;
+            --bg-hover: #2A2A2A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --text-muted: #808080;
+            --gradient-hero: linear-gradient(to top, #141414 0%, transparent 60%),
+                              linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 50%);
+            --shadow-elevated: 0 20px 40px rgba(0,0,0,0.6);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-darker);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 4%;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .admin-badge {
+            background: var(--primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 4% 150px;
+            background: var(--gradient-hero),
+                        url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1920&q=80') center/cover;
+            background-blend-mode: normal;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, var(--bg-dark) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(229, 9, 20, 0.2);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg-dark);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.9);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: rgba(109, 109, 110, 0.7);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(109, 109, 110, 0.9);
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-primary);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px 4%;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '›';
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: transform 0.3s;
+        }
+
+        .section-header:hover .section-title::after {
+            transform: translateX(5px);
+        }
+
+        .explore-all {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .explore-all:hover {
+            color: var(--text-primary);
+        }
+
+        /* Story Rows */
+        .story-row {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .story-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .story-card {
+            flex: 0 0 auto;
+            width: 280px;
+            height: 380px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            background: var(--bg-card);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .story-card:hover {
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .story-card-image {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .story-card:hover .story-card-image {
+            transform: scale(1.1);
+        }
+
+        .story-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
+            transition: var(--transition-smooth);
+        }
+
+        .story-card:hover .story-card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.5) 100%);
+        }
+
+        .story-genre {
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .story-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .story-excerpt {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .story-card:hover .story-excerpt {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .story-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .story-card:hover .story-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .action-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5);
+            background: transparent;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .action-btn:hover {
+            background: white;
+            color: black;
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        .action-btn.play {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .action-btn.play:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        /* Featured Grid */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .featured-card {
+            position: relative;
+            height: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .featured-card-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .featured-card:hover .featured-card-bg {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .featured-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .featured-author {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .featured-author strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Story Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            backdrop-filter: blur(20px);
+        }
+
+        .modal.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            max-width: 900px;
+            margin: 50px auto;
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-hero {
+            height: 400px;
+            position: relative;
+            background: linear-gradient(to top, var(--bg-card) 0%, transparent 100%),
+                        url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=1200&q=80') center/cover;
+        }
+
+        .modal-body {
+            padding: 40px;
+            margin-top: -100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .narration-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--bg-hover);
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .voice-selector {
+            display: flex;
+            gap: 10px;
+        }
+
+        .voice-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.9rem;
+        }
+
+        .voice-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .voice-btn:hover:not(.active) {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        .narrate-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .narrate-btn:hover {
+            transform: scale(1.05);
+            background: var(--primary);
+            color: white;
+        }
+
+        .narrate-btn.playing {
+            background: var(--primary);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-secondary);
+            column-count: 1;
+            column-gap: 40px;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5em;
+            text-align: justify;
+        }
+
+        .story-text p:first-child::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 5px;
+            color: var(--primary);
+        }
+
+        /* Admin Section */
+        .admin-section {
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-card) 100%);
+            padding: 80px 4%;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .admin-image {
+            width: 100%;
+            height: 350px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: var(--shadow-elevated);
+            border: 3px solid rgba(229, 9, 20, 0.3);
+        }
+
+        .admin-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .admin-title {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .admin-bio {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .admin-signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-darker);
+            padding: 60px 4% 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .admin-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .admin-image {
+                width: 250px;
+                height: 250px;
+                margin: 0 auto;
+                border-radius: 50%;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .modal-content {
+                margin: 0;
+                border-radius: 0;
+                min-height: 100vh;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 0 4% 100px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .story-card {
+                width: 240px;
+                height: 340px;
+            }
+        }
+
+        /* Loading Animation */
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-hover) 50%, var(--bg-card) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Audio Visualizer */
+        .audio-visualizer {
+            display: none;
+            align-items: center;
+            gap: 3px;
+            height: 20px;
+        }
+
+        .audio-visualizer.active {
+            display: flex;
+        }
+
+        .bar {
+            width: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            animation: sound 0ms -800ms linear infinite alternate;
+        }
+
+        .bar:nth-child(1) { height: 10px; animation-duration: 474ms; }
+        .bar:nth-child(2) { height: 15px; animation-duration: 433ms; }
+        .bar:nth-child(3) { height: 20px; animation-duration: 407ms; }
+        .bar:nth-child(4) { height: 12px; animation-duration: 458ms; }
+        .bar:nth-child(5) { height: 18px; animation-duration: 400ms; }
+
+        @keyframes sound {
+            0% { height: 3px; opacity: 0.35; }
+            100% { height: 20px; opacity: 1; }
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--bg-card);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-elevated);
+            transform: translateX(400px);
+            transition: transform 0.3s;
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">Laminono<span>Nexus</span></a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#stories">Stories</a>
+            <a href="#featured">Featured</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="nav-profile">
+            <span class="admin-badge">Admin</span>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">Laminono</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>✦</span> Featured Story
+            </div>
+            <h1>The Echoes of Tomorrow</h1>
+            <div class="hero-meta">
+                <span>⏱ 12 min read</span>
+                <span>📖 Drama</span>
+                <span>🔥 Trending #1</span>
+            </div>
+            <p class="hero-description">
+                In a world where memories can be traded like currency, one archivist discovers a recollection that could unravel the fabric of society. A gripping tale of identity, loss, and the price of perfection.
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="openStory('echoes')">
+                    <span>▶</span> Read Now
+                </button>
+                <button class="btn btn-secondary" onclick="openStory('echoes')">
+                    <span>ℹ</span> More Info
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Now -->
+    <section class="content-section" id="stories">
+        <div class="section-header">
+            <h2 class="section-title">Trending Now</h2>
+            <span class="explore-all">Explore All →</span>
+        </div>
+        <div class="story-row" id="trendingRow">
+            <!-- Stories injected by JS -->
+        </div>
+    </section>
+
+    <!-- New Releases -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">New Releases</h2>
+            <span class="explore-all">View All →</span>
+        </div>
+        <div class="story-row" id="newReleasesRow">
+            <!-- Stories injected by JS -->
+        </div>
+    </section>
+
+    <!-- Featured Stories Grid -->
+    <section class="content-section" id="featured">
+        <div class="section-header">
+            <h2 class="section-title">Curated for You</h2>
+        </div>
+        <div class="featured-grid" id="featuredGrid">
+            <!-- Featured stories injected by JS -->
+        </div>
+    </section>
+
+    <!-- Admin/About Section -->
+    <section class="admin-section" id="about">
+        <div class="admin-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Olamide Emmanuel Willoughby" class="admin-image">
+            <div class="admin-content">
+                <div class="admin-title">The Storyteller</div>
+                <h2>Olamide Emmanuel Willoughby</h2>
+                <p class="admin-bio">
+                    Laminono is more than a name—it's a creative identity. Founded by Olamide Emmanuel Willoughby, Laminono blends storytelling, visual creativity, and digital strategy to craft powerful experiences. From emotionally driven stories to high-converting social media content, every creation is designed to resonate, inspire, and influence.
+                </p>
+                <p class="admin-signature">— Laminono</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">Laminono Nexus</div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                    Premium storytelling platform where words become cinematic experiences.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Trending Stories</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Authors</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Laminono Nexus. All rights reserved. Created with passion by Olamide Emmanuel Willoughby.</p>
+        </div>
+    </footer>
+
+    <!-- Story Modal -->
+    <div class="modal" id="storyModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-hero" id="modalHero"></div>
+            <div class="modal-body">
+                <h1 class="modal-title" id="modalTitle">Story Title</h1>
+                <div class="modal-meta" id="modalMeta">
+                    <span>⏱ 10 min read</span>
+                    <span>📖 Genre</span>
+                    <span>👤 By Olamide Emmanuel Willoughby</span>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="toggleNarration()">
+                        <span id="narrateIcon">▶</span> <span id="narrateText">Narrate Story</span>
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span>+</span> My List
+                    </button>
+                    <button class="btn btn-outline">
+                        <span>↗</span> Share
+                    </button>
+                </div>
+
+                <div class="narration-controls">
+                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Voice:</span>
+                    <div class="voice-selector">
+                        <button class="voice-btn active" onclick="setVoice('female')">Female</button>
+                        <button class="voice-btn" onclick="setVoice('male')">Male</button>
+                    </div>
+                    <div class="audio-visualizer" id="visualizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div class="story-text" id="storyText">
+                    <!-- Story content injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastIcon">✓</span>
+        <span id="toastMessage">Notification</span>
+    </div>
+
+    <script>
+        // Story Data
+        const stories = [
+            {
+                id: 'echoes',
+                title: 'The Echoes of Tomorrow',
+                genre: 'Drama',
+                excerpt: 'In a world where memories can be traded like currency...',
+                image: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&q=80',
+                readTime: '12 min',
+                trending: true,
+                content: `The morning light filtered through the stained glass windows of the Archives, casting prismatic shadows across the marble floors. Elias Vane adjusted his spectacles, the brass frames glinting in the sun, as he prepared for another day of sorting memories.
+
+It was 2147, and the world had changed. Memories—the precious, intangible fragments of human experience—had become the most valuable currency on earth. The wealthy purchased joyful recollections to escape their hollow existences, while the desperate sold their happiest moments to survive another week.
+
+Elias had worked as a Memory Archivist for thirty years. He had seen thousands of memories: first loves, last goodbyes, childhood summers, and deathbed confessions. But today was different.
+
+Today, he found the Echo.
+
+It was labeled only with a date—October 3rd, 2089—and a serial number. No donor name, no classification, no price tag. Against protocol, Elias inserted the crystal memory drive into his viewer.
+
+The world dissolved.
+
+He was standing in a garden. Not the manicured, synthetic gardens of the Upper City, but a wild, untamed place where roses climbed crumbling walls and bees hummed between lavender stalks. A woman sat on a stone bench, her face turned away, reading from a paper book.
+
+"You're early," she said without looking up. Her voice was like honey and smoke.
+
+"I had to see you," Elias heard himself say—except it wasn't him. It was the memory's owner. "The Council knows."
+
+The woman closed her book. When she turned, Elias gasped. He knew that face. Everyone knew that face. It was Dr. Elara Voss, the scientist who had invented memory extraction technology. She had died fifty years ago, martyred by the very system she created.
+
+"They can't know the truth," Elara said, standing. She wore a simple white dress, and in the afternoon light, she seemed to glow. "If they find the Source, they'll destroy everything. Humanity will lose its last chance at redemption."
+
+"What do I do?" the memory's owner asked.
+
+Elara stepped closer, her eyes—gray as storm clouds—filling with tears. "You hide it. You hide it where only the worthy will find it. In the Echoes."
+
+The memory flickered. Elias felt a surge of panic, of love, of absolute determination. Then darkness.
+
+He ripped the viewer from his forehead, gasping. His hands shook. Dr. Voss was supposed to have died before the technology was even released. But this memory was dated years after her supposed death. And she was talking about hiding something—the Source.
+
+Elias looked at the crystal drive in his trembling hand. If the Council knew this existed...
+
+But he was already making his decision. Thirty years of archiving other people's lives had taught him one thing: some memories were worth dying for. And some truths were worth killing to protect.
+
+He pocketed the drive and walked out of the Archives, leaving his old life behind. The Echoes were calling, and for the first time in decades, Elias Vane felt truly alive.`
+            },
+            {
+                id: 'midnight',
+                title: 'Midnight in Lisbon',
+                genre: 'Romance',
+                excerpt: 'The tram rattled through the narrow streets as Ana painted the city in shades of blue...',
+                image: 'https://images.unsplash.com/photo-1585208798174-6ced315ddc7a?w=800&q=80',
+                readTime: '8 min',
+                trending: true,
+                content: `The number 28 tram groaned its way up the steep incline of Rua da Conceição, sparks flying from the overhead wires like fireflies. Ana Silva pressed her forehead against the cool glass, watching the streetlamps of Lisbon blur into streaks of gold against the indigo night.
+
+She was running away. Or perhaps running toward. At twenty-nine, Ana had discovered that the difference was mostly semantic.
+
+Her sketchbook lay open on her lap, pages filled with the angular shadows of Alfama's alleyways, the terracotta rooftops that tumbled toward the Tagus River like a child's blocks. But tonight, her pencil remained still. Tonight, she was searching for something she couldn't name.
+
+The tram lurched to a stop at Largo das Portas do Sol. Ana gathered her bag and stepped onto the cobblestones, her boots echoing in the empty square. Before her, the city fell away in layers of terracotta and white, descending to the black ribbon of the river where cargo ships blinked their navigation lights.
+
+"Beautiful, isn't it?"
+
+Ana spun around. A man sat on the low wall overlooking the viewpoint, a guitar case beside him, a cigarette dangling from his fingers. He was older than her, perhaps forty, with salt-and-pepper hair and the kind of weathered face that suggested years of stories.
+
+"It is," she said, clutching her sketchbook like a shield. "I didn't see you there."
+
+"Most people don't." He smiled, and the lines around his eyes deepened. "I'm invisible at night. Part of the scenery."
+
+Ana should have walked away. Every instinct honed by years of solo travel told her to nod politely and continue down the hill toward her rented room. Instead, she found herself sitting beside him, leaving a careful foot of space between them.
+
+"You're an artist," he observed, nodding at her book.
+
+"Trying to be."
+
+"There's no try. You either see the world differently, or you don't." He took a drag of his cigarette, the tip glowing orange. "May I?"
+
+Reluctantly, Ana handed over the sketchbook. He flipped through it slowly, his expression unreadable in the dim light. Page after page of Lisbon—its crumbling facades, its laundry flapping like prayer flags between windows, its cats sunning themselves on warm stone.
+
+"You've captured her soul," he said finally. "Most tourists draw the monuments. You draw the wrinkles."
+
+"I'm not a tourist. Not exactly."
+
+"Neither am I." He closed the book and handed it back. "I'm Miguel. I play fado in a bar in Mouraria. The kind of place tourists never find."
+
+Fado. The music of fate, of longing, of saudade—the untranslatable Portuguese word for a nostalgia so profound it hurts. Ana had heard it in cafes, drifting from open windows, always feeling like an eavesdropper on someone else's grief.
+
+"I should go," she said, but didn't move.
+
+Miguel studied her face. "You're running from something."
+
+"Does it matter?"
+
+"Only if you want it to stop chasing you." He stood, dusting off his trousers. "Come. I'll buy you a glass of wine. The view is better from below."
+
+Ana looked at the darkened streets, the winding paths that had intimidated her since arrival. She looked at Miguel, who seemed to carry his own shadows like a cloak.
+
+"One glass," she said.
+
+He smiled, and for a moment, the weight in his eyes lifted. "One glass. And then, who knows? In Lisbon, midnight is just the beginning."
+
+They walked down through the Alfama, the oldest district, where the Moorish influence still whispered in the arches and tilework. The streets narrowed until they were single file, the buildings leaning toward each other like gossiping old women. Somewhere, a dog barked. Somewhere else, music played—a tinny radio transmitting pop songs from another continent.
+
+Miguel's bar was indeed invisible, tucked into a basement accessible only by a steep staircase that smelled of yeast and river damp. Inside, twenty tables crowded a room meant for ten. The walls were covered in photographs blackened by decades of cigarette smoke, showing fishermen and fishwives, revolutionaries and poets.
+
+A woman behind the bar—Miguel's sister, Ana would later learn—poured two glasses of ruby port without being asked.
+
+"To new beginnings," Miguel said, raising his glass.
+
+"To invisible men," Ana countered.
+
+They drank. The port was sweet and heavy, tasting of dark cherries and oak. As the liquid warmed her throat, Ana felt something shift inside her chest, a loosening of the knot she'd carried across three countries and two continents.
+
+"Play something," she said.
+
+Miguel hesitated, his fingers drumming the table. Then he retrieved his guitar from the case by the door. It was old, the wood worn smooth by countless hands, the strings silver with age.
+
+The first notes filled the room like smoke. Ana didn't understand the words—Portuguese was still a mystery of rounded vowels and shushing consonants—but she understood the feeling. It was the sound of rain on windowpanes, of train stations at dawn, of love letters burned unread.
+
+When he finished, the bar was silent. Then applause, scattered but sincere.
+
+Miguel looked at Ana, and she saw the question in his eyes. Not an invitation, but an acknowledgment—that sometimes, in the most unexpected places, you find exactly what you didn't know you were looking for.
+
+"Midnight in Lisbon," Ana said softly, opening her sketchbook to a fresh page. "I think I'll stay a while."`
+            },
+            {
+                id: 'nebula',
+                title: 'Nebula\'s Edge',
+                genre: 'Sci-Fi',
+                excerpt: 'Captain Reeves stared at the anomaly, knowing it would change everything...',
+                image: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80',
+                readTime: '15 min',
+                trending: false,
+                content: `The USS Horizon drifted at the edge of the Kepler Nebula, her engines silent, her crew holding their breath. Captain Elena Reeves stood on the bridge, her reflection ghosting across the viewport where cosmic clouds of ionized gas painted the void in impossible purples and golds.
+
+"Distance to anomaly?" she asked, her voice steady despite the adrenaline coursing through her veins.
+
+"Two thousand kilometers and closing," Lieutenant Chen replied from the navigation console. "But Captain... it's not moving like anything in the database. It's not moving like anything should."
+
+Elena didn't need the sensors to tell her that. She could see it with her own eyes—a distortion in the nebula's fabric, a place where the stars seemed to bend and twist like reflections in disturbed water. They had come to study stellar formation. Instead, they had found a door.
+
+"All hands, this is the Captain," she spoke into the ship-wide comm. "We are approaching an unidentified spatial phenomenon. All non-essential personnel report to secure quarters. Science team, bridge."
+
+She turned to her first officer, a stoic Martian named Kael who had served with her for eight years. "Opinions?"
+
+"Officially? We should observe from a safe distance and report to Command." Kael's jaw tightened. "Unofficially? We've traveled three light-years to find something that shouldn't exist. Turning back now would be... scientifically negligent."
+
+Elena smiled despite herself. "That's why I keep you around, Kael. Your gift for rationalization."
+
+The science team arrived in a flurry of excited chatter. Dr. Aris Thorne, the ship's xenobiologist, pushed to the front of the viewport, his face pressed against the glass like a child at an aquarium.
+
+"It's beautiful," he breathed. "The gravitational readings are impossible. It's as if someone folded space itself, created a pocket where the laws of physics are... suggestions."
+
+"Can we survive passage?" Elena asked.
+
+Thorne turned, his eyes bright with the particular madness of discovery. "Unknown. But Captain, if I'm reading these scans correctly, that anomaly isn't natural. Someone built it. Or something."
+
+The implications hung in the recycled air. Humanity had searched for extraterrestrial intelligence for three centuries, finding only silence and fossilized microbes on distant moons. Now, staring them in the face, was evidence of technology beyond human comprehension.
+
+"Helm," Elena decided. "Take us in. One-quarter impulse."
+
+The Horizon shuddered as her engines engaged. The nebula grew larger, filling the viewport until they were surrounded by swirling clouds of stardust. The anomaly resolved into a ring—a perfect circle of nothingness, event-horizon black, surrounded by a halo of Cherenkov radiation that painted the bridge in shades of blue.
+
+"Bridge to engineering," Elena called. "Status?"
+
+"We're holding," Chief Engineer Okafor reported, strain evident in her voice. "But the warp core is acting strange. It's... singing, Captain. I've never heard anything like it."
+
+As if in response, a tone filled the bridge. Not through the comm system, but through the hull itself, resonating in Elena's bones. It was music, she realized. Or language. Or both—a message encoded in mathematics and melody.
+
+"We're being hailed," Communications Officer Park said, disbelief coloring his tone. "But not on any frequency. It's... it's in our minds."
+
+Elena felt it then. A presence, vast and ancient, brushing against her consciousness like a whale passing a minnow. Images flooded her mind: civilizations rising and falling across eons, the birth and death of stars, a network of doorways connecting the galaxy like neural pathways in a cosmic brain.
+
+The Builders, the presence seemed to say. We are the Architects. You have found the Threshold. Will you cross?
+
+Elena looked at her crew—her family, really, after four years in the void. She looked at the anomaly, the doorway to everything humanity had ever wondered about. She thought of Earth, of the crowded solar system, of a species that had always looked to the stars and asked: Are we alone?
+
+"Yes," she said aloud. "We cross."
+
+The Horizon surged forward. The ring enveloped them, and for a moment, Elena saw the true shape of the universe—not a void, but a web, glittering with the lights of countless civilizations. And at the center of it all, waiting with infinite patience, were those who had built the pathways.
+
+The nebula swallowed them. And on the other side, a new story began.`
+            },
+            {
+                id: 'garden',
+                title: 'The Last Garden',
+                genre: 'Dystopian',
+                excerpt: 'In a concrete world, Maya tended the last green thing on Earth...',
+                image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
+                readTime: '10 min',
+                trending: true,
+                content: `The greenhouse stood alone in Sector 7, a glass jewel surrounded by kilometers of gray concrete and steel. From the observation towers of the Central Authority, it was an aberration—a dangerous reminder of the world that had been sacrificed for progress.
+
+Maya Chen watered her tomatoes, humming a tune her grandmother had taught her, a melody older than the concrete city. The water was precious, recycled from her own breath and waste, processed through filters she maintained with religious devotion. Every drop was a rebellion.
+
+"Section B needs pruning," her assistant drone chirped, hovering at elbow height. It was an old model, salvaged from the recycling heaps, its AI quirky but loyal. She called it Sprout.
+
+"I know, Sprout. Patience."
+
+But time was running out. The Authority had announced the Final Reclamation—all unauthorized vegetation was to be cleared by month's end. The official reason was efficiency. The real reason was fear. Green things reminded people that life had once been different, that the gray world of New Eden was a choice, not destiny.
+
+Maya touched the leaf of her oldest plant, an oak sapling grown from an acorn her grandmother had smuggled from the Old Forests. It was three years old now, knee-high, its leaves the color of hope.
+
+"They'll come tomorrow," she whispered to the tree. "I'm sorry."
+
+The greenhouse had been her grandfather's, then her mother's. Three generations of Chen women had kept the flame of green life burning while the world outside turned to stone and circuitry. And now, Maya would be the last.
+
+Unless...
+
+She moved to her workbench, where her real projects hid in plain sight. Seeds. Thousands of them, collected from every plant she could trade for, steal, or salvage. Seeds for trees that could break concrete, vines that could strangle steel, flowers that could survive acid rain. And something new—something she had engineered in secret.
+
+Maya called them Ghost Seeds. Genetically modified to lie dormant for decades, undetectable by Authority scanners, waiting for the right signal to germinate. She had spent five years perfecting them. Tomorrow, she would scatter them to the wind.
+
+"Sprout," she said, "calculate wind patterns for the next 48 hours."
+
+"Processing... Optimal dispersal window: 0300 hours. Northeast breeze at 15 knots. Coverage: 78% of city sectors."
+
+Maya smiled. The Authorities would destroy her greenhouse. They would probably arrest her, or worse. But they couldn't stop the wind. They couldn't stop the Ghost Seeds from finding their way into cracks and crevices, into the forgotten places where life might take hold again.
+
+She spent the evening saying goodbye. To the tomatoes that had fed her, to the flowers that had brought bees—the last bees, perhaps, in the entire city—to the oak sapling that would never grow old enough to shade her.
+
+At midnight, she climbed to the greenhouse roof, a bag of Ghost Seeds slung over her shoulder. The city sprawled below, a grid of lights and shadows, beautiful and terrible in its efficiency. Somewhere out there, she knew, were others like her. Secret gardeners, memory keepers, dreamers who remembered green.
+
+She opened the bag and let the wind take them. The seeds were dust-fine, glittering in the streetlights like stars falling to earth.
+
+"Grow," she commanded them. "When the time is right, grow."
+
+The Authorities came at dawn, as she knew they would. They wore white suits and sealed helmets, as if nature itself were a contagion. Their leader, a man named Director Vane, surveyed the greenhouse with something like sadness.
+
+"You could have been useful, Dr. Chen," he said. "Your botanical knowledge is valuable."
+
+"I know exactly how valuable it is to you," Maya replied, standing tall among her plants. "You want to control life. I want to set it free."
+
+Vane sighed. "Burn it."
+
+They used plasma torches. The glass shattered, the wood charred, the plants screamed in silent agony. Maya watched her oak sapling turn to ash, her tears mixing with the smoke.
+
+But as they led her away in restraints, she saw something that made her smile. A crack in the concrete, near the greenhouse foundation. And in that crack, green—a single blade of grass, impossibly alive, swaying in the morning breeze.
+
+The Ghost Seeds were already working.
+
+They put Maya in a cell high in the Central Tower, with a view of the city she had tried to save. Years passed. She grew old, her hair turning white, her hands gnarled with arthritis. But every spring, she pressed her face to the glass and watched.
+
+The cracks were spreading. Concrete was crumbling. In Sector 4, a tree had broken through the roof of an abandoned factory. In Sector 9, vines draped the Authority towers themselves, green fingers reclaiming the steel.
+
+On the day Maya Chen died, at the age of eighty-seven, the city was breathing again. Forests had risen in the suburbs. Birds nested in the upper levels of the Central Authority building. And in the place where her greenhouse had stood, an oak tree towered fifty feet tall, its roots deep in the soil of revolution.
+
+The Last Garden had become the First Forest. And Maya, they would later say, was simply the seed.`
+            },
+            {
+                id: 'letters',
+                title: 'Letters to the Sea',
+                genre: 'Literary Fiction',
+                excerpt: 'Every morning, Eleanor wrote to her missing daughter and cast the letters into the waves...',
+                image: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&q=80',
+                readTime: '11 min',
+                trending: false,
+                content: `Dear Clara,
+
+It has been 4,387 days since you left. I know because I have counted them, marked them in the margins of my journals, carved them into the driftwood that piles up on the winter shore. I know because I am still here, and you are not, and the math of absence is the only math I have left.
+
+Today the tide brought in a bottle. Not one of mine—I stopped using glass years ago, afraid the fish would swallow your words. This was old, green glass fogged by decades in the deep. Inside, a letter dated 1987, from a boy named Thomas to a girl named Sarah. He loved her. He was sorry. He hoped she would wait.
+
+I wondered if Sarah waited. I wondered if Thomas ever came back from wherever the sea took him. I wondered if anyone will find my letters, my hundreds of waterproof pages weighted with stones and cast into the gray Atlantic. Probably not. Probably they rest on the continental shelf, a library of grief slowly becoming sediment.
+
+But I write anyway.
+
+Your father says I should stop. He has moved on, as they say, though I don't know where "on" is. He has a new wife, a new daughter even—little Sophie, who looks nothing like you but laughs in the same register. He sends me Christmas cards. I burn them unopened.
+
+Not out of hate. Out of preservation. If I let his new life in, I fear it will push out the old one, the one that had you in it.
+
+Today I wrote about the time we found the dead seal on the beach. You were six. You insisted we bury it, and we dug for hours until the hole was deep enough. You said a prayer you made up on the spot, something about the seal swimming in heaven's ocean. Then you asked me if all mothers had to watch their children die.
+
+"No," I lied. "That's not how it works."
+
+But you knew. You always knew things. The way the weather would turn, the way a story would end, the way I would eventually stand alone on this shore writing letters that will never find you.
+
+The police say you drowned. The currents here are treacherous, the riptides sudden and strong. They found your sandals at the waterline, your favorite yellow dress snagged on the rocks. They did not find you.
+
+I think you became a mermaid. I think you are down there in the dark, reading my letters as they settle, learning to breathe water, forgetting the taste of air. It is a fantasy, I know. But it is mine, and I cling to it the way you once clung to my hand in crowded stores.
+
+Tomorrow I will write about your birthday. You would have been twenty. I will bake a cake and cast it into the waves, watch the gulls fight over the frosting. I will sing to the horizon and pretend you can hear me.
+
+I will keep writing until my hands fail, until the pen falls from my grip, until the sea takes me too. And then, perhaps, we will read these letters together in the deep, you with your fish-tail, me with my ghost-hands, finally understanding what the waves have been trying to say all along:
+
+That love is the only thing that doesn't dissolve in salt water.
+
+Your mother,
+Eleanor
+
+P.S. The seal is still here. I visit its grave every spring. The grass grows thick over the spot, greener than anywhere else on the beach. I like to think it's listening.`
+
+            }
+        ];
+
+        // State
+        let currentStory = null;
+        let isNarrating = false;
+        let speechUtterance = null;
+        let selectedVoice = 'female';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderStories();
+            setupNavbar();
+        });
+
+        // Navbar scroll effect
+        function setupNavbar() {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Render stories
+        function renderStories() {
+            const trending = stories.filter(s => s.trending);
+            const newReleases = stories.slice(0, 4);
+            const featured = stories.slice(0, 3);
+
+            // Trending Row
+            document.getElementById('trendingRow').innerHTML = trending.map(story => createStoryCard(story)).join('');
+            
+            // New Releases Row
+            document.getElementById('newReleasesRow').innerHTML = newReleases.map(story => createStoryCard(story)).join('');
+            
+            // Featured Grid
+            document.getElementById('featuredGrid').innerHTML = featured.map(story => createFeaturedCard(story)).join('');
+        }
+
+        function createStoryCard(story) {
+            return `
+                <div class="story-card" onclick="openStory('${story.id}')">
+                    <img src="${story.image}" alt="${story.title}" class="story-card-image">
+                    <div class="story-card-overlay">
+                        <div class="story-genre">${story.genre}</div>
+                        <h3 class="story-title">${story.title}</h3>
+                        <p class="story-excerpt">${story.excerpt}</p>
+                        <div class="story-actions" onclick="event.stopPropagation()">
+                            <button class="action-btn play" onclick="openStory('${story.id}'); toggleNarration();" title="Narrate">
+                                ▶
+                            </button>
+                            <button class="action-btn" onclick="showToast('Added to My List')" title="Add to List">
+                                +
+                            </button>
+                            <button class="action-btn" onclick="showToast('Shared successfully')" title="Share">
+                                ↗
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createFeaturedCard(story) {
+            return `
+                <div class="featured-card" onclick="openStory('${story.id}')">
+                    <img src="${story.image}" alt="${story.title}" class="featured-card-bg">
+                    <div class="featured-content">
+                        <span class="featured-badge">Featured</span>
+                        <h3 class="featured-title">${story.title}</h3>
+                        <p class="featured-author">By <strong>Olamide Emmanuel Willoughby</strong> • ${story.readTime} read</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">${story.excerpt}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Modal Functions
+        function openStory(storyId) {
+            const story = stories.find(s => s.id === storyId) || stories[0];
+            currentStory = story;
+            
+            document.getElementById('modalTitle').textContent = story.title;
+            document.getElementById('modalMeta').innerHTML = `
+                <span>⏱ ${story.readTime} read</span>
+                <span>📖 ${story.genre}</span>
+                <span>👤 By Olamide Emmanuel Willoughby</span>
+            `;
+            document.getElementById('modalHero').style.background = `
+                linear-gradient(to top, var(--bg-card) 0%, transparent 100%),
+                url('${story.image}') center/cover
+            `;
+            
+            // Format content with paragraphs
+            const paragraphs = story.content.split('\n\n').filter(p => p.trim());
+            document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+            
+            document.getElementById('storyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Reset narration
+            stopNarration();
+        }
+
+        function closeModal() {
+            document.getElementById('storyModal').classList.remove('active');
+            document.body.style.overflow = '';
+            stopNarration();
+        }
+
+        // Text-to-Speech Functions
+        function setVoice(gender) {
+            selectedVoice = gender;
+            document.querySelectorAll('.voice-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            if (isNarrating) {
+                stopNarration();
+                setTimeout(() => startNarration(), 100);
+            }
+        }
+
+        function toggleNarration() {
+            if (isNarrating) {
+                stopNarration();
+            } else {
+                startNarration();
+            }
+        }
+
+        function startNarration() {
+            if (!currentStory) return;
+            
+            const text = currentStory.content;
+            speechUtterance = new SpeechSynthesisUtterance(text);
+            
+            // Get available voices
+            const voices = window.speechSynthesis.getVoices();
+            
+            // Try to find appropriate voice
+            let preferredVoice;
+            if (selectedVoice === 'female') {
+                preferredVoice = voices.find(v => v.name.includes('Female') || v.name.includes('Samantha') || v.name.includes('Victoria'));
+            } else {
+                preferredVoice = voices.find(v => v.name.includes('Male') || v.name.includes('Daniel') || v.name.includes('Alex'));
+            }
+            
+            if (preferredVoice) {
+                speechUtterance.voice = preferredVoice;
+            }
+            
+            speechUtterance.rate = 0.9; // Slightly slower for dramatic effect
+            speechUtterance.pitch = selectedVoice === 'female' ? 1.1 : 0.9;
+            speechUtterance.volume = 1;
+            
+            speechUtterance.onstart = () => {
+                isNarrating = true;
+                document.getElementById('narrateIcon').textContent = '⏸';
+                document.getElementById('narrateText').textContent = 'Pause Narration';
+                document.querySelector('.narrate-btn').classList.add('playing');
+                document.getElementById('visualizer').classList.add('active');
+            };
+            
+            speechUtterance.onend = () => {
+                stopNarration();
+            };
+            
+            window.speechSynthesis.speak(speechUtterance);
+        }
+
+        function stopNarration() {
+            window.speechSynthesis.cancel();
+            isNarrating = false;
+            document.getElementById('narrateIcon').textContent = '▶';
+            document.getElementById('narrateText').textContent = 'Narrate Story';
+            document.querySelector('.narrate-btn')?.classList.remove('playing');
+            document.getElementById('visualizer').classList.remove('active');
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Load voices when available
+        window.speechSynthesis.onvoiceschanged = () => {
+            // Voices loaded
+        };
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
