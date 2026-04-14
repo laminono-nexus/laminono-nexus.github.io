@@ -1391,8 +1391,46 @@
                     </div>
                 </div>
 
-                <div class="story-text" id="storyText">
+                                <div class="story-text" id="storyText">
                     <!-- Story content injected here -->
+                </div>
+
+                <!-- Rating Section -->
+                <div class="rating-section">
+                    <div class="average-rating">
+                        <span class="average-score" id="averageScore">0.0</span>
+                        <span class="average-stars" id="averageStars">★★★★★</span>
+                        <span class="total-votes" id="totalVotes">(0 ratings)</span>
+                    </div>
+                    
+                    <h3 class="rating-title">Rate this story</h3>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                        <span class="star-rating-text" id="ratingText">Click to rate</span>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="comments-section">
+                        <h3 class="rating-title">Comments <span class="comments-count" id="commentsCount">(0)</span></h3>
+                        
+                        <form class="comment-form" id="commentForm" onsubmit="submitComment(event)">
+                            <div class="comment-input-group">
+                                <input type="text" class="comment-input" id="commentName" placeholder="Your name" required>
+                                <textarea class="comment-input comment-textarea" id="commentText" placeholder="Share your thoughts on this story..." required></textarea>
+                            </div>
+                            <button type="submit" class="comment-submit">
+                                <span>💬</span> Post Comment
+                            </button>
+                        </form>
+
+                        <div class="comments-list" id="commentsList">
+                            <div class="no-comments">No comments yet. Be the first to share your thoughts!</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1980,6 +2018,194 @@ P.S. The seal is still here. I visit its grave every spring. The grass grows thi
                 </div>
             `).join('');
         }
+            // Rating and Comments System
+        let currentRating = 0;
+        let storyRatings = JSON.parse(localStorage.getItem('laminonoRatings') || '{}');
+        let storyComments = JSON.parse(localStorage.getItem('laminonoComments') || '{}');
+
+        // Initialize star rating hover
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('mouseenter', function() {
+                const rating = parseInt(this.dataset.rating);
+                highlightStars(rating);
+                document.getElementById('ratingText').textContent = getRatingText(rating);
+            });
+
+            star.addEventListener('mouseleave', function() {
+                highlightStars(currentRating);
+                document.getElementById('ratingText').textContent = currentRating > 0 ? 'You rated ' + currentRating + ' stars' : 'Click to rate';
+            });
+
+            star.addEventListener('click', function() {
+                const rating = parseInt(this.dataset.rating);
+                submitRating(rating);
+            });
+        });
+
+        function highlightStars(count) {
+            document.querySelectorAll('.star').forEach((star, index) => {
+                if (index < count) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function getRatingText(rating) {
+            const texts = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+            return texts[rating - 1] || 'Click to rate';
+        }
+
+        function submitRating(rating) {
+            if (!currentStory) return;
+            
+            currentRating = rating;
+            highlightStars(rating);
+            document.getElementById('ratingText').textContent = 'You rated ' + rating + ' stars!';
+
+            // Save to localStorage
+            if (!storyRatings[currentStory.id]) {
+                storyRatings[currentStory.id] = { total: 0, count: 0, sum: 0 };
+            }
+            
+            // Prevent multiple ratings from same session (simple version)
+            const ratedStories = JSON.parse(localStorage.getItem('ratedStories') || '[]');
+            if (!ratedStories.includes(currentStory.id)) {
+                storyRatings[currentStory.id].total += 1;
+                storyRatings[currentStory.id].sum += rating;
+                ratedStories.push(currentStory.id);
+                localStorage.setItem('ratedStories', JSON.stringify(ratedStories));
+                localStorage.setItem('laminonoRatings', JSON.stringify(storyRatings));
+                
+                // Google Analytics Event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'rate_story', {
+                        'event_category': 'engagement',
+                        'event_label': currentStory.title,
+                        'value': rating
+                    });
+                }
+                
+                showToast('Thank you for rating!');
+            } else {
+                showToast('You already rated this story!');
+            }
+
+            updateAverageRating();
+        }
+
+        function updateAverageRating() {
+            if (!currentStory || !storyRatings[currentStory.id]) {
+                document.getElementById('averageScore').textContent = '0.0';
+                document.getElementById('averageStars').textContent = '★★★★★';
+                document.getElementById('totalVotes').textContent = '(0 ratings)';
+                return;
+            }
+
+            const data = storyRatings[currentStory.id];
+            const average = (data.sum / data.total).toFixed(1);
+            const fullStars = Math.round(average);
+            
+            document.getElementById('averageScore').textContent = average;
+            document.getElementById('averageStars').textContent = '★'.repeat(fullStars) + '☆'.repeat(5 - fullStars);
+            document.getElementById('totalVotes').textContent = `(${data.total} rating${data.total !== 1 ? 's' : ''})`;
+        }
+
+        function submitComment(event) {
+            event.preventDefault();
+            if (!currentStory) return;
+
+            const name = document.getElementById('commentName').value.trim();
+            const text = document.getElementById('commentText').value.trim();
+
+            if (!name || !text) return;
+
+            const comment = {
+                id: Date.now(),
+                name: name,
+                text: text,
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+                rating: currentRating,
+                isAdmin: name.toLowerCase().includes('laminono') || name.toLowerCase().includes('olamide')
+            };
+
+            if (!storyComments[currentStory.id]) {
+                storyComments[currentStory.id] = [];
+            }
+            storyComments[currentStory.id].unshift(comment);
+            localStorage.setItem('laminonoComments', JSON.stringify(storyComments));
+
+            // Google Analytics Event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'post_comment', {
+                    'event_category': 'engagement',
+                    'event_label': currentStory.title
+                });
+            }
+
+            // Clear form
+            document.getElementById('commentName').value = '';
+            document.getElementById('commentText').value = '';
+            currentRating = 0;
+            highlightStars(0);
+            document.getElementById('ratingText').textContent = 'Click to rate';
+
+            renderComments();
+            showToast('Comment posted!');
+        }
+
+        function renderComments() {
+            if (!currentStory) return;
+
+            const comments = storyComments[currentStory.id] || [];
+            const list = document.getElementById('commentsList');
+            const count = document.getElementById('commentsCount');
+
+            count.textContent = `(${comments.length})`;
+
+            if (comments.length === 0) {
+                list.innerHTML = '<div class="no-comments">No comments yet. Be the first to share your thoughts!</div>';
+                return;
+            }
+
+            list.innerHTML = comments.map(comment => `
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <span class="comment-author">
+                            ${comment.name}
+                            ${comment.isAdmin ? '<span class="admin-badge-small">Admin</span>' : ''}
+                        </span>
+                        <span class="comment-date">${comment.date}</span>
+                    </div>
+                    ${comment.rating > 0 ? `<div class="comment-rating">${'★'.repeat(comment.rating)}</div>` : ''}
+                    <div class="comment-text">${escapeHtml(comment.text)}</div>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Update modal functions to reset rating/comments
+        const originalOpenStory = openStory;
+        openStory = function(storyId) {
+            originalOpenStory(storyId);
+            
+            // Reset rating display
+            currentRating = 0;
+            highlightStars(0);
+            document.getElementById('ratingText').textContent = 'Click to rate';
+            
+            // Update ratings display
+            updateAverageRating();
+            
+            // Render comments
+            renderComments();
+        };
     </script>
     <!-- All Stories Page (Hidden by default) -->
     <div id="allStoriesPage" class="hidden">
