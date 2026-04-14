@@ -1618,6 +1618,10 @@
             }
         });
     <script>
+        <!-- Admin Bio Modal -->
+    <div class="admin-bio-modal" id="adminBioModal" onclick="closeAdminBio(event)">
+        <div class="admin-bio-content" onclick="event.stopPropagation()">
+            <button class="admin-bio-close" onclick="closeAdminBio()">×</button>
         
         // Story Data
         const stories = [
@@ -2402,12 +2406,7 @@ P.S. The seal is still here. I visit its grave every spring. The grass grows thi
         <div class="all-stories-grid" id="allStoriesGrid">
             <!-- Stories loaded here -->
         </div>
-    </div>
-    <!-- Admin Bio Modal -->
-    <div class="admin-bio-modal" id="adminBioModal" onclick="closeAdminBio(event)">
-        <div class="admin-bio-content" onclick="event.stopPropagation()">
-            <button class="admin-bio-close" onclick="closeAdminBio()">×</button>
-            
+    </div>       
             <div class="admin-bio-header">
                 <img src="laminono.jpeg" alt="Olamide Emmanuel Willoughby" class="admin-bio-image">
             </div>
