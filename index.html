@@ -1577,32 +1577,7 @@
         <span id="toastIcon">✓</span>
         <span id="toastMessage">Notification</span>
     </div>
-
-            // Admin Bio Modal Functions
-        function openAdminBio() {
-            const modal = document.getElementById('adminBioModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
             
-            // Update stats
-            document.getElementById('storyCount').textContent = stories.length;
-            
-            // Calculate total readers from localStorage
-            let totalReaders = 0;
-            Object.values(storyRatings).forEach(rating => {
-                totalReaders += rating.total;
-            });
-            document.getElementById('readerCount').textContent = totalReaders;
-            
-            // Google Analytics
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'view_admin_bio', {
-                    'event_category': 'engagement',
-                    'event_label': 'Admin Profile'
-                });
-            }
-        }
-    
     <script>
         
         // Story Data
