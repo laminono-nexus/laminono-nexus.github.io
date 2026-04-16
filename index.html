@@ -1619,23 +1619,143 @@
     opacity: 0.9;
 }
 
-/* Mobile adjustments */
+/* ============================================
+   BOOK HOOK FEATURE - Phase 1 - Fixed
+   ============================================ */
+
+.book-hook-container {
+    position: fixed;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    transition: top 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-hook-container.visible {
+    top: 0;
+    pointer-events: auto;
+}
+
+/* The rope - clearly visible */
+.book-rope {
+    width: 4px;
+    height: 60px;
+    background: linear-gradient(to bottom, #5D3A1A, #8B4513, #A0522D);
+    position: relative;
+    box-shadow: 1px 0 2px rgba(0,0,0,0.4);
+}
+
+/* Knot at top */
+.book-rope::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #654321;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* The book - HORIZONTAL layout */
+.book-sign {
+    width: 160px;
+    height: 55px;
+    background: linear-gradient(180deg, #8B0000 0%, #A52A2A 50%, #8B0000 100%);
+    border-radius: 4px 10px 10px 4px;
+    position: relative;
+    box-shadow: 
+        0 6px 20px rgba(0,0,0,0.5),
+        inset 2px 0 6px rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+/* Spine on left */
+.book-sign::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.5) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0.5) 100%);
+    border-radius: 2px;
+}
+
+/* Pages on right */
+.book-sign::after {
+    content: '';
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    bottom: 3px;
+    width: 8px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #F5F5DC 0px,
+        #E8E4C9 3px,
+        #F5F5DC 6px
+    );
+    border-radius: 0 5px 5px 0;
+}
+
+.book-sign:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Text - HORIZONTAL and readable */
+.book-sign-text {
+    color: #FFD700;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Subtitle */
+.book-sign-text small {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #FFA500;
+    margin-top: 2px;
+    text-transform: none;
+}
+
+/* Mobile */
 @media (max-width: 600px) {
     .book-hook-container.visible {
         top: 0;
     }
     .book-rope {
-        height: 60px;
+        height: 50px;
     }
     .book-sign {
-        width: 110px;
-        height: 70px;
+        width: 130px;
+        height: 45px;
     }
     .book-sign-text {
-        font-size: 13px;
-    }
-    .book-sign-text::after {
-        font-size: 8px;
+        font-size: 12px;
     }
 }
 
