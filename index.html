@@ -1364,10 +1364,7 @@
     pointer-events: none;
 }
 
-        /* ============================================
-   BOOK HOOK - SIMPLE & CLEAN
-   ============================================ */
-
+        /* BOOK HOOK */
 .book-hook-container {
     position: fixed;
     top: -100px;
@@ -1377,43 +1374,27 @@
     transition: top 0.5s ease;
     pointer-events: none;
 }
-
 .book-hook-container.visible {
     top: 60px;
     pointer-events: auto;
 }
-
 .book-rope {
     width: 3px;
     height: 40px;
     background: #8B4513;
     margin: 0 auto;
 }
-
 .book-sign {
     width: 120px;
     height: 40px;
     background: #8B0000;
     border-radius: 3px 8px 8px 3px;
-    position: relative;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.book-sign::after {
-    content: '';
-    position: absolute;
-    right: 3px;
-    top: 3px;
-    bottom: 3px;
-    width: 6px;
-    background: #f5f5dc;
-    border-radius: 0 4px 4px 0;
-}
-
 .book-sign-text {
     color: #FFD700;
     font-family: 'Playfair Display', serif;
@@ -1422,32 +1403,15 @@
     letter-spacing: 2px;
 }
 
-.book-sign:hover {
-    transform: translateY(-2px);
-}
-
-@media (max-width: 600px) {
-    .book-sign {
-        width: 100px;
-        height: 35px;
-    }
-    .book-sign-text {
-        font-size: 11px;
-    }
-}
-
 </style>
 </head>
 <body>
-    <!-- ============================================
-     BOOK HOOK FEATURE - Phase 1
-     ============================================ -->
     <div class="book-hook-container" id="bookHook">
-        <div class="book-rope"></div>
-        <div class="book-sign" onclick="openBookshelf()">
-            <span class="book-sign-text">BOOKS</span>
-        </div>
+    <div class="book-rope"></div>
+    <div class="book-sign" onclick="openBookshelf()">
+        <span class="book-sign-text">BOOKS</span>
     </div>
+</div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -18186,17 +18150,16 @@ If a system could only write your life after you resist it—learning from every
             window.requestAnimationFrame(updateBookHook);
             ticking = true;
         }
-    }, { passive: true });
-    
-    // Initial check
-    updateBookHook();
-    
-    // Placeholder for Phase 2
-    window.openBookshelf = function() {
-        showToast('Library coming soon...');
-        // Phase 2 will replace this
-    };
-    
+
+(function() {
+    const hook = document.getElementById('bookHook');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight * 0.3) {
+            hook.classList.add('visible');
+        } else {
+            hook.classList.remove('visible');
+        }
+    });
 })();
 
     </script>
