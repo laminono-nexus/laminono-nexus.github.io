@@ -18197,6 +18197,52 @@ If a system could only write your life after you resist it—learning from every
             // Render comments
             renderComments();
         };
+   // ============================================
+// BOOK HOOK FEATURE - Phase 1
+// ============================================
+
+(function() {
+    'use strict';
+    
+    const bookHook = document.getElementById('bookHook');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    
+    // Show/hide book hook based on scroll
+    function updateBookHook() {
+        const currentScrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        
+        // Show when scrolled past 30% of viewport, hide when near top
+        if (currentScrollY > viewportHeight * 0.3) {
+            bookHook.classList.add('visible');
+        } else {
+            bookHook.classList.remove('visible');
+        }
+        
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+    
+    // Throttled scroll listener for performance
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateBookHook);
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // Initial check
+    updateBookHook();
+    
+    // Placeholder for Phase 2
+    window.openBookshelf = function() {
+        showToast('Library coming soon...');
+        // Phase 2 will replace this
+    };
+    
+})();
+
     </script>
     <!-- All Stories Page (Hidden by default) -->
     <div id="allStoriesPage" class="hidden">
