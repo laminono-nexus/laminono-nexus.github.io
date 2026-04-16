@@ -1742,23 +1742,180 @@
     text-transform: none;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .book-hook-container.visible {
-        top: 0;
-    }
-    .book-rope {
-        height: 50px;
-    }
-    .book-sign {
-        width: 130px;
-        height: 45px;
-    }
-    .book-sign-text {
-        font-size: 12px;
-    }
+/* ============================================
+   BOOK HOOK FEATURE - FINAL WORKING VERSION
+   ============================================ */
+
+.book-hook-container {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    transition: top 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
 }
 
+.book-hook-container.visible {
+    top: 15px;
+    pointer-events: auto;
+}
+
+/* Rope */
+.book-rope {
+    width: 6px;
+    height: 60px;
+    background: linear-gradient(to right, #3d2314, #8B4513, #3d2314);
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.book-rope::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #5d3a1a;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* The Book */
+.book-sign {
+    width: 200px;
+    height: 70px;
+    background: linear-gradient(to bottom, #a61c1c 0%, #c62828 50%, #a61c1c 100%);
+    border-radius: 5px 15px 15px 5px;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+    cursor: pointer;
+    margin-top: -3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+        /* ============================================
+   BOOK HOOK FEATURE - FINAL WORKING VERSION
+   ============================================ */
+
+.book-hook-container {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    transition: top 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.book-hook-container.visible {
+    top: 15px;
+    pointer-events: auto;
+}
+
+/* Rope */
+.book-rope {
+    width: 6px;
+    height: 60px;
+    background: linear-gradient(to right, #3d2314, #8B4513, #3d2314);
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.book-rope::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #5d3a1a;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* The Book */
+.book-sign {
+    width: 200px;
+    height: 70px;
+    background: linear-gradient(to bottom, #a61c1c 0%, #c62828 50%, #a61c1c 100%);
+    border-radius: 5px 15px 15px 5px;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+    cursor: pointer;
+    margin-top: -3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Spine */
+.book-sign::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 2px;
+    bottom: 2px;
+    width: 6px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2), rgba(255,255,255,0.5));
+    border-radius: 3px;
+}
+
+/* Pages */
+.book-sign::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    width: 12px;
+    background: repeating-linear-gradient(to bottom, #f5f5dc 0px, #e8dcc4 3px, #f5f5dc 6px);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Text - HORIZONTAL */
+.book-sign-text {
+    color: #FFD700;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.book-sign:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.7);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .book-sign {
+        width: 160px;
+        height: 55px;
+    }
+    .book-sign-text {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+    .book-rope {
+        height: 45px;
+    }
+}
+        
     </style>
 </head>
 <body>
