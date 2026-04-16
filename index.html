@@ -18144,13 +18144,12 @@ If a system could only write your life after you resist it—learning from every
         ticking = false;
     }
     
-    // Throttled scroll listener for performance
     window.addEventListener('scroll', function() {
-        if (!ticking) {
-            window.requestAnimationFrame(updateBookHook);
-            ticking = true;
-        }
-
+    if (!ticking) {
+        window.requestAnimationFrame(updateBookHook);
+        ticking = true;
+    }
+});
     </script>
     <!-- All Stories Page (Hidden by default) -->
     <div id="allStoriesPage" class="hidden">
