@@ -3,31 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Echoes of Tomorrow</title>
+    <title>The Chronos Protocol — Part 2 | Laminono Nexus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;line-height:1.8;min-height:100vh}
+        .nav{position:fixed;top:0;width:100%;padding:15px 4%;background:linear-gradient(to bottom,rgba(10,10,10,0.9),transparent);z-index:1000;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#fff,#e50914);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .author{display:flex;align-items:center;gap:8px;font-size:0.75rem;color:#b3b3b3}
+        .content{max-width:800px;margin:0 auto;padding:100px 20px 60px}
+        .thumbnail{width:100%;max-width:700px;height:350px;object-fit:cover;border-radius:12px;margin:0 auto 40px;display:block;box-shadow:0 20px 60px rgba(229,9,20,0.3)}
+        .series-title{text-align:center;font-size:0.9rem;color:#e50914;text-transform:uppercase;letter-spacing:3px;margin-bottom:10px;font-weight:600}
+        .main-title{text-align:center;font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;margin-bottom:15px;line-height:1.2;text-shadow:0 0 30px rgba(229,9,20,0.3)}
+        .genre{text-align:center;color:#808080;font-size:1rem;margin-bottom:30px}
+        .episode-info{text-align:center;background:rgba(229,9,20,0.1);border:1px solid rgba(229,9,20,0.3);border-radius:8px;padding:15px 30px;display:inline-block;margin:0 auto 50px;position:relative;left:50%;transform:translateX(-50%)}
+        .episode-info .ep-num{font-size:1.5rem;font-weight:700;color:#e50914;display:block;margin-bottom:5px}
+        .episode-info .ep-time{font-size:0.85rem;color:#b3b3b3}
+        .story-text{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:2.2;text-align:justify;color:#e8e8e8}
+        .story-text p{margin-bottom:2em;text-indent:2em}
+        .story-text p:first-child::first-letter{font-size:3.5rem;float:left;line-height:1;margin-right:15px;color:#e50914;font-weight:700;text-shadow:0 0 20px rgba(229,9,20,0.5)}
+        .ending{text-align:center;margin:60px 0;font-style:italic;color:#808080;font-size:1.1rem;position:relative}
+        .ending::before,.ending::after{content:"—";margin:0 20px;color:#e50914}
+        .next-episode{display:block;width:100%;max-width:400px;margin:40px auto;padding:20px 40px;background:linear-gradient(135deg,#e50914,#8b0000);color:#fff;text-align:center;text-decoration:none;border-radius:8px;font-size:1.2rem;font-weight:600;transition:all 0.3s;box-shadow:0 10px 30px rgba(229,9,20,0.3)}
+        .next-episode:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(229,9,20,0.4)}
+        .next-episode small{display:block;font-size:0.85rem;margin-top:8px;opacity:0.9;font-weight:400}
+        .back-btn{position:fixed;top:20px;left:20px;padding:10px 20px;background:rgba(255,255,255,0.1);border:none;color:#fff;border-radius:4px;cursor:pointer;z-index:1001}
+        .rating-section{text-align:center;margin:60px 0;padding:40px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
+        .rating-title{font-size:1.1rem;margin-bottom:20px;color:#b3b3b3}
+        .stars{display:flex;justify-content:center;gap:10px;font-size:2rem;cursor:pointer}
+        .star{color:#333;transition:color 0.2s}
+        .star:hover,.star.active{color:#e50914;text-shadow:0 0 20px rgba(229,9,20,0.5)}
+        .comment-section{margin-top:40px;padding:30px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
+        .comment-section h3{color:#e50914;margin-bottom:20px;font-size:1.2rem}
+        .comment-box{width:100%;padding:15px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:#fff;font-size:1rem;min-height:100px;resize:vertical;margin-bottom:15px}
+        .comment-box::placeholder{color:#666}
+        .submit-btn{padding:12px 30px;background:#e50914;color:#fff;border:none;border-radius:4px;cursor:pointer;font-weight:600;transition:all 0.3s}
+        .submit-btn:hover{background:#ff0a16;transform:scale(1.02)}
+        .footer{text-align:center;padding:40px 20px;color:#666;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.1);margin-top:60px}
+        .bio-section{margin:60px 0;padding:40px;background:rgba(229,9,20,0.05);border-radius:12px;border:1px solid rgba(229,9,20,0.2);text-align:center}
+        .bio-section h3{color:#e50914;margin-bottom:15px;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px}
+        .bio-text{font-family:'Playfair Display',serif;font-size:1.1rem;line-height:1.8;color:#ccc;max-width:600px;margin:0 auto}
+        @media(max-width:768px){.main-title{font-size:2rem}.thumbnail{height:200px}.story-text{font-size:1.1rem}}
+    </style>
 </head>
 <body>
-    <nav>
-        <!-- Navbar content -->
+    <button class="back-btn" onclick="history.back()">← Back</button>
+    
+    <nav class="nav">
+        <div class="logo">LAMINONO NEXUS</div>
+        <div class="author">Olamide Emmanuel Willoughby — <em>Laminono</em></div>
     </nav>
-    <header>
-        <h1>Welcome to the Echoes of Tomorrow</h1>
-    </header>
-    <main>
-        <script>
-            const stories = [
-                {
-                    title: "The Echoes of Tomorrow",
-                    content: "Your content for The Echoes of Tomorrow goes here.",
-                    // Other properties of the story
-                }
-            ];
-        </script>
-        <!-- Other sections of the page remain the same -->
-    </main>
-    <footer>
-        <!-- Footer content -->
-    </footer>
-    <script src="script.js"></script>
+
+    <div class="content">
+        <!-- UNIQUE THUMBNAIL FOR PART 2: Burning Building Scene -->
+        <img src="https://t4.ftcdn.net/jpg/01/86/91/45/360_F_186914599_ho2bNRYyC0F7nYfI2gmw2L67OhuCvttT.jpg" alt="The Burning Shop - Part 2" class="thumbnail">
+        
+        <div class="series-title">The Chronos Protocol</div>
+        <h1 class="main-title">The First Jump</h1>
+        <div class="genre">Time Travel Thriller</div>
+        
+        <div class="episode-info">
+            <span class="ep-num">Episode 2</span>
+            <span class="ep-time">Reading Time: ~4 minutes</span>
+        </div>
+
+        <div class="story-text">
+            <p>Darkness didn't feel empty. It felt full. Like Daniel had stepped into a space that was waiting for him. He tried to move. Nothing happened. No ground beneath his feet. No air against his skin. Just a strange pressure, like being suspended inside something unseen.</p>
+            
+            <p>Then came the sound. A low hum at first. Then voices. Whispers. Not one. Not two. Many. Daniel turned, but there was nothing to see. "Who's there?" His voice echoed, stretching farther than it should. A light flickered ahead. Small at first. Then growing. The moment it touched him— He was gone.</p>
+            
+            <p>Daniel gasped and dropped to his knees. Concrete scraped his palms. Air rushed back into his lungs like he had been underwater. He looked up quickly. This was not his street. The buildings were the same—but different. Older. Faded. The paint on the walls was peeling. Some shops were closed, their signs broken or missing.</p>
+            
+            <p>A bus passed by. Daniel froze. It looked outdated, like something from years ago. People walked past him. No one stopped. No one reacted. "Where am I…?" He stood slowly, trying to steady himself. Then he noticed something else. The street felt familiar. Too familiar. His eyes moved across the road… until they landed on a small shop at the corner. His breath caught. That shop had been demolished years ago. He remembered clearly. A fire. A collapse. It had been all over the news. But here it was. Standing. Whole. Untouched.</p>
+            
+            <p>"This doesn't make sense…" A sudden chill ran down his spine. If the shop was still standing… Then this wasn't his time. Daniel stepped backward slowly. "No… no, no…" A loud crash echoed down the street. People began to shout. Daniel turned toward the sound. Smoke was rising from the direction of the shop. His chest tightened. He knew this moment. "This is the day it happened…" The fire. The collapse. The deaths.</p>
+            
+            <p>Without thinking, Daniel started running. "Hey!" someone shouted as he pushed past. But he didn't stop. The shop was already burning. Flames climbed the walls, devouring everything in seconds. People stood at a distance, watching, shouting, panicking. Daniel's heart pounded violently. "I remember this… there were people inside…" A woman screamed. "My son! He's inside!"</p>
+            
+            <p>Daniel froze. That didn't happen before. He didn't remember that. His mind raced. "Was that always there… or did something change?" The fire grew stronger. The building creaked dangerously. Daniel stepped forward. Then stopped. If this was the past… Then anything he did here could change everything. But if he did nothing… Someone might die.</p>
+            
+            <p>The woman's screams cut through him. "Please! Somebody help him!" Daniel clenched his fists. "This isn't my problem…" But his feet didn't move. Another crack echoed from the building. Time was running out. "Damn it…" Before he could think any further— Daniel ran into the fire.</p>
+            
+            <p>Heat slammed into him instantly. Smoke filled his lungs. His eyes burned. "Hello?!" he shouted. "Is anyone here?!" A faint cough answered him. Daniel followed the sound deeper inside. The ceiling groaned above him. Debris fell around him. Then he saw him. A small boy, trapped beneath a fallen shelf.</p>
+            
+            <p>"Don't move!" Daniel said, rushing forward. The boy looked up, terrified. "You came…" Daniel didn't answer. He pushed the shelf aside with everything he had. "Can you stand?" The boy nodded weakly. "Good. Stay close." Another loud crack. The building was seconds from collapse. Daniel grabbed the boy's hand and ran. The exit was just ahead. Light breaking through the smoke.</p>
+            
+            <p>Then— Everything froze. The flames stopped moving. The falling debris hung in the air. The boy's hand in his… went still. Daniel's heart dropped. "No… not now…" The world had paused again. And the clock appeared. Right in front of him. Burning… but untouched by the fire. Tick. Tick. A message formed across its cracked glass: "Interference detected." "Timeline deviation: unauthorized."</p>
+            
+            <p>Daniel stepped back. "I was trying to help!" The ticking grew louder. Sharper. Almost angry. "Return immediately." The boy's frozen face stared up at him. So close to being saved. Daniel clenched his jaw. "No…" But the clock didn't wait.</p>
+            
+            <p>The world snapped. Daniel collapsed onto his apartment floor, gasping violently. His chest burned. His throat felt raw from smoke that shouldn't exist anymore. He coughed hard, trying to breathe. Then he noticed something. His hand. Burn marks. Real. Painful. "This… this is real…"</p>
+            
+            <p>His phone buzzed again. New message. "You broke the rule." Another one followed. "You are not there to save them." "You are there to observe." Daniel stared at the screen, anger rising in his chest. "Then why send me there?" he whispered. The reply came instantly. "To learn."</p>
+            
+            <p>Daniel's grip tightened around the phone. Another message appeared. "Next jump in 00:59." A countdown began. 59… 58… 57… Daniel's breathing slowed. But his eyes hardened. "This time…" he said quietly, "I'm not just watching." The countdown continued.</p>
+        </div>
+
+        <div class="ending">To be continued…</div>
+
+        <a href="chronos-protocol-part3.html" class="next-episode">
+            Next Episode → Part 3: The Rule Breaker
+            <small>Daniel defies the Protocol—and the consequences begin</small>
+        </a>
+
+        <div class="bio-section">
+            <h3>About the Author</h3>
+            <p class="bio-text"><strong>Olamide Emmanuel Willoughby</strong> — <em>Laminono</em> is a creative writer, poet, and visual storyteller whose work educates, entertains, informs, and evokes powerful flashbacks. As a media professional, he crafts narratives that linger in the mind long after the final word.</p>
+        </div>
+
+        <div class="rating-section">
+            <div class="rating-title">How would you rate this episode?</div>
+            <div class="stars" onclick="rateStory(event)">
+                <span class="star" data-rating="1">★</span>
+                <span class="star" data-rating="2">★</span>
+                <span class="star" data-rating="3">★</span>
+                <span class="star" data-rating="4">★</span>
+                <span class="star" data-rating="5">★</span>
+            </div>
+            <div id="rating-msg" style="margin-top:15px;color:#666;font-size:0.9rem"></div>
+        </div>
+
+        <div class="comment-section">
+            <h3>Share Your Thoughts</h3>
+            <textarea class="comment-box" placeholder="What did you think of Part 2? Will Daniel break the rules again? Share your theories..."></textarea>
+            <button class="submit-btn" onclick="submitComment()">Post Comment</button>
+            <div id="comments-list" style="margin-top:30px"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 Laminono Nexus. Curated by Olamide Emmanuel Willoughby — <em>Laminono</em>
+    </div>
+
+    <script>
+        function rateStory(e){
+            if(e.target.classList.contains('star')){
+                const rating=e.target.dataset.rating;
+                document.querySelectorAll('.star').forEach((s,i)=>{
+                    s.classList.toggle('active',i<rating);
+                });
+                document.getElementById('rating-msg').textContent='Thanks for rating! '+rating+' stars saved.';
+                localStorage.setItem('chronos-p2-rating',rating);
+            }
+        }
+        
+        function submitComment(){
+            const box=document.querySelector('.comment-box');
+            const text=box.value.trim();
+            if(!text)return alert('Please write a comment first');
+            
+            const list=document.getElementById('comments-list');
+            const div=document.createElement('div');
+            div.style.cssText='padding:20px;background:rgba(255,255,255,0.05);border-radius:8px;margin-bottom:15px;border-left:3px solid #e50914';
+            div.innerHTML='<div style="color:#e50914;font-size:0.85rem;margin-bottom:8px">Reader • Just now</div><div style="color:#e8e8e8;line-height:1.6">'+text.replace(/\n/g,'<br>')+'</div>';
+            list.insertBefore(div,list.firstChild);
+            box.value='';
+            
+            const comments=JSON.parse(localStorage.getItem('chronos-p2-comments')||'[]');
+            comments.unshift({text:text,time:new Date().toLocaleString()});
+            localStorage.setItem('chronos-p2-comments',JSON.stringify(comments));
+        }
+        
+        window.onload=function(){
+            const saved=localStorage.getItem('chronos-p2-rating');
+            if(saved){
+                document.querySelectorAll('.star').forEach((s,i)=>{
+                    s.classList.toggle('active',i<saved);
+                });
+            }
+            const comments=JSON.parse(localStorage.getItem('chronos-p2-comments')||'[]');
+            comments.forEach(c=>{
+                const div=document.createElement('div');
+                div.style.cssText='padding:20px;background:rgba(255,255,255,0.05);border-radius:8px;margin-bottom:15px;border-left:3px solid #e50914';
+                div.innerHTML='<div style="color:#e50914;font-size:0.85rem;margin-bottom:8px">Reader • '+c.time+'</div><div style="color:#e8e8e8;line-height:1.6">'+c.text.replace(/\n/g,'<br>')+'</div>';
+                document.getElementById('comments-list').appendChild(div);
+            });
+        };
+    </script>
 </body>
 </html>
