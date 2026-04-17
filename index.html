@@ -1490,6 +1490,103 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         } 
+        <style>
+/* Floating Book Trigger */
+#floating-book {
+  position: fixed;
+  top: 90px;           /* sits just below the navbar */
+  right: -6px;         /* slightly peeking from the right edge */
+  z-index: 5000;
+  cursor: pointer;
+
+  /* Hidden by default — slides in when scrolling DOWN */
+  transform: translateX(100%);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#floating-book.visible {
+  transform: translateX(0);
+}
+
+.float-book-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The rope attached to the top */
+.float-rope {
+  width: 3px;
+  height: 22px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #c8a96e 0px, #a07040 4px,
+    #c8a96e 8px
+  );
+  border-radius: 2px;
+  margin: 0 auto;
+}
+.float-rope::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 8px;
+  background: #c8a96e;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  margin-left: -4.5px;
+  margin-top: -7px;
+}
+
+/* Book card */
+.float-book-card {
+  width: 78px;
+  background: linear-gradient(145deg, #8B1a1a, #4a0a0a);
+  border: 1px solid rgba(229, 9, 20, 0.5);
+  border-radius: 3px 8px 8px 3px;
+  box-shadow:
+    -4px 4px 16px rgba(0,0,0,0.6),
+    inset 2px 0 4px rgba(255,255,255,0.05);
+  padding: 10px 6px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: floatBook 2.8s ease-in-out infinite;
+}
+@keyframes floatBook {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-6px) rotate(0deg); }
+}
+
+.float-book-icon { font-size: 1.5rem; line-height: 1; }
+
+.float-book-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.52rem;
+  color: #f5c6a0;
+  text-align: center;
+  line-height: 1.35;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.float-book-cta {
+  font-size: 0.46rem;
+  color: rgba(245, 198, 160, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+
+/* Spine highlight line */
+.float-book-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 4px; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+  border-radius: 2px;
+}
     </style>
 </head>
 <body>
@@ -18223,12 +18320,39 @@ If a system could only write your life after you resist it—learning from every
             <div class="admin-bio-body">
                 <p class="admin-bio-nickname">Laminono — The Storyteller</p>
                 
-                                <p class="admin-bio-text">
-    <em>"Stories are the currency of human connection. I aim to make us all rich."</em>
-    <br><br> — Laminono
-</p>
+             class="filter-btn" onclick="filterStories('Dystopian')">Dystopian</button>
+            </div>
+        </div>
+        
+        <div class="all-stories-grid" id="allStoriesGrid">
+           <div id="floating-book" title="Open the Book Shelves">
+  <div class="float-book-inner">
+    <div class="float-rope"></div>
+    <a href="bookshelf.html" class="float-book-card" style="text-decoration:none; position:relative;">
+      <span class="float-book-icon">📚</span>
+      <span class="float-book-label">BOOK SHELVES</span>
+      <span class="float-book-cta">Unlimited Books</span>
+    </a>
+  </div>
 </div>
-</div>
-</div>
+<script>
+(function () {
+  const floatBook = document.getElementById('floating-book');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY;
+
+    if (currentY > 120) {
+      // Scrolled down enough — show the book
+      floatBook.classList.add('visible');
+    } else {
+      // Back near top — hide the book
+      floatBook.classList.remove('visible');
+    }
+
+    lastScrollY = currentY;
+  }, { passive: true });
+})();  
 </body>
 </html>
