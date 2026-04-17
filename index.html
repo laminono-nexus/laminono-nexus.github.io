@@ -9,6 +9,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-B7YT12YB25');
+    
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1589,6 +1590,37 @@
 }
     </style>
 </head>
+    <script>
+(function () {
+  const floatBook = document.getElementById('floating-book');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY;
+
+    if (currentY > 120) {
+      // Scrolled down enough — show the book
+      floatBook.classList.add('visible');
+    } else {
+      // Back near top — hide the book
+      floatBook.classList.remove('visible');
+    }
+
+    lastScrollY = currentY;
+  }, { passive: true });
+})();   
+    <div class="all-stories-grid" id="allStoriesGrid">
+           <div id="floating-book" title="Open the Book Shelves">
+  <div class="float-book-inner">
+    <div class="float-rope"></div>
+    <a href="bookshelf.html" class="float-book-card" style="text-decoration:none; position:relative;">
+      <span class="float-book-icon">📚</span>
+      <span class="float-book-label">BOOK SHELVES</span>
+      <span class="float-book-cta">Unlimited Books</span>
+    </a>
+  </div>
+</div>
+
 <body>
 
     <!-- Navigation -->
@@ -18324,36 +18356,7 @@ If a system could only write your life after you resist it—learning from every
             </div>
         </div>
         
-        <div class="all-stories-grid" id="allStoriesGrid">
-           <div id="floating-book" title="Open the Book Shelves">
-  <div class="float-book-inner">
-    <div class="float-rope"></div>
-    <a href="bookshelf.html" class="float-book-card" style="text-decoration:none; position:relative;">
-      <span class="float-book-icon">📚</span>
-      <span class="float-book-label">BOOK SHELVES</span>
-      <span class="float-book-cta">Unlimited Books</span>
-    </a>
-  </div>
-</div>
-<script>
-(function () {
-  const floatBook = document.getElementById('floating-book');
-  let lastScrollY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
-    const currentY = window.scrollY;
-
-    if (currentY > 120) {
-      // Scrolled down enough — show the book
-      floatBook.classList.add('visible');
-    } else {
-      // Back near top — hide the book
-      floatBook.classList.remove('visible');
-    }
-
-    lastScrollY = currentY;
-  }, { passive: true });
-})();  
 </script>
 </body>
 </html>
