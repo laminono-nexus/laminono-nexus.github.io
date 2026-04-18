@@ -18681,6 +18681,291 @@ If a system could only write your life after you resist it—learning from every
             // Render comments
             renderComments();
         };
+        /* ═══════════════════════════════════════════
+   BOOKSHELF — all prefixed "bs" so they never
+   clash with your existing site code
+═══════════════════════════════════════════ */
+
+/* ── DATA ── */
+const BS_LIBRARY = [
+  {
+    id:'mystery', name:'Mystery', icon:'🔍', tagline:'Secrets that demand answers',
+    subShelves:[
+      { id:'ms-dark', name:'Dark Secrets', desc:'Hidden truths', books:[
+        { id:'b01', title:'The Locked Room', description:'A body. No entry. No exit. No answers — yet.' },
+        { id:'b02', title:'Whisper Network', description:'Everyone in town knew. Nobody talked. Until now.' }
+      ]},
+      { id:'ms-twist', name:'Plot Twists', desc:'Nothing is as it seems', books:[
+        { id:'b03', title:'The Last Witness', description:'She saw everything. She remembers nothing.' }
+      ]}
+    ]
+  },
+  {
+    id:'illusion', name:'Illusion', icon:'🌀', tagline:'Reality bends here',
+    subShelves:[
+      { id:'il-mind', name:'Mind Games', desc:'Trust no one, not even yourself', books:[
+        { id:'b04', title:'Mirror Self', description:'The reflection started moving first.' },
+        { id:'b05', title:'Sleep Frequency', description:'Every night at 3am, someone else woke up in her body.' }
+      ]},
+      { id:'il-dream', name:'Dreamscapes', desc:'Between sleep and waking', books:[
+        { id:'b06', title:'The Infinite Staircase', description:'He climbed every night. He never reached the top.' }
+      ]}
+    ]
+  },
+  {
+    id:'reality', name:'Reality', icon:'🌍', tagline:'Truth stranger than fiction',
+    subShelves:[
+      { id:'re-life', name:'Slice of Life', desc:'Ordinary made extraordinary', books:[
+        { id:'b07', title:'The 6:02 Train', description:'Same seat. Same stranger. 300 mornings. Then she wasn\'t there.' },
+        { id:'b08', title:'Corner Shop Chronicles', description:'The old man behind the counter knew every secret in the neighbourhood.' }
+      ]}
+    ]
+  },
+  {
+    id:'royalty', name:'Royalty', icon:'👑', tagline:'Power, duty, and crowns',
+    subShelves:[
+      { id:'ry-throne', name:'Throne Wars', desc:'Blood and crowns', books:[
+        { id:'b09', title:'The Youngest Heir', description:'Fourth in line. First to find the truth.' },
+        { id:'b10', title:'Queen Without a Kingdom', description:'They took her throne. They forgot she was still a weapon.' }
+      ]},
+      { id:'ry-exile', name:'Royal Exile', desc:'Power lost and reclaimed', books:[
+        { id:'b11', title:'The Paper Crown', description:'Exiled at dawn. Back by midnight. With an army.' }
+      ]}
+    ]
+  },
+  {
+    id:'romance', name:'Romance', icon:'💕', tagline:'Hearts that find each other',
+    subShelves:[
+      { id:'ro-modern', name:'Modern Love', desc:'Love in the digital age', books:[
+        { id:'b12', title:'Signal & Noise', description:'They matched online. They hate each other in the office. Their colleague ships it.' },
+        { id:'b13', title:'The Last Read Receipt', description:'She never replied. He never deleted the thread. Three years later, a new message arrives.' }
+      ]},
+      { id:'ro-second', name:'Second Chances', desc:'Love found again', books:[
+        { id:'b14', title:'The Same Station', description:'He missed his train. She missed hers. Ten years ago they made the same mistake — together.' }
+      ]}
+    ]
+  }
+];
+
+/* ── STATE ── */
+let bsCurrentGenre    = null;
+let bsCurrentSub      = null;
+let bsCurrentBook     = null;
+let bsRating          = 0;
+
+/* ── OVERLAY OPEN / CLOSE ── */
+function bsOpenOverlay() {
+  document.getElementById('bookshelf-overlay').classList.add('bs-open');
+  document.body.style.overflow = 'hidden';
+  bsShow('bs-entrance');
+  document.getElementById('bs-back-bar').style.display = 'none';
+}
+function bsCloseOverlay() {
+  document.getElementById('bookshelf-overlay').classList.remove('bs-open');
+  document.body.style.overflow = '';
+}
+
+/* ── VIEW SWITCHER ── */
+function bsShow(id) {
+  document.querySelectorAll('#bookshelf-overlay .bs-view')
+    .forEach(v => v.classList.remove('bs-active'));
+  document.getElementById(id).classList.add('bs-active');
+  document.getElementById('bookshelf-overlay').scrollTop = 0;
+}
+
+/* ── LOADING THEN NEXT VIEW ── */
+function bsLoad(nextFn, ms) {
+  bsShow('bs-loading');
+  // restart path animation
+  const line = document.querySelector('.bs-path-line');
+  line.style.animation = 'none';
+  void line.offsetWidth;
+  line.style.animation = 'bsDrawPath 1.8s ease forwards';
+  setTimeout(nextFn, ms || 2000);
+}
+
+/* ── ENTRANCE BOOK CLICK ── */
+document.getElementById('bs-big-book-btn').addEventListener('click', () => {
+  bsLoad(() => {
+    bsRenderLibrary();
+    bsShow('bs-library');
+    document.getElementById('bs-back-bar').style.display = 'flex';
+    document.getElementById('bs-bar-title').textContent = 'Book Shelves — Library';
+    document.getElementById('bs-back-btn').onclick = () => {
+      bsShow('bs-entrance');
+      document.getElementById('bs-back-bar').style.display = 'none';
+    };
+  });
+});
+
+/* ── RENDER GENRE SHELVES ── */
+function bsRenderLibrary() {
+  const room = document.getElementById('bs-genre-room');
+  room.innerHTML = '';
+  BS_LIBRARY.forEach(genre => {
+    const el = document.createElement('div');
+    el.className = 'bs-genre-shelf';
+    const books = Array.from({length:8},(_,i)=>
+      `<div class="bs-mini-book" style="height:${50+Math.sin(i)*16}px"></div>`
+    ).join('');
+    el.innerHTML = `
+      <div class="bs-shelf-body">${books}</div>
+      <div class="bs-shelf-plank"></div>
+      <div class="bs-shelf-label"><h3>${genre.icon} ${genre.name}</h3><p>${genre.tagline}</p></div>`;
+    el.addEventListener('click', () => bsOpenGenre(genre.id));
+    room.appendChild(el);
+  });
+}
+
+/* ── OPEN GENRE ── */
+function bsOpenGenre(genreId) {
+  bsCurrentGenre = genreId;
+  bsLoad(() => {
+    bsRenderSubShelves(genreId);
+    bsShow('bs-subshelves');
+    const g = BS_LIBRARY.find(x=>x.id===genreId);
+    document.getElementById('bs-bar-title').textContent = g.name;
+    document.getElementById('bs-back-btn').onclick = () => { bsShow('bs-library'); document.getElementById('bs-bar-title').textContent='Book Shelves — Library'; };
+  }, 1600);
+}
+
+function bsRenderSubShelves(genreId) {
+  const genre = BS_LIBRARY.find(g=>g.id===genreId);
+  document.getElementById('bs-sub-title').textContent = `${genre.icon} ${genre.name}`;
+  document.getElementById('bs-breadcrumb-sub').innerHTML =
+    `<span onclick="bsShow('bs-library')">Library</span> › <span>${genre.name}</span>`;
+  const grid = document.getElementById('bs-sub-grid');
+  grid.innerHTML = '';
+  genre.subShelves.forEach(sub => {
+    const el = document.createElement('div');
+    el.className = 'bs-sub-card';
+    const books = Array.from({length:6},(_,i)=>
+      `<div style="width:15px;height:${44+Math.cos(i)*12}px;background:linear-gradient(to right,hsl(${i*40},70%,45%),hsl(${i*40+20},60%,35%));border-radius:1px 2px 2px 1px;"></div>`
+    ).join('');
+    el.innerHTML = `
+      <div class="bs-sub-body">${books}</div>
+      <div class="bs-sub-plank"></div>
+      <div class="bs-sub-label">${sub.name}</div>
+      <div class="bs-sub-count">${sub.books.length} ${sub.books.length===1?'story':'stories'}</div>`;
+    el.addEventListener('click', () => bsOpenSub(genreId, sub.id));
+    grid.appendChild(el);
+  });
+}
+
+/* ── OPEN SUB-SHELF ── */
+function bsOpenSub(genreId, subId) {
+  bsCurrentSub = subId;
+  const genre = BS_LIBRARY.find(g=>g.id===genreId);
+  const sub   = genre.subShelves.find(s=>s.id===subId);
+  document.getElementById('bs-books-title').textContent = sub.name;
+  document.getElementById('bs-breadcrumb-books').innerHTML =
+    `<span onclick="bsShow('bs-library')">Library</span> › 
+     <span onclick="bsShow('bs-subshelves')">${genre.name}</span> › 
+     <span>${sub.name}</span>`;
+  document.getElementById('bs-bar-title').textContent = sub.name;
+  document.getElementById('bs-back-btn').onclick = () => bsShow('bs-subshelves');
+
+  const roll = document.getElementById('bs-books-roll');
+  roll.innerHTML = '';
+  if(!sub.books.length){
+    roll.innerHTML='<p class="bs-empty-msg">No stories on this shelf yet — check back soon!</p>';
+  } else {
+    sub.books.forEach(book => {
+      const sp = document.createElement('div');
+      sp.className = 'bs-spine';
+      sp.style.minHeight = (110 + (book.title.length % 5)*14) + 'px';
+      sp.innerHTML = `<span class="bs-spine-title">${book.title}</span>`;
+      sp.addEventListener('click', () => bsOpenStory(genreId, subId, book.id));
+      roll.appendChild(sp);
+    });
+  }
+  bsShow('bs-books');
+}
+
+/* ── OPEN STORY ── */
+function bsOpenStory(genreId, subId, bookId) {
+  bsCurrentBook = bookId;
+  const genre = BS_LIBRARY.find(g=>g.id===genreId);
+  const sub   = genre.subShelves.find(s=>s.id===subId);
+  const book  = sub.books.find(b=>b.id===bookId);
+
+  document.getElementById('bs-bar-title').textContent = book.title;
+  document.getElementById('bs-back-btn').onclick = () => bsShow('bs-books');
+  document.getElementById('bs-story-genre-tag').textContent = `${genre.icon} ${genre.name} · ${sub.name}`;
+  document.getElementById('bs-story-title').textContent = book.title;
+  document.getElementById('bs-story-description').textContent = book.description;
+
+  const ft = document.getElementById('bs-story-full-text');
+  if(book.fullStory){
+    ft.innerHTML = book.fullStory.map(p=>`<p>${p}</p>`).join('');
+  } else {
+    ft.innerHTML = `<div class="bs-placeholder">
+      <div class="bs-placeholder-icon">✍️</div>
+      <p>The full story will appear here once the author adds it.</p>
+      <p style="margin-top:6px;font-size:0.78rem;">Coming soon!</p>
+    </div>`;
+  }
+
+  bsResetRating();
+  document.getElementById('bs-comments-list').innerHTML='<p class="bs-no-comments">No comments yet — be the first!</p>';
+  document.getElementById('bs-comment-input').value='';
+  document.getElementById('bs-coin-toast').style.display='none';
+  bsShow('bs-story');
+}
+
+/* ── RATING ── */
+function bsResetRating(){
+  bsRating = 0;
+  document.querySelectorAll('.bs-star').forEach(s=>s.classList.remove('bs-lit'));
+  document.getElementById('bs-rating-msg').textContent='Select a star to rate';
+}
+document.querySelectorAll('.bs-star').forEach(star=>{
+  star.addEventListener('click',()=>{
+    bsRating = parseInt(star.getAttribute('data-v'));
+    document.querySelectorAll('.bs-star').forEach(s=>{
+      s.classList.toggle('bs-lit', parseInt(s.getAttribute('data-v'))<=bsRating);
+    });
+    const msgs=['','Not for me','It was okay','Enjoyed it','Really good!','Absolutely brilliant! ⭐'];
+    document.getElementById('bs-rating-msg').textContent=msgs[bsRating];
+  });
+});
+
+/* ── COMMENTS ── */
+function bsSubmitComment(){
+  const inp = document.getElementById('bs-comment-input');
+  const txt = inp.value.trim();
+  if(!txt) return;
+  const list = document.getElementById('bs-comments-list');
+  const noMsg = list.querySelector('.bs-no-comments');
+  if(noMsg) noMsg.remove();
+  const item = document.createElement('div');
+  item.className = 'bs-comment-item';
+  item.innerHTML = `<div class="bs-comment-author">Anonymous Reader</div>
+    <div class="bs-comment-text">${txt.replace(/</g,'&lt;')}</div>`;
+  list.appendChild(item);
+  inp.value='';
+}
+
+/* ── COIN SUPPORT ── */
+function bsSupportCoin(amount){
+  const t = document.getElementById('bs-coin-toast');
+  t.textContent=`🪙 You sent ${amount} coin${amount>1?'s':''}! Thank you for supporting this story! ✨`;
+  t.style.display='block';
+  setTimeout(()=>{ t.style.display='none'; },4000);
+}
+
+/* ── FLOATING BOOK SCROLL BEHAVIOUR ── */
+(function(){
+  var el = document.getElementById('floating-book-trigger');
+  var lastY = 0;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y > 60 && y >= lastY){ el.style.top = '70px'; }
+    else if(y < lastY){ el.style.top = '-280px'; }
+    lastY = y;
+  }, { passive: true });
+})();
+        
     </script>
 
     <!-- ══ BOOKSHELF OVERLAY ══════════════════════════ -->
