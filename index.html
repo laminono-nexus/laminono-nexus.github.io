@@ -18289,5 +18289,17 @@ If a system could only write your life after you resist it—learning from every
 </div>
 </div>
 </div>
+    <script>
+(function(){
+  var el = document.getElementById('floating-book-trigger');
+  var lastY = 0;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y > 60 && y >= lastY){ el.style.top = '70px'; }
+    else if(y < lastY){ el.style.top = '-280px'; }
+    lastY = y;
+  }, { passive: true });
+})();
+    </script>
 </body>
 </html>
