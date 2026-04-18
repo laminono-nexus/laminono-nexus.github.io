@@ -18682,6 +18682,136 @@ If a system could only write your life after you resist it—learning from every
             renderComments();
         };
     </script>
+
+    <!-- ══ BOOKSHELF OVERLAY ══════════════════════════ -->
+<div id="bookshelf-overlay">
+
+  <!-- Close X button -->
+  <button class="bs-close" onclick="bsCloseOverlay()">✕</button>
+
+  <!-- Back bar (shows when inside the library) -->
+  <div class="bs-back-bar" id="bs-back-bar" style="display:none;">
+    <button class="bs-back-btn" id="bs-back-btn">← Back</button>
+    <span class="bs-bar-title" id="bs-bar-title">Book Shelves</span>
+  </div>
+
+  <!-- ── VIEW 1: ENTRANCE (the big 3D book) ── -->
+  <div class="bs-view bs-active" id="bs-entrance">
+    <p class="bs-entrance-title">Book Shelves</p>
+    <p class="bs-entrance-sub">Unlimited stories, waiting for you. Tap the book to enter.</p>
+    <div class="bs-big-book" id="bs-big-book-btn">
+      <div class="bs-book-rope"></div>
+      <div class="bs-book-cover">
+        <div class="bs-book-icon">📚</div>
+        <div class="bs-book-label">BOOK SHELVES<br>
+          <span class="bs-book-sub">Unlimited Books</span>
+        </div>
+      </div>
+    </div>
+    <p class="bs-open-cta">✦ Tap to open the library ✦</p>
+  </div>
+
+  <!-- ── VIEW 2: LOADING ANIMATION ── -->
+  <div class="bs-view" id="bs-loading">
+    <div class="bs-path-wrap">
+      <svg viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="bs-path-line" d="M20 140 Q60 20 120 80 Q180 140 220 20"
+          stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <circle cx="220" cy="20" r="5" fill="#E50914"/>
+      </svg>
+    </div>
+    <div class="bs-loading-text">Opening the library<span class="bs-loading-dots"></span></div>
+  </div>
+
+  <!-- ── VIEW 3: GENRE SHELVES (main library) ── -->
+  <div class="bs-view" id="bs-library">
+    <div class="bs-library-heading">
+      <h2>📚 The Library</h2>
+      <p>Choose a shelf to explore</p>
+    </div>
+    <div class="bs-shelf-room" id="bs-genre-room">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- ── VIEW 4: SUB-SHELVES ── -->
+  <div class="bs-view" id="bs-subshelves">
+    <div class="bs-breadcrumb" id="bs-breadcrumb-sub"></div>
+    <div class="bs-sub-heading">
+      <h2 id="bs-sub-title">Genre</h2>
+    </div>
+    <div class="bs-sub-grid" id="bs-sub-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- ── VIEW 5: BOOK SPINES ── -->
+  <div class="bs-view" id="bs-books">
+    <div class="bs-breadcrumb" id="bs-breadcrumb-books"></div>
+    <h2 id="bs-books-title" style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#f5c6a0;margin-bottom:24px;"></h2>
+    <div class="bs-books-roll" id="bs-books-roll">
+      <!-- Filled by JS -->
+    </div>
+    <div class="bs-books-plank"></div>
+  </div>
+
+  <!-- ── VIEW 6: STORY ── -->
+  <div class="bs-view" id="bs-story">
+    <div class="bs-story-wrap">
+      <span class="bs-genre-tag" id="bs-story-genre-tag"></span>
+      <h1 class="bs-story-title" id="bs-story-title"></h1>
+
+      <div class="bs-desc-box">
+        <p id="bs-story-description"></p>
+        <div class="bs-read-cta">👇 Tap below to read the full story</div>
+      </div>
+
+      <hr class="bs-divider">
+
+      <div class="bs-full-text" id="bs-story-full-text"></div>
+
+      <hr class="bs-divider">
+
+      <!-- Rating -->
+      <div class="bs-rating-section">
+        <h3>⭐ Rate this Story</h3>
+        <div class="bs-stars">
+          <span class="bs-star" data-v="1">★</span>
+          <span class="bs-star" data-v="2">★</span>
+          <span class="bs-star" data-v="3">★</span>
+          <span class="bs-star" data-v="4">★</span>
+          <span class="bs-star" data-v="5">★</span>
+        </div>
+        <p class="bs-rating-msg" id="bs-rating-msg">Select a star to rate</p>
+      </div>
+
+      <!-- Comments -->
+      <div class="bs-comments-section">
+        <h3>💬 Comments</h3>
+        <div id="bs-comments-list">
+          <p class="bs-no-comments">No comments yet — be the first!</p>
+        </div>
+        <textarea class="bs-comment-input" id="bs-comment-input" placeholder="Share your thoughts..."></textarea>
+        <button class="bs-comment-submit" onclick="bsSubmitComment()">Post Comment</button>
+      </div>
+
+      <!-- Coin Support -->
+      <div class="bs-coin-section">
+        <h3>🪙 Support with Coins</h3>
+        <div class="bs-coin-btns">
+          <button class="bs-coin-btn" onclick="bsSupportCoin(1)">🪙 1 Coin</button>
+          <button class="bs-coin-btn" onclick="bsSupportCoin(5)">🪙 5 Coins</button>
+          <button class="bs-coin-btn" onclick="bsSupportCoin(10)">🪙 10 Coins</button>
+          <button class="bs-coin-btn" onclick="bsSupportCoin(50)">🪙 50 Coins</button>
+        </div>
+        <div class="bs-coin-toast" id="bs-coin-toast"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- end #bookshelf-overlay -->
+    
     <!-- All Stories Page (Hidden by default) -->
     <div id="allStoriesPage" class="hidden">
         <div class="all-stories-header">
