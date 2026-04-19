@@ -7,816 +7,411 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-
   <style>
-    /* ─── RESET & TOKENS ──────────────────────────────── */
     :root {
-      --primary: #E50914;
-      --primary-dark: #B20710;
-      --bg-dark: #141414;
-      --bg-darker: #0A0A0A;
-      --bg-card: #1F1F1F;
-      --bg-hover: #2A2A2A;
-      --text-primary: #FFFFFF;
-      --text-secondary: #B3B3B3;
-      --transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-
-      /* Wood palette */
-      --wood-1: #8B4513;
-      --wood-2: #A0522D;
-      --wood-3: #6B3A2A;
-      --wood-4: #C68642;
-      --wood-5: #7B5B3A;
+      --primary:#E50914; --primary-dark:#B20710;
+      --bg-dark:#141414; --bg-darker:#0A0A0A;
+      --bg-card:#1F1F1F; --bg-hover:#2A2A2A;
+      --text-primary:#FFFFFF; --text-secondary:#B3B3B3;
+      --gold:#f5c6a0; --gold-dim:rgba(245,198,160,0.55);
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-primary);
-      overflow-x: hidden;
-      min-height: 100vh;
+      font-family:'Inter',sans-serif;
+      background:var(--bg-dark);
+      color:var(--text-primary);
+      overflow-x:hidden;
+      min-height:100vh;
+      -webkit-tap-highlight-color:transparent;
     }
 
-    ::-webkit-scrollbar { width:8px; }
-    ::-webkit-scrollbar-track { background: var(--bg-darker); }
-    ::-webkit-scrollbar-thumb { background:#333; border-radius:4px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:var(--bg-darker)}
+    ::-webkit-scrollbar-thumb{background:#333;border-radius:3px}
+    ::-webkit-scrollbar-thumb:hover{background:var(--primary)}
 
-    /* ─── BACK LINK ───────────────────────────────────── */
+    /* TOP BAR */
     .back-bar {
-      position: fixed;
-      top:0; left:0; right:0;
-      padding: 14px 4%;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(16px);
-      z-index: 9000;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position:fixed; top:0; left:0; right:0;
+      padding:14px 4%;
+      background:rgba(10,10,10,0.96);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      z-index:9000;
+      display:flex; align-items:center; gap:12px;
+      border-bottom:1px solid rgba(255,255,255,0.07);
     }
     .back-bar a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.3s;
+      color:var(--text-secondary); text-decoration:none;
+      font-size:0.88rem; font-weight:500;
+      display:flex; align-items:center; gap:6px;
+      transition:color 0.3s; white-space:nowrap;
     }
-    .back-bar a:hover { color: var(--primary); }
+    .back-bar a:hover{color:var(--primary)}
     .back-bar .page-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--text-primary);
-      margin-left: auto;
-      margin-right: auto;
-      letter-spacing: 0.5px;
+      font-family:'Playfair Display',serif;
+      font-size:1rem; color:var(--text-primary);
+      margin:0 auto; letter-spacing:0.5px;
     }
 
-    /* ─── SCENE WRAPPER ───────────────────────────────── */
-    .scene {
-      padding-top: 56px; /* height of back-bar */
-      min-height: 100vh;
+    /* SCENE */
+    .scene{padding-top:52px;min-height:100vh}
+
+    /* VIEWS */
+    .view{display:none}
+    .view.active{display:block;animation:fadeUp 0.4s ease}
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(16px)}
+      to{opacity:1;transform:translateY(0)}
     }
 
-    /* ─── VIEWS (screens stack, shown one at a time) ─── */
-    .view { display:none; }
-    .view.active { display:block; animation: fadeIn 0.45s ease; }
-    @keyframes fadeIn { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
-
-    /* ─── LANDING / ENTRANCE ──────────────────────────── */
+    /* ENTRANCE */
     #view-entrance {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: calc(100vh - 56px);
-      background: radial-gradient(ellipse at 50% 60%, #1a0d05 0%, #0A0A0A 70%);
-      text-align: center;
-      padding: 40px 4%;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      min-height:calc(100vh - 52px);
+      background:radial-gradient(ellipse at 50% 60%,#1a0d05,#0A0A0A 70%);
+      text-align:center; padding:40px 6%;
     }
-    #view-entrance.active { display:flex; }
+    #view-entrance.active{display:flex}
 
     .entrance-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: var(--text-primary);
-      margin-bottom: 12px;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,5vw,3.2rem);
+      color:var(--text-primary); margin-bottom:10px; line-height:1.2;
     }
     .entrance-sub {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 60px;
-      max-width: 500px;
+      color:var(--text-secondary);
+      font-size:clamp(0.88rem,2.5vw,1rem);
+      margin-bottom:50px; max-width:460px; line-height:1.6;
     }
 
-    /* Big 3-D book */
-    .big-book {
-      width: 180px;
-      height: 240px;
-      position: relative;
-      transform-style: preserve-3d;
-      perspective: 900px;
-      cursor: pointer;
-      transition: transform 0.5s ease;
-      margin-bottom: 40px;
-      animation: float 3s ease-in-out infinite;
+    /* BIG BOOK — KEY FIX: <button> so Android tap always fires */
+    .big-book-btn {
+      width:clamp(140px,42vw,190px);
+      height:clamp(185px,56vw,250px);
+      position:relative; cursor:pointer;
+      margin-bottom:36px; margin-top:24px;
+      background:none; border:none; padding:0;
+      animation:floatBook 3s ease-in-out infinite;
+      touch-action:manipulation;
     }
-    @keyframes float {
+    .big-book-btn:hover,.big-book-btn:focus{
+      animation:none;
+      transform:rotateY(-28deg) scale(1.05);
+      outline:none;
+    }
+    @keyframes floatBook{
       0%,100%{transform:translateY(0) rotateY(-15deg)}
       50%{transform:translateY(-12px) rotateY(-15deg)}
     }
-    .big-book:hover { animation: none; transform: rotateY(-25deg) scale(1.06); }
-
-    .book-cover, .book-spine, .book-back, .book-top, .book-bottom {
-      position:absolute;
-      background: linear-gradient(135deg, #8B1a1a 0%, #5a0f0f 100%);
-    }
-    .book-cover {
-      width:180px; height:240px;
-      top:0; left:0;
-      border-radius: 2px 8px 8px 2px;
-      background: linear-gradient(145deg, #8B1a1a, #4a0a0a);
-      box-shadow: 4px 6px 24px rgba(0,0,0,0.6);
-      display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
-      padding:20px 14px;
-      border: 1px solid rgba(229,9,20,0.4);
-    }
-    .book-cover-icon { font-size:2.8rem; margin-bottom:12px; }
-    .book-cover-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.85rem;
-      color: #f5c6a0;
-      text-align:center;
-      line-height:1.4;
-      letter-spacing: 0.5px;
-    }
-    .book-cover-sub {
-      font-size:0.65rem;
-      color: rgba(245,198,160,0.6);
-      margin-top:6px;
-      text-transform:uppercase;
-      letter-spacing:1.5px;
-    }
-    /* Rope decoration */
     .book-rope {
-      position:absolute;
-      top: -20px;
-      left:50%;
+      position:absolute; top:-22px; left:50%;
       transform:translateX(-50%);
-      width:3px;
-      height:26px;
-      background: repeating-linear-gradient(
-        to bottom,
-        #c8a96e 0px, #a07040 4px,
-        #c8a96e 8px
-      );
+      width:3px; height:28px;
+      background:repeating-linear-gradient(to bottom,#c8a96e 0,#a07040 4px,#c8a96e 8px);
       border-radius:2px;
     }
     .book-rope::before {
-      content:'';
-      position:absolute;
-      top:-8px; left:-6px;
-      width:15px; height:10px;
-      background: #c8a96e;
+      content:''; position:absolute;
+      top:-8px; left:-6px; width:15px; height:10px;
+      background:#c8a96e;
       border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
     }
-
+    .book-cover {
+      position:absolute; inset:0;
+      border-radius:2px 10px 10px 2px;
+      background:linear-gradient(145deg,#8B1a1a,#4a0a0a);
+      box-shadow:6px 8px 28px rgba(0,0,0,0.7),inset -2px 0 8px rgba(0,0,0,0.3);
+      border:1px solid rgba(229,9,20,0.4);
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding:18px 12px;
+    }
+    .book-cover-icon{font-size:clamp(2rem,8vw,2.8rem);margin-bottom:10px}
+    .book-cover-title {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(0.7rem,2.5vw,0.88rem);
+      color:var(--gold); text-align:center; line-height:1.4; letter-spacing:0.5px;
+    }
+    .book-cover-sub {
+      font-size:clamp(0.55rem,1.8vw,0.65rem);
+      color:var(--gold-dim); margin-top:6px;
+      text-transform:uppercase; letter-spacing:1.5px;
+    }
     .open-cta {
-      font-size:0.9rem;
-      color: var(--text-secondary);
-      margin-top:16px;
-      animation: blink 2s step-end infinite;
+      font-size:0.88rem; color:var(--text-secondary);
+      margin-top:14px; animation:blink 2s step-end infinite;
     }
-    @keyframes blink { 50%{opacity:0.3} }
+    @keyframes blink{50%{opacity:0.25}}
 
-    /* ─── LOADING ANIMATION ──────────────────────────── */
+    /* LOADING */
     #view-loading {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      min-height: calc(100vh - 56px);
-      gap:24px;
-      background: radial-gradient(ellipse at 50% 50%, #1a0d05 0%, #0A0A0A 80%);
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      min-height:calc(100vh - 52px); gap:22px;
+      background:radial-gradient(ellipse at 50% 50%,#1a0d05,#0A0A0A 80%);
     }
-    #view-loading.active { display:flex; }
-
-    .path-anim {
-      position:relative;
-      width:260px; height:180px;
-    }
-    .path-anim svg { width:100%; height:100%; }
-    .path-line {
-      stroke-dasharray:600;
-      stroke-dashoffset:600;
-      animation: drawPath 1.8s ease forwards;
-    }
-    @keyframes drawPath { to{stroke-dashoffset:0} }
+    #view-loading.active{display:flex}
+    .path-anim{width:min(260px,85vw);aspect-ratio:260/180}
+    .path-anim svg{width:100%;height:100%}
+    .path-line{stroke-dasharray:600;stroke-dashoffset:600;animation:drawPath 1.8s ease forwards}
+    @keyframes drawPath{to{stroke-dashoffset:0}}
     .loading-text {
       font-family:'Playfair Display',serif;
-      font-size:1.4rem;
-      color: #c8a96e;
-      letter-spacing:2px;
+      font-size:clamp(1rem,4vw,1.4rem);
+      color:#c8a96e; letter-spacing:2px; text-align:center;
     }
-    .loading-dots::after {
-      content:'';
-      animation: dots 1.5s steps(4,end) infinite;
-    }
-    @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}100%{content:''}}
+    .loading-dots::after{content:'';animation:dots 1.5s steps(4,end) infinite}
+    @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
 
-    /* ─── GENRE SHELVES (Library Room) ─────────────────── */
-    #view-library {
-      min-height: calc(100vh - 56px);
-      background:
-        linear-gradient(to bottom, #0e0804 0%, #1a0f07 100%);
-      padding: 50px 4% 80px;
-    }
-    #view-library.active { display:block; }
+    /* LIBRARY */
+    #view-library{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:linear-gradient(to bottom,#0e0804,#1a0f07)}
+    #view-library.active{display:block}
+    .library-heading{text-align:center;margin-bottom:40px}
+    .library-heading h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--gold)}
+    .library-heading p{color:var(--text-secondary);margin-top:8px;font-size:clamp(0.82rem,2.5vw,0.95rem)}
 
-    .library-heading {
-      text-align:center;
-      margin-bottom: 48px;
-    }
-    .library-heading h2 {
-      font-family:'Playfair Display',serif;
-      font-size: clamp(1.8rem,4vw,2.8rem);
-      color: #f5c6a0;
-    }
-    .library-heading p {
-      color: var(--text-secondary);
-      margin-top:8px;
-      font-size:0.95rem;
-    }
-
-    /* Two-row shelf room layout */
     .shelf-room {
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px 24px;
-      max-width:1100px;
-      margin: 0 auto;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:28px 20px; max-width:1100px; margin:0 auto;
     }
-
-    /* Individual genre shelf unit */
-    .genre-shelf {
-      cursor:pointer;
-      position:relative;
-      transition: transform 0.35s ease, filter 0.35s ease;
-    }
-    .genre-shelf:hover { transform: translateY(-8px); filter: brightness(1.15); }
-
-    .shelf-unit {
-      perspective:800px;
-    }
-    /* Shelf body */
+    .genre-shelf{cursor:pointer;transition:transform 0.3s,filter 0.3s;touch-action:manipulation}
+    .genre-shelf:hover,.genre-shelf:active{transform:translateY(-8px);filter:brightness(1.18)}
+    .shelf-unit{perspective:800px}
     .shelf-body {
-      position:relative;
-      border-radius:4px 4px 0 0;
-      padding: 18px 10px 10px;
-      min-height:130px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      gap:5px;
-      overflow:hidden;
+      border-radius:4px 4px 0 0; padding:16px 10px 10px; min-height:120px;
+      display:flex; align-items:flex-end; justify-content:center;
+      gap:5px; overflow:hidden; position:relative;
     }
-    /* Different wood colours per shelf */
-    .genre-shelf:nth-child(1) .shelf-body { background: linear-gradient(160deg,#6b3a1f,#3d1f0d); border:1px solid #7a4020; }
-    .genre-shelf:nth-child(2) .shelf-body { background: linear-gradient(160deg,#7a5c2e,#4a3318); border:1px solid #8a6c38; }
-    .genre-shelf:nth-child(3) .shelf-body { background: linear-gradient(160deg,#5a2d14,#2e160a); border:1px solid #6a3520; }
-    .genre-shelf:nth-child(4) .shelf-body { background: linear-gradient(160deg,#8a6030,#513818); border:1px solid #9a7040; }
-    .genre-shelf:nth-child(5) .shelf-body { background: linear-gradient(160deg,#4a3020,#261810); border:1px solid #5a3e28; }
+    .shelf-body::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.05),transparent);pointer-events:none}
 
-    /* Mini decorative books on shelf preview */
-    .mini-book {
-      width: 18px;
-      border-radius:1px 2px 2px 1px;
-      flex-shrink:0;
-    }
-    .genre-shelf:nth-child(1) .mini-book { background:linear-gradient(to right,#e74c3c,#c0392b); }
-    .genre-shelf:nth-child(2) .mini-book { background:linear-gradient(to right,#f39c12,#e67e22); }
-    .genre-shelf:nth-child(3) .mini-book { background:linear-gradient(to right,#9b59b6,#8e44ad); }
-    .genre-shelf:nth-child(4) .mini-book { background:linear-gradient(to right,#2ecc71,#27ae60); }
-    .genre-shelf:nth-child(5) .mini-book { background:linear-gradient(to right,#e91e8c,#c2185b); }
+    .genre-shelf:nth-child(1) .shelf-body{background:linear-gradient(160deg,#6b3a1f,#3d1f0d);border:1px solid #7a4020}
+    .genre-shelf:nth-child(2) .shelf-body{background:linear-gradient(160deg,#7a5c2e,#4a3318);border:1px solid #8a6c38}
+    .genre-shelf:nth-child(3) .shelf-body{background:linear-gradient(160deg,#5a2d14,#2e160a);border:1px solid #6a3520}
+    .genre-shelf:nth-child(4) .shelf-body{background:linear-gradient(160deg,#8a6030,#513818);border:1px solid #9a7040}
+    .genre-shelf:nth-child(5) .shelf-body{background:linear-gradient(160deg,#4a3020,#261810);border:1px solid #5a3e28}
 
-    /* Shelf plank (bottom edge) */
-    .shelf-plank {
-      height:14px;
-      border-radius:0 0 4px 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-    .genre-shelf:nth-child(1) .shelf-plank { background:linear-gradient(to bottom,#8B4513,#5a2a0a); }
-    .genre-shelf:nth-child(2) .shelf-plank { background:linear-gradient(to bottom,#A0522D,#6a3418); }
-    .genre-shelf:nth-child(3) .shelf-plank { background:linear-gradient(to bottom,#7a3520,#4a1a0a); }
-    .genre-shelf:nth-child(4) .shelf-plank { background:linear-gradient(to bottom,#C68642,#8a5620); }
-    .genre-shelf:nth-child(5) .shelf-plank { background:linear-gradient(to bottom,#5a3828,#341e10); }
+    .mini-book{width:16px;border-radius:1px 2px 2px 1px;flex-shrink:0}
+    .genre-shelf:nth-child(1) .mini-book{background:linear-gradient(to right,#e74c3c,#c0392b)}
+    .genre-shelf:nth-child(2) .mini-book{background:linear-gradient(to right,#f39c12,#e67e22)}
+    .genre-shelf:nth-child(3) .mini-book{background:linear-gradient(to right,#9b59b6,#8e44ad)}
+    .genre-shelf:nth-child(4) .mini-book{background:linear-gradient(to right,#2ecc71,#27ae60)}
+    .genre-shelf:nth-child(5) .mini-book{background:linear-gradient(to right,#e91e8c,#c2185b)}
 
-    .shelf-label {
-      text-align:center;
-      margin-top:14px;
-    }
-    .shelf-label h3 {
-      font-family:'Playfair Display',serif;
-      font-size:1.1rem;
-      color:#f5c6a0;
-    }
-    .shelf-label p {
-      font-size:0.75rem;
-      color: var(--text-secondary);
-      margin-top:3px;
-    }
+    .shelf-plank{height:13px;border-radius:0 0 4px 4px;box-shadow:0 4px 12px rgba(0,0,0,0.5)}
+    .genre-shelf:nth-child(1) .shelf-plank{background:linear-gradient(to bottom,#8B4513,#5a2a0a)}
+    .genre-shelf:nth-child(2) .shelf-plank{background:linear-gradient(to bottom,#A0522D,#6a3418)}
+    .genre-shelf:nth-child(3) .shelf-plank{background:linear-gradient(to bottom,#7a3520,#4a1a0a)}
+    .genre-shelf:nth-child(4) .shelf-plank{background:linear-gradient(to bottom,#C68642,#8a5620)}
+    .genre-shelf:nth-child(5) .shelf-plank{background:linear-gradient(to bottom,#5a3828,#341e10)}
 
-    /* ─── SUB-SHELVES (topic shelves inside a genre) ─── */
-    #view-subshelves {
-      min-height: calc(100vh - 56px);
-      padding: 50px 4% 80px;
-      background: linear-gradient(to bottom,#0e0804,#1a0f07);
-    }
-    #view-subshelves.active { display:block; }
+    .shelf-label{text-align:center;margin-top:12px}
+    .shelf-label h3{font-family:'Playfair Display',serif;font-size:clamp(0.9rem,3vw,1.1rem);color:var(--gold)}
+    .shelf-label p{font-size:0.72rem;color:var(--text-secondary);margin-top:3px}
 
-    .sub-heading {
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:36px;
-    }
-    .sub-heading h2 {
-      font-family:'Playfair Display',serif;
-      font-size: clamp(1.6rem,3.5vw,2.4rem);
-      color:#f5c6a0;
-    }
-    .breadcrumb {
-      font-size:0.82rem;
-      color: var(--text-secondary);
-      margin-bottom:8px;
-      display:flex; align-items:center; gap:6px;
-    }
-    .breadcrumb span { cursor:pointer; }
-    .breadcrumb span:hover { color: var(--primary); }
+    /* SUB-SHELVES */
+    #view-subshelves{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:linear-gradient(to bottom,#0e0804,#1a0f07)}
+    #view-subshelves.active{display:block}
+    .sub-heading{margin-bottom:30px}
+    .sub-heading h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,4vw,2.2rem);color:var(--gold)}
+    .breadcrumb{font-size:0.78rem;color:var(--text-secondary);margin-bottom:8px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+    .breadcrumb span{cursor:pointer}
+    .breadcrumb span:hover{color:var(--primary)}
 
     .sub-shelf-grid {
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap:24px;
-      max-width:1000px;
-      margin:0 auto;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:20px; max-width:960px; margin:0 auto;
     }
-
-    .sub-shelf-card {
-      cursor:pointer;
-      transition: transform 0.3s, filter 0.3s;
-    }
-    .sub-shelf-card:hover { transform:translateY(-6px); filter:brightness(1.15); }
-
+    .sub-shelf-card{cursor:pointer;transition:transform 0.3s,filter 0.3s;touch-action:manipulation}
+    .sub-shelf-card:hover,.sub-shelf-card:active{transform:translateY(-6px);filter:brightness(1.18)}
     .sub-shelf-body {
-      min-height:100px;
-      border-radius:4px 4px 0 0;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      gap:4px;
-      padding:14px 8px 8px;
-      position:relative;
-      overflow:hidden;
+      min-height:90px; border-radius:4px 4px 0 0;
+      display:flex; align-items:flex-end; justify-content:center;
+      gap:4px; padding:12px 8px 8px; overflow:hidden; position:relative;
     }
-    .sub-shelf-body::after {
-      content:'';
-      position:absolute;
-      top:0;right:0;bottom:0;left:0;
-      background:linear-gradient(to bottom,rgba(255,255,255,0.04),transparent);
-      pointer-events:none;
-    }
+    .sub-shelf-body::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.04),transparent);pointer-events:none}
 
-    /* Different wood tones for sub-shelves using CSS nth random-ish */
-    .sub-shelf-card:nth-child(odd)  .sub-shelf-body { background:linear-gradient(160deg,#6b3a1f,#3d1f0d); border:1px solid #7a4020; }
-    .sub-shelf-card:nth-child(even) .sub-shelf-body { background:linear-gradient(160deg,#7a5c2e,#4a3318); border:1px solid #8a6c38; }
-    .sub-shelf-card:nth-child(3n)   .sub-shelf-body { background:linear-gradient(160deg,#8a6030,#513818); border:1px solid #9a7040; }
-    .sub-shelf-card:nth-child(4n)   .sub-shelf-body { background:linear-gradient(160deg,#5a2d14,#2e160a); border:1px solid #6a3520; }
+    .sub-shelf-card:nth-child(odd)  .sub-shelf-body{background:linear-gradient(160deg,#6b3a1f,#3d1f0d);border:1px solid #7a4020}
+    .sub-shelf-card:nth-child(even) .sub-shelf-body{background:linear-gradient(160deg,#7a5c2e,#4a3318);border:1px solid #8a6c38}
+    .sub-shelf-card:nth-child(3n)   .sub-shelf-body{background:linear-gradient(160deg,#8a6030,#513818);border:1px solid #9a7040}
+    .sub-shelf-card:nth-child(4n)   .sub-shelf-body{background:linear-gradient(160deg,#5a2d14,#2e160a);border:1px solid #6a3520}
 
-    .sub-shelf-plank {
-      height:10px;
-      border-radius:0 0 4px 4px;
-    }
-    .sub-shelf-card:nth-child(odd)  .sub-shelf-plank { background:linear-gradient(to bottom,#8B4513,#5a2a0a); }
-    .sub-shelf-card:nth-child(even) .sub-shelf-plank { background:linear-gradient(to bottom,#A0522D,#6a3418); }
-    .sub-shelf-card:nth-child(3n)   .sub-shelf-plank { background:linear-gradient(to bottom,#C68642,#8a5620); }
-    .sub-shelf-card:nth-child(4n)   .sub-shelf-plank { background:linear-gradient(to bottom,#7a3520,#4a1a0a); }
+    .sub-shelf-plank{height:9px;border-radius:0 0 4px 4px}
+    .sub-shelf-card:nth-child(odd)  .sub-shelf-plank{background:linear-gradient(to bottom,#8B4513,#5a2a0a)}
+    .sub-shelf-card:nth-child(even) .sub-shelf-plank{background:linear-gradient(to bottom,#A0522D,#6a3418)}
+    .sub-shelf-card:nth-child(3n)   .sub-shelf-plank{background:linear-gradient(to bottom,#C68642,#8a5620)}
+    .sub-shelf-card:nth-child(4n)   .sub-shelf-plank{background:linear-gradient(to bottom,#7a3520,#4a1a0a)}
 
-    .sub-shelf-label {
-      text-align:center; margin-top:10px;
-      font-size:0.88rem; color:#f5c6a0;
-      font-weight:600;
-    }
-    .sub-shelf-count {
-      text-align:center;
-      font-size:0.72rem;
-      color:var(--text-secondary);
-      margin-top:2px;
-    }
+    .sub-shelf-label{text-align:center;margin-top:9px;font-size:0.85rem;color:var(--gold);font-weight:600}
+    .sub-shelf-count{text-align:center;font-size:0.7rem;color:var(--text-secondary);margin-top:2px}
 
-    /* ─── BOOK SPINES VIEW ────────────────────────────── */
-    #view-books {
-      min-height: calc(100vh - 56px);
-      padding: 50px 4% 80px;
-      background: linear-gradient(to bottom,#0e0804,#1a0f07);
-    }
-    #view-books.active { display:block; }
-
-    .books-shelf-container {
-      max-width:1000px;
-      margin:0 auto;
-    }
-
-    /* The long shelf roll */
+    /* BOOK SPINES */
+    #view-books{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:linear-gradient(to bottom,#0e0804,#1a0f07)}
+    #view-books.active{display:block}
+    .books-shelf-container{max-width:980px;margin:0 auto}
     .books-shelf-roll {
-      background: linear-gradient(160deg,#6b3a1f,#3d1f0d);
-      border:1px solid #7a4020;
-      border-radius:4px 4px 0 0;
-      padding:20px 16px 16px;
-      min-height:400px; /* grows as more books added */
-
-      /* Books sit side by side in rows that wrap */
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      align-items:flex-end;
+      background:linear-gradient(160deg,#6b3a1f,#3d1f0d);
+      border:1px solid #7a4020; border-radius:4px 4px 0 0;
+      padding:18px 14px 14px; min-height:360px;
+      display:flex; flex-wrap:wrap; gap:6px; align-items:flex-end;
     }
-
     .books-shelf-plank {
-      height:14px;
-      background:linear-gradient(to bottom,#8B4513,#5a2a0a);
-      border-radius:0 0 4px 4px;
-      margin-bottom:20px;
+      height:13px; background:linear-gradient(to bottom,#8B4513,#5a2a0a);
+      border-radius:0 0 4px 4px; margin-bottom:20px;
       box-shadow:0 6px 16px rgba(0,0,0,0.5);
     }
-
-    /* Individual book spine */
     .book-spine {
-      width: 36px;
-      min-height:120px;
-      border-radius:2px 3px 3px 2px;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      transition: transform 0.25s, box-shadow 0.25s;
+      width:clamp(28px,7vw,38px); min-height:120px;
+      border-radius:2px 3px 3px 2px; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      position:relative; transition:transform 0.25s,box-shadow 0.25s;
       box-shadow:2px 0 6px rgba(0,0,0,0.4);
-      flex-shrink:0;
+      flex-shrink:0; touch-action:manipulation;
     }
-    .book-spine:hover {
-      transform:translateY(-10px) scaleY(1.04);
-      box-shadow:4px 0 18px rgba(0,0,0,0.7);
-      z-index:5;
-    }
-    /* Spine title (rotated) */
+    .book-spine:hover,.book-spine:active{transform:translateY(-12px) scaleY(1.04);box-shadow:4px 0 20px rgba(0,0,0,0.7);z-index:5}
     .spine-title {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transform:rotate(180deg);
-      font-size: 0.65rem;
-      font-weight:600;
-      color:rgba(255,255,255,0.9);
-      text-align:center;
-      padding:6px 2px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-height:100px;
-      letter-spacing:0.5px;
+      writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg);
+      font-size:clamp(0.5rem,1.8vw,0.65rem); font-weight:600;
+      color:rgba(255,255,255,0.92); text-align:center; padding:5px 2px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      max-height:100px; letter-spacing:0.5px;
     }
+    /* Colours cycle — works for unlimited books */
+    .book-spine:nth-child(20n+1) {background:linear-gradient(to right,#e74c3c,#c0392b)}
+    .book-spine:nth-child(20n+2) {background:linear-gradient(to right,#3498db,#2980b9)}
+    .book-spine:nth-child(20n+3) {background:linear-gradient(to right,#2ecc71,#27ae60)}
+    .book-spine:nth-child(20n+4) {background:linear-gradient(to right,#f39c12,#e67e22)}
+    .book-spine:nth-child(20n+5) {background:linear-gradient(to right,#9b59b6,#8e44ad)}
+    .book-spine:nth-child(20n+6) {background:linear-gradient(to right,#1abc9c,#16a085)}
+    .book-spine:nth-child(20n+7) {background:linear-gradient(to right,#e91e8c,#c2185b)}
+    .book-spine:nth-child(20n+8) {background:linear-gradient(to right,#ff5722,#e64a19)}
+    .book-spine:nth-child(20n+9) {background:linear-gradient(to right,#607d8b,#455a64)}
+    .book-spine:nth-child(20n+10){background:linear-gradient(to right,#795548,#5d4037)}
+    .book-spine:nth-child(20n+11){background:linear-gradient(to right,#c0392b,#96281b)}
+    .book-spine:nth-child(20n+12){background:linear-gradient(to right,#27ae60,#1e8449)}
+    .book-spine:nth-child(20n+13){background:linear-gradient(to right,#3498db,#2471a3)}
+    .book-spine:nth-child(20n+14){background:linear-gradient(to right,#f39c12,#d68910)}
+    .book-spine:nth-child(20n+15){background:linear-gradient(to right,#8e44ad,#6c3483)}
+    .book-spine:nth-child(20n+16){background:linear-gradient(to right,#16a085,#0e6655)}
+    .book-spine:nth-child(20n+17){background:linear-gradient(to right,#d35400,#a04000)}
+    .book-spine:nth-child(20n+18){background:linear-gradient(to right,#2c3e50,#1a252f)}
+    .book-spine:nth-child(20n+19){background:linear-gradient(to right,#c0392b,#7b241c)}
+    .book-spine:nth-child(20n+20){background:linear-gradient(to right,#1e8bc3,#154360)}
+    .empty-shelf-msg{color:var(--text-secondary);font-style:italic;font-size:0.88rem;padding:40px 0;text-align:center;width:100%}
 
-    /* Varied spine colours */
-    .book-spine:nth-child(1)  { background:linear-gradient(to right,#e74c3c,#c0392b); }
-    .book-spine:nth-child(2)  { background:linear-gradient(to right,#3498db,#2980b9); }
-    .book-spine:nth-child(3)  { background:linear-gradient(to right,#2ecc71,#27ae60); }
-    .book-spine:nth-child(4)  { background:linear-gradient(to right,#f39c12,#e67e22); }
-    .book-spine:nth-child(5)  { background:linear-gradient(to right,#9b59b6,#8e44ad); }
-    .book-spine:nth-child(6)  { background:linear-gradient(to right,#1abc9c,#16a085); }
-    .book-spine:nth-child(7)  { background:linear-gradient(to right,#e91e8c,#c2185b); }
-    .book-spine:nth-child(8)  { background:linear-gradient(to right,#ff5722,#e64a19); }
-    .book-spine:nth-child(9)  { background:linear-gradient(to right,#607d8b,#455a64); }
-    .book-spine:nth-child(10) { background:linear-gradient(to right,#795548,#5d4037); }
-    .book-spine:nth-child(11) { background:linear-gradient(to right,#c0392b,#96281b); }
-    .book-spine:nth-child(12) { background:linear-gradient(to right,#27ae60,#1e8449); }
-    /* repeat cycle for more books */
-    .book-spine:nth-child(13) { background:linear-gradient(to right,#3498db,#2471a3); }
-    .book-spine:nth-child(14) { background:linear-gradient(to right,#f39c12,#d68910); }
-    .book-spine:nth-child(15) { background:linear-gradient(to right,#8e44ad,#6c3483); }
-
-    .empty-shelf-msg {
-      color:var(--text-secondary);
-      font-style:italic;
-      font-size:0.9rem;
-      padding:40px 0;
-      text-align:center;
-      width:100%;
-    }
-
-    /* ─── STORY VIEW ──────────────────────────────────── */
-    #view-story {
-      min-height: calc(100vh - 56px);
-      padding:50px 4% 80px;
-      background: var(--bg-dark);
-    }
-    #view-story.active { display:block; }
-
-    .story-container {
-      max-width:760px;
-      margin:0 auto;
-    }
-
+    /* STORY VIEW */
+    #view-story{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:var(--bg-dark)}
+    #view-story.active{display:block}
+    .story-container{max-width:740px;margin:0 auto}
     .story-genre-tag {
-      display:inline-block;
-      background:var(--primary);
-      color:#fff;
-      padding:4px 14px;
-      border-radius:4px;
-      font-size:0.72rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      margin-bottom:16px;
+      display:inline-block; background:var(--primary); color:#fff;
+      padding:4px 13px; border-radius:4px; font-size:0.7rem;
+      font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;
     }
+    .story-view-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin-bottom:16px}
+    .story-description-box{background:var(--bg-card);border-left:4px solid var(--primary);border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:28px}
+    .story-description-box p{color:var(--text-secondary);font-size:clamp(0.9rem,2.5vw,1rem);line-height:1.75}
+    .read-cta{color:var(--primary);font-size:0.82rem;font-weight:600;margin-top:10px;display:flex;align-items:center;gap:5px;animation:blink 2s step-end infinite}
+    .story-divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:32px 0}
+    .story-full-text{font-size:clamp(0.95rem,2.5vw,1.05rem);line-height:2;color:var(--text-secondary)}
+    .story-full-text p{margin-bottom:1.5em;text-align:justify}
+    .story-full-text p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:3.8rem;float:left;line-height:0.8;margin-right:9px;margin-top:5px;color:var(--primary)}
+    .story-placeholder{background:var(--bg-card);border:2px dashed rgba(255,255,255,0.1);border-radius:12px;padding:46px 28px;text-align:center;color:var(--text-secondary);font-style:italic;margin-bottom:30px}
+    .story-placeholder .placeholder-icon{font-size:2.4rem;margin-bottom:12px}
 
-    .story-view-title {
-      font-family:'Playfair Display',serif;
-      font-size: clamp(2rem,5vw,3rem);
-      line-height:1.2;
-      margin-bottom:16px;
-    }
+    /* RATING */
+    .rating-section{background:var(--bg-card);border-radius:12px;padding:24px;margin-bottom:22px}
+    .rating-section h4{font-size:1rem;font-weight:600;margin-bottom:14px}
+    .stars{display:flex;gap:8px;flex-wrap:wrap}
+    .star{font-size:clamp(1.6rem,6vw,2rem);cursor:pointer;color:#444;transition:color 0.2s,transform 0.2s;line-height:1;touch-action:manipulation}
+    .star:hover,.star.active{color:#f5c642;transform:scale(1.2)}
+    .rating-msg{font-size:0.85rem;color:var(--text-secondary);margin-top:10px}
 
-    .story-description-box {
-      background: var(--bg-card);
-      border-left:4px solid var(--primary);
-      border-radius:0 8px 8px 0;
-      padding:20px 24px;
-      margin-bottom:30px;
-    }
-    .story-description-box p {
-      color: var(--text-secondary);
-      font-size:1rem;
-      line-height:1.75;
-    }
-    .story-description-box .read-cta {
-      color:var(--primary);
-      font-size:0.85rem;
-      font-weight:600;
-      margin-top:12px;
-      display:flex;
-      align-items:center;
-      gap:5px;
-      animation: blink 2s step-end infinite;
-    }
+    /* COMMENTS */
+    .comment-section{background:var(--bg-card);border-radius:12px;padding:24px;margin-bottom:22px}
+    .comment-section h4{font-size:1rem;font-weight:600;margin-bottom:14px}
+    .comment-textarea{width:100%;background:var(--bg-hover);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:14px;color:#fff;font-family:'Inter',sans-serif;font-size:0.9rem;resize:vertical;min-height:100px;outline:none;transition:border-color 0.3s}
+    .comment-textarea:focus{border-color:var(--primary)}
+    .comment-submit{margin-top:12px;padding:10px 26px;background:var(--primary);color:#fff;border:none;border-radius:6px;font-size:0.9rem;font-weight:600;cursor:pointer;transition:background 0.3s,transform 0.2s;touch-action:manipulation}
+    .comment-submit:hover{background:var(--primary-dark);transform:scale(1.03)}
+    .comments-list{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+    .comment-item{background:var(--bg-hover);border-radius:8px;padding:14px 16px;font-size:0.88rem;color:var(--text-secondary)}
+    .comment-author{color:var(--text-primary);font-weight:600;margin-bottom:4px;font-size:0.82rem}
+    .no-comments{color:var(--text-secondary);font-style:italic;font-size:0.85rem}
 
-    .story-divider {
-      border:none;
-      border-top:1px solid rgba(255,255,255,0.08);
-      margin:36px 0;
-    }
+    /* COIN SUPPORT */
+    .support-section{background:linear-gradient(135deg,#1a0f05,#2a1a08);border:1px solid rgba(245,198,100,0.25);border-radius:12px;padding:28px;margin-bottom:40px;text-align:center}
+    .support-section h4{font-size:1.05rem;font-weight:600;margin-bottom:6px;color:var(--gold)}
+    .support-section p{font-size:0.85rem;color:var(--text-secondary);margin-bottom:20px}
+    .coin-buttons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .coin-btn{padding:10px 22px;border:1px solid rgba(245,198,100,0.4);background:rgba(245,198,100,0.08);border-radius:50px;color:var(--gold);font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:6px;touch-action:manipulation}
+    .coin-btn:hover{background:rgba(245,198,100,0.2);border-color:var(--gold);transform:scale(1.05)}
+    .coin-icon{font-size:1.1rem}
+    .coin-toast{display:none;margin-top:14px;font-size:0.82rem;color:var(--gold)}
 
-    .story-full-text {
-      font-size:1.05rem;
-      line-height:2;
-      color:var(--text-secondary);
-    }
-    .story-full-text p { margin-bottom:1.5em; text-align:justify; }
-    .story-full-text p:first-child::first-letter {
-      font-family:'Playfair Display',serif;
-      font-size:4rem;
-      float:left;
-      line-height:0.8;
-      margin-right:10px;
-      margin-top:5px;
-      color:var(--primary);
-    }
-    .story-placeholder {
-      background:var(--bg-card);
-      border:2px dashed rgba(255,255,255,0.1);
-      border-radius:10px;
-      padding:48px 30px;
-      text-align:center;
-      color:var(--text-secondary);
-      font-style:italic;
-      margin-bottom:32px;
-    }
-    .story-placeholder .placeholder-icon { font-size:2.5rem; margin-bottom:12px; }
+    /* BACK BUTTON */
+    .view-back-btn{display:inline-flex;align-items:center;gap:8px;color:var(--text-secondary);font-size:0.88rem;font-weight:500;cursor:pointer;margin-bottom:28px;transition:color 0.3s;background:none;border:none;padding:6px 0;touch-action:manipulation}
+    .view-back-btn:hover{color:var(--primary)}
 
-    /* ─── RATING ──────────────────────────────────────── */
-    .rating-section {
-      background:var(--bg-card);
-      border-radius:12px;
-      padding:28px;
-      margin-bottom:24px;
+    /* RESPONSIVE */
+    @media(max-width:600px){
+      .shelf-room{grid-template-columns:1fr 1fr}
+      .sub-shelf-grid{grid-template-columns:1fr 1fr}
+      .book-spine{width:30px;min-height:100px}
+      .spine-title{font-size:0.5rem;max-height:80px}
+      .books-shelf-roll{padding:14px 10px 10px;gap:5px}
     }
-    .rating-section h4 {
-      font-size:1rem;
-      font-weight:600;
-      margin-bottom:14px;
+    @media(max-width:380px){
+      .shelf-room{grid-template-columns:1fr 1fr}
+      .sub-shelf-grid{grid-template-columns:1fr 1fr}
+      .book-spine{width:26px;min-height:90px}
     }
-    .stars {
-      display:flex;
-      gap:6px;
-    }
-    .star {
-      font-size:2rem;
-      cursor:pointer;
-      color:#444;
-      transition: color 0.2s, transform 0.2s;
-      line-height:1;
-    }
-    .star:hover, .star.active { color:#f5c642; transform:scale(1.2); }
-    .rating-msg {
-      font-size:0.85rem;
-      color:var(--text-secondary);
-      margin-top:10px;
-    }
-
-    /* ─── COMMENT BOX ─────────────────────────────────── */
-    .comment-section {
-      background:var(--bg-card);
-      border-radius:12px;
-      padding:28px;
-      margin-bottom:24px;
-    }
-    .comment-section h4 {
-      font-size:1rem;
-      font-weight:600;
-      margin-bottom:16px;
-    }
-    .comment-textarea {
-      width:100%;
-      background:var(--bg-hover);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:8px;
-      padding:14px;
-      color:#fff;
-      font-family:'Inter',sans-serif;
-      font-size:0.9rem;
-      resize:vertical;
-      min-height:100px;
-      outline:none;
-      transition:border-color 0.3s;
-    }
-    .comment-textarea:focus { border-color:var(--primary); }
-    .comment-submit {
-      margin-top:12px;
-      padding:10px 26px;
-      background:var(--primary);
-      color:#fff;
-      border:none;
-      border-radius:6px;
-      font-size:0.9rem;
-      font-weight:600;
-      cursor:pointer;
-      transition:background 0.3s, transform 0.2s;
-    }
-    .comment-submit:hover { background:var(--primary-dark); transform:scale(1.03); }
-
-    .comments-list { margin-top:20px; display:flex; flex-direction:column; gap:14px; }
-    .comment-item {
-      background:var(--bg-hover);
-      border-radius:8px;
-      padding:14px 16px;
-      font-size:0.88rem;
-      color:var(--text-secondary);
-      position:relative;
-    }
-    .comment-author { color:var(--text-primary); font-weight:600; margin-bottom:4px; font-size:0.82rem; }
-    .no-comments { color:var(--text-secondary); font-style:italic; font-size:0.85rem; }
-
-    /* ─── COIN SUPPORT ────────────────────────────────── */
-    .support-section {
-      background:linear-gradient(135deg,#1a0f05,#2a1a08);
-      border:1px solid rgba(245,198,100,0.25);
-      border-radius:12px;
-      padding:28px;
-      margin-bottom:40px;
-      text-align:center;
-    }
-    .support-section h4 {
-      font-size:1.05rem;
-      font-weight:600;
-      margin-bottom:6px;
-      color:#f5c6a0;
-    }
-    .support-section p {
-      font-size:0.85rem;
-      color:var(--text-secondary);
-      margin-bottom:20px;
-    }
-    .coin-buttons {
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:center;
-    }
-    .coin-btn {
-      padding:10px 22px;
-      border:1px solid rgba(245,198,100,0.4);
-      background:rgba(245,198,100,0.08);
-      border-radius:50px;
-      color:#f5c6a0;
-      font-size:0.9rem;
-      font-weight:600;
-      cursor:pointer;
-      transition: all 0.3s;
-      display:flex; align-items:center; gap:6px;
-    }
-    .coin-btn:hover {
-      background:rgba(245,198,100,0.2);
-      border-color:#f5c6a0;
-      transform:scale(1.05);
-    }
-    .coin-btn .coin-icon { font-size:1.1rem; }
-    .coin-toast {
-      display:none;
-      margin-top:14px;
-      font-size:0.82rem;
-      color:#f5c6a0;
-      animation:fadeIn 0.3s ease;
-    }
-
-    /* ─── BACK BTN (inside views) ─────────────────────── */
-    .view-back-btn {
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:var(--text-secondary);
-      font-size:0.88rem;
-      font-weight:500;
-      cursor:pointer;
-      margin-bottom:28px;
-      transition:color 0.3s;
-      background:none;
-      border:none;
-      padding:0;
-    }
-    .view-back-btn:hover { color:var(--primary); }
-
-    /* ─── RESPONSIVE ──────────────────────────────────── */
-    @media(max-width:600px) {
-      .shelf-room { grid-template-columns:1fr 1fr; }
-      .sub-shelf-grid { grid-template-columns:1fr 1fr; }
-      .book-spine { width:28px; min-height:90px; }
-      .spine-title { font-size:0.55rem; max-height:76px; }
-    }
-    @media(max-width:380px) {
-      .shelf-room { grid-template-columns:1fr; }
-      .sub-shelf-grid { grid-template-columns:1fr 1fr; }
+    @media(min-width:900px){
+      .shelf-room{grid-template-columns:repeat(5,1fr)}
+      .sub-shelf-grid{grid-template-columns:repeat(4,1fr)}
     }
   </style>
 </head>
 <body>
 
-<!-- ── TOP BAR ──────────────────────────────────────── -->
 <nav class="back-bar">
-  <a href="index.html" id="main-back-link">
-    ← Back to Laminono Nexus
-  </a>
+  <a href="index.html">← Back to Laminono Nexus</a>
   <span class="page-title">📚 Book Shelves</span>
 </nav>
 
-<!-- ── SCENE ─────────────────────────────────────────── -->
 <div class="scene">
 
   <!-- VIEW 1: ENTRANCE -->
   <div id="view-entrance" class="view active">
     <h1 class="entrance-title">Welcome to the Library</h1>
     <p class="entrance-sub">Thousands of stories wait between these walls. Open the book to begin your journey.</p>
-
-    <div class="big-book" id="big-book-btn" title="Open Library">
+    <button class="big-book-btn" id="big-book-btn" aria-label="Open Library">
       <div class="book-rope"></div>
       <div class="book-cover">
         <div class="book-cover-icon">📖</div>
         <div class="book-cover-title">BOOK SHELVES<br>Unlimited Books</div>
         <div class="book-cover-sub">Tap to Enter</div>
       </div>
-    </div>
+    </button>
     <p class="open-cta">✨ Tap the book to open the library</p>
   </div>
 
-  <!-- VIEW 2: LOADING / PATH ANIMATION -->
+  <!-- VIEW 2: LOADING -->
   <div id="view-loading" class="view">
     <div class="path-anim">
       <svg viewBox="0 0 260 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Library path (corridor perspective lines) -->
         <line class="path-line" x1="130" y1="90" x2="10"  y2="10"  stroke="#f5c6a0" stroke-width="1.5" stroke-linecap="round"/>
         <line class="path-line" x1="130" y1="90" x2="250" y2="10"  stroke="#f5c6a0" stroke-width="1.5" stroke-linecap="round" style="animation-delay:0.15s"/>
         <line class="path-line" x1="130" y1="90" x2="10"  y2="170" stroke="#f5c6a0" stroke-width="1.5" stroke-linecap="round" style="animation-delay:0.3s"/>
         <line class="path-line" x1="130" y1="90" x2="250" y2="170" stroke="#f5c6a0" stroke-width="1.5" stroke-linecap="round" style="animation-delay:0.45s"/>
-        <!-- Shelves (horizontal lines) -->
         <line class="path-line" x1="50"  y1="46"  x2="210" y2="46"  stroke="#a07040" stroke-width="2" style="animation-delay:0.6s"/>
         <line class="path-line" x1="30"  y1="90"  x2="230" y2="90"  stroke="#a07040" stroke-width="2" style="animation-delay:0.75s"/>
         <line class="path-line" x1="50"  y1="134" x2="210" y2="134" stroke="#a07040" stroke-width="2" style="animation-delay:0.9s"/>
-        <!-- Walkway -->
         <line class="path-line" x1="130" y1="90"  x2="130" y2="170" stroke="#c8a96e" stroke-width="2.5" style="animation-delay:1s"/>
-        <!-- Person dot -->
         <circle cx="130" cy="158" r="5" fill="#E50914" opacity="0">
           <animate attributeName="opacity" values="0;1" begin="1.4s" dur="0.3s" fill="freeze"/>
           <animate attributeName="cy" values="170;140;130" begin="1.4s" dur="0.7s" fill="freeze"/>
@@ -826,19 +421,16 @@
     <div class="loading-text">Opening the Library<span class="loading-dots"></span></div>
   </div>
 
-  <!-- VIEW 3: GENRE LIBRARY (main shelves) -->
+  <!-- VIEW 3: GENRE LIBRARY -->
   <div id="view-library" class="view">
     <div class="library-heading">
       <h2>📚 The Grand Library</h2>
       <p>Choose a shelf — each holds a world of its own</p>
     </div>
-
-    <div class="shelf-room" id="genre-shelf-room">
-      <!-- Shelves rendered by JS -->
-    </div>
+    <div class="shelf-room" id="genre-shelf-room"></div>
   </div>
 
-  <!-- VIEW 4: SUB-SHELVES (topics inside a genre) -->
+  <!-- VIEW 4: SUB-SHELVES -->
   <div id="view-subshelves" class="view">
     <button class="view-back-btn" onclick="goBack('view-library')">← Back to Library</button>
     <div class="breadcrumb">
@@ -849,9 +441,7 @@
     <div class="sub-heading">
       <h2 id="subshelves-title">Sub Shelves</h2>
     </div>
-    <div class="sub-shelf-grid" id="sub-shelf-grid">
-      <!-- Rendered by JS -->
-    </div>
+    <div class="sub-shelf-grid" id="sub-shelf-grid"></div>
   </div>
 
   <!-- VIEW 5: BOOK SPINES -->
@@ -859,10 +449,8 @@
     <button class="view-back-btn" id="books-back-btn">← Back</button>
     <div class="breadcrumb" id="books-breadcrumb"></div>
     <div class="books-shelf-container">
-      <h2 id="books-shelf-title" style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#f5c6a0;margin-bottom:24px;"></h2>
-      <div class="books-shelf-roll" id="books-shelf-roll">
-        <!-- Book spines rendered by JS -->
-      </div>
+      <h2 id="books-shelf-title" style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,4vw,1.8rem);color:#f5c6a0;margin-bottom:22px;"></h2>
+      <div class="books-shelf-roll" id="books-shelf-roll"></div>
       <div class="books-shelf-plank"></div>
     </div>
   </div>
@@ -873,27 +461,13 @@
       <button class="view-back-btn" id="story-back-btn">← Back to Shelf</button>
       <span class="story-genre-tag" id="story-genre-tag"></span>
       <h1 class="story-view-title" id="story-title"></h1>
-
-      <!-- Description preview -->
       <div class="story-description-box">
         <p id="story-description"></p>
         <div class="read-cta">👇 Tap below to read the full story</div>
       </div>
-
-      <hr class="story-divider" />
-
-      <!-- Full story (placeholder until you add content) -->
-      <div class="story-full-text" id="story-full-text">
-        <div class="story-placeholder">
-          <div class="placeholder-icon">✍️</div>
-          <p>The full story will appear here once it has been added by the author.</p>
-          <p style="margin-top:8px;font-size:0.8rem;">Story content coming soon — check back later!</p>
-        </div>
-      </div>
-
-      <hr class="story-divider" />
-
-      <!-- Rating -->
+      <hr class="story-divider"/>
+      <div class="story-full-text" id="story-full-text"></div>
+      <hr class="story-divider"/>
       <div class="rating-section">
         <h4>⭐ Rate this story</h4>
         <div class="stars" id="star-container">
@@ -905,8 +479,6 @@
         </div>
         <p class="rating-msg" id="rating-msg">Select a star to rate</p>
       </div>
-
-      <!-- Comments -->
       <div class="comment-section">
         <h4>💬 Leave a Comment</h4>
         <textarea class="comment-textarea" id="comment-input" placeholder="Share your thoughts about this story…"></textarea>
@@ -915,8 +487,6 @@
           <p class="no-comments">No comments yet — be the first!</p>
         </div>
       </div>
-
-      <!-- Coin Support -->
       <div class="support-section">
         <h4>🪙 Support the Author</h4>
         <p>Show your appreciation with coins — we'll convert them to real rewards soon!</p>
@@ -928,377 +498,289 @@
         </div>
         <p class="coin-toast" id="coin-toast"></p>
       </div>
-
-    </div><!-- /.story-container -->
+    </div>
   </div>
 
-</div><!-- /.scene -->
+</div>
 
-
-<!-- ══════════════════════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════════════════════ -->
 <script>
-/* ── DATA STRUCTURE ─────────────────────────────────────
-   Add your stories inside the `books` arrays.
-   Each shelf can hold as many books as you like —
-   the shelf roll will grow longer automatically.
-────────────────────────────────────────────────────── */
 const LIBRARY = [
   {
-    id: 'mystery',
-    name: 'Mystery',
-    icon: '🔍',
-    tagline: 'Secrets, twists & the unknown',
-    subShelves: [
+    id:'mystery', name:'Mystery', icon:'🔍',
+    tagline:'Secrets, twists & the unknown',
+    subShelves:[
       {
-        id: 'ms-detective',
-        name: 'Detective Files',
-        desc: 'Cases cracked in the dark',
-        books: [
-          { id: 'b1', title: 'The Shadow Witness', description: 'A detective chases a ghost no one else can see — until the ghost chases back.' },
-          { id: 'b2', title: 'Room 404',            description: 'A hotel room that does not exist holds the clue to three missing persons.' },
-          { id: 'b3', title: 'Cold Print',          description: 'An old photograph surfaces at a new crime scene — dated forty years in the future.' }
+        id:'ms-detective', name:'Detective Files', desc:'Cases cracked in the dark',
+        books:[
+          {id:'b1', title:'The Shadow Witness',  description:'A detective chases a ghost no one else can see — until the ghost chases back.'},
+          {id:'b2', title:'Room 404',             description:'A hotel room that does not exist holds the clue to three missing persons.'},
+          {id:'b3', title:'Cold Print',           description:'An old photograph surfaces at a new crime scene — dated forty years in the future.'}
         ]
       },
       {
-        id: 'ms-thriller',
-        name: 'Edge of Night',
-        desc: 'Pulse-racing suspense',
-        books: [
-          { id: 'b4', title: 'Last Exit',           description: 'She boards the wrong bus and steps off in a town that erases you from existence.' },
-          { id: 'b5', title: 'The Quiet Bomb',      description: 'A librarian discovers a code hidden in every book checked out this month.' }
+        id:'ms-thriller', name:'Edge of Night', desc:'Pulse-racing suspense',
+        books:[
+          {id:'b4', title:'Last Exit',            description:'She boards the wrong bus and steps off in a town that erases you from existence.'},
+          {id:'b5', title:'The Quiet Bomb',       description:'A librarian discovers a code hidden in every book checked out this month.'}
         ]
       },
       {
-        id: 'ms-paranormal',
-        name: 'Beyond the Veil',
-        desc: 'Where logic ends',
-        books: [
-          { id: 'b6', title: 'Echo House',          description: 'Every mirror in the manor shows a different occupant — all of them afraid.' }
+        id:'ms-paranormal', name:'Beyond the Veil', desc:'Where logic ends',
+        books:[
+          {id:'b6', title:'Echo House',           description:'Every mirror in the manor shows a different occupant — all of them afraid.'}
         ]
       }
     ]
   },
   {
-    id: 'illusion',
-    name: 'Illusion',
-    icon: '🌀',
-    tagline: 'Nothing is what it seems',
-    subShelves: [
+    id:'illusion', name:'Illusion', icon:'🌀',
+    tagline:'Nothing is what it seems',
+    subShelves:[
       {
-        id: 'il-mind',
-        name: 'Mind Benders',
-        desc: 'Reality fractured',
-        books: [
-          { id: 'b7', title: 'The Second Sky',      description: 'A painter realises she has been painting places she will visit — in reverse.' },
-          { id: 'b8', title: 'Hollow Twin',         description: 'Two strangers share the same dream every night until one of them wakes up inside it.' }
+        id:'il-mind', name:'Mind Benders', desc:'Reality fractured',
+        books:[
+          {id:'b7', title:'The Second Sky',       description:'A painter realises she has been painting places she will visit — in reverse.'},
+          {id:'b8', title:'Hollow Twin',          description:'Two strangers share the same dream every night until one of them wakes up inside it.'}
         ]
       },
       {
-        id: 'il-dream',
-        name: 'Dreamscapes',
-        desc: 'Sleep and its secrets',
-        books: [
-          { id: 'b9', title: 'Lucid Street',        description: 'In a city that exists only at 3 AM, she looks for the door marked EXIT.' }
+        id:'il-dream', name:'Dreamscapes', desc:'Sleep and its secrets',
+        books:[
+          {id:'b9', title:'Lucid Street',         description:'In a city that exists only at 3 AM, she looks for the door marked EXIT.'}
         ]
       }
     ]
   },
   {
-    id: 'reality',
-    name: 'Reality',
-    icon: '🌍',
-    tagline: 'Raw, real, and relentless',
-    subShelves: [
+    id:'reality', name:'Reality', icon:'🌍',
+    tagline:'Raw, real, and relentless',
+    subShelves:[
       {
-        id: 'rl-life',
-        name: 'Everyday Lives',
-        desc: 'Stories from the street',
-        books: [
-          { id: 'b10', title: 'The Long Walk Home',  description: 'A father walks 200 km to attend his daughter\'s graduation after his bus is cancelled.' },
-          { id: 'b11', title: 'Market Women',         description: 'Five market traders share one phone — and one dream — across five years.' }
+        id:'rl-life', name:'Everyday Lives', desc:'Stories from the street',
+        books:[
+          {id:'b10', title:'The Long Walk Home',  description:'A father walks 200 km to attend his daughter\'s graduation after his bus is cancelled.'},
+          {id:'b11', title:'Market Women',         description:'Five market traders share one phone — and one dream — across five years.'}
         ]
       },
       {
-        id: 'rl-struggle',
-        name: 'Grit & Grace',
-        desc: 'Resilience in the storm',
-        books: [
-          { id: 'b12', title: 'Soil Season',          description: 'A drought forces a farming family to choose between harvest and forgiveness.' }
+        id:'rl-struggle', name:'Grit & Grace', desc:'Resilience in the storm',
+        books:[
+          {id:'b12', title:'Soil Season',          description:'A drought forces a farming family to choose between harvest and forgiveness.'}
         ]
       }
     ]
   },
   {
-    id: 'royalty',
-    name: 'Royalty',
-    icon: '👑',
-    tagline: 'Crowns, courts & conquest',
-    subShelves: [
+    id:'royalty', name:'Royalty', icon:'👑',
+    tagline:'Crowns, courts & conquest',
+    subShelves:[
       {
-        id: 'ry-palace',
-        name: 'Palace Intrigues',
-        desc: 'Power behind the throne',
-        books: [
-          { id: 'b13', title: 'The Ivory Throne',    description: 'A princess discovers the kingdom\'s founding document is a forgery — signed by her ancestor.' },
-          { id: 'b14', title: 'Blood Crown',          description: 'Three siblings. One crown. The eldest is already dead — or so everyone believes.' }
+        id:'ry-palace', name:'Palace Intrigues', desc:'Power behind the throne',
+        books:[
+          {id:'b13', title:'The Ivory Throne',    description:'A princess discovers the kingdom\'s founding document is a forgery — signed by her ancestor.'},
+          {id:'b14', title:'Blood Crown',          description:'Three siblings. One crown. The eldest is already dead — or so everyone believes.'}
         ]
       },
       {
-        id: 'ry-exile',
-        name: 'Exiled & Chosen',
-        desc: 'Royals in the wild',
-        books: [
-          { id: 'b15', title: 'Barefoot Queen',       description: 'Stripped of rank and sent into the desert, she returns with an army made of sand.' }
+        id:'ry-exile', name:'Exiled & Chosen', desc:'Royals in the wild',
+        books:[
+          {id:'b15', title:'Barefoot Queen',       description:'Stripped of rank and sent into the desert, she returns with an army made of sand.'}
         ]
       }
     ]
   },
   {
-    id: 'romance',
-    name: 'Romance',
-    icon: '🌹',
-    tagline: 'Hearts, heat & longing',
-    subShelves: [
+    id:'romance', name:'Romance', icon:'🌹',
+    tagline:'Hearts, heat & longing',
+    subShelves:[
       {
-        id: 'ro-modern',
-        name: 'Modern Love',
-        desc: 'Love in the digital age',
-        books: [
-          { id: 'b16', title: 'Signal & Noise',       description: 'They matched online. They hate each other in the office. Their colleague ships it.' },
-          { id: 'b17', title: 'The Last Read Receipt', description: 'She never replied. He never deleted the thread. Three years later, a new message arrives.' }
+        id:'ro-modern', name:'Modern Love', desc:'Love in the digital age',
+        books:[
+          {id:'b16', title:'Signal & Noise',        description:'They matched online. They hate each other in the office. Their colleague ships it.'},
+          {id:'b17', title:'The Last Read Receipt',  description:'She never replied. He never deleted the thread. Three years later, a new message arrives.'}
         ]
       },
       {
-        id: 'ro-forbidden',
-        name: 'Forbidden Hearts',
-        desc: 'Love that dares',
-        books: [
-          { id: 'b18', title: 'Between Two Fires',    description: 'Their families share a wall and a century-old feud. Falling in love is an act of war.' }
+        id:'ro-forbidden', name:'Forbidden Hearts', desc:'Love that dares',
+        books:[
+          {id:'b18', title:'Between Two Fires',     description:'Their families share a wall and a century-old feud. Falling in love is an act of war.'}
         ]
       },
       {
-        id: 'ro-second',
-        name: 'Second Chances',
-        desc: 'Love found again',
-        books: [
-          { id: 'b19', title: 'The Same Station',     description: 'He missed his train. She missed hers. Ten years ago they made the same mistake — together.' }
+        id:'ro-second', name:'Second Chances', desc:'Love found again',
+        books:[
+          {id:'b19', title:'The Same Station',      description:'He missed his train. She missed hers. Ten years ago they made the same mistake — together.'}
         ]
       }
     ]
   }
 ];
 
-/* ── STATE ────────────────────────────────────────────── */
-let currentGenreId   = null;
-let currentSubShelfId = null;
-let currentBookId    = null;
-let previousView     = null;
+let currentGenreId = null, currentSubShelfId = null, currentBookId = null;
 
-/* ── VIEWS ────────────────────────────────────────────── */
 function showView(id) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
 }
+function goBack(target) { showView(target); }
 
-function goBack(targetView) {
-  showView(targetView);
-}
+/* KEY FIX: listen to both click AND touchend */
+document.getElementById('big-book-btn').addEventListener('click', openLibrary);
+document.getElementById('big-book-btn').addEventListener('touchend', function(e){
+  e.preventDefault(); openLibrary();
+}, {passive:false});
 
-/* ── ENTRANCE → LOADING → LIBRARY ─────────────────────── */
-document.getElementById('big-book-btn').addEventListener('click', () => {
+function openLibrary() {
   showView('view-loading');
-  setTimeout(() => {
-    renderLibrary();
-    showView('view-library');
-  }, 2600);
-});
+  document.querySelectorAll('.path-line').forEach(l => {
+    l.style.animation='none'; void l.offsetWidth; l.style.animation='';
+  });
+  setTimeout(() => { renderLibrary(); showView('view-library'); }, 2600);
+}
 
-/* ── RENDER GENRE SHELVES ─────────────────────────────── */
 function renderLibrary() {
-  const container = document.getElementById('genre-shelf-room');
-  container.innerHTML = '';
-
+  const c = document.getElementById('genre-shelf-room');
+  c.innerHTML = '';
   LIBRARY.forEach(genre => {
-    const shelf = document.createElement('div');
-    shelf.className = 'genre-shelf';
-    shelf.setAttribute('data-id', genre.id);
-
-    // Generate mini-book decorations
-    const miniBooks = Array.from({length: 8}, (_, i) =>
-      `<div class="mini-book" style="height:${55 + Math.sin(i) * 18}px"></div>`
-    ).join('');
-
-    shelf.innerHTML = `
+    const el = document.createElement('div');
+    el.className = 'genre-shelf';
+    const mb = Array.from({length:8},(_,i)=>
+      `<div class="mini-book" style="height:${55+Math.sin(i)*18}px"></div>`).join('');
+    el.innerHTML = `
       <div class="shelf-unit">
-        <div class="shelf-body">${miniBooks}</div>
+        <div class="shelf-body">${mb}</div>
         <div class="shelf-plank"></div>
       </div>
       <div class="shelf-label">
         <h3>${genre.icon} ${genre.name}</h3>
         <p>${genre.tagline}</p>
       </div>`;
-
-    shelf.addEventListener('click', () => openGenre(genre.id));
-    container.appendChild(shelf);
+    el.addEventListener('click', () => openGenre(genre.id));
+    c.appendChild(el);
   });
 }
 
-/* ── OPEN GENRE → LOADING → SUB-SHELVES ──────────────── */
 function openGenre(genreId) {
   currentGenreId = genreId;
   showView('view-loading');
-  setTimeout(() => {
-    renderSubShelves(genreId);
-    showView('view-subshelves');
-  }, 1800);
+  document.querySelectorAll('.path-line').forEach(l => {
+    l.style.animation='none'; void l.offsetWidth; l.style.animation='';
+  });
+  setTimeout(() => { renderSubShelves(genreId); showView('view-subshelves'); }, 1800);
 }
 
 function renderSubShelves(genreId) {
-  const genre = LIBRARY.find(g => g.id === genreId);
-  document.getElementById('subshelves-title').textContent   = `${genre.icon} ${genre.name}`;
+  const genre = LIBRARY.find(g => g.id===genreId);
+  document.getElementById('subshelves-title').textContent      = `${genre.icon} ${genre.name}`;
   document.getElementById('subshelves-genre-name').textContent = genre.name;
-
   const grid = document.getElementById('sub-shelf-grid');
   grid.innerHTML = '';
-
   genre.subShelves.forEach(sub => {
     const card = document.createElement('div');
     card.className = 'sub-shelf-card';
-
-    const miniBooks = Array.from({length: 6}, (_, i) =>
-      `<div class="mini-book" style="height:${48 + Math.cos(i)*14}px;width:16px;background:linear-gradient(to right,hsl(${i*40},70%,45%),hsl(${i*40+20},60%,35%));border-radius:1px 2px 2px 1px;"></div>`
-    ).join('');
-
+    const mb = Array.from({length:6},(_,i)=>
+      `<div style="width:14px;height:${48+Math.cos(i)*14}px;background:linear-gradient(to right,hsl(${i*40},70%,45%),hsl(${i*40+20},60%,35%));border-radius:1px 2px 2px 1px;"></div>`).join('');
     card.innerHTML = `
-      <div class="sub-shelf-body">${miniBooks}</div>
+      <div class="sub-shelf-body">${mb}</div>
       <div class="sub-shelf-plank"></div>
       <div class="sub-shelf-label">${sub.name}</div>
-      <div class="sub-shelf-count">${sub.books.length} ${sub.books.length === 1 ? 'story' : 'stories'}</div>`;
-
+      <div class="sub-shelf-count">${sub.books.length} ${sub.books.length===1?'story':'stories'}</div>`;
     card.addEventListener('click', () => openSubShelf(genreId, sub.id));
     grid.appendChild(card);
   });
 }
 
-/* ── OPEN SUB-SHELF → BOOK SPINES ────────────────────── */
 function openSubShelf(genreId, subShelfId) {
   currentSubShelfId = subShelfId;
-  const genre = LIBRARY.find(g => g.id === genreId);
-  const sub   = genre.subShelves.find(s => s.id === subShelfId);
-
-  document.getElementById('books-shelf-title').textContent = `${sub.name}`;
+  const genre = LIBRARY.find(g => g.id===genreId);
+  const sub   = genre.subShelves.find(s => s.id===subShelfId);
+  document.getElementById('books-shelf-title').textContent = sub.name;
   document.getElementById('books-breadcrumb').innerHTML =
     `<span onclick="goBack('view-library')" style="cursor:pointer">Library</span>
      <span> › </span>
      <span onclick="goBack('view-subshelves')" style="cursor:pointer">${genre.name}</span>
      <span> › </span>
      <span>${sub.name}</span>`;
-
   document.getElementById('books-back-btn').onclick = () => goBack('view-subshelves');
-
   const roll = document.getElementById('books-shelf-roll');
   roll.innerHTML = '';
-
-  if (sub.books.length === 0) {
-    roll.innerHTML = '<p class="empty-shelf-msg">No stories on this shelf yet — check back soon!</p>';
+  if (!sub.books.length) {
+    roll.innerHTML='<p class="empty-shelf-msg">No stories on this shelf yet — check back soon!</p>';
   } else {
     sub.books.forEach(book => {
-      const spine = document.createElement('div');
-      spine.className = 'book-spine';
-
-      // Height varies a little per book for a real-shelf feel
-      const h = 110 + (book.title.length % 5) * 14;
-      spine.style.minHeight = h + 'px';
-
-      spine.innerHTML = `<span class="spine-title">${book.title}</span>`;
-      spine.addEventListener('click', () => openStory(genreId, subShelfId, book.id));
-      roll.appendChild(spine);
+      const sp = document.createElement('div');
+      sp.className = 'book-spine';
+      sp.style.minHeight = (110+(book.title.length%5)*14)+'px';
+      sp.innerHTML = `<span class="spine-title">${book.title}</span>`;
+      sp.addEventListener('click', () => openStory(genreId, subShelfId, book.id));
+      roll.appendChild(sp);
     });
   }
-
   showView('view-books');
 }
 
-/* ── OPEN STORY ─────────────────────────────────────────── */
 function openStory(genreId, subShelfId, bookId) {
   currentBookId = bookId;
-  const genre = LIBRARY.find(g => g.id === genreId);
-  const sub   = genre.subShelves.find(s => s.id === subShelfId);
-  const book  = sub.books.find(b => b.id === bookId);
-
+  const genre = LIBRARY.find(g => g.id===genreId);
+  const sub   = genre.subShelves.find(s => s.id===subShelfId);
+  const book  = sub.books.find(b => b.id===bookId);
   document.getElementById('story-back-btn').onclick = () => goBack('view-books');
-  document.getElementById('story-genre-tag').textContent  = `${genre.icon} ${genre.name} · ${sub.name}`;
-  document.getElementById('story-title').textContent      = book.title;
+  document.getElementById('story-genre-tag').textContent   = `${genre.icon} ${genre.name} · ${sub.name}`;
+  document.getElementById('story-title').textContent       = book.title;
   document.getElementById('story-description').textContent = book.description;
-
-  // Full story: placeholder (author will add content here)
-  const fullText = document.getElementById('story-full-text');
-  if (book.fullStory) {
-    fullText.innerHTML = book.fullStory.map(para => `<p>${para}</p>`).join('');
-  } else {
-    fullText.innerHTML = `
-      <div class="story-placeholder">
-        <div class="placeholder-icon">✍️</div>
-        <p>The full story will appear here once added by the author.</p>
-        <p style="margin-top:8px;font-size:0.8rem;">Story content coming soon!</p>
-      </div>`;
-  }
-
-  // Reset rating & comments
+  const ft = document.getElementById('story-full-text');
+  ft.innerHTML = book.fullStory
+    ? book.fullStory.map(p=>`<p>${p}</p>`).join('')
+    : `<div class="story-placeholder">
+         <div class="placeholder-icon">✍️</div>
+         <p>The full story will appear here once added by the author.</p>
+         <p style="margin-top:8px;font-size:0.8rem;">Story content coming soon!</p>
+       </div>`;
   resetRating();
-  document.getElementById('comments-list').innerHTML = '<p class="no-comments">No comments yet — be the first!</p>';
-  document.getElementById('comment-input').value = '';
-  document.getElementById('coin-toast').style.display = 'none';
-
+  document.getElementById('comments-list').innerHTML='<p class="no-comments">No comments yet — be the first!</p>';
+  document.getElementById('comment-input').value='';
+  document.getElementById('coin-toast').style.display='none';
   showView('view-story');
-  window.scrollTo(0, 0);
 }
 
-/* ── RATING ──────────────────────────────────────────────── */
 let currentRating = 0;
 function resetRating() {
   currentRating = 0;
-  document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
-  document.getElementById('rating-msg').textContent = 'Select a star to rate';
+  document.querySelectorAll('.star').forEach(s=>s.classList.remove('active'));
+  document.getElementById('rating-msg').textContent='Select a star to rate';
 }
 document.querySelectorAll('.star').forEach(star => {
   star.addEventListener('click', () => {
     currentRating = parseInt(star.getAttribute('data-v'));
     document.querySelectorAll('.star').forEach(s => {
-      s.classList.toggle('active', parseInt(s.getAttribute('data-v')) <= currentRating);
+      s.classList.toggle('active', parseInt(s.getAttribute('data-v'))<=currentRating);
     });
-    const messages = ['', 'Not for me', 'It was okay', 'Enjoyed it', 'Really good!', 'Absolutely brilliant! ⭐'];
-    document.getElementById('rating-msg').textContent = messages[currentRating];
+    const msgs=['','Not for me','It was okay','Enjoyed it','Really good!','Absolutely brilliant! ⭐'];
+    document.getElementById('rating-msg').textContent=msgs[currentRating];
   });
 });
 
-/* ── COMMENTS ────────────────────────────────────────────── */
 function submitComment() {
   const input = document.getElementById('comment-input');
   const text  = input.value.trim();
   if (!text) return;
-
-  const list = document.getElementById('comments-list');
+  const list  = document.getElementById('comments-list');
   const noMsg = list.querySelector('.no-comments');
   if (noMsg) noMsg.remove();
-
-  const item = document.createElement('div');
-  item.className = 'comment-item';
-  item.innerHTML = `<div class="comment-author">Anonymous Reader</div>${text}`;
+  const item  = document.createElement('div');
+  item.className='comment-item';
+  item.innerHTML=`<div class="comment-author">Anonymous Reader</div>${text.replace(/</g,'&lt;')}`;
   list.appendChild(item);
-  input.value = '';
+  input.value='';
 }
 
-/* ── COIN SUPPORT ────────────────────────────────────────── */
 function supportCoin(amount) {
-  const toast = document.getElementById('coin-toast');
-  toast.textContent = `🪙 You sent ${amount} coin${amount>1?'s':''}! Thank you for supporting this story! ✨`;
-  toast.style.display = 'block';
-  setTimeout(() => { toast.style.display = 'none'; }, 4000);
+  const t = document.getElementById('coin-toast');
+  t.textContent=`🪙 You sent ${amount} coin${amount>1?'s':''}! Thank you for supporting this story! ✨`;
+  t.style.display='block';
+  setTimeout(()=>{t.style.display='none';},4000);
 }
 </script>
-
 </body>
 </html>
