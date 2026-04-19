@@ -56,11 +56,19 @@
     }
 
     /* SCENE */
-    .scene{padding-top:52px;min-height:100vh}
+    .scene{padding-top:52px; min-height:100vh;}
 
-    /* VIEWS */
-    .view{display:none}
-    .view.active{display:block;animation:fadeUp 0.4s ease}
+    /* =============================================
+       VIEWS — only .active is shown.
+       Each view sets its OWN display inside active.
+       ============================================= */
+    .view { display:none !important; }
+    .view.active { display:block !important; animation:fadeUp 0.4s ease; }
+
+    /* Entrance & Loading need flex, not block */
+    #view-entrance.active { display:flex !important; }
+    #view-loading.active  { display:flex !important; }
+
     @keyframes fadeUp{
       from{opacity:0;transform:translateY(16px)}
       to{opacity:1;transform:translateY(0)}
@@ -68,14 +76,14 @@
 
     /* ENTRANCE */
     #view-entrance {
-      display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
       min-height:calc(100vh - 52px);
       background:radial-gradient(ellipse at 50% 60%,#1a0d05,#0A0A0A 70%);
-      text-align:center; padding:40px 6%;
+      text-align:center;
+      padding:40px 6%;
     }
-    #view-entrance.active{display:flex}
-
     .entrance-title {
       font-family:'Playfair Display',serif;
       font-size:clamp(1.8rem,5vw,3.2rem);
@@ -87,7 +95,7 @@
       margin-bottom:50px; max-width:460px; line-height:1.6;
     }
 
-    /* BIG BOOK — KEY FIX: <button> so Android tap always fires */
+    /* BIG BOOK BUTTON */
     .big-book-btn {
       width:clamp(140px,42vw,190px);
       height:clamp(185px,56vw,250px);
@@ -98,9 +106,7 @@
       touch-action:manipulation;
     }
     .big-book-btn:hover,.big-book-btn:focus{
-      animation:none;
-      transform:rotateY(-28deg) scale(1.05);
-      outline:none;
+      animation:none; transform:rotateY(-28deg) scale(1.05); outline:none;
     }
     @keyframes floatBook{
       0%,100%{transform:translateY(0) rotateY(-15deg)}
@@ -126,8 +132,7 @@
       box-shadow:6px 8px 28px rgba(0,0,0,0.7),inset -2px 0 8px rgba(0,0,0,0.3);
       border:1px solid rgba(229,9,20,0.4);
       display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
-      padding:18px 12px;
+      align-items:center; justify-content:center; padding:18px 12px;
     }
     .book-cover-icon{font-size:clamp(2rem,8vw,2.8rem);margin-bottom:10px}
     .book-cover-title {
@@ -148,15 +153,19 @@
 
     /* LOADING */
     #view-loading {
-      display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
-      min-height:calc(100vh - 52px); gap:22px;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      min-height:calc(100vh - 52px);
+      gap:22px;
       background:radial-gradient(ellipse at 50% 50%,#1a0d05,#0A0A0A 80%);
     }
-    #view-loading.active{display:flex}
     .path-anim{width:min(260px,85vw);aspect-ratio:260/180}
     .path-anim svg{width:100%;height:100%}
-    .path-line{stroke-dasharray:600;stroke-dashoffset:600;animation:drawPath 1.8s ease forwards}
+    .path-line{
+      stroke-dasharray:600; stroke-dashoffset:600;
+      animation:drawPath 1.8s ease forwards;
+    }
     @keyframes drawPath{to{stroke-dashoffset:0}}
     .loading-text {
       font-family:'Playfair Display',serif;
@@ -167,10 +176,16 @@
     @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
 
     /* LIBRARY */
-    #view-library{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:linear-gradient(to bottom,#0e0804,#1a0f07)}
-    #view-library.active{display:block}
+    #view-library{
+      min-height:calc(100vh - 52px);
+      padding:40px 4% 80px;
+      background:linear-gradient(to bottom,#0e0804,#1a0f07);
+    }
     .library-heading{text-align:center;margin-bottom:40px}
-    .library-heading h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--gold)}
+    .library-heading h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.6rem,4vw,2.6rem); color:var(--gold);
+    }
     .library-heading p{color:var(--text-secondary);margin-top:8px;font-size:clamp(0.82rem,2.5vw,0.95rem)}
 
     .shelf-room {
@@ -186,8 +201,12 @@
       display:flex; align-items:flex-end; justify-content:center;
       gap:5px; overflow:hidden; position:relative;
     }
-    .shelf-body::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.05),transparent);pointer-events:none}
-
+    .shelf-body::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to bottom,rgba(255,255,255,0.05),transparent);
+      pointer-events:none;
+    }
+    /* Different wood colours per shelf */
     .genre-shelf:nth-child(1) .shelf-body{background:linear-gradient(160deg,#6b3a1f,#3d1f0d);border:1px solid #7a4020}
     .genre-shelf:nth-child(2) .shelf-body{background:linear-gradient(160deg,#7a5c2e,#4a3318);border:1px solid #8a6c38}
     .genre-shelf:nth-child(3) .shelf-body{background:linear-gradient(160deg,#5a2d14,#2e160a);border:1px solid #6a3520}
@@ -213,67 +232,72 @@
     .shelf-label p{font-size:0.72rem;color:var(--text-secondary);margin-top:3px}
 
     /* SUB-SHELVES */
-    #view-subshelves{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:linear-gradient(to bottom,#0e0804,#1a0f07)}
-    #view-subshelves.active{display:block}
+    #view-subshelves{
+      min-height:calc(100vh - 52px);
+      padding:40px 4% 80px;
+      background:linear-gradient(to bottom,#0e0804,#1a0f07);
+    }
     .sub-heading{margin-bottom:30px}
     .sub-heading h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,4vw,2.2rem);color:var(--gold)}
     .breadcrumb{font-size:0.78rem;color:var(--text-secondary);margin-bottom:8px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
     .breadcrumb span{cursor:pointer}
     .breadcrumb span:hover{color:var(--primary)}
-
-    .sub-shelf-grid {
+    .sub-shelf-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
       gap:20px; max-width:960px; margin:0 auto;
     }
     .sub-shelf-card{cursor:pointer;transition:transform 0.3s,filter 0.3s;touch-action:manipulation}
     .sub-shelf-card:hover,.sub-shelf-card:active{transform:translateY(-6px);filter:brightness(1.18)}
-    .sub-shelf-body {
+    .sub-shelf-body{
       min-height:90px; border-radius:4px 4px 0 0;
       display:flex; align-items:flex-end; justify-content:center;
       gap:4px; padding:12px 8px 8px; overflow:hidden; position:relative;
     }
     .sub-shelf-body::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.04),transparent);pointer-events:none}
-
     .sub-shelf-card:nth-child(odd)  .sub-shelf-body{background:linear-gradient(160deg,#6b3a1f,#3d1f0d);border:1px solid #7a4020}
     .sub-shelf-card:nth-child(even) .sub-shelf-body{background:linear-gradient(160deg,#7a5c2e,#4a3318);border:1px solid #8a6c38}
     .sub-shelf-card:nth-child(3n)   .sub-shelf-body{background:linear-gradient(160deg,#8a6030,#513818);border:1px solid #9a7040}
     .sub-shelf-card:nth-child(4n)   .sub-shelf-body{background:linear-gradient(160deg,#5a2d14,#2e160a);border:1px solid #6a3520}
-
     .sub-shelf-plank{height:9px;border-radius:0 0 4px 4px}
     .sub-shelf-card:nth-child(odd)  .sub-shelf-plank{background:linear-gradient(to bottom,#8B4513,#5a2a0a)}
     .sub-shelf-card:nth-child(even) .sub-shelf-plank{background:linear-gradient(to bottom,#A0522D,#6a3418)}
     .sub-shelf-card:nth-child(3n)   .sub-shelf-plank{background:linear-gradient(to bottom,#C68642,#8a5620)}
     .sub-shelf-card:nth-child(4n)   .sub-shelf-plank{background:linear-gradient(to bottom,#7a3520,#4a1a0a)}
-
     .sub-shelf-label{text-align:center;margin-top:9px;font-size:0.85rem;color:var(--gold);font-weight:600}
     .sub-shelf-count{text-align:center;font-size:0.7rem;color:var(--text-secondary);margin-top:2px}
 
     /* BOOK SPINES */
-    #view-books{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:linear-gradient(to bottom,#0e0804,#1a0f07)}
-    #view-books.active{display:block}
+    #view-books{
+      min-height:calc(100vh - 52px);
+      padding:40px 4% 80px;
+      background:linear-gradient(to bottom,#0e0804,#1a0f07);
+    }
     .books-shelf-container{max-width:980px;margin:0 auto}
-    .books-shelf-roll {
+    .books-shelf-roll{
       background:linear-gradient(160deg,#6b3a1f,#3d1f0d);
       border:1px solid #7a4020; border-radius:4px 4px 0 0;
       padding:18px 14px 14px; min-height:360px;
       display:flex; flex-wrap:wrap; gap:6px; align-items:flex-end;
     }
-    .books-shelf-plank {
+    .books-shelf-plank{
       height:13px; background:linear-gradient(to bottom,#8B4513,#5a2a0a);
       border-radius:0 0 4px 4px; margin-bottom:20px;
       box-shadow:0 6px 16px rgba(0,0,0,0.5);
     }
-    .book-spine {
+    .book-spine{
       width:clamp(28px,7vw,38px); min-height:120px;
       border-radius:2px 3px 3px 2px; cursor:pointer;
       display:flex; align-items:center; justify-content:center;
       position:relative; transition:transform 0.25s,box-shadow 0.25s;
-      box-shadow:2px 0 6px rgba(0,0,0,0.4);
-      flex-shrink:0; touch-action:manipulation;
+      box-shadow:2px 0 6px rgba(0,0,0,0.4); flex-shrink:0;
+      touch-action:manipulation;
     }
-    .book-spine:hover,.book-spine:active{transform:translateY(-12px) scaleY(1.04);box-shadow:4px 0 20px rgba(0,0,0,0.7);z-index:5}
-    .spine-title {
+    .book-spine:hover,.book-spine:active{
+      transform:translateY(-12px) scaleY(1.04);
+      box-shadow:4px 0 20px rgba(0,0,0,0.7); z-index:5;
+    }
+    .spine-title{
       writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg);
       font-size:clamp(0.5rem,1.8vw,0.65rem); font-weight:600;
       color:rgba(255,255,255,0.92); text-align:center; padding:5px 2px;
@@ -305,13 +329,8 @@
 
     /* STORY VIEW */
     #view-story{min-height:calc(100vh - 52px);padding:40px 4% 80px;background:var(--bg-dark)}
-    #view-story.active{display:block}
     .story-container{max-width:740px;margin:0 auto}
-    .story-genre-tag {
-      display:inline-block; background:var(--primary); color:#fff;
-      padding:4px 13px; border-radius:4px; font-size:0.7rem;
-      font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;
-    }
+    .story-genre-tag{display:inline-block;background:var(--primary);color:#fff;padding:4px 13px;border-radius:4px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
     .story-view-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin-bottom:16px}
     .story-description-box{background:var(--bg-card);border-left:4px solid var(--primary);border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:28px}
     .story-description-box p{color:var(--text-secondary);font-size:clamp(0.9rem,2.5vw,1rem);line-height:1.75}
@@ -366,8 +385,6 @@
       .books-shelf-roll{padding:14px 10px 10px;gap:5px}
     }
     @media(max-width:380px){
-      .shelf-room{grid-template-columns:1fr 1fr}
-      .sub-shelf-grid{grid-template-columns:1fr 1fr}
       .book-spine{width:26px;min-height:90px}
     }
     @media(min-width:900px){
@@ -385,7 +402,7 @@
 
 <div class="scene">
 
-  <!-- VIEW 1: ENTRANCE -->
+  <!-- VIEW 1: ENTRANCE — shown first, everything else hidden -->
   <div id="view-entrance" class="view active">
     <h1 class="entrance-title">Welcome to the Library</h1>
     <p class="entrance-sub">Thousands of stories wait between these walls. Open the book to begin your journey.</p>
@@ -400,7 +417,7 @@
     <p class="open-cta">✨ Tap the book to open the library</p>
   </div>
 
-  <!-- VIEW 2: LOADING -->
+  <!-- VIEW 2: LOADING — hidden until book is tapped -->
   <div id="view-loading" class="view">
     <div class="path-anim">
       <svg viewBox="0 0 260 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -421,7 +438,7 @@
     <div class="loading-text">Opening the Library<span class="loading-dots"></span></div>
   </div>
 
-  <!-- VIEW 3: GENRE LIBRARY -->
+  <!-- VIEW 3: GENRE SHELVES — hidden until loading finishes -->
   <div id="view-library" class="view">
     <div class="library-heading">
       <h2>📚 The Grand Library</h2>
@@ -430,7 +447,7 @@
     <div class="shelf-room" id="genre-shelf-room"></div>
   </div>
 
-  <!-- VIEW 4: SUB-SHELVES -->
+  <!-- VIEW 4: SUB-SHELVES — hidden until a genre shelf is tapped -->
   <div id="view-subshelves" class="view">
     <button class="view-back-btn" onclick="goBack('view-library')">← Back to Library</button>
     <div class="breadcrumb">
@@ -444,7 +461,7 @@
     <div class="sub-shelf-grid" id="sub-shelf-grid"></div>
   </div>
 
-  <!-- VIEW 5: BOOK SPINES -->
+  <!-- VIEW 5: BOOK SPINES — hidden until a sub-shelf is tapped -->
   <div id="view-books" class="view">
     <button class="view-back-btn" id="books-back-btn">← Back</button>
     <div class="breadcrumb" id="books-breadcrumb"></div>
@@ -455,7 +472,7 @@
     </div>
   </div>
 
-  <!-- VIEW 6: STORY -->
+  <!-- VIEW 6: STORY — hidden until a book spine is tapped -->
   <div id="view-story" class="view">
     <div class="story-container">
       <button class="view-back-btn" id="story-back-btn">← Back to Shelf</button>
@@ -470,7 +487,7 @@
       <hr class="story-divider"/>
       <div class="rating-section">
         <h4>⭐ Rate this story</h4>
-        <div class="stars" id="star-container">
+        <div class="stars">
           <span class="star" data-v="1">★</span>
           <span class="star" data-v="2">★</span>
           <span class="star" data-v="3">★</span>
@@ -501,9 +518,15 @@
     </div>
   </div>
 
-</div>
+</div><!-- /.scene -->
 
 <script>
+/* ═══════════════════════════════════════════════
+   LIBRARY DATA
+   To add a story: add a new { } object inside
+   any books:[ ] array. The shelf grows longer
+   automatically as you add more books.
+═══════════════════════════════════════════════ */
 const LIBRARY = [
   {
     id:'mystery', name:'Mystery', icon:'🔍',
@@ -616,40 +639,55 @@ const LIBRARY = [
   }
 ];
 
+/* ── STATE ── */
 let currentGenreId = null, currentSubShelfId = null, currentBookId = null;
 
+/* ── SHOW ONE VIEW AT A TIME ── */
 function showView(id) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
 function goBack(target) { showView(target); }
 
-/* KEY FIX: listen to both click AND touchend */
+/* ── RESTART LOADING ANIMATION ── */
+function restartAnim() {
+  document.querySelectorAll('.path-line').forEach(l => {
+    l.style.animation = 'none';
+    void l.offsetWidth;
+    l.style.animation = '';
+  });
+}
+
+/* ── BIG BOOK BUTTON — both click and touchend for Android ── */
 document.getElementById('big-book-btn').addEventListener('click', openLibrary);
-document.getElementById('big-book-btn').addEventListener('touchend', function(e){
-  e.preventDefault(); openLibrary();
-}, {passive:false});
+document.getElementById('big-book-btn').addEventListener('touchend', function(e) {
+  e.preventDefault();
+  openLibrary();
+}, { passive: false });
 
 function openLibrary() {
   showView('view-loading');
-  document.querySelectorAll('.path-line').forEach(l => {
-    l.style.animation='none'; void l.offsetWidth; l.style.animation='';
-  });
-  setTimeout(() => { renderLibrary(); showView('view-library'); }, 2600);
+  restartAnim();
+  setTimeout(() => {
+    renderLibrary();
+    showView('view-library');
+  }, 2600);
 }
 
+/* ── RENDER GENRE SHELVES ── */
 function renderLibrary() {
-  const c = document.getElementById('genre-shelf-room');
-  c.innerHTML = '';
+  const container = document.getElementById('genre-shelf-room');
+  container.innerHTML = '';
   LIBRARY.forEach(genre => {
     const el = document.createElement('div');
     el.className = 'genre-shelf';
-    const mb = Array.from({length:8},(_,i)=>
-      `<div class="mini-book" style="height:${55+Math.sin(i)*18}px"></div>`).join('');
+    const miniBooks = Array.from({length:8}, (_, i) =>
+      `<div class="mini-book" style="height:${55 + Math.sin(i) * 18}px"></div>`
+    ).join('');
     el.innerHTML = `
       <div class="shelf-unit">
-        <div class="shelf-body">${mb}</div>
+        <div class="shelf-body">${miniBooks}</div>
         <div class="shelf-plank"></div>
       </div>
       <div class="shelf-label">
@@ -657,21 +695,23 @@ function renderLibrary() {
         <p>${genre.tagline}</p>
       </div>`;
     el.addEventListener('click', () => openGenre(genre.id));
-    c.appendChild(el);
+    container.appendChild(el);
   });
 }
 
+/* ── OPEN GENRE → LOADING → SUB-SHELVES ── */
 function openGenre(genreId) {
   currentGenreId = genreId;
   showView('view-loading');
-  document.querySelectorAll('.path-line').forEach(l => {
-    l.style.animation='none'; void l.offsetWidth; l.style.animation='';
-  });
-  setTimeout(() => { renderSubShelves(genreId); showView('view-subshelves'); }, 1800);
+  restartAnim();
+  setTimeout(() => {
+    renderSubShelves(genreId);
+    showView('view-subshelves');
+  }, 1800);
 }
 
 function renderSubShelves(genreId) {
-  const genre = LIBRARY.find(g => g.id===genreId);
+  const genre = LIBRARY.find(g => g.id === genreId);
   document.getElementById('subshelves-title').textContent      = `${genre.icon} ${genre.name}`;
   document.getElementById('subshelves-genre-name').textContent = genre.name;
   const grid = document.getElementById('sub-shelf-grid');
@@ -679,22 +719,25 @@ function renderSubShelves(genreId) {
   genre.subShelves.forEach(sub => {
     const card = document.createElement('div');
     card.className = 'sub-shelf-card';
-    const mb = Array.from({length:6},(_,i)=>
-      `<div style="width:14px;height:${48+Math.cos(i)*14}px;background:linear-gradient(to right,hsl(${i*40},70%,45%),hsl(${i*40+20},60%,35%));border-radius:1px 2px 2px 1px;"></div>`).join('');
+    const miniBooks = Array.from({length:6}, (_, i) =>
+      `<div style="width:14px;height:${48+Math.cos(i)*14}px;background:linear-gradient(to right,hsl(${i*40},70%,45%),hsl(${i*40+20},60%,35%));border-radius:1px 2px 2px 1px;"></div>`
+    ).join('');
     card.innerHTML = `
-      <div class="sub-shelf-body">${mb}</div>
+      <div class="sub-shelf-body">${miniBooks}</div>
       <div class="sub-shelf-plank"></div>
       <div class="sub-shelf-label">${sub.name}</div>
-      <div class="sub-shelf-count">${sub.books.length} ${sub.books.length===1?'story':'stories'}</div>`;
+      <div class="sub-shelf-count">${sub.books.length} ${sub.books.length === 1 ? 'story' : 'stories'}</div>`;
     card.addEventListener('click', () => openSubShelf(genreId, sub.id));
     grid.appendChild(card);
   });
 }
 
+/* ── OPEN SUB-SHELF → BOOK SPINES ── */
 function openSubShelf(genreId, subShelfId) {
   currentSubShelfId = subShelfId;
-  const genre = LIBRARY.find(g => g.id===genreId);
-  const sub   = genre.subShelves.find(s => s.id===subShelfId);
+  const genre = LIBRARY.find(g => g.id === genreId);
+  const sub   = genre.subShelves.find(s => s.id === subShelfId);
+
   document.getElementById('books-shelf-title').textContent = sub.name;
   document.getElementById('books-breadcrumb').innerHTML =
     `<span onclick="goBack('view-library')" style="cursor:pointer">Library</span>
@@ -703,64 +746,71 @@ function openSubShelf(genreId, subShelfId) {
      <span> › </span>
      <span>${sub.name}</span>`;
   document.getElementById('books-back-btn').onclick = () => goBack('view-subshelves');
+
   const roll = document.getElementById('books-shelf-roll');
   roll.innerHTML = '';
   if (!sub.books.length) {
-    roll.innerHTML='<p class="empty-shelf-msg">No stories on this shelf yet — check back soon!</p>';
+    roll.innerHTML = '<p class="empty-shelf-msg">No stories on this shelf yet — check back soon!</p>';
   } else {
     sub.books.forEach(book => {
-      const sp = document.createElement('div');
-      sp.className = 'book-spine';
-      sp.style.minHeight = (110+(book.title.length%5)*14)+'px';
-      sp.innerHTML = `<span class="spine-title">${book.title}</span>`;
-      sp.addEventListener('click', () => openStory(genreId, subShelfId, book.id));
-      roll.appendChild(sp);
+      const spine = document.createElement('div');
+      spine.className = 'book-spine';
+      spine.style.minHeight = (110 + (book.title.length % 5) * 14) + 'px';
+      spine.innerHTML = `<span class="spine-title">${book.title}</span>`;
+      spine.addEventListener('click', () => openStory(genreId, subShelfId, book.id));
+      roll.appendChild(spine);
     });
   }
   showView('view-books');
 }
 
+/* ── OPEN STORY ── */
 function openStory(genreId, subShelfId, bookId) {
   currentBookId = bookId;
-  const genre = LIBRARY.find(g => g.id===genreId);
-  const sub   = genre.subShelves.find(s => s.id===subShelfId);
-  const book  = sub.books.find(b => b.id===bookId);
+  const genre = LIBRARY.find(g => g.id === genreId);
+  const sub   = genre.subShelves.find(s => s.id === subShelfId);
+  const book  = sub.books.find(b => b.id === bookId);
+
   document.getElementById('story-back-btn').onclick = () => goBack('view-books');
   document.getElementById('story-genre-tag').textContent   = `${genre.icon} ${genre.name} · ${sub.name}`;
   document.getElementById('story-title').textContent       = book.title;
   document.getElementById('story-description').textContent = book.description;
+
   const ft = document.getElementById('story-full-text');
   ft.innerHTML = book.fullStory
-    ? book.fullStory.map(p=>`<p>${p}</p>`).join('')
+    ? book.fullStory.map(p => `<p>${p}</p>`).join('')
     : `<div class="story-placeholder">
          <div class="placeholder-icon">✍️</div>
          <p>The full story will appear here once added by the author.</p>
          <p style="margin-top:8px;font-size:0.8rem;">Story content coming soon!</p>
        </div>`;
+
   resetRating();
-  document.getElementById('comments-list').innerHTML='<p class="no-comments">No comments yet — be the first!</p>';
-  document.getElementById('comment-input').value='';
-  document.getElementById('coin-toast').style.display='none';
+  document.getElementById('comments-list').innerHTML = '<p class="no-comments">No comments yet — be the first!</p>';
+  document.getElementById('comment-input').value = '';
+  document.getElementById('coin-toast').style.display = 'none';
   showView('view-story');
 }
 
+/* ── RATING ── */
 let currentRating = 0;
 function resetRating() {
   currentRating = 0;
-  document.querySelectorAll('.star').forEach(s=>s.classList.remove('active'));
-  document.getElementById('rating-msg').textContent='Select a star to rate';
+  document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+  document.getElementById('rating-msg').textContent = 'Select a star to rate';
 }
 document.querySelectorAll('.star').forEach(star => {
   star.addEventListener('click', () => {
     currentRating = parseInt(star.getAttribute('data-v'));
     document.querySelectorAll('.star').forEach(s => {
-      s.classList.toggle('active', parseInt(s.getAttribute('data-v'))<=currentRating);
+      s.classList.toggle('active', parseInt(s.getAttribute('data-v')) <= currentRating);
     });
-    const msgs=['','Not for me','It was okay','Enjoyed it','Really good!','Absolutely brilliant! ⭐'];
-    document.getElementById('rating-msg').textContent=msgs[currentRating];
+    const msgs = ['','Not for me','It was okay','Enjoyed it','Really good!','Absolutely brilliant! ⭐'];
+    document.getElementById('rating-msg').textContent = msgs[currentRating];
   });
 });
 
+/* ── COMMENTS ── */
 function submitComment() {
   const input = document.getElementById('comment-input');
   const text  = input.value.trim();
@@ -769,17 +819,18 @@ function submitComment() {
   const noMsg = list.querySelector('.no-comments');
   if (noMsg) noMsg.remove();
   const item  = document.createElement('div');
-  item.className='comment-item';
-  item.innerHTML=`<div class="comment-author">Anonymous Reader</div>${text.replace(/</g,'&lt;')}`;
+  item.className = 'comment-item';
+  item.innerHTML = `<div class="comment-author">Anonymous Reader</div>${text.replace(/</g,'&lt;')}`;
   list.appendChild(item);
-  input.value='';
+  input.value = '';
 }
 
+/* ── COIN SUPPORT ── */
 function supportCoin(amount) {
-  const t = document.getElementById('coin-toast');
-  t.textContent=`🪙 You sent ${amount} coin${amount>1?'s':''}! Thank you for supporting this story! ✨`;
-  t.style.display='block';
-  setTimeout(()=>{t.style.display='none';},4000);
+  const toast = document.getElementById('coin-toast');
+  toast.textContent = `🪙 You sent ${amount} coin${amount > 1 ? 's' : ''}! Thank you for supporting this story! ✨`;
+  toast.style.display = 'block';
+  setTimeout(() => { toast.style.display = 'none'; }, 4000);
 }
 </script>
 </body>
