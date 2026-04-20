@@ -18905,6 +18905,464 @@ If every reflection you have ever seen was not a copy of you, but a version of y
 </div>
 </div>
 </div>
+    <!-- ═══════════════════════════════════════════════════════════
+     AUTH MODAL — Login / Signup
+═══════════════════════════════════════════════════════════ -->
+<div id="auth-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);overflow-y:auto;animation:fadeIn 0.3s ease;">
+  <div style="max-width:460px;margin:60px auto;background:#1F1F1F;border-radius:20px;overflow:hidden;border:1px solid rgba(229,9,20,0.25);box-shadow:0 30px 60px rgba(0,0,0,0.8);">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#B20710,#E50914);padding:36px 30px 28px;text-align:center;position:relative;">
+      <button onclick="closeAuthModal()" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.3);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer;">✕</button>
+      <div style="font-size:2.4rem;margin-bottom:10px;">📚</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:6px;" id="auth-modal-title">Join Laminono Nexus</h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:0.88rem;" id="auth-modal-sub">Save your favourite stories. Read anywhere.</p>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:30px;">
+
+      <!-- Google Button -->
+      <button onclick="signInWithGoogle()" style="width:100%;padding:14px;background:#fff;color:#141414;border:none;border-radius:10px;font-size:0.95rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Continue with Google
+      </button>
+
+      <!-- Divider -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <div style="flex:1;height:1px;background:rgba(255,255,255,0.1);"></div>
+        <span style="color:#808080;font-size:0.82rem;">or</span>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,0.1);"></div>
+      </div>
+
+      <!-- Email/Password Form -->
+      <div id="auth-form-login">
+        <input type="email" id="auth-email" placeholder="Email address" style="width:100%;padding:13px 16px;background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:0.92rem;margin-bottom:12px;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='#E50914'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+        <input type="password" id="auth-password" placeholder="Password" style="width:100%;padding:13px 16px;background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:0.92rem;margin-bottom:8px;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='#E50914'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+        <p id="auth-error" style="color:#E50914;font-size:0.8rem;min-height:18px;margin-bottom:10px;"></p>
+        <button onclick="handleEmailAuth()" style="width:100%;padding:14px;background:#E50914;color:#fff;border:none;border-radius:10px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:background 0.3s;" onmouseover="this.style.background='#B20710'" onmouseout="this.style.background='#E50914'" id="auth-submit-btn">Sign In</button>
+        <div style="text-align:center;margin-top:16px;">
+          <span style="color:#808080;font-size:0.85rem;" id="auth-toggle-text">Don't have an account?</span>
+          <button onclick="toggleAuthMode()" style="background:none;border:none;color:#E50914;font-size:0.85rem;font-weight:600;cursor:pointer;margin-left:4px;" id="auth-toggle-btn">Sign Up</button>
+        </div>
+        <div style="text-align:center;margin-top:8px;">
+          <button onclick="forgotPassword()" style="background:none;border:none;color:#808080;font-size:0.8rem;cursor:pointer;" id="forgot-btn">Forgot password?</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MY LIST MODAL
+═══════════════════════════════════════════════════════════ -->
+<div id="mylist-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);overflow-y:auto;animation:fadeIn 0.3s ease;">
+  <div style="max-width:700px;margin:50px auto;background:#1F1F1F;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 30px 60px rgba(0,0,0,0.8);">
+    <div style="padding:28px 30px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#f5c6a0;">📖 My Reading List</h2>
+      <button onclick="closeMyList()" style="background:rgba(255,255,255,0.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;">✕</button>
+    </div>
+    <div style="padding:24px 30px;" id="mylist-content">
+      <p style="color:#808080;text-align:center;padding:40px 0;font-style:italic;">Loading your list...</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SHARE MODAL
+═══════════════════════════════════════════════════════════ -->
+<div id="share-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);display:none;align-items:flex-end;justify-content:center;" onclick="if(event.target===this)closeShareModal()">
+  <div style="width:100%;max-width:600px;background:#1F1F1F;border-radius:20px 20px 0 0;padding:0 0 30px;border:1px solid rgba(255,255,255,0.08);animation:slideUp 0.35s ease;">
+
+    <!-- Handle -->
+    <div style="text-align:center;padding:14px 0 0;"><div style="width:40px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto;"></div></div>
+
+    <!-- Story Preview Card -->
+    <div style="margin:18px 20px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);" id="share-preview-card">
+      <div style="height:160px;background:#2A2A2A;background-size:cover;background-position:center;" id="share-preview-img"></div>
+      <div style="padding:14px 16px;background:#141414;">
+        <p style="color:#E50914;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;" id="share-preview-genre"></p>
+        <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#fff;margin-bottom:6px;line-height:1.3;" id="share-preview-title"></p>
+        <p style="font-size:0.8rem;color:#B3B3B3;line-height:1.5;" id="share-preview-hook"></p>
+        <p style="font-size:0.72rem;color:#E50914;margin-top:8px;">📚 laminono-nexus.github.io</p>
+      </div>
+    </div>
+
+    <!-- Share Options -->
+    <div style="padding:0 20px;">
+      <p style="color:#808080;font-size:0.82rem;margin-bottom:14px;text-align:center;">Share this story</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px;">
+        <button onclick="shareVia('whatsapp')" style="background:#25D366;border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <span style="font-size:1.6rem;">💬</span>
+          <span style="color:#fff;font-size:0.7rem;font-weight:600;">WhatsApp</span>
+        </button>
+        <button onclick="shareVia('twitter')" style="background:#000;border:1px solid #333;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <span style="font-size:1.6rem;">𝕏</span>
+          <span style="color:#fff;font-size:0.7rem;font-weight:600;">X / Twitter</span>
+        </button>
+        <button onclick="shareVia('facebook')" style="background:#1877F2;border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <span style="font-size:1.6rem;">📘</span>
+          <span style="color:#fff;font-size:0.7rem;font-weight:600;">Facebook</span>
+        </button>
+        <button onclick="shareVia('telegram')" style="background:#229ED9;border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <span style="font-size:1.6rem;">✈️</span>
+          <span style="color:#fff;font-size:0.7rem;font-weight:600;">Telegram</span>
+        </button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+        <button onclick="shareVia('instagram')" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <span style="font-size:1.6rem;">📸</span>
+          <span style="color:#fff;font-size:0.7rem;font-weight:600;">Instagram</span>
+        </button>
+        <button onclick="shareVia('native')" style="background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <span style="font-size:1.6rem;">⋯</span>
+          <span style="color:#fff;font-size:0.7rem;font-weight:600;">More</span>
+        </button>
+        <button onclick="copyShareLink()" style="background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;" id="copy-link-btn">
+          <span style="font-size:1.6rem;">🔗</span>
+          <span style="color:#fff;font-size:0.7rem;font-weight:600;">Copy Link</span>
+        </button>
+      </div>
+      <button onclick="closeShareModal()" style="width:100%;padding:13px;background:rgba(255,255,255,0.06);border:none;border-radius:10px;color:#B3B3B3;font-size:0.9rem;cursor:pointer;">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     USER PROFILE BAR (shows when logged in — top right)
+═══════════════════════════════════════════════════════════ -->
+<div id="user-profile-bar" style="display:none;position:fixed;top:14px;right:80px;z-index:9000;display:none;align-items:center;gap:10px;">
+  <img id="user-avatar" src="" alt="" style="width:34px;height:34px;border-radius:50%;border:2px solid #E50914;object-fit:cover;cursor:pointer;" onclick="openMyList()" title="My List"/>
+  <button onclick="signOutUser()" style="background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.4);color:#E50914;padding:6px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer;">Sign Out</button>
+</div>
+
+<style>
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.mylist-story-card {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  background: #141414;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+.mylist-story-card:hover { border-color: rgba(229,9,20,0.4); }
+.mylist-thumb {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background: #2A2A2A;
+}
+.mylist-remove {
+  background: none;
+  border: none;
+  color: #808080;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: color 0.3s;
+}
+.mylist-remove:hover { color: #E50914; }
+</style>
+
+<script type="module">
+/* ═══════════════════════════════════════════════════════════
+   FIREBASE — Auth + Firestore
+═══════════════════════════════════════════════════════════ */
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA4jdIQilVbAcdnc0mAxk8arTg9xvYDuzc",
+  authDomain: "laminono-nexus.firebaseapp.com",
+  projectId: "laminono-nexus",
+  storageBucket: "laminono-nexus.firebasestorage.app",
+  messagingSenderId: "762207905640",
+  appId: "1:762207905640:web:9727e33d2f4d33bcc4d8dd"
+};
+
+const app      = initializeApp(firebaseConfig);
+const auth     = getAuth(app);
+const db       = getFirestore(app);
+const provider = new GoogleAuthProvider();
+
+/* ── STATE ── */
+let currentUser    = null;
+let isSignUpMode   = false;
+let pendingAction  = null; // 'mylist' | 'share'
+
+/* ── AUTH STATE LISTENER ── */
+onAuthStateChanged(auth, user => {
+  currentUser = user;
+  const bar    = document.getElementById('user-profile-bar');
+  const avatar = document.getElementById('user-avatar');
+  if (user) {
+    bar.style.display = 'flex';
+    avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
+    // If there was a pending action after login, execute it
+    if (pendingAction === 'mylist') { pendingAction = null; openMyList(); }
+  } else {
+    bar.style.display = 'none';
+  }
+});
+
+/* ── EXPOSE FUNCTIONS TO GLOBAL SCOPE ── */
+window.signInWithGoogle = async () => {
+  try {
+    document.getElementById('auth-error').textContent = '';
+    await signInWithPopup(auth, provider);
+    closeAuthModal();
+    showToast('Welcome to Laminono Nexus! 🎉');
+  } catch(e) {
+    document.getElementById('auth-error').textContent = e.message.replace('Firebase: ','');
+  }
+};
+
+window.handleEmailAuth = async () => {
+  const email    = document.getElementById('auth-email').value.trim();
+  const password = document.getElementById('auth-password').value;
+  const errEl    = document.getElementById('auth-error');
+  errEl.textContent = '';
+  if (!email || !password) { errEl.textContent = 'Please fill in all fields.'; return; }
+  try {
+    if (isSignUpMode) {
+      await createUserWithEmailAndPassword(auth, email, password);
+      showToast('Account created! Welcome 🎉');
+    } else {
+      await signInWithEmailAndPassword(auth, email, password);
+      showToast('Welcome back! 👋');
+    }
+    closeAuthModal();
+  } catch(e) {
+    const msg = e.code === 'auth/wrong-password'       ? 'Incorrect password.'
+              : e.code === 'auth/user-not-found'        ? 'No account found with this email.'
+              : e.code === 'auth/email-already-in-use'  ? 'This email is already registered. Sign in instead.'
+              : e.code === 'auth/weak-password'          ? 'Password must be at least 6 characters.'
+              : e.code === 'auth/invalid-email'          ? 'Please enter a valid email address.'
+              : e.message.replace('Firebase: ','');
+    errEl.textContent = msg;
+  }
+};
+
+window.forgotPassword = async () => {
+  const email = document.getElementById('auth-email').value.trim();
+  if (!email) { document.getElementById('auth-error').textContent = 'Enter your email above first.'; return; }
+  try {
+    await sendPasswordResetEmail(auth, email);
+    showToast('Password reset email sent! Check your inbox.');
+  } catch(e) {
+    document.getElementById('auth-error').textContent = 'Could not send reset email. Check the address.';
+  }
+};
+
+window.toggleAuthMode = () => {
+  isSignUpMode = !isSignUpMode;
+  document.getElementById('auth-modal-title').textContent  = isSignUpMode ? 'Create Your Account'   : 'Welcome Back';
+  document.getElementById('auth-modal-sub').textContent    = isSignUpMode ? 'Join the story community.' : 'Sign in to access your reading list.';
+  document.getElementById('auth-submit-btn').textContent   = isSignUpMode ? 'Create Account'          : 'Sign In';
+  document.getElementById('auth-toggle-text').textContent  = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
+  document.getElementById('auth-toggle-btn').textContent   = isSignUpMode ? 'Sign In'                  : 'Sign Up';
+  document.getElementById('forgot-btn').style.display      = isSignUpMode ? 'none' : 'block';
+  document.getElementById('auth-error').textContent = '';
+};
+
+window.signOutUser = async () => {
+  await signOut(auth);
+  showToast('You have been signed out.');
+};
+
+/* ── AUTH MODAL ── */
+window.openAuthModal = (action) => {
+  pendingAction = action || null;
+  document.getElementById('auth-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+};
+window.closeAuthModal = () => {
+  document.getElementById('auth-modal').style.display = 'none';
+  document.body.style.overflow = '';
+};
+
+/* ══════════════════════════════════════════
+   MY LIST — Firestore
+══════════════════════════════════════════ */
+window.toggleMyList = async () => {
+  if (!currentUser) { openAuthModal('mylist'); return; }
+  const story = window.currentStory;
+  if (!story) return;
+  const ref  = doc(db, 'users', currentUser.uid);
+  const snap = await getDoc(ref);
+  const list = snap.exists() ? (snap.data().myList || []) : [];
+  const exists = list.some(s => s.id === story.id);
+  const item = { id: story.id, title: story.title, genre: story.genre, image: story.image, readTime: story.readTime };
+
+  if (exists) {
+    await updateDoc(ref, { myList: arrayRemove(item) }).catch(() =>
+      setDoc(ref, { myList: list.filter(s => s.id !== story.id) }, { merge: true })
+    );
+    showToast('Removed from My List');
+    document.getElementById('mylist-btn-text').textContent = '+ My List';
+  } else {
+    if (!snap.exists()) {
+      await setDoc(ref, { myList: [item] });
+    } else {
+      await updateDoc(ref, { myList: arrayUnion(item) });
+    }
+    showToast('✅ Added to My List!');
+    document.getElementById('mylist-btn-text').textContent = '✓ In My List';
+  }
+};
+
+window.openMyList = async () => {
+  if (!currentUser) { openAuthModal('mylist'); return; }
+  document.getElementById('mylist-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  const content = document.getElementById('mylist-content');
+  content.innerHTML = '<p style="color:#808080;text-align:center;padding:40px 0;">Loading...</p>';
+  try {
+    const snap = await getDoc(doc(db, 'users', currentUser.uid));
+    const list = snap.exists() ? (snap.data().myList || []) : [];
+    if (!list.length) {
+      content.innerHTML = '<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;font-size:0.92rem;">Your reading list is empty.<br>Tap <strong style=\'color:#fff\'>"+ My List"</strong> on any story to save it here.</p></div>';
+      return;
+    }
+    content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">' + list.length + ' ' + (list.length === 1 ? 'story' : 'stories') + ' saved</p>' +
+      list.map(s => `
+        <div class="mylist-story-card" onclick="openStory('${s.id}');closeMyList()">
+          <img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/>
+          <div style="flex:1;min-width:0;">
+            <p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p>
+            <p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p>
+            <p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p>
+          </div>
+          <button class="mylist-remove" onclick="event.stopPropagation();removeFromMyList('${s.id}')" title="Remove">🗑</button>
+        </div>`).join('');
+  } catch(e) {
+    content.innerHTML = '<p style="color:#E50914;text-align:center;padding:30px;">Could not load your list. Try again.</p>';
+  }
+};
+
+window.removeFromMyList = async (storyId) => {
+  if (!currentUser) return;
+  const ref  = doc(db, 'users', currentUser.uid);
+  const snap = await getDoc(ref);
+  if (!snap.exists()) return;
+  const list = (snap.data().myList || []).filter(s => s.id !== storyId);
+  await setDoc(ref, { myList: list }, { merge: true });
+  openMyList();
+  showToast('Removed from My List');
+};
+
+window.closeMyList = () => {
+  document.getElementById('mylist-modal').style.display = 'none';
+  document.body.style.overflow = '';
+};
+
+/* ══════════════════════════════════════════
+   SHARE
+══════════════════════════════════════════ */
+window.openShareModal = () => {
+  const story = window.currentStory;
+  if (!story) return;
+
+  // Build share link with story ID
+  const shareUrl  = `https://laminono-nexus.github.io/?story=${story.id}`;
+  const hookLine  = story.excerpt || story.content.split('\n\n')[0].substring(0, 120) + '…';
+
+  document.getElementById('share-preview-img').style.backgroundImage   = `url('${story.image}')`;
+  document.getElementById('share-preview-genre').textContent            = story.genre;
+  document.getElementById('share-preview-title').textContent            = story.title;
+  document.getElementById('share-preview-hook').textContent             = hookLine;
+
+  // Store for share functions
+  window._shareData = { url: shareUrl, title: story.title, text: hookLine, image: story.image };
+
+  const modal = document.getElementById('share-modal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeShareModal = () => {
+  document.getElementById('share-modal').style.display = 'none';
+  document.body.style.overflow = '';
+};
+
+window.shareVia = (platform) => {
+  const d   = window._shareData;
+  const msg = encodeURIComponent(`📚 "${d.title}"\n\n${d.text}\n\n🔗 Read more: ${d.url}`);
+  const url = encodeURIComponent(d.url);
+  const ttl = encodeURIComponent(d.title);
+  const links = {
+    whatsapp:  `https://wa.me/?text=${msg}`,
+    twitter:   `https://twitter.com/intent/tweet?text=${msg}`,
+    facebook:  `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${encodeURIComponent(d.title + ' — ' + d.text)}`,
+    telegram:  `https://t.me/share/url?url=${url}&text=${encodeURIComponent(d.title + '\n\n' + d.text)}`,
+    instagram: null, // Instagram doesn't support direct link sharing — copy instead
+    native:    null,
+  };
+
+  if (platform === 'instagram') {
+    copyShareLink();
+    showToast('Link copied! Paste it in your Instagram story or bio 📸');
+    return;
+  }
+
+  if (platform === 'native') {
+    if (navigator.share) {
+      navigator.share({ title: d.title, text: d.text, url: d.url }).catch(() => {});
+    } else {
+      copyShareLink();
+    }
+    return;
+  }
+
+  if (links[platform]) window.open(links[platform], '_blank');
+  closeShareModal();
+};
+
+window.copyShareLink = () => {
+  const d = window._shareData;
+  const text = `📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => {
+      document.getElementById('copy-link-btn').querySelector('span:last-child').textContent = 'Copied!';
+      setTimeout(() => { document.getElementById('copy-link-btn').querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
+      showToast('Link copied to clipboard! 🔗');
+    });
+  } else {
+    const el = document.createElement('textarea');
+    el.value = text; document.body.appendChild(el);
+    el.select(); document.execCommand('copy'); document.body.removeChild(el);
+    showToast('Link copied! 🔗');
+  }
+};
+
+/* ══════════════════════════════════════════
+   DEEP LINK — open story from URL param
+══════════════════════════════════════════ */
+window.addEventListener('DOMContentLoaded', () => {
+  const params  = new URLSearchParams(window.location.search);
+  const storyId = params.get('story');
+  if (storyId) {
+    setTimeout(() => {
+      if (typeof openStory === 'function') openStory(storyId);
+    }, 800);
+  }
+});
+
+</script>
     <!-- Footer -->
     <footer>
         <div class="footer-content">
