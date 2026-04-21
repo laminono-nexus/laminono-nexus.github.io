@@ -1,0 +1,492 @@
+[
+  {
+    "id": "echoes",
+    "title": "The Echoes of Tomorrow",
+    "genre": "Drama",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&q=80",
+    "excerpt": "In a world where memories can be traded like currency, one archivist discovers a recollection that could unravel the fabric of society.",
+    "content": "The morning light filtered through the stained glass windows of the Archives, casting prismatic shadows across the marble floors. Elias Vane adjusted his spectacles, the brass frames glinting in the sun, as he prepared for another day of sorting memories.\n\nIt was 2147, and the world had changed. Memories—the precious, intangible fragments of human experience—had become the most valuable currency on earth. The wealthy purchased joyful recollections to escape their hollow existences, while the desperate sold their happiest moments to survive another week.\n\nElias had worked as a Memory Archivist for thirty years. He had seen thousands of memories: first loves, last goodbyes, childhood summers, and deathbed confessions. But today was different.\n\nToday, he found the Echo.\n\nIt was labeled only with a date—October 3rd, 2089—and a serial number. No donor name, no classification, no price tag. Against protocol, Elias inserted the crystal memory drive into his viewer.\n\nThe world dissolved.\n\nHe was standing in a garden. Not the manicured, synthetic gardens of the Upper City, but a wild, untamed place where roses climbed crumbling walls and bees hummed between lavender stalks. A woman sat on a stone bench, her face turned away, reading from a paper book.\n\n\"You're early,\" she said without looking up. Her voice was like honey and smoke.\n\n\"I had to see you,\" Elias heard himself say—except it wasn't him. It was the memory's owner. \"The Council knows.\"\n\nThe woman closed her book. When she turned, Elias gasped. He knew that face. Everyone knew that face. It was Dr. Elara Voss, the scientist who had invented memory extraction technology. She had died fifty years ago, martyred by the very system she created.\n\n\"They can't know the truth,\" Elara said, standing. She wore a simple white dress, and in the afternoon light, she seemed to glow. \"If they find the Source, they'll destroy everything. Humanity will lose its last chance at redemption.\"\n\n\"What do I do?\" the memory's owner asked.\n\nElara stepped closer, her eyes—gray as storm clouds—filling with tears. \"You hide it. You hide it where only the worthy will find it. In the Echoes.\"\n\nThe memory flickered. Elias felt a surge of panic, of love, of absolute determination. Then darkness.\n\nHe ripped the viewer from his forehead, gasping. His hands shook. Dr. Voss was supposed to have died before the technology was even released. But this memory was dated years after her supposed death. And she was talking about hiding something—the Source.\n\nElias looked at the crystal drive in his trembling hand. If the Council knew this existed...\n\nBut he was already making his decision. Thirty years of archiving other people's lives had taught him one thing: some memories were worth dying for. And some truths were worth killing to protect.\n\nHe pocketed the drive and walked out of the Archives, leaving his old life behind. The Echoes were calling, and for the first time in decades, Elias Vane felt truly alive."
+  },
+  {
+    "id": "midnight",
+    "title": "Midnight in Lisbon",
+    "genre": "Romance",
+    "readTime": "8 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1525874684015-58379d421a52?w=800&q=80",
+    "excerpt": "The tram rattled through the narrow streets as Ana painted the city in shades of blue and gold...",
+    "content": "The tram rattled through the narrow streets as Ana painted the city in shades of blue and gold...\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "nebula",
+    "title": "Nebula's Edge",
+    "genre": "Sci-Fi",
+    "readTime": "15 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80",
+    "excerpt": "Captain Reeves stared at the anomaly, knowing it would change everything about humanity's place in the universe.",
+    "content": "Captain Reeves stared at the anomaly, knowing it would change everything about humanity's place in the universe.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "garden",
+    "title": "The Last Garden",
+    "genre": "Dystopian",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
+    "excerpt": "In a concrete world stripped of nature, Maya tended the last green thing on Earth—and planned a quiet revolution.",
+    "content": "In a concrete world stripped of nature, Maya tended the last green thing on Earth—and planned a quiet revolution.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "letters",
+    "title": "Letters to the Sea",
+    "genre": "Literary Fiction",
+    "readTime": "11 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&q=80",
+    "excerpt": "Every morning, Eleanor wrote to her missing daughter and cast the letters into the waves.",
+    "content": "Every morning, Eleanor wrote to her missing daughter and cast the letters into the waves.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "promise",
+    "title": "The Weight of a Promise",
+    "genre": "Drama",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80",
+    "excerpt": "The airport was louder than Daniel expected, but inside him, everything felt quiet. Not peaceful—just quiet, like a storm holding its breath.",
+    "content": "The airport was louder than Daniel expected, but inside him, everything felt quiet. Not peaceful—just quiet, like a storm holding its breath.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "future",
+    "title": "The Man Who Returned His Future",
+    "genre": "Drama",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&q=80",
+    "excerpt": "On a quiet street in Lisbon, there was a small antique shop no one really noticed. Just a narrow wooden door that always seemed slightly open.",
+    "content": "On a quiet street in Lisbon, there was a small antique shop no one really noticed. Just a narrow wooden door that always seemed slightly open.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "silent",
+    "title": "The Day The World Went Silent",
+    "genre": "Drama",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
+    "excerpt": "It began at exactly 9:17 a.m. No warning. No explosion. No announcement. Just silence.",
+    "content": "It began at exactly 9:17 a.m. No warning. No explosion. No announcement. Just silence.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "money",
+    "title": "The Money That Never Arrived",
+    "genre": "Drama",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80",
+    "excerpt": "At exactly 2:43 p.m., Chinedu refreshed his bank app for the seventh time. Still nothing. The payment had been promised two weeks ago.",
+    "content": "At exactly 2:43 p.m., Chinedu refreshed his bank app for the seventh time. Still nothing. The payment had been promised two weeks ago.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "drafts",
+    "title": "The Last Message In His Drafts",
+    "genre": "Drama",
+    "readTime": "9 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
+    "excerpt": "At 11:58 p.m., Tunde stared at his phone for the fourth time that night. The message was still there. Unsent.",
+    "content": "At 11:58 p.m., Tunde stared at his phone for the fourth time that night. The message was still there. Unsent.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "secondshift",
+    "title": "The Second Shift",
+    "genre": "Drama",
+    "readTime": "8 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+    "excerpt": "At 6:12 p.m., the office lights flickered off automatically. Clara didn't notice. She was still staring at her screen.",
+    "content": "At 6:12 p.m., the office lights flickered off automatically. Clara didn't notice. She was still staring at her screen.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "seathenevertook",
+    "title": "The Seat He Never Took",
+    "genre": "Drama",
+    "readTime": "7 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80",
+    "excerpt": "Flight 247 was overbooked. Not unusual. What made this day different was seat 18A—and the choice of one stranger.",
+    "content": "Flight 247 was overbooked. Not unusual. What made this day different was seat 18A—and the choice of one stranger.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "elevator",
+    "title": "The Elevator Didn't Stop on His Floor",
+    "genre": "Drama",
+    "readTime": "8 min",
+    "trending": true,
+    "image": "https://images.stockcake.com/public/5/e/9/5e98e74e-bef5-4881-b4e8-9d150c607ffc_large/vintage-elevator-interior-stockcake.jpg",
+    "excerpt": "At 8:59 a.m., the elevator doors slid open. David stepped in, adjusting his tie, eyes fixed on his phone. He didn't know he was about to miss his floor.",
+    "content": "At 8:59 a.m., the elevator doors slid open. David stepped in, adjusting his tie, eyes fixed on his phone. He didn't know he was about to miss his floor.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "thecall",
+    "title": "The Call He Kept Ignoring",
+    "genre": "Drama",
+    "readTime": "9 min",
+    "trending": true,
+    "image": "https://blog.earkick.com/wp-content/uploads/2025/02/Father-and-son-1-1024x684.jpg",
+    "excerpt": "At 9:11 p.m., Adrian's phone lit up again. Same number. Same name. Dad. He stared at it. Watched it ring. Then turned the phone face down.",
+    "content": "At 9:11 p.m., Adrian's phone lit up again. Same number. Same name. Dad. He stared at it. Watched it ring. Then turned the phone face down.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "thelie",
+    "title": "The Day She Fell in Love with a Lie",
+    "genre": "Romance",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.stockcake.com/public/2/c/9/2c93c307-d9c6-49b8-b498-8c9ed97f343d_large/cozy-coffee-date-stockcake.jpg",
+    "excerpt": "The first time Amara saw Daniel, it wasn't dramatic. No rain. No slow motion. No music. Just a quiet Tuesday evening in a crowded train station.",
+    "content": "The first time Amara saw Daniel, it wasn't dramatic. No rain. No slow motion. No music. Just a quiet Tuesday evening in a crowded train station.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "stoppedbeingus",
+    "title": "The Day They Stopped Being \"Us\"",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
+    "excerpt": "They used to argue about stupid things. Like whether pineapple belonged on pizza. Because underneath every small argument was something strong enough to survive anything.",
+    "content": "They used to argue about stupid things. Like whether pineapple belonged on pizza. Because underneath every small argument was something strong enough to survive anything.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "neverssaid",
+    "title": "The Things They Never Said Before It Broke",
+    "genre": "Romance",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&q=80",
+    "excerpt": "The first thing people noticed about Daniel and Chloe was how perfect they looked together. Five years. Two years under the same roof. One future everyone assumed was guaranteed.",
+    "content": "The first thing people noticed about Daniel and Chloe was how perfect they looked together. Five years. Two years under the same roof. One future everyone assumed was guaranteed.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "lasttimesheloved",
+    "title": "The Last Time She Loved Him",
+    "genre": "Romance",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    "excerpt": "The wedding hall was already full when Elias arrived. Too full. Too bright. Too loud for a man who had spent the last three years learning how to live in silence.",
+    "content": "The wedding hall was already full when Elias arrived. Too full. Too bright. Too loud for a man who had spent the last three years learning how to live in silence.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "girltwice",
+    "title": "The Girl He Loved… Twice",
+    "genre": "Romance",
+    "readTime": "13 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1529333241880-0fc7855bb921?w=800&q=80",
+    "excerpt": "The first time Leo saw her, she was laughing. Not the kind of laugh people fake to be polite. It was loud. Free. Unfiltered.",
+    "content": "The first time Leo saw her, she was laughing. Not the kind of laugh people fake to be polite. It was loud. Free. Unfiltered.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "neversupposed",
+    "title": "The Woman He Was Never Supposed to Love",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
+    "excerpt": "Adrian was not the kind of man who believed in fate. He believed in schedules, deadlines, logic, and outcomes that could be measured. Until the night his car broke down in the rain.",
+    "content": "Adrian was not the kind of man who believed in fate. He believed in schedules, deadlines, logic, and outcomes that could be measured. Until the night his car broke down in the rain.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "voice-silence",
+    "title": "Somewhere Between Your Voice and My Silence",
+    "genre": "Romance",
+    "readTime": "12 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=800&q=80",
+    "excerpt": "Elena didn't believe in perfect timing. She believed in missed calls, delayed replies, and love that showed up a little too late to be convenient.",
+    "content": "Elena didn't believe in perfect timing. She believed in missed calls, delayed replies, and love that showed up a little too late to be convenient.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "mango-tree",
+    "title": "The Mango Tree That Knew Their Names",
+    "genre": "Romance",
+    "readTime": "14 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
+    "excerpt": "In the village of Igbosere, there was a mango tree everyone believed was older than the church bell. No one could prove it. But no one argued either.",
+    "content": "In the village of Igbosere, there was a mango tree everyone believed was older than the church bell. No one could prove it. But no one argued either.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "bus-too-late",
+    "title": "The Bus That Took Her Home Too Late",
+    "genre": "Romance",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=800&q=80",
+    "excerpt": "The bus stop in Enugu never slept. Even at night, it stayed awake in fragments. And Ngozi stood there holding a small bag that contained everything she owned for five years.",
+    "content": "The bus stop in Enugu never slept. Even at night, it stayed awake in fragments. And Ngozi stood there holding a small bag that contained everything she owned for five years.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "cape-town-forever",
+    "title": "Cape Town, Where We Almost Stayed Forever",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
+    "excerpt": "Cape Town always looked like it was trying to impress someone. The ocean on one side. The mountains watching quietly from the other.",
+    "content": "Cape Town always looked like it was trying to impress someone. The ocean on one side. The mountains watching quietly from the other.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "flower-traffic-light",
+    "title": "The Girl Who Sold Flowers at the Traffic Light",
+    "genre": "Romance",
+    "readTime": "9 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80",
+    "excerpt": "Johannesburg mornings don't ask permission before they become loud. That was where Thandi sold flowers—at the same traffic light that never stayed red long enough.",
+    "content": "Johannesburg mornings don't ask permission before they become loud. That was where Thandi sold flowers—at the same traffic light that never stayed red long enough.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "wrongmessage",
+    "title": "The Message He Typed… But Sent to Someone Else",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    "excerpt": "It wasn't supposed to go to her. At 6:42 p.m., Jamal typed: 'I miss you. I don't think I ever stopped loving you.' Then sent it to the wrong person.",
+    "content": "It wasn't supposed to go to her. At 6:42 p.m., Jamal typed: 'I miss you. I don't think I ever stopped loving you.' Then sent it to the wrong person.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "nighthome",
+    "title": "The Night He Didn't Come Home—And Told the Truth Instead",
+    "genre": "Romance",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80",
+    "excerpt": "By 11:47 p.m., Ada had stopped checking the door. The food had gone cold twice. At 12:32 a.m., Kunle walked in quietly. Too quietly.",
+    "content": "By 11:47 p.m., Ada had stopped checking the door. The food had gone cold twice. At 12:32 a.m., Kunle walked in quietly. Too quietly.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "voicenote",
+    "title": "The Voice Note She Never Sent",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=800&q=80",
+    "excerpt": "At 2:13 a.m., Zara pressed record. Then stopped. Deleted it. Started again. Her voice came out softer than expected: 'I don't know if I'm allowed to miss you like this… But I do.'",
+    "content": "At 2:13 a.m., Zara pressed record. Then stopped. Deleted it. Started again. Her voice came out softer than expected: 'I don't know if I'm allowed to miss you like this… But I do.'\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "oppositesides",
+    "title": "The Night We Slept on Opposite Sides and Woke Up Honest",
+    "genre": "Romance",
+    "readTime": "9 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+    "excerpt": "They didn't argue that night. Which was exactly the problem. The room was quiet in a way that didn't feel peaceful. Just paused.",
+    "content": "They didn't argue that night. Which was exactly the problem. The room was quiet in a way that didn't feel peaceful. Just paused.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "learnedtotalk",
+    "title": "We Learned How to Talk the Night We Almost Broke",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1518568819330-497c9d7f79a3?w=800&q=80",
+    "excerpt": "It didn't start as a fight. No shouting. No slammed doors. Just a sentence that landed wrong: 'I don't feel seen by you anymore.'",
+    "content": "It didn't start as a fight. No shouting. No slammed doors. Just a sentence that landed wrong: 'I don't feel seen by you anymore.'\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "engagementfine",
+    "title": "We Were Supposed to Be Fine After the Engagement",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1515934751635-c0c12472215a?w=800&q=80",
+    "excerpt": "It didn't feel like a celebration. Not really. Just a ring, a smile, and two people quietly realizing they had crossed into something that couldn't easily be undone.",
+    "content": "It didn't feel like a celebration. Not really. Just a ring, a smile, and two people quietly realizing they had crossed into something that couldn't easily be undone.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "goodbyelove",
+    "title": "The Love That Started After the Goodbye",
+    "genre": "Romance",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+    "excerpt": "It was supposed to end at the airport. One flight. Two different countries. No promises. Just a quiet understanding that distance would do what neither of them had the courage to do.",
+    "content": "It was supposed to end at the airport. One flight. Two different countries. No promises. Just a quiet understanding that distance would do what neither of them had the courage to do.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "marriedunknown",
+    "title": "The Day She Married a Man She Didn't Fully Know Anymore",
+    "genre": "Romance",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    "excerpt": "The wedding wasn't small. It wasn't grand either. White chairs. Soft music. And two people at the center who kept thinking: How did we get here so fast?",
+    "content": "The wedding wasn't small. It wasn't grand either. White chairs. Soft music. And two people at the center who kept thinking: How did we get here so fast?\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "forgotflowers",
+    "title": "He Forgot Her Name, But Still Bought Her Flowers",
+    "genre": "Romance",
+    "readTime": "10 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80",
+    "excerpt": "It started on a Tuesday. Not the kind of Tuesday that changes lives. Just a man standing outside a flower shop, staring at roses like they were a language he almost remembered.",
+    "content": "It started on a Tuesday. Not the kind of Tuesday that changes lives. Just a man standing outside a flower shop, staring at roses like they were a language he almost remembered.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "metagain",
+    "title": "We Met Again Like It Was the First Time We Lied",
+    "genre": "Romance",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=800&q=80",
+    "excerpt": "She didn't recognize him at first. Just a man standing in the rain outside a small bakery, holding a book she used to love. Something about him felt familiar in a way she couldn't explain.",
+    "content": "She didn't recognize him at first. Just a man standing in the rain outside a small bakery, holding a book she used to love. Something about him felt familiar in a way she couldn't explain.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "womanend",
+    "title": "The Woman I Only Meet When the World Is About to End",
+    "genre": "Sci-Fi",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80",
+    "excerpt": "The first time the sirens sounded, Jonah thought it was a drill. The second time, he realized drills don't make the sky crack. The third time—he saw her.",
+    "content": "The first time the sirens sounded, Jonah thought it was a drill. The second time, he realized drills don't make the sky crack. The third time—he saw her.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "citymissing",
+    "title": "The City That Only Appeared When She Was Missing",
+    "genre": "Sci-Fi",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
+    "excerpt": "The city didn't exist yesterday. Jonas was certain of that. Because yesterday, there was only ocean where it now stood—rising like it had always been there.",
+    "content": "The city didn't exist yesterday. Jonas was certain of that. Because yesterday, there was only ocean where it now stood—rising like it had always been there.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "paidmemories",
+    "title": "The Woman Who Paid for My Memories",
+    "genre": "Sci-Fi",
+    "readTime": "11 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1506318137071-a8bcbf6755dd?w=800&q=80",
+    "excerpt": "The first time I met her, I didn't remember dying. Which, I later learned, meant I already had.",
+    "content": "The first time I met her, I didn't remember dying. Which, I later learned, meant I already had.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "deletedworlds",
+    "title": "The Man Who Loved Across Deleted Worlds",
+    "genre": "Sci-Fi",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    "excerpt": "The first time the world ended, it did so quietly. No explosion. No fire. No warning sirens. Just a single line of text on every device on Earth.",
+    "content": "The first time the world ended, it did so quietly. No explosion. No fire. No warning sirens. Just a single line of text on every device on Earth.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "lastmemory",
+    "title": "The Last Memory of You",
+    "genre": "Sci-Fi",
+    "readTime": "13 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1484589065579-248aad0d8b13?w=800&q=80",
+    "excerpt": "The first time Daniel met Aria, she was already dying. Not the kind of dying that comes with hospital beds—but the quiet, invisible kind where memories fade like ink in the rain.",
+    "content": "The first time Daniel met Aria, she was already dying. Not the kind of dying that comes with hospital beds—but the quiet, invisible kind where memories fade like ink in the rain.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "abandoned-girl",
+    "title": "The Girl Who Lives in the Places I've Already Left",
+    "genre": "Sci-Fi",
+    "readTime": "12 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&q=80",
+    "excerpt": "Jonah first saw her in a room he had already abandoned. The problem was—he was still inside it.",
+    "content": "Jonah first saw her in a room he had already abandoned. The problem was—he was still inside it.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "universe-deletes",
+    "title": "The Man Who Only Loves Women the Universe Deletes",
+    "genre": "Sci-Fi",
+    "readTime": "14 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
+    "excerpt": "Jonah noticed the pattern on a Tuesday that refused to stay the same day. He met her at a bus stop. She smiled like they had already survived something together.",
+    "content": "Jonah noticed the pattern on a Tuesday that refused to stay the same day. He met her at a bus stop. She smiled like they had already survived something together.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "different-me",
+    "title": "The Woman Who Appears When My Life Chooses a Different Me",
+    "genre": "Sci-Fi",
+    "readTime": "13 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    "excerpt": "Jonah first noticed the split on a Monday that refused to agree with itself. He was walking to work when he saw himself standing across the street.",
+    "content": "Jonah first noticed the split on a Monday that refused to agree with itself. He was walking to work when he saw himself standing across the street.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "not-myself",
+    "title": "The Woman Who Only Exists When I Am Not Myself",
+    "genre": "Sci-Fi",
+    "readTime": "11 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
+    "excerpt": "Jonah first met her during a moment of emotional silence. Not peace. Not calm. Silence—the kind that happens when your thoughts briefly stop agreeing with each other.",
+    "content": "Jonah first met her during a moment of emotional silence. Not peace. Not calm. Silence—the kind that happens when your thoughts briefly stop agreeing with each other.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "machine-refuse",
+    "title": "The Machine That Writes My Life Only After I Refuse It",
+    "genre": "Sci-Fi",
+    "readTime": "16 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+    "excerpt": "Jonah first noticed the edits in his receipts. A coffee he never ordered. A taxi ride he never took. A hotel stay in a city he had never visited. All dated tomorrow.",
+    "content": "Jonah first noticed the edits in his receipts. A coffee he never ordered. A taxi ride he never took. A hotel stay in a city he had never visited. All dated tomorrow.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "sky-rain",
+    "title": "The City That Forgot Rain",
+    "genre": "Dystopian",
+    "readTime": "18 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
+    "excerpt": "The rain had stopped falling seven years ago. No one remembered the exact day it ended. People only remembered the silence in the sky, the dryness in the soil.",
+    "content": "The rain had stopped falling seven years ago. No one remembered the exact day it ended. People only remembered the silence in the sky, the dryness in the soil.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "shadow-city",
+    "title": "The City Where Shadows Broke Free",
+    "genre": "Dystopian",
+    "readTime": "17 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=800&q=80",
+    "excerpt": "The first thing people noticed was that shadows no longer matched their owners. At sunrise, a man raised his hand and saw his shadow delay by three seconds.",
+    "content": "The first thing people noticed was that shadows no longer matched their owners. At sunrise, a man raised his hand and saw his shadow delay by three seconds.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "dead-replaced",
+    "title": "When the Dead Started Replacing the Living",
+    "genre": "Dystopian",
+    "readTime": "16 min",
+    "trending": true,
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    "excerpt": "The first time someone noticed a replacement, it was not dramatic. It was a Tuesday. A man boarded a bus, scanned his identity chip—then another version of him got on.",
+    "content": "The first time someone noticed a replacement, it was not dramatic. It was a Tuesday. A man boarded a bus, scanned his identity chip—then another version of him got on.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  },
+  {
+    "id": "lost-reflections",
+    "title": "The Day Humanity Lost Its Reflections",
+    "genre": "Dystopian",
+    "readTime": "15 min",
+    "trending": false,
+    "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80",
+    "excerpt": "It started with mirrors refusing to cooperate. Not breaking. Not fogging. Simply showing something else.",
+    "content": "It started with mirrors refusing to cooperate. Not breaking. Not fogging. Simply showing something else.\n\n[Full story content — paste the complete text for this story here in stories.json]"
+  }
+]
