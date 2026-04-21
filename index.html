@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7YT12YB25"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B7YT12YB25');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laminono Nexus - Premium Storytelling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E50914;
+            --primary-dark: #B20710;
+            --bg-dark: #141414;
+            --bg-darker: #0A0A0A;
+            --bg-card: #1F1F1F;
+            --bg-hover: #2A2A2A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --text-muted: #808080;
+            --gradient-hero: linear-gradient(to top, #141414 0%, transparent 60%),
+                              linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 50%);
+            --shadow-elevated: 0 20px 40px rgba(0,0,0,0.6);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-darker); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: fixed; top: 0; width: 100%; padding: 20px 4%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+            transition: var(--transition-smooth);
+        }
+        .navbar.scrolled {
+            background: rgba(20,20,20,0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 4%;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600;
+            color: var(--primary); text-decoration: none; letter-spacing: -0.5px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .logo span { color: var(--text-primary); font-weight: 300; }
+        .nav-links { display: flex; gap: 30px; align-items: center; margin-left: auto; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
+            font-weight: 500; transition: var(--transition-smooth); position: relative;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0;
+            height: 2px; background: var(--primary); transition: var(--transition-smooth);
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative; height: 100vh; min-height: 700px;
+            display: flex; align-items: flex-end; padding: 0 4% 150px;
+            background: var(--gradient-hero),
+                url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1920&q=80') center/cover;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to top, var(--bg-dark) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 700px; animation: fadeInUp 1s ease-out; }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(229,9,20,0.2); border: 1px solid var(--primary);
+            color: var(--primary); padding: 8px 16px; border-radius: 4px;
+            font-size: 0.85rem; font-weight: 600; margin-bottom: 20px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 600;
+            line-height: 1.1; margin-bottom: 20px; text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+        }
+        .hero-meta { display: flex; gap: 20px; margin-bottom: 20px; font-size: 0.9rem; color: var(--text-secondary); }
+        .hero-meta span { display: flex; align-items: center; gap: 5px; }
+        .hero-description { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px; max-width: 600px; }
+        .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        /* ── BUTTONS ── */
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 28px; border-radius: 4px; font-size: 1rem; font-weight: 600;
+            cursor: pointer; transition: var(--transition-smooth); border: none; text-decoration: none;
+        }
+        .btn-primary { background: var(--text-primary); color: var(--bg-dark); }
+        .btn-primary:hover { background: rgba(255,255,255,0.9); transform: scale(1.05); }
+        .btn-secondary { background: rgba(109,109,110,0.7); color: var(--text-primary); backdrop-filter: blur(10px); }
+        .btn-secondary:hover { background: rgba(109,109,110,0.9); transform: scale(1.05); }
+        .btn-outline { background: transparent; border: 2px solid var(--text-secondary); color: var(--text-primary); }
+        .btn-outline:hover { border-color: var(--text-primary); background: rgba(255,255,255,0.1); }
+
+        /* ── CONTENT SECTIONS ── */
+        .content-section { padding: 40px 4%; position: relative; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .section-title {
+            font-size: 1.5rem; font-weight: 600; display: flex; align-items: center; gap: 10px;
+        }
+        .section-title::after { content: '›'; color: var(--primary); font-size: 1.8rem; transition: transform 0.3s; }
+        .section-header:hover .section-title::after { transform: translateX(5px); }
+        .explore-all { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: color 0.3s; }
+        .explore-all:hover { color: var(--text-primary); }
+
+        /* ── STORY ROW ── */
+        .story-row {
+            display: flex; gap: 15px; overflow-x: auto; scroll-behavior: smooth;
+            padding: 20px 0; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+        }
+        .story-row::-webkit-scrollbar { display: none; }
+
+        /* ── STORY CARD — with Cover Art overlay ── */
+        .story-card {
+            flex: 0 0 auto; width: 280px; height: 380px; position: relative;
+            border-radius: 8px; overflow: hidden; cursor: pointer;
+            transition: var(--transition-smooth); background: var(--bg-card);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .story-card:hover { transform: scale(1.05); z-index: 10; box-shadow: var(--shadow-elevated); }
+
+        /* Cover art: full-bleed image */
+        .story-card-image {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s; display: block;
+        }
+        .story-card:hover .story-card-image { transform: scale(1.08); }
+
+        /* Permanent dark vignette for title legibility */
+        .story-card-vignette {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.15) 0%,
+                rgba(0,0,0,0.05) 30%,
+                rgba(0,0,0,0.6) 65%,
+                rgba(0,0,0,0.92) 100%
+            );
+        }
+
+        /* Title rendered like a movie title over the cover */
+        .story-cover-title {
+            position: absolute; bottom: 60px; left: 0; right: 0; padding: 0 18px;
+            font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600;
+            color: #fff; line-height: 1.3; text-align: center;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 0.01em;
+        }
+
+        /* Genre pill */
+        .story-cover-genre {
+            position: absolute; bottom: 36px; left: 0; right: 0;
+            text-align: center;
+            color: var(--primary); font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
+        }
+
+        /* Read-time tag */
+        .story-cover-time {
+            position: absolute; top: 12px; right: 12px;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+            color: rgba(255,255,255,0.8); font-size: 0.7rem; padding: 4px 10px;
+            border-radius: 20px; border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* Hover action bar */
+        .story-card-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 14px 18px 16px;
+            background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+            opacity: 0; transform: translateY(8px);
+            transition: var(--transition-smooth);
+        }
+        .story-card:hover .story-card-overlay { opacity: 1; transform: translateY(0); }
+        .story-excerpt {
+            font-size: 0.82rem; color: var(--text-secondary);
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; margin-bottom: 10px;
+        }
+        .story-actions { display: flex; gap: 10px; }
+        .action-btn {
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.5); background: transparent;
+            color: white; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: var(--transition-smooth);
+        }
+        .action-btn:hover { background: white; color: black; border-color: white; transform: scale(1.1); }
+        .action-btn.play { background: var(--primary); border-color: var(--primary); }
+        .action-btn.play:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+
+        /* ── FEATURED GRID ── */
+        .featured-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+            gap: 25px; margin-top: 30px;
+        }
+        .featured-card {
+            position: relative; height: 450px; border-radius: 12px;
+            overflow: hidden; cursor: pointer; transition: var(--transition-smooth);
+        }
+        .featured-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-elevated); }
+        .featured-card-bg { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+        .featured-card:hover .featured-card-bg { transform: scale(1.05); }
+
+        /* Featured cover art overlay */
+        .featured-vignette {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.97) 100%);
+        }
+        .featured-content {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 30px;
+        }
+        .featured-cover-title {
+            font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600;
+            color: #fff; line-height: 1.2; margin-bottom: 8px;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+        }
+        .featured-badge {
+            display: inline-block; background: var(--primary); color: white;
+            padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+        }
+        .featured-author { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px; }
+        .featured-author strong { color: var(--text-primary); font-weight: 600; }
+
+        /* ── MODAL ── */
+        .modal {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.95); z-index: 2000;
+            overflow-y: auto; backdrop-filter: blur(20px);
+        }
+        .modal.active { display: block; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        .modal-content {
+            max-width: 900px; margin: 50px auto; background: var(--bg-card);
+            border-radius: 16px; overflow: hidden; position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        }
+        .modal-close {
+            position: absolute; top: 20px; right: 20px; width: 40px; height: 40px;
+            border-radius: 50%; background: rgba(0,0,0,0.5); border: none;
+            color: white; font-size: 1.5rem; cursor: pointer; z-index: 10;
+            transition: var(--transition-smooth); display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: var(--primary); transform: rotate(90deg); }
+        .modal-hero { height: 400px; position: relative; background: center/cover; }
+        .modal-body { padding: 40px; margin-top: -100px; position: relative; z-index: 2; }
+        .modal-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; }
+        .modal-meta { display: flex; gap: 20px; color: var(--text-secondary); margin-bottom: 30px; flex-wrap: wrap; }
+        .modal-actions { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .narration-controls {
+            display: flex; align-items: center; gap: 15px; background: var(--bg-hover);
+            padding: 15px 25px; border-radius: 50px; margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .voice-selector { display: flex; gap: 10px; }
+        .voice-btn {
+            padding: 8px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);
+            background: transparent; color: var(--text-secondary); cursor: pointer;
+            transition: var(--transition-smooth); font-size: 0.9rem;
+        }
+        .voice-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .voice-btn:hover:not(.active) { border-color: var(--text-primary); color: var(--text-primary); }
+        .narrate-btn {
+            display: flex; align-items: center; gap: 8px; padding: 10px 24px;
+            background: white; color: black; border: none; border-radius: 25px;
+            font-weight: 600; cursor: pointer; transition: var(--transition-smooth);
+        }
+        .narrate-btn:hover { transform: scale(1.05); background: var(--primary); color: white; }
+        .narrate-btn.playing { background: var(--primary); color: white; animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(229,9,20,0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(229,9,20,0); }
+        }
+        .story-text { font-size: 1.1rem; line-height: 2; color: var(--text-secondary); }
+        .story-text p { margin-bottom: 1.5em; text-align: justify; }
+        .story-text p:first-child::first-letter {
+            font-family: 'Playfair Display', serif; font-size: 4rem; float: left;
+            line-height: 0.8; margin-right: 10px; margin-top: 5px; color: var(--primary);
+        }
+
+        /* ── ADMIN / ABOUT ── */
+        .admin-section {
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-card) 100%);
+            padding: 80px 4%; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .admin-container {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: center;
+        }
+        .admin-image {
+            width: 100%; height: 350px; border-radius: 16px; object-fit: cover;
+            box-shadow: var(--shadow-elevated); border: 3px solid rgba(229,9,20,0.3);
+        }
+        .admin-content h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .admin-title { color: var(--primary); font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .admin-bio { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; }
+        .admin-signature { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--text-primary); font-style: italic; }
+
+        /* ── FOOTER ── */
+        footer { background: var(--bg-darker); padding: 60px 4% 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-content {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 40px; margin-bottom: 40px;
+        }
+        .footer-section h3 { color: var(--text-primary); font-size: 1.1rem; margin-bottom: 20px; font-weight: 600; }
+        .footer-section ul { list-style: none; }
+        .footer-section li { margin-bottom: 12px; }
+        .footer-section a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-section a:hover { color: var(--primary); }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.9rem; }
+        .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); margin-bottom: 10px; }
+
+        /* ── RATING & COMMENTS ── */
+        .rating-section { background: var(--bg-hover); padding: 30px; border-radius: 12px; margin: 40px 0; border: 1px solid rgba(255,255,255,0.05); }
+        .rating-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .star-rating { display: flex; gap: 8px; margin-bottom: 25px; }
+        .star { font-size: 2rem; color: var(--text-muted); cursor: pointer; transition: var(--transition-smooth); user-select: none; }
+        .star:hover, .star.active { color: #FFD700; transform: scale(1.2); }
+        .star-rating-text { color: var(--text-secondary); font-size: 0.9rem; margin-left: 15px; }
+        .average-rating { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .average-stars { color: #FFD700; font-size: 1.5rem; }
+        .average-score { font-size: 2rem; font-weight: 700; color: var(--text-primary); }
+        .total-votes { color: var(--text-muted); font-size: 0.9rem; }
+        .comments-section { margin-top: 30px; }
+        .comment-form { margin-bottom: 30px; }
+        .comment-input-group { display: grid; gap: 15px; margin-bottom: 15px; }
+        .comment-input {
+            background: var(--bg-dark); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 12px 16px; color: var(--text-primary);
+            font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: var(--transition-smooth);
+        }
+        .comment-input:focus { outline: none; border-color: var(--primary); background: var(--bg-card); }
+        .comment-textarea { min-height: 100px; resize: vertical; }
+        .comment-submit {
+            display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+            background: var(--primary); color: white; border: none; border-radius: 6px;
+            font-weight: 600; cursor: pointer; transition: var(--transition-smooth);
+        }
+        .comment-submit:hover { background: var(--primary-dark); transform: scale(1.05); }
+        .comments-list { display: flex; flex-direction: column; gap: 20px; }
+        .comment-card {
+            background: var(--bg-dark); padding: 20px; border-radius: 10px;
+            border-left: 3px solid var(--primary); transition: var(--transition-smooth);
+        }
+        .comment-card:hover { background: var(--bg-hover); transform: translateX(5px); }
+        .comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .comment-author { font-weight: 600; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+        .comment-date { font-size: 0.8rem; color: var(--text-muted); }
+        .comment-rating { color: #FFD700; font-size: 0.9rem; margin-bottom: 8px; }
+        .comment-text { color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; }
+        .no-comments { text-align: center; color: var(--text-muted); padding: 40px; font-style: italic; }
+        .admin-badge-small { background: var(--primary); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+
+        /* ── ALL STORIES PAGE ── */
+        .all-stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 25px; padding: 40px 4%; }
+        .all-stories-header { padding: 120px 4% 40px; background: linear-gradient(to bottom, var(--bg-darker) 0%, var(--bg-dark) 100%); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .all-stories-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--text-secondary); text-decoration: none; margin-bottom: 20px; transition: color 0.3s; cursor: pointer; }
+        .back-btn:hover { color: var(--primary); }
+        .category-filter { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        .filter-btn { padding: 8px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-secondary); cursor: pointer; transition: var(--transition-smooth); }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* ── LOADING ── */
+        .skeleton { background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-hover) 50%, var(--bg-card) 75%); background-size: 200% 100%; animation: loading 1.5s infinite; }
+        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        /* ── AUDIO VISUALIZER ── */
+        .audio-visualizer { display: none; align-items: center; gap: 3px; height: 20px; }
+        .audio-visualizer.active { display: flex; }
+        .bar { width: 3px; background: var(--primary); border-radius: 2px; animation: sound 0ms -800ms linear infinite alternate; }
+        .bar:nth-child(1) { height: 10px; animation-duration: 474ms; }
+        .bar:nth-child(2) { height: 15px; animation-duration: 433ms; }
+        .bar:nth-child(3) { height: 20px; animation-duration: 407ms; }
+        .bar:nth-child(4) { height: 12px; animation-duration: 458ms; }
+        .bar:nth-child(5) { height: 18px; animation-duration: 400ms; }
+        @keyframes sound { 0% { height:3px; opacity:0.35; } 100% { height:20px; opacity:1; } }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed; bottom: 30px; right: 30px; background: var(--bg-card);
+            color: white; padding: 16px 24px; border-radius: 8px; border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-elevated); transform: translateX(400px);
+            transition: transform 0.3s; z-index: 3000; display: flex; align-items: center; gap: 12px;
+        }
+        .toast.show { transform: translateX(0); }
+
+        /* ── FLOATING BOOK ── */
+        #floating-book-trigger { position: fixed; top: -280px; right: 20px; z-index: 9999; cursor: pointer; display: flex; flex-direction: column; align-items: center; transition: top 0.6s cubic-bezier(0.4,0,0.2,1); }
+        .fb-rope { width: 3px; height: 30px; background: repeating-linear-gradient(to bottom,#c8a96e 0px,#a07040 4px,#c8a96e 8px); margin: 0 auto; border-radius: 2px; }
+        .fb-rope-hook { width: 14px; height: 9px; background: #c8a96e; border-radius: 50% 50% 50% 50%/60% 60% 40% 40%; margin: 0 auto; }
+        .fb-cover { width: 90px; background: linear-gradient(145deg,#8B1a1a,#4a0a0a); border: 1px solid rgba(229,9,20,0.4); border-radius: 2px 8px 8px 2px; padding: 14px 10px; text-align: center; box-shadow: 4px 6px 24px rgba(0,0,0,0.7); transition: transform 0.4s ease; }
+        .fb-icon { font-size: 1.8rem; }
+        .fb-title { font-family: 'Playfair Display', serif; font-size: 0.58rem; color: #f5c6a0; line-height: 1.4; margin-top: 7px; }
+        .fb-sub { font-size: 0.5rem; color: rgba(245,198,160,0.6); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 3px; }
+
+        /* ── AUTH MODAL ── */
+        .mylist-story-card { display: flex; gap: 14px; padding: 14px; background: #141414; border-radius: 10px; margin-bottom: 12px; align-items: center; border: 1px solid rgba(255,255,255,0.06); transition: border-color 0.3s; cursor: pointer; }
+        .mylist-story-card:hover { border-color: rgba(229,9,20,0.4); }
+        .mylist-thumb { width: 60px; height: 80px; object-fit: cover; border-radius: 6px; flex-shrink: 0; background: #2A2A2A; }
+        .mylist-remove { background: none; border: none; color: #808080; font-size: 1.1rem; cursor: pointer; padding: 4px; margin-left: auto; flex-shrink: 0; transition: color 0.3s; }
+        .mylist-remove:hover { color: #E50914; }
+
+        @keyframes slideUp { from { transform:translateY(100%); opacity:0; } to { transform:translateY(0); opacity:1; } }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 968px) {
+            .admin-container { grid-template-columns: 1fr; text-align: center; }
+            .admin-image { width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; }
+            .hero h1 { font-size: 2.5rem; }
+            .modal-content { margin: 0; border-radius: 0; min-height: 100vh; }
+            .featured-grid { grid-template-columns: repeat(2,1fr); }
+            .footer-content { grid-template-columns: repeat(2,1fr); }
+        }
+        @media (max-width: 600px) {
+            .navbar { padding: 15px 5%; }
+            .nav-links { display: none; }
+            .logo { font-size: 1.5rem; }
+            .hero { padding: 0 5% 80px; min-height: 600px; }
+            .hero h1 { font-size: 1.9rem; line-height: 1.2; }
+            .hero-description { font-size: 0.95rem; }
+            .hero-actions { flex-direction: column; gap: 10px; }
+            .hero-actions .btn { width: 100%; justify-content: center; }
+            .hero-meta { flex-wrap: wrap; gap: 10px; font-size: 0.8rem; }
+            .story-card { width: 200px; height: 300px; }
+            .story-cover-title { font-size: 1rem; bottom: 52px; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .featured-card { height: 350px; }
+            .featured-cover-title { font-size: 1.4rem; }
+            .modal-content { margin: 0; border-radius: 0; }
+            .modal-hero { height: 250px; }
+            .modal-title { font-size: 1.8rem; }
+            .modal-body { padding: 20px; }
+            .modal-actions { flex-direction: column; }
+            .modal-actions .btn { width: 100%; justify-content: center; }
+            .narration-controls { flex-wrap: wrap; gap: 10px; padding: 12px 15px; }
+            .all-stories-header h1 { font-size: 2rem; }
+            .all-stories-grid { grid-template-columns: repeat(2,1fr); gap: 15px; padding: 20px 4%; }
+            .admin-section { padding: 50px 5%; }
+            .admin-content h2 { font-size: 1.8rem; }
+            .footer-content { grid-template-columns: 1fr; gap: 25px; }
+            .toast { bottom: 15px; right: 15px; left: 15px; transform: translateY(100px); }
+            .toast.show { transform: translateY(0); }
+            .star { font-size: 2.5rem; }
+            .section-title { font-size: 1.2rem; }
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+<!-- Floating Book -->
+<div id="floating-book-trigger" onclick="window.location.href='bookshelf.html'">
+    <div class="fb-rope-hook"></div>
+    <div class="fb-rope"></div>
+    <div class="fb-cover">
+        <div class="fb-icon">📚</div>
+        <div class="fb-title">BOOK SHELVES</div>
+        <div class="fb-sub">Unlimited Books</div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <a href="#" class="logo">Laminono<span>Nexus</span></a>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#stories">Stories</a>
+        <a href="#featured">Featured</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-badge"><span>✦</span> Featured Story</div>
+        <h1>The Echoes of Tomorrow</h1>
+        <div class="hero-meta">
+            <span>⏱ 12 min read</span>
+            <span>📖 Drama</span>
+            <span>🔥 Trending #1</span>
+        </div>
+        <p class="hero-description">
+            In a world where memories can be traded like currency, one archivist discovers a recollection that could unravel the fabric of society. A gripping tale of identity, loss, and the price of perfection.
+        </p>
+        <div class="hero-actions">
+            <button class="btn btn-primary" onclick="openStory('echoes')"><span>▶</span> Read Now</button>
+            <button class="btn btn-secondary" onclick="openStory('echoes')"><span>ℹ</span> More Info</button>
+        </div>
+    </div>
+</section>
+
+<!-- Trending Now -->
+<section class="content-section" id="stories">
+    <div class="section-header">
+        <h2 class="section-title">Trending Now</h2>
+        <span class="explore-all" onclick="showAllStories('trending')">Explore All →</span>
+    </div>
+    <div class="story-row" id="trendingRow"></div>
+</section>
+
+<!-- New Releases -->
+<section class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">New Releases</h2>
+        <span class="explore-all" onclick="showAllStories('all')">View All →</span>
+    </div>
+    <div class="story-row" id="newReleasesRow"></div>
+</section>
+
+<!-- Featured Grid -->
+<section class="content-section" id="featured">
+    <div class="section-header">
+        <h2 class="section-title">Curated for You</h2>
+    </div>
+    <div class="featured-grid" id="featuredGrid"></div>
+</section>
+
+<!-- About -->
+<section class="admin-section" id="about">
+    <div class="admin-container">
+        <img src="laminono.jpeg" alt="Olamide Emmanuel Willoughby" class="admin-image">
+        <div class="admin-content">
+            <div class="admin-title">The Storyteller</div>
+            <h2>Olamide Emmanuel Willoughby</h2>
+            <p class="admin-bio">
+                Laminono Nexus is more than a name—it's a creative identity. Founded by Olamide Emmanuel Willoughby, Laminono blends storytelling, visual creativity, and digital strategy to craft powerful experiences. From emotionally driven stories to high-converting social media content, every creation is designed to resonate, inspire, and influence.
+            </p>
+            <p class="admin-signature">— Laminono</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="footer-brand">Laminono Nexus</div>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Premium storytelling platform where words become cinematic experiences.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#">Trending Stories</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Authors</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Connect</h3>
+            <ul>
+                <li><a href="mailto:laminonosfilmview@gmail.com">Newsletter</a></li>
+                <li><a href="https://www.instagram.com/laminono_stories?igsh=MTZvb2hudTJqdDR4dw==" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://x.com/Laminono" target="_blank" rel="noopener">Twitter / X</a></li>
+                <li><a href="https://youtube.com/@laminono?si=c1TIcvPnMyDLy1eo" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="mailto:laminonosfilmview@gmail.com">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-use.html">Terms of Use</a></li>
+                <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Laminono Nexus. All rights reserved. Created with passion by Olamide Emmanuel Willoughby.</p>
+    </div>
+</footer>
+
+<!-- Story Modal -->
+<div class="modal" id="storyModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="modal-hero" id="modalHero"></div>
+        <div class="modal-body">
+            <h1 class="modal-title" id="modalTitle">Story Title</h1>
+            <div class="modal-meta" id="modalMeta"></div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="toggleNarration()">
+                    <span id="narrateIcon">▶</span> <span id="narrateText">Narrate Story</span>
+                </button>
+                <button class="btn btn-secondary" onclick="toggleMyList()">
+                    <span>+</span> <span id="mylist-btn-text">My List</span>
+                </button>
+                <button class="btn btn-outline" onclick="openShareModal()"><span>↗</span> Share</button>
+            </div>
+            <div class="narration-controls">
+                <span style="color:var(--text-secondary);font-size:0.9rem;">Voice:</span>
+                <div class="voice-selector">
+                    <button class="voice-btn active" onclick="setVoice('female',event)">Female</button>
+                    <button class="voice-btn" onclick="setVoice('male',event)">Male</button>
+                </div>
+                <div class="audio-visualizer" id="visualizer">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div>
+                </div>
+            </div>
+            <div class="story-text" id="storyText"></div>
+            <!-- Rating -->
+            <div class="rating-section">
+                <div class="average-rating">
+                    <span class="average-score" id="averageScore">0.0</span>
+                    <span class="average-stars" id="averageStars">★★★★★</span>
+                    <span class="total-votes" id="totalVotes">(0 ratings)</span>
+                </div>
+                <h3 class="rating-title">Rate this story</h3>
+                <div class="star-rating" id="starRating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                    <span class="star-rating-text" id="ratingText">Click to rate</span>
+                </div>
+                <!-- Comments -->
+                <div class="comments-section">
+                    <h3 class="rating-title">Comments <span class="comments-count" id="commentsCount">(0)</span></h3>
+                    <form class="comment-form" id="commentForm" onsubmit="submitComment(event)">
+                        <div class="comment-input-group">
+                            <input type="text" class="comment-input" id="commentName" placeholder="Your name" required>
+                            <textarea class="comment-input comment-textarea" id="commentText" placeholder="Share your thoughts on this story..." required></textarea>
+                        </div>
+                        <button type="submit" class="comment-submit"><span>💬</span> Post Comment</button>
+                    </form>
+                    <div class="comments-list" id="commentsList">
+                        <div class="no-comments">No comments yet. Be the first to share your thoughts!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">Notification</span>
+</div>
+
+<!-- All Stories Page -->
+<div id="allStoriesPage" class="hidden">
+    <div class="all-stories-header">
+        <span class="back-btn" onclick="backToHome()">← Back to Home</span>
+        <h1 id="allStoriesTitle">All Stories</h1>
+        <p style="color:var(--text-secondary);margin-top:10px;">Curated by Olamide Emmanuel Willoughby</p>
+        <div class="category-filter">
+            <button class="filter-btn active" onclick="filterStories('all')">All</button>
+            <button class="filter-btn" onclick="filterStories('Drama')">Drama</button>
+            <button class="filter-btn" onclick="filterStories('Romance')">Romance</button>
+            <button class="filter-btn" onclick="filterStories('Sci-Fi')">Sci-Fi</button>
+            <button class="filter-btn" onclick="filterStories('Dystopian')">Dystopian</button>
+            <button class="filter-btn" onclick="filterStories('Literary Fiction')">Literary Fiction</button>
+        </div>
+    </div>
+    <div class="all-stories-grid" id="allStoriesGrid"></div>
+</div>
+
+<!-- Auth Modal -->
+<div id="auth-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);overflow-y:auto;animation:fadeIn 0.3s ease;">
+    <div style="max-width:460px;margin:60px auto;background:#1F1F1F;border-radius:20px;overflow:hidden;border:1px solid rgba(229,9,20,0.25);box-shadow:0 30px 60px rgba(0,0,0,0.8);">
+        <div style="background:linear-gradient(135deg,#B20710,#E50914);padding:36px 30px 28px;text-align:center;position:relative;">
+            <button onclick="closeAuthModal()" style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.3);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer;">✕</button>
+            <div style="font-size:2.4rem;margin-bottom:10px;">📚</div>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:6px;" id="auth-modal-title">Join Laminono Nexus</h2>
+            <p style="color:rgba(255,255,255,0.8);font-size:0.88rem;" id="auth-modal-sub">Save your favourite stories. Read anywhere.</p>
+        </div>
+        <div style="padding:30px;">
+            <button onclick="signInWithGoogle()" style="width:100%;padding:14px;background:#fff;color:#141414;border:none;border-radius:10px;font-size:0.95rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Continue with Google
+            </button>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;"><div style="flex:1;height:1px;background:rgba(255,255,255,0.1);"></div><span style="color:#808080;font-size:0.82rem;">or</span><div style="flex:1;height:1px;background:rgba(255,255,255,0.1);"></div></div>
+            <input type="email" id="auth-email" placeholder="Email address" style="width:100%;padding:13px 16px;background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:0.92rem;margin-bottom:12px;outline:none;" onfocus="this.style.borderColor='#E50914'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+            <input type="password" id="auth-password" placeholder="Password" style="width:100%;padding:13px 16px;background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:0.92rem;margin-bottom:8px;outline:none;" onfocus="this.style.borderColor='#E50914'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"/>
+            <p id="auth-error" style="color:#E50914;font-size:0.8rem;min-height:18px;margin-bottom:10px;"></p>
+            <button onclick="handleEmailAuth()" style="width:100%;padding:14px;background:#E50914;color:#fff;border:none;border-radius:10px;font-size:0.95rem;font-weight:700;cursor:pointer;" id="auth-submit-btn">Sign In</button>
+            <div style="text-align:center;margin-top:16px;">
+                <span style="color:#808080;font-size:0.85rem;" id="auth-toggle-text">Don't have an account?</span>
+                <button onclick="toggleAuthMode()" style="background:none;border:none;color:#E50914;font-size:0.85rem;font-weight:600;cursor:pointer;margin-left:4px;" id="auth-toggle-btn">Sign Up</button>
+            </div>
+            <div style="text-align:center;margin-top:8px;">
+                <button onclick="forgotPassword()" style="background:none;border:none;color:#808080;font-size:0.8rem;cursor:pointer;" id="forgot-btn">Forgot password?</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- My List Modal -->
+<div id="mylist-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);overflow-y:auto;animation:fadeIn 0.3s ease;">
+    <div style="max-width:700px;margin:50px auto;background:#1F1F1F;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 30px 60px rgba(0,0,0,0.8);">
+        <div style="padding:28px 30px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;">
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#f5c6a0;">📖 My Reading List</h2>
+            <button onclick="closeMyList()" style="background:rgba(255,255,255,0.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:24px 30px;" id="mylist-content"></div>
+    </div>
+</div>
+
+<!-- Share Modal -->
+<div id="share-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);align-items:flex-end;justify-content:center;" onclick="if(event.target===this)closeShareModal()">
+    <div style="width:100%;max-width:600px;background:#1F1F1F;border-radius:20px 20px 0 0;padding:0 0 30px;border:1px solid rgba(255,255,255,0.08);animation:slideUp 0.35s ease;">
+        <div style="text-align:center;padding:14px 0 0;"><div style="width:40px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto;"></div></div>
+        <div style="margin:18px 20px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
+            <div style="height:160px;background:#2A2A2A;background-size:cover;background-position:center;" id="share-preview-img"></div>
+            <div style="padding:14px 16px;background:#141414;">
+                <p style="color:#E50914;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;" id="share-preview-genre"></p>
+                <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#fff;margin-bottom:6px;line-height:1.3;" id="share-preview-title"></p>
+                <p style="font-size:0.8rem;color:#B3B3B3;line-height:1.5;" id="share-preview-hook"></p>
+                <p style="font-size:0.72rem;color:#E50914;margin-top:8px;">📚 laminono-nexus.github.io</p>
+            </div>
+        </div>
+        <div style="padding:0 20px;">
+            <p style="color:#808080;font-size:0.82rem;margin-bottom:14px;text-align:center;">Share this story</p>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px;">
+                <button onclick="shareVia('whatsapp')" style="background:#25D366;border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;"><span style="font-size:1.6rem;">💬</span><span style="color:#fff;font-size:0.7rem;font-weight:600;">WhatsApp</span></button>
+                <button onclick="shareVia('twitter')" style="background:#000;border:1px solid #333;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;"><span style="font-size:1.6rem;">𝕏</span><span style="color:#fff;font-size:0.7rem;font-weight:600;">X / Twitter</span></button>
+                <button onclick="shareVia('facebook')" style="background:#1877F2;border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;"><span style="font-size:1.6rem;">📘</span><span style="color:#fff;font-size:0.7rem;font-weight:600;">Facebook</span></button>
+                <button onclick="shareVia('telegram')" style="background:#229ED9;border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;"><span style="font-size:1.6rem;">✈️</span><span style="color:#fff;font-size:0.7rem;font-weight:600;">Telegram</span></button>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+                <button onclick="shareVia('instagram')" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border:none;border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;"><span style="font-size:1.6rem;">📸</span><span style="color:#fff;font-size:0.7rem;font-weight:600;">Instagram</span></button>
+                <button onclick="shareVia('native')" style="background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;"><span style="font-size:1.6rem;">⋯</span><span style="color:#fff;font-size:0.7rem;font-weight:600;">More</span></button>
+                <button onclick="copyShareLink()" id="copy-link-btn" style="background:#2A2A2A;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;"><span style="font-size:1.6rem;">🔗</span><span style="color:#fff;font-size:0.7rem;font-weight:600;">Copy Link</span></button>
+            </div>
+            <button onclick="closeShareModal()" style="width:100%;padding:13px;background:rgba(255,255,255,0.06);border:none;border-radius:10px;color:#B3B3B3;font-size:0.9rem;cursor:pointer;">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- User Profile Bar -->
+<div id="user-profile-bar" style="display:none;position:fixed;top:14px;right:80px;z-index:9000;align-items:center;gap:10px;">
+    <img id="user-avatar" src="" alt="" style="width:34px;height:34px;border-radius:50%;border:2px solid #E50914;object-fit:cover;cursor:pointer;" onclick="openMyList()" title="My List"/>
+    <button onclick="signOutUser()" style="background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.4);color:#E50914;padding:6px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer;">Sign Out</button>
+</div>
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════ -->
+<script>
+    // ── STATE ──
+    let stories = [];          // populated from stories.json
+    let currentStory = null;
+    let isNarrating = false;
+    let speechUtterance = null;
+    let selectedVoice = 'female';
+    let currentRating = 0;
+    let storyRatings  = JSON.parse(localStorage.getItem('laminonoRatings')  || '{}');
+    let storyComments = JSON.parse(localStorage.getItem('laminonoComments') || '{}');
+
+    // ── LOAD STORIES FROM JSON ──
+    async function loadStories() {
+        try {
+            const res = await fetch('stories.json');
+            stories = await res.json();
+        } catch (e) {
+            console.error('Could not load stories.json:', e);
+            stories = [];
+        }
+        renderStories();
+        checkDeepLink();
+    }
+
+    // ── RENDER ──
+    function renderStories() {
+        const trending    = stories.filter(s => s.trending);
+        const newReleases = stories.slice(0, 6);
+        const featured    = stories.slice(0, 3);
+
+        document.getElementById('trendingRow').innerHTML    = trending.map(createStoryCard).join('');
+        document.getElementById('newReleasesRow').innerHTML = newReleases.map(createStoryCard).join('');
+        document.getElementById('featuredGrid').innerHTML   = featured.map(createFeaturedCard).join('');
+    }
+
+    function createStoryCard(story) {
+        return `
+            <div class="story-card" onclick="openStory('${story.id}')">
+                <img src="${story.image}" alt="${story.title}" class="story-card-image"
+                     onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+                <div class="story-card-vignette"></div>
+                <div class="story-cover-time">⏱ ${story.readTime}</div>
+                <div class="story-cover-title">${story.title}</div>
+                <div class="story-cover-genre">${story.genre}</div>
+                <div class="story-card-overlay" onclick="event.stopPropagation()">
+                    <p class="story-excerpt">${story.excerpt}</p>
+                    <div class="story-actions">
+                        <button class="action-btn play" onclick="openStory('${story.id}');setTimeout(toggleNarration,400);" title="Narrate">▶</button>
+                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');toggleMyList();" title="Add to List">+</button>
+                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');openShareModal();" title="Share">↗</button>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    function createFeaturedCard(story) {
+        return `
+            <div class="featured-card" onclick="openStory('${story.id}')">
+                <img src="${story.image}" alt="${story.title}" class="featured-card-bg"
+                     onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+                <div class="featured-vignette"></div>
+                <div class="featured-content">
+                    <span class="featured-badge">Featured</span>
+                    <h3 class="featured-cover-title">${story.title}</h3>
+                    <p class="featured-author">By <strong>Olamide Emmanuel Willoughby</strong> • ${story.readTime} read</p>
+                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${story.excerpt}</p>
+                </div>
+            </div>`;
+    }
+
+    // ── MODAL ──
+    function openStory(storyId) {
+        const story = stories.find(s => s.id === storyId) || stories[0];
+        if (!story) return;
+        currentStory = story;
+
+        document.getElementById('modalTitle').textContent = story.title;
+        document.getElementById('modalMeta').innerHTML =
+            `<span>⏱ ${story.readTime} read</span>
+             <span>📖 ${story.genre}</span>
+             <span>👤 By Olamide Emmanuel Willoughby</span>`;
+        document.getElementById('modalHero').style.cssText =
+            `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.image}') center/cover;`;
+
+        const paragraphs = story.content.split('\n\n').filter(p => p.trim());
+        document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+
+        document.getElementById('storyModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // reset UI
+        stopNarration();
+        currentRating = 0;
+        highlightStars(0);
+        document.getElementById('ratingText').textContent = 'Click to rate';
+        document.getElementById('mylist-btn-text').textContent = '+ My List';
+        updateAverageRating();
+        renderComments();
+
+        if (typeof gtag !== 'undefined') gtag('event','open_story',{'event_category':'engagement','event_label':story.title});
+    }
+
+    function closeModal() {
+        document.getElementById('storyModal').classList.remove('active');
+        document.body.style.overflow = '';
+        stopNarration();
+    }
+
+    // ── NARRATION ──
+    function setVoice(gender, e) {
+        selectedVoice = gender;
+        document.querySelectorAll('.voice-btn').forEach(b => b.classList.remove('active'));
+        if (e && e.target) e.target.classList.add('active');
+        if (isNarrating) { stopNarration(); setTimeout(startNarration, 100); }
+    }
+
+    function toggleNarration() {
+        isNarrating ? stopNarration() : startNarration();
+    }
+
+    function startNarration() {
+        if (!currentStory) return;
+        speechUtterance = new SpeechSynthesisUtterance(currentStory.content);
+        const voices = window.speechSynthesis.getVoices();
+        let preferred;
+        if (selectedVoice === 'female') {
+            preferred = voices.find(v => /Female|Samantha|Victoria/i.test(v.name));
+        } else {
+            preferred = voices.find(v => /Male|Daniel|Alex/i.test(v.name));
+        }
+        if (preferred) speechUtterance.voice = preferred;
+        speechUtterance.rate  = 0.9;
+        speechUtterance.pitch = selectedVoice === 'female' ? 1.1 : 0.9;
+        speechUtterance.onstart = () => {
+            isNarrating = true;
+            document.getElementById('narrateIcon').textContent = '⏸';
+            document.getElementById('narrateText').textContent = 'Pause Narration';
+            document.querySelector('.narrate-btn').classList.add('playing');
+            document.getElementById('visualizer').classList.add('active');
+        };
+        speechUtterance.onend = stopNarration;
+        window.speechSynthesis.speak(speechUtterance);
+    }
+
+    function stopNarration() {
+        window.speechSynthesis.cancel();
+        isNarrating = false;
+        const btn = document.querySelector('.narrate-btn');
+        if (btn) btn.classList.remove('playing');
+        const ni = document.getElementById('narrateIcon');
+        const nt = document.getElementById('narrateText');
+        if (ni) ni.textContent = '▶';
+        if (nt) nt.textContent = 'Narrate Story';
+        document.getElementById('visualizer').classList.remove('active');
+    }
+
+    // ── RATINGS ──
+    document.querySelectorAll('.star').forEach(star => {
+        star.addEventListener('mouseenter', () => {
+            highlightStars(parseInt(star.dataset.rating));
+            document.getElementById('ratingText').textContent = getRatingText(parseInt(star.dataset.rating));
+        });
+        star.addEventListener('mouseleave', () => {
+            highlightStars(currentRating);
+            document.getElementById('ratingText').textContent = currentRating > 0 ? 'You rated ' + currentRating + ' stars' : 'Click to rate';
+        });
+        star.addEventListener('click', () => submitRating(parseInt(star.dataset.rating)));
+    });
+
+    function highlightStars(count) {
+        document.querySelectorAll('.star').forEach((s,i) => s.classList.toggle('active', i < count));
+    }
+    function getRatingText(r) { return ['Poor','Fair','Good','Very Good','Excellent'][r-1] || 'Click to rate'; }
+
+    function submitRating(rating) {
+        if (!currentStory) return;
+        currentRating = rating;
+        highlightStars(rating);
+        document.getElementById('ratingText').textContent = 'You rated ' + rating + ' stars!';
+        if (!storyRatings[currentStory.id]) storyRatings[currentStory.id] = {total:0,sum:0};
+        const rated = JSON.parse(localStorage.getItem('ratedStories') || '[]');
+        if (!rated.includes(currentStory.id)) {
+            storyRatings[currentStory.id].total++;
+            storyRatings[currentStory.id].sum += rating;
+            rated.push(currentStory.id);
+            localStorage.setItem('ratedStories', JSON.stringify(rated));
+            localStorage.setItem('laminonoRatings', JSON.stringify(storyRatings));
+            if (typeof gtag !== 'undefined') gtag('event','rate_story',{'event_category':'engagement','event_label':currentStory.title,'value':rating});
+            showToast('Thank you for rating!');
+        } else { showToast('You already rated this story!'); }
+        updateAverageRating();
+    }
+
+    function updateAverageRating() {
+        if (!currentStory || !storyRatings[currentStory.id]) {
+            document.getElementById('averageScore').textContent = '0.0';
+            document.getElementById('averageStars').textContent = '★★★★★';
+            document.getElementById('totalVotes').textContent   = '(0 ratings)';
+            return;
+        }
+        const d = storyRatings[currentStory.id];
+        const avg = (d.sum / d.total).toFixed(1);
+        const full = Math.round(avg);
+        document.getElementById('averageScore').textContent = avg;
+        document.getElementById('averageStars').textContent = '★'.repeat(full) + '☆'.repeat(5-full);
+        document.getElementById('totalVotes').textContent   = `(${d.total} rating${d.total!==1?'s':''})`;
+    }
+
+    // ── COMMENTS ──
+    function submitComment(e) {
+        e.preventDefault();
+        if (!currentStory) return;
+        const name = document.getElementById('commentName').value.trim();
+        const text = document.getElementById('commentText').value.trim();
+        if (!name || !text) return;
+        const comment = {
+            id: Date.now(), name, text,
+            date: new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}),
+            rating: currentRating,
+            isAdmin: /laminono|olamide/i.test(name)
+        };
+        if (!storyComments[currentStory.id]) storyComments[currentStory.id] = [];
+        storyComments[currentStory.id].unshift(comment);
+        localStorage.setItem('laminonoComments', JSON.stringify(storyComments));
+        if (typeof gtag !== 'undefined') gtag('event','post_comment',{'event_category':'engagement','event_label':currentStory.title});
+        document.getElementById('commentName').value = '';
+        document.getElementById('commentText').value = '';
+        renderComments();
+        showToast('Comment posted!');
+    }
+
+    function renderComments() {
+        if (!currentStory) return;
+        const comments = storyComments[currentStory.id] || [];
+        document.getElementById('commentsCount').textContent = `(${comments.length})`;
+        const list = document.getElementById('commentsList');
+        if (!comments.length) { list.innerHTML = '<div class="no-comments">No comments yet. Be the first to share your thoughts!</div>'; return; }
+        list.innerHTML = comments.map(c => `
+            <div class="comment-card">
+                <div class="comment-header">
+                    <span class="comment-author">${c.name}${c.isAdmin?'<span class="admin-badge-small">Admin</span>':''}</span>
+                    <span class="comment-date">${c.date}</span>
+                </div>
+                ${c.rating>0?`<div class="comment-rating">${'★'.repeat(c.rating)}</div>`:''}
+                <div class="comment-text">${escapeHtml(c.text)}</div>
+            </div>`).join('');
+    }
+
+    function escapeHtml(t) { const d=document.createElement('div');d.textContent=t;return d.innerHTML; }
+
+    // ── ALL STORIES PAGE ──
+    function showAllStories(type) {
+        document.querySelector('.hero').classList.add('hidden');
+        document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
+        document.querySelector('.admin-section').classList.add('hidden');
+        document.querySelector('footer').classList.add('hidden');
+        document.getElementById('allStoriesPage').classList.remove('hidden');
+        document.getElementById('allStoriesTitle').textContent = type === 'trending' ? 'Trending Stories' : 'All Stories';
+        filterStories('all');
+        window.scrollTo(0,0);
+    }
+
+    function backToHome() {
+        document.querySelector('.hero').classList.remove('hidden');
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('hidden'));
+        document.querySelector('.admin-section').classList.remove('hidden');
+        document.querySelector('footer').classList.remove('hidden');
+        document.getElementById('allStoriesPage').classList.add('hidden');
+        window.scrollTo(0,0);
+    }
+
+    function filterStories(category) {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent === category || (category === 'all' && btn.textContent === 'All'));
+        });
+        const filtered = category === 'all' ? stories : stories.filter(s => s.genre === category);
+        document.getElementById('allStoriesGrid').innerHTML = filtered.map(story => `
+            <div class="story-card" onclick="openStory('${story.id}')" style="height:400px;flex:none;width:100%;">
+                <img src="${story.image}" alt="${story.title}" class="story-card-image"
+                     onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+                <div class="story-card-vignette"></div>
+                <div class="story-cover-time">⏱ ${story.readTime}</div>
+                <div class="story-cover-title">${story.title}</div>
+                <div class="story-cover-genre">${story.genre}</div>
+            </div>`).join('');
+    }
+
+    // ── TOAST ──
+    function showToast(message) {
+        const t = document.getElementById('toast');
+        document.getElementById('toastMessage').textContent = message;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // ── NAVBAR ──
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ── FLOATING BOOK ──
+    (function(){
+        const el = document.getElementById('floating-book-trigger');
+        let lastY = 0;
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            el.style.top = (y > 60 && y >= lastY) ? '70px' : '-280px';
+            lastY = y;
+        }, {passive:true});
+    })();
+
+    // ── DEEP LINK ──
+    function checkDeepLink() {
+        const params  = new URLSearchParams(window.location.search);
+        const storyId = params.get('story');
+        if (storyId) setTimeout(() => openStory(storyId), 600);
+    }
+
+    // ── SMOOTH SCROLL ──
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        });
+    });
+
+    // ── ESCAPE TO CLOSE ──
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    window.speechSynthesis.onvoiceschanged = () => {};
+
+    // ── INIT ──
+    document.addEventListener('DOMContentLoaded', loadStories);
+</script>
+
+<!-- ── FIREBASE (Auth + Firestore + Share) ── -->
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyA4jdIQilVbAcdnc0mAxk8arTg9xvYDuzc",
+    authDomain: "laminono-nexus.firebaseapp.com",
+    projectId: "laminono-nexus",
+    storageBucket: "laminono-nexus.firebasestorage.app",
+    messagingSenderId: "762207905640",
+    appId: "1:762207905640:web:9727e33d2f4d33bcc4d8dd"
+};
+
+const app      = initializeApp(firebaseConfig);
+const auth     = getAuth(app);
+const db       = getFirestore(app);
+const provider = new GoogleAuthProvider();
+
+let currentUser   = null;
+let isSignUpMode  = false;
+let pendingAction = null;
+
+onAuthStateChanged(auth, user => {
+    currentUser = user;
+    const bar    = document.getElementById('user-profile-bar');
+    const avatar = document.getElementById('user-avatar');
+    if (user) {
+        bar.style.display = 'flex';
+        avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
+        if (pendingAction === 'mylist') { pendingAction = null; openMyList(); }
+    } else {
+        bar.style.display = 'none';
+    }
+});
+
+window.signInWithGoogle = async () => {
+    try {
+        document.getElementById('auth-error').textContent = '';
+        await signInWithPopup(auth, provider);
+        closeAuthModal();
+        showToast('Welcome to Laminono Nexus! 🎉');
+    } catch(e) { document.getElementById('auth-error').textContent = e.message.replace('Firebase: ',''); }
+};
+
+window.handleEmailAuth = async () => {
+    const email    = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
+    const errEl    = document.getElementById('auth-error');
+    errEl.textContent = '';
+    if (!email || !password) { errEl.textContent = 'Please fill in all fields.'; return; }
+    try {
+        if (isSignUpMode) { await createUserWithEmailAndPassword(auth, email, password); showToast('Account created! Welcome 🎉'); }
+        else { await signInWithEmailAndPassword(auth, email, password); showToast('Welcome back! 👋'); }
+        closeAuthModal();
+    } catch(e) {
+        const msg = e.code === 'auth/wrong-password'       ? 'Incorrect password.'
+                  : e.code === 'auth/user-not-found'        ? 'No account found with this email.'
+                  : e.code === 'auth/email-already-in-use'  ? 'This email is already registered.'
+                  : e.code === 'auth/weak-password'          ? 'Password must be at least 6 characters.'
+                  : e.code === 'auth/invalid-email'          ? 'Please enter a valid email address.'
+                  : e.message.replace('Firebase: ','');
+        errEl.textContent = msg;
+    }
+};
+
+window.forgotPassword = async () => {
+    const email = document.getElementById('auth-email').value.trim();
+    if (!email) { document.getElementById('auth-error').textContent = 'Enter your email above first.'; return; }
+    try { await sendPasswordResetEmail(auth, email); showToast('Password reset email sent!'); }
+    catch(e) { document.getElementById('auth-error').textContent = 'Could not send reset email.'; }
+};
+
+window.toggleAuthMode = () => {
+    isSignUpMode = !isSignUpMode;
+    document.getElementById('auth-modal-title').textContent  = isSignUpMode ? 'Create Your Account'    : 'Welcome Back';
+    document.getElementById('auth-modal-sub').textContent    = isSignUpMode ? 'Join the story community.' : 'Sign in to access your reading list.';
+    document.getElementById('auth-submit-btn').textContent   = isSignUpMode ? 'Create Account'           : 'Sign In';
+    document.getElementById('auth-toggle-text').textContent  = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
+    document.getElementById('auth-toggle-btn').textContent   = isSignUpMode ? 'Sign In'                  : 'Sign Up';
+    document.getElementById('forgot-btn').style.display      = isSignUpMode ? 'none'                     : 'block';
+    document.getElementById('auth-error').textContent = '';
+};
+
+window.signOutUser   = async () => { await signOut(auth); showToast('You have been signed out.'); };
+window.openAuthModal = (action) => { pendingAction = action||null; document.getElementById('auth-modal').style.display='block'; document.body.style.overflow='hidden'; };
+window.closeAuthModal= () => { document.getElementById('auth-modal').style.display='none'; document.body.style.overflow=''; };
+
+window.toggleMyList = async () => {
+    if (!currentUser) { openAuthModal('mylist'); return; }
+    const story = window.currentStory;
+    if (!story) return;
+    const ref  = doc(db,'users',currentUser.uid);
+    const snap = await getDoc(ref);
+    const list = snap.exists() ? (snap.data().myList||[]) : [];
+    const exists = list.some(s => s.id === story.id);
+    const item   = {id:story.id, title:story.title, genre:story.genre, image:story.image, readTime:story.readTime};
+    if (exists) {
+        await updateDoc(ref,{myList:arrayRemove(item)}).catch(()=>setDoc(ref,{myList:list.filter(s=>s.id!==story.id)},{merge:true}));
+        showToast('Removed from My List');
+        document.getElementById('mylist-btn-text').textContent = '+ My List';
+    } else {
+        snap.exists() ? await updateDoc(ref,{myList:arrayUnion(item)}) : await setDoc(ref,{myList:[item]});
+        showToast('✅ Added to My List!');
+        document.getElementById('mylist-btn-text').textContent = '✓ In My List';
+    }
+};
+
+window.openMyList = async () => {
+    if (!currentUser) { openAuthModal('mylist'); return; }
+    document.getElementById('mylist-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    const content = document.getElementById('mylist-content');
+    content.innerHTML = '<p style="color:#808080;text-align:center;padding:40px 0;">Loading...</p>';
+    try {
+        const snap = await getDoc(doc(db,'users',currentUser.uid));
+        const list = snap.exists() ? (snap.data().myList||[]) : [];
+        if (!list.length) { content.innerHTML='<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;font-size:0.92rem;">Your reading list is empty.<br>Tap <strong style=\'color:#fff\'>"+ My List"</strong> on any story.</p></div>'; return; }
+        content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">'+list.length+' '+(list.length===1?'story':'stories')+' saved</p>'+
+            list.map(s=>`<div class="mylist-story-card" onclick="openStory('${s.id}');closeMyList()"><img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/><div style="flex:1;min-width:0;"><p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p><p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p><p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p></div><button class="mylist-remove" onclick="event.stopPropagation();removeFromMyList('${s.id}')" title="Remove">🗑</button></div>`).join('');
+    } catch(e) { content.innerHTML='<p style="color:#E50914;text-align:center;padding:30px;">Could not load your list.</p>'; }
+};
+
+window.removeFromMyList = async (storyId) => {
+    if (!currentUser) return;
+    const ref  = doc(db,'users',currentUser.uid);
+    const snap = await getDoc(ref);
+    if (!snap.exists()) return;
+    await setDoc(ref,{myList:(snap.data().myList||[]).filter(s=>s.id!==storyId)},{merge:true});
+    openMyList();
+    showToast('Removed from My List');
+};
+
+window.closeMyList = () => { document.getElementById('mylist-modal').style.display='none'; document.body.style.overflow=''; };
+
+// Share
+window.openShareModal = () => {
+    const story = window.currentStory;
+    if (!story) return;
+    const shareUrl  = `https://laminono-nexus.github.io/?story=${story.id}`;
+    const hookLine  = story.excerpt || story.content.split('\n\n')[0].substring(0,120)+'…';
+    document.getElementById('share-preview-img').style.backgroundImage = `url('${story.image}')`;
+    document.getElementById('share-preview-genre').textContent = story.genre;
+    document.getElementById('share-preview-title').textContent = story.title;
+    document.getElementById('share-preview-hook').textContent  = hookLine;
+    window._shareData = {url:shareUrl, title:story.title, text:hookLine};
+    const modal = document.getElementById('share-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeShareModal = () => { document.getElementById('share-modal').style.display='none'; document.body.style.overflow=''; };
+
+window.shareVia = (platform) => {
+    const d   = window._shareData;
+    const msg = encodeURIComponent(`📚 "${d.title}"\n\n${d.text}\n\n🔗 Read more: ${d.url}`);
+    const url = encodeURIComponent(d.url);
+    const links = {
+        whatsapp: `https://wa.me/?text=${msg}`,
+        twitter:  `https://twitter.com/intent/tweet?text=${msg}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        telegram: `https://t.me/share/url?url=${url}&text=${encodeURIComponent(d.title)}`,
+    };
+    if (platform === 'instagram' || platform === 'native') {
+        if (platform === 'native' && navigator.share) { navigator.share({title:d.title,text:d.text,url:d.url}).catch(()=>{}); return; }
+        copyShareLink(); showToast('Link copied! Paste it where you want to share 📋'); return;
+    }
+    if (links[platform]) window.open(links[platform], '_blank');
+    closeShareModal();
+};
+
+window.copyShareLink = () => {
+    const d = window._shareData;
+    const text = `📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById('copy-link-btn');
+            if (btn) btn.querySelector('span:last-child').textContent = 'Copied!';
+            setTimeout(() => { if (btn) btn.querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
+            showToast('Link copied to clipboard! 🔗');
+        });
+    } else {
+        const el = document.createElement('textarea'); el.value=text; document.body.appendChild(el);
+        el.select(); document.execCommand('copy'); document.body.removeChild(el);
+        showToast('Link copied! 🔗');
+    }
+};
+</script>
+
+</body>
+</html>
