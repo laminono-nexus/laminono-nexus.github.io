@@ -572,12 +572,15 @@
         <div class="footer-section">
             <h3>Explore</h3>
             <ul>
-                <li><a href="#">Trending Stories</a></li>
-                <li><a href="#">New Releases</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Authors</a></li>
-            </ul>
-        </div>
+                <div class="footer-section">
+    <h3>Explore</h3>
+    <ul>
+        <li><a href="#stories" onclick="document.getElementById('stories').scrollIntoView({behavior:'smooth',block:'start'}); return false;">Trending Stories</a></li>
+        <li><a href="#" onclick="showAllStories('all'); return false;">New Releases</a></li>
+        <li><a href="#" onclick="showAllStories('all'); return false;">Categories</a></li>
+        <li><a href="#about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth',block:'start'}); return false;">Authors</a></li>
+    </ul>
+</div>
         <div class="footer-section">
             <h3>Connect</h3>
             <ul>
