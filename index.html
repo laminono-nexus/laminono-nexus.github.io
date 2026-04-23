@@ -1104,7 +1104,10 @@
     window.speechSynthesis.onvoiceschanged = () => {};
 
     // ── INIT ──
-    document.addEventListener('DOMContentLoaded', loadStories);
+    document.addEventListener('DOMContentLoaded', () => {
+    renderStories();
+    checkDeepLink();
+});
 <script type="module">
     import { stories } from './stories.js';
 
