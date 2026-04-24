@@ -850,6 +850,9 @@
 <script type="module">
     import { stories, updatePageSEO, resetToHomeSEO } from './stories.js';
 
+// Make stories available globally for onclick handlers
+window.allStories = stories;
+
     // ── STATE ──
     let currentStory = null;
     let isNarrating = false;
