@@ -932,7 +932,7 @@
              <span>📖 ${story.genre}</span>
              <span>👤 By Olamide Emmanuel Willoughby</span>`;
         document.getElementById('modalHero').style.cssText =
-            `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.image}') center/cover;`;
+    `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.cover?.image || story.image}') center/cover;`;
 
         const paragraphs = story.content.split('\n\n').filter(p => p.trim());
         document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
