@@ -1334,7 +1334,7 @@ window.openShareModal = () => {
     if (!story) return;
     const shareUrl  = `https://laminono-nexus.github.io/?story=${story.id}`;
     const hookLine  = story.excerpt || story.content.split('\n\n')[0].substring(0,120)+'…';
-    document.getElementById('share-preview-img').style.backgroundImage = `url('${story.image}')`;
+    document.getElementById('share-preview-img').style.backgroundImage = `url('${story.cover?.image || story.image}')`;
     document.getElementById('share-preview-genre').textContent = story.genre;
     document.getElementById('share-preview-title').textContent = story.title;
     document.getElementById('share-preview-hook').textContent  = hookLine;
