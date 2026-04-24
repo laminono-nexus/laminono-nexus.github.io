@@ -26,7 +26,7 @@
     <!-- SEO: Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:title" content="Laminono Nexus — Premium Storytelling">
     <meta property="og:description" content="Discover premium short stories on Laminono Nexus. Free drama, romance, sci-fi, and literary fiction by Olamide Emmanuel Willoughby.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200&q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1515549832467-8783363e19b6?w=1200&q=80">
     <meta property="og:url" content="https://laminono-nexus.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Laminono Nexus">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Laminono Nexus — Premium Storytelling">
     <meta name="twitter:description" content="Discover premium short stories on Laminono Nexus. Free drama, romance, sci-fi, and literary fiction.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200&q=80">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1515549832467-8783363e19b6?w=1200&q=80">
     
     <!-- SEO: Canonical URL -->
     <link rel="canonical" href="https://laminono-nexus.github.io/">
@@ -116,7 +116,7 @@
             position: relative; height: 100vh; min-height: 700px;
             display: flex; align-items: flex-end; padding: 0 4% 150px;
             background: var(--gradient-hero),
-                url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1920&q=80') center/cover;
+                url('https://images.unsplash.com/photo-1515549832467-8783363e19b6?w=1920&q=80') center/cover;
         }
         .hero::before {
             content: ''; position: absolute; inset: 0;
@@ -141,6 +141,26 @@
         .hero-description { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px; max-width: 600px; }
         .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
 
+        /* ── CONTINUE READING BANNER ── */
+        .continue-banner {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 5000;
+            box-shadow: 0 10px 30px rgba(229,9,20,0.4);
+            animation: slideUp 0.5s ease;
+        }
+        .continue-banner.show { display: flex; align-items: center; gap: 10px; }
+        @keyframes slideUp { from { transform: translateX(-50%) translateY(100px); opacity: 0; } to { transform: translateX(-50%) translateY(0); opacity: 1; } }
+
         /* ── BUTTONS ── */
         .btn {
             display: inline-flex; align-items: center; gap: 10px;
@@ -160,7 +180,7 @@
         .section-title {
             font-size: 1.5rem; font-weight: 600; display: flex; align-items: center; gap: 10px;
         }
-        .section-title::after { content: '›'; color: var(--primary); font-size: 1.8rem; transition: transform 0.3s; }
+        .section-title::after { content: '>'; color: var(--primary); font-size: 1.8rem; transition: transform 0.3s; }
         .section-header:hover .section-title::after { transform: translateX(5px); }
         .explore-all { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: color 0.3s; }
         .explore-all:hover { color: var(--text-primary); }
@@ -172,16 +192,16 @@
         }
         .story-row::-webkit-scrollbar { display: none; }
 
-        /* ── STORY CARD — with Cover Art overlay ── */
+        /* ── STORY CARD — Cover Art Style ── */
         .story-card {
-            flex: 0 0 auto; width: 280px; height: 380px; position: relative;
+            flex: 0 0 auto; width: 280px; height: 420px; position: relative;
             border-radius: 8px; overflow: hidden; cursor: pointer;
             transition: var(--transition-smooth); background: var(--bg-card);
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .story-card:hover { transform: scale(1.05); z-index: 10; box-shadow: var(--shadow-elevated); }
 
-        /* Cover art: full-bleed image */
+        /* Cover art: full-bleed image with lazy loading */
         .story-card-image {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.5s; display: block;
@@ -193,35 +213,36 @@
             position: absolute; inset: 0;
             background: linear-gradient(
                 to bottom,
-                rgba(0,0,0,0.15) 0%,
-                rgba(0,0,0,0.05) 30%,
-                rgba(0,0,0,0.6) 65%,
-                rgba(0,0,0,0.92) 100%
+                rgba(0,0,0,0.1) 0%,
+                rgba(0,0,0,0.05) 25%,
+                rgba(0,0,0,0.4) 50%,
+                rgba(0,0,0,0.85) 75%,
+                rgba(0,0,0,0.98) 100%
             );
         }
 
-        /* Title rendered like a movie title over the cover */
+        /* Title rendered like a movie poster title */
         .story-cover-title {
-            position: absolute; bottom: 60px; left: 0; right: 0; padding: 0 18px;
-            font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600;
-            color: #fff; line-height: 1.3; text-align: center;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8);
-            letter-spacing: 0.01em;
+            position: absolute; bottom: 70px; left: 0; right: 0; padding: 0 18px;
+            font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600;
+            color: #fff; line-height: 1.2; text-align: center;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,0.9);
+            letter-spacing: 0.02em;
         }
 
         /* Genre pill */
         .story-cover-genre {
-            position: absolute; bottom: 36px; left: 0; right: 0;
+            position: absolute; bottom: 44px; left: 0; right: 0;
             text-align: center;
-            color: var(--primary); font-size: 0.68rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--primary); font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px;
         }
 
         /* Read-time tag */
         .story-cover-time {
             position: absolute; top: 12px; right: 12px;
             background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-            color: rgba(255,255,255,0.8); font-size: 0.7rem; padding: 4px 10px;
+            color: rgba(255,255,255,0.9); font-size: 0.7rem; padding: 4px 10px;
             border-radius: 20px; border: 1px solid rgba(255,255,255,0.15);
         }
 
@@ -337,6 +358,18 @@
         .story-text p:first-child::first-letter {
             font-family: 'Playfair Display', serif; font-size: 4rem; float: left;
             line-height: 0.8; margin-right: 10px; margin-top: 5px; color: var(--primary);
+        }
+
+        /* ── READING PROGRESS BAR ── */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary);
+            z-index: 10000;
+            transition: width 0.1s;
+            width: 0%;
         }
 
         /* ── ADMIN / ABOUT ── */
@@ -512,12 +545,21 @@
 </head>
 <body>
 
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Continue Reading Banner -->
+<div class="continue-banner" id="continueBanner" onclick="continueReading()">
+    <span>Continue Reading</span>
+    <span style="font-size: 0.8rem; opacity: 0.8;" id="continueTitle"></span>
+</div>
+
 <!-- Floating Book -->
 <div id="floating-book-trigger" onclick="window.location.href='bookshelf.html'">
     <div class="fb-rope-hook"></div>
     <div class="fb-rope"></div>
     <div class="fb-cover">
-        <div class="fb-icon">📚</div>
+        <div class="fb-icon">&#128218;</div>
         <div class="fb-title">BOOK SHELVES</div>
         <div class="fb-sub">Unlimited Books</div>
     </div>
@@ -537,19 +579,19 @@
 <!-- Hero -->
 <section class="hero" id="home">
     <div class="hero-content">
-        <div class="hero-badge"><span>✦</span> Featured Story</div>
-        <h1>The Echoes of Tomorrow</h1>
+        <div class="hero-badge"><span>*</span> Featured Story</div>
+        <h1>The Boy Who Paid With Tomorrow</h1>
         <div class="hero-meta">
-            <span>⏱ 12 min read</span>
-            <span>📖 Drama</span>
-            <span>🔥 Trending #1</span>
+            <span>* 30 min read</span>
+            <span>* Drama</span>
+            <span>* Trending #1</span>
         </div>
         <p class="hero-description">
-            In a world where memories can be traded like currency, one archivist discovers a recollection that could unravel the fabric of society. A gripping tale of identity, loss, and the price of perfection.
+            Every note he spent carried a price. He just did not know who was paying it. A gripping Nigerian drama about cursed money, grief, and the price of survival.
         </p>
         <div class="hero-actions">
-            <button class="btn btn-primary" onclick="openStory('echoes-of-tomorrow')"><span>▶</span> Read Now</button>
-            <button class="btn btn-secondary" onclick="openStory('echoes-of-tomorrow')"><span>ℹ</span> More Info</button>
+            <button class="btn btn-primary" onclick="openStory('the-boy-who-paid-with-tomorrow')"><span>></span> Read Now</button>
+            <button class="btn btn-secondary" onclick="openStory('the-boy-who-paid-with-tomorrow')"><span>i</span> More Info</button>
         </div>
     </div>
 </section>
@@ -558,7 +600,7 @@
 <section class="content-section" id="stories">
     <div class="section-header">
         <h2 class="section-title">Trending Now</h2>
-        <span class="explore-all" onclick="showAllStories('trending')">Explore All →</span>
+        <span class="explore-all" onclick="showAllStories('trending')">Explore All ></span>
     </div>
     <div class="story-row" id="trendingRow"></div>
 </section>
@@ -567,7 +609,7 @@
 <section class="content-section">
     <div class="section-header">
         <h2 class="section-title">New Releases</h2>
-        <span class="explore-all" onclick="showAllStories('all')">View All →</span>
+        <span class="explore-all" onclick="showAllStories('all')">View All ></span>
     </div>
     <div class="story-row" id="newReleasesRow"></div>
 </section>
@@ -583,12 +625,12 @@
 <!-- About -->
 <section class="admin-section" id="about">
     <div class="admin-container">
-        <img src="laminono.jpeg" alt="Olamide Emmanuel Willoughby" class="admin-image">
+        <img src="laminono.jpeg" alt="Olamide Emmanuel Willoughby" class="admin-image" loading="lazy">
         <div class="admin-content">
             <div class="admin-title">The Storyteller</div>
             <h2>Olamide Emmanuel Willoughby</h2>
             <p class="admin-bio">
-                Laminono Nexus is more than a name—it's a creative identity. Founded by Olamide Emmanuel Willoughby, Laminono blends storytelling, visual creativity, and digital strategy to craft powerful experiences. From emotionally driven stories to high-converting social media content, every creation is designed to resonate, inspire, and influence.
+                Laminono Nexus is more than a name—it is a creative identity. Founded by Olamide Emmanuel Willoughby, Laminono blends storytelling, visual creativity, and digital strategy to craft powerful experiences. From emotionally driven stories to high-converting social media content, every creation is designed to resonate, inspire, and influence.
             </p>
             <p class="admin-signature">— Laminono</p>
         </div>
@@ -645,12 +687,12 @@
             <div class="modal-meta" id="modalMeta"></div>
             <div class="modal-actions">
                 <button class="btn btn-primary" onclick="toggleNarration()">
-                    <span id="narrateIcon">▶</span> <span id="narrateText">Narrate Story</span>
+                    <span id="narrateIcon">></span> <span id="narrateText">Narrate Story</span>
                 </button>
                 <button class="btn btn-secondary" onclick="toggleMyList()">
                     <span>+</span> <span id="mylist-btn-text">My List</span>
                 </button>
-                <button class="btn btn-outline" onclick="openShareModal()"><span>↗</span> Share</button>
+                <button class="btn btn-outline" onclick="openShareModal()"><span>^</span> Share</button>
             </div>
             <div class="narration-controls">
                 <span style="color:var(--text-secondary);font-size:0.9rem;">Voice:</span>
@@ -668,16 +710,16 @@
             <div class="rating-section">
                 <div class="average-rating">
                     <span class="average-score" id="averageScore">0.0</span>
-                    <span class="average-stars" id="averageStars">★★★★★</span>
+                    <span class="average-stars" id="averageStars">*****</span>
                     <span class="total-votes" id="totalVotes">(0 ratings)</span>
                 </div>
                 <h3 class="rating-title">Rate this story</h3>
                 <div class="star-rating" id="starRating">
-                    <span class="star" data-rating="1">★</span>
-                    <span class="star" data-rating="2">★</span>
-                    <span class="star" data-rating="3">★</span>
-                    <span class="star" data-rating="4">★</span>
-                    <span class="star" data-rating="5">★</span>
+                    <span class="star" data-rating="1">*</span>
+                    <span class="star" data-rating="2">*</span>
+                    <span class="star" data-rating="3">*</span>
+                    <span class="star" data-rating="4">*</span>
+                    <span class="star" data-rating="5">*</span>
                     <span class="star-rating-text" id="ratingText">Click to rate</span>
                 </div>
                 <!-- Comments -->
@@ -688,8 +730,9 @@
                             <input type="text" class="comment-input" id="commentName" placeholder="Your name" required>
                             <textarea class="comment-input comment-textarea" id="commentText" placeholder="Share your thoughts on this story..." required></textarea>
                         </div>
-                        <button type="submit" class="comment-submit"><span>💬</span> Post Comment</button>
+                        <button type="submit" class="comment-submit"><span>#</span> Post Comment</button>
                     </form>
+
                     <div class="comments-list" id="commentsList">
                         <div class="no-comments">No comments yet. Be the first to share your thoughts!</div>
                     </div>
