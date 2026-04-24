@@ -873,7 +873,7 @@
     function createStoryCard(story) {
     return `
         <div class="story-card" onclick="openStory('${story.id}')">
-            <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image"
+            <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image" onerror="this.src='https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80'">
                  onerror="this.src='https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80'">
                 <div class="story-card-vignette"></div>
                 <div class="story-cover-time">⏱ ${story.readTime}</div>
