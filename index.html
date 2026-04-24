@@ -922,8 +922,8 @@
             <span>📖 ${story.genre}</span>
             <span>🔥 Trending #1</span>`;
         document.querySelector('.hero').style.background = `
-            var(--gradient-hero),
-            url('${story.image}') center/cover`;
+    var(--gradient-hero),
+    url('${story.cover?.image || story.image}') center/cover`;
 
         // Modal content
         document.getElementById('modalTitle').textContent = story.title;
