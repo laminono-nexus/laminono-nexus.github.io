@@ -907,50 +907,62 @@
 
     // ── MODAL ──
     function openStory(storyId) {
-        const story = stories.find(s => s.id === storyId) || stories[0];
-        if (!story) return;
-        currentStory = story;
-
-        // Update SEO for this story
-        updatePageSEO(story);
-
-        // Update hero content dynamically
-        document.querySelector('.hero h1').textContent = story.title;
-        document.querySelector('.hero-description').textContent = story.excerpt;
-        document.querySelector('.hero-meta').innerHTML = `
-            <span>⏱ ${story.readTime}</span>
-            <span>📖 ${story.genre}</span>
-            <span>🔥 Trending #1</span>`;
-        document.querySelector('.hero').style.background = `
-    var(--gradient-hero),
-    url('${story.cover?.image || story.image}') center/cover`;
-
-        // Modal content
-        document.getElementById('modalTitle').textContent = story.title;
-        document.getElementById('modalMeta').innerHTML =
-            `<span>⏱ ${story.readTime} read</span>
-             <span>📖 ${story.genre}</span>
-             <span>👤 By Olamide Emmanuel Willoughby</span>`;
-        document.getElementById('modalHero').style.cssText =
-    `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.cover?.image || story.image}') center/cover;`;
-
-        const paragraphs = story.content.split('\n\n').filter(p => p.trim());
-        document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
-
-        document.getElementById('storyModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
-
-        // reset UI
-        stopNarration();
-        currentRating = 0;
-        highlightStars(0);
-        document.getElementById('ratingText').textContent = 'Click to rate';
-        document.getElementById('mylist-btn-text').textContent = '+ My List';
-        updateAverageRating();
-        renderComments();
-
-        if (typeof gtag !== 'undefined') gtag('event','open_story',{'event_category':'engagement','event_label':story.title});
+    // Find the story from the imported stories array
+    const story = window.allStories?.find(s => s.id === storyId) || stories.find(s => s.id === storyId) || stories[0];
+    if (!story) {
+        console.error('Story not found:', storyId);
+        return;
     }
+    
+    currentStory = story;
+    console.log('Opening story:', story.title); // Debug line
+
+    // Update SEO for this story
+    updatePageSEO(story);
+
+    // Update hero content dynamically
+    document.querySelector('.hero h1').textContent = story.title;
+    document.querySelector('.hero-description').textContent = story.excerpt;
+    document.querySelector('.hero-meta').innerHTML = `
+        <span>⏱ ${story.readTime}</span>
+        <span>📖 ${story.genre}</span>
+        <span>🔥 Trending #1</span>`;
+    
+    // Update hero background to story cover
+    document.querySelector('.hero').style.background = `
+        var(--gradient-hero),
+        url('${story.cover?.image || story.image}') center/cover`;
+
+    // Modal content
+    document.getElementById('modalTitle').textContent = story.title;
+    document.getElementById('modalMeta').innerHTML =
+        `<span>⏱ ${story.readTime} read</span>
+         <span>📖 ${story.genre}</span>
+         <span>👤 By Olamide Emmanuel Willoughby</span>`;
+    document.getElementById('modalHero').style.cssText =
+        `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.cover?.image || story.image}') center/cover;`;
+
+    // THIS IS THE FIX - properly split content into paragraphs
+    const paragraphs = story.content.split('\n\n').filter(p => p.trim());
+    document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+
+    // Show modal
+    const modal = document.getElementById('storyModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Reset UI
+    stopNarration();
+    currentRating = 0;
+    highlightStars(0);
+    document.getElementById('ratingText').textContent = 'Click to rate';
+    document.getElementById('mylist-btn-text').textContent = '+ My List';
+    updateAverageRating();
+    renderComments();
+
+    // Analytics
+    if (typeof gtag !== 'undefined') gtag('event','open_story',{'event_category':'engagement','event_label':story.title});
+}
 
     function closeModal() {
         document.getElementById('storyModal').classList.remove('active');
