@@ -907,17 +907,16 @@ window.stories = stories;
         </div>`;
 }
 
-    // ── MODAL ──
     function openStory(storyId) {
-    // Find the story from the imported stories array
-    const story = window.allStories?.find(s => s.id === storyId) || stories.find(s => s.id === storyId) || stories[0];
+    // Find story from the imported stories array
+    const story = stories.find(s => s.id === storyId);
     if (!story) {
         console.error('Story not found:', storyId);
         return;
     }
     
     currentStory = story;
-    console.log('Opening story:', story.title); // Debug line
+    window.currentStory = story; // Make available globally for other handlers
 
     // Update SEO for this story
     updatePageSEO(story);
@@ -944,7 +943,7 @@ window.stories = stories;
     document.getElementById('modalHero').style.cssText =
         `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.cover?.image || story.image}') center/cover;`;
 
-    // THIS IS THE FIX - properly split content into paragraphs
+    // Split content into paragraphs
     const paragraphs = story.content.split('\n\n').filter(p => p.trim());
     document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
 
