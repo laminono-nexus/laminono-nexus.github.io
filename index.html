@@ -1317,11 +1317,26 @@ onAuthStateChanged(auth, user => {
 window.signInWithGoogle = async () => {
     try {
         document.getElementById('auth-error').textContent = '';
-        await signInWithPopup(auth, provider);
-        closeAuthModal();
-        showToast('Welcome to Laminono Nexus! 🎉');
-    } catch(e) { document.getElementById('auth-error').textContent = e.message.replace('Firebase: ',''); }
+        // Popup fails on mobile browsers, use redirect
+        await signInWithRedirect(auth, provider);
+    } catch(e) { 
+        document.getElementById('auth-error').textContent = e.message.replace('Firebase: ',''); 
+    }
 };
+
+// Handle when user returns from Google
+getRedirectResult(auth).then((result) => {
+    if (result && result.user) {
+        closeAuthModal();
+        showToast('Welcome! 🎉');
+        // If they clicked a story before login, open it now
+        if (window.pendingUserAction) {
+            const action = window.pendingUserAction;
+            window.pendingUserAction = null;
+            setTimeout(action, 500);
+        }
+    }
+}).catch(() => {});
 
 window.handleEmailAuth = async () => {
     const email    = document.getElementById('auth-email').value.trim();
