@@ -1290,14 +1290,27 @@ let pendingAction = null;
 
 onAuthStateChanged(auth, user => {
     currentUser = user;
+    window.currentFirebaseUser = user; // Expose for gatekeeper
     const bar    = document.getElementById('user-profile-bar');
     const avatar = document.getElementById('user-avatar');
+    
     if (user) {
         bar.style.display = 'flex';
         avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
+        
+        // Check if user had a pending action before login
+        if (window.pendingUserAction) {
+            const action = window.pendingUserAction;
+            window.pendingUserAction = null; // Clear it
+            closeAuthModal();
+            showToast('Welcome! Opening your story...');
+            setTimeout(action, 300); // Small delay for modal close animation
+        }
+        
         if (pendingAction === 'mylist') { pendingAction = null; openMyList(); }
     } else {
         bar.style.display = 'none';
+        window.currentFirebaseUser = null;
     }
 });
 
