@@ -859,13 +859,17 @@ let currentStory = null;
 
 // ── AUTH GATEKEEPER ──
 // Every interactive action must pass through here first
-function requireAuth(actionCallback) {
+function requireAuth(actionCallback, storyId) {
     // Check if Firebase auth has a current user
     const user = window.currentFirebaseUser || null;
     
     if (!user) {
         // Not logged in — show login modal and remember what they wanted to do
         window.pendingUserAction = actionCallback;
+        // Store story ID for redirect recovery (Google sign-in causes page reload)
+        if (storyId) {
+            sessionStorage.setItem('pendingStoryId', storyId);
+        }
         openAuthModal();
         return false;
     }
