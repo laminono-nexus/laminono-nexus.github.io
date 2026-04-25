@@ -877,36 +877,34 @@ window.allStories = stories;
     return `
         <div class="story-card" onclick="openStory('${story.id}')">
             <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image" onerror="this.src='https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80'">
-                 onerror="this.src='https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80'">
-                <div class="story-card-vignette"></div>
-                <div class="story-cover-time">⏱ ${story.readTime}</div>
-                <div class="story-cover-title">${story.title}</div>
-                <div class="story-cover-genre">${story.genre}</div>
-                <div class="story-card-overlay" onclick="event.stopPropagation()">
-                    <p class="story-excerpt">${story.excerpt}</p>
-                    <div class="story-actions">
-                        <button class="action-btn play" onclick="openStory('${story.id}');setTimeout(toggleNarration,400);" title="Narrate ${story.title}">▶</button>
-                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');toggleMyList();" title="Add ${story.title} to My List">+</button>
-                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');openShareModal();" title="Share ${story.title}">↗</button>
-                    </div>
+            <div class="story-card-vignette"></div>
+            <div class="story-cover-time">⏱ ${story.readTime}</div>
+            <div class="story-cover-title">${story.title}</div>
+            <div class="story-cover-genre">${story.genre}</div>
+            <div class="story-card-overlay" onclick="event.stopPropagation()">
+                <p class="story-excerpt">${story.excerpt}</p>
+                <div class="story-actions">
+                    <button class="action-btn play" onclick="openStory('${story.id}');setTimeout(toggleNarration,400);" title="Narrate ${story.title}">▶</button>
+                    <button class="action-btn" onclick="currentStory=window.allStories.find(s=>s.id==='${story.id}');toggleMyList();" title="Add ${story.title} to My List">+</button>
+                    <button class="action-btn" onclick="currentStory=window.allStories.find(s=>s.id==='${story.id}');openShareModal();" title="Share ${story.title}">↗</button>
                 </div>
-            </div>`;
-    }
+            </div>
+        </div>`;
+}
 
     function createFeaturedCard(story) {
     return `
         <div class="featured-card" onclick="openStory('${story.id}')">
-            <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class...
-                     onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
-                <div class="featured-vignette"></div>
-                <div class="featured-content">
-                    <span class="featured-badge">Featured</span>
-                    <h3 class="featured-cover-title">${story.title}</h3>
-                    <p class="featured-author">By <strong>Olamide Emmanuel Willoughby</strong> • ${story.readTime} read</p>
-                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${story.excerpt}</p>
-                </div>
-            </div>`;
-    }
+            <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="featured-card-bg" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+            <div class="featured-vignette"></div>
+            <div class="featured-content">
+                <span class="featured-badge">Featured</span>
+                <h3 class="featured-cover-title">${story.title}</h3>
+                <p class="featured-author">By <strong>Olamide Emmanuel Willoughby</strong> • ${story.readTime} read</p>
+                <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${story.excerpt}</p>
+            </div>
+        </div>`;
+}
 
     // ── MODAL ──
     function openStory(storyId) {
