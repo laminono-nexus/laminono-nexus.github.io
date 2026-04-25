@@ -1450,24 +1450,32 @@ onAuthStateChanged(auth, user => {
     const avatar = document.getElementById('user-avatar');
     
     if (user) {
+        console.log('✓ User logged in:', user.email);
         bar.style.display = 'flex';
         avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
         
-        // ← ADD THIS: Auto-close auth modal
+        // AUTO-CLOSE AUTH MODAL
         const authModal = document.getElementById('auth-modal');
         if (authModal && authModal.style.display === 'block') {
-            closeAuthModal();
-            showToast('Welcome! 👋');
+            authModal.style.display = 'none';
+            document.body.style.overflow = '';
+            window.showToast('Welcome! 👋');
         }
         
-        // Check if user had a pending action before login
+        // Handle pending action
         if (window.pendingUserAction) {
             const action = window.pendingUserAction;
             window.pendingUserAction = null;
             setTimeout(action, 300);
         }
+        
+        if (pendingAction === 'mylist') { 
+            pendingAction = null; 
+            window.openMyList(); 
+        }
     }
     else {
+        console.log('✗ User logged out');
         bar.style.display = 'none';
         window.currentFirebaseUser = null;
     }
