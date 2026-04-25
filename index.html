@@ -1280,6 +1280,13 @@ function openStoryContent(storyId) {
     window.closeAuthModal = closeAuthModal;
     window.signOutUser = signOutUser;
     window.requireAuth = requireAuth;
+    // Make sure openStory works
+window.openStory = openStory;
+
+// Debug
+console.log('✓ Functions exposed:');
+console.log('  - openStory:', typeof window.openStory);
+console.log('  - stories:', window.allStories?.length, 'loaded');
         // Fix floating book click for mobile
     const fb = document.getElementById('floating-book-trigger');
 if (fb) {
