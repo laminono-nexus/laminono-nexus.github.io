@@ -1363,7 +1363,15 @@ window.toggleAuthMode = () => {
 };
 
 window.signOutUser   = async () => { await signOut(auth); showToast('You have been signed out.'); };
-window.openAuthModal = (action) => { pendingAction = action||null; document.getElementById('auth-modal').style.display='block'; document.body.style.overflow='hidden'; };
+window.openAuthModal = (action) => { 
+    pendingAction = action||null; 
+    document.getElementById('auth-modal').style.display='block'; 
+    document.body.style.overflow='hidden';
+    // Update subtitle for mandatory login context
+    const isSignUp = document.getElementById('auth-submit-btn').textContent.includes('Create');
+    document.getElementById('auth-modal-sub').textContent = isSignUp ? 'Create your free account to start reading.' : 'Welcome back! Sign in to continue reading.';
+};
+    
 window.closeAuthModal= () => { document.getElementById('auth-modal').style.display='none'; document.body.style.overflow=''; };
 
 window.toggleMyList = async () => {
