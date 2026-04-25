@@ -1185,11 +1185,21 @@ function openStoryContent(storyId) {
     }
 
     function filterStories(category) {
+    if (!window.allStories) {
+        console.error('Stories not loaded yet');
+        return;
+    }
+
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.textContent === category || (category === 'all' && btn.textContent === 'All'));
     });
-    const filtered = category === 'all' ? stories : stories.filter(s => s.genre === category);
-    document.getElementById('allStoriesGrid').innerHTML = filtered.map(story => `
+    
+    const filtered = category === 'all' ? window.allStories : window.allStories.filter(s => s.genre === category);
+    const grid = document.getElementById('allStoriesGrid');
+    
+    if (!grid) return;
+    
+    grid.innerHTML = filtered.map(story => `
         <div class="story-card" onclick="openStory('${story.id}')" style="height:400px;flex:none;width:100%;">
             <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
             <div class="story-card-vignette"></div>
@@ -1198,7 +1208,7 @@ function openStoryContent(storyId) {
             <div class="story-cover-genre">${story.genre}</div>
         </div>`).join('');
 }
-
+    
     // ── TOAST ──
     function showToast(message) {
         const t = document.getElementById('toast');
