@@ -1250,13 +1250,12 @@ function openStoryContent(storyId) {
     window.closeAuthModal = closeAuthModal;
     window.signOutUser = signOutUser;
     window.requireAuth = requireAuth;
-    // Fix floating book click for mobile
-    document.addEventListener('DOMContentLoaded', () => {
-        const fb = document.getElementById('floating-book-trigger');
-        if (fb) fb.addEventListener('click', () => {
-            requireAuth(() => { window.location.href = 'bookshelf.html'; });
-        });
+        // Fix floating book click for mobile
+    const fb = document.getElementById('floating-book-trigger');
+    if (fb) fb.addEventListener('click', () => {
+        requireAuth(() => { window.location.href = 'bookshelf.html'; });
     });
+
     // ── INIT ──
     document.addEventListener('DOMContentLoaded', () => {
         renderStories();
