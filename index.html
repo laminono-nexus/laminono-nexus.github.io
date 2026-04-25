@@ -1333,16 +1333,17 @@ window.handleEmailAuth = async () => {
         if (isSignUpMode) { await createUserWithEmailAndPassword(auth, email, password); showToast('Account created! Welcome 🎉'); }
         else { await signInWithEmailAndPassword(auth, email, password); showToast('Welcome back! 👋'); }
         closeAuthModal();
-    } catch(e) {
+        } catch(e) {
         const msg = e.code === 'auth/wrong-password'       ? 'Incorrect password.'
-                  : e.code === 'auth/user-not-found'        ? 'No account found with this email.'
-                  : e.code === 'auth/email-already-in-use'  ? 'This email is already registered.'
-                  : e.code === 'auth/weak-password'          ? 'Password must be at least 6 characters.'
-                  : e.code === 'auth/invalid-email'          ? 'Please enter a valid email address.'
+                  : e.code === 'auth/user-not-found'        ? 'No account found. Tap Sign Up below.'
+                  : e.code === 'auth/email-already-in-use'  ? 'Email exists. Tap Sign In below.'
+                  : e.code === 'auth/weak-password'          ? 'Password too short (min 6).'
+                  : e.code === 'auth/invalid-email'          ? 'Invalid email format.'
+                  : e.code === 'auth/invalid-credential'     ? 'Wrong password. Use Google if you signed up that way.'
+                  : e.code === 'auth/unauthorized-domain'    ? 'Domain not allowed. Contact: laminonosfilmview@gmail.com'
                   : e.message.replace('Firebase: ','');
         errEl.textContent = msg;
     }
-};
 
 window.forgotPassword = async () => {
     const email = document.getElementById('auth-email').value.trim();
