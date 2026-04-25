@@ -1335,11 +1335,12 @@ getRedirectResult(auth).then((result) => {
     if (result && result.user) {
         closeAuthModal();
         showToast('Welcome! 🎉');
-        // If they clicked a story before login, open it now
-        if (window.pendingUserAction) {
-            const action = window.pendingUserAction;
-            window.pendingUserAction = null;
-            setTimeout(action, 500);
+        // Check if there was a pending story before redirect
+        const pendingStoryId = sessionStorage.getItem('pendingStoryId');
+        if (pendingStoryId) {
+            sessionStorage.removeItem('pendingStoryId');
+            sessionStorage.removeItem('pendingAction');
+            setTimeout(() => openStory(pendingStoryId), 500);
         }
     }
 }).catch(() => {});
