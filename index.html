@@ -1298,7 +1298,7 @@ onAuthStateChanged(auth, user => {
     const bar    = document.getElementById('user-profile-bar');
     const avatar = document.getElementById('user-avatar');
     
-    if (user) {
+        if (user) {
         bar.style.display = 'flex';
         avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
         
@@ -1311,8 +1311,18 @@ onAuthStateChanged(auth, user => {
             setTimeout(action, 300); // Small delay for modal close animation
         }
         
+        // Check for pending story from Google redirect (page reload case)
+        const pendingStoryId = sessionStorage.getItem('pendingStoryId');
+        if (pendingStoryId) {
+            sessionStorage.removeItem('pendingStoryId');
+            sessionStorage.removeItem('pendingAction');
+            closeAuthModal();
+            setTimeout(() => openStory(pendingStoryId), 500);
+        }
+        
         if (pendingAction === 'mylist') { pendingAction = null; openMyList(); }
-    } else {
+    }
+    else {
         bar.style.display = 'none';
         window.currentFirebaseUser = null;
     }
