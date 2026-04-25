@@ -893,14 +893,26 @@ function requireAuth(actionCallback, storyId) {
 
     // ── RENDER ──
     function renderStories() {
-        const trending    = stories.filter(s => s.trending);
-        const newReleases = stories.slice(0, 6);
-        const featured    = stories.slice(0, 3);
-
-        document.getElementById('trendingRow').innerHTML    = trending.map(createStoryCard).join('');
-        document.getElementById('newReleasesRow').innerHTML = newReleases.map(createStoryCard).join('');
-        document.getElementById('featuredGrid').innerHTML   = featured.map(createFeaturedCard).join('');
+    // Safety check: ensure stories are loaded
+    if (!window.allStories || window.allStories.length === 0) {
+        console.warn('⚠ No stories available to render');
+        return;
     }
+
+    const trending    = window.allStories.filter(s => s.trending);
+    const newReleases = window.allStories.slice(0, 6);
+    const featured    = window.allStories.slice(0, 3);
+
+    const trendingRow = document.getElementById('trendingRow');
+    const newRow      = document.getElementById('newReleasesRow');
+    const featuredGrid = document.getElementById('featuredGrid');
+
+    if (trendingRow)   trendingRow.innerHTML    = trending.map(createStoryCard).join('');
+    if (newRow)        newRow.innerHTML         = newReleases.map(createStoryCard).join('');
+    if (featuredGrid)  featuredGrid.innerHTML   = featured.map(createFeaturedCard).join('');
+    
+    console.log('✓ Stories rendered:', trending.length, 'trending,', newReleases.length, 'new releases');
+}
 
     function createStoryCard(story) {
     return `
