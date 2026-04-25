@@ -854,8 +854,27 @@
 window.allStories = stories;
 window.stories = stories;
 
-    // ── STATE ──
-    let currentStory = null;
+// ── STATE ──
+let currentStory = null;
+
+// ── AUTH GATEKEEPER ──
+// Every interactive action must pass through here first
+function requireAuth(actionCallback) {
+    // Check if Firebase auth has a current user
+    const user = window.currentFirebaseUser || null;
+    
+    if (!user) {
+        // Not logged in — show login modal and remember what they wanted to do
+        window.pendingUserAction = actionCallback;
+        openAuthModal();
+        return false;
+    }
+    
+    // Logged in — proceed with the action
+    actionCallback();
+    return true;
+}
+
     let isNarrating = false;
     let speechUtterance = null;
     let selectedVoice = 'female';
