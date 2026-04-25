@@ -934,7 +934,7 @@ function requireAuth(actionCallback, storyId) {
     // Gate: Must be logged in to read
     requireAuth(() => {
         openStoryContent(storyId);
-    });
+    }, storyId);
 }
 
 function openStoryContent(storyId) {
