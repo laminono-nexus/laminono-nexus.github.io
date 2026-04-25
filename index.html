@@ -927,6 +927,13 @@ function requireAuth(actionCallback) {
 }
 
     function openStory(storyId) {
+    // Gate: Must be logged in to read
+    requireAuth(() => {
+        openStoryContent(storyId);
+    });
+}
+
+function openStoryContent(storyId) {
     // Find story from the imported stories array
     const story = stories.find(s => s.id === storyId);
     if (!story) {
