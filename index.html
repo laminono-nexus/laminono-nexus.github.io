@@ -1283,9 +1283,17 @@ function openStoryContent(storyId) {
     window.requireAuth = requireAuth;
         // Fix floating book click for mobile
     const fb = document.getElementById('floating-book-trigger');
-    if (fb) fb.addEventListener('click', () => {
-        requireAuth(() => { window.location.href = 'bookshelf.html'; });
+if (fb) {
+    fb.style.cursor = 'pointer';
+    fb.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (window.currentFirebaseUser) {
+            window.location.href = 'bookshelf.html';
+        } else {
+            openAuthModal();
+        }
     });
+}
 
     // ── INIT ──
     document.addEventListener('DOMContentLoaded', () => {
