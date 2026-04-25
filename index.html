@@ -846,13 +846,12 @@
 </div>
 
 <script>
-    // Stories will be loaded via separate script tag
-// Ensure stories are available globally BEFORE any functions use them
-window.allStories = stories;
-window.stories = stories;
-window.updatePageSEO = updatePageSEO;
-window.resetToHomeSEO = resetToHomeSEO;
+// Stories already loaded from stories.js script tag above
+// Access them via window object
 
+window.allStories = window.stories;
+window.updatePageSEO = window.updatePageSEO || (() => {});
+window.resetToHomeSEO = window.resetToHomeSEO || (() => {});
 // Verify stories loaded
 console.log('✓ Stories loaded:', stories.length, 'story(ies)');
     
