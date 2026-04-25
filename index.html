@@ -1360,7 +1360,8 @@ window.handleEmailAuth = async () => {
                   : e.message.replace('Firebase: ','');
         errEl.textContent = msg;
     }
-
+};
+    
 window.forgotPassword = async () => {
     const email = document.getElementById('auth-email').value.trim();
     if (!email) { document.getElementById('auth-error').textContent = 'Enter your email above first.'; return; }
