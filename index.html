@@ -1435,7 +1435,35 @@ window.openAuthModal = (action) => {
     document.getElementById('auth-modal-sub').textContent = isSignUp ? 'Create your free account to start reading.' : 'Welcome back! Sign in to continue reading.';
 };
     
-window.closeAuthModal= () => { document.getElementById('auth-modal').style.display='none'; document.body.style.overflow=''; };
+onAuthStateChanged(auth, user => {
+    currentUser = user;
+    window.currentFirebaseUser = user;
+    const bar    = document.getElementById('user-profile-bar');
+    const avatar = document.getElementById('user-avatar');
+    
+    if (user) {
+        bar.style.display = 'flex';
+        avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
+        
+        // ← ADD THIS: Auto-close auth modal
+        const authModal = document.getElementById('auth-modal');
+        if (authModal && authModal.style.display === 'block') {
+            closeAuthModal();
+            showToast('Welcome! 👋');
+        }
+        
+        // Check if user had a pending action before login
+        if (window.pendingUserAction) {
+            const action = window.pendingUserAction;
+            window.pendingUserAction = null;
+            setTimeout(action, 300);
+        }
+    }
+    else {
+        bar.style.display = 'none';
+        window.currentFirebaseUser = null;
+    }
+});
 
 window.toggleMyList = async () => {
     if (!currentUser) { openAuthModal('mylist'); return; }
