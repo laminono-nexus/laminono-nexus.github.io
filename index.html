@@ -1289,9 +1289,22 @@ function openStoryContent(storyId) {
 
     // ── INIT ──
     document.addEventListener('DOMContentLoaded', () => {
+    // Ensure stories are properly initialized
+    if (window.allStories && window.allStories.length > 0) {
         renderStories();
         checkDeepLink();
-    });
+    } else {
+        console.error('❌ Stories array is empty or not loaded');
+    }
+});
+
+// Fallback: If DOMContentLoaded fires before module is ready
+window.addEventListener('load', () => {
+    if (!document.getElementById('trendingRow').innerHTML) {
+        console.log('ℹ Running fallback renderStories...');
+        renderStories();
+    }
+});
 
 </script>
 
