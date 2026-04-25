@@ -1223,10 +1223,9 @@ function openStoryContent(storyId) {
 
     window.speechSynthesis.onvoiceschanged = () => {};
 
-        // ── EXPOSE FUNCTIONS GLOBALLY ──
-    // Module functions are private by default.
-    // HTML onclick="..." needs them on window.
+            // ── EXPOSE FUNCTIONS GLOBALLY ──
     window.openStory = openStory;
+    window.openStoryContent = openStoryContent;
     window.closeModal = closeModal;
     window.toggleNarration = toggleNarration;
     window.setVoice = setVoice;
@@ -1250,6 +1249,7 @@ function openStoryContent(storyId) {
     window.openAuthModal = openAuthModal;
     window.closeAuthModal = closeAuthModal;
     window.signOutUser = signOutUser;
+    window.requireAuth = requireAuth;
 
     // ── INIT ──
     document.addEventListener('DOMContentLoaded', () => {
