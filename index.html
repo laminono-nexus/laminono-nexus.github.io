@@ -1197,6 +1197,40 @@ window.allStories = stories;
 
     window.speechSynthesis.onvoiceschanged = () => {};
 
+        // ── EXPOSE FUNCTIONS GLOBALLY ──
+    // Module functions are private by default.
+    // HTML onclick="..." needs them on window.
+    window.openStory = openStory;
+    window.closeModal = closeModal;
+    window.toggleNarration = toggleNarration;
+    window.setVoice = setVoice;
+    window.toggleMyList = toggleMyList;
+    window.openShareModal = openShareModal;
+    window.closeShareModal = closeShareModal;
+    window.shareVia = shareVia;
+    window.copyShareLink = copyShareLink;
+    window.showAllStories = showAllStories;
+    window.backToHome = backToHome;
+    window.filterStories = filterStories;
+    window.continueReading = continueReading;
+    window.submitComment = submitComment;
+    window.openMyList = openMyList;
+    window.closeMyList = closeMyList;
+    window.removeFromMyList = removeFromMyList;
+    window.signInWithGoogle = signInWithGoogle;
+    window.handleEmailAuth = handleEmailAuth;
+    window.toggleAuthMode = toggleAuthMode;
+    window.forgotPassword = forgotPassword;
+    window.openAuthModal = openAuthModal;
+    window.closeAuthModal = closeAuthModal;
+    window.signOutUser = signOutUser;
+
+    // ── INIT ──
+    document.addEventListener('DOMContentLoaded', () => {
+        renderStories();
+        checkDeepLink();
+    });
+
     // ── INIT ──
     document.addEventListener('DOMContentLoaded', () => {
         renderStories();
