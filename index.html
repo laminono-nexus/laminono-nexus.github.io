@@ -1340,41 +1340,23 @@ let currentUser   = null;
 let isSignUpMode  = false;
 let pendingAction = null;
 
-onAuthStateChanged(auth, user => {
-    currentUser = user;
-    window.currentFirebaseUser = user; // Expose for gatekeeper
-    const bar    = document.getElementById('user-profile-bar');
-    const avatar = document.getElementById('user-avatar');
-    
-        if (user) {
-        bar.style.display = 'flex';
-        avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
-        
-        // Check if user had a pending action before login
-        if (window.pendingUserAction) {
-            const action = window.pendingUserAction;
-            window.pendingUserAction = null; // Clear it
-            closeAuthModal();
-            showToast('Welcome! Opening your story...');
-            setTimeout(action, 300); // Small delay for modal close animation
-        }
-        
-        // Check for pending story from Google redirect (page reload case)
-        const pendingStoryId = sessionStorage.getItem('pendingStoryId');
-        if (pendingStoryId) {
-            sessionStorage.removeItem('pendingStoryId');
-            sessionStorage.removeItem('pendingAction');
-            closeAuthModal();
-            setTimeout(() => openStory(pendingStoryId), 500);
-        }
-        
-        if (pendingAction === 'mylist') { pendingAction = null; openMyList(); }
-    }
-    else {
-        bar.style.display = 'none';
-        window.currentFirebaseUser = null;
-    }
-});
+// Check if user is already logged in on page load
+const checkExistingLogin = async () => {
+    return new Promise((resolve) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log('✓ User already logged in:', user.email);
+                currentUser = user;
+                window.currentFirebaseUser = user;
+            }
+            unsubscribe(); // Stop listening after first check
+            resolve(user);
+        });
+    });
+};
+
+// Run on page load
+checkExistingLogin();
 
 window.signInWithGoogle = async () => {
     try {
