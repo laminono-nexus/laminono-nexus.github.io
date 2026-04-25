@@ -850,10 +850,15 @@
 <script type="module">
     import { stories, updatePageSEO, resetToHomeSEO } from './stories.js';
 
-// Make stories available globally for onclick handlers
+// Ensure stories are available globally BEFORE any functions use them
 window.allStories = stories;
 window.stories = stories;
+window.updatePageSEO = updatePageSEO;
+window.resetToHomeSEO = resetToHomeSEO;
 
+// Verify stories loaded
+console.log('✓ Stories loaded:', stories.length, 'story(ies)');
+    
 // ── STATE ──
 let currentStory = null;
 
