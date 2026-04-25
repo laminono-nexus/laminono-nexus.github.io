@@ -544,6 +544,7 @@
     </style>
 </head>
 <body>
+<script src="./stories.js"></script>
 
 <!-- Reading Progress Bar -->
 <div class="reading-progress" id="readingProgress"></div>
@@ -844,10 +845,8 @@
     <button onclick="signOutUser()" style="background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.4);color:#E50914;padding:6px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer;">Sign Out</button>
 </div>
 
-<!-- ── FIREBASE (Auth + Firestore + Share) ── -->
 <script>
-    import { stories, updatePageSEO, resetToHomeSEO } from './stories.js';
-
+    // Stories will be loaded via separate script tag
 // Ensure stories are available globally BEFORE any functions use them
 window.allStories = stories;
 window.stories = stories;
@@ -1329,7 +1328,7 @@ window.addEventListener('load', () => {
 </script>
 
 <!-- ── FIREBASE (Auth + Firestore + Share) ── -->
-<script type="module">
+<script>
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import { getAuth, signInWithRedirect, getRedirectResult, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
