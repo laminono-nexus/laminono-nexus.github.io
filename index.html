@@ -1321,6 +1321,8 @@ onAuthStateChanged(auth, user => {
 window.signInWithGoogle = async () => {
     try {
         document.getElementById('auth-error').textContent = '';
+        // Mark that we have a pending action for redirect recovery
+        sessionStorage.setItem('pendingAction', 'true');
         // Popup fails on mobile browsers, use redirect
         await signInWithRedirect(auth, provider);
     } catch(e) { 
