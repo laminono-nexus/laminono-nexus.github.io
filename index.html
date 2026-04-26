@@ -26,7 +26,7 @@
     <!-- SEO: Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:title" content="Laminono Nexus — Premium Storytelling">
     <meta property="og:description" content="Discover premium short stories on Laminono Nexus. Free drama, romance, sci-fi, and literary fiction by Olamide Emmanuel Willoughby.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1515549832467-8783363e19b6?w=1200&q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200&q=80">
     <meta property="og:url" content="https://laminono-nexus.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Laminono Nexus">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Laminono Nexus — Premium Storytelling">
     <meta name="twitter:description" content="Discover premium short stories on Laminono Nexus. Free drama, romance, sci-fi, and literary fiction.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1515549832467-8783363e19b6?w=1200&q=80">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200&q=80">
     
     <!-- SEO: Canonical URL -->
     <link rel="canonical" href="https://laminono-nexus.github.io/">
@@ -112,12 +112,12 @@
         .nav-links a:hover::after { width: 100%; }
 
         /* ── HERO ── */
-.hero {
-    position: relative; height: 100vh; min-height: 700px;
-    display: flex; align-items: flex-end; padding: 0 4% 150px;
-    background: var(--gradient-hero),
-        url('https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80') center/cover;
-}
+        .hero {
+            position: relative; height: 100vh; min-height: 700px;
+            display: flex; align-items: flex-end; padding: 0 4% 150px;
+            background: var(--gradient-hero),
+                url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1920&q=80') center/cover;
+        }
         .hero::before {
             content: ''; position: absolute; inset: 0;
             background: linear-gradient(to top, var(--bg-dark) 0%, transparent 50%);
@@ -141,26 +141,6 @@
         .hero-description { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px; max-width: 600px; }
         .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
 
-        /* ── CONTINUE READING BANNER ── */
-        .continue-banner {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            z-index: 5000;
-            box-shadow: 0 10px 30px rgba(229,9,20,0.4);
-            animation: slideUp 0.5s ease;
-        }
-        .continue-banner.show { display: flex; align-items: center; gap: 10px; }
-        @keyframes slideUp { from { transform: translateX(-50%) translateY(100px); opacity: 0; } to { transform: translateX(-50%) translateY(0); opacity: 1; } }
-
         /* ── BUTTONS ── */
         .btn {
             display: inline-flex; align-items: center; gap: 10px;
@@ -180,7 +160,7 @@
         .section-title {
             font-size: 1.5rem; font-weight: 600; display: flex; align-items: center; gap: 10px;
         }
-        .section-title::after { content: '>'; color: var(--primary); font-size: 1.8rem; transition: transform 0.3s; }
+        .section-title::after { content: '›'; color: var(--primary); font-size: 1.8rem; transition: transform 0.3s; }
         .section-header:hover .section-title::after { transform: translateX(5px); }
         .explore-all { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: color 0.3s; }
         .explore-all:hover { color: var(--text-primary); }
@@ -192,16 +172,16 @@
         }
         .story-row::-webkit-scrollbar { display: none; }
 
-        /* ── STORY CARD — Cover Art Style ── */
+        /* ── STORY CARD — with Cover Art overlay ── */
         .story-card {
-            flex: 0 0 auto; width: 280px; height: 420px; position: relative;
+            flex: 0 0 auto; width: 280px; height: 380px; position: relative;
             border-radius: 8px; overflow: hidden; cursor: pointer;
             transition: var(--transition-smooth); background: var(--bg-card);
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .story-card:hover { transform: scale(1.05); z-index: 10; box-shadow: var(--shadow-elevated); }
 
-        /* Cover art: full-bleed image with lazy loading */
+        /* Cover art: full-bleed image */
         .story-card-image {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.5s; display: block;
@@ -213,36 +193,35 @@
             position: absolute; inset: 0;
             background: linear-gradient(
                 to bottom,
-                rgba(0,0,0,0.1) 0%,
-                rgba(0,0,0,0.05) 25%,
-                rgba(0,0,0,0.4) 50%,
-                rgba(0,0,0,0.85) 75%,
-                rgba(0,0,0,0.98) 100%
+                rgba(0,0,0,0.15) 0%,
+                rgba(0,0,0,0.05) 30%,
+                rgba(0,0,0,0.6) 65%,
+                rgba(0,0,0,0.92) 100%
             );
         }
 
-        /* Title rendered like a movie poster title */
+        /* Title rendered like a movie title over the cover */
         .story-cover-title {
-            position: absolute; bottom: 70px; left: 0; right: 0; padding: 0 18px;
-            font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600;
-            color: #fff; line-height: 1.2; text-align: center;
-            text-shadow: 0 2px 16px rgba(0,0,0,0.95), 0 1px 4px rgba(0,0,0,0.9);
-            letter-spacing: 0.02em;
+            position: absolute; bottom: 60px; left: 0; right: 0; padding: 0 18px;
+            font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600;
+            color: #fff; line-height: 1.3; text-align: center;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8);
+            letter-spacing: 0.01em;
         }
 
         /* Genre pill */
         .story-cover-genre {
-            position: absolute; bottom: 44px; left: 0; right: 0;
+            position: absolute; bottom: 36px; left: 0; right: 0;
             text-align: center;
-            color: var(--primary); font-size: 0.7rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--primary); font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px;
         }
 
         /* Read-time tag */
         .story-cover-time {
             position: absolute; top: 12px; right: 12px;
             background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-            color: rgba(255,255,255,0.9); font-size: 0.7rem; padding: 4px 10px;
+            color: rgba(255,255,255,0.8); font-size: 0.7rem; padding: 4px 10px;
             border-radius: 20px; border: 1px solid rgba(255,255,255,0.15);
         }
 
@@ -358,18 +337,6 @@
         .story-text p:first-child::first-letter {
             font-family: 'Playfair Display', serif; font-size: 4rem; float: left;
             line-height: 0.8; margin-right: 10px; margin-top: 5px; color: var(--primary);
-        }
-
-        /* ── READING PROGRESS BAR ── */
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--primary);
-            z-index: 10000;
-            transition: width 0.1s;
-            width: 0%;
         }
 
         /* ── ADMIN / ABOUT ── */
@@ -544,23 +511,13 @@
     </style>
 </head>
 <body>
-<!-- stories.js will be imported as a module below -->
-
-<!-- Reading Progress Bar -->
-<div class="reading-progress" id="readingProgress"></div>
-
-<!-- Continue Reading Banner -->
-<div class="continue-banner" id="continueBanner" onclick="continueReading()">
-    <span>Continue Reading</span>
-    <span style="font-size: 0.8rem; opacity: 0.8;" id="continueTitle"></span>
-</div>
 
 <!-- Floating Book -->
-<div id="floating-book-trigger">
+<div id="floating-book-trigger" onclick="window.location.href='bookshelf.html'">
     <div class="fb-rope-hook"></div>
     <div class="fb-rope"></div>
     <div class="fb-cover">
-        <div class="fb-icon">&#128218;</div>
+        <div class="fb-icon">📚</div>
         <div class="fb-title">BOOK SHELVES</div>
         <div class="fb-sub">Unlimited Books</div>
     </div>
@@ -580,19 +537,19 @@
 <!-- Hero -->
 <section class="hero" id="home">
     <div class="hero-content">
-        <div class="hero-badge"><span>*</span> Featured Story</div>
-        <h1>The Boy Who Paid With Tomorrow</h1>
+        <div class="hero-badge"><span>✦</span> Featured Story</div>
+        <h1>The Echoes of Tomorrow</h1>
         <div class="hero-meta">
-            <span>* 30 min read</span>
-            <span>* Drama</span>
-            <span>* Trending #1</span>
+            <span>⏱ 12 min read</span>
+            <span>📖 Drama</span>
+            <span>🔥 Trending #1</span>
         </div>
         <p class="hero-description">
-            Every note he spent carried a price. He just did not know who was paying it. A gripping Nigerian drama about cursed money, grief, and the price of survival.
+            In a world where memories can be traded like currency, one archivist discovers a recollection that could unravel the fabric of society. A gripping tale of identity, loss, and the price of perfection.
         </p>
         <div class="hero-actions">
-            <button class="btn btn-primary" onclick="openStory('the-boy-who-paid-with-tomorrow')"><span>></span> Read Now</button>
-            <button class="btn btn-secondary" onclick="openStory('the-boy-who-paid-with-tomorrow')"><span>i</span> More Info</button>
+            <button class="btn btn-primary" onclick="openStory('echoes-of-tomorrow')"><span>▶</span> Read Now</button>
+            <button class="btn btn-secondary" onclick="openStory('echoes-of-tomorrow')"><span>ℹ</span> More Info</button>
         </div>
     </div>
 </section>
@@ -601,7 +558,7 @@
 <section class="content-section" id="stories">
     <div class="section-header">
         <h2 class="section-title">Trending Now</h2>
-        <span class="explore-all" onclick="showAllStories('trending')">Explore All ></span>
+        <span class="explore-all" onclick="showAllStories('trending')">Explore All →</span>
     </div>
     <div class="story-row" id="trendingRow"></div>
 </section>
@@ -610,7 +567,7 @@
 <section class="content-section">
     <div class="section-header">
         <h2 class="section-title">New Releases</h2>
-        <span class="explore-all" onclick="showAllStories('all')">View All ></span>
+        <span class="explore-all" onclick="showAllStories('all')">View All →</span>
     </div>
     <div class="story-row" id="newReleasesRow"></div>
 </section>
@@ -626,12 +583,12 @@
 <!-- About -->
 <section class="admin-section" id="about">
     <div class="admin-container">
-        <img src="laminono.jpeg" alt="Olamide Emmanuel Willoughby" class="admin-image" loading="lazy">
+        <img src="laminono.jpeg" alt="Olamide Emmanuel Willoughby" class="admin-image">
         <div class="admin-content">
             <div class="admin-title">The Storyteller</div>
             <h2>Olamide Emmanuel Willoughby</h2>
             <p class="admin-bio">
-                Laminono Nexus is more than a name—it is a creative identity. Founded by Olamide Emmanuel Willoughby, Laminono blends storytelling, visual creativity, and digital strategy to craft powerful experiences. From emotionally driven stories to high-converting social media content, every creation is designed to resonate, inspire, and influence.
+                Laminono Nexus is more than a name—it's a creative identity. Founded by Olamide Emmanuel Willoughby, Laminono blends storytelling, visual creativity, and digital strategy to craft powerful experiences. From emotionally driven stories to high-converting social media content, every creation is designed to resonate, inspire, and influence.
             </p>
             <p class="admin-signature">— Laminono</p>
         </div>
@@ -688,12 +645,12 @@
             <div class="modal-meta" id="modalMeta"></div>
             <div class="modal-actions">
                 <button class="btn btn-primary" onclick="toggleNarration()">
-                    <span id="narrateIcon">></span> <span id="narrateText">Narrate Story</span>
+                    <span id="narrateIcon">▶</span> <span id="narrateText">Narrate Story</span>
                 </button>
                 <button class="btn btn-secondary" onclick="toggleMyList()">
                     <span>+</span> <span id="mylist-btn-text">My List</span>
                 </button>
-                <button class="btn btn-outline" onclick="openShareModal()"><span>^</span> Share</button>
+                <button class="btn btn-outline" onclick="openShareModal()"><span>↗</span> Share</button>
             </div>
             <div class="narration-controls">
                 <span style="color:var(--text-secondary);font-size:0.9rem;">Voice:</span>
@@ -711,16 +668,16 @@
             <div class="rating-section">
                 <div class="average-rating">
                     <span class="average-score" id="averageScore">0.0</span>
-                    <span class="average-stars" id="averageStars">*****</span>
+                    <span class="average-stars" id="averageStars">★★★★★</span>
                     <span class="total-votes" id="totalVotes">(0 ratings)</span>
                 </div>
                 <h3 class="rating-title">Rate this story</h3>
                 <div class="star-rating" id="starRating">
-                    <span class="star" data-rating="1">*</span>
-                    <span class="star" data-rating="2">*</span>
-                    <span class="star" data-rating="3">*</span>
-                    <span class="star" data-rating="4">*</span>
-                    <span class="star" data-rating="5">*</span>
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
                     <span class="star-rating-text" id="ratingText">Click to rate</span>
                 </div>
                 <!-- Comments -->
@@ -731,9 +688,8 @@
                             <input type="text" class="comment-input" id="commentName" placeholder="Your name" required>
                             <textarea class="comment-input comment-textarea" id="commentText" placeholder="Share your thoughts on this story..." required></textarea>
                         </div>
-                        <button type="submit" class="comment-submit"><span>#</span> Post Comment</button>
+                        <button type="submit" class="comment-submit"><span>💬</span> Post Comment</button>
                     </form>
-
                     <div class="comments-list" id="commentsList">
                         <div class="no-comments">No comments yet. Be the first to share your thoughts!</div>
                     </div>
@@ -845,52 +801,14 @@
     <button onclick="signOutUser()" style="background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.4);color:#E50914;padding:6px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer;">Sign Out</button>
 </div>
 
-<script>
-// Load stories module dynamically
-let stories = [];
-let updatePageSEO = () => {};
-let resetToHomeSEO = () => {};
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT — ONLY ONE SCRIPT BLOCK
+════════════════════════════════════════ -->
+<script type="module">
+    import { stories, updatePageSEO, resetToHomeSEO } from './stories.js';
 
-// Import stories as module
-import('./stories.js').then(module => {
-    stories = module.stories;
-    updatePageSEO = module.updatePageSEO;
-    resetToHomeSEO = module.resetToHomeSEO;
-    window.allStories = stories;
-    window.stories = stories;
-    window.updatePageSEO = updatePageSEO;
-    window.resetToHomeSEO = resetToHomeSEO;
-    
-    console.log('✓ Stories loaded:', stories.length, 'story(ies)');
-    
-    // Now render
-    renderStories();
-    checkDeepLink();
-}).catch(err => {
-    console.error('Failed to load stories:', err);
-});
-
-// ── STATE ──
-let currentStory = null;
-
-function requireAuth(actionCallback, storyId) {
-    const user = window.currentFirebaseUser;
-    
-    if (!user) {
-        // User NOT logged in — show modal
-        window.pendingUserAction = actionCallback;
-        if (storyId) {
-            sessionStorage.setItem('pendingStoryId', storyId);
-        }
-        openAuthModal();
-        return false;
-    } else {
-        // User IS logged in — proceed immediately
-        if (actionCallback) actionCallback();
-        return true;
-    }
-}
-
+    // ── STATE ──
+    let currentStory = null;
     let isNarrating = false;
     let speechUtterance = null;
     let selectedVoice = 'female';
@@ -900,124 +818,96 @@ function requireAuth(actionCallback, storyId) {
 
     // ── RENDER ──
     function renderStories() {
-    // Safety check: ensure stories are loaded
-    if (!window.allStories || window.allStories.length === 0) {
-        console.warn('⚠ No stories available to render');
-        return;
+        const trending    = stories.filter(s => s.trending);
+        const newReleases = stories.slice(0, 6);
+        const featured    = stories.slice(0, 3);
+
+        document.getElementById('trendingRow').innerHTML    = trending.map(createStoryCard).join('');
+        document.getElementById('newReleasesRow').innerHTML = newReleases.map(createStoryCard).join('');
+        document.getElementById('featuredGrid').innerHTML   = featured.map(createFeaturedCard).join('');
     }
-
-    const trending    = window.allStories.filter(s => s.trending);
-    const newReleases = window.allStories.slice(0, 6);
-    const featured    = window.allStories.slice(0, 3);
-
-    const trendingRow = document.getElementById('trendingRow');
-    const newRow      = document.getElementById('newReleasesRow');
-    const featuredGrid = document.getElementById('featuredGrid');
-
-    if (trendingRow)   trendingRow.innerHTML    = trending.map(createStoryCard).join('');
-    if (newRow)        newRow.innerHTML         = newReleases.map(createStoryCard).join('');
-    if (featuredGrid)  featuredGrid.innerHTML   = featured.map(createFeaturedCard).join('');
-    
-    console.log('✓ Stories rendered:', trending.length, 'trending,', newReleases.length, 'new releases');
-}
 
     function createStoryCard(story) {
-    return `
-        <div class="story-card" onclick="openStory('${story.id}')">
-            <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image" onerror="this.src='https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80'">
-            <div class="story-card-vignette"></div>
-            <div class="story-cover-time">⏱ ${story.readTime}</div>
-            <div class="story-cover-title">${story.title}</div>
-            <div class="story-cover-genre">${story.genre}</div>
-            <div class="story-card-overlay" onclick="event.stopPropagation()">
-                <p class="story-excerpt">${story.excerpt}</p>
-                <div class="story-actions">
-                    <button class="action-btn play" onclick="openStory('${story.id}');setTimeout(toggleNarration,400);" title="Narrate ${story.title}">▶</button>
-                    <button class="action-btn" onclick="currentStory=window.allStories.find(s=>s.id==='${story.id}');toggleMyList();" title="Add ${story.title} to My List">+</button>
-                    <button class="action-btn" onclick="currentStory=window.allStories.find(s=>s.id==='${story.id}');openShareModal();" title="Share ${story.title}">↗</button>
+        return `
+            <div class="story-card" onclick="openStory('${story.id}')">
+                <img src="${story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image"
+                     onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+                <div class="story-card-vignette"></div>
+                <div class="story-cover-time">⏱ ${story.readTime}</div>
+                <div class="story-cover-title">${story.title}</div>
+                <div class="story-cover-genre">${story.genre}</div>
+                <div class="story-card-overlay" onclick="event.stopPropagation()">
+                    <p class="story-excerpt">${story.excerpt}</p>
+                    <div class="story-actions">
+                        <button class="action-btn play" onclick="openStory('${story.id}');setTimeout(toggleNarration,400);" title="Narrate ${story.title}">▶</button>
+                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');toggleMyList();" title="Add ${story.title} to My List">+</button>
+                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');openShareModal();" title="Share ${story.title}">↗</button>
+                    </div>
                 </div>
-            </div>
-        </div>`;
-}
+            </div>`;
+    }
 
     function createFeaturedCard(story) {
-    return `
-        <div class="featured-card" onclick="openStory('${story.id}')">
-            <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="featured-card-bg" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
-            <div class="featured-vignette"></div>
-            <div class="featured-content">
-                <span class="featured-badge">Featured</span>
-                <h3 class="featured-cover-title">${story.title}</h3>
-                <p class="featured-author">By <strong>Olamide Emmanuel Willoughby</strong> • ${story.readTime} read</p>
-                <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${story.excerpt}</p>
-            </div>
-        </div>`;
-}
-
-    function openStory(storyId) {
-    // Gate: Must be logged in to read
-    requireAuth(() => {
-        openStoryContent(storyId);
-    }, storyId);
-}
-
-function openStoryContent(storyId) {
-    // Find story from the stories array
-    const story = window.allStories.find(s => s.id === storyId);
-    if (!story) {
-        console.error('Story not found:', storyId);
-        return;
+        return `
+            <div class="featured-card" onclick="openStory('${story.id}')">
+                <img src="${story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="featured-card-bg"
+                     onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+                <div class="featured-vignette"></div>
+                <div class="featured-content">
+                    <span class="featured-badge">Featured</span>
+                    <h3 class="featured-cover-title">${story.title}</h3>
+                    <p class="featured-author">By <strong>Olamide Emmanuel Willoughby</strong> • ${story.readTime} read</p>
+                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${story.excerpt}</p>
+                </div>
+            </div>`;
     }
-    
-    currentStory = story;
-    window.currentStory = story; // Make available globally for other handlers
 
-    // Update SEO for this story
-    updatePageSEO(story);
+    // ── MODAL ──
+    function openStory(storyId) {
+        const story = stories.find(s => s.id === storyId) || stories[0];
+        if (!story) return;
+        currentStory = story;
 
-    // Update hero content dynamically
-    document.querySelector('.hero h1').textContent = story.title;
-    document.querySelector('.hero-description').textContent = story.excerpt;
-    document.querySelector('.hero-meta').innerHTML = `
-        <span>⏱ ${story.readTime}</span>
-        <span>📖 ${story.genre}</span>
-        <span>🔥 Trending #1</span>`;
-    
-    // Update hero background to story cover
-    document.querySelector('.hero').style.background = `
-        var(--gradient-hero),
-        url('${story.cover?.image || story.image}') center/cover`;
+        // Update SEO for this story
+        updatePageSEO(story);
 
-    // Modal content
-    document.getElementById('modalTitle').textContent = story.title;
-    document.getElementById('modalMeta').innerHTML =
-        `<span>⏱ ${story.readTime} read</span>
-         <span>📖 ${story.genre}</span>
-         <span>👤 By Olamide Emmanuel Willoughby</span>`;
-    document.getElementById('modalHero').style.cssText =
-        `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.cover?.image || story.image}') center/cover;`;
+        // Update hero content dynamically
+        document.querySelector('.hero h1').textContent = story.title;
+        document.querySelector('.hero-description').textContent = story.excerpt;
+        document.querySelector('.hero-meta').innerHTML = `
+            <span>⏱ ${story.readTime}</span>
+            <span>📖 ${story.genre}</span>
+            <span>🔥 Trending #1</span>`;
+        document.querySelector('.hero').style.background = `
+            var(--gradient-hero),
+            url('${story.image}') center/cover`;
 
-    // Split content into paragraphs
-    const paragraphs = story.content.split('\n\n').filter(p => p.trim());
-    document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+        // Modal content
+        document.getElementById('modalTitle').textContent = story.title;
+        document.getElementById('modalMeta').innerHTML =
+            `<span>⏱ ${story.readTime} read</span>
+             <span>📖 ${story.genre}</span>
+             <span>👤 By Olamide Emmanuel Willoughby</span>`;
+        document.getElementById('modalHero').style.cssText =
+            `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.image}') center/cover;`;
 
-    // Show modal
-    const modal = document.getElementById('storyModal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+        const paragraphs = story.content.split('\n\n').filter(p => p.trim());
+        document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
 
-    // Reset UI
-    stopNarration();
-    currentRating = 0;
-    highlightStars(0);
-    document.getElementById('ratingText').textContent = 'Click to rate';
-    document.getElementById('mylist-btn-text').textContent = '+ My List';
-    updateAverageRating();
-    renderComments();
+        document.getElementById('storyModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
 
-    // Analytics
-    if (typeof gtag !== 'undefined') gtag('event','open_story',{'event_category':'engagement','event_label':story.title});
-}
+        // reset UI
+        stopNarration();
+        currentRating = 0;
+        highlightStars(0);
+        document.getElementById('ratingText').textContent = 'Click to rate';
+        document.getElementById('mylist-btn-text').textContent = '+ My List';
+        updateAverageRating();
+        renderComments();
+
+        if (typeof gtag !== 'undefined') gtag('event','open_story',{'event_category':'engagement','event_label':story.title});
+    }
 
     function closeModal() {
         document.getElementById('storyModal').classList.remove('active');
@@ -1192,30 +1082,21 @@ function openStoryContent(storyId) {
     }
 
     function filterStories(category) {
-    if (!window.allStories) {
-        console.error('Stories not loaded yet');
-        return;
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent === category || (category === 'all' && btn.textContent === 'All'));
+        });
+        const filtered = category === 'all' ? stories : stories.filter(s => s.genre === category);
+        document.getElementById('allStoriesGrid').innerHTML = filtered.map(story => `
+            <div class="story-card" onclick="openStory('${story.id}')" style="height:400px;flex:none;width:100%;">
+                <img src="${story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image"
+                     onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+                <div class="story-card-vignette"></div>
+                <div class="story-cover-time">⏱ ${story.readTime}</div>
+                <div class="story-cover-title">${story.title}</div>
+                <div class="story-cover-genre">${story.genre}</div>
+            </div>`).join('');
     }
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent === category || (category === 'all' && btn.textContent === 'All'));
-    });
-    
-    const filtered = category === 'all' ? window.allStories : window.allStories.filter(s => s.genre === category);
-    const grid = document.getElementById('allStoriesGrid');
-    
-    if (!grid) return;
-    
-    grid.innerHTML = filtered.map(story => `
-        <div class="story-card" onclick="openStory('${story.id}')" style="height:400px;flex:none;width:100%;">
-            <img src="${story.cover?.image || story.image}" alt="${story.title} - ${story.genre} short story by Olamide Willoughby" class="story-card-image" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
-            <div class="story-card-vignette"></div>
-            <div class="story-cover-time">⏱ ${story.readTime}</div>
-            <div class="story-cover-title">${story.title}</div>
-            <div class="story-cover-genre">${story.genre}</div>
-        </div>`).join('');
-}
-    
     // ── TOAST ──
     function showToast(message) {
         const t = document.getElementById('toast');
@@ -1261,432 +1142,201 @@ function openStoryContent(storyId) {
 
     window.speechSynthesis.onvoiceschanged = () => {};
 
-            // ── EXPOSE FUNCTIONS GLOBALLY ──
-    window.openStory = openStory;
-    window.openStoryContent = openStoryContent;
-    window.closeModal = closeModal;
-    window.toggleNarration = toggleNarration;
-    window.setVoice = setVoice;
-    window.toggleMyList = toggleMyList;
-    window.openShareModal = openShareModal;
-    window.closeShareModal = closeShareModal;
-    window.shareVia = shareVia;
-    window.copyShareLink = copyShareLink;
-    window.showAllStories = showAllStories;
-    window.backToHome = backToHome;
-    window.filterStories = filterStories;
-    window.continueReading = continueReading;
-    window.submitComment = submitComment;
-    window.openMyList = openMyList;
-    window.closeMyList = closeMyList;
-    window.removeFromMyList = removeFromMyList;
-    window.signInWithGoogle = signInWithGoogle;
-    window.handleEmailAuth = handleEmailAuth;
-    window.toggleAuthMode = toggleAuthMode;
-    window.forgotPassword = forgotPassword;
-    window.openAuthModal = openAuthModal;
-    window.closeAuthModal = closeAuthModal;
-    window.signOutUser = signOutUser;
-    window.requireAuth = requireAuth;
-    // Make sure openStory works
-window.openStory = openStory;
-
-// Debug
-console.log('✓ Functions exposed:');
-console.log('  - openStory:', typeof window.openStory);
-console.log('  - stories:', window.allStories?.length, 'loaded');
-        // Fix floating book click for mobile
-    const fb = document.getElementById('floating-book-trigger');
-if (fb) {
-    fb.style.cursor = 'pointer';
-    fb.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        
-        // Check if user is logged in
-        const user = window.currentFirebaseUser;
-        
-        if (user) {
-            // User logged in → go to bookshelf
-            window.location.href = 'bookshelf.html';
-        } else {
-            // User not logged in → show login
-            console.log('Not logged in, showing auth modal');
-            window.openAuthModal();
-        }
-    });
-}
-
     // ── INIT ──
-    // Stories are loaded via dynamic import above, which calls renderStories()
+    document.addEventListener('DOMContentLoaded', () => {
+        renderStories();
+        checkDeepLink();
+    });
+</script>
 
+<!-- ── FIREBASE (Auth + Firestore + Share) ── -->
 <script type="module">
-    import { stories, updatePageSEO, resetToHomeSEO } from './stories.js';
-    
-    // Make available globally
-    window.allStories = stories;
-    window.stories = stories;
-    window.updatePageSEO = updatePageSEO;
-    window.resetToHomeSEO = resetToHomeSEO;
-    
-    // ── STATE ──
-    let currentStory = null;
-    let isNarrating = false;
-    let speechUtterance = null;
-    let selectedVoice = 'female';
-    let currentRating = 0;
-    let storyRatings  = JSON.parse(localStorage.getItem('laminonoRatings')  || '{}');
-    let storyComments = JSON.parse(localStorage.getItem('laminonoComments') || '{}');
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
-    // ── AUTH GATEKEEPER ──
-    function requireAuth(actionCallback, storyId) {
-        const user = window.currentFirebaseUser;
-        if (!user) {
-            window.pendingUserAction = actionCallback;
-            if (storyId) sessionStorage.setItem('pendingStoryId', storyId);
-            openAuthModal();
-            return false;
-        }
-        if (actionCallback) actionCallback();
-        return true;
+const firebaseConfig = {
+    apiKey: "AIzaSyA4jdIQilVbAcdnc0mAxk8arTg9xvYDuzc",
+    authDomain: "laminono-nexus.firebaseapp.com",
+    projectId: "laminono-nexus",
+    storageBucket: "laminono-nexus.firebasestorage.app",
+    messagingSenderId: "762207905640",
+    appId: "1:762207905640:web:9727e33d2f4d33bcc4d8dd"
+};
+
+const app      = initializeApp(firebaseConfig);
+const auth     = getAuth(app);
+const db       = getFirestore(app);
+const provider = new GoogleAuthProvider();
+
+let currentUser   = null;
+let isSignUpMode  = false;
+let pendingAction = null;
+
+onAuthStateChanged(auth, user => {
+    currentUser = user;
+    const bar    = document.getElementById('user-profile-bar');
+    const avatar = document.getElementById('user-avatar');
+    if (user) {
+        bar.style.display = 'flex';
+        avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
+        if (pendingAction === 'mylist') { pendingAction = null; openMyList(); }
+    } else {
+        bar.style.display = 'none';
     }
+});
 
-    // ── RENDER ──
-    function renderStories() {
-        const trending    = stories.filter(s => s.trending);
-        const newReleases = stories.slice(0, 6);
-        const featured    = stories.slice(0, 3);
-        document.getElementById('trendingRow').innerHTML    = trending.map(createStoryCard).join('');
-        document.getElementById('newReleasesRow').innerHTML = newReleases.map(createStoryCard).join('');
-        document.getElementById('featuredGrid').innerHTML   = featured.map(createFeaturedCard).join('');
+window.signInWithGoogle = async () => {
+    try {
+        document.getElementById('auth-error').textContent = '';
+        await signInWithPopup(auth, provider);
+        closeAuthModal();
+        showToast('Welcome to Laminono Nexus! 🎉');
+    } catch(e) { document.getElementById('auth-error').textContent = e.message.replace('Firebase: ',''); }
+};
+
+window.handleEmailAuth = async () => {
+    const email    = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
+    const errEl    = document.getElementById('auth-error');
+    errEl.textContent = '';
+    if (!email || !password) { errEl.textContent = 'Please fill in all fields.'; return; }
+    try {
+        if (isSignUpMode) { await createUserWithEmailAndPassword(auth, email, password); showToast('Account created! Welcome 🎉'); }
+        else { await signInWithEmailAndPassword(auth, email, password); showToast('Welcome back! 👋'); }
+        closeAuthModal();
+    } catch(e) {
+        const msg = e.code === 'auth/wrong-password'       ? 'Incorrect password.'
+                  : e.code === 'auth/user-not-found'        ? 'No account found with this email.'
+                  : e.code === 'auth/email-already-in-use'  ? 'This email is already registered.'
+                  : e.code === 'auth/weak-password'          ? 'Password must be at least 6 characters.'
+                  : e.code === 'auth/invalid-email'          ? 'Please enter a valid email address.'
+                  : e.message.replace('Firebase: ','');
+        errEl.textContent = msg;
     }
+};
 
-    function createStoryCard(story) {
-        return `
-            <div class="story-card" onclick="openStory('${story.id}')">
-                <img src="${story.cover?.image || story.image}" alt="${story.title}" class="story-card-image" onerror="this.src='https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80'">
-                <div class="story-card-vignette"></div>
-                <div class="story-cover-time">⏱ ${story.readTime}</div>
-                <div class="story-cover-title">${story.title}</div>
-                <div class="story-cover-genre">${story.genre}</div>
-                <div class="story-card-overlay" onclick="event.stopPropagation()">
-                    <p class="story-excerpt">${story.excerpt}</p>
-                    <div class="story-actions">
-                        <button class="action-btn play" onclick="openStory('${story.id}');setTimeout(toggleNarration,400);" title="Narrate">▶</button>
-                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');toggleMyList();" title="My List">+</button>
-                        <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');openShareModal();" title="Share">↗</button>
-                    </div>
-                </div>
-            </div>`;
-    }
+window.forgotPassword = async () => {
+    const email = document.getElementById('auth-email').value.trim();
+    if (!email) { document.getElementById('auth-error').textContent = 'Enter your email above first.'; return; }
+    try { await sendPasswordResetEmail(auth, email); showToast('Password reset email sent!'); }
+    catch(e) { document.getElementById('auth-error').textContent = 'Could not send reset email.'; }
+};
 
-    function createFeaturedCard(story) {
-        return `
-            <div class="featured-card" onclick="openStory('${story.id}')">
-                <img src="${story.cover?.image || story.image}" alt="${story.title}" class="featured-card-bg" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
-                <div class="featured-vignette"></div>
-                <div class="featured-content">
-                    <span class="featured-badge">Featured</span>
-                    <h3 class="featured-cover-title">${story.title}</h3>
-                    <p class="featured-author">By <strong>Olamide Emmanuel Willoughby</strong> • ${story.readTime} read</p>
-                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.5;">${story.excerpt}</p>
-                </div>
-            </div>`;
-    }
+window.toggleAuthMode = () => {
+    isSignUpMode = !isSignUpMode;
+    document.getElementById('auth-modal-title').textContent  = isSignUpMode ? 'Create Your Account'    : 'Welcome Back';
+    document.getElementById('auth-modal-sub').textContent    = isSignUpMode ? 'Join the story community.' : 'Sign in to access your reading list.';
+    document.getElementById('auth-submit-btn').textContent   = isSignUpMode ? 'Create Account'           : 'Sign In';
+    document.getElementById('auth-toggle-text').textContent  = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
+    document.getElementById('auth-toggle-btn').textContent   = isSignUpMode ? 'Sign In'                  : 'Sign Up';
+    document.getElementById('forgot-btn').style.display      = isSignUpMode ? 'none'                     : 'block';
+    document.getElementById('auth-error').textContent = '';
+};
 
-    function openStory(storyId) {
-        requireAuth(() => { openStoryContent(storyId); }, storyId);
-    }
+window.signOutUser   = async () => { await signOut(auth); showToast('You have been signed out.'); };
+window.openAuthModal = (action) => { pendingAction = action||null; document.getElementById('auth-modal').style.display='block'; document.body.style.overflow='hidden'; };
+window.closeAuthModal= () => { document.getElementById('auth-modal').style.display='none'; document.body.style.overflow=''; };
 
-    function openStoryContent(storyId) {
-        const story = stories.find(s => s.id === storyId);
-        if (!story) { console.error('Story not found:', storyId); return; }
-        
-        currentStory = story;
-        window.currentStory = story;
-        updatePageSEO(story);
-        
-        document.querySelector('.hero h1').textContent = story.title;
-        document.querySelector('.hero-description').textContent = story.excerpt;
-        document.querySelector('.hero-meta').innerHTML = `<span>⏱ ${story.readTime}</span><span>📖 ${story.genre}</span><span>🔥 Trending #1</span>`;
-        document.querySelector('.hero').style.background = `var(--gradient-hero), url('${story.cover?.image || story.image}') center/cover`;
-        
-        document.getElementById('modalTitle').textContent = story.title;
-        document.getElementById('modalMeta').innerHTML = `<span>⏱ ${story.readTime} read</span><span>📖 ${story.genre}</span><span>👤 By Olamide Emmanuel Willoughby</span>`;
-        document.getElementById('modalHero').style.cssText = `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.cover?.image || story.image}') center/cover;`;
-        
-        const paragraphs = story.content.split('\n\n').filter(p => p.trim());
-        document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
-        
-        document.getElementById('storyModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
-        
-        stopNarration();
-        currentRating = 0;
-        highlightStars(0);
-        document.getElementById('ratingText').textContent = 'Click to rate';
+window.toggleMyList = async () => {
+    if (!currentUser) { openAuthModal('mylist'); return; }
+    const story = window.currentStory;
+    if (!story) return;
+    const ref  = doc(db,'users',currentUser.uid);
+    const snap = await getDoc(ref);
+    const list = snap.exists() ? (snap.data().myList||[]) : [];
+    const exists = list.some(s => s.id === story.id);
+    const item   = {id:story.id, title:story.title, genre:story.genre, image:story.image, readTime:story.readTime};
+    if (exists) {
+        await updateDoc(ref,{myList:arrayRemove(item)}).catch(()=>setDoc(ref,{myList:list.filter(s=>s.id!==story.id)},{merge:true}));
+        showToast('Removed from My List');
         document.getElementById('mylist-btn-text').textContent = '+ My List';
-        updateAverageRating();
-        renderComments();
+    } else {
+        snap.exists() ? await updateDoc(ref,{myList:arrayUnion(item)}) : await setDoc(ref,{myList:[item]});
+        showToast('✅ Added to My List!');
+        document.getElementById('mylist-btn-text').textContent = '✓ In My List';
     }
+};
 
-    function closeModal() {
-        document.getElementById('storyModal').classList.remove('active');
-        document.body.style.overflow = '';
-        stopNarration();
-        resetToHomeSEO();
+window.openMyList = async () => {
+    if (!currentUser) { openAuthModal('mylist'); return; }
+    document.getElementById('mylist-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    const content = document.getElementById('mylist-content');
+    content.innerHTML = '<p style="color:#808080;text-align:center;padding:40px 0;">Loading...</p>';
+    try {
+        const snap = await getDoc(doc(db,'users',currentUser.uid));
+        const list = snap.exists() ? (snap.data().myList||[]) : [];
+        if (!list.length) { content.innerHTML='<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;font-size:0.92rem;">Your reading list is empty.<br>Tap <strong style=\'color:#fff\'>"+ My List"</strong> on any story.</p></div>'; return; }
+        content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">'+list.length+' '+(list.length===1?'story':'stories')+' saved</p>'+
+            list.map(s=>`<div class="mylist-story-card" onclick="openStory('${s.id}');closeMyList()"><img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/><div style="flex:1;min-width:0;"><p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p><p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p><p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p></div><button class="mylist-remove" onclick="event.stopPropagation();removeFromMyList('${s.id}')" title="Remove">🗑</button></div>`).join('');
+    } catch(e) { content.innerHTML='<p style="color:#E50914;text-align:center;padding:30px;">Could not load your list.</p>'; }
+};
+
+window.removeFromMyList = async (storyId) => {
+    if (!currentUser) return;
+    const ref  = doc(db,'users',currentUser.uid);
+    const snap = await getDoc(ref);
+    if (!snap.exists()) return;
+    await setDoc(ref,{myList:(snap.data().myList||[]).filter(s=>s.id!==storyId)},{merge:true});
+    openMyList();
+    showToast('Removed from My List');
+};
+
+window.closeMyList = () => { document.getElementById('mylist-modal').style.display='none'; document.body.style.overflow=''; };
+
+// Share
+window.openShareModal = () => {
+    const story = window.currentStory;
+    if (!story) return;
+    const shareUrl  = `https://laminono-nexus.github.io/?story=${story.id}`;
+    const hookLine  = story.excerpt || story.content.split('\n\n')[0].substring(0,120)+'…';
+    document.getElementById('share-preview-img').style.backgroundImage = `url('${story.image}')`;
+    document.getElementById('share-preview-genre').textContent = story.genre;
+    document.getElementById('share-preview-title').textContent = story.title;
+    document.getElementById('share-preview-hook').textContent  = hookLine;
+    window._shareData = {url:shareUrl, title:story.title, text:hookLine};
+    const modal = document.getElementById('share-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeShareModal = () => { document.getElementById('share-modal').style.display='none'; document.body.style.overflow=''; };
+
+window.shareVia = (platform) => {
+    const d   = window._shareData;
+    const msg = encodeURIComponent(`📚 "${d.title}"\n\n${d.text}\n\n🔗 Read more: ${d.url}`);
+    const url = encodeURIComponent(d.url);
+    const links = {
+        whatsapp: `https://wa.me/?text=${msg}`,
+        twitter:  `https://twitter.com/intent/tweet?text=${msg}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        telegram: `https://t.me/share/url?url=${url}&text=${encodeURIComponent(d.title)}`,
+    };
+    if (platform === 'instagram' || platform === 'native') {
+        if (platform === 'native' && navigator.share) { navigator.share({title:d.title,text:d.text,url:d.url}).catch(()=>{}); return; }
+        copyShareLink(); showToast('Link copied! Paste it where you want to share 📋'); return;
     }
+    if (links[platform]) window.open(links[platform], '_blank');
+    closeShareModal();
+};
 
-    function setVoice(gender, e) {
-        selectedVoice = gender;
-        document.querySelectorAll('.voice-btn').forEach(b => b.classList.remove('active'));
-        if (e && e.target) e.target.classList.add('active');
-        if (isNarrating) { stopNarration(); setTimeout(startNarration, 100); }
-    }
-
-    function toggleNarration() { isNarrating ? stopNarration() : startNarration(); }
-
-    function startNarration() {
-        if (!currentStory) return;
-        speechUtterance = new SpeechSynthesisUtterance(currentStory.content);
-        const voices = window.speechSynthesis.getVoices();
-        let preferred = selectedVoice === 'female' 
-            ? voices.find(v => /Female|Samantha|Victoria/i.test(v.name))
-            : voices.find(v => /Male|Daniel|Alex/i.test(v.name));
-        if (preferred) speechUtterance.voice = preferred;
-        speechUtterance.rate = 0.9;
-        speechUtterance.pitch = selectedVoice === 'female' ? 1.1 : 0.9;
-        speechUtterance.onstart = () => {
-            isNarrating = true;
-            document.getElementById('narrateIcon').textContent = '⏸';
-            document.getElementById('narrateText').textContent = 'Pause Narration';
-            document.querySelector('.narrate-btn').classList.add('playing');
-            document.getElementById('visualizer').classList.add('active');
-        };
-        speechUtterance.onend = stopNarration;
-        window.speechSynthesis.speak(speechUtterance);
-    }
-
-    function stopNarration() {
-        window.speechSynthesis.cancel();
-        isNarrating = false;
-        const btn = document.querySelector('.narrate-btn');
-        if (btn) btn.classList.remove('playing');
-        document.getElementById('narrateIcon').textContent = '▶';
-        document.getElementById('narrateText').textContent = 'Narrate Story';
-        document.getElementById('visualizer').classList.remove('active');
-    }
-
-    // ── RATINGS ──
-    document.querySelectorAll('.star').forEach(star => {
-        star.addEventListener('mouseenter', () => {
-            highlightStars(parseInt(star.dataset.rating));
-            document.getElementById('ratingText').textContent = getRatingText(parseInt(star.dataset.rating));
+window.copyShareLink = () => {
+    const d = window._shareData;
+    const text = `📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById('copy-link-btn');
+            if (btn) btn.querySelector('span:last-child').textContent = 'Copied!';
+            setTimeout(() => { if (btn) btn.querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
+            showToast('Link copied to clipboard! 🔗');
         });
-        star.addEventListener('mouseleave', () => {
-            highlightStars(currentRating);
-            document.getElementById('ratingText').textContent = currentRating > 0 ? 'You rated ' + currentRating + ' stars' : 'Click to rate';
-        });
-        star.addEventListener('click', () => submitRating(parseInt(star.dataset.rating)));
-    });
-
-    function highlightStars(count) {
-        document.querySelectorAll('.star').forEach((s,i) => s.classList.toggle('active', i < count));
+    } else {
+        const el = document.createElement('textarea'); el.value=text; document.body.appendChild(el);
+        el.select(); document.execCommand('copy'); document.body.removeChild(el);
+        showToast('Link copied! 🔗');
     }
-    function getRatingText(r) { return ['Poor','Fair','Good','Very Good','Excellent'][r-1] || 'Click to rate'; }
-
-    function submitRating(rating) {
-        if (!currentStory) return;
-        currentRating = rating;
-        highlightStars(rating);
-        document.getElementById('ratingText').textContent = 'You rated ' + rating + ' stars!';
-        if (!storyRatings[currentStory.id]) storyRatings[currentStory.id] = {total:0,sum:0};
-        const rated = JSON.parse(localStorage.getItem('ratedStories') || '[]');
-        if (!rated.includes(currentStory.id)) {
-            storyRatings[currentStory.id].total++;
-            storyRatings[currentStory.id].sum += rating;
-            rated.push(currentStory.id);
-            localStorage.setItem('ratedStories', JSON.stringify(rated));
-            localStorage.setItem('laminonoRatings', JSON.stringify(storyRatings));
-            showToast('Thank you for rating!');
-        } else { showToast('You already rated this story!'); }
-        updateAverageRating();
-    }
-
-    function updateAverageRating() {
-        if (!currentStory || !storyRatings[currentStory.id]) {
-            document.getElementById('averageScore').textContent = '0.0';
-            document.getElementById('averageStars').textContent = '★★★★★';
-            document.getElementById('totalVotes').textContent = '(0 ratings)';
-            return;
-        }
-        const d = storyRatings[currentStory.id];
-        const avg = (d.sum / d.total).toFixed(1);
-        const full = Math.round(avg);
-        document.getElementById('averageScore').textContent = avg;
-        document.getElementById('averageStars').textContent = '★'.repeat(full) + '☆'.repeat(5-full);
-        document.getElementById('totalVotes').textContent = `(${d.total} rating${d.total!==1?'s':''})`;
-    }
-
-    // ── COMMENTS ──
-    function submitComment(e) {
-        e.preventDefault();
-        if (!currentStory) return;
-        const name = document.getElementById('commentName').value.trim();
-        const text = document.getElementById('commentText').value.trim();
-        if (!name || !text) return;
-        const comment = {
-            id: Date.now(), name, text,
-            date: new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}),
-            rating: currentRating,
-            isAdmin: /laminono|olamide/i.test(name)
-        };
-        if (!storyComments[currentStory.id]) storyComments[currentStory.id] = [];
-        storyComments[currentStory.id].unshift(comment);
-        localStorage.setItem('laminonoComments', JSON.stringify(storyComments));
-        document.getElementById('commentName').value = '';
-        document.getElementById('commentText').value = '';
-        renderComments();
-        showToast('Comment posted!');
-    }
-
-    function renderComments() {
-        if (!currentStory) return;
-        const comments = storyComments[currentStory.id] || [];
-        document.getElementById('commentsCount').textContent = `(${comments.length})`;
-        const list = document.getElementById('commentsList');
-        if (!comments.length) { list.innerHTML = '<div class="no-comments">No comments yet. Be the first to share your thoughts!</div>'; return; }
-        list.innerHTML = comments.map(c => `
-            <div class="comment-card">
-                <div class="comment-header">
-                    <span class="comment-author">${c.name}${c.isAdmin?'<span class="admin-badge-small">Admin</span>':''}</span>
-                    <span class="comment-date">${c.date}</span>
-                </div>
-                ${c.rating>0?`<div class="comment-rating">${'★'.repeat(c.rating)}</div>`:''}
-                <div class="comment-text">${escapeHtml(c.text)}</div>
-            </div>`).join('');
-    }
-
-    function escapeHtml(t) { const d=document.createElement('div');d.textContent=t;return d.innerHTML; }
-
-    // ── ALL STORIES PAGE ──
-    function showAllStories(type) {
-        document.querySelector('.hero').classList.add('hidden');
-        document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
-        document.querySelector('.admin-section').classList.add('hidden');
-        document.querySelector('footer').classList.add('hidden');
-        document.getElementById('allStoriesPage').classList.remove('hidden');
-        document.getElementById('allStoriesTitle').textContent = type === 'trending' ? 'Trending Stories' : 'All Stories';
-        filterStories('all');
-        window.scrollTo(0,0);
-    }
-
-    function backToHome() {
-        document.querySelector('.hero').classList.remove('hidden');
-        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('hidden'));
-        document.querySelector('.admin-section').classList.remove('hidden');
-        document.querySelector('footer').classList.remove('hidden');
-        document.getElementById('allStoriesPage').classList.add('hidden');
-        window.scrollTo(0,0);
-    }
-
-    function filterStories(category) {
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.textContent === category || (category === 'all' && btn.textContent === 'All'));
-        });
-        const filtered = category === 'all' ? stories : stories.filter(s => s.genre === category);
-        document.getElementById('allStoriesGrid').innerHTML = filtered.map(story => `
-            <div class="story-card" onclick="openStory('${story.id}')" style="height:400px;flex:none;width:100%;">
-                <img src="${story.cover?.image || story.image}" alt="${story.title}" class="story-card-image" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
-                <div class="story-card-vignette"></div>
-                <div class="story-cover-time">⏱ ${story.readTime}</div>
-                <div class="story-cover-title">${story.title}</div>
-                <div class="story-cover-genre">${story.genre}</div>
-            </div>`).join('');
-    }
-
-    // ── TOAST ──
-    function showToast(message) {
-        const t = document.getElementById('toast');
-        document.getElementById('toastMessage').textContent = message;
-        t.classList.add('show');
-        setTimeout(() => t.classList.remove('show'), 3000);
-    }
-
-    // ── NAVBAR ──
-    window.addEventListener('scroll', () => {
-        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // ── FLOATING BOOK ──
-    (function(){
-        const el = document.getElementById('floating-book-trigger');
-        let lastY = 0;
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            el.style.top = (y > 60 && y >= lastY) ? '70px' : '-280px';
-            lastY = y;
-        }, {passive:true});
-    })();
-
-    // ── FLOATING BOOK CLICK ──
-    const fb = document.getElementById('floating-book-trigger');
-    if (fb) {
-        fb.addEventListener('click', () => {
-            requireAuth(() => { window.location.href = 'bookshelf.html'; });
-        });
-    }
-
-    // ── DEEP LINK ──
-    function checkDeepLink() {
-        const params = new URLSearchParams(window.location.search);
-        const storyId = params.get('story');
-        if (storyId) setTimeout(() => openStory(storyId), 600);
-    }
-
-    // ── SMOOTH SCROLL ──
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            e.preventDefault();
-            const t = document.querySelector(a.getAttribute('href'));
-            if (t) t.scrollIntoView({behavior:'smooth',block:'start'});
-        });
-    });
-
-    // ── ESCAPE TO CLOSE ──
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    // ── EXPOSE ALL FUNCTIONS GLOBALLY ──
-    window.openStory = openStory;
-    window.openStoryContent = openStoryContent;
-    window.closeModal = closeModal;
-    window.toggleNarration = toggleNarration;
-    window.setVoice = setVoice;
-    window.toggleMyList = toggleMyList;
-    window.openShareModal = openShareModal;
-    window.closeShareModal = closeShareModal;
-    window.shareVia = shareVia;
-    window.copyShareLink = copyShareLink;
-    window.showAllStories = showAllStories;
-    window.backToHome = backToHome;
-    window.filterStories = filterStories;
-    window.continueReading = continueReading;
-    window.submitComment = submitComment;
-    window.openMyList = openMyList;
-    window.closeMyList = closeMyList;
-    window.removeFromMyList = removeFromMyList;
-    window.signInWithGoogle = signInWithGoogle;
-    window.handleEmailAuth = handleEmailAuth;
-    window.toggleAuthMode = toggleAuthMode;
-    window.forgotPassword = forgotPassword;
-    window.openAuthModal = openAuthModal;
-    window.closeAuthModal = closeAuthModal;
-    window.signOutUser = signOutUser;
-    window.requireAuth = requireAuth;
-
-    // ── INIT ──
-    renderStories();
-    checkDeepLink();
+};
 </script>
 
 </body>
