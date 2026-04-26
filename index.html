@@ -873,25 +873,22 @@ import('./stories.js').then(module => {
 // ── STATE ──
 let currentStory = null;
 
-// ── AUTH GATEKEEPER ──
-// Every interactive action must pass through here first
 function requireAuth(actionCallback, storyId) {
-    // Give Firebase a moment to check login status
-    setTimeout(() => {
-        const user = window.currentFirebaseUser;
-        
-        if (!user) {
-            // User NOT logged in — show modal
-            window.pendingUserAction = actionCallback;
-            if (storyId) {
-                sessionStorage.setItem('pendingStoryId', storyId);
-            }
-            openAuthModal();
-        } else {
-            // User IS logged in — proceed immediately
-            if (actionCallback) actionCallback();
+    const user = window.currentFirebaseUser;
+    
+    if (!user) {
+        // User NOT logged in — show modal
+        window.pendingUserAction = actionCallback;
+        if (storyId) {
+            sessionStorage.setItem('pendingStoryId', storyId);
         }
-    }, 100);
+        openAuthModal();
+        return false;
+    } else {
+        // User IS logged in — proceed immediately
+        if (actionCallback) actionCallback();
+        return true;
+    }
 }
 
     let isNarrating = false;
