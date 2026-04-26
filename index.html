@@ -962,8 +962,8 @@ function requireAuth(actionCallback, storyId) {
 }
 
 function openStoryContent(storyId) {
-    // Find story from the imported stories array
-    const story = stories.find(s => s.id === storyId);
+    // Find story from the stories array
+    const story = window.allStories.find(s => s.id === storyId);
     if (!story) {
         console.error('Story not found:', storyId);
         return;
