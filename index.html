@@ -846,15 +846,30 @@
 </div>
 
 <script>
-// Stories already loaded from stories.js script tag above
-// Access them via window object
+// Load stories module dynamically
+let stories = [];
+let updatePageSEO = () => {};
+let resetToHomeSEO = () => {};
 
-window.allStories = window.stories;
-window.updatePageSEO = window.updatePageSEO || (() => {});
-window.resetToHomeSEO = window.resetToHomeSEO || (() => {});
-// Verify stories loaded
-console.log('✓ Stories loaded:', stories.length, 'story(ies)');
+// Import stories as module
+import('./stories.js').then(module => {
+    stories = module.stories;
+    updatePageSEO = module.updatePageSEO;
+    resetToHomeSEO = module.resetToHomeSEO;
+    window.allStories = stories;
+    window.stories = stories;
+    window.updatePageSEO = updatePageSEO;
+    window.resetToHomeSEO = resetToHomeSEO;
     
+    console.log('✓ Stories loaded:', stories.length, 'story(ies)');
+    
+    // Now render
+    renderStories();
+    checkDeepLink();
+}).catch(err => {
+    console.error('Failed to load stories:', err);
+});
+
 // ── STATE ──
 let currentStory = null;
 
