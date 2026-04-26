@@ -1531,16 +1531,6 @@ window.removeFromMyList = async (storyId) => {
 
 window.closeMyList = () => { document.getElementById('mylist-modal').style.display='none'; document.body.style.overflow=''; };
 
-// ← ADD THIS RIGHT HERE:
-window.showToast = (message) => {
-    const t = document.getElementById('toast');
-    if (t) {
-        document.getElementById('toastMessage').textContent = message;
-        t.classList.add('show');
-        setTimeout(() => t.classList.remove('show'), 3000);
-    }
-};
-
 // Continue with the rest (Share section, etc)
 window.openShareModal = () => {
 // Share
