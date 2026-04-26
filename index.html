@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7YT12YB25"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5PK2L0DQXW"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-B7YT12YB25');
+      gtag('config', 'G-5PK2L0DQXW');
     </script>
     
     <meta charset="UTF-8">
@@ -16,15 +16,61 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <style>
-        /* This ensures your bookshelf is never blocked by other layers */
+        :root {
+            --netflix-red: #E50914;
+            --bg-black: #141414;
+            --card-bg: #1F1F1F;
+        }
+
+        body { 
+            background: var(--bg-black); 
+            color: white; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            overflow-x: hidden;
+        }
+
+        /* --- NETFLIX RESPONSIVE GRID --- */
+        .story-grid {
+            display: grid;
+            gap: 12px;
+            padding: 15px;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+        }
+
+        @media (min-width: 768px) { .story-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 1200px) { .story-grid { grid-template-columns: repeat(6, 1fr); } }
+
+        .story-card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .story-card:hover { transform: scale(1.05); z-index: 10; }
+
+        .story-card img {
+            width: 100%;
+            aspect-ratio: 2/3; 
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-info {
+            padding: 8px;
+            background: rgba(0,0,0,0.7);
+        }
+
+        /* Floating Bookshelf Trigger */
         #floating-book-trigger {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 99999 !important;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99999;
             cursor: pointer;
-            pointer-events: auto !important;
-            display: block;
         }
 
         /* Login Overlay */
@@ -37,15 +83,22 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .brand {
+            color: var(--netflix-red);
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
     <div id="auth-overlay" style="display: none;">
-        <h2 style="margin-bottom: 20px;">Laminono Nexus</h2>
+        <div class="brand">NEXUS</div>
+        <p style="color: #888; margin-bottom: 20px;">Sign in to start reading</p>
         <div id="g_id_onload"
              data-client_id="762207905640-vh5n2i6l96v7q28m4q7l888888888888.apps.googleusercontent.com"
              data-callback="onGoogleSignIn"
@@ -54,50 +107,81 @@
         <div class="g_id_signin" data-type="standard"></div>
     </div>
 
-    <div id="site-wrapper" style="opacity: 0;">
+    <div id="site-wrapper" style="display: none;">
+        <header style="padding: 15px; border-bottom: 1px solid #333;">
+            <span style="color: var(--netflix-red); font-weight: bold;">LAMINONO NEXUS</span>
+        </header>
+
+        <div class="story-grid" id="main-grid">
+            </div>
+
         <div id="floating-book-trigger">
-            <img src="https://laminono-nexus.github.io/laminono.jpeg" alt="Library" style="width:60px; border-radius:50%; border:2px solid gold;">
+            <img src="https://laminono-nexus.github.io/laminono.jpeg" alt="Library" style="width:60px; height:60px; border-radius:50%; border:2px solid var(--netflix-red);">
         </div>
     </div>
 
     <script type="module">
+        // Import your Firebase SDK and Stories Module
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
         import { stories, updatePageSEO } from './stories.js';
 
-        // Fix for the Login Loop: This handles the response from Google
+        // Initialize Firebase using your provided config
+        const firebaseConfig = {
+            apiKey: "AIzaSyA4jdIQilVbAcdnc0mAxk8arTg9xvYDuzc",
+            authDomain: "laminono-nexus.firebaseapp.com",
+            projectId: "laminono-nexus",
+            storageBucket: "laminono-nexus.firebasestorage.app",
+            messagingSenderId: "762207905640",
+            appId: "1:762207905640:web:9727e33d2f4d33bcc4d8dd",
+            measurementId: "G-5PK2L0DQXW"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // --- AUTH LOGIC ---
         window.onGoogleSignIn = (response) => {
-            console.log("Login Successful");
-            localStorage.setItem('laminono_logged_in', 'true');
+            localStorage.setItem('nexus_logged_in', 'true');
             unlockSite();
         };
 
         function unlockSite() {
             document.getElementById('auth-overlay').style.display = 'none';
-            document.getElementById('site-wrapper').style.opacity = '1';
+            document.getElementById('site-wrapper').style.display = 'block';
+            renderGrid();
         }
 
+        // --- RENDER GRID ---
+        function renderGrid() {
+            const grid = document.getElementById('main-grid');
+            grid.innerHTML = stories.map(s => `
+                <div class="story-card" onclick="handleStoryClick('${s.id}')">
+                    <img src="${s.cover.image}" alt="${s.title}">
+                    <div class="card-info">
+                        <div style="font-weight: bold; font-size: 0.8rem;">${s.title}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- CONTINUE READING & SEO ---
+        window.handleStoryClick = (id) => {
+            localStorage.setItem('nexus_last_read', id);
+            const story = stories.find(s => s.id === id);
+            if (story) updatePageSEO(story);
+            window.location.href = `bookshelf.html?id=${id}`;
+        };
+
         window.onload = () => {
-            // Check if user already logged in previously
-            if (localStorage.getItem('laminono_logged_in') === 'true') {
+            if (localStorage.getItem('nexus_logged_in') === 'true') {
                 unlockSite();
             } else {
                 document.getElementById('auth-overlay').style.display = 'flex';
             }
 
-            // Fix for the Bookshelf Click
-            const shelf = document.getElementById('floating-book-trigger');
-            if (shelf) {
-                shelf.onclick = () => {
-                    window.location.href = 'bookshelf.html';
-                };
-            }
-
-            // SEO Management from your stories.js module
-            const params = new URLSearchParams(window.location.search);
-            const storyId = params.get('story');
-            if (storyId) {
-                const activeStory = stories.find(s => s.id === storyId);
-                if (activeStory) updatePageSEO(activeStory);
-            }
+            document.getElementById('floating-book-trigger').onclick = () => {
+                window.location.href = 'bookshelf.html';
+            };
         };
     </script>
 </body>
