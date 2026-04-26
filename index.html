@@ -1545,8 +1545,7 @@ window.closeMyList = () => { document.getElementById('mylist-modal').style.displ
 
 // Continue with the rest (Share section, etc)
 window.openShareModal = () => {
-// Share
-window.openShareModal = () => {
+    
     const story = window.currentStory;
     if (!story) return;
     const shareUrl  = `https://laminono-nexus.github.io/?story=${story.id}`;
