@@ -1349,13 +1349,6 @@ const provider = new GoogleAuthProvider();
 let currentUser   = null;
 let isSignUpMode  = false;
 let pendingAction = null;
-
-// ← ADD THIS:
-// Bridge: Reference functions from first script block
-const openStory = window.openStory;
-const closeAuthModal = window.closeAuthModal;
-const showToast = window.showToast;
-const openMyList = window.openMyList;
     
 // Check if user is already logged in on page load
 const checkExistingLogin = async () => {
