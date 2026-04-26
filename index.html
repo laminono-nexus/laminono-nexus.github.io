@@ -1315,7 +1315,7 @@ window.addEventListener('load', () => {
 
 </script>
 
-<!-- ── FIREBASE (Auth + Firestore + Share) ── -->
+    <!-- ── FIREBASE (Auth + Firestore + Share) ── -->
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import { getAuth, signInWithRedirect, getRedirectResult, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
@@ -1335,54 +1335,64 @@ const auth     = getAuth(app);
 const db       = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
-let currentUser   = null;
-let isSignUpMode  = false;
+let currentUser  = null;
+let isSignUpMode = false;
 let pendingAction = null;
 
-// Check if user is already logged in on page load
-const checkExistingLogin = async () => {
-    return new Promise((resolve) => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                console.log('✓ User already logged in:', user.email);
-                currentUser = user;
-                window.currentFirebaseUser = user;
-            }
-            unsubscribe(); // Stop listening after first check
-            resolve(user);
-        });
-    });
-};
+const toast = (msg) => window.showToast && window.showToast(msg);
 
-// Run on page load
-checkExistingLogin();
-
-window.signInWithGoogle = async () => {
-    try {
-        document.getElementById('auth-error').textContent = '';
-        // Mark that we have a pending action for redirect recovery
-        sessionStorage.setItem('pendingAction', 'true');
-        // Popup fails on mobile browsers, use redirect
-        await signInWithRedirect(auth, provider);
-    } catch(e) { 
-        document.getElementById('auth-error').textContent = e.message.replace('Firebase: ',''); 
+onAuthStateChanged(auth, user => {
+    currentUser = user;
+    window.currentFirebaseUser = user;
+    const bar    = document.getElementById('user-profile-bar');
+    const avatar = document.getElementById('user-avatar');
+    if (user) {
+        bar.style.display = 'flex';
+        avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
+        const authModal = document.getElementById('auth-modal');
+        if (authModal && authModal.style.display === 'block') {
+            authModal.style.display = 'none';
+            document.body.style.overflow = '';
+            toast('Welcome! 👋');
+        }
+        if (window.pendingUserAction) {
+            const action = window.pendingUserAction;
+            window.pendingUserAction = null;
+            setTimeout(action, 300);
+        }
+        if (pendingAction === 'mylist') {
+            pendingAction = null;
+            window.openMyList && window.openMyList();
+        }
+    } else {
+        bar.style.display = 'none';
+        window.currentFirebaseUser = null;
     }
-};
+});
 
-// Handle when user returns from Google
 getRedirectResult(auth).then((result) => {
     if (result && result.user) {
-        closeAuthModal();
-        showToast('Welcome! 🎉');
-        // Check if there was a pending story before redirect
+        const authModal = document.getElementById('auth-modal');
+        if (authModal) { authModal.style.display = 'none'; document.body.style.overflow = ''; }
+        toast('Welcome! 🎉');
         const pendingStoryId = sessionStorage.getItem('pendingStoryId');
         if (pendingStoryId) {
             sessionStorage.removeItem('pendingStoryId');
             sessionStorage.removeItem('pendingAction');
-            setTimeout(() => openStory(pendingStoryId), 500);
+            setTimeout(() => window.openStory && window.openStory(pendingStoryId), 500);
         }
     }
 }).catch(() => {});
+
+window.signInWithGoogle = async () => {
+    try {
+        document.getElementById('auth-error').textContent = '';
+        sessionStorage.setItem('pendingAction', 'true');
+        await signInWithRedirect(auth, provider);
+    } catch(e) {
+        document.getElementById('auth-error').textContent = e.message.replace('Firebase: ','');
+    }
+};
 
 window.handleEmailAuth = async () => {
     const email    = document.getElementById('auth-email').value.trim();
@@ -1391,144 +1401,146 @@ window.handleEmailAuth = async () => {
     errEl.textContent = '';
     if (!email || !password) { errEl.textContent = 'Please fill in all fields.'; return; }
     try {
-        if (isSignUpMode) { await createUserWithEmailAndPassword(auth, email, password); showToast('Account created! Welcome 🎉'); }
-        else { await signInWithEmailAndPassword(auth, email, password); showToast('Welcome back! 👋'); }
-        closeAuthModal();
-        } catch(e) {
-        const msg = e.code === 'auth/wrong-password'       ? 'Incorrect password.'
-                  : e.code === 'auth/user-not-found'        ? 'No account found. Tap Sign Up below.'
-                  : e.code === 'auth/email-already-in-use'  ? 'Email exists. Tap Sign In below.'
-                  : e.code === 'auth/weak-password'          ? 'Password too short (min 6).'
-                  : e.code === 'auth/invalid-email'          ? 'Invalid email format.'
-                  : e.code === 'auth/invalid-credential'     ? 'Wrong password. Use Google if you signed up that way.'
-                  : e.code === 'auth/unauthorized-domain'    ? 'Domain not allowed. Contact: laminonosfilmview@gmail.com'
+        if (isSignUpMode) {
+            await createUserWithEmailAndPassword(auth, email, password);
+            toast('Account created! Welcome 🎉');
+        } else {
+            await signInWithEmailAndPassword(auth, email, password);
+            toast('Welcome back! 👋');
+        }
+        const authModal = document.getElementById('auth-modal');
+        if (authModal) { authModal.style.display = 'none'; document.body.style.overflow = ''; }
+    } catch(e) {
+        const msg = e.code === 'auth/wrong-password'      ? 'Incorrect password.'
+                  : e.code === 'auth/user-not-found'       ? 'No account found. Tap Sign Up below.'
+                  : e.code === 'auth/email-already-in-use' ? 'Email exists. Tap Sign In below.'
+                  : e.code === 'auth/weak-password'         ? 'Password too short (min 6).'
+                  : e.code === 'auth/invalid-email'         ? 'Invalid email format.'
+                  : e.code === 'auth/invalid-credential'    ? 'Wrong password. Use Google if you signed up that way.'
+                  : e.code === 'auth/unauthorized-domain'   ? 'Domain not allowed. Contact: laminonosfilmview@gmail.com'
                   : e.message.replace('Firebase: ','');
         errEl.textContent = msg;
     }
 };
-    
+
 window.forgotPassword = async () => {
     const email = document.getElementById('auth-email').value.trim();
     if (!email) { document.getElementById('auth-error').textContent = 'Enter your email above first.'; return; }
-    try { await sendPasswordResetEmail(auth, email); showToast('Password reset email sent!'); }
+    try { await sendPasswordResetEmail(auth, email); toast('Password reset email sent!'); }
     catch(e) { document.getElementById('auth-error').textContent = 'Could not send reset email.'; }
 };
 
 window.toggleAuthMode = () => {
     isSignUpMode = !isSignUpMode;
-    document.getElementById('auth-modal-title').textContent  = isSignUpMode ? 'Create Your Account'    : 'Welcome Back';
-    document.getElementById('auth-modal-sub').textContent    = isSignUpMode ? 'Create your free account to start reading.' : 'Welcome back! Sign in to continue reading.';
-    document.getElementById('auth-submit-btn').textContent   = isSignUpMode ? 'Create Account'           : 'Sign In';
-    document.getElementById('auth-toggle-text').textContent  = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
-    document.getElementById('auth-toggle-btn').textContent   = isSignUpMode ? 'Sign In'                  : 'Sign Up';
-    document.getElementById('forgot-btn').style.display      = isSignUpMode ? 'none'                     : 'block';
+    document.getElementById('auth-modal-title').textContent = isSignUpMode ? 'Create Your Account' : 'Welcome Back';
+    document.getElementById('auth-modal-sub').textContent   = isSignUpMode ? 'Create your free account to start reading.' : 'Welcome back! Sign in to continue reading.';
+    document.getElementById('auth-submit-btn').textContent  = isSignUpMode ? 'Create Account' : 'Sign In';
+    document.getElementById('auth-toggle-text').textContent = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
+    document.getElementById('auth-toggle-btn').textContent  = isSignUpMode ? 'Sign In' : 'Sign Up';
+    document.getElementById('forgot-btn').style.display     = isSignUpMode ? 'none' : 'block';
     document.getElementById('auth-error').textContent = '';
 };
 
-window.signOutUser   = async () => { await signOut(auth); showToast('You have been signed out.'); };
-window.openAuthModal = (action) => { 
-    pendingAction = action||null; 
-    document.getElementById('auth-modal').style.display='block'; 
-    document.body.style.overflow='hidden';
-    // Update subtitle for mandatory login context
-    const isSignUp = document.getElementById('auth-submit-btn').textContent.includes('Create');
-    document.getElementById('auth-modal-sub').textContent = isSignUp ? 'Create your free account to start reading.' : 'Welcome back! Sign in to continue reading.';
+window.signOutUser = async () => { await signOut(auth); toast('You have been signed out.'); };
+
+window.openAuthModal = (action) => {
+    pendingAction = action || null;
+    document.getElementById('auth-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
 };
-    
-onAuthStateChanged(auth, user => {
-    currentUser = user;
-    window.currentFirebaseUser = user;
-    const bar    = document.getElementById('user-profile-bar');
-    const avatar = document.getElementById('user-avatar');
-    
-    if (user) {
-        bar.style.display = 'flex';
-        avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
-        
-        // ← ADD THIS: Auto-close auth modal
-        const authModal = document.getElementById('auth-modal');
-        if (authModal && authModal.style.display === 'block') {
-            closeAuthModal();
-            showToast('Welcome! 👋');
-        }
-        
-        // Check if user had a pending action before login
-        if (window.pendingUserAction) {
-            const action = window.pendingUserAction;
-            window.pendingUserAction = null;
-            setTimeout(action, 300);
-        }
+
+window.closeAuthModal = () => {
+    document.getElementById('auth-modal').style.display = 'none';
+    document.body.style.overflow = '';
+};
+
+window.showToast = (message) => {
+    const t = document.getElementById('toast');
+    if (t) {
+        document.getElementById('toastMessage').textContent = message;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 3000);
     }
-    else {
-        bar.style.display = 'none';
-        window.currentFirebaseUser = null;
-    }
-});
+};
+
+window.continueReading = () => {
+    const storyId = sessionStorage.getItem('currentStoryId');
+    if (storyId && window.openStory) window.openStory(storyId);
+};
 
 window.toggleMyList = async () => {
-    if (!currentUser) { openAuthModal('mylist'); return; }
+    if (!currentUser) { window.openAuthModal('mylist'); return; }
     const story = window.currentStory;
     if (!story) return;
-    const ref  = doc(db,'users',currentUser.uid);
+    const ref  = doc(db, 'users', currentUser.uid);
     const snap = await getDoc(ref);
-    const list = snap.exists() ? (snap.data().myList||[]) : [];
+    const list = snap.exists() ? (snap.data().myList || []) : [];
     const exists = list.some(s => s.id === story.id);
-    const item   = {id:story.id, title:story.title, genre:story.genre, image:story.image, readTime:story.readTime};
+    const item = {id:story.id, title:story.title, genre:story.genre, image:story.image, readTime:story.readTime};
     if (exists) {
-        await updateDoc(ref,{myList:arrayRemove(item)}).catch(()=>setDoc(ref,{myList:list.filter(s=>s.id!==story.id)},{merge:true}));
-        showToast('Removed from My List');
+        await updateDoc(ref, {myList: arrayRemove(item)}).catch(() => setDoc(ref, {myList: list.filter(s => s.id !== story.id)}, {merge:true}));
+        toast('Removed from My List');
         document.getElementById('mylist-btn-text').textContent = '+ My List';
     } else {
-        snap.exists() ? await updateDoc(ref,{myList:arrayUnion(item)}) : await setDoc(ref,{myList:[item]});
-        showToast('✅ Added to My List!');
+        snap.exists() ? await updateDoc(ref, {myList: arrayUnion(item)}) : await setDoc(ref, {myList: [item]});
+        toast('✅ Added to My List!');
         document.getElementById('mylist-btn-text').textContent = '✓ In My List';
     }
 };
 
 window.openMyList = async () => {
-    if (!currentUser) { openAuthModal('mylist'); return; }
+    if (!currentUser) { window.openAuthModal('mylist'); return; }
     document.getElementById('mylist-modal').style.display = 'block';
     document.body.style.overflow = 'hidden';
     const content = document.getElementById('mylist-content');
     content.innerHTML = '<p style="color:#808080;text-align:center;padding:40px 0;">Loading...</p>';
     try {
-        const snap = await getDoc(doc(db,'users',currentUser.uid));
-        const list = snap.exists() ? (snap.data().myList||[]) : [];
-        if (!list.length) { content.innerHTML='<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;font-size:0.92rem;">Your reading list is empty.<br>Tap <strong style=\'color:#fff\'>"+ My List"</strong> on any story.</p></div>'; return; }
-        content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">'+list.length+' '+(list.length===1?'story':'stories')+' saved</p>'+
-            list.map(s=>`<div class="mylist-story-card" onclick="openStory('${s.id}');closeMyList()"><img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/><div style="flex:1;min-width:0;"><p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p><p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p><p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p></div><button class="mylist-remove" onclick="event.stopPropagation();removeFromMyList('${s.id}')" title="Remove">🗑</button></div>`).join('');
-    } catch(e) { content.innerHTML='<p style="color:#E50914;text-align:center;padding:30px;">Could not load your list.</p>'; }
+        const snap = await getDoc(doc(db, 'users', currentUser.uid));
+        const list = snap.exists() ? (snap.data().myList || []) : [];
+        if (!list.length) {
+            content.innerHTML = '<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;font-size:0.92rem;">Your reading list is empty.<br>Tap <strong style=\'color:#fff\'>"+ My List"</strong> on any story.</p></div>';
+            return;
+        }
+        content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">' + list.length + ' ' + (list.length === 1 ? 'story' : 'stories') + ' saved</p>' +
+            list.map(s => `<div class="mylist-story-card" onclick="window.openStory('${s.id}');window.closeMyList()"><img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/><div style="flex:1;min-width:0;"><p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p><p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p><p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p></div><button class="mylist-remove" onclick="event.stopPropagation();window.removeFromMyList('${s.id}')" title="Remove">🗑</button></div>`).join('');
+    } catch(e) {
+        content.innerHTML = '<p style="color:#E50914;text-align:center;padding:30px;">Could not load your list.</p>';
+    }
 };
 
 window.removeFromMyList = async (storyId) => {
     if (!currentUser) return;
-    const ref  = doc(db,'users',currentUser.uid);
+    const ref  = doc(db, 'users', currentUser.uid);
     const snap = await getDoc(ref);
     if (!snap.exists()) return;
-    await setDoc(ref,{myList:(snap.data().myList||[]).filter(s=>s.id!==storyId)},{merge:true});
-    openMyList();
-    showToast('Removed from My List');
+    await setDoc(ref, {myList: (snap.data().myList || []).filter(s => s.id !== storyId)}, {merge:true});
+    window.openMyList();
+    toast('Removed from My List');
 };
 
-window.closeMyList = () => { document.getElementById('mylist-modal').style.display='none'; document.body.style.overflow=''; };
+window.closeMyList = () => {
+    document.getElementById('mylist-modal').style.display = 'none';
+    document.body.style.overflow = '';
+};
 
-// Share
 window.openShareModal = () => {
     const story = window.currentStory;
     if (!story) return;
-    const shareUrl  = `https://laminono-nexus.github.io/?story=${story.id}`;
-    const hookLine  = story.excerpt || story.content.split('\n\n')[0].substring(0,120)+'…';
+    const shareUrl = `https://laminono-nexus.github.io/?story=${story.id}`;
+    const hookLine = story.excerpt || story.content.split('\n\n')[0].substring(0, 120) + '…';
     document.getElementById('share-preview-img').style.backgroundImage = `url('${story.cover?.image || story.image}')`;
     document.getElementById('share-preview-genre').textContent = story.genre;
     document.getElementById('share-preview-title').textContent = story.title;
     document.getElementById('share-preview-hook').textContent  = hookLine;
-    window._shareData = {url:shareUrl, title:story.title, text:hookLine};
-    const modal = document.getElementById('share-modal');
-    modal.style.display = 'flex';
+    window._shareData = {url: shareUrl, title: story.title, text: hookLine};
+    document.getElementById('share-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 };
 
-window.closeShareModal = () => { document.getElementById('share-modal').style.display='none'; document.body.style.overflow=''; };
+window.closeShareModal = () => {
+    document.getElementById('share-modal').style.display = 'none';
+    document.body.style.overflow = '';
+};
 
 window.shareVia = (platform) => {
     const d   = window._shareData;
@@ -1542,10 +1554,12 @@ window.shareVia = (platform) => {
     };
     if (platform === 'instagram' || platform === 'native') {
         if (platform === 'native' && navigator.share) { navigator.share({title:d.title,text:d.text,url:d.url}).catch(()=>{}); return; }
-        copyShareLink(); showToast('Link copied! Paste it where you want to share 📋'); return;
+        window.copyShareLink();
+        toast('Link copied! Paste it where you want to share 📋');
+        return;
     }
     if (links[platform]) window.open(links[platform], '_blank');
-    closeShareModal();
+    window.closeShareModal();
 };
 
 window.copyShareLink = () => {
@@ -1556,12 +1570,13 @@ window.copyShareLink = () => {
             const btn = document.getElementById('copy-link-btn');
             if (btn) btn.querySelector('span:last-child').textContent = 'Copied!';
             setTimeout(() => { if (btn) btn.querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
-            showToast('Link copied to clipboard! 🔗');
+            toast('Link copied to clipboard! 🔗');
         });
     } else {
-        const el = document.createElement('textarea'); el.value=text; document.body.appendChild(el);
+        const el = document.createElement('textarea');
+        el.value = text; document.body.appendChild(el);
         el.select(); document.execCommand('copy'); document.body.removeChild(el);
-        showToast('Link copied! 🔗');
+        toast('Link copied! 🔗');
     }
 };
 </script>
