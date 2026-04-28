@@ -789,8 +789,7 @@
     // ── LOAD STORIES FROM JSON ──
     async function loadStories() {
         try {
-            const res = await fetch('stories.json');
-            stories = await res.json();
+            // stories already loaded from stories.js
         } catch (e) {
             console.error('Could not load stories.json:', e);
             stories = [];
