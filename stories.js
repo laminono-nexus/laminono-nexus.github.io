@@ -1,8 +1,3 @@
-// ═══════════════════════════════════════════════════════
-//  LAMINONO NEXUS — STORIES MODULE
-//  Add new stories below. Copy the template.
-// ═══════════════════════════════════════════════════════
-
 const stories = [
   {
     // ── STORY CONTENT ──
