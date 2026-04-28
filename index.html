@@ -1294,52 +1294,21 @@ window.shareVia = (platform) => {
 };
 
 window.copyShareLink = () => {
-    const d = window._shareData;
-    const text = `📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`;
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(() => {
-            const btn = document.getElementById('copy-link-btn');
-            if (btn) btn.querySelector('span:last-child').textContent = 'Copied!';
-            setTimeout(() => { if (btn) btn.querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
-            showToast('Link copied to clipboard! 🔗');
-        });
-    } else {
-        const el = document.createElement('textarea'); el.value=text; document.body.appendChild(el);
-        el.select(); document.execCommand('copy'); document.body.removeChild(el);
-        showToast('Link copied! 🔗');
-    }
-};
-    <script src="stories.js"></script>
-<script>
-    function openStory(storyId) {
-        // 1. Find the story inside your 'stories' array in stories.js
-        const story = stories.find(s => s.id === storyId);
-        
-        if (story) {
-            const modal = document.getElementById('storyModal');
-            
-            // 2. Inject the Title, Image, and Content into the Modal
-            document.querySelector('.modal-title').innerText = story.title;
-            document.querySelector('.modal-hero').style.backgroundImage = `url(${story.cover.image})`;
-            
-            // This turns your text into paragraphs automatically
-            document.querySelector('.story-text').innerHTML = story.content
-                .split('\n')
-                .filter(p => p.trim() !== '')
-                .map(p => `<p>${p}</p>`)
-                .join('');
-            
-            // 3. Open the Modal
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop background from scrolling
+        const d = window._shareData;
+        const text = `📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`;
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copy-link-btn');
+                if (btn) btn.querySelector('span:last-child').textContent = 'Copied!';
+                setTimeout(() => { if (btn) btn.querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
+                showToast('Link copied to clipboard! 🔗');
+            });
+        } else {
+            const el = document.createElement('textarea'); el.value=text; document.body.appendChild(el);
+            el.select(); document.execCommand('copy'); document.body.removeChild(el);
+            showToast('Link copied! 🔗');
         }
-    }
-
-    // Close Modal Function (for the 'X' button)
-    function closeModal() {
-        document.getElementById('storyModal').classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
+    };
 </script>
 
 </body>
