@@ -1299,6 +1299,36 @@ window.copyShareLink = () => {
         showToast('Link copied! 🔗');
     }
 };
+<script>
+    function openStory(storyId) {
+        // 1. Find the story inside your 'stories' array in stories.js
+        const story = stories.find(s => s.id === storyId);
+        
+        if (story) {
+            const modal = document.getElementById('storyModal');
+            
+            // 2. Inject the Title, Image, and Content into the Modal
+            document.querySelector('.modal-title').innerText = story.title;
+            document.querySelector('.modal-hero').style.backgroundImage = `url(${story.cover.image})`;
+            
+            // This turns your text into paragraphs automatically
+            document.querySelector('.story-text').innerHTML = story.content
+                .split('\n')
+                .filter(p => p.trim() !== '')
+                .map(p => `<p>${p}</p>`)
+                .join('');
+            
+            // 3. Open the Modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background from scrolling
+        }
+    }
+
+    // Close Modal Function (for the 'X' button)
+    function closeModal() {
+        document.getElementById('storyModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 </script>
 
 </body>
