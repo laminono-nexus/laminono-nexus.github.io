@@ -847,36 +847,46 @@
 
     // ── MODAL ──
     function openStory(storyId) {
-        const story = stories.find(s => s.id === storyId) || stories[0];
-        if (!story) return;
-        currentStory = story;
-
-        document.getElementById('modalTitle').textContent = story.title;
-        document.getElementById('modalMeta').innerHTML =
-            `<span>⏱ ${story.readTime} read</span>
-             <span>📖 ${story.genre}</span>
-             <span>👤 By Olamide Emmanuel Willoughby</span>`;
-        document.getElementById('modalHero').style.cssText =
-            `height:400px;position:relative;background:linear-gradient(to top,var(--bg-card) 0%,transparent 100%), url('${story.image}') center/cover;`;
-
-        const paragraphs = story.content.split('\n\n').filter(p => p.trim());
-        document.getElementById('storyText').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
-
-        document.getElementById('storyModal').classList.add('active');
-        document.body.style.overflow = 'hidden';
-
-        // reset UI
-        stopNarration();
-        currentRating = 0;
-        highlightStars(0);
-        document.getElementById('ratingText').textContent = 'Click to rate';
-        document.getElementById('mylist-btn-text').textContent = '+ My List';
-        updateAverageRating();
-        renderComments();
-
-        if (typeof gtag !== 'undefined') gtag('event','open_story',{'event_category':'engagement','event_label':story.title});
+    // 1. Find the story
+    const story = stories.find(s => s.id === storyId);
+    if (!story) {
+        console.error("Story not found:", storyId);
+        return;
     }
+    
+    currentStory = story;
 
+    // 2. Fill the modal using the correct IDs
+    document.getElementById('modalTitle').innerText = story.title;
+    document.getElementById('modalMeta').innerHTML = `
+        <span>⏱ ${story.readTime} read</span>
+        <span>📖 ${story.genre}</span>
+        <span>👤 By Olamide Emmanuel Willoughby</span>
+    `;
+    
+    // Set the Hero Image
+    const modalHero = document.getElementById('modalHero');
+    modalHero.style.backgroundImage = `url(${story.cover.image})`;
+    modalHero.style.height = "400px";
+    modalHero.style.backgroundSize = "cover";
+
+    // Format the story text into paragraphs
+    const paragraphs = story.content.split('\n')
+        .filter(p => p.trim() !== '')
+        .map(p => `<p>${p}</p>`)
+        .join('');
+    document.getElementById('storyText').innerHTML = paragraphs;
+
+    // 3. Show the modal
+    document.getElementById('storyModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Reset extra features
+    if (typeof stopNarration === 'function') stopNarration();
+    currentRating = 0;
+    if (typeof highlightStars === 'function') highlightStars(0);
+}
+    
     function closeModal() {
         document.getElementById('storyModal').classList.remove('active');
         document.body.style.overflow = '';
