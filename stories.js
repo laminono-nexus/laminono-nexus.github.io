@@ -436,6 +436,3 @@ function resetToHomeSEO() {
   updateMetaTag('og:type', 'website');
   updateMetaTag('twitter:card', 'summary_large_image');
 }
-
-// Export for use in index.html
-export { stories, updatePageSEO, resetToHomeSEO };
