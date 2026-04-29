@@ -519,9 +519,9 @@
             <button class="btn btn-primary" onclick="openStory('the-boy-who-paid-with-tomorrow')">
     <span>▶</span> Read Now
 </button>
-            <button class="btn btn-secondary">
-                <span>+</span> Add to My List
-            </button>
+            <button class="btn btn-secondary" onclick="currentStory=stories.find(s=>s.id==='the-boy-who-paid-with-tomorrow');toggleMyList();">
+    <span>+</span> Add to My List
+</button>
         </div>
     </div>
 </section>
