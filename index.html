@@ -1084,6 +1084,18 @@
         setTimeout(() => t.classList.remove('show'), 3000);
     }
 
+    window.toggleProfileMenu = () => {
+    const menu = document.getElementById('profile-menu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+};
+
+document.addEventListener('click', (e) => {
+    const avatar = document.getElementById('user-avatar');
+    const menu = document.getElementById('profile-menu');
+    if (menu && avatar && !avatar.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = 'none';
+    }
+});
     // ── NAVBAR ──
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
