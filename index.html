@@ -768,9 +768,18 @@
 </div>
 
 <!-- User Profile Bar -->
-<div id="user-profile-bar" style="display:none;position:fixed;top:14px;right:80px;z-index:9000;align-items:center;gap:10px;">
-    <img id="user-avatar" src="" alt="" style="width:34px;height:34px;border-radius:50%;border:2px solid #E50914;object-fit:cover;cursor:pointer;" onclick="openMyList()" title="My List"/>
-    <button onclick="signOutUser()" style="background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.4);color:#E50914;padding:6px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer;">Sign Out</button>
+<div id="user-profile-bar" style="display:none;position:fixed;top:14px;right:20px;z-index:9000;align-items:center;gap:10px;">
+    <div style="position:relative;">
+        <img id="user-avatar" src="" alt="" 
+             style="width:38px;height:38px;border-radius:50%;border:2px solid #E50914;object-fit:cover;cursor:pointer;" 
+             onclick="toggleProfileMenu()" title="My Profile"/>
+        <!-- Profile Dropdown -->
+        <div id="profile-menu" style="display:none;position:absolute;top:48px;right:0;background:#1F1F1F;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;min-width:180px;box-shadow:0 10px 30px rgba(0,0,0,0.8);z-index:9999;">
+            <div id="profile-name" style="padding:10px 12px;color:#fff;font-size:0.85rem;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:6px;"></div>
+            <button onclick="openMyList();toggleProfileMenu()" style="width:100%;padding:10px 12px;background:none;border:none;color:#B3B3B3;font-size:0.85rem;text-align:left;cursor:pointer;border-radius:8px;display:flex;align-items:center;gap:8px;" onmouseover="this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.background='none'">📖 My List</button>
+            <button onclick="signOutUser()" style="width:100%;padding:10px 12px;background:none;border:none;color:#E50914;font-size:0.85rem;text-align:left;cursor:pointer;border-radius:8px;display:flex;align-items:center;gap:8px;" onmouseover="this.style.background='rgba(229,9,20,0.08)'" onmouseout="this.style.background='none'">↪ Sign Out</button>
+        </div>
+    </div>
 </div>
 
 <!-- ═══════════════════════════════════════
