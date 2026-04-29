@@ -1142,14 +1142,19 @@ let pendingAction = null;
 
 onAuthStateChanged(auth, user => {
     currentUser = user;
-    const bar    = document.getElementById('user-profile-bar');
+    const bar = document.getElementById('user-profile-bar');
     const avatar = document.getElementById('user-avatar');
     if (user) {
         bar.style.display = 'flex';
         avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
-        if (pendingAction === 'mylist') { pendingAction = null; openMyList(); }
+        localStorage.setItem('laminono_logged_in', 'yes');
+        closeAuthModal();
     } else {
         bar.style.display = 'none';
+        const hasLoggedIn = localStorage.getItem('laminono_logged_in');
+        if (!hasLoggedIn) {
+            setTimeout(() => openAuthModal(), 1500);
+        }
     }
 });
 
