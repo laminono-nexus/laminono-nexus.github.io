@@ -1168,8 +1168,9 @@ onAuthStateChanged(auth, user => {
     if (user) {
         bar.style.display = 'flex';
         avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
-        localStorage.setItem('laminono_logged_in', 'yes');
-        closeAuthModal();
+document.getElementById('profile-name').textContent = user.displayName || user.email;
+localStorage.setItem('laminono_logged_in', 'yes');
+closeAuthModal();
     } else {
         bar.style.display = 'none';
         const hasLoggedIn = localStorage.getItem('laminono_logged_in');
