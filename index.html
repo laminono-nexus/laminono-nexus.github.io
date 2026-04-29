@@ -860,7 +860,8 @@
     
     // Set the Hero Image
     const modalHero = document.getElementById('modalHero');
-    modalHero.style.backgroundImage = `url(${story.cover.image})`;
+    const heroImg = (story.cover && story.cover.image) ? story.cover.image : story.image;
+    modalHero.style.backgroundImage = `url(${heroImg})`;
     modalHero.style.height = "400px";
     modalHero.style.backgroundSize = "cover";
 
