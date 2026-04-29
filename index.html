@@ -1211,7 +1211,7 @@ window.openAuthModal = (action) => { pendingAction = action||null; document.getE
 window.closeAuthModal= () => { document.getElementById('auth-modal').style.display='none'; document.body.style.overflow=''; };
 
 window.toggleMyList = async () => {
-    if (!currentUser) { openAuthModal('mylist'); return; }
+    if (!currentUser) { showToast('Please sign in to save stories'); return; }
     const story = window.currentStory;
     if (!story) return;
     const ref  = doc(db,'users',currentUser.uid);
