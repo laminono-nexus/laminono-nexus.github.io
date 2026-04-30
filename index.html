@@ -1228,7 +1228,11 @@ window.toggleAuthMode = () => {
     document.getElementById('auth-error').textContent = '';
 };
 
-window.signOutUser   = async () => { await signOut(auth); showToast('You have been signed out.'); };
+window.signOutUser = async () => {
+    await signOut(auth);
+    localStorage.removeItem('laminono_logged_in');
+    showToast('You have been signed out.');
+};
 window.openAuthModal = (action) => { pendingAction = action||null; document.getElementById('auth-modal').style.display='block'; document.body.style.overflow='hidden'; };
 window.closeAuthModal= () => { document.getElementById('auth-modal').style.display='none'; document.body.style.overflow=''; };
 
