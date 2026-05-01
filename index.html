@@ -1137,13 +1137,11 @@ document.addEventListener('click', (e) => {
     // ── INIT ──
     document.addEventListener('DOMContentLoaded', loadStories);
 </script>
-
 <!-- ── FIREBASE (Auth + Firestore + Share) ── -->
-<script type="module">
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
-
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script>
 const firebaseConfig = {
     apiKey: "AIzaSyA4jdIQilVbAcdnc0mAxk8arTg9xvYDuzc",
     authDomain: "laminono-nexus.firebaseapp.com",
@@ -1153,26 +1151,23 @@ const firebaseConfig = {
     appId: "1:762207905640:web:9727e33d2f4d33bcc4d8dd"
 };
 
-const app      = initializeApp(firebaseConfig);
-const auth     = getAuth(app);
-const db       = getFirestore(app);
-const provider = new GoogleAuthProvider();
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db   = firebase.firestore();
+let currentUser  = null;
+let isSignUpMode = false;
 
-currentUser = user;
-window.currentUser = user;
-let isSignUpMode  = false;
-let pendingAction = null;
-
-onAuthStateChanged(auth, user => {
+// ── AUTH STATE ──
+auth.onAuthStateChanged(user => {
     currentUser = user;
-    const bar = document.getElementById('user-profile-bar');
+    const bar    = document.getElementById('user-profile-bar');
     const avatar = document.getElementById('user-avatar');
     if (user) {
         bar.style.display = 'flex';
         avatar.src = user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=E50914&color=fff';
-document.getElementById('profile-name').textContent = user.displayName || user.email;
-localStorage.setItem('laminono_logged_in', 'yes');
-closeAuthModal();
+        document.getElementById('profile-name').textContent = user.displayName || user.email;
+        localStorage.setItem('laminono_logged_in', 'yes');
+        closeAuthModal();
     } else {
         bar.style.display = 'none';
         const hasLoggedIn = localStorage.getItem('laminono_logged_in');
@@ -1182,129 +1177,164 @@ closeAuthModal();
     }
 });
 
-window.signInWithGoogle = async () => {
-    try {
-        document.getElementById('auth-error').textContent = '';
-        await signInWithPopup(auth, provider);
-        closeAuthModal();
-        showToast('Welcome to Laminono Nexus! 🎉');
-    } catch(e) { document.getElementById('auth-error').textContent = e.message.replace('Firebase: ',''); }
-};
+// ── GOOGLE SIGN IN ──
+function signInWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+        .then(() => { showToast('Welcome to Laminono Nexus! 🎉'); })
+        .catch(e => { document.getElementById('auth-error').textContent = e.message; });
+}
 
-window.handleEmailAuth = async () => {
+// ── EMAIL AUTH ──
+function handleEmailAuth() {
     const email    = document.getElementById('auth-email').value.trim();
     const password = document.getElementById('auth-password').value;
     const errEl    = document.getElementById('auth-error');
     errEl.textContent = '';
     if (!email || !password) { errEl.textContent = 'Please fill in all fields.'; return; }
-    try {
-        if (isSignUpMode) { await createUserWithEmailAndPassword(auth, email, password); showToast('Account created! Welcome 🎉'); }
-        else { await signInWithEmailAndPassword(auth, email, password); showToast('Welcome back! 👋'); }
-        closeAuthModal();
-    } catch(e) {
-        const msg = e.code === 'auth/wrong-password'       ? 'Incorrect password.'
-                  : e.code === 'auth/user-not-found'        ? 'No account found with this email.'
-                  : e.code === 'auth/email-already-in-use'  ? 'This email is already registered.'
-                  : e.code === 'auth/weak-password'          ? 'Password must be at least 6 characters.'
-                  : e.code === 'auth/invalid-email'          ? 'Please enter a valid email address.'
-                  : e.message.replace('Firebase: ','');
-        errEl.textContent = msg;
-    }
-};
+    const action = isSignUpMode
+        ? auth.createUserWithEmailAndPassword(email, password)
+        : auth.signInWithEmailAndPassword(email, password);
+    action
+        .then(() => { showToast(isSignUpMode ? 'Account created! Welcome 🎉' : 'Welcome back! 👋'); })
+        .catch(e => {
+            const msg = e.code === 'auth/wrong-password'      ? 'Incorrect password.'
+                      : e.code === 'auth/user-not-found'       ? 'No account found with this email.'
+                      : e.code === 'auth/email-already-in-use' ? 'This email is already registered.'
+                      : e.code === 'auth/weak-password'         ? 'Password must be at least 6 characters.'
+                      : e.code === 'auth/invalid-email'         ? 'Please enter a valid email address.'
+                      : e.message;
+            errEl.textContent = msg;
+        });
+}
 
-window.forgotPassword = async () => {
+// ── FORGOT PASSWORD ──
+function forgotPassword() {
     const email = document.getElementById('auth-email').value.trim();
     if (!email) { document.getElementById('auth-error').textContent = 'Enter your email above first.'; return; }
-    try { await sendPasswordResetEmail(auth, email); showToast('Password reset email sent!'); }
-    catch(e) { document.getElementById('auth-error').textContent = 'Could not send reset email.'; }
-};
+    auth.sendPasswordResetEmail(email)
+        .then(() => showToast('Password reset email sent!'))
+        .catch(() => { document.getElementById('auth-error').textContent = 'Could not send reset email.'; });
+}
 
-window.toggleAuthMode = () => {
+// ── TOGGLE AUTH MODE ──
+function toggleAuthMode() {
     isSignUpMode = !isSignUpMode;
-    document.getElementById('auth-modal-title').textContent  = isSignUpMode ? 'Create Your Account'    : 'Welcome Back';
-    document.getElementById('auth-modal-sub').textContent    = isSignUpMode ? 'Join the story community.' : 'Sign in to access your reading list.';
-    document.getElementById('auth-submit-btn').textContent   = isSignUpMode ? 'Create Account'           : 'Sign In';
-    document.getElementById('auth-toggle-text').textContent  = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
-    document.getElementById('auth-toggle-btn').textContent   = isSignUpMode ? 'Sign In'                  : 'Sign Up';
-    document.getElementById('forgot-btn').style.display      = isSignUpMode ? 'none'                     : 'block';
+    document.getElementById('auth-modal-title').textContent = isSignUpMode ? 'Create Your Account' : 'Welcome Back';
+    document.getElementById('auth-modal-sub').textContent   = isSignUpMode ? 'Join the story community.' : 'Sign in to access your reading list.';
+    document.getElementById('auth-submit-btn').textContent  = isSignUpMode ? 'Create Account' : 'Sign In';
+    document.getElementById('auth-toggle-text').textContent = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
+    document.getElementById('auth-toggle-btn').textContent  = isSignUpMode ? 'Sign In' : 'Sign Up';
+    document.getElementById('forgot-btn').style.display     = isSignUpMode ? 'none' : 'block';
     document.getElementById('auth-error').textContent = '';
-};
+}
 
-window.signOutUser = async () => {
-    await signOut(auth);
-    localStorage.removeItem('laminono_logged_in');
-    showToast('You have been signed out.');
-};
-window.openAuthModal = (action) => { pendingAction = action||null; document.getElementById('auth-modal').style.display='block'; document.body.style.overflow='hidden'; };
-window.closeAuthModal= () => { document.getElementById('auth-modal').style.display='none'; document.body.style.overflow=''; };
+// ── SIGN OUT ──
+function signOutUser() {
+    auth.signOut().then(() => {
+        localStorage.removeItem('laminono_logged_in');
+        showToast('You have been signed out.');
+    });
+}
 
-window.toggleMyList = async () => {
-    if (!window.currentUser) { showToast('Please sign in to save stories'); return; }
-const currentUser = window.currentUser;
-    const story = window.currentStory;
+// ── AUTH MODAL ──
+function openAuthModal() {
+    document.getElementById('auth-modal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+function closeAuthModal() {
+    document.getElementById('auth-modal').style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+// ── MY LIST ──
+function toggleMyList() {
+    if (!currentUser) { showToast('Please sign in to save stories ✨'); return; }
+    const story = currentStory;
     if (!story) return;
-    const ref  = doc(db,'users',currentUser.uid);
-    const snap = await getDoc(ref);
-    const list = snap.exists() ? (snap.data().myList||[]) : [];
-    const exists = list.some(s => s.id === story.id);
-    const item   = {id:story.id, title:story.title, genre:story.genre, image:story.image, readTime:story.readTime};
-    if (exists) {
-        await updateDoc(ref,{myList:arrayRemove(item)}).catch(()=>setDoc(ref,{myList:list.filter(s=>s.id!==story.id)},{merge:true}));
-        showToast('Removed from My List');
-        document.getElementById('mylist-btn-text').textContent = '+ My List';
-    } else {
-        snap.exists() ? await updateDoc(ref,{myList:arrayUnion(item)}) : await setDoc(ref,{myList:[item]});
-        showToast('✅ Added to My List!');
-        document.getElementById('mylist-btn-text').textContent = '✓ In My List';
-    }
-};
+    const ref = db.collection('users').doc(currentUser.uid);
+    ref.get().then(snap => {
+        const list   = snap.exists ? (snap.data().myList || []) : [];
+        const exists = list.some(s => s.id === story.id);
+        const item   = { id: story.id, title: story.title, genre: story.genre, image: story.image, readTime: story.readTime };
+        if (exists) {
+            ref.update({ myList: list.filter(s => s.id !== story.id) })
+               .then(() => { showToast('Removed from My List'); document.getElementById('mylist-btn-text').textContent = '+ My List'; });
+        } else {
+            const newList = [...list, item];
+            ref.set({ myList: newList }, { merge: true })
+               .then(() => { showToast('✅ Added to My List!'); document.getElementById('mylist-btn-text').textContent = '✓ In My List'; });
+        }
+    });
+}
 
-window.openMyList = async () => {
-    if (!currentUser) { openAuthModal('mylist'); return; }
+function openMyList() {
+    if (!currentUser) { openAuthModal(); return; }
     document.getElementById('mylist-modal').style.display = 'block';
     document.body.style.overflow = 'hidden';
     const content = document.getElementById('mylist-content');
     content.innerHTML = '<p style="color:#808080;text-align:center;padding:40px 0;">Loading...</p>';
-    try {
-        const snap = await getDoc(doc(db,'users',currentUser.uid));
-        const list = snap.exists() ? (snap.data().myList||[]) : [];
-        if (!list.length) { content.innerHTML='<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;font-size:0.92rem;">Your reading list is empty.<br>Tap <strong style=\'color:#fff\'>"+ My List"</strong> on any story.</p></div>'; return; }
-        content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">'+list.length+' '+(list.length===1?'story':'stories')+' saved</p>'+
-            list.map(s=>`<div class="mylist-story-card" onclick="openStory('${s.id}');closeMyList()"><img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/><div style="flex:1;min-width:0;"><p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p><p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p><p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p></div><button class="mylist-remove" onclick="event.stopPropagation();removeFromMyList('${s.id}')" title="Remove">🗑</button></div>`).join('');
-    } catch(e) { content.innerHTML='<p style="color:#E50914;text-align:center;padding:30px;">Could not load your list.</p>'; }
-};
+    db.collection('users').doc(currentUser.uid).get().then(snap => {
+        const list = snap.exists ? (snap.data().myList || []) : [];
+        if (!list.length) {
+            content.innerHTML = '<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;font-size:0.92rem;">Your reading list is empty.<br>Tap <strong style="color:#fff">"+ My List"</strong> on any story.</p></div>';
+            return;
+        }
+        content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">' + list.length + ' ' + (list.length === 1 ? 'story' : 'stories') + ' saved</p>' +
+            list.map(s => `
+                <div class="mylist-story-card" onclick="openStory('${s.id}');closeMyList()">
+                    <img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/>
+                    <div style="flex:1;min-width:0;">
+                        <p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p>
+                        <p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p>
+                        <p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p>
+                    </div>
+                    <button class="mylist-remove" onclick="event.stopPropagation();removeFromMyList('${s.id}')" title="Remove">🗑</button>
+                </div>`).join('');
+    }).catch(() => {
+        content.innerHTML = '<p style="color:#E50914;text-align:center;padding:30px;">Could not load your list.</p>';
+    });
+}
 
-window.removeFromMyList = async (storyId) => {
+function removeFromMyList(storyId) {
     if (!currentUser) return;
-    const ref  = doc(db,'users',currentUser.uid);
-    const snap = await getDoc(ref);
-    if (!snap.exists()) return;
-    await setDoc(ref,{myList:(snap.data().myList||[]).filter(s=>s.id!==storyId)},{merge:true});
-    openMyList();
-    showToast('Removed from My List');
-};
+    const ref = db.collection('users').doc(currentUser.uid);
+    ref.get().then(snap => {
+        if (!snap.exists) return;
+        const newList = (snap.data().myList || []).filter(s => s.id !== storyId);
+        ref.set({ myList: newList }, { merge: true }).then(() => {
+            openMyList();
+            showToast('Removed from My List');
+        });
+    });
+}
 
-window.closeMyList = () => { document.getElementById('mylist-modal').style.display='none'; document.body.style.overflow=''; };
+function closeMyList() {
+    document.getElementById('mylist-modal').style.display = 'none';
+    document.body.style.overflow = '';
+}
 
-// Share
-window.openShareModal = () => {
-    const story = window.currentStory;
+// ── SHARE ──
+function openShareModal() {
+    const story = currentStory;
     if (!story) return;
-    const shareUrl  = `https://laminono-nexus.github.io/?story=${story.id}`;
-    const hookLine  = story.excerpt || story.content.split('\n\n')[0].substring(0,120)+'…';
+    const shareUrl = `https://laminono-nexus.github.io/?story=${story.id}`;
+    const hookLine = story.excerpt || story.content.substring(0, 120) + '…';
     document.getElementById('share-preview-img').style.backgroundImage = `url('${story.image}')`;
     document.getElementById('share-preview-genre').textContent = story.genre;
     document.getElementById('share-preview-title').textContent = story.title;
     document.getElementById('share-preview-hook').textContent  = hookLine;
-    window._shareData = {url:shareUrl, title:story.title, text:hookLine};
-    const modal = document.getElementById('share-modal');
-    modal.style.display = 'flex';
+    window._shareData = { url: shareUrl, title: story.title, text: hookLine };
+    document.getElementById('share-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
-};
+}
 
-window.closeShareModal = () => { document.getElementById('share-modal').style.display='none'; document.body.style.overflow=''; };
+function closeShareModal() {
+    document.getElementById('share-modal').style.display = 'none';
+    document.body.style.overflow = '';
+}
 
-window.shareVia = (platform) => {
+function shareVia(platform) {
     const d   = window._shareData;
     const msg = encodeURIComponent(`📚 "${d.title}"\n\n${d.text}\n\n🔗 Read more: ${d.url}`);
     const url = encodeURIComponent(d.url);
@@ -1315,29 +1345,35 @@ window.shareVia = (platform) => {
         telegram: `https://t.me/share/url?url=${url}&text=${encodeURIComponent(d.title)}`,
     };
     if (platform === 'instagram' || platform === 'native') {
-        if (platform === 'native' && navigator.share) { navigator.share({title:d.title,text:d.text,url:d.url}).catch(()=>{}); return; }
-        copyShareLink(); showToast('Link copied! Paste it where you want to share 📋'); return;
+        if (platform === 'native' && navigator.share) { navigator.share({ title: d.title, text: d.text, url: d.url }).catch(() => {}); return; }
+        copyShareLink();
+        showToast('Link copied! Paste it where you want to share 📋');
+        return;
     }
     if (links[platform]) window.open(links[platform], '_blank');
     closeShareModal();
-};
+}
 
-window.copyShareLink = () => {
-        const d = window._shareData;
-        const text = `📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`;
-        if (navigator.clipboard) {
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = document.getElementById('copy-link-btn');
-                if (btn) btn.querySelector('span:last-child').textContent = 'Copied!';
-                setTimeout(() => { if (btn) btn.querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
-                showToast('Link copied to clipboard! 🔗');
-            });
-        } else {
-            const el = document.createElement('textarea'); el.value=text; document.body.appendChild(el);
-            el.select(); document.execCommand('copy'); document.body.removeChild(el);
-            showToast('Link copied! 🔗');
-        }
-    };
+function copyShareLink() {
+    const d    = window._shareData;
+    const text = `📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById('copy-link-btn');
+            if (btn) btn.querySelector('span:last-child').textContent = 'Copied!';
+            setTimeout(() => { if (btn) btn.querySelector('span:last-child').textContent = 'Copy Link'; }, 2000);
+            showToast('Link copied to clipboard! 🔗');
+        });
+    } else {
+        const el = document.createElement('textarea');
+        el.value = text;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        showToast('Link copied! 🔗');
+    }
+}
 </script>
 
 </body>
