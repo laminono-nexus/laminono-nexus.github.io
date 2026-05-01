@@ -1152,9 +1152,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db   = firebase.firestore();
-let currentUser  = null;
-let isSignUpMode = false;
-
+var currentUser  = null;
+var isSignUpMode = false;
 // ── AUTH STATE ──
 auth.onAuthStateChanged(user => {
     currentUser = user;
