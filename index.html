@@ -789,6 +789,10 @@
 <script>
     // ── STATE ──
     // let stories = [];       // populated from stories.js
+    const SUPABASE_URL  = 'https://innmbjbvnamyuxxbmaia.supabase.co';
+const SUPABASE_ANON = 'sb_publishable_-Cq1InBqR-UIeBohPEBbKg_kZ-Bbxfk';
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+let currentUser = null;
     let isNarrating = false;
     let speechUtterance = null;
     let selectedVoice = 'female';
