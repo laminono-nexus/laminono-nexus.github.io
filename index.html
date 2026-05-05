@@ -475,7 +475,32 @@
             .star { font-size: 2.5rem; }
             .section-title { font-size: 1.2rem; }
         }
-
+#site-gate {
+    position: fixed; inset: 0; z-index: 99999;
+    background: rgba(0,0,0,0.97);
+    backdrop-filter: blur(24px);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.5s ease;
+}
+#site-gate.hidden { opacity: 0; pointer-events: none; }
+.auth-card { width: 92%; max-width: 440px; background: #1a1a1a; border: 1px solid rgba(229,9,20,0.25); border-radius: 20px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.9); animation: cardIn 0.5s ease both; }
+@keyframes cardIn { from { opacity:0; transform:scale(0.88) translateY(30px); } to { opacity:1; transform:scale(1) translateY(0); } }
+.auth-header { background: linear-gradient(135deg,#8B0000,#E50914); padding: 36px 30px 28px; text-align: center; }
+.auth-header h2 { font-family:'Playfair Display',serif; font-size:1.7rem; color:#fff; margin-bottom:6px; }
+.auth-header p { color:rgba(255,255,255,0.8); font-size:0.88rem; }
+.auth-body { padding: 28px 28px 32px; }
+.btn-google { width:100%; padding:14px; background:#fff; color:#1a1a1a; border:none; border-radius:10px; font-size:0.95rem; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:20px; }
+.auth-divider { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.auth-divider::before,.auth-divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.1); }
+.auth-divider span { color:#808080; font-size:0.82rem; }
+.auth-input { width:100%; padding:13px 16px; background:#0f0f0f; border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff; font-size:0.92rem; margin-bottom:12px; outline:none; font-family:'Inter',sans-serif; }
+.auth-input:focus { border-color:#E50914; }
+.auth-error { color:#ff6b6b; font-size:0.8rem; min-height:18px; margin-bottom:10px; }
+.btn-auth-submit { width:100%; padding:14px; background:#E50914; color:#fff; border:none; border-radius:10px; font-size:0.95rem; font-weight:700; cursor:pointer; margin-bottom:16px; }
+.auth-footer { text-align:center; }
+.auth-footer span { color:#808080; font-size:0.85rem; }
+.auth-footer button { background:none; border:none; color:#E50914; font-size:0.85rem; font-weight:600; cursor:pointer; margin-left:4px; }
+.auth-forgot { display:block; text-align:center; margin-top:10px; background:none; border:none; color:#808080; font-size:0.8rem; cursor:pointer; font-family:'Inter',sans-serif; }
         .hidden { display: none !important; }
     </style>
 </head>
