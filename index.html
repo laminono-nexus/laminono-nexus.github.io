@@ -1159,7 +1159,74 @@ let isSignUpMode = false;
                 <div class="story-cover-genre">${story.genre}</div>
             </div>`).join('');
     }
+// ── MY LIST ──
+async function toggleMyList() {
+    if (!currentUser) { showToast('Please sign in to save stories ✨'); return; }
+    const story = currentStory;
+    if (!story) return;
+    const { data: existing } = await _supabase
+        .from('user_lists')
+        .select('id')
+        .eq('user_id', currentUser.id)
+        .eq('story_id', story.id)
+        .single();
+    if (existing) {
+        await _supabase.from('user_lists').delete()
+            .eq('user_id', currentUser.id).eq('story_id', story.id);
+        showToast('Removed from My List');
+        document.getElementById('mylist-btn-text').textContent = '+ My List';
+    } else {
+        await _supabase.from('user_lists').insert({
+            user_id: currentUser.id,
+            story_id: story.id,
+            story_data: { id: story.id, title: story.title, genre: story.genre, image: story.image, readTime: story.readTime }
+        });
+        showToast('✅ Added to My List!');
+        document.getElementById('mylist-btn-text').textContent = '✓ In My List';
+    }
+}
 
+async function openMyList() {
+    if (!currentUser) { showToast('Please sign in first ✨'); return; }
+    const modal = document.getElementById('mylist-modal');
+    const content = document.getElementById('mylist-content');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    content.innerHTML = '<p style="color:#808080;text-align:center;padding:40px 0;">Loading…</p>';
+    const { data, error } = await _supabase
+        .from('user_lists').select('story_data')
+        .eq('user_id', currentUser.id)
+        .order('created_at', { ascending: false });
+    if (error || !data || !data.length) {
+        content.innerHTML = '<div style="text-align:center;padding:50px 20px;"><div style="font-size:2.5rem;margin-bottom:14px;">📭</div><p style="color:#808080;">Your reading list is empty.<br>Tap <strong style="color:#fff">My List</strong> on any story.</p></div>';
+        return;
+    }
+    const list = data.map(r => r.story_data);
+    content.innerHTML = '<p style="color:#B3B3B3;font-size:0.82rem;margin-bottom:16px;">' + list.length + ' ' + (list.length===1?'story':'stories') + ' saved</p>' +
+        list.map(s => `
+            <div class="mylist-story-card" onclick="openStory('${s.id}');closeMyList()">
+                <img class="mylist-thumb" src="${s.image}" alt="${s.title}" onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=200&q=80'"/>
+                <div style="flex:1;min-width:0;">
+                    <p style="font-size:0.7rem;color:#E50914;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">${s.genre}</p>
+                    <p style="font-family:'Playfair Display',serif;font-size:0.98rem;color:#fff;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.title}</p>
+                    <p style="font-size:0.75rem;color:#808080;">⏱ ${s.readTime} read</p>
+                </div>
+                <button class="mylist-remove" onclick="event.stopPropagation();removeFromMyList('${s.id}')" title="Remove">🗑</button>
+            </div>`).join('');
+}
+
+async function removeFromMyList(storyId) {
+    if (!currentUser) return;
+    await _supabase.from('user_lists').delete()
+        .eq('user_id', currentUser.id).eq('story_id', storyId);
+    showToast('Removed from My List');
+    openMyList();
+}
+
+function closeMyList() {
+    document.getElementById('mylist-modal').style.display = 'none';
+    document.body.style.overflow = '';
+}
     // ── TOAST ──
     function showToast(message) {
         const t = document.getElementById('toast');
