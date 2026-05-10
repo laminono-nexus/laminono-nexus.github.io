@@ -839,24 +839,39 @@
 <script>
     // ══ SUPABASE AUTH ══
 _supabase.auth.onAuthStateChange((event, session) => {
+_supabase.auth.onAuthStateChange((event, session) => {
     currentUser = session ? session.user : null;
     if (currentUser) {
         document.getElementById('site-gate').classList.add('hidden');
         document.body.style.overflow = '';
-        const bar = document.getElementById('user-profile-bar');
+        const bar    = document.getElementById('user-profile-bar');
         const avatar = document.getElementById('user-avatar');
         const nameEl = document.getElementById('profile-name');
-        const name = currentUser.user_metadata?.full_name || currentUser.email || 'Reader';
-        const photo = currentUser.user_metadata?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=E50914&color=fff&size=80`;
+        const name   = currentUser.user_metadata?.full_name || currentUser.email || 'Reader';
+        const photo  = currentUser.user_metadata?.avatar_url ||
+            `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=E50914&color=fff&size=80`;
         bar.style.display = 'flex';
-        avatar.src = photo;
+        avatar.src        = photo;
         nameEl.textContent = name;
     } else {
-        document.getElementById('site-gate').classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        // Hide gate on load — only show when user taps something
+        document.getElementById('site-gate').classList.add('hidden');
+        document.body.style.overflow = '';
         document.getElementById('user-profile-bar').style.display = 'none';
     }
 });
+
+// Show gate when unauthenticated user taps anything
+document.addEventListener('click', function(e) {
+    if (!currentUser) {
+        // Allow tapping the gate itself
+        if (document.getElementById('site-gate').contains(e.target)) return;
+        e.preventDefault();
+        e.stopPropagation();
+        document.getElementById('site-gate').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}, true);
 async function signInWithGoogle() {
     document.getElementById('auth-error').textContent = '';
     const { error } = await _supabase.auth.signInWithOAuth({
