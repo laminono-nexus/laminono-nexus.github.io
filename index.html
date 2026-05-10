@@ -922,11 +922,6 @@ async function signOutUser() {
     currentUser = null;
     showToast('You have been signed out.');
 }
-    // ── SUPABASE INIT ──
-const SUPABASE_URL  = 'https://innmbjbvnamyuxxbmaia.supabase.co';
-const SUPABASE_ANON = 'sb_publishable_-Cq1InBqR-UIeBohPEBbKg_kZ-Bbxfk';
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-
 // ── STATE ──
 let currentUser  = null;
 let isSignUpMode = false;
