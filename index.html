@@ -873,15 +873,19 @@ document.addEventListener('click', function(e) {
     }
 }, true);
 async function signInWithGoogle() {
-    document.getElementById('auth-error').textContent = '';
-    const { error } = await _supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-            redirectTo: 'https://laminono-nexus.github.io',
-            skipBrowserRedirect: false
-        }
-    });
-    if (error) document.getElementById('auth-error').textContent = error.message;
+    const errEl = document.getElementById('auth-error');
+    errEl.textContent = '';
+    try {
+        const { error } = await _supabase.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+                redirectTo: 'https://laminono-nexus.github.io'
+            }
+        });
+        if (error) errEl.textContent = error.message;
+    } catch(e) {
+        errEl.textContent = 'Something went wrong. Try again.';
+    }
 }
 async function handleEmailAuth() {
     const email = document.getElementById('auth-email').value.trim();
