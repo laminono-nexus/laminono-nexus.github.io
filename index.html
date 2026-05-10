@@ -838,7 +838,6 @@
 <script>
     // ══ SUPABASE AUTH ══
 _supabase.auth.onAuthStateChange((event, session) => {
-_supabase.auth.onAuthStateChange((event, session) => {
     currentUser = session ? session.user : null;
     if (currentUser) {
         document.getElementById('site-gate').classList.add('hidden');
