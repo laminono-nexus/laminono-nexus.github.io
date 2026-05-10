@@ -854,11 +854,17 @@ _supabase.auth.onAuthStateChange((event, session) => {
         avatar.src        = photo;
         nameEl.textContent = name;
     } else {
-        // Hide gate on load — only show when user taps something
-        document.getElementById('site-gate').classList.add('hidden');
-        document.body.style.overflow = '';
-        document.getElementById('user-profile-bar').style.display = 'none';
-    }
+    document.getElementById('site-gate').classList.add('hidden');
+    document.body.style.overflow = '';
+    document.getElementById('user-profile-bar').style.display = 'none';
+    // Allow swiping down to dismiss gate
+    document.getElementById('site-gate').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    });
+}
 });
 
 // Show gate when unauthenticated user taps anything
@@ -872,20 +878,8 @@ document.addEventListener('click', function(e) {
         document.body.style.overflow = 'hidden';
     }
 }, true);
-async function signInWithGoogle() {
-    const errEl = document.getElementById('auth-error');
-    errEl.textContent = '';
-    try {
-        const { error } = await _supabase.auth.signInWithOAuth({
-            provider: 'google',
-            options: {
-                redirectTo: 'https://laminono-nexus.github.io'
-            }
-        });
-        if (error) errEl.textContent = error.message;
-    } catch(e) {
-        errEl.textContent = 'Something went wrong. Try again.';
-    }
+function signInWithGoogle() {
+    window.location.href = 'https://innmbjbvnamyuxxbmaia.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://laminono-nexus.github.io';
 }
 async function handleEmailAuth() {
     const email = document.getElementById('auth-email').value.trim();
