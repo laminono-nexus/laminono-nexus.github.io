@@ -836,89 +836,74 @@
      JAVASCRIPT
 ════════════════════════════════════════ -->
 <script>
-    // ── HANDLE OAUTH REDIRECT ──
-const hashParams = new URLSearchParams(window.location.hash.replace('#', '?'));
-if (hashParams.get('access_token')) {
-    _supabase.auth.getSession().then(({ data }) => {
-        if (data.session) {
-            currentUser = data.session.user;
-            window.history.replaceState({}, '', window.location.pathname);
-        }
-    });
+  // ── AUTH ──
+function showGate() {
+    document.getElementById('site-gate').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
 }
-    // ══ SUPABASE AUTH ══
-_supabase.auth.onAuthStateChange((event, session) => {
-    currentUser = session ? session.user : null;
-    if (currentUser) {
-        document.getElementById('site-gate').classList.add('hidden');
-        document.body.style.overflow = '';
-        const bar    = document.getElementById('user-profile-bar');
-        const avatar = document.getElementById('user-avatar');
-        const nameEl = document.getElementById('profile-name');
-        const name   = currentUser.user_metadata?.full_name || currentUser.email || 'Reader';
-        const photo  = currentUser.user_metadata?.avatar_url ||
-            `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=E50914&color=fff&size=80`;
-        bar.style.display = 'flex';
-        avatar.src        = photo;
-        nameEl.textContent = name;
-} else {
-        // Check for existing session first
-        _supabase.auth.getSession().then(({ data }) => {
-            if (!data.session) {
-                document.getElementById('site-gate').classList.add('hidden');
-                document.body.style.overflow = '';
-                document.getElementById('user-profile-bar').style.display = 'none';
-            }
-        });
+function hideGate() {
+    document.getElementById('site-gate').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+function showAvatar(user) {
+    const name  = user.user_metadata?.full_name || user.email || 'Reader';
+    const photo = user.user_metadata?.avatar_url ||
+        `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=E50914&color=fff&size=80`;
+    document.getElementById('user-profile-bar').style.display = 'flex';
+    document.getElementById('user-avatar').src = photo;
+    document.getElementById('profile-name').textContent = name;
+}
+
+// Check session on every page load
+_supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+        currentUser = session.user;
+        hideGate();
+        showAvatar(currentUser);
+    } else {
+        currentUser = null;
+        hideGate(); // hide on load, show only on tap
     }
 });
+
+// Listen for auth changes
+_supabase.auth.onAuthStateChange((event, session) => {
+    if (session) {
+        currentUser = session.user;
+        hideGate();
+        showAvatar(currentUser);
+        // Clean URL after OAuth redirect
+        if (window.location.hash.includes('access_token')) {
+            window.history.replaceState({}, '', window.location.pathname);
+        }
+    } else {
+        currentUser = null;
+    }
+});
+
 // Show gate when unauthenticated user taps anything
 document.addEventListener('click', function(e) {
     if (!currentUser) {
-        // Allow tapping the gate itself
-        if (document.getElementById('site-gate').contains(e.target)) return;
+        const gate = document.getElementById('site-gate');
+        if (gate.contains(e.target)) return;
         e.preventDefault();
         e.stopPropagation();
-        document.getElementById('site-gate').classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        showGate();
     }
 }, true);
+
+// Tap dark background to dismiss gate
+document.getElementById('site-gate').addEventListener('click', function(e) {
+    if (e.target === this) hideGate();
+});
+
 function signInWithGoogle() {
-    window.location.href = 'https://innmbjbvnamyuxxbmaia.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://laminono-nexus.github.io&scopes=email%20profile';
+    window.location.href = 'https://innmbjbvnamyuxxbmaia.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://laminono-nexus.github.io';
 }
-async function handleEmailAuth() {
-    const email = document.getElementById('auth-email').value.trim();
-    const password = document.getElementById('auth-password').value;
-    const btn = document.getElementById('auth-submit-btn');
-    document.getElementById('auth-error').textContent = '';
-    if (!email || !password) { document.getElementById('auth-error').textContent = 'Please fill in all fields.'; return; }
-    btn.disabled = true; btn.textContent = 'Please wait…';
-    const result = isSignUpMode
-        ? await _supabase.auth.signUp({ email, password })
-        : await _supabase.auth.signInWithPassword({ email, password });
-    btn.disabled = false; btn.textContent = isSignUpMode ? 'Create Account' : 'Sign In';
-    if (result.error) { document.getElementById('auth-error').textContent = result.error.message; }
-    else if (isSignUpMode && !result.data.session) { document.getElementById('auth-error').textContent = '✅ Check your email to confirm your account!'; }
-    else { showToast(isSignUpMode ? 'Welcome! 🎉' : 'Welcome back! 👋'); }
-}
-async function forgotPassword() {
-    const email = document.getElementById('auth-email').value.trim();
-    if (!email) { document.getElementById('auth-error').textContent = 'Enter your email above first.'; return; }
-    const { error } = await _supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.href });
-    document.getElementById('auth-error').textContent = error ? error.message : '✅ Reset link sent to your email!';
-}
-function toggleAuthMode() {
-    isSignUpMode = !isSignUpMode;
-    document.getElementById('auth-title').textContent = isSignUpMode ? 'Create Account' : 'Welcome Back';
-    document.getElementById('auth-subtitle').textContent = isSignUpMode ? 'Join the story community.' : 'Sign in to read & save stories.';
-    document.getElementById('auth-submit-btn').textContent = isSignUpMode ? 'Create Account' : 'Sign In';
-    document.getElementById('auth-toggle-text').textContent = isSignUpMode ? 'Already have an account?' : "Don't have an account?";
-    document.getElementById('auth-toggle-btn').textContent = isSignUpMode ? 'Sign In' : 'Sign Up';
-    document.getElementById('forgot-btn').style.display = isSignUpMode ? 'none' : 'block';
-    document.getElementById('auth-error').textContent = '';
-}
+
 async function signOutUser() {
     await _supabase.auth.signOut();
+    currentUser = null;
     showToast('You have been signed out.');
 }
     // ── SUPABASE INIT ──
