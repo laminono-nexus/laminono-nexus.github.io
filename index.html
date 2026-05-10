@@ -869,18 +869,16 @@ function showAvatar(user) {
     document.getElementById('user-avatar').src = photo;
     document.getElementById('profile-name').textContent = name;
 }
-
-// Check session on every page load
-_supabase.auth.getSession().then(({ data: { session } }) => {
-    if (session) {
-        currentUser = session.user;
-        hideGate();
-        showAvatar(currentUser);
-    } else {
-        currentUser = null;
-        hideGate(); // hide on load, show only on tap
-    }
-});
+    
+// Use pre-loaded auth state
+if (window.__AUTHED__ && window.__USER__) {
+    currentUser = window.__USER__;
+    hideGate();
+    showAvatar(currentUser);
+} else {
+    currentUser = null;
+    hideGate();
+}
 
 // Listen for auth changes
 _supabase.auth.onAuthStateChange((event, session) => {
