@@ -862,12 +862,16 @@ _supabase.auth.onAuthStateChange((event, session) => {
         avatar.src        = photo;
         nameEl.textContent = name;
 } else {
-        document.getElementById('site-gate').classList.add('hidden');
-        document.body.style.overflow = '';
-        document.getElementById('user-profile-bar').style.display = 'none';
+        // Check for existing session first
+        _supabase.auth.getSession().then(({ data }) => {
+            if (!data.session) {
+                document.getElementById('site-gate').classList.add('hidden');
+                document.body.style.overflow = '';
+                document.getElementById('user-profile-bar').style.display = 'none';
+            }
+        });
     }
 });
-
 // Show gate when unauthenticated user taps anything
 document.addEventListener('click', function(e) {
     if (!currentUser) {
