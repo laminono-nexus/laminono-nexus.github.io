@@ -884,7 +884,7 @@ document.addEventListener('click', function(e) {
     }
 }, true);
 function signInWithGoogle() {
-    window.location.href = 'https://innmbjbvnamyuxxbmaia.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://laminono-nexus.github.io';
+    window.location.href = 'https://innmbjbvnamyuxxbmaia.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://laminono-nexus.github.io&scopes=email%20profile';
 }
 async function handleEmailAuth() {
     const email = document.getElementById('auth-email').value.trim();
