@@ -858,7 +858,14 @@ _supabase.auth.onAuthStateChange((event, session) => {
     }
 });
 async function signInWithGoogle() {
-    const { error } = await _supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.href } });
+    document.getElementById('auth-error').textContent = '';
+    const { error } = await _supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+            redirectTo: 'https://laminono-nexus.github.io',
+            skipBrowserRedirect: false
+        }
+    });
     if (error) document.getElementById('auth-error').textContent = error.message;
 }
 async function handleEmailAuth() {
