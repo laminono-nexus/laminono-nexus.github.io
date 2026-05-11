@@ -1138,7 +1138,8 @@ function closeModal() {
     document.getElementById('storyModal').classList.remove('active');
     document.body.style.overflow = '';
     stopNarration();
-}
+    showAvatarOnHomepage(); // Restore full avatar on homepage
+    }
 
 // ── NARRATION ──
 function setVoice(gender, e) {
