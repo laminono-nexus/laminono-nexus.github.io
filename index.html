@@ -1285,6 +1285,8 @@ async function toggleMyList() {
 async function openMyList() {
     if (!currentUser) { showGate(); return; }
     const modal   = document.getElementById('mylist-modal');
+    saveCurrentState();
+    showCompactMenu();
     const content = document.getElementById('mylist-content');
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
