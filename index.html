@@ -797,14 +797,16 @@ const _supabase = supabase.createClient(
 
 <!-- My List Modal -->
 <div id="mylist-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);overflow-y:auto;animation:fadeIn 0.3s ease;">
-    <div style="max-width:700px;margin:50px auto;background:#1F1F1F;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 30px 60px rgba(0,0,0,0.8);">
-        <div style="padding:28px 30px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;">
+<div style="max-width:700px;margin:50px auto;background:#1F1F1F;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 30px 60px rgba(0,0,0,0.8);">
+    <div style="padding:28px 30px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;align-items:center;gap:15px;">
+            <button onclick="goBack()" style="display:flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50px;color:#fff;font-size:0.85rem;font-weight:500;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+                <span>←</span> Back
+            </button>
             <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#f5c6a0;">📖 My Reading List</h2>
-            <button onclick="closeMyList()" style="background:rgba(255,255,255,0.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;">✕</button>
         </div>
-        <div style="padding:24px 30px;" id="mylist-content"></div>
+        <button onclick="closeMyList()" style="background:rgba(255,255,255,0.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;">✕</button>
     </div>
-</div>
 
 <!-- Share Modal -->
 <div id="share-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);align-items:flex-end;justify-content:center;" onclick="if(event.target===this)closeShareModal()">
