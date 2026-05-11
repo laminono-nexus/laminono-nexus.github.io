@@ -1111,6 +1111,8 @@ function openStory(storyId) {
     const story = stories.find(s => s.id === storyId);
     if (!story) return;
     currentStory = story;
+    saveCurrentState(); // Save where we came from
+    showCompactMenu();  // Switch to ••• button
     document.getElementById('modalTitle').innerText = story.title;
     document.getElementById('modalMeta').innerHTML = `
         <span>⏱ ${story.readTime} read</span>
