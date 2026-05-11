@@ -810,8 +810,14 @@ const _supabase = supabase.createClient(
 
 <!-- Share Modal -->
 <div id="share-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);align-items:flex-end;justify-content:center;" onclick="if(event.target===this)closeShareModal()">
-    <div style="width:100%;max-width:600px;background:#1F1F1F;border-radius:20px 20px 0 0;padding:0 0 30px;border:1px solid rgba(255,255,255,0.08);animation:slideUp 0.35s ease;">
-        <div style="text-align:center;padding:14px 0 0;"><div style="width:40px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto;"></div></div>
+<div style="width:100%;max-width:600px;background:#1F1F1F;border-radius:20px 20px 0 0;padding:0 0 30px;border:1px solid rgba(255,255,255,0.08);animation:slideUp 0.35s ease;position:relative;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px 0;">
+        <button onclick="goBack()" style="display:flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50px;color:#B3B3B3;font-size:0.8rem;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.color='#B3B3B3';this.style.borderColor='rgba(255,255,255,0.1)'">
+            <span>←</span> Back
+        </button>
+        <div style="width:40px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto;"></div>
+        <button onclick="closeShareModal()" style="background:rgba(255,255,255,0.06);border:none;color:#808080;width:32px;height:32px;border-radius:50%;font-size:1rem;cursor:pointer;">✕</button>
+    </div>
         <div style="margin:18px 20px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
             <div style="height:160px;background:#2A2A2A;background-size:cover;background-position:center;" id="share-preview-img"></div>
             <div style="padding:14px 16px;background:#141414;">
