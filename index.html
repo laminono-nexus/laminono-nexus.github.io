@@ -910,11 +910,17 @@ function showAvatar(user) {
     const name  = user.user_metadata?.full_name || user.email || 'Reader';
     const photo = user.user_metadata?.avatar_url ||
         `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=E50914&color=fff&size=80`;
-    document.getElementById('user-profile-bar').style.display = 'flex';
+    
+    // Set avatar image and name in both places
     document.getElementById('user-avatar').src = photo;
     document.getElementById('profile-name').textContent = name;
-}
-
+    document.getElementById('compact-avatar').src = photo;
+    document.getElementById('compact-name').textContent = name;
+    
+    // Show homepage avatar by default
+    showAvatarOnHomepage();
+    }
+    
 // ── AUTH STATE ──
 _supabase.auth.onAuthStateChange((event, session) => {
     if (session) {
