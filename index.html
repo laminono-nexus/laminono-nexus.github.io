@@ -1326,6 +1326,8 @@ function closeMyList() {
 // ── ALL STORIES ──
 function showAllStories(type) {
     document.querySelector('.hero').classList.add('hidden');
+    saveCurrentState();
+    showCompactMenu();
     document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
     document.querySelector('.admin-section').classList.add('hidden');
     document.querySelector('footer').classList.add('hidden');
@@ -1336,6 +1338,7 @@ function showAllStories(type) {
 }
 function backToHome() {
     document.querySelector('.hero').classList.remove('hidden');
+    showAvatarOnHomepage(); // Restore full avatar
     document.querySelectorAll('.content-section').forEach(s => s.classList.remove('hidden'));
     document.querySelector('.admin-section').classList.remove('hidden');
     document.querySelector('footer').classList.remove('hidden');
