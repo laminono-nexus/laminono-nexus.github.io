@@ -1,5 +1,374 @@
 const stories = [
   {
+  id: "the-woman-who-swallowed-her-own-name",
+  title: "The Woman Who Swallowed Her Own Name",
+  genre: "Drama",
+  readTime: "50 min",
+  trending: true,
+  excerpt: "She spent forty years being everyone else's everything. The day she finally said no — the world called her selfish. What happened next, nobody saw coming.",
+  image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1920&q=80"
+  },
+  content: `The morning Ngozi Adeyemi turned sixty, nobody remembered.
+
+Not her daughter in London, who had sent a voice note three days early and considered the matter settled. Not her son in Abuja, who meant to call but got pulled into a meeting that stretched until midnight and told himself tomorrow would do. Not her husband of thirty-eight years, Chukwuemeka, who was in the sitting room watching football when she came downstairs in her good dress — the blue one she had bought four years ago and worn exactly once — and who looked up briefly and said, "There is no pepper in the soup."
+
+Ngozi stood in the kitchen doorway.
+
+She was wearing pearl earrings. She had pressed her hair. She had, for the first time in eleven months, put on lipstick.
+
+She looked at her husband's back. At the television. At the half-empty bowl on the side table that he had not carried to the kitchen.
+
+Then she went back upstairs, sat on the edge of the bed, and did something she had not done in so long she had forgotten what it felt like.
+
+She counted herself.
+
+One woman. Sixty years old. Still breathing.
+
+That was when everything changed.
+
+Ngozi was not always invisible.
+
+There are photographs — real ones, printed on the thick paper of the 1980s, the kind that do not fade gracefully but hold color with an almost aggressive loyalty — that prove it. In them, she is twenty-two, twenty-three, twenty-four. She is laughing in every single one. Not the polite laugh of a woman performing happiness, but the full, unguarded, slightly too-loud laugh of someone who has not yet learned that her joy takes up space that others might want.
+
+She had been studying economics at the University of Lagos when she met Chukwuemeka. He was handsome and certain, which is a dangerous combination in a young man, and she was brilliant and searching, which is a dangerous combination in a young woman, and when the two met at a faculty dinner in 1986, the collision produced what looked, from the outside, like a love story.
+
+And it was. For a time, it was.
+
+She graduated with a first-class degree. She had been offered a position with a consulting firm in Lagos — the kind of position that in 1988 was offered to perhaps two women a year and represented something close to a miracle.
+
+She told Chukwuemeka.
+
+He was quiet for a long time. Then he said his mother was unwell and needed someone in the house. Then he said Lagos was far from where he was being posted. Then he said, gently but with the certainty of a man who does not expect to be argued with, that a home needs a foundation, and a foundation needs someone to tend it.
+
+He did not ask her to give up the position.
+
+He simply arranged the facts until giving it up was the only shape that made sense.
+
+And Ngozi, who was twenty-four and in love and had been raised by a mother who taught her that a woman's greatness was measured in what she gave, and a father who taught her that noise was unbecoming — Ngozi let the job go.
+
+She told herself it was a choice. For many years, she believed it.
+
+The children came. First Adaeze, then Emeka Junior, then the third pregnancy that ended at seven months and was never spoken of again, not even between them, because grief that is not named cannot demand space.
+
+Ngozi cooked. She cleaned. She raised children who were brilliant and confident and who left — as brilliant, confident children do — for London, for Abuja, for lives that their mother had quietly, systematically, lovingly made possible by having no life of her own.
+
+The years are the hardest part to account for. Not because they were bad — there was warmth in them, real warmth, the warmth of a house that was always running, always fed, always functioning. But warmth is not the same as light. And Ngozi, somewhere between the first decade and the third, had stopped being a source of anything and become only a surface — reflecting everyone else's needs back at them, perfectly, reliably, without remainder.
+
+She had not noticed it happening. That is the most important thing to understand. She had not sacrificed herself dramatically, in one large gesture that could be examined and mourned. She had done it the way you lose a language you no longer speak — gradually, then completely, until one day you open your mouth and the words are gone and you cannot even remember what they sounded like.
+
+By the time she was fifty, she could not have told you what she liked for breakfast. She made Chukwuemeka's preferences — no onions, extra pepper, tea not coffee — from memory and reflex. What she herself wanted in the morning was a question she had stopped asking so long ago that asking it now felt fraudulent, like applying for a passport to a country you had never been to and could not locate on a map.
+
+She had swallowed her own name so many times that even she had forgotten the taste of it.
+
+Let us return to that birthday morning.
+
+After Ngozi sat on the edge of the bed and counted herself — one woman, sixty years old, still breathing — she sat for a very long time.
+
+She heard Chukwuemeka downstairs. The television. The particular creak of his chair when he shifted. Sounds she knew as well as her own heartbeat, which was perhaps the problem — she had learned his rhythms so completely that her own had gone quiet by comparison.
+
+She thought about the consulting job. The one from 1988. She had not thought about it in years — had locked it in the part of her mind reserved for things too painful to examine — but today, on the morning of the birthday nobody remembered, it surfaced like something that had been held underwater for a very long time.
+
+She wondered what her life would have looked like. Not with bitterness — that is important. She had learned long ago that bitterness is just grief that has been left in the sun too long. She wondered the way you wonder about a door you passed and never opened: with curiosity, with a kind of tender sorrow, with the residual awareness that choosing one door means all the others remain closed and that this is simply the architecture of a life.
+
+But then she thought something she had never thought before.
+
+She thought: I am sixty. And I am still here.
+
+And then, very quietly, like a match being struck in a dark room: So what do I do now?
+
+She sat with that question for a long time. Then she stood up, changed out of the blue dress, hung it back in the wardrobe with the careful hands of someone handling something that still has use, and went downstairs to add pepper to the soup.
+
+But something had shifted. Something small and tectonic. The kind of shift you do not feel until the ground has already moved.
+
+It started with a notebook.
+
+She found it while clearing the small study that had been gathering other people's clutter for two decades — Adaeze's old textbooks, Emeka Junior's childhood drawings, a broken radio Chukwuemeka kept meaning to fix. Underneath all of it, in a box she had not opened in fifteen years, she found a notebook.
+
+Her handwriting. 1991.
+
+She stood there in the study with the afternoon light coming through the louvers and opened it.
+
+It was full of ideas. Economic analyses. Small observations about market behavior in their neighborhood — the way the price of tomatoes spiked every three weeks in a pattern she had mapped obsessively. A half-written business proposal for a cooperative lending scheme for market women. Margin notes in the firm, slightly impatient hand of a young woman who was thinking faster than she could write.
+
+Ngozi read it standing up. She could not sit down. She was not sure she could have explained why, except that sitting felt like the wrong posture for encountering a version of yourself that you had forgotten existed.
+
+The woman in this notebook was not who Ngozi had become. She was sharper. Hungrier. She asked questions in the margins — not polite questions but demanding ones, the kind that do not wait for permission.
+
+She was, Ngozi realized, standing very still in the dusty study, someone worth knowing.
+
+She took the notebook to the kitchen table.
+
+She opened it to the last written page — the business proposal, which ended mid-sentence, as if the writer had been called away and simply never come back — and she picked up a pen.
+
+She finished the sentence.
+
+Then she wrote another one.
+
+Then another.
+
+She did not stop for three hours. Chukwuemeka called for dinner twice. She answered that food was on the stove, which it was, because she had put it there at noon with the automatic efficiency of a woman who manages the logistics of living the way other people breathe — without thinking, without stopping, without rest.
+
+But tonight she did not go and serve it. Tonight she sat at the kitchen table and wrote until her hand ached, and when it ached she kept writing anyway.
+
+The first time she said no, it was small.
+
+Adaeze called from London — a Sunday, as always, the call that was more inventory than conversation: how is Papa, what did the doctor say, can you send me Aunty Chioma's number, did the generator get fixed. Ngozi answered all of it. Then Adaeze said, in passing, that she needed her mother to call the landlord about the property in Enugu because she was too busy and it would only take a minute.
+
+"No," Ngozi said.
+
+A silence.
+
+"Sorry?"
+
+"I will not call the landlord, Adaeze. You are the owner of the property. You call him."
+
+Another silence. Longer. The kind that carries freight.
+
+"Mummy, I am in the middle of —"
+
+"I know you are busy. So am I."
+
+She was not, technically, busy. She was sitting at the kitchen table with her notebook. But she had decided that what she was doing was work, and work counted, and she was going to hold that line even if it felt, in the moment, as fragile as paper.
+
+Adaeze called back twenty minutes later and said, with the careful tone of a woman who has decided to be patient with someone behaving strangely, "Mummy, are you all right? You seem — different."
+
+"I am not different," Ngozi said. "I am the same. You just have not been paying attention."
+
+She said it without heat. That surprised both of them.
+
+The bigger collision was with Chukwuemeka.
+
+It happened on a Tuesday, six weeks after the birthday morning. She had spent those six weeks quietly but methodically doing things she had not done in decades. She reread the economics textbooks she had kept in boxes. She walked — not the purposeful walking of errands but the wandering, thinking kind, the kind that goes nowhere and comes back having been somewhere. She contacted, after seventeen years of silence, a woman named Folake who had been her closest friend at university and who, it turned out, had become an economist of some quiet distinction and who answered Ngozi's tentative message with a voice note so warm and immediate that Ngozi cried, which surprised her, because she had not thought she was carrying something that needed releasing.
+
+On that Tuesday, Chukwuemeka came home to find dinner not ready.
+
+This had not happened in thirty-eight years.
+
+"The food," he said, standing in the kitchen doorway.
+
+Ngozi was at the table. The notebook was open. There was a pot on the stove — she had started it — but it was not finished.
+
+"It will be ready in an hour," she said. "I am in the middle of something."
+
+He stood there. He was not an unkind man — that needs to be said, because the story is not about cruelty. He had never hit her, never belittled her in public, never done any of the things that would have made the narrative clean and the choices obvious. He had simply lived, for thirty-eight years, as men of his generation often did — in the assumption that the house ran itself, that the food appeared, that the woman in the kitchen was a feature of the home rather than a person with finite time and infinite capacity that she was slowly, quietly depleting.
+
+He sat down. He was quiet for a long time.
+
+"What are you doing?" he finally asked.
+
+She looked up. And she told him.
+
+Not quickly. Not defensively. She told him about the notebook. About 1988. About the consulting job. About the cooperative lending proposal that she had started writing again and that had, in the past six weeks, become twenty pages of something she was increasingly convinced was not just nostalgia but was actually, possibly, good.
+
+She told him about the market women she had quietly started talking to on her morning walks — the ones whose pricing patterns she had studied from her window for years without saying anything to anyone, the ones whose businesses ran on informal credit systems that were efficient but precarious, the ones who needed not money but structure, not charity but architecture.
+
+She told him she wanted to build something. A small cooperative. A lending circle with proper governance. Something that had been in her head since 1991 and had been waiting, all this time, for her to have an hour at a kitchen table to remember that it existed.
+
+Chukwuemeka listened.
+
+She could not read his face while she spoke. She had spent thirty-eight years learning every expression he owned, and this one was new — which both frightened and interested her.
+
+When she finished, the kitchen was fully dark. Neither of them had turned on a light.
+
+He was quiet for a long time.
+
+Then he said: "Why did you not tell me all this before?"
+
+Ngozi looked at him across the dark table.
+
+"You did not ask," she said. "And I did not know there was a me left to tell it."
+
+Folake Ogunyemi-Bello came to visit on a Thursday in March.
+
+She drove herself from Lagos, refused to be picked up, arrived with chin-chin in a biscuit tin and the slightly imperious energy of a woman who has spent forty years in rooms where people underestimated her and has long since stopped adjusting her volume to accommodate their surprise.
+
+She and Ngozi sat on the back veranda for four hours.
+
+They talked about their children. About their husbands. About the particular loneliness of being brilliant women in marriages that were built for a different version of them. About the way ambition in a woman of their generation had been treated as a flaw to be smoothed over rather than a force to be directed.
+
+"I almost stopped," Folake said, at some point in the second hour. "After my second child. I had a paper rejected — a good paper, I knew it was good — and my husband said maybe it was a sign, and I almost listened."
+
+"What stopped you?"
+
+Folake looked at her. "Anger," she said simply. "I was so angry that I sat down and rewrote the paper the next morning just to prove I could. It was published six months later."
+
+Ngozi laughed. It was the real laugh — the one from the photographs.
+
+"I never had the anger," she said. "I do not know if that was better or worse."
+
+"It was neither," Folake said, with the precision of a woman who has thought about this for years. "It was just different. You took a different road. You are still walking."
+
+"I am sixty."
+
+"And?"
+
+Ngozi looked out at the garden — her garden, the one she had planted piece by piece over thirty years, the one that was currently in its best bloom because she had, this year, for the first time, planted things she personally loved rather than things she thought looked respectable.
+
+"And I do not know if there is enough time."
+
+Folake made a sound that was not quite dismissive but was adjacent to it. "Enough time for what? To be on a banknote? Ngozi. What do you actually want?"
+
+Ngozi thought about the twenty pages in the notebook. About the market women — Mama Titi with her groundnut oil business that was one bad season from collapse, Bisi who had been trying for three years to buy a second sewing machine and could not access formal credit. About the lending structure she had been sketching, refining, testing against her memory of the economic theory she had not used in decades but which had not, it turned out, gone anywhere. It had just been waiting.
+
+"I want to build the cooperative," she said. "I want to make it work. I want to sit across from those women and see what happens when someone gives them architecture instead of just sympathy."
+
+Folake nodded. Put down her chin-chin. Looked at Ngozi with the direct, calibrated gaze of a woman who respects what she is looking at.
+
+"Then let us build it," she said.
+
+The Aboabu Women's Cooperative — she named it after the village where her mother was born, which felt like the right kind of continuity — launched quietly in September.
+
+Eleven women. A lending fund of two hundred and forty thousand naira, assembled through member contributions and a matching donation from Folake, who insisted on being listed as a silent partner and refused any credit. A governance document that Ngozi had written across seventeen drafts and which was, she knew in the objective part of herself, genuinely good — clear, fair, adaptable, built for the specific vulnerabilities of small informal businesses run by women who had been underestimated by every formal financial system they had ever encountered.
+
+The first meeting was held in Mama Titi's shop, which was the largest space available and smelled permanently of groundnut oil and blue soap, which Ngozi decided she would always associate with the specific joy of beginning.
+
+Eleven women sat in a circle.
+
+Ngozi stood up and explained, without condescension and without oversimplification, how the cooperative worked. Who could borrow and how much. What the interest rate was and why it was set at that rate and not another. What happened if someone could not repay and how that would be handled not as a moral failure but as a logistical problem to be solved collectively.
+
+The women asked questions. Sharp ones. Mama Titi asked about collateral. Bisi asked about what happened if a member died. A younger woman, Remi, who ran a small catering business from her home, asked a question about reinvestment rates that was so precisely formulated that Ngozi stopped mid-answer and looked at her.
+
+"Where did you study?" she asked.
+
+Remi blinked. "I did not. I stopped at secondary school."
+
+Ngozi looked at her for a moment. "You should have studied economics," she said.
+
+Remi looked away, and something in the way she did it — the practiced speed of it, the reflexive deflection of the compliment — told Ngozi everything she needed to know about what this woman had been told, for years, about what she was capable of.
+
+Ngozi made a note in the margin of her governance document. Next to Remi's name.
+
+The note said: Potential.
+
+Two months after the cooperative launched, Chukwuemeka did something that Ngozi had not expected.
+
+He asked to see the governance document.
+
+She brought it to him on a Sunday evening. He read it with the careful attention of a man who has been an engineer for forty years and cannot engage with a document any other way — looking for load-bearing structures, for weak joints, for the places where the design might fail.
+
+When he finished, he was quiet for a moment.
+
+"This clause," he said, pointing. "About reinvestment thresholds. You have set it at fifteen percent. Most cooperatives run into trouble between twelve and eighteen. You should add a review mechanism."
+
+Ngozi stared at him.
+
+He looked up. Something moved across his face — not quite guilt, but something adjacent. Something that knew its own shape.
+
+"I have been reading about cooperative economics," he said. "For the past six weeks."
+
+She sat down slowly.
+
+"Why?"
+
+He took a long time with the answer. He was not a man who rushed toward things that required honesty.
+
+"Because," he said, "you were working on something real, and I did not know enough to understand it, and I did not want to be the person in the room who understood nothing."
+
+Ngozi looked at this man she had been married to for thirty-eight years. At the document in his hands. At the reading glasses he had not been wearing six months ago.
+
+She thought about 1988. About the silence that had arranged itself into a decision. About the thirty-eight years she had spent managing the temperature of a house and the emotions of a family and the logistics of four lives while her own ran in the background like a program nobody had opened in decades.
+
+She thought about all the things she could say.
+
+She said none of them.
+
+Instead she took the document, found the clause he had identified, and wrote in the margin: Review mechanism — annual. Then she slid it back across the table.
+
+"You are right," she said. "Fix it."
+
+He looked at her. Something shifted in his face — not into the unfamiliar, but into something that had been there all along and had simply gone unread.
+
+"Together," he said.
+
+She considered this.
+
+"Together," she said.
+
+A year after the cooperative launched, Remi paid off her first loan, took out a second one twice the size, hired her younger sister, moved her catering business out of her home kitchen and into a rented space on the main road.
+
+She came to the second anniversary meeting with a spreadsheet — an actual spreadsheet, color-coded, with projected quarterly earnings and a conservative but defensible expansion model — that she had built herself, through a combination of YouTube tutorials, a secondhand accounting textbook, and the focused, slightly ferocious energy of someone who has been told for too long that numbers are not for them.
+
+She put it on the table in front of Ngozi.
+
+"I need a bigger loan," she said. "Here is why."
+
+Ngozi looked at the spreadsheet. Looked at Remi. Looked back at the spreadsheet.
+
+"Have you thought about a formal qualification?" she asked. "In accounting or business management?"
+
+Remi's face did the thing — the quick deflection, the reflex of someone who has learned not to want things that seem too large.
+
+"I am thirty-four," she said.
+
+Ngozi said nothing.
+
+Remi met her eyes.
+
+"You were sixty," Remi said slowly.
+
+"I was," Ngozi said.
+
+A long silence.
+
+"Tell me about the programs," Remi said.
+
+Three years after the birthday morning when nobody called and Ngozi sat on the edge of the bed and counted herself, the Aboabu Women's Cooperative had thirty-one members, a repayment rate of ninety-four percent, and had been written about in a small but well-regarded economics journal by a researcher from Ibadan who had contacted Ngozi after hearing about the cooperative's governance model from — of all people — Folake.
+
+The article referred to Ngozi as "the architect of the scheme."
+
+She read that phrase three times.
+
+Architect.
+
+She was sixty-three years old and someone had called her an architect and the word fit, the way a word fits when it has been waiting for its correct application.
+
+Adaeze called that weekend — not the inventory call, a different kind. She had read the article. She was quiet on the phone in a way her daughter rarely was, and then she said, "Mummy, I did not know you were doing all this."
+
+Ngozi thought about how to answer.
+
+"You did not ask," she said. Then, more gently: "But I did not tell you, either. I think we have both been looking at each other from too far away."
+
+Adaeze was quiet. Then: "Can I come home next month?"
+
+"Yes," Ngozi said. "Come home."
+
+She was still at the kitchen table when she hung up. The notebook was open — not the 1991 one, which she had finished and placed in the box with the photographs, but a new one, bought from a stall in the market and already half-filled with the handwriting of a woman who had found, at sixty, that she had more to say than she had years remaining and intended to say all of it anyway.
+
+Chukwuemeka came in from the garden. He had taken up gardening since her — following her interest with the tentative care of a man making amends through proximity, learning the names of plants the way he had recently learned the names of cooperative governance models, with a diligence that was its own kind of apology.
+
+He set a cup of tea on the table beside her.
+
+She looked up.
+
+"Thank you," she said.
+
+He nodded. Started to leave.
+
+"Chukwuemeka."
+
+He turned.
+
+"Sit with me," she said.
+
+He sat.
+
+Outside, the garden was in its best bloom — things she had planted for herself, because she liked them, because they were hers. Inside, a woman who had spent forty years being everyone else's everything was sitting at a kitchen table with her name open in front of her like a book she had finally decided to read.
+
+She was sixty-three years old.
+
+She was just getting started.
+
+And the name she had swallowed, all those decades ago, had been growing quietly in the dark.
+
+It was ready now.
+
+It tasted exactly like herself.
+
+At what point did you — or a woman you love — stop shrinking and start taking up the space you always deserved? Or are you still waiting for permission that was never anyone else's to give? Share in the comments. Share this with the woman in your life who has been everyone's everything and nobody's priority — including her own. She needs to know that sixty is not too late. Neither is today.`
+},
+  {
   id: "the-last-breath-of-a-forgotten-man",
   title: "The Last Breath of a Forgotten Man",
   genre: "Drama",
