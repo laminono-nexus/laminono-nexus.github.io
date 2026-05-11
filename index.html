@@ -833,7 +833,7 @@ const _supabase = supabase.createClient(
     </div>
 </div>
 
-<!-- User Profile Bar -->
+<!-- User Profile Bar - HOMEPAGE ONLY -->
 <div id="user-profile-bar" style="display:none;position:fixed;top:14px;right:20px;z-index:9000;align-items:center;gap:10px;">
     <div style="position:relative;">
         <img id="user-avatar" src="" alt="" 
@@ -846,6 +846,21 @@ const _supabase = supabase.createClient(
             <button onclick="signOutUser()" style="width:100%;padding:10px 12px;background:none;border:none;color:#E50914;font-size:0.85rem;text-align:left;cursor:pointer;border-radius:8px;display:flex;align-items:center;gap:8px;" onmouseover="this.style.background='rgba(229,9,20,0.08)'" onmouseout="this.style.background='none'">↪ Sign Out</button>
         </div>
     </div>
+</div>
+
+<!-- Compact Menu Button - SHOWS ON MODALS/PAGES (not homepage) -->
+<div id="compact-menu-btn" style="display:none;position:fixed;top:14px;right:20px;z-index:9001;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.2);cursor:pointer;backdrop-filter:blur(10px);transition:all 0.3s;" onclick="toggleCompactMenu()" title="Menu">
+    <span style="color:#fff;font-size:1.2rem;letter-spacing:1px;font-weight:bold;">•••</span>
+</div>
+
+<!-- Compact Menu Dropdown -->
+<div id="compact-menu-dropdown" style="display:none;position:fixed;top:60px;right:20px;z-index:9002;background:#1F1F1F;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:8px;min-width:200px;box-shadow:0 10px 30px rgba(0,0,0,0.8);">
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:6px;">
+        <img id="compact-avatar" src="" alt="" style="width:32px;height:32px;border-radius:50%;border:2px solid #E50914;object-fit:cover;">
+        <span id="compact-name" style="color:#fff;font-size:0.85rem;font-weight:600;"></span>
+    </div>
+    <button onclick="openMyList();toggleCompactMenu()" style="width:100%;padding:10px 12px;background:none;border:none;color:#B3B3B3;font-size:0.85rem;text-align:left;cursor:pointer;border-radius:8px;display:flex;align-items:center;gap:8px;" onmouseover="this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.background='none'">📖 My List</button>
+    <button onclick="signOutUser()" style="width:100%;padding:10px 12px;background:none;border:none;color:#E50914;font-size:0.85rem;text-align:left;cursor:pointer;border-radius:8px;display:flex;align-items:center;gap:8px;" onmouseover="this.style.background='rgba(229,9,20,0.08)'" onmouseout="this.style.background='none'">↪ Sign Out</button>
 </div>
 
  <!-- ═══════════════════════════════════════
