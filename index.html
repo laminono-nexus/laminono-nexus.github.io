@@ -1320,6 +1320,7 @@ async function removeFromMyList(storyId) {
 function closeMyList() {
     document.getElementById('mylist-modal').style.display = 'none';
     document.body.style.overflow = '';
+    showAvatarOnHomepage(); // Restore full avatar on homepage
 }
 
 // ── ALL STORIES ──
@@ -1380,7 +1381,11 @@ function openShareModal() {
     document.getElementById('share-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
-function closeShareModal() { document.getElementById('share-modal').style.display='none'; document.body.style.overflow=''; }
+function closeShareModal() { 
+    document.getElementById('share-modal').style.display='none'; 
+    document.body.style.overflow='';
+    showAvatarOnHomepage(); // Restore full avatar on homepage
+    }
 function shareVia(platform) {
     const d   = window._shareData;
     const msg = encodeURIComponent(`📚 "${d.title}"\n\n${d.text}\n\n🔗 ${d.url}`);
