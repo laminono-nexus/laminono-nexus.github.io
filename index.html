@@ -964,13 +964,94 @@ window.toggleProfileMenu = () => {
     const menu = document.getElementById('profile-menu');
     menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
 };
+
+// ── COMPACT MENU (for modals/pages) ──
+window.toggleCompactMenu = () => {
+    const menu = document.getElementById('compact-menu-dropdown');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+};
+
+// Close menus when clicking outside
 document.addEventListener('click', (e) => {
     const avatar = document.getElementById('user-avatar');
     const menu   = document.getElementById('profile-menu');
+    const compactBtn = document.getElementById('compact-menu-btn');
+    const compactMenu = document.getElementById('compact-menu-dropdown');
+    
     if (menu && avatar && !avatar.contains(e.target) && !menu.contains(e.target)) {
         menu.style.display = 'none';
     }
+    if (compactMenu && compactBtn && !compactBtn.contains(e.target) && !compactMenu.contains(e.target)) {
+        compactMenu.style.display = 'none';
+    }
 });
+
+// ── SHOW/HIDE AVATAR BASED ON CONTEXT ──
+function showAvatarOnHomepage() {
+    const profileBar = document.getElementById('user-profile-bar');
+    const compactBtn = document.getElementById('compact-menu-btn');
+    if (profileBar) profileBar.style.display = 'flex';
+    if (compactBtn) compactBtn.style.display = 'none';
+}
+
+function showCompactMenu() {
+    const profileBar = document.getElementById('user-profile-bar');
+    const compactBtn = document.getElementById('compact-menu-btn');
+    if (profileBar) profileBar.style.display = 'none';
+    if (compactBtn) compactBtn.style.display = 'flex';
+}
+
+// ── BACK BUTTON FUNCTIONALITY ──
+let previousPageState = null;
+
+function saveCurrentState() {
+    previousPageState = {
+        scrollY: window.scrollY,
+        view: document.getElementById('allStoriesPage').classList.contains('hidden') ? 'home' : 'allStories',
+        modalOpen: document.getElementById('storyModal').classList.contains('active'),
+        myListOpen: document.getElementById('mylist-modal').style.display === 'block',
+        shareOpen: document.getElementById('share-modal').style.display === 'flex'
+    };
+}
+
+function goBack() {
+    // Close any open modals first
+    const storyModal = document.getElementById('storyModal');
+    const myListModal = document.getElementById('mylist-modal');
+    const shareModal = document.getElementById('share-modal');
+    const allStoriesPage = document.getElementById('allStoriesPage');
+    
+    // If share modal is open, close it
+    if (shareModal && shareModal.style.display === 'flex') {
+        closeShareModal();
+        return;
+    }
+    
+    // If my list is open, close it
+    if (myListModal && myListModal.style.display === 'block') {
+        closeMyList();
+        return;
+    }
+    
+    // If story modal is open, close it and return to previous view
+    if (storyModal && storyModal.classList.contains('active')) {
+        closeModal();
+        // If we came from all stories page, keep it visible
+        if (previousPageState && previousPageState.view === 'allStories') {
+            // Stay on all stories page
+        }
+        return;
+    }
+    
+    // If on all stories page, go back to home
+    if (allStoriesPage && !allStoriesPage.classList.contains('hidden')) {
+        backToHome();
+        return;
+    }
+    
+    // Default: go to home
+    backToHome();
+    }
 
 // ── STORIES ──
 function loadStories() { renderStories(); checkDeepLink(); }
