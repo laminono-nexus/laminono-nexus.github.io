@@ -1367,6 +1367,8 @@ function showToast(message) {
 // ── SHARE ──
 function openShareModal() {
     const story = currentStory; if (!story) return;
+    saveCurrentState();
+    showCompactMenu();
     const shareUrl = `https://laminono-nexus.github.io/?story=${story.id}`;
     const hookLine = story.excerpt || story.content.substring(0,120) + '…';
     document.getElementById('share-preview-img').style.backgroundImage = `url('${story.image}')`;
