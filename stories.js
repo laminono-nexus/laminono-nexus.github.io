@@ -1,5 +1,266 @@
 const stories = [
   {
+  id: "the-last-breath-of-a-forgotten-man",
+  title: "The Last Breath of a Forgotten Man",
+  genre: "Drama",
+  readTime: "50 min",
+  trending: true,
+  excerpt: "He was buried alive — not in a grave, but in plain sight. What he did next changed an entire village forever.",
+  image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+  },
+  content: `The morning Samuel Osei decided to disappear, nobody noticed.
+
+Not his neighbors, who had long stopped greeting him. Not the market women, who had learned to look through him like glass. Not even the children, who once followed every adult in the village like shadows — because Samuel, to them, was not a man. He was furniture. Present, unmoved, and utterly without purpose.
+
+He had become invisible while still breathing.
+
+And on that gray Tuesday, with a small bag over his shoulder and borrowed shoes on his feet, Samuel Osei walked out of Aboabu village at four in the morning — and the only witness was the moon.
+
+Ten years earlier, Samuel had been someone.
+
+Not famous. Not rich. But someone — the kind of man whose laugh you heard three houses away, whose farm was the first to bloom after the rains, whose wife, Abena, used to say, "God put extra life in that man. Enough for two."
+
+He had three children who climbed him like a tree. He had a voice in the village council. He had hands that knew how to coax yam from stubborn earth and how to hold a crying child until silence came.
+
+Then the flood of 2009 took everything.
+
+Not just his farm. Not just his harvest. It took his eldest son, Kofi — eight years old, still in his school uniform — swept away in thirteen seconds of rushing brown water while Samuel stood on the bank screaming a name that the river did not care about.
+
+Grief is a strange country. Some people visit and return. Others move in and never leave.
+
+Samuel moved in.
+
+He stopped laughing first. Then he stopped speaking, except when necessary. Then he stopped being necessary. Abena held on for three years — three years of sleeping next to a man whose body was present but whose soul had mailed itself to wherever Kofi had gone. In 2012, she packed the two remaining children and moved to her sister's house in Kumasi.
+
+She did not file for divorce. She did not scream or slam doors. She simply said, "Samuel, I cannot save you if you will not reach for the rope."
+
+And Samuel sat on his porch and watched his family leave, and felt nothing. Which was the most terrifying thing of all.
+
+By 2014, the village had quietly, collectively, without malice, decided that Samuel Osei was already gone. They kept him alive with occasional food left at his door — the way you leave water for a stray dog — not out of cruelty, but out of a helplessness that had curdled into habit.
+
+He was a ghost who had not had the decency to die.
+
+Samuel walked for six hours before he sat down.
+
+He had no destination. That was the terrifying, liberating, stomach-dropping truth of it. He had simply woken up that morning with one thought hammering behind his eyes like a second heartbeat:
+
+If I stay, I will become nothing. And if I am already nothing — I have nothing to lose by leaving.
+
+He sat by the roadside near a junction he did not recognize, ate the two boiled eggs he had packed, and watched the world begin to wake up. Trucks rumbling. A woman balancing a basin of tomatoes on her head with the ease of someone balancing a thought. A small boy chasing a chicken with the full, shrieking joy of someone who had never known loss.
+
+Samuel watched the boy and felt something crack open in his chest.
+
+Not pain. Something older than pain. Something that lived underneath grief the way a river runs under ice — still moving, even when everything above has frozen.
+
+He did not know it yet. But that crack was the beginning of Samuel Osei's resurrection.
+
+A truck stopped beside him. The driver, a wide man with a beard that looked like it had its own ambitions, leaned out the window.
+
+"Where you go?"
+
+Samuel opened his mouth. Closed it. Opened it again.
+
+"Somewhere I can be useful," he said — and was surprised to hear his own voice say something that was not just a transaction.
+
+The driver studied him for a long moment, the way old men study clouds before deciding if rain is coming.
+
+"Get in," he said. "I know a place."
+
+The place was called Nkwanta — a small, half-forgotten town three hours north, where the roads turned to memory and the mobile network existed only as a rumor.
+
+The driver, whose name was Bright — "My mother was an optimist," he said, grinning — dropped Samuel at a junction and pointed down a dirt road.
+
+"There is a school there. Was a school. No teacher for eight months. The children still show up every morning and sit in the classrooms."
+
+Samuel frowned. "Why?"
+
+Bright shrugged with the weight of a man who has seen too many things to be shocked by any of them. "Because someone told them education was the way out. And children," he said, pulling back onto the road, "believe things longer than adults do."
+
+Samuel stood at that junction for a full ten minutes.
+
+He was not a teacher. He had finished secondary school and two years of agricultural college before the flood consumed his ambitions. He had no certificate that said this man may shape young minds. He had, in fact, very little to offer anyone.
+
+But the image of children sitting in empty classrooms, waiting for someone who never came — it reached through his chest and grabbed something that had been dormant so long he had forgotten it had a name.
+
+It was called purpose.
+
+He picked up his bag and walked down the dirt road.
+
+There were thirty-one of them.
+
+Ages ranging from six to fifteen, crammed into two classrooms with broken windows, a blackboard that was more ghost than board, and textbooks so old they still referred to their country by its colonial name.
+
+When Samuel walked in that first morning, they stared at him with the particular, devastating hope of children who have learned to expect disappointment but have not yet accepted it.
+
+"Are you our teacher?" asked a girl in the front row. She was perhaps ten, with eyes that seemed to be doing complex mathematical calculations about him at all times.
+
+Samuel set down his bag.
+
+"I do not know yet," he said honestly. "Let us find out together."
+
+That should have been a disaster. It was not.
+
+Because Samuel Osei, in his years of silence, had done one thing consistently — he had observed. He had watched people. He had studied the world with the concentrated attention of a man who has nothing left to fill his mind with except the details of living. He noticed things. Small things. The way a person's posture changes when they lie. The way hunger looks different from tiredness in a child's face. The way a question, asked right, can unlock a room inside someone that they did not know existed.
+
+He began teaching. Not from textbooks first — he was not ready for that, and neither were they. He taught from life.
+
+He taught mathematics through the market — taking them to the small trading post every Thursday, letting them calculate change, argue prices, understand profit and loss not as abstract numbers but as bread on a table or shoes on feet.
+
+He taught science through the farm behind the school — overgrown, neglected, begging to be broken open. Within three weeks, those thirty-one children had cleared it, planted it, and were arguing passionately about soil acidity with the kind of intensity that university students reserve for examinations.
+
+He taught language through stories.
+
+His stories. The first time he told them about the flood — about Kofi, about the brown water and the school uniform and the name he screamed until his voice shredded — the classroom went so quiet that you could hear the wind negotiating with the trees outside.
+
+When he finished, the girl in the front row — her name was Adwoa — said: "So you know what it is to lose something."
+
+"Yes," Samuel said.
+
+"Then you know what it is to need something back," she said.
+
+Samuel looked at this ten-year-old girl with her mathematical eyes and felt, for the first time in eleven years, that someone had seen him. Not the ghost. Not the furniture. Not the tragedy.
+
+Him.
+
+He cried in front of thirty-one children. And not one of them looked away.
+
+Word travels fast in small places, and silence travels faster.
+
+Within two months, parents were talking. Not about Samuel's unconventional methods, or his lack of formal credentials — but about their children. Children who came home asking questions instead of waiting to be given answers. Children who woke up early, who argued at dinner tables about why the river flooded every year and whether it could be prevented. Children who had started, quietly and without announcement, to become.
+
+The village headman, a cautious man named Opoku, summoned Samuel.
+
+Samuel arrived expecting to be told to leave. To be reminded that he had no certificate, no authority, no right to be shaping futures.
+
+Instead, Opoku poured him palm wine, sat across from him in the careful way of a man choosing his words like he is choosing stones to cross a river, and said:
+
+"What do you need?"
+
+Samuel was so unprepared for the question that he sat in silence for nearly a minute.
+
+Then — for the first time in eleven years — Samuel Osei made a list.
+
+New blackboards. Window repairs. Agricultural tools. A small library — even twenty books would do. A feeding program, because three of his students were learning on empty stomachs, and an empty stomach is the loudest thing in any classroom.
+
+Opoku looked at the list. Looked at Samuel. Said: "Give me sixty days."
+
+He took fifty-five.
+
+The day the books arrived — donated by a teacher's association in Accra that Opoku had written to seventeen times before receiving a reply — Adwoa ran her hands across their spines the way you touch something you have only seen in dreams.
+
+"Mr. Samuel," she said, "are all these for us?"
+
+"All of them," he said.
+
+She looked up at him. "Even the ones with the hard words?"
+
+"Especially those," he said. "The hard words are where everything important is hiding."
+
+Fourteen months after Samuel Osei walked out of Aboabu village in borrowed shoes, his phone rang at six in the morning.
+
+It was Abena.
+
+He almost did not answer. Eleven months ago, he would not have. But the man who almost did not answer was not quite the same man who had sat on that porch watching his family drive away.
+
+"Samuel."
+
+Her voice was the same. Time had not touched it.
+
+"Abena."
+
+A long silence — the kind that carries weight, that is not empty but full, packed with everything two people have survived separately.
+
+"Afia told me," Abena said. Afia was her sister. "She heard from someone in Accra. About a school. About a teacher in Nkwanta." A pause. "About a man who came back from somewhere far away."
+
+Samuel looked out the window of the small room the headman had arranged for him, at the school building in the distance where even now, at six in the morning, two children were sitting on the steps waiting for the day to begin.
+
+"I am not fully back," he said honestly. "But I am not where I was."
+
+Another silence. Then Abena's voice, softer now, stripped of everything except the truth underneath it:
+
+"Kofi would have been nineteen this year."
+
+"I know."
+
+"He would have been someone like you. Stubborn. Ridiculous. Wonderful."
+
+Samuel pressed his hand flat against the wall beside the window. Breathed. Stayed.
+
+"Abena —"
+
+"I am not calling to come back," she said quickly. "I am calling because I needed to know if you were still alive. Really alive. Not just breathing."
+
+Samuel watched the two children on the steps. One of them — a boy named Fiifi, eight years old, son of the woman who sold tomatoes at the junction — had pulled out a book and was reading it with the focused ferocity of someone mining for gold.
+
+"I am alive," Samuel said. "Really alive."
+
+He heard her exhale. A sound like something set down after being carried too long.
+
+"Good," she said. "Good."
+
+Three years after Samuel arrived in Nkwanta, Adwoa passed the national placement exam — first in the district.
+
+She was the first student from Nkwanta to pass in eleven years. She would not be the last.
+
+The news came on a Wednesday afternoon, and the village celebrated the way small places celebrate — loudly, personally, with food that appeared from nowhere and music that materialized as if it had been stored in the trees, waiting for an occasion worthy of release.
+
+Samuel stood at the edge of it all — as he had always stood at edges — watching.
+
+But this time, the edge was not the border of his exile. It was the rim of something full. He was not outside looking in. He was inside, looking at what had grown.
+
+Adwoa found him there. She was thirteen now — taller, sharper, carrying herself with the upright posture of someone who has been told clearly and repeatedly that she matters.
+
+"Mr. Samuel."
+
+"Adwoa."
+
+"Are you happy?" she asked, with the directness that had terrified and delighted him from the first day.
+
+He considered the question the way he considered everything now — not quickly, but completely.
+
+"I am," he said. And checked it against every corner of himself. "Yes. I actually am."
+
+She nodded, satisfied, as if she had been holding a hypothesis and had now received sufficient data to confirm it.
+
+"I knew you would be," she said. "When you first walked in, you had the face of someone who had been somewhere terrible. But your eyes — your eyes still wanted something. People who do not want anything anymore — their eyes go flat. Yours had not."
+
+Samuel stared at this thirteen-year-old girl.
+
+"You noticed all that? The first day?"
+
+"I notice everything," she said simply. Then, with a sudden, blinding smile that was entirely her age: "You taught me to."
+
+Samuel Osei did not save a village.
+
+Let us be honest about that — because stories that oversimplify the truth dishonor the people inside them.
+
+He taught children, and some of them soared and some of them struggled and some of them left and some of them stayed. He built something, but it was not a monument — it was a habit. The habit of showing up. The habit of asking questions. The habit of believing that the next generation deserves more than what broke the last one.
+
+He still grieved Kofi. He always would. Grief, he had learned, does not end — it changes. It becomes less like drowning and more like weather. You learn to read it. You learn to move through it without losing your footing.
+
+He and Abena did not reconcile in the romantic, cinematic sense. But they talked. Every few weeks — sometimes about the children, sometimes about nothing, sometimes about Kofi, speaking his name out loud the way you keep a fire fed: carefully, consistently, because the alternative is cold.
+
+And every morning, Samuel Osei woke up in a small room in Nkwanta, looked out at a school building where children were already arriving before the sun had fully committed to the day —
+
+And he reached for his bag.
+
+And he went.
+
+Not because he had been saved. Not because the pain was gone. Not because life had become simple or fair or easy.
+
+But because someone, once, had asked him where he was going — and he had finally, finally had an answer.
+
+Somewhere I can be useful.
+
+And it turned out — that was enough.
+
+That was, in fact, everything.
+
+What was the moment — the one conversation, the one decision, the one morning — that pulled you or someone you love back from invisibility? And if you have not found that moment yet — what has been stopping you from taking that first walk? Share in the comments. Every story there is someone else's lifeline.`
+},
+  {
     // ── STORY CONTENT ──
     id: 'the-boy-who-paid-with-tomorrow',
     title: 'The Boy Who Paid With Tomorrow',
