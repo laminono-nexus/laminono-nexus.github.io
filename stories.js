@@ -1,5 +1,328 @@
 const stories = [
   {
+  id: "the-version-of-you-i-never-met",
+  title: "The Version of You I Never Met",
+  genre: "Romance",
+  readTime: "60 min",
+  trending: true,
+  excerpt: "She had been in love with his words for two years before she saw his face. When she finally did — he was standing at the altar. Marrying someone else.",
+  image: "https://images.unsplash.com/photo-1535688391459-479d308104f8?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1535688391459-479d308104f8?w=1920&q=80"
+  },
+  content: `The morning Adaline Marsh realized she was in love with a man she had never met, she was eating toast at her kitchen table in Bristol and it was raining, which felt appropriate.
+
+She had known him for two years.
+
+Or she had known his words for two years, which in her experience was the more accurate version of knowing someone — more accurate, certainly, than knowing their face, their height, the particular way they occupied physical space. Words were what a person could not hide behind. Faces were curated. Words, when a person wrote them at two in the morning with no expectation of an audience, were something closer to truth.
+
+His name — the name he wrote under, the name she knew him by — was E.
+
+Just the letter. A single initial, the way writers sign things when they are not sure yet if they want to be known.
+
+She had found his blog in the way you find things that matter — not by looking, but by being in exactly the right place of openness when the thing arrived. A friend had shared a post. She had clicked it without expectation. She had read three sentences and stopped eating entirely.
+
+He wrote about ordinary things. About the specific loneliness of Sunday afternoons. About the way certain songs belong to certain seasons and lose something when you hear them in the wrong one. About his father, who had died three years ago, in a piece so precise and unsentimental in its love that she had read it four times in a row and then sat very still for a long time, feeling the specific resonance of someone else's truth landing in your own chest.
+
+She had left a comment. A long one — too long, probably, the kind of comment that reveals more about the commenter than they intended.
+
+He had replied.
+
+That was two years ago.
+
+Their correspondence had grown the way real things grow — not in a straight line, not according to plan, but in the organic, slightly surprising way of something that has its own momentum.
+
+They wrote long emails. Not daily — sometimes weeks passed between them, weeks where life intervened and the correspondence sat waiting with the patience of something that knows it will be returned to. But when they wrote, they wrote properly. The emails were long and specific and honest in the way that is only possible with someone you have never met and therefore have no performance to maintain.
+
+He told her about his work — he was an architect, he said, which she found almost too perfect, a man who built structures for a living and wrote about the interior life with such precision. He told her about a project he was struggling with, a community centre in Sheffield whose brief kept shifting, and she had asked questions that were — she could tell from the quality of his answers — questions he had not been asked before.
+
+She told him about her translation work — she translated literary fiction from French and Italian into English, which meant she spent her days inside other people's sentences, learning the particular architecture of how other minds expressed themselves. She told him what she told almost nobody: that she sometimes felt more at home in other people's languages than her own, that there was a specific freedom in inhabiting a voice that was not yours.
+
+He wrote back: I think you might be the only person I have told about the Sheffield project who understood that the problem was not structural but relational. That the building was not the point.
+
+She wrote back: I think you might be the only person I have told about the translation work who understood that it is not servitude. That it is a form of listening.
+
+He wrote back: Yes. Exactly. Yes.
+
+These exchanges. These precise collisions of understanding. She had collected them without meaning to, the way you collect things that feel significant before you understand why.
+
+She had not told anyone about E. Not because it was a secret — there was nothing to secret, they were friends, people had email friends, this was not unusual — but because explaining it required context she was not sure she could provide without it sounding like something it was not.
+
+Or something it was.
+
+She had not examined that particular question too closely.
+
+Until the toast. Until the rain. Until the morning she was reading his latest email — about a weekend he had spent in the countryside, about the quality of silence in a place where there is genuinely no traffic, about how he had sat outside at dusk and felt, for the first time in months, like a person rather than a function — and she had felt something in her chest that was not just recognition.
+
+It was more than recognition.
+
+She put down her toast.
+
+She looked at the rain on the kitchen window.
+
+She thought: oh.
+
+Oh no.
+
+The email arrived on a Wednesday in March.
+
+She almost missed it — her inbox was full of work, a translation deadline approaching, the particular administrative chaos of a freelance life. But she saw his name in the subject line and opened it the way she always opened his emails: with the specific, quiet anticipation of someone who knows they are about to be given something worth having.
+
+The email was shorter than usual.
+
+It said:
+
+I have something to tell you and I am not sure how to say it so I will just say it. I am getting married in June. Her name is Claire. She is — she is good. She is kind and she is steady and she makes the ordinary parts of life feel manageable in a way I had stopped believing was possible. I wanted to tell you because you know things about me that most people do not and it felt wrong to say nothing. I hope this finds you well. I hope Bristol is treating you kindly. I hope the Morante translation is going the way it deserves to go. — E
+
+Adaline read it twice.
+
+Then she closed her laptop and went for a walk in the rain without a coat, which was not something she did, which was in fact the opposite of something she did, but the walls of her flat had suddenly become a size that did not fit her and she needed the outside even if the outside was wet and cold and Bristol in March.
+
+She walked for forty-five minutes. She got thoroughly soaked. She thought about nothing with great concentration, which is the mental equivalent of pressing hard on a bruise to determine its size.
+
+When she came home she changed her clothes and made tea and sat down and wrote back.
+
+She wrote: Congratulations. That is genuinely wonderful news. Claire sounds like exactly what you deserve. I hope June is everything it should be.
+
+She sent it before she could revise it.
+
+Then she sat with her tea and was honest with herself in the way she rarely was, in the way the rain and the walk and the wet coat had made necessary.
+
+She had been in love with him for — she thought about it carefully, trying to locate the beginning — at least a year. Possibly longer. The kind of love that does not announce itself but is simply present one day when you look for it, the way furniture you have owned for years suddenly becomes visible when you think about moving.
+
+She had never told him.
+
+She was not going to tell him.
+
+He was marrying Claire, who was good and kind and steady. He was happy. She could tell from the specific way he had written the email — the slight breathlessness of it, the shorter sentences, the way joy compresses language — that he was genuinely, actually happy.
+
+That was the thing. She was not willing to do anything with what she felt because his happiness was real and his happiness mattered and some loves are most truly themselves when they ask nothing.
+
+She had known this about love in theory.
+
+She had not known it would feel like this in practice.
+
+She drank her tea.
+
+She picked up the Morante.
+
+She translated fifteen pages that afternoon, which was the most she had done in weeks, and later she would think that grief, properly held, makes excellent fuel.
+
+She met him four months later.
+
+Not planned. Not — she would emphasize this to herself many times afterward — not sought. She was in Sheffield for a literary festival, three days of panels and readings and the specific slightly dazed sociality of book people gathering in a city for a reason. She had not known he was based in Sheffield. She had known it abstractly — he had mentioned it, the project, the community centre — but she had not connected it to geography in any way that made him feel proximate.
+
+She was standing outside a venue after a reading, getting air, when someone behind her said:
+
+"You are Adaline."
+
+She turned.
+
+He was — she had not known what she expected, had deliberately not imagined him too specifically, but he was — he was tall and had the kind of face that was not conventionally handsome but was entirely itself, a face that had clearly done a lot of thinking and showed it, and he was looking at her with an expression she could not immediately identify.
+
+"How did you —" she started.
+
+"Your festival lanyard," he said. "Your name. And —" he paused. "I recognized the way you were standing."
+
+"The way I was standing."
+
+"You described it once," he said. "In an email. You said you go very still when you are processing something. That you stand like a person who has just received information they have not categorized yet."
+
+She stared at him.
+
+"I am E," he said. "My name is Elliot."
+
+Elliot.
+
+E.
+
+She had known him for two years. She had not known his name was Elliot.
+
+"Adaline," she said, which was redundant, but she needed a moment.
+
+He smiled. And the smile — she had not been prepared for the smile, for the way it arrived slowly and then entirely, for the way it was recognizable, somehow, as belonging to the person who wrote the emails.
+
+"I saw your name on the programme," he said. "I almost did not come. I was not sure if — meeting seemed like it might change something. That it is easier sometimes to know someone without coordinates."
+
+"And now?" she said.
+
+He looked at her. "And now you are a real person standing outside a building in Sheffield and I am very glad I came," he said simply.
+
+They went for coffee. Of course they went for coffee — the conversation had twenty-four months of momentum behind it and the physical presence of each other only added to it, did not subtract, which she had half hoped it might, which would have been simpler.
+
+They talked for three hours. In person it was the same and completely different — the same intelligence, the same quality of attention, the complete and slightly disorienting experience of being listened to by someone who actually hears you. But in person there was also his hands when he talked about the Sheffield project, moving slightly as if arranging invisible structures. There was the way he went quiet before saying something he meant. There was the coffee he did not finish because he forgot it was there.
+
+She catalogued all of it without meaning to and hated herself slightly for cataloguing it.
+
+At some point she said: "When is the wedding?"
+
+"Three weeks," he said. And something moved across his face — something she could not read, something she told herself she was not going to try to read.
+
+"Are you ready?" she asked.
+
+He was quiet for a moment. "I think so," he said. Then: "Claire is — she is everything I said she was. Kind. Steady. Real." He paused. "I think I am very lucky."
+
+"You are," Adaline said. And meant it. Fully, almost.
+
+He walked her back to her hotel. They stood outside it in the early evening light, Sheffield doing something unexpectedly beautiful with the sunset, the old and new of the city holding the light differently.
+
+"I am glad we met," he said.
+
+"So am I," she said.
+
+"I was worried it would be strange," he said.
+
+"Is it?" she asked.
+
+He looked at her. Something in his face she still could not read. "No," he said. "It is not strange at all. That is almost the strangest part."
+
+She went inside. She stood in the lift and pressed the button for her floor and looked at the closing doors and told herself: you are fine. You are genuinely fine. He is happy and you are fine and some things are exactly what they are and nothing more.
+
+The lift arrived at her floor.
+
+She was fine.
+
+She was almost entirely fine.
+
+She had not planned to go.
+
+He had mentioned it — casually, in an email after Sheffield, in the warm aftermath of having met — that the wedding was open, that Claire had family and friends coming from everywhere and there was always room, that he would love for her to come if she was near Sheffield in late June.
+
+She had said she would think about it. She had thought about it extensively. She had decided not to go. She had then been invited to a translator's conference in Leeds the week before and the proximity had rearranged the decision without her full consent, and she had found herself, on a Saturday in late June, sitting in the third row of a small stone church outside Sheffield in a blue dress she had bought specifically because it was not the kind of dress you wore to the wedding of a man you were in love with.
+
+She had told herself: you are here as a friend. You are here because he is your friend and friends attend weddings. You are here because not coming would have been its own statement and she was not prepared to make that statement.
+
+She was also here because she had not been able to not come, which was a different reason and one she was being honest about only to herself.
+
+The church was full of people who loved Elliot and Claire. She could tell this immediately — the specific warmth of a room full of people who are genuinely glad about a thing, which is different from the performed gladness of obligation. Claire's family filled one side: a large, loud, affectionate crowd who had clearly been waiting for this specific occasion and were making the most of it.
+
+Elliot's side was quieter, smaller, but no less warm — a handful of close friends, colleagues, his mother in the front row looking exactly as Adaline had imagined from his descriptions, upright and bright-eyed and trying not to cry already.
+
+Adaline sat in the third row and looked at the altar and waited.
+
+He came in from the side door with the other men — three friends she did not know — and she saw him before he saw her.
+
+He was in a dark suit she had no right to have opinions about. He was nervous in the specific way that is also excitement, the way that lives on the same frequency, and he was looking at the door at the back of the church where Claire would appear, and his face had an expression on it that was so open and so real and so entirely directed at someone else that Adaline felt it land in her chest like a physical thing.
+
+He loved Claire.
+
+She had known this. She had accepted this. But seeing it — seeing it written so clearly on the face she had finally learned to read — was different from knowing it in the abstract.
+
+He was happy.
+
+He was genuinely, completely, in the right place happy.
+
+And something shifted in Adaline's chest — not away from pain, not immediately, but toward something that was also true: she was glad. Underneath everything, alongside everything, she was glad for him. Because she knew him. Because she had spent two years in his thoughts and she knew that this man deserved to be this happy and she was glad he had found it even though she was also, simultaneously, somewhere between the second and third rows of a stone church in Sheffield, quietly breaking in a way she would not let anyone see.
+
+Both things were true.
+
+She was learning that both things could be true.
+
+He saw her during the second hymn. His eyes moved across the congregation in the way eyes move when they are looking for something specific, and they landed on her, and she saw the moment of recognition and then the smile — real, warm, surprised — and she smiled back.
+
+She meant the smile. That was the thing. She meant it completely.
+
+She had planned to leave after the ceremony.
+
+She stayed for the reception because he found her outside the church and said "you came" with such genuine warmth that leaving felt like something she was not able to do.
+
+Claire was — she was exactly what he had said. Adaline met her at the reception, in the garden of the house his friends had hired, in the golden late-afternoon light of a June day that had decided to be perfect. Claire was tall and dark-haired and had a laugh that arrived without warning and a way of looking at people like she was actually interested in what they were saying.
+
+"You are Adaline," Claire said. "Elliot talks about you."
+
+"Good things, I hope," Adaline said, which was what you said.
+
+"Specific things," Claire said, which was different and more true. "He says you are the best reader he has ever had. That you understand what he is trying to say before he has finished saying it."
+
+Adaline looked at this woman. At her directness. At the lack of performance in her, the complete absence of the social smoothing that most people apply to conversations with a stranger at their own wedding.
+
+"He writes beautifully," Adaline said. And meant it. Fully.
+
+Claire looked at her for a moment. Something in her eyes that was not quite assessment and not quite recognition and was entirely intelligent.
+
+"Yes," she said. "He does." A pause. "I am glad he has people who see that."
+
+Elliot appeared at Claire's shoulder — holding two glasses of champagne, slightly pink from the heat, looking at them both with an expression that was half nerves and half something she could not name.
+
+"You have met," he said.
+
+"We have met," Claire said. She took her champagne and touched his arm briefly — the small, unconscious touch of people who have made a home of each other — and turned to greet someone else.
+
+Elliot looked at Adaline.
+
+"Thank you for coming," he said.
+
+"Thank you for the margin note in the Sheffield email," she said. "The one about the community centre. I read it four times."
+
+He smiled. "That is the highest compliment you give."
+
+"It is," she said.
+
+They stood in the garden in the late afternoon light and talked for twenty minutes — easily, warmly, with the fluency of two people who have been talking for two years and have found that the person matches the words. At some point Claire drifted back and stood beside him and the three of them talked about translation, about architecture, about the Morante novel, about a film they had all seen and had different opinions about, and it was — it was good. It was genuinely, surprisingly, almost unbearably good.
+
+At seven she said she had to leave. She had a train.
+
+He walked her to the gate of the garden. Claire waved from across the lawn.
+
+"I am glad you exist," he said. It was a very Elliot thing to say.
+
+"So am I," she said. "I am glad you exist too. Both of you."
+
+She meant it. She had arrived at meaning it through something difficult and was on the other side of it now, still carrying the weight but upright, moving, functional.
+
+He hugged her. Brief, warm, the hug of a friend.
+
+She walked to the gate. Opened it. Turned back once.
+
+He was already walking back toward Claire, toward the garden full of people who loved them, toward the life they were building together, which would be — she knew this, she trusted this — a good one.
+
+She turned back to the road.
+
+She walked to the station in the long summer light and she let herself feel all of it — the love, the loss, the gladness, the grief, all of it at once, without ranking it or resolving it or asking it to be simpler than it was.
+
+She was thirty-one years old and she was in love with a man who had married someone else today and she was also genuinely glad he existed and genuinely glad she knew him and genuinely glad that some of the best reading of her life had happened in his emails at two in the morning with no expectation of an audience.
+
+Both things.
+
+All things.
+
+True.
+
+She finished the Morante translation in September.
+
+She dedicated it — in the acknowledgements, in the small quiet space where translators sometimes leave their real thoughts — to the writers whose words had found her when she needed them. She did not name anyone. She did not need to.
+
+He emailed when the book came out. He said: I read your acknowledgements three times. I think I understood them.
+
+She wrote back: I think you probably did.
+
+He wrote: Are you well?
+
+She wrote: Yes. Getting there. Are you?
+
+He wrote: Yes. We are. Both of us.
+
+She wrote: Good. That is genuinely good.
+
+And she meant it. Fully. Without the qualification she would have needed six months ago.
+
+She started a new translation in October — a French novelist she had been wanting to work on for years, a woman who wrote about desire and restraint with the precision of someone who had lived both completely. She worked well. She slept well. She bought a second plant, smaller than the first, and put it on the windowsill in her study where the light was good.
+
+She did not stop loving him. She did not expect to, not soon, possibly not ever entirely — love does not work on a timeline, does not respond to reason, does not vacate when you ask it to.
+
+But love, she was learning, was not only what it asked for. It was also what it gave without asking. The two years of being known. The emails. The specific, irreplaceable experience of being understood by someone before you had finished the sentence.
+
+She had that. She would always have had that.
+
+Some things you carry not as weight but as weather — present, changing, part of the climate of who you are without defining it, without limiting it, without keeping you from everything that is still possible and open and coming.
+
+She sat at her desk in October with the French novelist and the good light and the small plant on the windowsill.
+
+She began.
+
+Have you ever loved someone quietly — without telling them, without asking for anything — and looking back, do you think that silence was a gift or a loss? And is it possible to be grateful for a love that was never yours to keep? Share in the comments. Share this with someone who has loved quietly and well. They deserve to know that loving without taking is one of the bravest things a person can do.`
+},
+  {
   id: "everything-we-did-not-say",
   title: "Everything We Did Not Say",
   genre: "Romance",
