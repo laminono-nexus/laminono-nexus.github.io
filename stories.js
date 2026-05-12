@@ -385,9 +385,9 @@ Who is the person in your life that you have been geographically, emotionally, o
   readTime: "50 min",
   trending: true,
   excerpt: "She spent forty years being everyone else's everything. The day she finally said no — the world called her selfish. What happened next, nobody saw coming.",
-  image: "https://images.unsplash.com/photo-1614289371518-722f2615943d?w=800&q=80",
+  image: "https://images.unsplash.com/photo-1589156206699-bc21e38c8a7c?w=800&q=80",
 cover: {
-  image: "https://images.unsplash.com/photo-1614289371518-722f2615943d?w=1920&q=80"
+  image: "https://images.unsplash.com/photo-1589156206699-bc21e38c8a7c?w=1920&q=80"
 },
   content: `The morning Ngozi Adeyemi turned sixty, nobody remembered.
 
