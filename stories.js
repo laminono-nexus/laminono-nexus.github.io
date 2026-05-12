@@ -1,5 +1,384 @@
 const stories = [
   {
+  id: "the-cartographer-of-broken-things",
+  title: "The Cartographer of Broken Things",
+  genre: "Drama",
+  readTime: "50 min",
+  trending: true,
+  excerpt: "He spent his life mapping every road in the world. He never once found his way back to his son.",
+  image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1920&q=80"
+  },
+  content: `The last letter Martin Voss wrote to his son was four sentences long.
+
+He wrote it in a hotel room in Reykjavik at two in the morning, on the stationery of a place he would never return to, with a pen he would lose before morning. He wrote it the way a drowning man writes — fast, without punctuation of thought, without the careful architecture he applied to everything else in his life. He sealed it. He addressed it. He carried it in his coat pocket for eleven days before mailing it, and by the time he did, he was already in a different country and the letter felt like something written by someone he used to know.
+
+He did not know that his son, Daniel, would read it thirty-seven times.
+
+He did not know because he never asked.
+
+That was, in the end, the whole story. But stories that are whole cannot be told in one sentence, so let us go back to where it started — which was not Iceland, and was not a hotel room, but was a kitchen in Stuttgart in 1987, when Martin Voss was thirty-one years old and his son was four, and the world was still, technically, a place that contained everything Martin needed.
+
+He just could not see it from where he was standing.
+
+Martin Voss was a cartographer.
+
+Not the digital kind — not the programmer hunched over satellite data, processing coordinates into pixels. He was the other kind, the almost extinct kind, the kind that still believed a map was not merely a diagram of distance but an argument about what mattered. He worked for a geographic institute in Stuttgart that produced atlases for academic institutions across Europe, and his specific gift — the one that had earned him a reputation that traveled further than he did, which was saying something — was his ability to render terrain.
+
+Not just accurately. Anyone could be accurate. Martin rendered terrain the way a novelist renders character — with selection, with emphasis, with the understanding that what you choose to show reveals as much as what you choose to omit. His mountain ranges had weight. His coastlines had mood. Looking at a Martin Voss map, you did not simply know where you were. You felt it.
+
+His colleagues called it a gift. His wife, Elena, called it a disappearance act.
+
+"You are here," she said once, standing in the doorway of his studio, watching him work at midnight, "the way furniture is here. Present. Functional. Not actually in the room."
+
+He had looked up. He had meant to say something that proved her wrong. He could not find the words because, he realized, he was not entirely sure she was wrong.
+
+That was 1986. Daniel was three.
+
+The geography of their marriage after that is simple to map but difficult to look at. Elena left in 1991 — not dramatically, not with the violence of a sudden rupture, but with the slow, exhausted logic of a woman who has waited years for a man to return from a place he never physically left. She took Daniel. She moved to Copenhagen, where her sister lived. She was generous in the divorce, which Martin recognized, dimly, as the generosity of someone who had already mourned and arrived at the other side.
+
+He visited Daniel twice a year. Christmas and summer. He was punctual. He brought good presents — the kind of presents a man buys when he does not know his child well enough to know what they actually want, so he substitutes quality for knowledge. He took Daniel to museums, to films, to restaurants that were too grown-up for an eight-year-old, a ten-year-old, a twelve-year-old, because these were the things Martin knew how to do and he did not know how to simply sit on a floor and play.
+
+Daniel was always polite during these visits. Polite in the particular way of a child who has learned that politeness is the safest currency to use with someone who feels more like a formal obligation than a father.
+
+Martin noticed this and told himself it was shyness. It was easier than the alternative.
+
+When Daniel was fifteen, he stopped being polite. He simply stopped coming to the phone. Elena relayed the information with the neutral tone of a woman who is trying very hard not to say I told you so and is mostly succeeding.
+
+Martin wrote letters instead. He was better at letters — better at the written word than the spoken one, better at considered sentences than real-time conversation, better at expression when there was distance between himself and the person he was expressing to.
+
+Perhaps that was always the problem.
+
+Martin was fifty-eight when he went to Reykjavik.
+
+It was a commission — an atlas of the North Atlantic for a Norwegian university press, the kind of project that required months of fieldwork, of driving roads that barely qualified as roads, of standing on clifftops in weather that had opinions about your presence. He had done this kind of work his entire career. It was the work he was best at and felt most like himself doing.
+
+He was there for four months. In the third month, something happened that had never happened to him before in thirty years of fieldwork.
+
+He got lost.
+
+Not dangerously. Not life-threateningly. He took a road off the main route to document a coastal feature, drove further than he intended in the low autumn light, and found himself on a track that ended abruptly at a black sand beach with no landmark he could reconcile against his own maps.
+
+He sat in the car for a long time.
+
+He was a cartographer. He had spent his life making it possible for people to know exactly where they were. And he was sitting on a beach in Iceland, in a car, in the growing dark, with his own maps open on the passenger seat, unable to determine his position.
+
+The feeling was physical. A kind of vertigo that had nothing to do with elevation.
+
+He got out of the car and stood on the black sand. The Atlantic was in front of him — enormous, absolutely indifferent, the color of something older than color. The wind was the cold, intimate kind that gets inside your collar and stays there.
+
+He stood for a very long time.
+
+And in that standing — in that rare, uncomfortable, clarifying stillness — he thought about Daniel.
+
+Not the visiting version. Not the museum version, the restaurant version, the version that arrived with good presents and left with awkward embraces. He thought about Daniel at four years old, standing in the doorway of his studio, asking if they could play, and Martin saying — he remembered this precisely, remembered it with the fidelity of a memory that has been examined many times and still does not improve — "In a little while, Daniel. Papa is working."
+
+In a little while.
+
+Thirty-one years ago.
+
+He got back in the car. He drove until he found a road he recognized. He returned to the hotel in Reykjavik and he sat at the desk with the hotel stationery and he wrote the letter. Four sentences. The inadequate, urgent, midnight sentences of a man who has just understood something that was always true and is only now, at fifty-eight, on a black sand beach in Iceland, becoming real.
+
+He mailed it eleven days later.
+
+He did not know that Daniel would read it thirty-seven times.
+
+The letter said:
+
+Daniel. I have been thinking about the kind of father I have been. I do not have an excuse that is worth your time. I would like, if you are willing, to try to have a conversation that is longer than a visit. I am sorry it took me this long to ask.
+
+— Dad
+
+Daniel Voss was thirty-five when the letter arrived. He was living in Toronto. He was a structural engineer — a fact that Martin had registered at some point but had not thought about carefully until now, when he was thinking about it very carefully: his son built things designed to hold weight. His son had spent his career learning how to make structures that did not collapse.
+
+Daniel read the letter the first time standing at his mailbox in the November cold. He read it the second time sitting in his car in the parking garage. He read it the third time at his kitchen table with a glass of water he did not drink.
+
+By the thirty-seventh reading, he had not yet decided what to do with it.
+
+He called his mother instead.
+
+Elena was sixty-four, retired, living in Copenhagen in an apartment filled with plants and books and the quiet, full life of a woman who had rebuilt thoroughly and was not interested in excavating old ground.
+
+"He wrote to me," Daniel said.
+
+A pause. "What did he say?"
+
+Daniel read it to her.
+
+Another pause. Longer.
+
+"What are you going to do?" she asked.
+
+"I do not know," Daniel said. "What would you do?"
+
+Elena was quiet for a moment. "I would ask myself what I want," she said. "Not what he deserves. Not what is fair. What do you actually want, Daniel?"
+
+Daniel looked at the letter on his kitchen table.
+
+"I want to know why," he said. "I want to understand how someone can be present for an entire childhood and be completely absent at the same time. I want that explained to me in a way that makes sense."
+
+"Then ask him," Elena said.
+
+"What if the answer is not good enough?"
+
+"Then at least you will have asked," she said. "And that is more than he managed for thirty years."
+
+Martin flew to Toronto in February.
+
+He had not been to Canada before. He noticed this with the particular awareness of a man who has been to sixty-one countries and is now conscious, for perhaps the first time, that being everywhere is not the same as being somewhere.
+
+Daniel met him at a coffee shop near his office. Not at his home — Martin understood this without needing it explained. A coffee shop was neutral ground, a public place, a location with exits.
+
+They were physically similar in a way that seemed to embarrass both of them. The same long face. The same slightly too-serious default expression that strangers sometimes mistook for unfriendliness. Daniel had his mother's eyes, but everything else — the hands, the posture, the way he held a coffee cup with both hands as if it might escape — was Martin's.
+
+They talked about the flight. About Toronto's winter. About Daniel's current project — a pedestrian bridge in the east end, a long commission, complex foundations because of the soil composition near the waterway.
+
+Martin asked questions about the bridge because he was genuinely interested and because it was easier than the alternative. Daniel answered them carefully. They were, for twenty minutes, two strangers who happened to share a jawline.
+
+Then Daniel put down his cup and looked at his father directly.
+
+"I want to ask you something," he said. "And I want you to answer it honestly, not carefully. There is a difference."
+
+Martin looked at his son. "All right," he said.
+
+"Did you love me?" Daniel said. "When I was young. When you were still in the house. Did you actually love me, or was I just — part of the furniture of a life you were not really living?"
+
+The coffee shop was warm. Someone at the counter was steaming milk. Outside, the February street was the specific grey of a city that has been cold for too long and is not expecting relief anytime soon.
+
+Martin sat with the question.
+
+He did not rush. He had learned, at fifty-eight on a black sand beach, that rushing toward answers was how you ended up with the wrong ones.
+
+"Yes," he said finally. "I loved you. I love you. But love — I thought love was something you felt, and that the feeling was enough. I did not understand that love is also something you do. Consistently. Even when you are tired. Even when your work is calling. Even when presence feels —" He stopped. "Even when presence feels harder than absence."
+
+Daniel was quiet.
+
+"That is not a good answer," Martin said. "I know it is not good enough. I am not asking you to accept it. I am just — answering honestly. The way you asked."
+
+"Why was it harder?" Daniel said. "Being present. Why was it harder than just leaving?"
+
+Martin thought about this for a long time.
+
+"Because presence requires you to be seen," he said slowly. "And I spent my life making maps. I was very good at showing other people where things were. I was not good at being located myself."
+
+Daniel looked at him.
+
+"That is almost a good answer," he said.
+
+"Almost is the best I have managed so far," Martin said.
+
+Something shifted in Daniel's face. Not forgiveness — it was too early for forgiveness, and forgiveness is not a thing that happens in coffee shops in February anyway. But something. A crack of light under a door.
+
+"Tell me about Iceland," Daniel said.
+
+They met four more times that week.
+
+Not planned, exactly — each meeting grew out of the previous one the way conversations grow when two people have decades of unasked questions and have both, finally, decided to start asking them.
+
+They walked along the waterfront where Daniel's bridge was being built. Daniel explained the foundation problem — the soil near the waterway was variable, unstable in patches, required a design that could accommodate shifting load distribution. He talked about it with the focused, slightly lit-up energy of someone who genuinely loves their work, and Martin recognized this immediately and painfully, because it was the same energy he brought to his own work and had always assumed was invisible to other people.
+
+"You talk about it the way I talk about maps," Martin said.
+
+Daniel looked at him. "I know," he said. "Mum pointed that out when I was in university. She said —" He stopped.
+
+"What did she say?"
+
+Daniel was quiet for a moment. "She said I had inherited your ability to fall in love with problems. She said she hoped I would also inherit the sense to know when to put them down."
+
+Martin absorbed this.
+
+"Did you?" he asked. "Inherit the sense?"
+
+Daniel looked out at the water. "I am thirty-five and I have not managed to sustain a relationship longer than two years," he said. "So probably not entirely."
+
+They stood by the waterfront in the February cold for a while. The bridge structure rose out of the riverbed — skeletal, purposeful, mid-becoming.
+
+"It will be good," Martin said. "The bridge. I can see it."
+
+"You can see it from the structure?"
+
+"I can see it from the way you talk about the problem," Martin said. "People who understand their problems usually solve them."
+
+Daniel looked at his father.
+
+"Is that what you are doing?" he said. "Understanding the problem?"
+
+"Trying to," Martin said. "Late. But trying."
+
+On the fifth day, Daniel did something Martin had not expected.
+
+He called Elena and put her on speakerphone, and the three of them had a conversation — Martin in Daniel's apartment, the speakerphone on the kitchen table, Elena's voice coming from Copenhagen with the slight delay of international calls, that half-second pause that makes every sentence feel more considered than it is.
+
+It was not a comfortable conversation. It was not designed to be.
+
+Elena said things that were true and that landed with the precision of someone who has had thirty years to find the exact words and has chosen them carefully.
+
+She said: "You were not a villain, Martin. That would have been simpler. You were just — somewhere else. Always somewhere else. And the tragedy of somewhere else is that it looks, from the outside, like a choice. It looks like you chose the maps over us."
+
+"Did I not?" Martin said.
+
+"I think," Elena said, "you did not know you were choosing. I think you genuinely did not understand that presence was a thing that required active decision. I think you believed that being in the house was the same as being there."
+
+"That is not an excuse," Martin said.
+
+"No," she agreed. "But it is an explanation. And explanations matter when you are trying to understand rather than just assign blame."
+
+A pause.
+
+"I am not angry at you anymore, Martin," she said. "I want you to know that. I was angry for a long time. But anger is exhausting, and I have things I would rather spend my energy on."
+
+"I am sorry," Martin said. "For what it is worth at this distance."
+
+"It is worth something," she said. "It is worth more than nothing."
+
+After she hung up, Daniel and Martin sat in the apartment kitchen without speaking for several minutes. Outside, the city made its city sounds — distant traffic, a siren, the muffled percussion of someone's music two floors up.
+
+"She is remarkable," Martin said.
+
+"Yes," Daniel said. "She is."
+
+"I did not deserve her," Martin said. "I did not deserve either of you. I am aware of that."
+
+"Deserving is not really the point," Daniel said slowly, as if he was working it out as he spoke. "The point is what you do with the time that is left. That is what I keep coming back to." He paused. "I am thirty-five. You are fifty-eight. Between us, we have — what. Decades, hopefully. That is still time. That is not nothing."
+
+Martin looked at his son.
+
+"No," he said quietly. "It is not nothing."
+
+On his last evening in Toronto, Martin asked Daniel if he could see his apartment properly.
+
+Not the kitchen where they had been talking. All of it.
+
+Daniel looked at him oddly but said yes, and Martin walked through the rooms with the attentiveness he brought to new terrain — noticing, filing, understanding a life through its physical evidence. The bookshelf organized by something other than alphabet — by some private logic that Martin could not decode but found interesting. The drawing board near the window with the bridge sketches pinned above it. The running shoes by the door, worn at the outer heel in a way that suggested Daniel ran long distances and ran them often. A photograph on the wall — Daniel and a group of friends at what looked like a trail somewhere mountainous, all of them squinting into sun and looking slightly destroyed in the way of people who have pushed themselves and feel good about it.
+
+Martin stopped at the photograph.
+
+"Where was this?" he asked.
+
+"Patagonia," Daniel said. "Three years ago. We hiked the W Trek."
+
+Martin looked at it for a long time.
+
+"I mapped that region," he said. "In 2003. I spent six weeks there."
+
+Daniel turned to look at him. "You were in Patagonia in 2003?"
+
+"October and November."
+
+A strange silence.
+
+"I went in February of that year," Daniel said. "For a month. Before the trek, I was doing survey work for a university project."
+
+They looked at each other.
+
+"We were in the same place," Martin said.
+
+"In the same year," Daniel said.
+
+"And did not know it," Martin said.
+
+The silence that followed was the kind that has weight and texture, the kind you could run your hands over. Two people in the same landscape at the same time, moving through the same terrain, completely invisible to each other. A father and a son, separated by nothing but the absence of knowledge of each other's whereabouts.
+
+Martin, who had spent his life mapping the world, had not known where his own son was.
+
+"I am going to make something," Martin said. It came out quietly, the way decisions sound when they have been forming for a long time and have finally found their sentence. "When I get back to Stuttgart. I do not know exactly what it is yet. But I want to make a map — not a geographic one. Something that shows where we actually were. Both of us. All the years. All the places. A record of the parallel lives we were living without knowing it."
+
+Daniel looked at him.
+
+"Why?"
+
+"Because I have spent my life mapping terrain," Martin said. "I want to try mapping something that matters more."
+
+Daniel was quiet for a moment. "We were in the same city once," he said. "You came to Copenhagen for Christmas when I was twelve. I had a friend whose family lived in the same street as the hotel you stayed at."
+
+"I did not know that."
+
+"Neither did I. I found out years later." He paused. "We probably walked past each other."
+
+Martin absorbed this.
+
+"I would like to find all of those," he said. "All the times we were closer than we knew."
+
+Daniel looked at his father for a long time — the long, measuring look of a structural engineer assessing load-bearing capacity, determining whether a structure will hold.
+
+"That would take a while," he said.
+
+"Yes," Martin said. "It would."
+
+Another pause.
+
+"I am free most weekends," Daniel said.
+
+Martin Voss returned to Stuttgart in late February.
+
+He did not go back to the atlas project immediately. Instead he went to his studio and he cleared the large drafting table he had worked on for twenty years and he began to construct something he had no professional language for.
+
+He started with two parallel timelines. His life. Daniel's life. He plotted them geographically — every city, every country, every address he could verify. He wrote to Daniel for the gaps, and Daniel wrote back, and the correspondence that developed out of this project was unlike anything they had exchanged before: specific, detailed, collaborative, two people building something together that required both of them to be fully present.
+
+They found eleven moments of geographic proximity they had not known about. Cities where they had both been within the same week. An airport — Zurich, 2009 — where their flights had departed from adjacent terminals forty minutes apart.
+
+A beach in southern Portugal where Martin had done survey work in 2011 and Daniel had spent a week with friends the same summer.
+
+They had been on the same beach.
+
+The map grew large. It covered the entire surface of the drafting table and required three extensions. It was not a beautiful map in the conventional sense — it was dense with annotation, with cross-references, with the layered notation of two lives being compared and connected. But it had the quality Martin recognized in his best work: it told a truth that was not immediately visible, and when you saw it, you could not unsee it.
+
+He photographed it and sent it to Daniel.
+
+Daniel called him that night — not a text, a call. His voice sounded the way a voice sounds when something has landed somewhere unexpected and undefended.
+
+"There is a gap," Daniel said. "In my twenties. Almost eight years where we are not near each other at all."
+
+"I know," Martin said. "Those were the years you stopped returning calls."
+
+A silence.
+
+"Yes," Daniel said. "They were."
+
+"I am not saying it to — I am not assigning blame. I just —" Martin paused. "On the map, it looks like a white space. The kind cartographers used to label with old Latin phrases."
+
+"What phrases?"
+
+"Things like — here there be nothing known. Here we have no information."
+
+Another silence.
+
+"We could fill it in," Daniel said. "With what actually happened. On both sides."
+
+"That would require more conversations," Martin said.
+
+"Yes," Daniel said. "It would."
+
+Martin looked at the map spread across his studio table. At the two lives running parallel across decades and continents, occasionally converging, occasionally almost touching, sometimes in the same city, once on the same beach, never — until a hotel room in Iceland at two in the morning — close enough to hear each other.
+
+"Daniel," he said.
+
+"Yes."
+
+"I am glad you read the letter."
+
+A pause. "Thirty-seven times," Daniel said.
+
+Martin went very still. "You counted?"
+
+"The first few were not a choice," Daniel said. "After that, I think I was looking for something."
+
+"Did you find it?"
+
+A long silence. The kind that is not empty.
+
+"I am still looking," Daniel said. "But I think I am looking in the right place now."
+
+Martin put his hand flat on the map. On the white space. On the years they had both been somewhere the other did not know.
+
+"I will call you on Sunday," he said.
+
+"I know," Daniel said. "I will answer."
+
+Who is the person in your life that you have been geographically, emotionally, or silently absent from — and what would your four-sentence letter to them say right now, tonight, if you were brave enough to write it? Share in the comments. The only letters that never arrive are the ones that stay in your pocket.`
+},
+  {
   id: "the-woman-who-swallowed-her-own-name",
   title: "The Woman Who Swallowed Her Own Name",
   genre: "Drama",
