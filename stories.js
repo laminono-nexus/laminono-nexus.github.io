@@ -1,5 +1,390 @@
 const stories = [
   {
+  id: "everything-we-did-not-say",
+  title: "Everything We Did Not Say",
+  genre: "Romance",
+  readTime: "60 min",
+  trending: true,
+  excerpt: "They met at the wrong time. Left at the wrong time. And found each other again at the worst possible time. The problem was — nothing had changed. And everything had.",
+  image: "https://images.unsplash.com/photo-1608327092131-56c824b13052?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1608327092131-56c824b13052?w=1920&q=80"
+  },
+  content: `The first thing Sera noticed when she walked into the hotel bar in Edinburgh was that it was raining outside and warm inside, and that both of these things felt like a warning she was choosing to ignore.
+
+The second thing she noticed was Daniel Avery sitting at the far end of the bar.
+
+He had not seen her yet. She had approximately four seconds to make a decision — leave, or stay and pretend that the ground had not just shifted beneath her feet in the particular way it only ever shifted for him, even now, even after six years, even in a country neither of them was from, in a city that had no business containing both of them on the same wet Thursday evening in November.
+
+She stayed.
+
+Not because she was brave. Because her legs simply did not receive the message to move.
+
+He looked up.
+
+And there it was — that thing that had no name, that thing that had never had a name in the four years they were together or the six years since, that thing that lived in the exact space between recognition and consequence.
+
+"Sera," he said.
+
+Just her name. Nothing else. The way you say a word you thought you had forgotten and discover you never had.
+
+"Daniel," she said.
+
+And they looked at each other across a hotel bar in Edinburgh on a Thursday evening in November, six years after the last time they had been in the same room, and the rain came down outside, and the bar was warm, and neither of them moved.
+
+She sat down. Not next to him — two stools away, which was close enough to talk and far enough to pretend this was casual, which it was not, which they both knew it was not, but the pretense was necessary because the alternative was acknowledging what was actually happening and neither of them was ready for that.
+
+"What are you doing in Edinburgh?" he asked.
+
+"Conference," she said. "Architecture. You?"
+
+"Book launch." He paused. "Well. Someone else's book launch. I did the cover."
+
+He was a graphic designer. Had been, when she knew him. Still was, apparently. She felt something shift in her chest at this — not surprise, but the specific tenderness of finding that a person you loved is still recognizably themselves.
+
+"Is it a good book?" she asked.
+
+"Terrible," he said. "Beautiful cover though."
+
+She laughed. It came out before she could stop it — the real laugh, the one she had never been able to manufacture, the one that only arrived when something caught her genuinely off guard.
+
+He smiled. And there was the other thing — the smile that started in his eyes before it reached his mouth, the smile she had spent four years waking up next to and six years trying to forget the specific geometry of.
+
+The bartender appeared. Sera ordered wine. Daniel ordered another whisky. The rain intensified outside, drumming against the tall windows of the bar, and Edinburgh did what Edinburgh does in November — wrapped itself in grey and amber and the specific melancholy of a beautiful city that knows what it is.
+
+"How long are you here?" he asked.
+
+"Three days," she said. "You?"
+
+"Two." A pause. "I leave Saturday morning."
+
+"I leave Saturday afternoon."
+
+They sat with this information. The almost-overlap of it. The city containing them for the same thirty-six hours, which was either coincidence or the universe doing something it had no business doing.
+
+"Are you —" he started.
+
+"Yes," she said. Then: "Are you?"
+
+"No," he said. "Not anymore."
+
+Another pause.
+
+"I am sorry," she said.
+
+"Do not be," he said. "It was — mutual. And a long time coming." He turned his glass. "You?"
+
+"Yes," she said again. Then: "His name is Marco. He is in Rome right now."
+
+"Is he good?" Daniel asked.
+
+She looked at him. In six years she had not had a single conversation with a single person who had asked her that question — not is he successful, not is he handsome, not is he kind, but is he good. The Daniel Avery question. The question that cut straight to the thing that mattered.
+
+"Yes," she said. "He is good."
+
+Daniel nodded. Something moved across his face and was gone before she could identify it.
+
+"Good," he said. And she believed him. That was the thing about Daniel — she had always believed him, even when believing him was difficult, even when it would have been easier not to.
+
+They had met at a party in London in 2014.
+
+This is the ordinary version. The version you tell people at dinner parties when they ask how you met, before the relationship becomes something that requires a longer explanation.
+
+The longer explanation is this: she had been standing on the balcony of someone's flat in Brixton at eleven at night, holding a drink she did not want, thinking about leaving, when a man she did not know came and stood beside her and looked out at the city and said, without preamble or introduction, "Do you ever think about how many conversations are happening in all those lit windows right now?"
+
+She had looked at him. "Constantly," she said.
+
+That was it. That was the whole beginning.
+
+They talked for three hours on that balcony. About cities and buildings and the way light behaves differently in different countries. About the year she had spent in Tokyo and the year he had spent in Lisbon and the specific quality of loneliness that comes from being in a beautiful place alone. About their families — her mother who was an engineer and her father who had wanted to be a musician and compromised into silence, his parents who had stayed together twenty years past the point where staying made sense because leaving seemed more frightening than remaining.
+
+At two in the morning the party had emptied around them without either of them noticing.
+
+"I think we are the last ones here," Daniel said.
+
+Sera looked inside. The flat was dark except for a lamp in the corner. Everyone else had gone.
+
+"I think we have been standing on this balcony for three hours," she said.
+
+"Yes," he said.
+
+"That is unusual," she said.
+
+"For me too," he said.
+
+They stood there for another moment. The city below them was quieter but not quiet — London is never quiet, which is either its strength or its flaw depending on who you ask and when.
+
+"I should go," she said.
+
+"Yes," he said. Then: "Can I have your number? Not — I just. I would like to continue this conversation."
+
+She gave it to him. He called her the next day. Not texted — called. Which was already unusual, already a signal of something.
+
+They had four years.
+
+Four years that were, she would say later, the most fully alive she had felt in her adult life — not because they were perfect, not because it was easy, but because Daniel Avery was the only person she had ever been with who seemed genuinely interested in who she was rather than who she was in relation to him. He asked questions and waited for the answers. He remembered things. He noticed when she was quiet in a different way than usual. He made her feel, consistently and without apparent effort, like being herself was not only acceptable but was specifically the thing he had been looking for.
+
+The problem — the problem that accumulated slowly and then all at once, the way water erodes stone — was that she had a life plan. She had always had a life plan. It was the architecture of her existence: the career trajectory, the city, the timeline. London until thirty-two, then the partnership track at the firm, then whatever came next. Structured. Intentional. Load-bearing.
+
+Daniel did not have a plan. He had a direction — forward, curious, open — but not a plan. He was offered a residency in Berlin in 2017 and took it without anguish, the way a person takes an open door. He talked about possibly living in different cities, possibly going back to Lisbon, possibly spending a year somewhere he had never been.
+
+Possibly. That word. The word that lived in the gap between his life and the architecture of hers.
+
+She could not do possibly. She had built herself on certainty, on structure, on knowing the load-bearing walls of her own future.
+
+They talked about it. Many times. With love and honesty and the specific exhaustion of two people who understand each other well enough to see the problem clearly and are not sure the clarity helps.
+
+In the end — and the end came in March 2018, on a Sunday, in their flat in Islington, with the specific grey light of a London March coming through the windows — she said:
+
+"I think we want different things."
+
+And he said: "I think we want the same things in different shapes."
+
+And neither of them was wrong. Which made it worse.
+
+He left. She stayed. The flat was hers. She kept the bookshelf they had built together and got rid of the lamp he had chosen and kept the habit of making coffee the way he had taught her and told herself this was not significant.
+
+They finished their drinks and ordered more, which was a decision neither of them announced but both of them made.
+
+The bar filled up around them — conference people, tourists sheltering from the rain, a group of young women celebrating something with the specific joy of people who have not yet learned to moderate it. The room became warm and loud and intimate in the way bars become intimate when the weather outside is bad enough to make staying feel like a choice rather than a default.
+
+They talked. Carefully at first, with the slightly formal register of people who have history and are navigating its terrain slowly. About work — she had made partner at the firm two years ago, which she said simply and without performance. About his work — the covers he was proudest of, the ones that had not worked, a project he was developing that involved hand-drawn typography and that he described with the lit-up specificity of someone who has not yet told many people about it.
+
+Gradually the care fell away. Not all at once — gradually, the way formality always dissolves when two people who know each other well spend enough time in a warm room together.
+
+"Do you still do that thing," she said, "where you rearrange the furniture when you cannot sleep?"
+
+He looked at her. Something surprised in his face. "Yes," he said. "How did you —"
+
+"You rearranged our living room four times in one month," she said. "I came home from a site visit once and the sofa was facing the window."
+
+"The light was better that way," he said.
+
+"It was," she said. "I never told you that."
+
+He was quiet for a moment. "I still do it," he said. "My current flat — the bedroom has been in three different configurations in eight months."
+
+"Does it help?"
+
+"Usually," he said. "It is like — resetting something. The space changes and my head changes with it."
+
+She nodded. She understood this. She had always understood this about him — the way his inner state and his physical environment were in constant conversation, the way he could not separate the two.
+
+"I bought a plant," she said.
+
+He looked at her. "You."
+
+"Me."
+
+"Sera Okonkwo bought a plant."
+
+"Do not make it into something."
+
+"It is already something," he said. "You once told me you were not a person who kept things alive."
+
+"I was talking about plants."
+
+"Were you?"
+
+She looked at him. He looked back. The thing between them — that nameless thing — was present and neither of them was pretending otherwise anymore.
+
+"It is still alive," she said. "The plant. Three years."
+
+"Good," he said softly. And then, in a different register: "That is really good, Sera."
+
+She looked away. At the rain on the windows. At the city outside, amber and grey, doing what it did.
+
+"I think about that Sunday sometimes," she said. She had not planned to say it. It arrived the way true things arrive when the room is warm enough and the hour is late enough — without permission.
+
+He did not ask which Sunday. He knew.
+
+"So do I," he said.
+
+"Not with regret," she said quickly. "I just — I think about what you said. The same things in different shapes."
+
+"I still think that is true," he said.
+
+"So do I," she said. "Now. I think I understand it better now than I did then."
+
+Daniel turned his glass slowly on the bar. "What changed?"
+
+Sera thought about this. About the years between that Sunday and this Thursday. About Marco, who was good and kind and present and with whom she had built something real and functional and warm. About the partnership. About the plant, which was a small but genuine thing. About the slow, incremental work of becoming a person who could hold both structure and openness without one destroying the other.
+
+"I learned that the plan was not the point," she said. "I thought the plan was load-bearing. I thought without it everything would collapse. But it was not. The plan was just —" she paused, searching, "scaffolding. You take it down when the structure can hold itself."
+
+Daniel looked at her for a long time.
+
+"When did you figure that out?" he said.
+
+"Too late," she said. "And also —" she stopped.
+
+"Also at the right time," he said quietly. "For what came next."
+
+"Yes," she said. "For what came next."
+
+They sat with this. The bar noise around them. The rain. The warmth.
+
+"Are you happy?" he asked. The Daniel Avery question. Straight to the centre of things.
+
+She thought about it honestly. "Yes," she said. "Not in the way I thought happiness would feel. It is quieter than I expected. Less — architectural." A pause. "But real. It is real."
+
+He nodded. "That is the best kind," he said.
+
+"Are you?" she asked.
+
+He considered it with the same honesty. "Getting there," he said. "I think I needed to be alone for a while. To figure out what I actually wanted versus what I was willing to accept." He paused. "I accepted a lot of things that were not right because being with someone felt better than not being."
+
+"I did the opposite," she said. "I was alone and called it independence."
+
+"Were you lonely?"
+
+"Yes," she said. Simply, without drama. "For a long time."
+
+"Me too," he said.
+
+They looked at each other.
+
+"This is a strange evening," she said.
+
+"Yes," he said. "It is."
+
+At some point — neither of them marked exactly when — the bar thinned out. The celebrating women left in a warm, laughing cloud. The conference people drifted away in ones and twos. The bartender began the quiet work of end-of-night without hurrying anyone.
+
+Sera and Daniel remained.
+
+Not because they had decided to. Because leaving required a decision and staying only required not making one, and there are evenings — rare ones, significant ones, the kind you sense even while they are happening that you will think about later — where the not-deciding is itself a choice.
+
+"I should tell you something," Daniel said.
+
+She looked at him.
+
+"When I left — when I went to Berlin — I wrote you a letter." He paused. "A real one. On paper."
+
+Sera went very still.
+
+"I never sent it," he said. "I rewrote it four times and never sent any of the versions because none of them said the right thing. Or they all said too much of the right thing. I was not sure which."
+
+"What did it say?" she asked.
+
+He was quiet for a moment. "That I understood why you needed the plan. That I had been unfair in treating your certainty like a limitation rather than a form of courage. That building something solid is not smaller than leaving it open — it is a different kind of bravery and I had not given it the respect it deserved." He paused. "And that I missed you. Every day for a year, I missed you."
+
+Sera was quiet for a long time.
+
+Outside, the rain had eased to the kind of fine mist that is almost not rain at all, the kind that does not require an umbrella but leaves you damp anyway, the kind that Edinburgh specialises in.
+
+"I rearranged my office," she said finally. "About a month after you left. I moved everything. The desk faced the window."
+
+He looked at her.
+
+"The light was better," she said.
+
+Something moved across his face that was not quite a smile and not quite sadness and was entirely itself.
+
+"Sera," he said.
+
+"I know," she said.
+
+"This is not —"
+
+"I know," she said again. "I am not asking for anything. I am not — I have a life. A good one. And so do you. Or you are building one." She paused. "I just wanted you to know. That I understood. That I understand. What you were trying to say on that Sunday."
+
+"The same things in different shapes," he said.
+
+"Yes," she said. "I think we would have figured it out. If we had had more time. Or different time. Or —"
+
+"Or if we had been slightly different people at the exact moment it mattered," he said.
+
+"Yes," she said. "That."
+
+They sat with this. With the particular weight of a truth that has been identified too late to change anything and too clearly to be dismissed.
+
+"Can I ask you something?" Daniel said.
+
+"Yes."
+
+"The plant," he said. "What kind is it?"
+
+She blinked. Then laughed — the real laugh, the one she could not manufacture. "A monstera," she said. "It has gotten enormous. It is genuinely out of control."
+
+"Of course it is," he said. And he was smiling — the real one, the eyes first — and she was laughing, and for a moment they were just two people in a bar in Edinburgh at the end of a November evening, warm inside while the city was damp outside, laughing about a plant.
+
+She saw him once more before they left.
+
+Saturday morning, hotel breakfast room, seven forty-five. He was at a table by the window with coffee and a notebook — drawing something, not writing, his hand moving in the small deliberate way it moved when he was working something out. He had not seen her.
+
+She stood in the doorway for a moment.
+
+She thought about going over. About saying something. About the letter he had never sent and the lamp she had thrown away and the sofa that faced the window and the plant that had grown enormous and out of control.
+
+She thought about Marco in Rome, who was good, who was real, who deserved the full version of her that she had been slowly and honestly becoming.
+
+She thought about what Daniel had said — the same things in different shapes.
+
+She thought about how some things are true and also finished. How a story can be complete without being resolved. How two people can love each other across time in a way that is real and also not enough, in a way that asks nothing and changes nothing and still, quietly, means something.
+
+She got her coffee from the counter. She walked to a table on the other side of the room. She sat down. She opened her laptop.
+
+At some point — she was not looking — she heard his chair move. Heard him cross the room. Felt, without seeing, the moment he reached the doorway.
+
+She did not look up.
+
+She heard him pause.
+
+Then she heard his footsteps continue, down the corridor, toward the lift, toward Saturday morning and a flight and whatever came next for a man who had learned to take open doors.
+
+She looked up at the window.
+
+Edinburgh was pale and silver in the morning light, the castle on the hill doing what it always did — enduring, above the weather, patient in the particular way of things that have been standing long enough to know that everything passes and nothing passes completely.
+
+She picked up her coffee.
+
+She thought: I am glad I stayed.
+
+She thought: I am glad he is still himself.
+
+She thought about the monstera at home, growing toward whatever light it could find, enormous and out of control and stubbornly, persistently alive.
+
+Then she opened her emails. Found the one from Marco sent at six in the morning Rome time — a photograph of the view from his hotel window and no caption, just the image, just the light on the buildings, just the small ordinary gesture of a person saying I am here and I thought of you.
+
+She looked at it for a long time.
+
+Then she replied: beautiful. come home soon.
+
+And meant it. Fully. Without remainder.
+
+She never told Marco about Edinburgh.
+
+Not because it was a secret — there was nothing to secret, nothing had happened, nothing would happen — but because some things belong only to themselves. Some encounters live in their own sealed space, complete and private, neither shameful nor significant enough to require explanation.
+
+She kept the monstera.
+
+It grew three new leaves that winter, which felt like something, though she was not sure what.
+
+Daniel finished the project with the hand-drawn typography eight months later. It was exhibited in a gallery in Amsterdam. She saw it mentioned in a design publication she followed and looked at the images — the letters drawn with the particular intentionality of someone who has decided that how you make a thing is as important as what the thing says.
+
+She thought they were beautiful. She did not reach out to say so.
+
+Some things you hold without sending.
+
+Some letters stay on the desk.
+
+Some sofa faces the window and some face the room and both catch the light differently and both are, in their own way, right.
+
+She understood this now.
+
+She had learned it slowly, the way you learn the things that matter — not in a single moment of revelation but in the accumulation of ordinary days, in the plant that kept living, in the emails with photographs and no caption, in the conference rooms and site visits and Saturday mornings that make up a life that is not perfect and is genuinely, quietly, without remainder, hers.
+
+And sometimes — not often, not with longing, just occasionally, the way you remember a city you visited once in weather that was exactly right — she thought about a bar in Edinburgh and a Thursday in November and a man who had asked her if she was happy and waited for the true answer.
+
+And she was glad.
+
+Not for what was lost. For what she had carried forward from it.
+
+For the shape it had given to everything that came after.
+
+Have you ever loved someone where everything was right except the timing — and looking back, do you believe it was timing that failed you, or were you both exactly who you needed to be to learn what came next? And the hardest question: do you believe the right person at the wrong time is still the right person? Share in the comments. Share this with someone who loved deeply and had to let it go anyway. They need to know that a love that did not last can still be one of the truest things that ever happened to them.`
+},
+  {
   id: "the-cartographer-of-broken-things",
   title: "The Cartographer of Broken Things",
   genre: "Drama",
