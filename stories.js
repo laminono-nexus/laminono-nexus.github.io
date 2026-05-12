@@ -6,10 +6,10 @@ const stories = [
   readTime: "50 min",
   trending: true,
   excerpt: "She spent forty years being everyone else's everything. The day she finally said no — the world called her selfish. What happened next, nobody saw coming.",
-  image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
-  cover: {
-    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1920&q=80"
-  },
+  image: "https://images.unsplash.com/photo-1614289371518-722f2615943d?w=800&q=80",
+cover: {
+  image: "https://images.unsplash.com/photo-1614289371518-722f2615943d?w=1920&q=80"
+},
   content: `The morning Ngozi Adeyemi turned sixty, nobody remembered.
 
 Not her daughter in London, who had sent a voice note three days early and considered the matter settled. Not her son in Abuja, who meant to call but got pulled into a meeting that stretched until midnight and told himself tomorrow would do. Not her husband of thirty-eight years, Chukwuemeka, who was in the sitting room watching football when she came downstairs in her good dress — the blue one she had bought four years ago and worn exactly once — and who looked up briefly and said, "There is no pepper in the soup."
@@ -375,10 +375,10 @@ At what point did you — or a woman you love — stop shrinking and start takin
   readTime: "50 min",
   trending: true,
   excerpt: "He was buried alive — not in a grave, but in plain sight. What he did next changed an entire village forever.",
-  image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-  cover: {
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
-  },
+  image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80",
+cover: {
+  image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=1920&q=80"
+},
   content: `The morning Samuel Osei decided to disappear, nobody noticed.
 
 Not his neighbors, who had long stopped greeting him. Not the market women, who had learned to look through him like glass. Not even the children, who once followed every adult in the village like shadows — because Samuel, to them, was not a man. He was furniture. Present, unmoved, and utterly without purpose.
