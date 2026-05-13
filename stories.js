@@ -1,5 +1,372 @@
 const stories = [
   {
+  id: "the-things-we-bury-always-grow",
+  title: "The Things We Bury Always Grow",
+  genre: "Drama",
+  readTime: "50 min",
+  trending: true,
+  excerpt: "He kept the letter for twenty-two years. When he finally opened it — his daughter had written it the night before she disappeared. And every word was meant for him.",
+  image: "https://images.unsplash.com/photo-1775725173215-4456488c961f?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1775725173215-4456488c961f?w=1920&q=80"
+  },
+  content: `The letter had been in the drawer for twenty-two years.
+
+Robert Callahan knew it was there the way you know a tooth is loose — constantly, in the background, with a low persistent awareness that never fully left even when other things demanded his attention. He had put it there the morning after Maya disappeared, unopened, because opening it had felt like a door he was not ready to walk through. Then the days became weeks and the weeks became months and the months folded into years, and the longer it sat there the more weight it accumulated, until opening it became something he could not do not because he lacked courage but because he had built his entire subsequent life around the fact of its not being opened, and opening it now would require him to examine that life from the beginning.
+
+He was sixty-seven years old.
+
+He was out of reasons to wait.
+
+He made coffee. He sat at the kitchen table in the house in Cork where he had lived alone for eleven years. Outside, the November morning was doing what November mornings do in the south of Ireland — delivering a grey so complete and considered it was almost beautiful, the kind of grey that is not absence of colour but is itself a colour, particular and Irish and specific to this coast.
+
+He put the letter on the table.
+
+He looked at it.
+
+It was a standard white envelope, slightly yellowed at the edges now, with his name on the front in Maya's handwriting — the handwriting of her at twenty-three, which he had not seen in any new form since. The letters were careful. She had always been careful with her letters, with the physical act of writing, pressing deliberately the way people do when they want the thing to last.
+
+He had not deserved that care.
+
+He knew that. He had known it for twenty-two years.
+
+He opened the letter.
+
+Maya Callahan had been the kind of child who made you feel, as a parent, that you had done something right without being entirely sure what it was.
+
+She was clever in the way that is broader than academic — the kind of clever that notices things, that makes connections between unrelated ideas, that asks the question nobody else thought to ask and then waits, with genuine patience, for the answer. She had her mother's eyes — dark, direct, the kind of eyes that people found either comforting or slightly unnerving depending on what they were hiding — and Robert's stubbornness, which he recognized in her with the complicated pride of a person seeing their own worst quality made somehow more bearable in someone else.
+
+Her mother, Deirdre, had died when Maya was nine. Cancer, swift and total, the kind that does not negotiate. Robert had been thirty-six, alone with a nine-year-old daughter, working as a civil engineer for Cork City Council, and entirely unprepared for both the grief and the responsibility, which arrived simultaneously and did not acknowledge each other.
+
+He had done his best. He believed this. He had kept the house running, kept Maya in school, kept food on the table, attended the parent-teacher meetings and the school plays and the graduations. He had been present in the way that presence can be managed — logistically, reliably, consistently — while being absent in the way that is harder to name and harder to forgive.
+
+He had not talked about Deirdre.
+
+Not to Maya, not to anyone. He had locked the grief in a room inside himself and thrown away the key not because he was heartless but because he was terrified — terrified that opening it would produce something he could not manage, something that would undo the functional version of himself that Maya needed. He had chosen the functional version. He had offered her competence instead of vulnerability, reliability instead of truth, presence instead of the full, complicated weight of himself.
+
+He had not understood, until it was too late, that children do not need functional. They need real.
+
+Maya had understood this before he did. She had spent her teenage years reaching through the glass of his managed competence, asking questions he deflected, offering emotions he received politely and did not return, being — with increasing frustration and decreasing hope — a person trying to have a relationship with someone who had decided, somewhere below the level of consciousness, that relationships were too dangerous to be real.
+
+They had fought. Not dramatically — there was no single terrible fight he could point to, no door slammed so hard it came off the hinges. They had fought the slow, corrosive way of people who love each other and cannot find each other, a long series of small misses that accumulated into distance.
+
+When Maya was twenty-three she had been accepted into a graduate programme in Vancouver. Environmental science. She had worked for it — he knew this, had watched her work for it — and she had come to him in the kitchen of this house and told him.
+
+He had said: that is great news.
+
+He had not said: I am proud of you. He had not said: I will miss you. He had not said: please do not go, or please do go, or please know that every inadequate thing I have ever offered you came from the same place as the things I could not offer, which was love, imperfectly housed and poorly expressed but real, genuinely real.
+
+He had said: that is great news.
+
+She had looked at him for a long moment with Deirdre's eyes.
+
+Then she had gone upstairs.
+
+The next morning she was gone. A note on the kitchen table — not the letter, a different note, brief and without blame — saying she had taken an early train to Dublin, that she would call when she arrived in Vancouver.
+
+She had not called.
+
+He had found the letter three days later, slipped under his bedroom door, when he went looking for something he could not name.
+
+He read it slowly.
+
+He had expected — he did not know what he had expected. Anger, perhaps. Accusation. The itemized list of his failures presented with the precision of someone who has been composing it for years.
+
+It was not that.
+
+It said:
+
+Dad.
+
+I have been trying to write this for six months and I keep stopping because I do not know how to say what I need to say without it sounding like blame, and I do not want to blame you. I want to understand you. There is a difference and it matters to me.
+
+I know you loved Mum. I know that losing her broke something in you that you did not know how to repair. I was nine when she died and I remember watching your face at the funeral — not crying, not anything, just very still, the way you go when something is too large — and I remember thinking that you had gone somewhere I could not follow you. I have spent fourteen years trying to follow you there anyway.
+
+I am not angry. I want you to know that first. I am — I am sad, I think. Sad that I know more about the structural load capacity of the bridge you designed in 1998 than I know about what made you happy when you were young. Sad that I have never heard you talk about Mum except in the practical language of someone managing an absence. Sad that I do not know if you are lonely. Sad that I do not know how to ask.
+
+I am going to Vancouver because I need to be somewhere that does not have the shape of waiting in it. I have been waiting for fourteen years — waiting for you to come back from wherever you went the day Mum died — and I think waiting is making me someone I do not want to be. I am not leaving because I do not love you. I am leaving because I love you and I cannot watch myself stop.
+
+I need you to know something before I go. You were a good father in the ways you knew how to be. I never went hungry. I never felt unsafe. You came to everything you were supposed to come to and you stayed for all of it. Those things are not nothing. I know they are not nothing.
+
+But Dad — I needed you to cry sometimes. I needed you to say her name. I needed you to be lost in front of me so I knew that being lost was allowed, so I knew that the enormous thing that happened to both of us was enormous and not just manageable. You made our grief manageable and in doing that you made me feel like mine was too large, like I was feeling more than I was supposed to, like the size of what I had lost was somehow excessive.
+
+I am telling you this not to hurt you but because I think you do not know. I think you genuinely do not know how far away you have been. And I think if you knew — if someone told you clearly, in plain language, without flinching — you would want to know. You are not a cruel man. You are a sealed one. Those are different things.
+
+I will call when I get to Vancouver. I hope you will answer and I hope, when you do, we can try something different. I do not know exactly what that looks like. I think it starts with you saying her name.
+
+I love you. That has never been the question.
+
+Maya.
+
+Robert put the letter down.
+
+He sat for a long time in the November kitchen with the grey light coming through the window and the coffee going cold beside him.
+
+He had not answered when she called from Vancouver.
+
+He had seen her number on the phone and he had sat in this same chair — this same chair, he was certain of it — and watched it ring and not picked up because the letter was still under his bedroom door, unopened, and he had known, somehow, that she had left him something he was not ready for, and the phone ringing had felt like the thing and the letter had felt like the thing and both of them together had been too much thing for a man who had built his life around managing the size of things.
+
+She had called twice more. Then she had stopped.
+
+He had told himself she needed space. He had told himself she would call again when she was ready. He had told himself these things for twenty-two years with the stubborn persistence of a man who has chosen a story and is going to live inside it regardless of the evidence.
+
+He was sixty-seven years old and he was sitting at a kitchen table reading a letter his daughter had written when she was twenty-three and he was — he searched for the right word, the accurate word, the word that was not self-pity but was honest — he was devastated.
+
+Not by the letter.
+
+By the twenty-two years he had waited to read it.
+
+He did not know where to start.
+
+He was sixty-seven and had not owned a smartphone until three years ago and had learned to use it with the careful, slightly suspicious attention of someone operating equipment they do not entirely trust. But he had a grandson — his son Kieran's boy, fourteen-year-old Finn, who regarded his grandfather's technological helplessness with a mixture of affection and despair — who had taught him, over a series of Sunday afternoons, the basic operations.
+
+He searched for Maya Callahan Vancouver.
+
+There were several. He refined it — Maya Callahan environmental scientist Vancouver. And there she was.
+
+A university profile. Associate Professor of Environmental Science, University of British Columbia. A photograph — and here he had to stop, had to put the phone down and look at the ceiling for a moment, because the photograph was his daughter at forty-five and she had Deirdre's eyes exactly and she was looking at the camera with an expression that was entirely her own and he had missed twenty-two years of her face.
+
+He picked up the phone again.
+
+The profile had an institutional email address.
+
+He opened his email. He stared at the empty composition window for a long time. He thought about the letter — about what she had said, about plain language and flinching and the difference between a sealed man and a cruel one.
+
+He typed:
+
+Maya.
+
+I read your letter this morning. The one you left under my door twenty-two years ago. I know that requires explanation. The explanation is that I was a coward and then I was ashamed of being a coward and the two things together kept me from the letter for longer than I can justify.
+
+You were right about everything you said. I want you to know that first. Not as defence — there is no defence — but because you wrote it hoping I would understand and I do and you deserve to know that your words landed where you sent them, even if they arrived twenty-two years late.
+
+I have not known how to say her name. Your mother's name. I have been trying to say it since I read your letter this morning and I can say it now: Deirdre. Her name was Deirdre and she was extraordinary and I loved her completely and when she died I went somewhere I did not know how to come back from and I brought you with me into that place without your consent and I am sorry. I am deeply, genuinely sorry.
+
+I do not know if you want to hear from me. I do not know what twenty-two years does to a person's willingness. If this email arrives and you read it and decide you do not want to respond, I will understand that and I will not write again.
+
+But if there is any part of you that is willing — I would like to try what you suggested. Something different. I think it starts, as you said, with her name.
+
+Her name was Deirdre.
+
+I love you. That has never been the question.
+
+Dad.
+
+He sent it before he could revise it.
+
+Then he sat in the November kitchen and waited with the patience of a man who has learned, twenty-two years too late, that some things cannot be managed into smallness and must simply be sat with, fully, until they tell you what they are.
+
+She replied in three days.
+
+He had not slept well in those three days. He had checked his email with the anxious frequency of someone who has sent something irreversible into the world and is waiting to discover what the world does with it.
+
+Her email was short.
+
+Dad.
+
+I have read your email four times. I do not know how to respond to twenty-two years in a single email so I am going to respond to the thing that matters most: you said her name.
+
+I need some time to think about what I want. I am going to take that time. Please do not take silence as a final answer — it is not. It is just me being honest about where I am.
+
+Her name was Deirdre. She made the best brown bread I have ever eaten and she sang off-key when she thought no one could hear and she had a laugh that started before whatever was funny had finished happening.
+
+I will write again when I know what I want to say.
+
+Maya.
+
+Robert read it standing at the kitchen counter. He read it three times. Then he sat down at the table and did something he had not done since the morning of Deirdre's funeral — he put his face in his hands and cried. Not politely. Not manageably. In the full, ugly, long-overdue way of a man who has been holding something for twenty-two years and has finally, finally been given permission to put it down.
+
+He cried for Deirdre. For the brown bread and the off-key singing and the laugh that arrived early and the twenty-eight years he had not had with her.
+
+He cried for Maya. For the nine-year-old who had watched his face at the funeral and understood something she should not have had to understand. For the twenty-three-year-old who had written a letter in plain language without flinching and then waited, and waited, and eventually stopped waiting.
+
+He cried for himself — not with self-pity, but with the specific grief of a person who can see clearly, perhaps for the first time, the shape of what they have lost and understands that the losing was not inevitable, that different choices existed and were not taken.
+
+When he finished he washed his face. Made fresh coffee. Sat back down.
+
+He wrote to Kieran — his son, who lived in Dublin with his family and who had grown up watching his father's distance with the resigned acceptance of a child who learns early that some things about parents are simply weather, to be endured rather than changed. He wrote: I have found Maya. She has replied. I think I owe you a conversation too, when you are ready.
+
+Kieran replied in twenty minutes: I know. Finn showed me how to look. I found her two years ago. I did not tell you because I was not sure you wanted to know.
+
+Robert stared at this for a long time.
+
+Then he wrote: I am sorry, Kieran. For the distance. I am aware it was real and I am aware it cost you something. I would like to try to be different if you will let me.
+
+Kieran wrote back: I have been waiting for you to say that for about forty years, Dad. Yes. Come to Dublin. Come for Christmas.
+
+Maya called six weeks later.
+
+A Sunday morning. He was in the garden — he had taken up the garden in his retirement, in the way of men who need to put their hands into something growing — when his phone rang and her name appeared on the screen.
+
+He sat down on the garden bench.
+
+He answered.
+
+"Dad," she said.
+
+Her voice was — it was her voice. Older, settled, the voice of a woman who has lived a full life in the years between. But underneath it, recognizable, the voice he had read bedtime stories to, the voice that had called him from the bottom of the stairs, the voice he had heard saying goodnight through a bedroom door for eighteen years.
+
+"Maya," he said.
+
+A pause. A long one. The kind that is not empty.
+
+"I have been thinking about what I want to say," she said. "For six weeks. And I think what I want to say is — I want to know you. Not the version of you I grew up with. The actual version. I want to know what you were like before Mum died. I want to know what you were afraid of and what you were proud of and what you wanted to be when you were young."
+
+"I wanted to be an architect," he said. "Before engineering. I wanted to design buildings that looked like they had grown rather than been built."
+
+A silence.
+
+"I did not know that," she said.
+
+"There is a great deal we do not know about each other," he said. "I would like to change that. If you are willing."
+
+"I am in Cork in February," she said. "A conference. I was going to come and go without — I had not decided if I was going to contact you."
+
+"And now?" he said.
+
+"And now I am calling you on a Sunday morning," she said. "Which I think is its own answer."
+
+He looked at the garden. At the November beds, cut back and waiting, the bare soil dark and patient in the way of things that know something is coming even when there is no visible evidence.
+
+"Your mother loved gardens," he said. It came out before he had decided to say it. "She could not keep anything alive but she loved them. She used to go to the Botanical Gardens on Sundays and just walk. She said plants were honest — that they showed you exactly how they were doing."
+
+A long silence.
+
+"I did not know that either," Maya said. Her voice had changed — something in it that was not quite crying and not quite not.
+
+"I know," he said. "I should have told you. I should have told you everything. I had so much of her and I kept it all — I kept it sealed away like it was mine to keep and it was not. It was yours too. She was yours too."
+
+"Yes," Maya said. "She was."
+
+They sat on the phone in silence for a moment — him in the Cork garden, her in Vancouver where it was still early morning, both of them in the particular stillness of people who have said something real and are letting it settle.
+
+"Tell me something else," Maya said. "About her."
+
+Robert looked at the bare garden beds.
+
+"She sang off-key," he said. "You know that. But what you might not know is that she knew she was off-key and did not care. She said music was not about being correct. She said it was about being in it."
+
+He heard Maya exhale. A sound like something set down after being carried a long way.
+
+"That sounds exactly like her," she said.
+
+"Yes," he said. "It does."
+
+She came on a Thursday.
+
+He had cleaned the house with the focused intensity of a man preparing for something that mattered. He had put flowers on the kitchen table — Deirdre had always put flowers on the kitchen table, a habit he had let lapse and now reinstated, which felt both small and significant. He had made brown bread, following a recipe he had found written in Deirdre's handwriting in a notebook he had kept in the back of a kitchen drawer for thirty years and never opened.
+
+It was not as good as Deirdre's. He knew this without needing to be told.
+
+But it was made, which was its own thing.
+
+Maya arrived at eleven in the morning. He heard the taxi on the road and stood in the doorway the way he had stood in doorways for her entire childhood, waiting for her to come home from things.
+
+She got out of the taxi.
+
+She was — she was his daughter. Forty-five years old and entirely herself, carrying a bag over one shoulder and looking at the house with an expression he could not fully read from this distance. She was taller than he remembered, or he had shrunk — probably both. She had Deirdre's way of standing: balanced, considering, like someone who has assessed the ground before putting their weight on it.
+
+She looked up and saw him in the doorway.
+
+They looked at each other across the front garden.
+
+Twenty-two years. The letter. The phone calls he had not answered. The email and the reply and the Sunday morning call. All of it, the whole accumulated weight of it, present in the ten metres of garden path between them.
+
+She walked toward him.
+
+He walked toward her.
+
+They met in the middle, which felt accurate — neither of them all the way there, both of them more than halfway.
+
+She hugged him. He held on. He had not hugged his daughter in twenty-two years and he had forgotten — he had let himself forget — that she was the same height as Deirdre, that she had Deirdre's way of hugging, completely, without the held-back quality of someone managing the distance.
+
+He did not cry. He had done his crying in the kitchen in November.
+
+But he held on for longer than a managed man would hold on. He held on for the right amount of time, which was longer than he was comfortable with, which was — he was learning — exactly the point.
+
+"You made brown bread," she said. She had seen it through the kitchen window.
+
+"I found your mother's recipe," he said. "It is not right. But it is made."
+
+She looked at him. "That is enough," she said. "That is actually enough, Dad."
+
+They went inside.
+
+The flowers were on the table. The bread was on the board. The November light came through the kitchen window in the particular way it had come through kitchen windows in this house for thirty years, falling on the table where he had read her letter, where he had written the email, where he had cried in the way of a man finally putting something down.
+
+Maya sat at the table. She put her hands flat on it. She looked around the kitchen with the slow attention of someone returning to a place they have carried inside them for a long time and are now checking the interior version against the real one.
+
+"It is smaller than I remembered," she said.
+
+"Everything is," he said.
+
+She looked at him. Something in her face that was not quite a smile and was entirely warm.
+
+"Tell me about her," she said. "Everything you have been keeping. I want all of it."
+
+Robert sat down across from his daughter.
+
+Outside, the Cork November was doing its particular grey and the garden was bare and patient and waiting for what came next.
+
+He began.
+
+He talked for three hours. About Deirdre — how they had met, at a dance in Cork city in 1976, the specific song that was playing, the green dress she was wearing, the way she had looked at him when he asked her to dance with the expression of someone deciding something. About the early years — the flat in Douglas, the arguments about money, the Sunday mornings at the Botanical Gardens, the brown bread that she made every Thursday without fail. About the diagnosis and what it had done to him — not the managed version, not the competent version, the real version, the version where a thirty-six-year-old man had sat in a hospital car park for an hour before going home because he could not find the face he needed to wear.
+
+Maya listened. She asked questions. She told him things — things she remembered that he had not known she remembered, small precise memories of her mother that had survived twenty-two years of not being spoken aloud.
+
+The bread was eaten. More coffee was made. The light changed in the kitchen — from morning to afternoon, from the specific grey of November to the amber of early evening.
+
+At some point Maya reached across the table and put her hand over his.
+
+He looked at it. At her hand on his. At the forty-five years of his daughter that he had mostly been present for and partially missed and was now, in a kitchen in Cork with flowers on the table and bad brown bread and the accumulated weight of everything they had not said now said and still saying —
+
+Present for.
+
+Actually, fully, without management or distance, present for.
+
+"I am sorry," he said. Not for the first time. But differently — not with the weight of a man managing his guilt but with the simple honesty of one who means it and knows meaning it is not enough and offers it anyway because it is what he has.
+
+"I know," she said. Her hand on his. "I know you are."
+
+Outside, the last of the November light was doing something beautiful with the bare garden, the way winter light does — finding the structure of things, showing what is there when everything decorative has been stripped away.
+
+Showing what holds.
+
+He learned things about his daughter in the months that followed.
+
+That she had married — a man named David, a marine biologist, quiet and careful and apparently very funny in private. That they had a daughter of their own, eleven years old, named — and here Robert had to sit down when Maya told him — Dee. Short for nothing. Just Dee. A name that had arrived and been given without explanation, though Maya said, on the phone one evening with a steadiness that told him she had thought about how to say this: I think I always knew I would use something close to her name. I just needed a reason to believe names were allowed to be kept.
+
+He had a granddaughter named Dee. He had not known this. He was going to Vancouver in the spring to meet her.
+
+He wrote to Maya every week. Not emails — letters, on paper, in the careful deliberate way she had written his name on an envelope twenty-two years ago. She wrote back. The correspondence was different from anything he had managed before — slower, more considered, the particular honesty of people who have chosen to be accountable to each other.
+
+Kieran came for Christmas with his family. It was the first Christmas in eleven years that Robert had not spent alone, and it was loud, and slightly chaotic, and Finn ate an extraordinary amount of everything, and at some point in the evening Kieran sat beside him on the sofa and said, simply, "This is better, Dad. This is a lot better," and Robert said "Yes. I know. I am sorry it took so long," and Kieran said "You are here now," and they sat together and watched the fire in the way of people who have made peace with what they cannot go back and change and are choosing, instead, to be here for what is still ahead.
+
+In February he dug the garden.
+
+He did not know much about gardening. He was learning. He had ordered bulbs — spring ones, the kind that spend winter underground accumulating into something, the kind that are doing their most important work in the months when there is nothing visible to show for it.
+
+He planted them in the beds his daughter had walked past in November.
+
+He covered them with earth.
+
+He went inside.
+
+He sat at the kitchen table where the letter had been and the flowers were and the coffee was warm, and he thought about Deirdre — the green dress, the Sunday mornings, the off-key singing, the laugh that arrived before the funny part — and for the first time in thirty years he thought about her without sealing the thought away.
+
+He let it stay.
+
+He let it be the size it was.
+
+Outside, under the February soil, the bulbs were doing what bulbs do — the slow, invisible, patient work of becoming. No evidence yet. No visible proof. Just the certain, unhurried process of something that has been given what it needs and knows, without being told, what comes next.
+
+Spring was coming.
+
+It always did.
+
+Is there a letter you have never sent — to a parent, a child, someone you love — that says the thing you have never been able to say out loud? And what is stopping you from sending it today, while there is still time? Share in the comments. Share this with someone who is waiting for the right moment to say something that matters. Tell them: the right moment is not coming. This moment is what there is. Use it.`
+},
+  {
   id: "the-version-of-you-i-never-met",
   title: "The Version of You I Never Met",
   genre: "Romance",
