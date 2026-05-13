@@ -1,5 +1,426 @@
 const stories = [
   {
+  id: "the-apology-tour",
+  title: "The Apology Tour",
+  genre: "Drama",
+  readTime: "50 min",
+  trending: true,
+  excerpt: "At seventy-one, Leonard Cole made a list of every person he had wronged in his life. There were forty-three names. He decided to find every single one. What he discovered changed everything he thought he knew about forgiveness — and about himself.",
+  image: "https://images.unsplash.com/photo-1543874889-5892f4c680b6?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1543874889-5892f4c680b6?w=1920&q=80"
+  },
+  content: `The list took three days to write.
+
+Leonard Cole sat at the kitchen table of his apartment in Portland, Oregon, with a yellow legal pad and a mechanical pencil he had owned for thirty years, and he wrote names. Not quickly — he did not rush, because rushing had been one of his problems and he was done with it — but carefully, the way you write something that matters, pressing firmly enough that the words would survive whatever happened to the page.
+
+He had started the list on the morning after his seventy-first birthday, which he had spent alone, which was his own fault, which was, in a sense, the whole point.
+
+The idea had come to him in the way that most honest ideas come — not dramatically, not with the force of revelation, but quietly, in the specific silence of a man sitting alone on his birthday eating a supermarket cake he had bought himself because he had not expected anyone to buy him one, looking at the four walls of an apartment that contained his books and his furniture and his seventy-one years of living and precisely none of the people those years had moved through.
+
+He had thought: I have done this to myself.
+
+And then, with the clarity of a man who has spent enough time avoiding a thing that the avoidance has become its own exhaustion: I would like to undo some of it. Whatever can still be undone.
+
+Hence the list.
+
+Forty-three names.
+
+He looked at it when he was done — three pages of the legal pad, front and back, names he had not spoken in years, names he had not allowed himself to think about because thinking about them required thinking about what he had done and what he had not done and what he had said and what he had been too careful or too cowardly to say.
+
+He was seventy-one years old and he had a list of forty-three people he had wronged and a supermarket birthday cake with one slice missing and the rest of his life, which was an uncertain quantity but was, he had recently been given to understand by a cardiologist who did not soften information unnecessarily, likely to be shorter than he had assumed.
+
+He picked up the pencil.
+
+He numbered the names.
+
+Then he started at the top.
+
+Leonard Cole had not been a bad man.
+
+This is important. The story is not about a bad man. It is about a man who was, in the ways that are hardest to see and therefore hardest to correct, selfish — not dramatically, not cruelly, but with the consistent, low-level selfishness of someone who has always prioritized his own comfort, his own timeline, his own version of events, without quite realizing he was doing it, because the realizing would have required a quality of self-examination he had spent most of his life successfully avoiding.
+
+He had been a journalist. A good one — genuinely good, the kind whose byline meant something, whose work had appeared in publications that mattered, whose investigative pieces on municipal corruption in the nineties had won awards that still sat on a shelf in the apartment, slightly dusty now, present and slightly accusing. He had the journalist's gift for seeing other people's lives with clarity and precision and the journalist's particular blind spot, which is the tendency to apply that clarity everywhere except inward.
+
+He had been married twice.
+
+The first marriage — Patricia, 1978 to 1985 — had ended because Leonard had been, in his late twenties and early thirties, the kind of man who treated a marriage like a support structure for his career rather than a thing that required its own tending. Patricia had left with the quiet dignity of a woman who has given something a fair chance and received insufficient return, and Leonard had been, at the time, more relieved than devastated, which told him something he had chosen not to examine.
+
+The second marriage — Rosanne, 1991 to 2003 — had produced two children, Marcus and Diane, and had ended for reasons that were more complicated and more his fault than he had admitted at the time or for many years after. Rosanne had needed a partner who was present. Leonard had been present in the physical sense — he was in the house, he attended the dinners, he showed up to the school events — while being absent in the way that mattered, the way that Patricia had also identified and that Leonard had apparently not corrected between marriages because correcting it would have required him to understand it and understanding it would have required the self-examination he was not doing.
+
+Marcus was forty now. He lived in Seattle with his wife and their two daughters. He and Leonard spoke four times a year — Christmas, Father's Day, and their respective birthdays — with the slightly formal politeness of people who have decided that a functional minimum is better than the alternative, which was the full reckoning of what had happened between them and which neither of them had yet been willing to have.
+
+Diane was thirty-seven. She had stopped speaking to Leonard six years ago, following a conversation he had handled with the specific tone-deafness of a man who is certain he is being reasonable while being entirely wrong. She had sent him a letter — three pages, precise and without venom, laying out clearly and in order the ways his absence had shaped her in ways she was still, at thirty-one, working to repair. He had read it. He had intended to reply. The reply had not been written, because writing it would have required the self-examination, and the self-examination would have required —
+
+He stopped going around this particular circle.
+
+The letter was in the list. Diane was name seven.
+
+The list also contained, in no particular order: a source he had burned to protect a story in 1994, which had cost the man his job. A colleague he had taken credit from in 1988, quietly and without acknowledgement. A woman named Elaine he had dated in 1987 and ended things with in a way that was technically honest and functionally cruel. His college roommate, James, with whom he had had a falling out in 1979 over money he had borrowed and never repaid and had told himself James had forgotten. Three editors he had treated with the particular contempt of a writer who believes his talent exempts him from basic professional courtesy. His brother, Richard, whom he had not spoken to in eleven years over a dispute about their mother's estate that Leonard knew, in the honest part of himself, he had mishandled from the beginning.
+
+And others. Forty-three in total.
+
+He had wronged forty-three people with enough significance that their names surfaced when he sat quietly and asked the question honestly.
+
+He was going to find them.
+
+All of them he could find.
+
+And he was going to say what he should have said — in some cases decades ago — without expectation of forgiveness, without the agenda of making himself feel better, with the simple, honest intention of giving people the acknowledgement they were owed.
+
+He booked his first flight on a Thursday.
+
+He was going to Seattle.
+
+Marcus Cole opened his front door on a Saturday morning and found his father standing on the porch with a carry-on bag and an expression that was unlike any expression Marcus had seen on his father's face in forty years of looking at it.
+
+It was uncertain.
+
+Leonard Cole had never, in Marcus's experience, looked uncertain. He had looked confident, distracted, professionally focused, occasionally guilty in the fleeting way of someone who glimpses guilt and moves past it quickly. He had not looked uncertain.
+
+"Dad," Marcus said.
+
+"I should have called," Leonard said. "I know I should have called. I was concerned that if I called you would tell me not to come, and I needed to come."
+
+Marcus stood in the doorway of his house in Seattle on a Saturday morning and looked at his seventy-one-year-old father with his carry-on bag and his unusual expression and thought several things simultaneously, none of which he said.
+
+"Come in," he said instead.
+
+They sat in the kitchen. Marcus's wife, Jenny, took the children to the park with the tactful instinct of someone who has been married long enough to read a room. Marcus made coffee. Leonard sat at the kitchen table with his hands around the mug and looked at the surface of the table for a moment before looking up.
+
+"I have a list," Leonard said.
+
+Marcus waited.
+
+"Of people I have wronged. In my life. Significantly enough that their name surfaces when I ask the question honestly." He paused. "You are on it."
+
+Marcus was quiet.
+
+"I am not here to make myself feel better," Leonard said. "I want to be clear about that because I know it could look like that — old man arrives at son's door, confesses failures, seeks absolution, feels better, leaves. That is not what this is. I am here because you are owed something that I have been not paying for forty years and the non-payment has cost you and I am aware of that and I want to say so directly."
+
+Marcus looked at his father.
+
+"What do you think you owe me?" he said. Not with hostility — with the genuine, careful question of a man who wants to know if his father actually knows.
+
+Leonard had prepared for this question. He had prepared for it on the flight and in the hotel the night before and in the taxi on the way to the house, turning it over, testing his answer against the honest version of events rather than the comfortable one.
+
+"I was not present," he said. "Not in the way that mattered. I was in the house. I attended things. I provided, financially, consistently. But I treated fatherhood the way I treated my marriage to your mother — as a support structure for my life rather than a life of its own that required my full attention." He paused. "You needed a father who was interested in you. Not in your performance. Not in the version of you that was convenient to engage with. In you. And I gave you a man who showed up to your events and left early and called it enough."
+
+Marcus looked at the table.
+
+"I remember," Marcus said, "a science fair. I was eleven. I had built a working model of a water filtration system. I won first place." He paused. "You left before the awards."
+
+"I had a deadline," Leonard said.
+
+"I know," Marcus said. "You told me. I stood up there with my ribbon and I looked for you and you were gone and I told myself you would have been proud if you had stayed. I spent thirty years telling myself that."
+
+"I would have been," Leonard said. "I am. That is not the point."
+
+"No," Marcus said. "The point is you left."
+
+"Yes," Leonard said. "The point is I left."
+
+They sat with this. The coffee. The Saturday morning kitchen. Outside, somewhere, Marcus's daughters were in the park with their mother, existing in the uncomplicated joy of a Saturday, unaware that their grandfather was in the kitchen accounting for thirty years of departure.
+
+"I do not know what to do with this," Marcus said finally. "I want to be honest with you. I have spent a long time being carefully managed about my feelings regarding you, because the alternative was a conversation I was not sure either of us was ready for. And now you are here and you are saying the things and I am —" He stopped.
+
+"Take your time," Leonard said. He meant it. He had promised himself he would mean it.
+
+Marcus looked at his father. "Are you sick?" he said.
+
+"My heart," Leonard said. "Nothing immediate. But the cardiologist was clear about the direction of travel."
+
+Marcus nodded. Something moved across his face — complicated, layered, the face of a man processing several feelings that do not have a simple order.
+
+"I am glad you came," Marcus said. "I want to say that first. I am glad you came even though I am also —" He stopped again.
+
+"Angry," Leonard said.
+
+"Angry," Marcus agreed. "Yes. I am angry. I have been angry for a long time and I am not going to pretend otherwise because you said you wanted the honest version and the honest version includes the anger."
+
+"I know," Leonard said. "The anger is correct. It is the right response to what I gave you. I am not here to argue with it."
+
+They talked for three hours.
+
+Not everything was said — three hours is not enough for forty years, and Leonard did not expect it to be. But things were said that had not been said, things that had lived in the pressurized space of careful management and were now, in a kitchen in Seattle on a Saturday morning, being released into the air where they could be examined rather than carried.
+
+When Jenny came back with the girls, Marcus introduced Leonard not as Dad, which was what he usually said with the slight awkward distance of the word in that context, but as my father, which was a different thing, which both of them noticed and neither of them remarked on.
+
+Leonard stayed for dinner.
+
+It was the first dinner he had eaten in his son's house that felt like something other than a performance of a family occasion.
+
+He drove to his hotel afterward and sat on the edge of the hotel bed and looked at the list.
+
+He crossed off Marcus's name.
+
+Not because it was done — it was not done, it was begun, which was different and more honest. But because something had been given and received and the giving and receiving had been real.
+
+He looked at name seven.
+
+Diane.
+
+He was going to need more than a flight for Diane.
+
+He found Elaine Marsh through a combination of LinkedIn and the specific investigative instinct of a man who had spent forty years finding people who did not want to be found.
+
+She was living in Chicago. She was sixty-four. She had been married for thirty years to a man named Paul, had three children, had retired two years ago from a career as a hospital administrator. Her LinkedIn photograph showed a woman who had lived a full life and looked like it — not diminished, not unfinished, but complete in the way of people who have built something real and are at peace with it.
+
+He wrote her a letter.
+
+Not an email — a letter, on paper, because email felt insufficient for what he needed to say and because the physical act of writing it by hand required him to mean every word since crossing things out on paper is more honest than deleting them on a screen.
+
+The letter said:
+
+Dear Elaine. My name is Leonard Cole. We dated briefly in 1987. I ended the relationship in a way that I have thought about many times since and that I handled with what I can now see was a combination of cowardice and self-absorption that was unfair to you. I told you the relationship was not working when what I meant was that I was not willing to do the work it required. I framed my failure as a mutual incompatibility because that version was more comfortable for me. You deserved honesty and I gave you a managed version of it. I am writing to say so directly, thirty-seven years later, which I understand is an unusual thing to receive in the mail. I do not expect a response. I do not need one. I simply wanted to give you what I should have given you at the time, which was the truth, and the acknowledgement that the way I ended things was unkind and you did not deserve it.
+
+She called him two weeks later.
+
+He almost did not answer — her name on his phone, after two weeks of having forgotten to brace for it, was startling in the way of things you have sent into the world and stopped expecting to return.
+
+He answered.
+
+"Leonard Cole," she said. The tone of a woman who has decided to find this amusing, which was not what he had expected and was, he realized, better.
+
+"Elaine," he said. "I did not expect you to call."
+
+"I almost did not," she said. "My husband thought it was either very brave or very strange. He could not decide which."
+
+"Both, probably," Leonard said.
+
+"Both," she agreed. A pause. "I want to tell you something. What you wrote — the part about framing your failure as mutual incompatibility. I have a word for that. I used to use it about you, when I was younger and still processing it."
+
+"What word?" Leonard said.
+
+"Convenient," she said. "You were convenient with the truth. You arranged it to reduce your own discomfort." A pause. "I am not saying that with bitterness. I genuinely am not. I am saying it because your letter suggested you did not fully know what you had done, and I wanted you to know the name of it."
+
+Leonard sat with this.
+
+"Convenient," he said. "Yes. That is accurate."
+
+"I spent some time angry about it," Elaine said. "In my thirties. Then I spent some time understanding it — understanding that people who are convenient with the truth are usually afraid of something, and that the fear is not an excuse but it is an explanation." A pause. "What were you afraid of?"
+
+Leonard thought about this honestly. "Commitment," he said. "The version of myself that would have had to show up for what you needed. I was not sure that version existed and I was not willing to find out."
+
+Elaine was quiet for a moment.
+
+"He exists," she said. "I think. Otherwise you would not have written the letter."
+
+Leonard looked at the list on the kitchen table.
+
+"He is trying to," he said.
+
+She laughed. It was a warm laugh, a full one, the laugh of a woman who has earned the right to find things funny.
+
+"Good luck with your list," she said. "I think it is a strange and honest thing you are doing."
+
+"It is taking longer than I expected," he said.
+
+"The real things always do," she said. And then, before she hung up: "Thank you for the letter, Leonard. It was thirty-seven years late and it was still worth receiving."
+
+He sat with the phone in his hand for a long time after she hung up.
+
+He picked up the pencil.
+
+He did not cross off her name.
+
+He drew a line under it instead — not finished, not erased, but marked. Acknowledged. Given what it was owed.
+
+His brother lived in Tucson.
+
+Richard Cole was sixty-eight, three years younger than Leonard, and had spent the last eleven years of his life without a brother, which was Leonard's fault in the specific way of disputes that begin about money and are actually about something older and more fundamental that the money is just the available language for.
+
+Their mother had died in 2013. The estate had been modest — a house in Oregon, some savings, personal effects. The dispute had been, on the surface, about the distribution. Underneath the surface it had been about forty years of Leonard being the older brother who got the attention and the opportunities and the assumption of capability, and Richard being the one who stayed, who visited, who was present for the gradual diminishment of their mother's last years while Leonard was elsewhere being important, and who had then been expected to split the estate equally with a man who had not been there for any of it.
+
+Leonard knew this. He had known it at the time. He had argued for equal distribution anyway because equal was correct on paper and because acknowledging what Richard was actually owed would have required him to acknowledge what Richard had given that Leonard had not, and he had not been ready for that.
+
+He drove to Tucson.
+
+Richard opened the door and looked at his brother for a long moment with an expression that was not warm and was not cold and was entirely complicated.
+
+"Leonard," he said.
+
+"Richard," Leonard said. "I know I should have called."
+
+"You should have called eleven years ago," Richard said. "Come in anyway."
+
+They sat in Richard's living room. Richard's wife, Carol, brought coffee and then went to her studio — she was a painter, had been for thirty years, and her paintings were on the walls of the living room, large and confident and completely her own.
+
+"Nice work," Leonard said, looking at them.
+
+"She is very good," Richard said. "She had a show last spring. It sold out." He said it with the uncomplicated pride of a man who has been paying attention to someone for a long time and knows their value.
+
+Leonard thought about Rosanne. About the things she had made and done that he had noticed only peripherally, attending to them with the portion of himself that was not occupied with his own work, which was always the smaller portion.
+
+"I was wrong about the estate," Leonard said. He said it directly, without preamble, because he had learned in Seattle that preamble was a form of self-protection and he was done with self-protection. "Not wrong about the legal distribution. Wrong about what was fair. You were there for eleven years. You drove Mum to her appointments and stayed through the bad nights and managed the last months when she did not always know who you were. And I showed up for the last two weeks and then argued for half of everything as if my absence had been equivalent to your presence. It was not. I knew it was not. I argued for it anyway because acknowledging what you had given would have required me to acknowledge what I had not, and I was not ready for that."
+
+Richard looked at him.
+
+"What changed?" he said.
+
+"My heart," Leonard said. "And a birthday I spent alone. And a list."
+
+He told Richard about the list.
+
+Richard listened with the particular attention of a younger sibling who has spent a lifetime not being listened to and therefore knows exactly what genuine listening looks like and how rare it is.
+
+When Leonard finished, Richard was quiet for a long time.
+
+"I used to tell Carol," Richard said, "that the problem with you was not that you were selfish. It was that you were unconsciously selfish. That you did not know you were doing it. Which is worse in some ways — a man who knows he is taking more than his share can choose to stop. A man who does not know is impossible to reach."
+
+"I know now," Leonard said.
+
+"Yes," Richard said. "Eleven years late."
+
+"Yes."
+
+"What do you want, Leonard?" Richard said. "From this visit. From the list. What is the outcome you are hoping for?"
+
+Leonard thought about this carefully.
+
+"I want to give people what they are owed," he said. "I am not expecting forgiveness. I am not expecting — reconciliation, necessarily, or the restoration of what was there before. I just want the people I wronged to have been told, clearly, what I did and that I know what I did. Whatever they do with that is their business."
+
+Richard looked at his older brother.
+
+"That is a more honest answer than I expected," he said.
+
+"I am trying to be done with the convenient version," Leonard said.
+
+Richard was quiet for a long time. Outside, the Tucson afternoon was doing what Tucson does — bright and warm and absolute, the kind of light that leaves nowhere to hide.
+
+"I missed you," Richard said finally. "For eleven years. I was angry for the first three and then I just missed you. You are my brother. You are difficult and self-absorbed and you were wrong about the estate and I missed you anyway."
+
+Leonard looked at his brother.
+
+"I missed you too," he said. "I was too proud to say it."
+
+"Yes," Richard said. "You were." A pause. "Carol is making dinner. You should stay."
+
+Leonard looked at his brother across thirty years of complicated history and eleven years of silence and the specific quality of afternoon light that does not allow pretense.
+
+"I would like that," he said.
+
+He saved Diane for last.
+
+Not because she was least important — she was most important, which was why she was last, because he needed everything he had learned from the other forty-two before he was ready.
+
+She was in Portland. Twenty minutes from his apartment. She had been twenty minutes away for six years while he had not written the reply to her letter and she had not reached out again because she had said what she needed to say and the next move was his and he had not made it.
+
+He did not call first.
+
+He wrote a letter — eight pages, the longest and most difficult thing he had written in thirty years of writing for a living, because the other thirty years had been about other people's truths and this was his own.
+
+He delivered it by hand.
+
+He put it through her mail slot on a Tuesday morning and stood on the pavement outside her house for a moment and then walked home.
+
+She called on Thursday evening.
+
+"Dad," she said.
+
+Just that. The word he had not heard from her in six years.
+
+"Diane," he said.
+
+"I read your letter four times," she said. "The first time I was angry. The second time I cried. The third time I looked for the places where you were still being convenient and I found two and I want to tell you which ones."
+
+"Tell me," he said.
+
+She told him. She was precise and fair and did not exaggerate and did not minimize, and as she spoke he heard in her voice the quality he recognized from her childhood — the quality he had not attended to sufficiently, the quality that was her, entirely and completely her, the mind that made connections and asked the real question and waited with genuine patience for the real answer.
+
+She had gotten that from somewhere.
+
+He thought: she got it from herself. And then, more honestly: she got it somewhere. Everyone gets things from somewhere.
+
+He had not given her enough. But he had given her something, and she had built from it, and what she had built was real and impressive and entirely her own.
+
+"You are right about both of them," he said, when she finished. "I was still arranging those two things to reduce my discomfort. I can rewrite them if —"
+
+"No," she said. "I do not need the revised version. I need to know that you know."
+
+"I know," he said.
+
+A pause.
+
+"I have a daughter," she said. "She is three. Her name is Audrey."
+
+Leonard closed his eyes.
+
+He had a granddaughter named Audrey. He had not known this.
+
+"I would like you to meet her," Diane said. "Not immediately. I need some time to — I need some time. But eventually. I think she should know you."
+
+"I would like that more than I can say," Leonard said.
+
+"Do not be too grateful," Diane said, with a sharpness that was also warmth. "I am not doing it for you. I am doing it for her. And for the version of us that might still be possible."
+
+"I know," Leonard said. "I am grateful anyway."
+
+He finished the list in eight months.
+
+Not all forty-three were findable — three had died, which landed harder than he had expected, the specific grief of an apology that has nowhere to go. Two did not respond to his letters. One responded with a single line that said I received your letter and have nothing to say to you, which he accepted as the right of someone who had decided that closure did not require his participation.
+
+The others — thirty-seven of the forty-three — gave him something. Not uniformly forgiveness. Not uniformly warmth. Some gave him anger, which he received without defense. Some gave him the quiet, considered response of people who had processed what he had done long ago and were surprised to find it being acknowledged at all. Some gave him conversations that lasted hours. Some gave him three sentences and a closed door that was nevertheless, he felt, a more honest closed door than an unopened one.
+
+He kept the list.
+
+He did not frame it. He did not treat it as an achievement — it was not an achievement, it was a payment on a debt, and paying a debt is not something you celebrate, it is simply something you do.
+
+He put it in the drawer of his bedside table, where he could find it if he needed to remember.
+
+Marcus came to Portland in December with Jenny and the girls. They stayed for four days. Leonard cooked dinner — badly the first night, better the second, adequately the third — and sat on the floor with his granddaughters and built things out of blocks that fell over and were rebuilt and fell over again, which was, he found, a very good way to spend an afternoon.
+
+Richard called every Sunday. It had started as a tentative thing, the first few calls slightly formal, the distance of eleven years still present in the pauses. By the fourth month it was easy. By the sixth it was necessary. By the eighth it was simply what Sunday evenings were.
+
+Diane brought Audrey in March.
+
+She stood in his doorway with a three-year-old on her hip and looked at him with Rosanne's eyes and her own expression, which was careful and open and entirely itself.
+
+"This is your grandfather," she told Audrey.
+
+Audrey looked at Leonard with the frank, complete attention of a three-year-old who has not yet learned to manage her assessment.
+
+"You are old," Audrey said.
+
+"Yes," Leonard said. "I am."
+
+"Do you have blocks?" Audrey said.
+
+Leonard looked at his daughter over Audrey's head. Diane was almost smiling.
+
+"I just bought some," he said. "Come in."
+
+They came in.
+
+He sat on the floor of his apartment in Portland with his daughter and his granddaughter and built things out of blocks, and the things fell over, and they rebuilt them, and they fell over again, and nobody minded, and the afternoon light came through the window and sat on all of them equally, the way light does — without preference, without judgment, falling on what is there and asking nothing about what was not.
+
+He was seventy-one years old.
+
+He had forty-three names on a list in his bedside drawer.
+
+He had a son in Seattle who called on Sundays now, sometimes, when there was something to say.
+
+He had a brother in Tucson who called every Sunday regardless.
+
+He had a daughter twenty minutes away who was almost smiling.
+
+He had a granddaughter who wanted blocks.
+
+He had not done enough. He had not done enough and he had not done it early enough and some of what he had not done could not be recovered and he was going to live with that — clearly, honestly, without the convenient version — for whatever time remained.
+
+But he was here now.
+
+Actually, fully, without management or arrangement, here.
+
+The blocks fell over.
+
+Audrey laughed.
+
+He rebuilt them.
+
+Is there someone in your life who is owed an apology you have not given — not because you do not know you owe it, but because giving it would require you to see yourself clearly? And what is the cost, to both of you, of every day you do not give it? Share in the comments. Share this with someone who is waiting for an apology that may never come — and with someone who owes one they have not yet found the courage to give. Both of them need this story today.`
+},
+  {
   id: "the-life-she-left-running",
   title: "The Life She Left Running",
   genre: "Romance",
