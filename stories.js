@@ -1,5 +1,348 @@
 const stories = [
   {
+  id: "the-life-she-left-running",
+  title: "The Life She Left Running",
+  genre: "Romance",
+  readTime: "50 min",
+  trending: true,
+  excerpt: "She walked out of her own wedding reception at 9:47 PM. Not because she did not love him. Because she had finally remembered who she was before she loved anyone at all.",
+  image: "https://images.unsplash.com/photo-1617964037288-fbc3b1006a5d?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1617964037288-fbc3b1006a5d?w=1920&q=80"
+  },
+  content: `The moment Clara Voss decided to leave her own wedding reception, she was standing in the bathroom of the Grand Hotel Kaiserhof in Vienna, holding a glass of champagne she had not drunk, looking at herself in the mirror with the particular expression of someone who has just understood something they cannot ununderstand.
+
+She was thirty-four years old.
+
+She was wearing a dress that had taken eight months and four fittings to exist.
+
+She was married — had been, for six hours and forty-seven minutes — to a man named Thomas, who was kind and brilliant and loved her with the steady, reliable devotion of someone who has chosen carefully and intends to honor the choice.
+
+She set the champagne on the edge of the sink.
+
+She looked at herself.
+
+She thought: when did I become someone who needs permission to breathe?
+
+She picked up her shoes — heels, ivory, the kind that look architectural and feel like punishment — and she walked out of the bathroom, through the service corridor that the catering staff used, down the back staircase that smelled of linen and industrial cleaning products, and out through a fire door into a Vienna side street at nine forty-seven on a Saturday evening in October.
+
+The cold hit her immediately. She was in a wedding dress with no coat and the city was doing what Vienna does in October — conducting the weather with the formal precision of an orchestra that knows its score and intends to play it regardless of the audience.
+
+She stood on the pavement in her bare feet, shoes in her hand, and looked at the street.
+
+Then she started walking.
+
+To understand why Clara walked out of her own wedding reception you need to understand who Clara was before she became the woman in the bathroom mirror.
+
+You need to go back eleven years.
+
+She was twenty-three and had just finished a degree in urban planning at the Technical University of Vienna and had been offered — through a combination of exceptional grades and the specific audacity of someone who applies for things they are not yet sure they deserve — a fellowship in Seoul. One year. Urban renewal projects in three districts of the city. The kind of opportunity that arrives once and does not offer a second appointment.
+
+She had taken it.
+
+Not without difficulty — her parents had been uncertain, her boyfriend at the time had been opposed with the particular vocal force of someone whose opposition is really about something else, and she had been, in the weeks before departure, genuinely frightened in the way that is indistinguishable from excitement if you are paying attention.
+
+She had gone anyway.
+
+Seoul had been — she returned to this year often, in the way you return to a place that rearranged something fundamental — Seoul had been the year she became herself. Not a finished version. Not a complete version. But a version that was genuinely, recognizably her — the version that stayed up until three in the morning arguing about public space with Korean urban planners who matched her point for point, the version that navigated a city of ten million people alone and found it exhilarating rather than terrifying, the version that made decisions — about work, about weekends, about what to eat and where to go and who to spend time with — based entirely on what she actually wanted rather than what made the situation easier.
+
+She had come back to Vienna at twenty-four with the particular confidence of someone who has lived alone in a foreign city and discovered they are capable of more than they knew.
+
+She had met Thomas at twenty-six.
+
+And here is the thing — the thing that is important to understand — Thomas was not the problem. Thomas had never been the problem. Thomas was a good man who loved her well and had never, not once, explicitly asked her to be smaller than she was.
+
+What had happened was subtler than that. What had happened was the slow, consensual, almost invisible process by which two people build a life together and in the building discover that some things get left out not because anyone decides to leave them out but because the structure does not seem to have room for them.
+
+What got left out of the structure of Clara and Thomas was the version of Clara that had walked through Seoul at midnight because she wanted to see what the Han River looked like at night. The version that had made decisions based entirely on what she wanted. The version that had frightened herself regularly and found the fright useful.
+
+That version had not disappeared. She had simply — gradually, without noticing, the way you do not notice the precise moment a season changes — stopped consulting her.
+
+By the time Clara was thirty-four, the unsealed version of herself had been sitting in a waiting room inside her for so long she had begun to wonder if she had imagined her.
+
+Until the bathroom mirror.
+
+Until the champagne she had not drunk.
+
+Until the question — when did I become someone who needs permission to breathe — arrived so clearly and so completely that there was no longer any pretending she had not heard it.
+
+She walked for forty minutes before she stopped.
+
+Vienna at nine forty-seven on a Saturday in October is not a city that is going to bed. It is a city mid-conversation — the restaurants full, the bars beginning their second act, the streets carrying the specific ambient warmth of people who are where they have chosen to be. She moved through it in a wedding dress with bare feet and did not think about how she looked and was not, in this moment, capable of thinking about how she looked, which was itself a kind of information.
+
+She ended up at the Stadtpark.
+
+She stood at the edge of it — the park she had walked through a hundred times, that she knew in every season, that she had walked through at midnight once in her twenties after a party and had sat on a bench until two in the morning talking to a stranger about the architecture of grief — and looked at the dark paths between the lit trees.
+
+She sat on a bench.
+
+Her phone was in the small ivory bag she had, apparently, carried out of the hotel without deciding to. It was full of messages she could feel without looking — the vibrations had not stopped since approximately ten minutes after she left, which meant someone had noticed, which meant the evening had become a different kind of evening for everyone in that ballroom.
+
+She did not look at the phone.
+
+She sat on the bench in the Stadtpark in her wedding dress in October and she thought.
+
+Not about Thomas — not yet, she could not think about Thomas yet, thinking about Thomas required a steadiness she was still assembling. She thought about Seoul. About the Han River at midnight. About the specific feeling of being twenty-three and terrified and audacious enough to apply for a fellowship she was not sure she deserved and go anyway.
+
+She thought about the urban planning project she had been offered eight months ago — a two-year consultancy in Copenhagen, working on a waterfront regeneration scheme that was exactly the kind of work she had entered the field to do. She had turned it down. Not because Thomas had asked her to — he had not — but because turning it down had been the shape that made sense, the way certain decisions arrange themselves into the only available form when you have not been consulting the version of yourself that would have made a different one.
+
+She had turned it down and told herself it was a choice.
+
+She had believed it. For eight months, she had believed it.
+
+She believed it less now.
+
+She had been sitting on the bench for twenty-two minutes when her phone rang.
+
+Not Thomas. Not her mother. Not any of the numbers she had been not-answering.
+
+Marta.
+
+Marta Hofer had been Clara's closest friend since they were nineteen years old, a friendship built on the specific foundation of two people who had recognized each other immediately and completely and had been arguing productively ever since. Marta was a sculptor who lived in a studio in the seventh district and had opinions about everything and delivered them without packaging, which Clara had always found both alarming and essential.
+
+She answered.
+
+"Where are you," Marta said. Not a question. The tone of someone who has located the approximate situation and needs only the coordinates.
+
+"Stadtpark," Clara said.
+
+A pause. "Of course you are." A sound of movement — coat, keys, door. "Do not go anywhere."
+
+"Marta —"
+
+"I am already in a taxi," Marta said. "Save it."
+
+She arrived in eleven minutes. She was wearing paint-stained jeans and a coat that had seen better decades and she sat down on the bench next to Clara without preamble and looked at her with the direct, unhurried attention she brought to everything she examined.
+
+"Tell me," she said.
+
+Clara looked at the lit trees. "I do not know where to start."
+
+"Start with the bathroom," Marta said. "I know you started in the bathroom. You always start things in bathrooms."
+
+Clara looked at her. "I looked at myself in the mirror and I did not recognize the person looking back."
+
+"What did you see?"
+
+"Someone who has been making decisions based on the shape of the life rather than the life itself." She paused. "Someone who turned down Copenhagen."
+
+Marta was quiet for a moment. She knew about Copenhagen. She had been, at the time, the only person Clara had told about the full weight of that decision, the only person who had heard the part where Clara said I think I should go and the part where Clara said I think I am going to say no and the part, weeks later, where Clara had said I said no, and Marta had said I know, and neither of them had said what they both knew, which was that the no had cost something that had not been fully accounted for.
+
+"Is it Thomas?" Marta said.
+
+"No," Clara said. And meant it. "Thomas is — Thomas is good. Thomas has never asked me to be less than I am. What happened is not Thomas's fault."
+
+"What happened?"
+
+Clara thought about how to say it accurately.
+
+"I think," she said slowly, "that I outsourced myself. Not to Thomas. To the idea of the life. The structure of it. I built something that looked correct from the outside and I moved into it and somewhere in the moving I left behind the version of me that walked through Seoul at midnight because she wanted to see the river."
+
+Marta looked at her. "And you missed her."
+
+"I did not know I was missing her," Clara said. "Until tonight. Until the mirror. Until I realized that the person in the dress had stopped asking herself what she wanted and was only asking what the shape required."
+
+Marta was quiet for a long time. Beside them the park moved with its own October business — leaves, wind, the distant music of a city mid-Saturday.
+
+"What do you want?" Marta asked. The question without softening. The Marta Hofer question.
+
+Clara looked at the trees.
+
+"I want to call Copenhagen," she said. "I want to know if the consultancy is still available. I want to go to Copenhagen and work on a waterfront regeneration scheme and come back knowing that I went because I chose to go and not because the structure did not have room for it." She paused. "And I want to tell Thomas the truth. The whole truth. Not the managed version. The actual version of what has been happening to me, which I should have told him months ago, which I did not tell him because I was not telling it to myself."
+
+"That is a lot for one October evening," Marta said.
+
+"Yes," Clara said. "It is."
+
+"Are you going back to the hotel?"
+
+Clara looked at her phone. Thirty-seven missed calls. She felt the weight of them — not with guilt but with the specific sobriety of someone who understands that choices have weight and is prepared to carry it.
+
+"Yes," she said. "I am going back."
+
+"Do you want me to come?"
+
+"No," Clara said. "This part I need to do alone."
+
+Marta looked at her for a moment. Then she reached out and straightened a piece of Clara's hair that had come loose — a gesture so small and so entirely Marta that Clara felt something unlock in her chest.
+
+"You know," Marta said, "the woman who walked through Seoul at midnight is not gone. She is sitting on a bench in the Stadtpark in a wedding dress in October. She has been here the whole time. She was just waiting for you to come and find her."
+
+Clara looked at her friend.
+
+"I know," she said. "I think I just did."
+
+She walked back to the hotel.
+
+The side street. The fire door. The service corridor. Reversed, retraced, the same and entirely different from the passage an hour ago.
+
+Thomas was in the corridor outside the ballroom. Not pacing — he was not a pacer, Thomas, he was a stiller, he went very quiet when things were large, he processed inward — just standing, with his jacket off and his tie loosened, holding his phone, looking at the floor.
+
+He looked up when he heard her.
+
+They looked at each other.
+
+She was barefoot and cold and her dress had acquired a watermark at the hem from the Stadtpark and she was — she could feel this, could feel it the way you feel something that has been absent for a long time and has returned — entirely herself. The actual version. Not managed or reduced or shaped to fit the available space.
+
+"Clara," he said.
+
+"I know," she said. "I know, Thomas. I owe you an explanation and I am going to give you one. The real one. Not a version of it."
+
+He looked at her for a long moment. His face — she knew his face completely, had spent eight years learning it — was doing something she could not immediately read. Not anger. Something more careful than anger, something that was trying to understand before it decided what to be.
+
+"Are you all right?" he said. First. Before anything else.
+
+She felt this land in her chest.
+
+"Yes," she said. "I am — yes. I am all right. I am more all right than I have been in a long time and I understand how that sounds given the evening and I am going to explain it."
+
+He gestured to a small sitting room off the corridor. They went in. He closed the door. They sat — not close, not far, the careful geography of two people about to have a real conversation.
+
+She told him.
+
+Not quickly, not in the managed way, but fully — the Seoul year, the Copenhagen offer, the gradual outsourcing of herself to the structure of their life, the bathroom mirror, the question she had not been able to unhear. She told him that she loved him — this was true, it was fully true, it was not the problem and she needed him to understand it was not the problem. She told him that she had not been honest with herself for long enough that she had stopped being fully honest with him, and that this was her failure and not his, and that he deserved the full version of who she was even when the full version was more complicated than the available space seemed to allow.
+
+She told him about the Copenhagen project.
+
+He listened. He listened the way Thomas listened — completely, without interrupting, with the focused attention of a man who understands that the most important thing he can do right now is hear accurately.
+
+When she finished the room was quiet.
+
+He looked at his hands. Then at her.
+
+"Why did you not tell me about Copenhagen?" he said. "At the time. The real version."
+
+"Because I had not told myself the real version," she said. "I told myself it was a choice. I believed it."
+
+"And now?"
+
+"Now I know it was not a choice. It was a concession to a shape I had not examined."
+
+He was quiet for a long time.
+
+"I would have supported you going," he said. "I want you to know that. Copenhagen — two years, long distance, the logistics of it — I would have managed all of that. If you had told me you needed to go I would have said go."
+
+"I know," she said. And she did know. That was the thing — she had known, somewhere below the deciding, that Thomas would have said go. The obstacle had never been Thomas. The obstacle had been the part of her that had forgotten she was allowed to need things that complicated the structure.
+
+"What do you want?" Thomas said. The question arriving from a different direction, in a different voice, but landing in the same place it had landed when Marta asked it.
+
+Clara looked at her husband.
+
+"I want to call Copenhagen on Monday," she said. "I want to know if there is still a place on that project. I want — I want us to be honest with each other in a way we have not been. Not because we have been dishonest deliberately but because I have not been honest with myself, and that leaks. It leaks into everything."
+
+"And us?" he said. "What do you want for us?"
+
+She looked at him. At the face she had spent eight years learning. At the man who had loved her steadily and well and had never asked her to be less than she was.
+
+"I want us to be real," she said. "I want to be the actual version of myself in this marriage. I want you to know who you married — the full person, the one who walks through cities at midnight and applies for things she is not sure she deserves. I think you fell in love with that person. I think I owe it to both of us to bring her back."
+
+Thomas looked at her for a very long time.
+
+Then he said: "I fell in love with a woman who sent me a voice note at two in the morning about the spatial inequity of Vienna's park distribution. I fell in love with someone who argued with my friends about urban density until midnight and was right about all of it. I fell in love with you, Clara. The actual version." He paused. "I did not fall in love with the woman in the bathroom who needed permission to breathe. I did not know she had moved in."
+
+Clara felt something shift — not dramatically, not with the force of resolution, but with the quiet weight of truth being recognized by two people simultaneously.
+
+"She is leaving," Clara said. "I am evicting her."
+
+Something moved across Thomas's face. Not quite a smile. Something more honest than a smile.
+
+"Good," he said. "I would like to meet the other one properly. The Seoul one. The Copenhagen one."
+
+"She is outside in the corridor," Clara said. "In bare feet. She is slightly cold."
+
+Thomas stood up. He took off his jacket and held it out.
+
+She looked at it. At him.
+
+She put it on.
+
+She called Copenhagen on Monday morning.
+
+Thomas was in the kitchen making coffee — he had, she noticed, started making it differently, the way she had always preferred it, which was a small thing and also not a small thing — and she sat at the desk in the study with the phone and the number and the specific quality of nervousness that is indistinguishable from excitement if you are paying attention.
+
+The project coordinator answered on the third ring.
+
+Her name was Ingrid. She had a brisk, warm voice and the directness of someone who does not waste time on preamble.
+
+"I submitted a proposal for the waterfront consultancy eighteen months ago," Clara said. "I withdrew my application. I am calling to ask whether the position is still available or whether there is any iteration of this project I could contribute to."
+
+A pause.
+
+"Clara Voss," Ingrid said. "I remember your proposal. It was one of the strongest we received."
+
+"I withdrew it," Clara said. "I know."
+
+"You did," Ingrid said. "Can I ask why you are calling now?"
+
+Clara thought about the bathroom mirror. The champagne she had not drunk. The Stadtpark at nine forty-seven on a Saturday in October.
+
+"Because I have recently reacquainted myself with the version of me that submitted the proposal," she said. "And she would like a conversation."
+
+A pause. Then — and Clara heard it clearly — the sound of someone smiling on the other end of a phone.
+
+"We are in the second phase," Ingrid said. "The waterfront project has expanded. We have a position that did not exist when you originally applied. It would suit your specific background very well." A pause. "Can you come to Copenhagen?"
+
+Clara looked through the study doorway at Thomas in the kitchen. He was reading something, coffee in hand, the particular absorbed quiet of a man at home in the morning.
+
+He looked up. Saw her face. Something in his expression — a question, open, without pressure.
+
+She gave him the smallest nod.
+
+He raised his coffee cup. A gesture so small and so completely Thomas that she felt it all the way across the room.
+
+"Yes," she said into the phone. "I can come to Copenhagen."
+
+She went to Copenhagen in January.
+
+The waterfront project was everything the proposal had suggested it would be and several things it had not — harder in some ways, more interesting in others, the specific productive difficulty of work that is genuinely worth doing. She worked with a team of twelve people from seven countries and discovered, in the first month, that the version of herself that had been sitting in the waiting room had not only survived the wait but had been accumulating, in the years of waiting, a depth and a patience and a precision that twenty-three-year-old Seoul Clara had not yet had.
+
+Thomas came in March for ten days. They walked the waterfront together — she showing him the project, explaining the decisions, watching him engage with it the way he engaged with things that interested him, which was completely. They had dinner in a small restaurant near the harbour and talked until the restaurant closed and the staff were politely arranging chairs around them.
+
+On the last evening he said: "You are different here."
+
+"Different how?" she said.
+
+He thought about it. "Complete," he said. "You are the same person you are at home but — all of you is present. There is no part of you in the waiting room."
+
+She looked at him. At the face she had spent eight years learning and was still learning and intended to spend a great deal more time learning.
+
+"I know," she said. "I am sorry it took me so long to find the door."
+
+"You found it," he said. "That is the part that matters."
+
+"The dress is ruined," she said. "The hem. From the park."
+
+"I know," he said. "I had it cleaned. The watermark did not come out."
+
+She looked at him.
+
+"Good," she said. "I want to keep it."
+
+He looked at her. "The ruined dress?"
+
+"The proof that I found the door," she said. "That I walked through it. Even when it was the wrong moment. Even when it cost something." She paused. "Especially then."
+
+Thomas looked at her across the table of a small Copenhagen restaurant with the harbour outside and the project she had come back for at the centre of the life they were building and which was — not perfect, not finished, not without the ongoing work of two people choosing to be honest with each other daily — real.
+
+Genuinely, completely, without remainder, real.
+
+"Keep the dress," he said.
+
+She kept the dress.
+
+She wore it, sometimes, in the study — not the whole thing, just the jacket she had borrowed from Thomas that October evening, which she had kept for reasons she had not explained and he had not asked about, which was itself a form of understanding.
+
+She wore it when she was working on something difficult. When she needed to remember the bench in the Stadtpark and the cold and the bare feet and the moment she had gone looking for the version of herself that walked through cities at midnight and found her, exactly where she had always been, waiting without impatience for the right person to come and say:
+
+I am here. I was looking for you.
+
+I found you.
+
+Let us go.
+
+Have you ever looked in a mirror — or had a moment of sudden, unavoidable clarity — and realized you had been living someone else's version of your life? What did you do with that moment? And if you have not had that moment yet — what is the waiting room inside you holding that you have not gone back to collect? Share in the comments. Share this with someone who has been shrinking themselves to fit a life that was built for a smaller version of them. Tell them the door is still there. It was always there. It opens from the inside.`
+},
+  {
   id: "the-things-we-bury-always-grow",
   title: "The Things We Bury Always Grow",
   genre: "Drama",
