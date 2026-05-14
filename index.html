@@ -1065,10 +1065,6 @@ function goBack() {
 // ── STORIES ──
 function loadStories() { renderStories(); checkDeepLink(); }
 
-function renderStories() {
-    const trending    = stories.filter(s => s.trending);
-    const newReleases = stories.slice(0, 6);
-    const featured    = stories.slice(0, 3);
     document.getElementById('trendingRow').innerHTML    = trending.map(createStoryCard).join('');
     document.getElementById('newReleasesRow').innerHTML = newReleases.map(createStoryCard).join('');
     document.getElementById('featuredGrid').innerHTML   = featured.map(createFeaturedCard).join('');
@@ -1450,8 +1446,104 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
 window.speechSynthesis.onvoiceschanged = () => {};
 
+// ── SHUFFLE UTILITY ──
+function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+// ── SEEDED SHUFFLE (changes every hour) ──
+function getHourlySeed() {
+    const now = new Date();
+    return now.getFullYear() * 1000000 +
+           (now.getMonth() + 1) * 10000 +
+           now.getDate() * 100 +
+           now.getHours();
+}
+
+function seededShuffle(arr, seed) {
+    const a = [...arr];
+    let s = seed;
+    for (let i = a.length - 1; i > 0; i--) {
+        s = (s * 1664525 + 1013904223) & 0xffffffff;
+        const j = Math.abs(s) % (i + 1);
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+// ── RENDER WITH HOURLY SHUFFLE ──
+function renderStories() {
+    const seed = getHourlySeed();
+
+    // Each section gets a different seed so they show different orders
+    const trendingShuffled   = seededShuffle(
+        stories.filter(s => s.trending), seed
+    );
+    const newReleasesShuffled = seededShuffle(
+        [...stories], seed + 1
+    ).slice(0, 6);
+    const featuredShuffled   = seededShuffle(
+        [...stories], seed + 2
+    ).slice(0, 3);
+
+    document.getElementById('trendingRow').innerHTML =
+        trendingShuffled.map(createStoryCard).join('');
+    document.getElementById('newReleasesRow').innerHTML =
+        newReleasesShuffled.map(createStoryCard).join('');
+    document.getElementById('featuredGrid').innerHTML =
+        featuredShuffled.map(createFeaturedCard).join('');
+}
+
+// ── SMOOTH SECTION REFRESH (no flicker) ──
+function refreshSections() {
+    const sections = [
+        { id: 'trendingRow',    stories: seededShuffle(stories.filter(s => s.trending), getHourlySeed()),     fn: createStoryCard },
+        { id: 'newReleasesRow', stories: seededShuffle([...stories], getHourlySeed() + 1).slice(0, 6),        fn: createStoryCard },
+        { id: 'featuredGrid',   stories: seededShuffle([...stories], getHourlySeed() + 2).slice(0, 3),        fn: createFeaturedCard }
+    ];
+
+    sections.forEach(({ id, stories: s, fn }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        // Fade out
+        el.style.transition = 'opacity 0.6s ease';
+        el.style.opacity = '0';
+
+        setTimeout(() => {
+            el.innerHTML = s.map(fn).join('');
+            // Fade in
+            el.style.opacity = '1';
+        }, 600);
+    });
+}
+
+// ── SCHEDULE HOURLY REFRESH ──
+function scheduleHourlyRefresh() {
+    const now = new Date();
+    // Calculate milliseconds until next exact hour
+    const msUntilNextHour =
+        (60 - now.getMinutes()) * 60 * 1000 -
+        now.getSeconds() * 1000 -
+        now.getMilliseconds();
+
+    // Wait until the top of the next hour, then refresh every hour
+    setTimeout(() => {
+        refreshSections();
+        setInterval(refreshSections, 60 * 60 * 1000);
+    }, msUntilNextHour);
+}
+
 // ── INIT ──
-document.addEventListener('DOMContentLoaded', loadStories);
+document.addEventListener('DOMContentLoaded', () => {
+    loadStories();
+    scheduleHourlyRefresh();
+});
 </script>
 
 </body>
