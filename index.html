@@ -1062,14 +1062,6 @@ function goBack() {
     backToHome();
     }
 
-// ── STORIES ──
-function loadStories() { renderStories(); checkDeepLink(); }
-
-    document.getElementById('trendingRow').innerHTML    = trending.map(createStoryCard).join('');
-    document.getElementById('newReleasesRow').innerHTML = newReleases.map(createStoryCard).join('');
-    document.getElementById('featuredGrid').innerHTML   = featured.map(createFeaturedCard).join('');
-}
-
 function createStoryCard(story) {
     return `
         <div class="story-card" onclick="openStory('${story.id}')">
