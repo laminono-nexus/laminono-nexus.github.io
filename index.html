@@ -1536,17 +1536,11 @@ function scheduleHourlyRefresh() {
     }, msUntilNextHour);
 }
 
-    // ── INIT ──
-function initApp() {
-    if (typeof stories === 'undefined' || !stories || stories.length === 0) {
-        setTimeout(initApp, 100);
-        return;
-    }
+// ── INIT ──
+document.addEventListener('DOMContentLoaded', () => {
     loadStories();
     scheduleHourlyRefresh();
-}
-
-document.addEventListener('DOMContentLoaded', initApp);
+});
 </script>
 
 </body>
