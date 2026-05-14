@@ -1438,6 +1438,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
 window.speechSynthesis.onvoiceschanged = () => {};
 
+    // ── LOAD STORIES ──
+function loadStories() {
+    renderStories();
+    checkDeepLink();
+}
 // ── SHUFFLE UTILITY ──
 function shuffleArray(arr) {
     const a = [...arr];
