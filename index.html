@@ -1531,11 +1531,17 @@ function scheduleHourlyRefresh() {
     }, msUntilNextHour);
 }
 
-// ── INIT ──
-document.addEventListener('DOMContentLoaded', () => {
+    // ── INIT ──
+function initApp() {
+    if (typeof stories === 'undefined' || !stories || stories.length === 0) {
+        setTimeout(initApp, 100);
+        return;
+    }
     loadStories();
     scheduleHourlyRefresh();
-});
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
 </script>
 
 </body>
