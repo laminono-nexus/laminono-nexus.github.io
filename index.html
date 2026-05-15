@@ -923,6 +923,64 @@ const _supabase = supabase.createClient(
     font-size: 0.9rem;
     line-height: 1.6;
 }
+        /* ── CURRENCY TOGGLE ── */
+.currency-toggle {
+    display: flex;
+    gap: 8px;
+    padding: 16px 16px 0;
+    margin-bottom: 4px;
+}
+.currency-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    background: transparent;
+    color: #808080;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.currency-btn.active {
+    background: rgba(229,9,20,0.15);
+    border-color: #E50914;
+    color: #fff;
+}
+.currency-note {
+    margin: 0 16px 4px;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    color: #808080;
+    font-size: 0.76rem;
+    text-align: center;
+}
+
+/* Dollar transfer section */
+.dollar-transfer-info {
+    display: none;
+    margin: 0 16px;
+    padding: 16px;
+    background: #0f0f0f;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.dollar-transfer-info.visible { display: block; }
+.dollar-section-label {
+    color: #f5c842;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 14px 0 8px;
+    padding-left: 2px;
+}
+.dollar-section-label:first-child { margin-top: 0; }
     </style>
 </head>
 <body>
