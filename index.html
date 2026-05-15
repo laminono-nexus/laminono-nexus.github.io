@@ -1197,6 +1197,180 @@ const _supabase = supabase.createClient(
     </div>
 </div>
 
+    <!-- ── COIN PAYMENT MODAL ── -->
+<div id="payment-modal">
+    <div class="payment-sheet" id="paymentSheet">
+        <div class="payment-handle"></div>
+
+        <!-- Header with story info + amount -->
+        <div class="payment-header">
+            <div class="payment-story-row">
+                <img id="pay-story-img" src="" alt="" class="payment-story-img">
+                <div>
+                    <div class="payment-story-title" id="pay-story-title"></div>
+                    <div class="payment-story-author">by Olamide Emmanuel Willoughby</div>
+                </div>
+            </div>
+            <div class="payment-amount-badge">
+                <div>
+                    <div class="payment-coins-label">
+                        <span>🪙</span>
+                        <span id="pay-coins-label">1 Coin</span>
+                    </div>
+                    <div class="payment-naira-label">Support amount</div>
+                </div>
+                <div>
+                    <div class="payment-naira-amount" id="pay-naira-amount">₦5,000</div>
+                    <div id="pay-dollar-amount" style="color:rgba(245,200,66,0.6);font-size:0.78rem;text-align:right;margin-top:2px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success screen -->
+        <div class="payment-success" id="payment-success">
+            <div class="success-icon">🎉</div>
+            <div class="success-title">Thank You!</div>
+            <p class="success-msg">Your support means everything to the author.<br>Your coins have been received with gratitude.</p>
+            <button onclick="closePaymentModal()" style="margin-top:24px;padding:14px 40px;background:#E50914;border:none;border-radius:50px;color:#fff;font-size:0.95rem;font-weight:700;cursor:pointer;">Done</button>
+        </div>
+
+        <!-- Payment flow -->
+        <div id="payment-flow">
+
+            <!-- Currency toggle -->
+            <div class="currency-toggle">
+                <button class="currency-btn active" id="btn-ngn" onclick="setCurrency('NGN')">
+                    🇳🇬 Nigerian Naira (₦)
+                </button>
+                <button class="currency-btn" id="btn-usd" onclick="setCurrency('USD')">
+                    🇺🇸 US Dollar ($)
+                </button>
+            </div>
+            <div class="currency-note" id="currency-note">
+                1 Coin = ₦5,000
+            </div>
+
+            <div class="payment-methods-title">Choose Payment Method</div>
+
+            <!-- Option 1: Card -->
+            <div class="payment-method-card" id="method-card" onclick="selectMethod('card')">
+                <div class="payment-method-top">
+                    <div class="payment-method-icon" style="background:rgba(66,133,244,0.15);">💳</div>
+                    <div>
+                        <div class="payment-method-name">Pay with Card</div>
+                        <div class="payment-method-desc">Debit or credit card — secure checkout</div>
+                    </div>
+                    <div class="payment-method-amount">
+                        <div class="payment-method-naira" id="card-amount">₦5,000</div>
+                        <div class="payment-method-coins" id="card-coins">1 Coin</div>
+                    </div>
+                </div>
+                <div class="card-form" id="card-form">
+                    <div style="height:14px;"></div>
+                    <input type="text" class="card-input" id="card-name" placeholder="Cardholder name" maxlength="60">
+                    <input type="text" class="card-input" id="card-number" placeholder="Card number" maxlength="19" oninput="formatCardNumber(this)">
+                    <div class="card-row">
+                        <input type="text" class="card-input" id="card-expiry" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)">
+                        <input type="text" class="card-input" id="card-cvv" placeholder="CVV" maxlength="4" oninput="this.value=this.value.replace(/\D/g,'')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 2: Bank Transfer -->
+            <div class="payment-method-card" id="method-transfer" onclick="selectMethod('transfer')">
+                <div class="payment-method-top">
+                    <div class="payment-method-icon" style="background:rgba(34,197,94,0.15);">🏦</div>
+                    <div>
+                        <div class="payment-method-name" id="transfer-method-name">Bank Transfer</div>
+                        <div class="payment-method-desc" id="transfer-method-desc">Transfer directly to author's account</div>
+                    </div>
+                    <div class="payment-method-amount">
+                        <div class="payment-method-naira" id="transfer-amount">₦5,000</div>
+                        <div class="payment-method-coins" id="transfer-coins">1 Coin</div>
+                    </div>
+                </div>
+
+                <!-- NGN Transfer details -->
+                <div class="transfer-info" id="transfer-info">
+                    <div style="height:12px;"></div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Bank</span>
+                        <span class="transfer-value">United Bank of Africa</span>
+                    </div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Account Name</span>
+                        <span class="transfer-value">Olamide Emmanuel Willoughby</span>
+                    </div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Account Number</span>
+                        <span class="transfer-value">
+                            2294033649
+                            <button class="copy-btn" onclick="copyAccount(event,'2294033649')">Copy</button>
+                        </span>
+                    </div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Amount</span>
+                        <span class="transfer-value" id="transfer-amount-row" style="color:#f5c842;">₦5,000</span>
+                    </div>
+                    <div class="transfer-note">
+                        After transferring, click "I Have Sent Payment" below. Your support will be confirmed within 24 hours.
+                    </div>
+                </div>
+
+                <!-- USD Transfer / Wire details -->
+                <div class="dollar-transfer-info" id="dollar-transfer-info">
+                    <div style="height:12px;"></div>
+
+                    <div class="dollar-section-label">Wire Transfer Details</div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Bank Name</span>
+                        <span class="transfer-value">United Bank of Africa</span>
+                    </div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Account Name</span>
+                        <span class="transfer-value">Olamide Emmanuel Willoughby</span>
+                    </div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Account Number</span>
+                        <span class="transfer-value">
+                            2294033649
+                            <button class="copy-btn" onclick="copyAccount(event,'2294033649')">Copy</button>
+                        </span>
+                    </div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Amount (USD)</span>
+                        <span class="transfer-value" id="dollar-transfer-amount-row" style="color:#f5c842;">$3.13</span>
+                    </div>
+
+                    <div class="dollar-section-label" style="margin-top:16px;">Alternative — PayPal</div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">PayPal Email</span>
+                        <span class="transfer-value">
+                            laminonosfilmview@gmail.com
+                            <button class="copy-btn" onclick="copyAccount(event,'laminonosfilmview@gmail.com')">Copy</button>
+                        </span>
+                    </div>
+                    <div class="transfer-row">
+                        <span class="transfer-label">Amount (USD)</span>
+                        <span class="transfer-value" id="paypal-amount-row" style="color:#f5c842;">$3.13</span>
+                    </div>
+
+                    <div class="transfer-note">
+                        Send the exact dollar amount via wire transfer or PayPal. Use your name and story title as payment reference. Click "I Have Sent Payment" once done.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <button class="pay-btn" id="pay-btn" onclick="processPayment()" disabled>
+                <span id="pay-btn-icon">🔒</span>
+                <span id="pay-btn-text">Select a payment method</span>
+            </button>
+            <button class="cancel-pay-btn" onclick="closePaymentModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
 <!-- Toast -->
 <div class="toast" id="toast">
     <span id="toastIcon">✓</span>
