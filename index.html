@@ -2003,6 +2003,235 @@ function copyShareLink() {
     navigator.clipboard ? navigator.clipboard.writeText(text).then(() => showToast('Link copied! 🔗')) : showToast('Could not copy');
 }
 
+    // ── COIN SUPPORT SYSTEM ──
+const COIN_PRICE_NGN = 5000;
+const COIN_PRICE_USD = 3.13; // 1 coin in USD (~₦5000 at current rate)
+let selectedPaymentMethod = null;
+let currentCoinAmount = 1;
+let selectedCurrency = 'NGN';
+
+function formatNGN(amount) {
+    return '₦' + (amount).toLocaleString('en-NG');
+}
+function formatUSD(amount) {
+    return '$' + amount.toFixed(2);
+}
+function getCoinPrice() {
+    return selectedCurrency === 'NGN' ? COIN_PRICE_NGN : COIN_PRICE_USD;
+}
+function formatAmount(coins) {
+    return selectedCurrency === 'NGN'
+        ? formatNGN(coins * COIN_PRICE_NGN)
+        : formatUSD(coins * COIN_PRICE_USD);
+}
+
+function setCurrency(currency) {
+    selectedCurrency = currency;
+
+    // Toggle buttons
+    document.getElementById('btn-ngn').classList.toggle('active', currency === 'NGN');
+    document.getElementById('btn-usd').classList.toggle('active', currency === 'USD');
+
+    // Update currency note
+    document.getElementById('currency-note').textContent = currency === 'NGN'
+        ? '1 Coin = ₦5,000'
+        : `1 Coin = $${COIN_PRICE_USD.toFixed(2)} USD`;
+
+    // Update transfer method label
+    document.getElementById('transfer-method-name').textContent = currency === 'NGN'
+        ? 'Bank Transfer'
+        : 'Wire Transfer / PayPal';
+    document.getElementById('transfer-method-desc').textContent = currency === 'NGN'
+        ? 'Transfer directly to author\'s account'
+        : 'Send via international wire or PayPal';
+
+    // Show/hide correct transfer details
+    if (selectedPaymentMethod === 'transfer') {
+        document.getElementById('transfer-info').classList.toggle('visible', currency === 'NGN');
+        document.getElementById('dollar-transfer-info').classList.toggle('visible', currency === 'USD');
+    }
+
+    // Refresh all amounts
+    refreshAmounts();
+
+    // Reset method selection if transfer was selected
+    if (selectedPaymentMethod) {
+        selectMethod(selectedPaymentMethod);
+    }
+}
+
+function refreshAmounts() {
+    const coins = currentCoinAmount;
+    const coinLabel = coins === 1 ? '1 Coin' : `${coins} Coins`;
+    const amount = formatAmount(coins);
+    const usdAmount = formatUSD(coins * COIN_PRICE_USD);
+    const ngnAmount = formatNGN(coins * COIN_PRICE_NGN);
+
+    document.getElementById('pay-coins-label').textContent = coinLabel;
+    document.getElementById('pay-naira-amount').textContent = selectedCurrency === 'NGN' ? ngnAmount : usdAmount;
+    document.getElementById('pay-dollar-amount').textContent = selectedCurrency === 'NGN' ? `≈ ${usdAmount}` : `≈ ${ngnAmount}`;
+    document.getElementById('card-amount').textContent = amount;
+    document.getElementById('card-coins').textContent = coinLabel;
+    document.getElementById('transfer-amount').textContent = amount;
+    document.getElementById('transfer-coins').textContent = coinLabel;
+    document.getElementById('transfer-amount-row').textContent = ngnAmount;
+    document.getElementById('dollar-transfer-amount-row').textContent = usdAmount;
+    document.getElementById('paypal-amount-row').textContent = usdAmount;
+}
+
+function openPayment(coins) {
+    if (!currentUser) { showGate(); return; }
+    if (!currentStory) return;
+    currentCoinAmount = coins;
+    selectedPaymentMethod = null;
+    selectedCurrency = 'NGN';
+
+    // Reset currency toggle
+    document.getElementById('btn-ngn').classList.add('active');
+    document.getElementById('btn-usd').classList.remove('active');
+    document.getElementById('currency-note').textContent = '1 Coin = ₦5,000';
+    document.getElementById('transfer-method-name').textContent = 'Bank Transfer';
+    document.getElementById('transfer-method-desc').textContent = 'Transfer directly to author\'s account';
+
+    // Set story info
+    document.getElementById('pay-story-img').src = currentStory.image;
+    document.getElementById('pay-story-title').textContent = currentStory.title;
+
+    // Refresh amounts
+    refreshAmounts();
+
+    // Reset UI state
+    document.getElementById('payment-success').classList.remove('visible');
+    document.getElementById('payment-flow').style.display = 'block';
+    document.getElementById('method-card').classList.remove('selected');
+    document.getElementById('method-transfer').classList.remove('selected');
+    document.getElementById('card-form').classList.remove('visible');
+    document.getElementById('transfer-info').classList.remove('visible');
+    document.getElementById('dollar-transfer-info').classList.remove('visible');
+    document.getElementById('pay-btn').disabled = true;
+    document.getElementById('pay-btn-icon').textContent = '🔒';
+    document.getElementById('pay-btn-text').textContent = 'Select a payment method';
+    document.getElementById('card-name').value = '';
+    document.getElementById('card-number').value = '';
+    document.getElementById('card-expiry').value = '';
+    document.getElementById('card-cvv').value = '';
+
+    document.getElementById('payment-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function openCustomPayment() {
+    const input = document.getElementById('customCoinInput');
+    const val = parseInt(input.value);
+    if (!val || val < 1) {
+        showToast('Please enter a valid coin amount');
+        return;
+    }
+    input.value = '';
+    openPayment(val);
+}
+
+function closePaymentModal() {
+    document.getElementById('payment-modal').classList.remove('active');
+    document.body.style.overflow = '';
+    selectedPaymentMethod = null;
+}
+
+function selectMethod(method) {
+    selectedPaymentMethod = method;
+
+    document.getElementById('method-card').classList.toggle('selected', method === 'card');
+    document.getElementById('method-transfer').classList.toggle('selected', method === 'transfer');
+    document.getElementById('card-form').classList.toggle('visible', method === 'card');
+
+    if (method === 'transfer') {
+        document.getElementById('transfer-info').classList.toggle('visible', selectedCurrency === 'NGN');
+        document.getElementById('dollar-transfer-info').classList.toggle('visible', selectedCurrency === 'USD');
+    } else {
+        document.getElementById('transfer-info').classList.remove('visible');
+        document.getElementById('dollar-transfer-info').classList.remove('visible');
+    }
+
+    const amount = formatAmount(currentCoinAmount);
+    const btn = document.getElementById('pay-btn');
+    btn.disabled = false;
+    document.getElementById('pay-btn-icon').textContent = method === 'card' ? '💳' : '✅';
+    document.getElementById('pay-btn-text').textContent = method === 'card'
+        ? `Pay ${amount} with Card`
+        : `I Have Sent ${amount}`;
+}
+
+function formatCardNumber(input) {
+    let val = input.value.replace(/\D/g, '').substring(0, 16);
+    input.value = val.replace(/(.{4})/g, '$1 ').trim();
+}
+
+function formatExpiry(input) {
+    let val = input.value.replace(/\D/g, '').substring(0, 4);
+    if (val.length >= 2) val = val.substring(0,2) + ' / ' + val.substring(2);
+    input.value = val;
+}
+
+function copyAccount(e, value) {
+    e.stopPropagation();
+    navigator.clipboard
+        ? navigator.clipboard.writeText(value).then(() => showToast('Copied to clipboard'))
+        : showToast('Copy manually: ' + value);
+}
+
+function processPayment() {
+    if (!selectedPaymentMethod) return;
+
+    if (selectedPaymentMethod === 'card') {
+        const name = document.getElementById('card-name').value.trim();
+        const number = document.getElementById('card-number').value.replace(/\s/g,'');
+        const expiry = document.getElementById('card-expiry').value.trim();
+        const cvv = document.getElementById('card-cvv').value.trim();
+
+        if (!name) { showToast('Please enter cardholder name'); return; }
+        if (number.length < 16) { showToast('Please enter a valid 16-digit card number'); return; }
+        if (expiry.length < 7) { showToast('Please enter a valid expiry date'); return; }
+        if (cvv.length < 3) { showToast('Please enter a valid CVV'); return; }
+
+        const btn = document.getElementById('pay-btn');
+        btn.disabled = true;
+        document.getElementById('pay-btn-text').textContent = 'Processing...';
+        document.getElementById('pay-btn-icon').textContent = '⏳';
+
+        setTimeout(() => { showSuccessScreen(); }, 2000);
+
+    } else if (selectedPaymentMethod === 'transfer') {
+        showSuccessScreen();
+    }
+}
+
+function showSuccessScreen() {
+    document.getElementById('payment-flow').style.display = 'none';
+    document.getElementById('payment-success').classList.add('visible');
+    const coinLabel = currentCoinAmount === 1 ? '1 Coin' : `${currentCoinAmount} Coins`;
+    showToast(`Thank you for supporting with ${coinLabel}`);
+
+    if (currentUser && currentStory) {
+        _supabase.from('story_support').insert({
+            user_id: currentUser.id,
+            story_id: currentStory.id,
+            coins: currentCoinAmount,
+            amount: currentCoinAmount * (selectedCurrency === 'NGN' ? COIN_PRICE_NGN : COIN_PRICE_USD),
+            currency: selectedCurrency,
+            method: selectedPaymentMethod,
+            created_at: new Date().toISOString()
+        }).catch(() => {});
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const pm = document.getElementById('payment-modal');
+    if (pm) {
+        pm.addEventListener('click', function(e) {
+            if (e.target === this) closePaymentModal();
+        });
+    }
+});
 // ── NAVBAR ──
 window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
