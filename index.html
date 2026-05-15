@@ -1162,6 +1162,21 @@ const _supabase = supabase.createClient(
                 </div>
             </div>
             <div class="story-text" id="storyText"></div>
+            <!-- Support the Author -->
+<div class="support-section" id="storySupportSection">
+    <div class="support-title">🪙 Support the Author</div>
+    <p class="support-subtitle">Every coin goes directly to the author. 1 Coin = ₦5,000</p>
+    <div class="coin-grid">
+        <button class="coin-btn" onclick="openPayment(1)">🪙 1 Coin</button>
+        <button class="coin-btn" onclick="openPayment(5)">🪙 5 Coins</button>
+        <button class="coin-btn" onclick="openPayment(10)">🪙 10 Coins</button>
+        <button class="coin-btn" onclick="openPayment(50)">🪙 50 Coins</button>
+    </div>
+    <div class="coin-custom-row">
+        <input type="number" class="coin-custom-input" id="customCoinInput" placeholder="Enter custom amount e.g. 3" min="1" max="9999">
+        <button class="coin-custom-btn" onclick="openCustomPayment()">Send Coins</button>
+    </div>
+</div>
             <!-- Rating -->
             <div class="rating-section">
                 <div class="average-rating">
