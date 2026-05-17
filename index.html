@@ -1691,7 +1691,9 @@ document.addEventListener('click', function(e) {
 
 // ── DISMISS GATE BY TAPPING DARK AREA ──
 document.getElementById('site-gate').addEventListener('click', function(e) {
-    if (e.target === this) hideGate();
+    if (e.target === this || e.target.closest('[onclick="hideGate()"]')) {
+        hideGate();
+    }
 });
 
 // ── GOOGLE SIGN IN ──
