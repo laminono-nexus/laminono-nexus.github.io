@@ -16,7 +16,14 @@
     <script>
 const _supabase = supabase.createClient(
     'https://innmbjbvnamyuxxbmaia.supabase.co',
-    'sb_publishable_-Cq1InBqR-UIeBohPEBbKg_kZ-Bbxfk'
+    'sb_publishable_-Cq1InBqR-UIeBohPEBbKg_kZ-Bbxfk',
+    {
+        auth: {
+            detectSessionInUrl: true,
+            persistSession: true,
+            autoRefreshToken: true
+        }
+    }
 );
 
 // Run BEFORE anything else loads
