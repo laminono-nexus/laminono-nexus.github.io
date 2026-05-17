@@ -2442,17 +2442,28 @@ function processPayment() {
 function showSuccessScreen() {
     document.getElementById('payment-flow').style.display = 'none';
     document.getElementById('payment-success').classList.add('visible');
-    const coinLabel = currentCoinAmount === 1 ? '1 Coin' : `${currentCoinAmount} Coins`;
+    const coinLabel = currentCoinAmount === 1
+        ? '1 Coin' : `${currentCoinAmount} Coins`;
     showToast(`Thank you for supporting with ${coinLabel}`);
 
     if (currentUser && currentStory) {
         _supabase.from('story_support').insert({
             user_id: currentUser.id,
             story_id: currentStory.id,
+            story_title: currentStory.title,
             coins: currentCoinAmount,
-            amount: currentCoinAmount * (selectedCurrency === 'NGN' ? COIN_PRICE_NGN : COIN_PRICE_USD),
+            amount: currentCoinAmount * (
+                selectedCurrency === 'NGN'
+                    ? COIN_PRICE_NGN
+                    : COIN_PRICE_USD
+            ),
             currency: selectedCurrency,
             method: selectedPaymentMethod,
+            transfer_ref: window._currentTransferRef || null,
+            txn_digits: (selectedPaymentMethod === 'transfer'
+                && selectedCurrency === 'NGN')
+                ? getTxnDigits() : null,
+            user_email: currentUser.email,
             created_at: new Date().toISOString()
         }).catch(() => {});
     }
