@@ -1306,31 +1306,121 @@ const _supabase = supabase.createClient(
                 </div>
 
                 <!-- NGN Transfer details -->
-                <div class="transfer-info" id="transfer-info">
-                    <div style="height:12px;"></div>
-                    <div class="transfer-row">
-                        <span class="transfer-label">Bank</span>
-                        <span class="transfer-value">United Bank of Africa</span>
-                    </div>
-                    <div class="transfer-row">
-                        <span class="transfer-label">Account Name</span>
-                        <span class="transfer-value">Olamide Emmanuel Willoughby</span>
-                    </div>
-                    <div class="transfer-row">
-                        <span class="transfer-label">Account Number</span>
-                        <span class="transfer-value">
-                            2294033649
-                            <button class="copy-btn" onclick="copyAccount(event,'2294033649')">Copy</button>
-                        </span>
-                    </div>
-                    <div class="transfer-row">
-                        <span class="transfer-label">Amount</span>
-                        <span class="transfer-value" id="transfer-amount-row" style="color:#f5c842;">₦5,000</span>
-                    </div>
-                    <div class="transfer-note">
-                        After transferring, click "I Have Sent Payment" below. Your support will be confirmed within 24 hours.
-                    </div>
-                </div>
+<div class="transfer-info" id="transfer-info">
+    <div style="height:12px;"></div>
+
+    <!-- Bank details -->
+    <div class="transfer-row">
+        <span class="transfer-label">Bank</span>
+        <span class="transfer-value">United Bank of Africa</span>
+    </div>
+    <div class="transfer-row">
+        <span class="transfer-label">Account Name</span>
+        <span class="transfer-value">Olamide Emmanuel Willoughby</span>
+    </div>
+    <div class="transfer-row">
+        <span class="transfer-label">Account Number</span>
+        <span class="transfer-value">
+            2294033649
+            <button class="copy-btn"
+                onclick="copyAccount(event,'2294033649')">Copy</button>
+        </span>
+    </div>
+    <div class="transfer-row">
+        <span class="transfer-label">Amount</span>
+        <span class="transfer-value"
+            id="transfer-amount-row"
+            style="color:#f5c842;">₦5,000</span>
+    </div>
+
+    <!-- Reference code box -->
+    <div style="margin-top:14px;padding:14px 16px;
+        background:rgba(229,9,20,0.08);
+        border:1px solid rgba(229,9,20,0.25);
+        border-radius:12px;">
+        <div style="color:#E50914;font-size:0.72rem;
+            font-weight:700;text-transform:uppercase;
+            letter-spacing:1px;margin-bottom:6px;">
+            Your Transfer Reference
+        </div>
+        <div style="display:flex;align-items:center;
+            justify-content:space-between;gap:10px;">
+            <div id="transfer-ref-code"
+                style="font-family:monospace;font-size:1.2rem;
+                font-weight:700;color:#fff;
+                letter-spacing:3px;">
+                LMN-0000-0000
+            </div>
+            <button class="copy-btn"
+                style="padding:5px 12px;font-size:0.78rem;"
+                onclick="copyAccount(event,
+                    document.getElementById(
+                    'transfer-ref-code').textContent.trim())">
+                Copy
+            </button>
+        </div>
+        <div style="color:#B3B3B3;font-size:0.76rem;
+            margin-top:8px;line-height:1.5;">
+            Use this code as your transfer
+            <strong style="color:#fff;">narration / description</strong>
+            when sending. This helps us confirm your payment.
+        </div>
+    </div>
+
+    <!-- Transaction ID confirmation -->
+    <div style="margin-top:12px;">
+        <div style="color:#B3B3B3;font-size:0.8rem;
+            margin-bottom:8px;font-weight:500;">
+            After transferring, enter the
+            <strong style="color:#fff;">last 4 digits</strong>
+            of your bank transaction ID or receipt number:
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+            <div style="display:flex;gap:6px;">
+                <input type="text"
+                    id="txn-digit-1"
+                    class="txn-digit-input"
+                    maxlength="1"
+                    oninput="moveFocus(this,'txn-digit-2')"
+                    onkeydown="handleBackspace(event,this,null)">
+                <input type="text"
+                    id="txn-digit-2"
+                    class="txn-digit-input"
+                    maxlength="1"
+                    oninput="moveFocus(this,'txn-digit-3')"
+                    onkeydown="handleBackspace(event,this,'txn-digit-1')">
+                <input type="text"
+                    id="txn-digit-3"
+                    class="txn-digit-input"
+                    maxlength="1"
+                    oninput="moveFocus(this,'txn-digit-4')"
+                    onkeydown="handleBackspace(event,this,'txn-digit-2')">
+                <input type="text"
+                    id="txn-digit-4"
+                    class="txn-digit-input"
+                    maxlength="1"
+                    oninput="checkTxnComplete()"
+                    onkeydown="handleBackspace(event,this,'txn-digit-3')">
+            </div>
+            <div id="txn-check-icon"
+                style="font-size:1.4rem;
+                transition:all 0.3s;opacity:0;">
+                ✅
+            </div>
+        </div>
+        <div style="color:#808080;font-size:0.73rem;
+            margin-top:6px;">
+            Find this on your bank app transfer receipt
+            or SMS alert (e.g. TXN ending in
+            <strong style="color:#B3B3B3;">4829</strong>)
+        </div>
+    </div>
+
+    <div class="transfer-note" style="margin-top:12px;">
+        Your support will be confirmed within 24 hours
+        after we verify your reference and transaction ID.
+    </div>
+</div>
 
                 <!-- USD Transfer / Wire details -->
                 <div class="dollar-transfer-info" id="dollar-transfer-info">
