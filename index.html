@@ -1674,9 +1674,13 @@ _supabase.auth.onAuthStateChange((event, session) => {
     }
 });
 
-// ── SHOW GATE ON FIRST TAP ──
+// Only intercept clicks on story cards and protected actions, not everything
 document.addEventListener('click', function(e) {
     if (!currentUser) {
+        // Check if click is on a story card, "Read Now", "My List", or support button
+        const target = e.target.closest('.story-card, .btn-primary, .btn-secondary, .action-btn, .coin-btn');
+        if (!target) return; // Allow all other clicks (nav, scroll, etc.)
+        
         const gate = document.getElementById('site-gate');
         if (gate.contains(e.target)) return;
         e.preventDefault();
