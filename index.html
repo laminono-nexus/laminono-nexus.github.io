@@ -2326,35 +2326,13 @@ function checkTxnComplete() {
     if (icon) icon.style.opacity = allFilled ? '1' : '0';
 
     const payBtn = document.getElementById('pay-btn');
-    if (selectedPaymentMethod === 'transfer' &&
-        selectedCurrency === 'NGN') {
+    if (selectedPaymentMethod === 'transfer' && selectedCurrency === 'NGN') {
         payBtn.disabled = !allFilled;
         if (allFilled) {
             const amount = formatAmount(currentCoinAmount);
-const btn = document.getElementById('pay-btn');
-
-if (method === 'card') {
-    btn.disabled = false;
-    document.getElementById('pay-btn-icon').textContent = '💳';
-    document.getElementById('pay-btn-text').textContent =
-        `Pay ${amount} with Card`;
-} else if (method === 'transfer') {
-    if (selectedCurrency === 'NGN') {
-        // Keep disabled until all 4 digits entered
-        btn.disabled = true;
-        document.getElementById('pay-btn-icon').textContent = '🔒';
-        document.getElementById('pay-btn-text').textContent =
-            'Enter your transaction digits to confirm';
-        // Re-check in case digits already filled
-        checkTxnComplete();
-    } else {
-        if (selectedPaymentMethod === 'transfer' && selectedCurrency === 'NGN') {
-    const btn = document.getElementById('pay-btn');
-    btn.disabled = !allFilled;
-    if (allFilled) {
-        document.getElementById('pay-btn-icon').textContent = '✅';
-        document.getElementById('pay-btn-text').textContent =
-            `I Have Sent ${formatAmount(currentCoinAmount)}`;
+            document.getElementById('pay-btn-icon').textContent = '✅';
+            document.getElementById('pay-btn-text').textContent = `I Have Sent ${amount}`;
+        }
     }
 }
 
