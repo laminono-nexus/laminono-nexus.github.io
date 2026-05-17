@@ -2266,6 +2266,83 @@ function closePaymentModal() {
     document.body.style.overflow = '';
     selectedPaymentMethod = null;
 }
+    // ── REFERENCE GENERATOR ──
+function generateTransferRef() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const rand = Math.floor(1000 + Math.random() * 9000);
+    return `LMN-${rand}-${year}`;
+}
+
+// ── DIGIT INPUT HELPERS ──
+function moveFocus(current, nextId) {
+    current.value = current.value.replace(/[^0-9a-zA-Z]/g, '');
+    if (current.value.length === 1) {
+        current.classList.add('filled');
+        const next = document.getElementById(nextId);
+        if (next) next.focus();
+    }
+    checkTxnComplete();
+}
+
+function handleBackspace(e, current, prevId) {
+    if (e.key === 'Backspace' && current.value === '') {
+        current.classList.remove('filled');
+        if (prevId) {
+            const prev = document.getElementById(prevId);
+            if (prev) {
+                prev.value = '';
+                prev.classList.remove('filled');
+                prev.focus();
+            }
+        }
+    }
+}
+
+function checkTxnComplete() {
+    const d1 = document.getElementById('txn-digit-1').value;
+    const d2 = document.getElementById('txn-digit-2').value;
+    const d3 = document.getElementById('txn-digit-3').value;
+    const d4 = document.getElementById('txn-digit-4').value;
+    const allFilled = d1 && d2 && d3 && d4;
+
+    const icon = document.getElementById('txn-check-icon');
+    if (icon) icon.style.opacity = allFilled ? '1' : '0';
+
+    const payBtn = document.getElementById('pay-btn');
+    if (selectedPaymentMethod === 'transfer' &&
+        selectedCurrency === 'NGN') {
+        payBtn.disabled = !allFilled;
+        if (allFilled) {
+            const amount = formatAmount(currentCoinAmount);
+            document.getElementById('pay-btn-icon').textContent = '✅';
+            document.getElementById('pay-btn-text').textContent =
+                `I Have Sent ${amount}`;
+        }
+    }
+}
+
+function getTxnDigits() {
+    return (
+        (document.getElementById('txn-digit-1').value || '') +
+        (document.getElementById('txn-digit-2').value || '') +
+        (document.getElementById('txn-digit-3').value || '') +
+        (document.getElementById('txn-digit-4').value || '')
+    ).toUpperCase();
+}
+
+function resetTxnInputs() {
+    ['txn-digit-1', 'txn-digit-2',
+     'txn-digit-3', 'txn-digit-4'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.value = '';
+            el.classList.remove('filled');
+        }
+    });
+    const icon = document.getElementById('txn-check-icon');
+    if (icon) icon.style.opacity = '0';
+}
 
 function selectMethod(method) {
     selectedPaymentMethod = method;
