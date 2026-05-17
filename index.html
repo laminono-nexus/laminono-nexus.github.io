@@ -1668,11 +1668,10 @@ _supabase.auth.onAuthStateChange((event, session) => {
             window.history.replaceState({}, '', window.location.pathname);
         }
     } else {
-        currentUser = null;
-        hideGate();
-        document.getElementById('user-profile-bar').style.display = 'none';
-    }
-});
+    currentUser = null;
+    showGate();  // ← SHOW gate when logged out
+    document.getElementById('user-profile-bar').style.display = 'none';
+}
 
 // Only intercept clicks on story cards and protected actions, not everything
 document.addEventListener('click', function(e) {
