@@ -23,11 +23,15 @@ const _supabase = supabase.createClient(
 (async () => {
     const { data } = await _supabase.auth.getSession();
     if (data.session) {
-        // User is logged in — mark it immediately
-        window.__AUTHED__ = true;
-        window.__USER__   = data.session.user;
+        currentUser = data.session.user;  // ← SET THE ACTUAL VARIABLE
+        hideGate();
+        showAvatar(currentUser);
+    } else {
+        // No session — show gate but allow dismissal
+        // showGate(); // Optional: uncomment if you want gate shown immediately
     }
 })();
+        
 </script>
 <script src="stories.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
