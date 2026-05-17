@@ -2341,12 +2341,13 @@ if (method === 'card') {
         // Re-check in case digits already filled
         checkTxnComplete();
     } else {
-        // USD — no digit check needed
-        btn.disabled = false;
+        if (selectedPaymentMethod === 'transfer' && selectedCurrency === 'NGN') {
+    const btn = document.getElementById('pay-btn');
+    btn.disabled = !allFilled;
+    if (allFilled) {
         document.getElementById('pay-btn-icon').textContent = '✅';
         document.getElementById('pay-btn-text').textContent =
-            `I Have Sent ${amount}`;
-        }
+            `I Have Sent ${formatAmount(currentCoinAmount)}`;
     }
 }
 
