@@ -1694,8 +1694,16 @@ document.getElementById('site-gate').addEventListener('click', function(e) {
 });
 
 // ── GOOGLE SIGN IN ──
-function signInWithGoogle() {
-    window.location.href = 'https://innmbjbvnamyuxxbmaia.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://laminono-nexus.github.io';
+async function signInWithGoogle() {
+    const { data, error } = await _supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+            redirectTo: 'https://laminono-nexus.github.io'
+        }
+    });
+    if (error) {
+        document.getElementById('auth-error').textContent = error.message;
+    }
 }
 
 // ── SIGN OUT ──
