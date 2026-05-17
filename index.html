@@ -2242,13 +2242,21 @@ function openPayment(coins) {
     document.getElementById('pay-btn-icon').textContent = '🔒';
     document.getElementById('pay-btn-text').textContent = 'Select a payment method';
     document.getElementById('card-name').value = '';
-    document.getElementById('card-number').value = '';
-    document.getElementById('card-expiry').value = '';
-    document.getElementById('card-cvv').value = '';
+document.getElementById('card-number').value = '';
+document.getElementById('card-expiry').value = '';
+document.getElementById('card-cvv').value = '';
 
-    document.getElementById('payment-modal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
+// Generate fresh reference for each payment session
+const ref = generateTransferRef();
+const refEl = document.getElementById('transfer-ref-code');
+if (refEl) refEl.textContent = ref;
+window._currentTransferRef = ref;
+
+// Reset transaction digit inputs
+resetTxnInputs();
+
+document.getElementById('payment-modal').classList.add('active');
+document.body.style.overflow = 'hidden';
 
 function openCustomPayment() {
     const input = document.getElementById('customCoinInput');
