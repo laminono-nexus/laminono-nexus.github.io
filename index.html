@@ -2323,9 +2323,28 @@ function checkTxnComplete() {
         payBtn.disabled = !allFilled;
         if (allFilled) {
             const amount = formatAmount(currentCoinAmount);
-            document.getElementById('pay-btn-icon').textContent = '✅';
-            document.getElementById('pay-btn-text').textContent =
-                `I Have Sent ${amount}`;
+const btn = document.getElementById('pay-btn');
+
+if (method === 'card') {
+    btn.disabled = false;
+    document.getElementById('pay-btn-icon').textContent = '💳';
+    document.getElementById('pay-btn-text').textContent =
+        `Pay ${amount} with Card`;
+} else if (method === 'transfer') {
+    if (selectedCurrency === 'NGN') {
+        // Keep disabled until all 4 digits entered
+        btn.disabled = true;
+        document.getElementById('pay-btn-icon').textContent = '🔒';
+        document.getElementById('pay-btn-text').textContent =
+            'Enter your transaction digits to confirm';
+        // Re-check in case digits already filled
+        checkTxnComplete();
+    } else {
+        // USD — no digit check needed
+        btn.disabled = false;
+        document.getElementById('pay-btn-icon').textContent = '✅';
+        document.getElementById('pay-btn-text').textContent =
+            `I Have Sent ${amount}`;
         }
     }
 }
