@@ -1,5 +1,377 @@
 const stories = [
   {
+  id: "the-last-letter",
+  title: "The Last Letter",
+  genre: "Romance",
+  readTime: "60 min",
+  trending: true,
+  excerpt: "Clara Voss found the letter on a Tuesday, which felt wrong for something that would change everything. Sealed in wax. Tucked inside her dead grandmother's copy of Middlemarch. Addressed, impossibly, in handwriting she had never seen — to her.",
+  image: "https://images.unsplash.com/photo-1687054250524-b7fcc864db7c?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1687054250524-b7fcc864db7c?w=1920&q=80"
+  },
+  content: `Clara Voss found the letter on a Tuesday, which felt wrong for something that would change everything.
+
+Tuesdays were for dry cleaning and conference calls and the particular loneliness of eating lunch at her desk while pretending to read emails she had already read. Tuesdays were not for life-altering discoveries. And yet there it was — tucked inside a copy of Middlemarch she had pulled from a box in her late grandmother's apartment, sealed with wax the color of old wine, addressed in handwriting so deliberate it looked like the person had been afraid the words might escape if not properly contained.
+
+The name on the envelope was not her grandmother's.
+
+It was hers.
+
+Clara — just that, no last name, no address, as though whoever had written it had known she would find it exactly here, exactly now, at thirty-four years old and freshly, quietly heartbroken in the specific way of a woman who has just ended a relationship that was good enough to stay in and not quite enough to stay in, which is the loneliest kind of ending there is.
+
+She turned the envelope over in her hands. The wax seal was intact. No one had opened it.
+
+She almost put it back.
+
+This matters — she almost put it back, tucked it between the pages, sealed it inside the book, put the book back in the box, and walked back to her conference call and her desk and the safely managed version of her life that did not include mysterious sealed letters with her name on them.
+
+She opened it instead.
+
+The letter was dated September 4th, 1987.
+
+It was written by a man named Daniel Ashworth.
+
+It was six pages long, written front and back in that same careful, contained handwriting, and it was addressed to a woman named Rose — her grandmother, Clara understood after the first paragraph, though her grandmother had been Rose only to the people who had known her before she became Rosie to her husband and Grandma to everyone else and, in the last years, simply the woman in the chair by the window who sometimes remembered your name and sometimes looked at you with the gentle, bewildered apology of someone who knows they have misplaced something important but cannot recall what.
+
+Clara had adored her.
+
+She sat down on the floor of her grandmother's apartment — the movers were coming Thursday, she was here to sort, to pack, to decide what survived and what didn't — and she read.
+
+Daniel Ashworth had loved Rose Castellano for three years in the way that people love each other when they are twenty-six and the world has not yet taught them to love carefully. Without self-protection. Without the pre-installed exits. With the full catastrophic commitment of someone who has not yet learned that loving that way makes the losing of it something you carry for the rest of your life in the soft tissue of you, not in the mind but in the body, in the place behind the sternum that never quite stops being tender when you press it.
+
+He had been a cartographer. This was the first thing that made Clara stop and read the sentence again. A cartographer — a man who drew maps — which struck her as either the most romantic profession possible or a metaphor so heavy-handed she would have rejected it in a novel, except that it was real, it was his actual job, and he wrote about it the way people write about vocations they were made for: I spend my days finding the shape of places no one has named yet. I keep thinking every coastline I trace is the shape of you. I keep thinking if I could map you accurately enough I would finally know how to find my way back.
+
+He had been away. That was the central fact of the letter — he had been away, on a surveying expedition in coastal Norway that had stretched from three months to eight due to complications he detailed with the rueful specificity of a man who knows that his absence has cost him something and is trying, from a distance of thousands of miles, to account for it.
+
+He had written to her. Many letters — this was not the first, it was the last, and the difference was that the previous ones had been answered and this one never would be.
+
+Because Rose had met someone.
+
+His name was given only once, in a sentence so spare it must have cost Daniel something to write it: Your mother tells me you are to be married in the spring. His name is Thomas Voss. She says he makes you happy in the everyday way, which she means as a comfort to me and which I understand as the truest thing she could have said.
+
+Thomas Voss. Clara's grandfather. Dead now twelve years, mourned still by his wife on the days she remembered to mourn him, which near the end had not been every day.
+
+Clara sat on the floor and read her grandfather's name in the handwriting of a man who had loved her grandmother first, and felt something complex move through her — not jealousy on her grandfather's behalf, because her grandfather had been loved and had known it, but something more like wonder. The specific wonder of discovering that the people you think you know completely had entire interior lives before you arrived, loves and losses and letters sealed in wax in the pages of books, proof that they were full and complicated people who had felt things as large as anything you have ever felt.
+
+She kept reading.
+
+The last two pages of the letter were different in tone from the first four.
+
+The first four were grief — beautiful, controlled grief, the grief of a man who is a craftsman with language and who is applying that craft to the hardest material he has ever tried to work with.
+
+The last two were something else.
+
+They were a kind of instruction.
+
+I have been thinking, Daniel wrote, about what it means to love someone you cannot have. Whether it diminishes the love or whether it is simply the love continuing, looking for somewhere to go. I think it is the latter. I think love does not require its object to remain love. It can become something else — not lesser, just different. It can become the thing that taught you how to love, which is more useful than the thing itself and more lasting.
+
+You taught me to be present. Before you, I was very good at arriving at places and very poor at being in them. You looked at me once at dinner — we were in that terrible Italian place on Weston Street, the one with the broken chair you kept not sitting in — and you said, you are somewhere else right now. It was not an accusation. It was an observation, as precise and non-judgmental as a weather report. And I looked at you and I was suddenly, entirely, only in that room, in that chair, across from you. You did that. You were the person who taught me that being present was a thing worth learning.
+
+I hope Thomas Voss knows how to stay, Daniel wrote. Not just to arrive. To stay. You deserve someone who stays.
+
+Clara put the letter down.
+
+She sat on the floor of her grandmother's apartment with the sounds of the city coming through the window — the particular Tuesday afternoon sounds of a city going about its Tuesdays — and she thought about her grandmother at twenty-six, beautiful and already loved by a man who mapped coastlines by hand and wrote six-page letters, choosing instead a man named Thomas who had known how to stay.
+
+She thought about her own ending, three weeks ago, in the kitchen of the apartment she now came home to alone: James, who was good and decent and had given her two years of consistent kindness and a relationship that had never once felt like standing at the edge of something enormous and necessary, and herself saying I think we both know this isn't enough, and James saying I know, with the sad relief of someone who has also felt the absence of enormity and has been too considerate to say so first.
+
+She had cried for a week. The crying had been real. She did not miss James the way you miss a catastrophe — she missed him the way you miss a comfortable room you have left because the room, however comfortable, was not where you were supposed to be.
+
+She picked up the letter.
+
+She read the last paragraph.
+
+Whoever you become, Rose — whatever years are given to you and whatever they contain — I hope you know that you were loved by someone who learned from it. I hope you find, somewhere in whatever your life becomes, some use for what you taught me. I hope the love was not wasted on me. I think it wasn't. I think I will spend the rest of my life being better because you looked at me across a table in a terrible Italian restaurant and said, you are somewhere else right now. I think that was the best thing anyone has ever given me. I think I will be trying to stay, in every room I enter, for the rest of my life.
+
+Yours, even still, even now, even from here,
+Daniel
+
+Clara sat with the letter until the light changed.
+
+This was a thing she did not usually do — sit with things. She was a woman of forward motion, of resolved items, of the specific competence of someone who has learned to be efficient as a way of not being still. Stillness, in Clara's experience, was the condition in which you felt what you were carrying, and feeling what you were carrying was something she had been managing around for quite some time.
+
+The light went from afternoon-gold to that particular late-Tuesday amber that makes cities look like they are trying harder than they are.
+
+She thought about Daniel Ashworth.
+
+He would be — she did the math — sixty-three now. If he was alive. If he had not vanished into the particular fog of people who exist only in sealed letters inside the books of people who have died.
+
+She thought: he might be findable.
+
+She thought, a moment later: that is insane.
+
+She thought, a moment after that: it is also the only thing I actually want to do right now.
+
+She found him in four hours, which was either a sign or an indictment of how findable everyone is now in a world where privacy is a thing people mean to maintain and then immediately undermine with LinkedIn profiles and alumni directories and a 2019 interview in a geographic journal that mentioned his name, his work, his retirement, and — crucially — the small cartography archive he had established at a university library in Edinburgh.
+
+Edinburgh.
+
+She was in New York.
+
+She had, at this exact moment in her life, precisely nothing keeping her in New York except a sublet apartment, a graphic design job she could do from anywhere with WiFi, and the dry cleaning she had been meaning to pick up since Thursday.
+
+Clara Voss was not an impulsive woman.
+
+She was, however, a woman who had just read six pages written by a man who had loved her grandmother, and who had been carrying, for three weeks and if she was honest for much longer than that, the quiet accumulating weight of a life lived with great efficiency and insufficient presence.
+
+She looked at the letter.
+
+She thought about the terrible Italian restaurant on Weston Street.
+
+She thought: you are somewhere else right now.
+
+She booked a flight to Edinburgh.
+
+The cartography archive was in a building that had been old when Daniel Ashworth was young, which somehow felt appropriate — a place built for the long preservation of things worth keeping.
+
+Clara had not emailed ahead.
+
+This was, she was now aware, standing at the door of the archive on a Wednesday morning in Edinburgh with the letter in her bag and the jet lag pressing lightly behind her eyes, either very romantic or very strange, and she could not fully distinguish between the two and had decided that perhaps they were not as different as she had always treated them.
+
+The archive was staffed by a young woman named Fiona who had the cheerful efficiency of someone who loves their job and the slight wariness of someone suddenly faced with an American in a good coat who is asking, with studied casualness, whether Mr. Ashworth was perhaps in today.
+
+"He's in on Wednesdays," Fiona said. "Are you —" she hesitated, with the instinct of someone trying to categorize a situation, "— expected?"
+
+"No," Clara said. "I have something that belongs to him."
+
+He was not what she had built in her mind on the ten-hour flight, though she could not have said afterward exactly what she had built.
+
+He was sixty-three, as she had calculated, and he was the kind of man who had aged into himself — the kind of aging that happens when a person has spent their years doing something they were meant to do and being someone they had actually chosen to be. His hair was white at the temples and he wore glasses and his hands, when she saw them resting on a large topographic map spread across the table, were the hands of someone who had spent decades holding a fine pen with precision and care.
+
+He looked up when she came in.
+
+She said: "Mr. Ashworth. My name is Clara Voss. My grandmother was Rose Castellano."
+
+Something moved across his face — not shock, exactly, but the specific expression of a man who has had a thing locked away for a long time and has just heard the door open.
+
+"Was," he said.
+
+"She died in March," Clara said. "I was sorting her things. I found a letter."
+
+She put it on the table between them.
+
+He looked at it for a long moment.
+
+"I wrote that letter," he said, "in a tent in Norway in 1987. I was twenty-six years old." He paused. "I did not know she had kept it."
+
+"She sealed it," Clara said. "Inside a book. With my name on the envelope. I don't know when she put my name on it. But she did."
+
+He picked up the letter. He held it in his cartographer's hands. He did not open it — he just held it, the way you hold something you have not touched in a long time and are not sure you are ready to touch now.
+
+"Why did you come?" he said. "You could have —" he gestured, vaguely, at the general existence of the postal system and email.
+
+"I know," Clara said. "I've been asking myself that on the plane for ten hours."
+
+"What did you decide?"
+
+She sat down across from him, uninvited, at his worktable covered in maps. She looked at him — this man who had loved her grandmother with catastrophic entirety, who had written six pages about it in a tent in Norway, who had learned from it and carried it and still came to this archive on Wednesdays at sixty-three to trace the shapes of coastlines.
+
+"There's a line in the letter," she said. "You wrote that love can become the thing that taught you how to love, which is more useful than the thing itself. I've been thinking about that line for three weeks. I've been thinking about it since I read it."
+
+He waited.
+
+"I think I've been doing the opposite," Clara said. "I think I've been so good at managing things — managing arrivals and departures, managing reasonable expectations, managing the distance between what I feel and what I allow — that I forgot to let anything actually —" she paused, looking for the word, "— land."
+
+He looked at her with the attention of someone who is entirely in the room.
+
+"Your grandmother," he said, "used to say that the most frightening thing about loving someone is that you have to put something real down on the table and wait to see what they do with it. She said most people spend their whole lives keeping their real things in their pockets."
+
+"I found a letter sealed with wax," Clara said. "In a book. With my name on it. I think she was trying to tell me something."
+
+He was quiet for a moment.
+
+Then: "What do you think she was trying to tell you?"
+
+Clara looked at this sixty-three-year-old man with his white temples and his precise hands and his Wednesday archive, a man who had loved her grandmother and learned from it and was still, she could see it clearly, trying to stay in every room he entered.
+
+"That it's supposed to feel like standing at the edge of something enormous," she said. "That the terrifying version is the real version. That managing it down to something comfortable is not the same as having it."
+
+He nodded slowly, the way people nod when something is accurate.
+
+"She was a very wise woman," he said. "I loved her for three years. I have spent forty years understanding what that taught me." He paused. "I never stopped being grateful for it."
+
+Clara sat in the archive in Edinburgh with the smell of old paper around her and the map spread on the table between them and her grandmother's letter in Daniel Ashworth's hands, and felt something she had been managing around for a long time begin, very quietly, to land.
+
+They talked for four hours.
+
+Not about Rose, mostly — though Rose was there in everything, the original shape everything else was mapped against. They talked about what it meant to do work you were made for. They talked about the specific loneliness of great competence. They talked about Daniel's daughter, Mara, who lived in London and had her mother's laugh and had just, at thirty-one, ended a marriage that had been good enough to stay in and not quite enough to stay in. They talked about Clara's mother, distant and efficient, who had never quite taught her daughter that the real things were worth bringing out of your pocket.
+
+When Fiona knocked to say the archive was closing, Clara looked up and was genuinely surprised that it was already evening.
+
+"There is," Daniel said, gathering the edges of the map with the automatic care of habit, "a restaurant on Chambers Street. It is not terrible, which I realize is a low standard, but it is actually quite good. If you have not eaten."
+
+"I haven't eaten," Clara said.
+
+"Then." He gestured, with the slight formal courtesy of a man of his generation, toward the door.
+
+They walked out of the archive into the Edinburgh evening, which was cold and gold and full of the particular quality of light that makes old cities look like they contain more time than ordinary places, and Clara thought about a woman named Rose at twenty-six, standing at the edge of a choice between two kinds of love, choosing the man who knew how to stay.
+
+She thought: she put my name on the envelope.
+
+She thought: she knew I would need this.
+
+She thought, for the first time in quite a long time, about what it might feel like to put something real down on the table and simply wait to see.
+
+The restaurant on Chambers Street was warm and small and the kind of place that does not try to be anything other than what it is.
+
+They ordered wine — red, without discussion, as though they had agreed on it without speaking.
+
+"Can I ask you something?" Clara said.
+
+"Yes," Daniel said.
+
+"The last paragraph of the letter. You wrote that love teaches you how to stay present. That she was the one who taught you." She paused. "Did it work? Did you learn?"
+
+He considered this with the seriousness of someone who does not give comfortable answers to serious questions.
+
+"Imperfectly," he said. "I was better after her than before. I was not perfect. There was a marriage — Anna, Mara's mother — and I was present for that in ways I had not been capable of before Rose. And I was also, sometimes, still elsewhere. Still mapping something interior that was not the room I was in." A pause. "But I kept trying. I kept remembering what she said. You are somewhere else right now. I kept using it on myself. Like a compass bearing."
+
+Clara thought about James saying I know with the sad relief of a man who had also felt the absence of enormity and been too kind to name it first.
+
+She thought about all the rooms she had sat in while being mostly elsewhere.
+
+"I do that," she said. "The elsewhere thing. I'm very good at it."
+
+"I know," he said. Simply, not unkindly.
+
+She looked at him. "How do you know? You met me five hours ago."
+
+"You flew to Edinburgh," he said, "on no notice, with a sealed letter, to find a man you had never met, because something you read would not let you stay in your regular life." He picked up his wine glass. "That is not the behavior of a woman who is comfortable with the elsewhere. That is the behavior of a woman who is trying to come back to the room."
+
+Clara sat with this.
+
+The wine was good. The restaurant was warm. Outside, Edinburgh was doing what old cities do in the evening — existing in its accumulated layers of time, holding the weight of everyone who had ever passed through it and felt something enormous.
+
+"I don't know what I'm doing," she said. This was true in several senses simultaneously.
+
+"Neither do I, mostly," Daniel said. "I have found that this is more honest than the alternative."
+
+She laughed — and the laugh surprised her, the real kind, the one that comes from somewhere below the managed surface.
+
+He smiled at the laugh. It was a warm smile, a whole one. The smile of a man who is entirely in the room.
+
+"Your grandmother," he said, "used to laugh like that. Before she caught herself and made it smaller."
+
+"She had a big laugh," Clara said. "I remember."
+
+"She did," he said. "Don't make yours smaller."
+
+They stayed until the restaurant was almost empty and the candles had burned down to their last hour.
+
+Clara did not know exactly what Daniel Ashworth was to her — not the man who had loved her grandmother, not a stranger, not yet anything with a word for it, but something beginning, something being laid down between them in the careful way of people who have both learned that the real things require care.
+
+She knew that her grandmother had sealed a letter in a book for forty years and put her granddaughter's name on it.
+
+She knew that you don't do that by accident.
+
+She knew that the letter said: love can become the thing that taught you how to love, which is more useful than the thing itself.
+
+She thought: she found me someone to learn from.
+
+And she thought, with the terrifying clarity of something enormous landing: maybe also someone to practice on.
+
+"I'm here for a week," Clara said. "I have nowhere to be. I have a laptop and a sublet I am already paying for that I am not in."
+
+"I know good places," Daniel said. "If you want to be shown them."
+
+"I want to be in them," Clara said. "Not just seeing them. Actually in them."
+
+He looked at her across the small table with the candle between them and the empty restaurant around them and forty years of a letter waiting in a book.
+
+"Then we'll practice," he said. "Staying."
+
+She found out, that week, that Edinburgh in October is the kind of cold that asks something of you.
+
+She found out that Daniel Ashworth walked the city the way he mapped coastlines — slowly, deliberately, with the attention of someone who believes that the shape of a place reveals itself only to those patient enough to wait for it.
+
+She found out that he made his coffee too strong and did not apologize for it. That he had read everything and retained most of it. That he looked at her, sometimes, the way her grandmother must have looked at him in the terrible Italian restaurant on Weston Street — with the full, uncomplicated attention of someone who is only in the room they are in.
+
+She found out that being looked at that way was alarming in the specific way of things you have not experienced and have been quietly wanting without knowing the shape of the wanting.
+
+She found out that she was capable, when sufficiently provoked by the beauty of a city and the company of a man who knew how to stay, of being entirely in a room.
+
+She found out that this was what it felt like.
+
+This enormous, terrifying, landed feeling.
+
+This.
+
+On her last morning, she sat in the kitchen of the small rental she had found after the first two nights in a hotel, and she wrote a letter.
+
+Not an email. A letter, on the paper she had bought at a small shop near the Grassmarket, with a pen she had borrowed from Daniel and not returned.
+
+She wrote to no one yet. She wrote to the version of herself who would come after this week, who would go back to New York to the sublet and the work and the dry cleaning, who would carry this in the place behind the sternum where things you have felt live.
+
+She wrote: You are somewhere else a lot. You have been. You were good at it. You thought the efficiency was a virtue and it was a virtue but it was also a very effective way of not being present for the things that might change you.
+
+Something changed you this week. Let it.
+
+Put your real things on the table.
+
+Stay in the room.
+
+She folded the letter. She did not seal it. It was not the kind of letter that required a seal — it was the kind that required you to leave it open, accessible, readable in any future moment when you felt yourself beginning to go elsewhere.
+
+She put it in her copy of Middlemarch.
+
+Because of course she had taken the book.
+
+Daniel drove her to the airport.
+
+They stood at the departures entrance with her bag between them and the particular charged quality of a goodbye that has no established category.
+
+"I will be in New York," he said, "in March. For a conference. If that is —" he paused, with the slight formality of a man who is also putting something real down on the table, "— of any relevance."
+
+"It is extremely relevant," Clara said.
+
+He took her hand. The cartographer's hands, precise and careful and warm.
+
+He said: "Your grandmother was a great love of my life. I want to say that clearly. I do not say it to complicate anything — I say it because she deserves to be named, and because meeting you has made me feel, for the first time in a long time, that the love was not wasted on me. That it has been passing forward."
+
+Clara thought about a woman at twenty-six choosing Thomas Voss. Living a full life. Sealing a letter in a book and writing a granddaughter's name on it and waiting forty years for the right moment.
+
+"She knew what she was doing," Clara said.
+
+"She always did," Daniel said.
+
+She hugged him — properly, the real kind, the kind that says something is being felt and is not being managed down to something smaller.
+
+"March," she said.
+
+"March," he confirmed.
+
+On the flight home she did not put her headphones in.
+
+She looked out the window at the North Atlantic and thought about coastlines and the shape of things and the way love — the original love, the enormous reckless full-catastrophe love that Daniel had had for her grandmother at twenty-six — had moved forward through time like a river finding the path it needed to find, arriving here, now, in a woman sitting on a plane watching the dark water below and feeling, for the first time in quite a long time, entirely present.
+
+Not managing the feeling.
+
+Not reducing it to something comfortable.
+
+Just — here. In the room. Staying.
+
+She reached into her bag and found Middlemarch.
+
+She opened it to the page where her unfolded letter waited.
+
+She read what she had written to herself.
+
+Put your real things on the table.
+
+She thought: I'm trying.
+
+She thought: I think I'm learning.
+
+She thought — and this was the truest and the most terrifying and the most right-feeling thought she had had in years, maybe the most right-feeling thought she had ever had — I think she knew I would.
+
+The plane flew on through the dark above the Atlantic.
+
+Below, somewhere, coastlines were waiting to be mapped.
+
+She stayed in the room.`
+},
+  {
   id: "the-apology-tour",
   title: "The Apology Tour",
   genre: "Drama",
