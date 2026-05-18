@@ -2616,12 +2616,36 @@ function renderStories() {
         [...stories], seed + 2
     ).slice(0, 3);
 
+    // NEW: Filter by genre for the 4 new sections
+    const suspenseShuffled       = seededShuffle(
+        stories.filter(s => s.genre === 'Suspense'), seed + 3
+    ).slice(0, 6);
+    const trueStoriesShuffled    = seededShuffle(
+        stories.filter(s => s.genre === 'True Stories'), seed + 4
+    ).slice(0, 6);
+    const behindSceneShuffled    = seededShuffle(
+        stories.filter(s => s.genre === 'Behind the Scene'), seed + 5
+    ).slice(0, 6);
+    const storyTrailersShuffled  = seededShuffle(
+        stories.filter(s => s.genre === 'Story Trailers'), seed + 6
+    ).slice(0, 6);
+
     document.getElementById('trendingRow').innerHTML =
         trendingShuffled.map(createStoryCard).join('');
     document.getElementById('newReleasesRow').innerHTML =
         newReleasesShuffled.map(createStoryCard).join('');
     document.getElementById('featuredGrid').innerHTML =
         featuredShuffled.map(createFeaturedCard).join('');
+
+    // NEW: Render the 4 new rows
+    document.getElementById('suspenseRow').innerHTML =
+        suspenseShuffled.map(createStoryCard).join('');
+    document.getElementById('trueStoriesRow').innerHTML =
+        trueStoriesShuffled.map(createStoryCard).join('');
+    document.getElementById('behindTheSceneRow').innerHTML =
+        behindSceneShuffled.map(createStoryCard).join('');
+    document.getElementById('storyTrailersRow').innerHTML =
+        storyTrailersShuffled.map(createStoryCard).join('');
 }
 
 // ── SMOOTH SECTION REFRESH (no flicker) ──
