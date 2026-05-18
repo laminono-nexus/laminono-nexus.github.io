@@ -265,7 +265,7 @@ Nadia read every one.
 When she was done, she sat for a long time with her hands folded and her eyes closed, and on her face was an expression that no one on the ship had ever seen before and that, in the coming days, everyone would come to recognize — because it spread, as these things do, slowly and then all at once, from face to face across all fourteen thousand souls on board.
 
 It was the expression of a people who had been lost for a very long time, finally understanding that they were found.`
-}
+},
   {
   id: "the-apology-tour",
   title: "The Apology Tour",
