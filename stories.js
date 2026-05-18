@@ -1,4 +1,373 @@
 const stories = [
+{
+  id: "the-cartographers-wife",
+  title: "The Cartographer's Wife",
+  genre: "Suspense",
+  readTime: "60 min",
+  trending: true,
+  excerpt: "Mara Osei had been married to the same man for eleven years before she realized she had never met him. Not in the way that matters. The thing that made her understand this was a hotel key card — in a city her husband had never mentioned visiting.",
+  image: "https://images.unsplash.com/photo-1743242260827-4f9035024595?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1743242260827-4f9035024595?w=1920&q=80"
+  },
+  content: `Mara Osei had been married to the same man for eleven years before she realized she had never met him.
+
+Not in the way that matters. Not in the way that means: I have looked at you in your unguarded moments and recognized something true. She had met the version he had decided to show her, which is the version most people show and which most people accept because accepting it is easier than asking for the other one. Mara had accepted it. Mara had, for eleven years, been an extremely competent accepter of the version of her husband that he curated for her consumption, and she had told herself this was intimacy, because the version was warm and consistent and showed up on time, and she had confused reliability for transparency the way many people do because one of them is easy to perform.
+
+The thing that made her understand this was a hotel key card.
+
+A hotel key card to a room she had not booked, in a city she had not visited, in a hotel she had never heard of — found in the inside breast pocket of a blazer she had pulled from her husband's closet on a Wednesday evening because her own coat was at the cleaner's and it was raining and she needed something with pockets and she had not thought for a single second before reaching in.
+
+The card was from the Hotel Albermarle in Edinburgh.
+
+Her husband, Solomon Osei, had told her he had spent the 14th, 15th, and 16th of October in Frankfurt. At a conference. She had packed his bag with him. She had driven him to the airport. She had texted him on the 15th and he had responded promptly, cheerfully, with a photograph of a bratwurst.
+
+He had sent her a photograph of a bratwurst from Edinburgh.
+
+She stood in the hallway of their house in London with the key card in her hand and the rain against the windows and the specific, absolute silence of a woman whose life has just divided into before and after, and she thought: he is in the kitchen right now.
+
+He was in the kitchen right now.
+
+She could hear him.
+
+She put the key card back in his pocket.
+
+She hung the blazer back in the closet.
+
+She went to the kitchen and she said: "I'll have whatever you're making," in a voice so normal she frightened herself, because the normalcy was not performed — it was automatic, the voice of a woman whose body had decided, faster than her mind, that she needed more information before she did anything at all.
+
+She sat at the kitchen table and watched her husband of eleven years make pasta, and she looked at him the way she had not looked at him in years — with the specific, careful attention of someone who is seeing something for the first time.
+
+He was handsome. He had always been handsome. Forty-four years old, broad-shouldered, with the unhurried movements of a man who is comfortable in his own body and in his own home. He made pasta the way he did everything — with complete competence and zero excess motion. He was humming something she didn't recognize.
+
+She thought: who are you?
+
+She thought: how long has this been happening?
+
+She thought: that is not the question I need to answer first.
+
+The question she needed to answer first was not the one that emotions wanted her to ask — not who, not why, not how could you. Those questions were correct and their time would come. But the first question, the one she needed answered before she said a single word or made a single move, was simpler and more fundamental.
+
+What exactly do I know?
+
+She knew: a hotel key card. A city that was not Frankfurt. A bratwurst photograph sent from somewhere he was not supposed to be.
+
+That was all she knew.
+
+It was not nothing. But it was not everything. And Mara Osei had not spent eight years as an investigative journalist for one of the country's most serious newspapers by moving on incomplete information, so she set the emotions — which were enormous, tidal, and patient in the way of things that know they will get their turn — aside, and she did what she had always done when the truth was hiding in plain sight.
+
+She looked harder.
+
+She started with his phone.
+
+Not dramatically — she did not go through it while he slept, which would have felt like the wrong kind of violation and which would also have been exactly what he expected her to do if he suspected she suspected, which she did not know yet whether he did. She looked at it the way she looked at documents: from the edges inward. She noted what she could observe without touching anything. When he left the room, she registered what was on the screen. What notifications appeared. What tabs were open when he set it face-up on the counter.
+
+He was being careful. Not paranoid-careful — the carefulness of a man who has been managing something for long enough that the management has become habit. The phone went screen-down on surfaces. Notifications were silenced. He had two email accounts that she had always known about; she began to wonder about a third.
+
+She went to the newspaper's archive on the second evening.
+
+The Hotel Albermarle, Edinburgh — she searched it the way she would search any subject. It was a real hotel. Small, privately owned, four stars, on a quiet street in New Town. Its website showed the kind of place that values discretion: no public restaurant, a small bar, mostly long-stay guests. The kind of hotel where you would not run into anyone you knew.
+
+She found his name in the guest registry because the hotel had been cited in a planning dispute three years ago and the council documents, which were public record, included a list of registered guests from a specific two-week period as part of a noise complaint filing. His name was not there.
+
+But a name she did not recognize was there twice.
+
+Marcus Webb.
+
+She sat with that name.
+
+She searched it. Marcus Webb returned thirty thousand results, which was not useful. She narrowed it. Marcus Webb Edinburgh returned eight hundred. She narrowed further. Marcus Webb Edinburgh financial, because Solomon worked in finance, because all roads in her husband's professional life led eventually to finance.
+
+She found him in forty minutes.
+
+Marcus Webb was forty-seven. He was a private equity partner at a firm based in Edinburgh. His professional profile was standard, his photograph was unexceptional — a man with dark hair going gray at the temples, a firm expression, the practiced look of someone whose job requires projecting reliability.
+
+She found something else about Marcus Webb in one further hour of careful searching, in a court document from 2019 that had been reported briefly and then dropped, because the case had been settled out of court and the terms were sealed and the press had moved on to louder things.
+
+Marcus Webb had been the subject of a fraud investigation.
+
+The case had been dropped. The settlement terms were sealed. But the original filing was public record, and the original filing described, in the careful language of legal documents trying to contain something large, a scheme involving shell companies, ghost accounts, and the movement of significant sums of money through a network of entities that existed on paper and nowhere else.
+
+The filing mentioned, in passing, a second party who had not been named as a subject of the investigation but whose cooperation had been sought by the investigating authority.
+
+The second party had not been named.
+
+Mara sat in the dark of her home office with the rain still going and the cursor blinking on the court document and something cold settling in her chest that was not about a hotel key card anymore.
+
+She thought: this is bigger than I thought.
+
+She thought: I have been looking at the wrong question.
+
+She thought: it might not be a woman.
+
+She called her editor the next morning.
+
+She said: "I have something. I don't know what shape it is yet. I need two weeks."
+
+Her editor said: "Is it personal?"
+
+She paused for exactly one second, which was one second too long.
+
+"It's a story," she said.
+
+Her editor said: "Take the two weeks."
+
+She did not tell Solomon she was investigating anything. She told him she had a source situation she needed to manage carefully, which was true, and that she would be working odd hours for a while, which was also true, and which he accepted with the easy accommodation of a man who has always supported her career, which had always seemed like a virtue and which she was now recalibrating as potentially useful cover.
+
+She built a file.
+
+Not a suspicion file — an evidence file. There is a difference. A suspicion file is organized around what you fear. An evidence file is organized around what you can prove. Mara had learned this distinction at twenty-three from a senior reporter named Alice who had told her: the truth doesn't care about your feelings about it. It only cares about whether you have documented it correctly.
+
+She documented correctly.
+
+She documented: three trips in the last fourteen months to cities she had believed to be Frankfurt, Zurich, and Amsterdam, cross-referenced against conference records that confirmed his attendance in two of the three but showed no record — not even a badge scan, not even a hotel booking in his name — for the third. The third was Amsterdam, October of the previous year. The month she had texted him a photograph of their dog sitting on his side of the bed, and he had responded: I miss home. That made me actually ache.
+
+She documented: three wire transfers from an investment account she had known about, to a destination account she had not known about, visible in the year-end financial statement she had filed away unread because she had trusted him and because the numbers had always been orderly and because trust, she was now understanding, is sometimes indistinguishable from willful blindness until the moment you need to distinguish between them.
+
+She documented: a company registered in the Cayman Islands, incorporated in 2018, with a director whose name she did not recognize but whose registered address was a mail forwarding service in Edinburgh that listed, as its primary client contact for correspondence purposes, a man named Marcus Webb.
+
+She built the file over ten days.
+
+On the tenth day, she had enough.
+
+Not enough for print — not yet. But enough to know what she was looking at, and what she was looking at was not a marriage in crisis. What she was looking at was a man who had, for reasons she did not yet fully understand, been running a second life — not romantic, not merely the cliché of the straying husband, but financial, structural, something that had been built carefully over years with the specific architecture of a person who intends it to last and intends it to be invisible.
+
+She sat at the kitchen table on the tenth evening with the file on her laptop and her husband sitting across from her reading a book, and she felt — underneath the betrayal, underneath the cold fury, underneath the grief of eleven years coming apart at a seam she had never known was there — the specific, uncomfortable feeling of a journalist who is about to do something that will cost her personally in order to get at something that needs to be known.
+
+She looked at him over the top of her screen.
+
+He looked up. He smiled at her — the warm, particular smile she had fallen in love with, the smile she had believed for eleven years was only for her.
+
+"You're quiet tonight," he said.
+
+"I'm thinking," she said.
+
+"About?"
+
+"A source," she said. "I'm not sure yet whether they're who they say they are."
+
+He nodded, with the sympathy of a man who has heard this before.
+
+"You'll figure it out," he said. "You always do."
+
+She looked at him.
+
+She said: "Yes. I always do."
+
+She called Marcus Webb's office on a Wednesday morning, on her work phone, identifying herself by name and publication.
+
+She expected his assistant to say he was unavailable.
+
+Instead, after a twenty-second pause that she timed on her watch, Marcus Webb himself came on the line.
+
+"Ms. Osei," he said. His voice was measured. Careful in the way of a man who has been expecting a call from someone — not necessarily from her, but from someone — for quite some time.
+
+"Mr. Webb," she said. "I'm working on a story about a network of financial entities operating through a registration service in Edinburgh. I believe you may have information relevant to my reporting. I'm offering you the opportunity to speak before publication."
+
+There was a silence.
+
+In the silence, Mara heard something she had not expected. Not hostility. Not a lawyer being summoned. Not the smooth deflection of a man who has media-trained his way out of difficult conversations.
+
+She heard something that sounded, faintly and undeniably, like relief.
+
+"Ms. Osei," Marcus Webb said. "I've been waiting for someone to ask me about this for three years." A pause. "I think you should come to Edinburgh."
+
+She booked the train that afternoon.
+
+She did not tell Solomon where she was going.
+
+She sat in the first-class carriage with her file open on her laptop and the Scottish countryside going dark outside the window, and she thought about eleven years, and about the specific violence of a gentle betrayal, and about the fact that she was on a train to Edinburgh to meet a man her husband had been secretly conducting business with for years and that the story she was about to find was going to break her marriage open whether she wanted it to or not.
+
+She thought: do I want it to?
+
+She thought: that is the wrong question.
+
+The right question, the journalist's question, the only question she actually knew how to answer, was: what is true?
+
+What is true, and who else needs to know it, and what will it cost?
+
+The train moved through the dark.
+
+She had the file.
+
+She had the evidence.
+
+She had a man on the other end of a phone call who had sounded like someone exhaling after holding their breath for three years.
+
+And she had a husband at home, reading a book, who had smiled at her across the kitchen table with the warm particular smile she had believed was only for her, and who had said: you always figure it out.
+
+She opened a new document on her laptop.
+
+She typed: The Cartographer's Wife.
+
+She thought: no.
+
+She deleted it.
+
+She typed: The Husband.
+
+She thought about Marcus Webb's voice. The relief in it. The specific quality of a man who has been carrying something heavy and has just heard a knock at the door.
+
+She typed, beneath the title, the first line of the story she was going to write:
+
+Solomon Osei did not think of himself as a criminal. He thought of himself as a man who had found a door left open and walked through it, and who had been walking, ever since, away from the light.
+
+She looked at the sentence.
+
+She thought: yes.
+
+She thought: I know how this ends.
+
+But the train was still moving through the dark, and Marcus Webb was at the other end of the line, and Edinburgh was an hour away, and the file on her laptop was thorough and documented and correct, and she had been the wife for eleven years and was now, fully and irreversibly, the journalist.
+
+She thought about what Alice had told her at twenty-three.
+
+The truth doesn't care about your feelings about it.
+
+The train pulled into Waverley Station.
+
+She closed the laptop.
+
+She stood up.
+
+She walked off the train into the light of the station, and she did not look back, and she thought about the bratwurst photograph her husband had sent her from a city he was not in, and she thought about a hotel key card in the pocket of a blazer, and she thought about a man reading a book in a warm kitchen who had no idea that the woman he had spent eleven years managing had spent the last ten days documenting every single thing he had done and that she was now forty-three steps away from a platform in Edinburgh and closing.
+
+She walked through the station.
+
+She found a taxi.
+
+She gave the driver the address.
+
+The city opened around her — cold, golden, ancient, indifferent.
+
+She had a story.
+
+She met Marcus Webb in a corner booth of a pub three streets from his office, which was not where she had expected him to suggest and which told her something about the kind of man he was — not a man conducting a clandestine meeting in a private place, but a man who wanted witnesses around him, who wanted the normalcy of a public room, who was, she now understood, genuinely afraid.
+
+He was smaller in person than his photograph had suggested. Not physically small — he was tall, well-built, the kind of man who takes up appropriate space — but diminished in some interior sense, with the look of someone who has been living with a weight that has redistributed his center of gravity.
+
+He had a glass of water in front of him. He was not drinking it.
+
+"Thank you for coming," he said.
+
+"You said three years," Mara said. She had her recorder on the table between them, visible, with his consent given on the phone. She did not waste time. "You said you'd been waiting three years for someone to ask. What happened three years ago?"
+
+He looked at the glass of water.
+
+"Three years ago," he said, "I understood what I had been helping to build. I had been —" he stopped, reorganized, the way people do when the story is complex and they need to find the right entry point, "— I had believed I was participating in a legitimate investment structure. There are grey areas in this industry. Many grey areas. I had told myself the grey was permissible. That what we were doing was aggressive, perhaps, but not —" he stopped again.
+
+"But not criminal," Mara said.
+
+"Yes," he said. "And then I saw the full picture. Not just my portion of it — the full architecture. Who the money was moving to. Where it was going after it left the structures I managed." He looked up at her. "Ms. Osei. Your husband is a careful man. He is an extremely careful man. What he built is elegant in the technical sense — the structures are elegant, the movements are clean, the documentation is meticulous. But the destination—"
+
+He stopped.
+
+"Tell me the destination," Mara said.
+
+He told her.
+
+She wrote for four hours in the pub booth after he left, ordering coffee she did not drink, building the architecture of the story from the evidence she had and the testimony Marcus Webb had given on the record, which was fuller and more specific and more damning than she had expected and which explained, among other things, why the 2019 fraud investigation had been dropped so abruptly, and what had been exchanged for that outcome, and whose name appeared at the center of that exchange.
+
+At eleven-thirty at night, she sat back and read what she had written.
+
+She thought: this is the story.
+
+She thought: this will end my marriage.
+
+She thought: my marriage ended ten days ago in a hallway in London when I put my hand in a pocket.
+
+She thought: it may have ended before that, and I was the last to know, which is the journalist's irony — the woman who finds things out for a living was the last person to know the most important thing.
+
+She sent the draft to her editor with a subject line that read: READ TONIGHT.
+
+Then she sat in the pub booth in Edinburgh and she let herself feel it — all of it, the tidal enormous patient thing she had been holding back for ten days with the discipline of a woman who knew she needed her hands free to do the work.
+
+She felt it.
+
+She let it be as large as it was.
+
+Then she took out her phone.
+
+She looked at Solomon's name in her contacts.
+
+She looked at it for a long time.
+
+She thought about eleven years. The pasta. The dog on his side of the bed. I miss home. That made me actually ache.
+
+She thought about the bratwurst.
+
+She put the phone face-down on the table.
+
+She ordered a whisky.
+
+She drank it in the ancient indifferent city in a warm pub booth with the story filed and her marriage over and the truth documented and correct, and she thought about Alice at twenty-three saying: the truth doesn't care about your feelings about it.
+
+She thought: I know.
+
+She thought: but I do.
+
+The story ran on a Thursday.
+
+It ran on the front page, above the fold, with her byline.
+
+Solomon Osei was arrested at their house in London at seven-fifteen in the morning.
+
+She was not there.
+
+She had not gone home.
+
+She had stayed in Edinburgh, in a small hotel that was not the Hotel Albermarle, in a room she had booked herself with her own name, and she had sat by the window in the early morning when she could not sleep and watched the city come awake and thought about what it means to build a life with someone and whether you can ever truly know, from the inside of a thing, what the thing actually is.
+
+She thought about her daughter.
+
+Amara was nine. She was at Mara's mother's house in Bristol, where she had been for the last week of half-term, where Mara had arranged for her to stay an extra few days without explaining why, with the instinct of a journalist who knows how the timing of a story works and with the separate, simultaneous instinct of a mother who will absorb everything before she lets it reach her child.
+
+She would call Amara at eight.
+
+She would say: I need to tell you something, and I need you to listen carefully, and I need you to know that none of this is your fault and all of it will be okay.
+
+She would mean the second part more than she knew it to be true. But she would mean it.
+
+At seven fifty-nine, her phone rang.
+
+Not Solomon — his phone was in evidence now. Not her editor — he had texted at seven-thirty: extraordinary. Call when you're ready.
+
+The number was one she did not recognize.
+
+She answered.
+
+A woman's voice. Measured, careful, with the composed quality of someone who has chosen their moment.
+
+"Ms. Osei," the woman said. "My name is not important yet. What's important is that I've just read your story." A pause. "I think you only found the first layer."
+
+Mara sat up.
+
+"There's more," the woman said. "There is considerably more. And it goes considerably higher than your husband." Another pause, shorter. "I know, because I helped build it. The part that comes before the part you found."
+
+The city was fully awake now outside the window. The morning light was cold and flat and clear, the kind of light that shows everything.
+
+"Tell me your name," Mara said.
+
+"Not on the phone," the woman said. "Come back to Edinburgh next week. Come alone. Don't tell your editor or anyone else." The pause of someone who has calculated how much to give. "Ms. Osei — the story you published today? It is the beginning of the story. Not the story. Are you willing to follow it to where it actually goes?"
+
+Mara looked out at the city.
+
+She thought about ten days ago, a hallway, a hand in a pocket, a hotel key card the color of old bone.
+
+She thought: this started with a man who made pasta and hummed songs she didn't recognize.
+
+She thought: where does it end?
+
+"Yes," she said.
+
+The line went quiet.
+
+And in the silence — in the space between the woman's last word and whatever came next — Mara Osei understood, with the clean, cold certainty of someone who has spent their life walking toward the truth rather than away from it, that she had not yet found the door.
+
+She had found the handle.
+
+If the person you loved most had been living a secret life for years — not out of passion, not out of weakness, but out of deliberate, architectural, long-planned choice — would you want to know everything? Or is there a depth of truth past which knowing it destroys not just the relationship, but the version of yourself that existed inside it?`
+},
   {
   id: "the-last-letter",
   title: "The Last Letter",
