@@ -48,8 +48,6 @@ Someone was trying to talk to them.
 
 She yanked the headset off and ran.
 
-— — —
-
 The ship's Chief Navigator, a compact and precise man named Dr. Yusuf Aalim, had a habit that everyone aboard found either endearing or unsettling depending on their temperament: he kept a physical map.
 
 Not a star chart on a screen. A map. Drawn by hand over eleven years on sheets of archival paper he'd requisitioned from the ship's historical archive under the bureaucratic fiction of "materials research." It covered one full wall of his private quarters — a rolling, spidery record of every deviation, every anomaly, every gravitational ripple Helix-7 had nudged through on its long fall toward Kepler-442b.
@@ -102,8 +100,6 @@ He tucked the map under his arm.
 
 "I intend to look at the data first."
 
-— — —
-
 What they found was not a planet.
 
 It was not a ship, exactly, either. The closest word either of them could find, comparing notes in hushed voices in the auxiliary sensor bay where Mara had routed the signal analysis without logging it to the main system, was structure.
@@ -148,8 +144,6 @@ It had been watching them for eleven years.
 
 And now, for reasons they could not know, it had decided to say hello.
 
-— — —
-
 Mara had the translation within eighteen hours.
 
 Not because she was brilliant — she was, but that wasn't why. She had it because the signal, once she fed it through every decryption framework in the ship's linguistic library, turned out to not need translation at all.
@@ -190,8 +184,6 @@ We have always wanted you to arrive.
 
 Please respond when you are ready. We will wait. We are very good at waiting.
 
-— — —
-
 Yusuf read to the end and then read the last line again.
 
 "We have to tell the Captain," Mara said.
@@ -209,8 +201,6 @@ Yusuf read to the end and then read the last line again.
 He picked up the map.
 
 "Come on."
-
-— — —
 
 Captain Nadia Osei had commanded Helix-7 for nineteen years. She had navigated three micrometeorite events, one catastrophic water recycling failure, a food-supply revolt in the lower decks that had lasted eleven days, and the grief of an entire ship when a beloved school teacher had died and 14,000 people had needed somewhere to put their sorrow. She was sixty-two years old and she had, over the course of those years, developed a very precise internal instrument for detecting the difference between a crisis and a catastrophe.
 
@@ -257,8 +247,6 @@ She walked to the viewport and stood there looking out at the dark that was no l
 "We're going to be alright," said Nadia.
 
 Not a question.
-
-— — —
 
 Forty-eight hours later, at 03:17 ship time, with Dr. Ferreira's disclosure plan approved and the senior council briefed and the words checked and rechecked and triple-checked, Captain Nadia Osei sat alone in the signal bay and transmitted the first human response to the Caretakers.
 
