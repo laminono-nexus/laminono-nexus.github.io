@@ -1,5 +1,382 @@
 const stories = [
 {
+  id: "the-interpreter",
+  title: "The Interpreter",
+  genre: "Suspense",
+  readTime: "60 min",
+  trending: true,
+  excerpt: "Yemi Adeyemi had spent fourteen years interpreting the lies of powerful men with perfect fidelity. She was a conduit, not a participant. Then a journalist found her in a corridor and said four words that changed everything: you are a witness.",
+  image: "https://images.unsplash.com/photo-1759774313258-b0111fb75cbd?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1759774313258-b0111fb75cbd?w=1920&q=80"
+  },
+  content: `The last thing Yemi Adeyemi interpreted before everything changed was a lie.
+
+She knew it was a lie the moment the words left the Russian delegate's mouth, because she had been doing this for fourteen years and because lies in diplomatic settings have a particular texture — smooth in the wrong places, like a table that has been sanded after the scratches rather than before — and because she had interpreted for Deputy Minister Volkov on three previous occasions and she knew the cadence of his honesty versus the cadence of his performance, and what he had just said about the ceasefire agreement was very clearly the latter.
+
+She interpreted it anyway.
+
+This was her job. This was, in fact, the foundational rule of the job: you are a conduit, not a participant. You render the words from one language to another with perfect fidelity, including the lies, including the evasions, including the things that make you want to set down your headset and say — clearly, in both languages, so everyone in the room understands — that is not true and everyone here knows it is not true and the fact that we are all pretending otherwise is the reason seventeen people died in a village in the Donbas last Tuesday.
+
+She did not say this.
+
+She interpreted the lie into English with the same precise neutrality she had applied to fourteen years of negotiations, treaties, summits, and the particular theater of men with power discussing the lives of people who had none, and she sat in her glass booth above the chamber floor and she watched the faces of the people receiving her words and she noted, as she always noted, who believed what they were hearing and who was performing belief and who was performing neither because they had already decided what they were going to do regardless.
+
+She noted one other thing.
+
+The man in the third row, left side, with the gray suit and the credentials badge she could not read from this distance, had not reacted to Volkov's statement at all.
+
+Not with belief, not with skepticism, not with the careful diplomatic neutrality of someone managing their face. He had not reacted because he had not been listening to Volkov.
+
+He had been watching her.
+
+His name, she found out three hours later in the corridor outside the simultaneous interpretation suite, was James Okafor.
+
+He found her, which was the first thing.
+
+She did not find him. He was simply there when she came out — not waiting in the obvious way of someone who has positioned themselves to intercept, but present in the specific, casual way of someone who is very good at being in the right place without appearing to have chosen it.
+
+"Ms. Adeyemi," he said.
+
+She stopped.
+
+She looked at him. Forty, perhaps forty-two. Nigerian British, she placed from the name and from something in his bearing, which had the particular quality of someone who has lived in several countries and has absorbed something from each of them without fully belonging to any. He was not wearing a delegate badge. He was wearing a press credential.
+
+"You have the wrong person," she said. Interpreters are not addressed by delegates, by press, by anyone outside the formal process. This is a rule. The rule exists because interpreters are conduits and conduits do not have names.
+
+"I don't," he said. "I have exactly the right person." He said it with the quality of a statement rather than a challenge — not aggressive, not flirtatious, simply factual, the way you say something when you have verified it carefully and are no longer uncertain. "You caught it too," he said. "Article seven. The exclusion clause. He changed the timeline."
+
+She looked at him.
+
+She said nothing.
+
+"The original draft had a seventy-two hour notification window," James said. "Volkov said forty-eight. You didn't hesitate, you didn't flag it, you interpreted it cleanly. But you caught it. I watched you catch it."
+
+She had caught it.
+
+She had caught it and interpreted it correctly — Volkov had said forty-eight, so she had said forty-eight — and she had noted it the way she noted all the discrepancies she was not permitted to act on, in the private file she kept in the back of her mind, organized by session, by speaker, by the precise nature of the deviation from what had previously been agreed.
+
+"Who are you?" she said.
+
+"A journalist," he said.
+
+"Your credential says that," she said. "That's not what I asked."
+
+He looked at her for a moment with something that was not quite surprise and not quite approval but was in the neighborhood of both.
+
+"Can I buy you a coffee?" he said.
+
+"No," she said.
+
+"Dinner, then," he said.
+
+She looked at him.
+
+"That's worse," she said.
+
+"It's longer," he said. "I need longer than a coffee."
+
+She should have walked away. She knew, standing in the corridor with her bag on her shoulder and fourteen years of professional discipline telling her to walk away, that this was the exact type of approach that the security briefings warned about. The ICC had very specific language about contact from outside parties. There was a protocol. The protocol did not involve dinner.
+
+She thought about Article Seven. The forty-eight hours.
+
+She thought about seventeen people in a village in the Donbas.
+
+"Where?" she said.
+
+The restaurant was small and Italian and far enough from the Hague's diplomatic quarter that the probability of being seen by anyone who mattered was low, which she understood he had calculated. He had chosen the corner table, facing the room. She noticed he had also chosen a seat that left her back to the wall, which meant he had thought about what would make her comfortable, which was either considerate or strategic and which she was not yet sure was a meaningful distinction in this context.
+
+He ordered wine without asking if she wanted wine, which would have annoyed her from anyone else and which she found, from him, simply efficient, because she did want wine and they both knew it.
+
+"The timeline change," she said, before he could begin. "You already knew about it. You didn't need me to confirm it."
+
+"No," he said.
+
+"So why were you watching me?"
+
+He poured the wine. He was not a man who moved quickly in the way of people who confuse speed with authority. He moved the way he spoke — with the particular patience of someone who has learned that the most important things don't come out faster when you push them.
+
+"Because I've been trying to understand something for eight months," he said. "And I've been looking in the wrong places. And then I watched you interpret for six hours and I understood that you are one of maybe four people in the world who has been present for every significant negotiation in this process, in both languages, and who has therefore heard not just what was said but what was meant, and not just what was meant but the delta between the two." He picked up his glass. "I've been looking at documents. I should have been looking for you."
+
+Yemi sat with this.
+
+"I'm a conduit," she said.
+
+"You're a witness," he said.
+
+The word landed differently than she expected.
+
+She had never used that word for herself. Conduit, yes — that was the official language, the trained language, the language of the professional code. Witness was different. Witness implied obligation. Witness implied that what you had heard had consequences beyond the hearing of it.
+
+"What is the story?" she said.
+
+He looked at her steadily. "The ceasefire agreement that is being negotiated right now contains a provision — buried in Article Seven, sub-clause four — that effectively creates a twenty-four-hour window in which the eastern corridor can be accessed without triggering the notification requirement. This window does not appear in the publicly released draft. It has been inserted through a series of small changes across three sessions, each one individually defensible, collectively significant." He paused. "If the agreement is signed as currently worded, there is a window. And someone knows about it and has been planning around it for six weeks."
+
+She looked at the table.
+
+She thought about the three sessions. She could place them exactly — could run them back in her mind like recordings, which was the strange gift and strange burden of having a memory trained to retain everything, to let nothing compress or distort in the passage from source language to target.
+
+She could hear Volkov's cadence across all three sessions.
+
+She could hear the tiny, incremental movements.
+
+She had noted them. She had filed them away. She had interpreted them correctly and said nothing because saying something was not her role and she had believed, for fourteen years, that her role was the most important boundary she had.
+
+"How did you find the change?" she said.
+
+"I have the draft from eight months ago," James said. "Someone gave it to me."
+
+"Who?"
+
+"A source I cannot name."
+
+"Of course," she said. She looked at him. "And you need me to — what, exactly? Confirm the changes? You clearly already know about the changes."
+
+"I need you to tell me what you heard," he said. "Not what was written. What was said in the room. The specific language. The moments where the language in the room diverged from the language in the document." He leaned forward slightly. "Ms. Adeyemi. I can show a document was changed. What I cannot show — what only a very specific set of people can speak to — is whether the change was deliberate, whether it was discussed in terms that make the intent clear, whether there is a pattern of communication across sessions that establishes this was coordinated rather than incidental."
+
+Yemi was quiet.
+
+She thought about the private file in the back of her mind. The one organized by session, by speaker, by the precise nature of the deviation.
+
+She thought about a specific moment in the second session — October, a Thursday, a long afternoon that had extended into evening — when Volkov had spoken to the Georgian delegate in a side conversation during a recess, in Russian, quietly, in the way of men who have forgotten or are pretending to have forgotten that the interpreter assigned to the room does not stop listening when the formal session does.
+
+She had heard what he said.
+
+She had noted it.
+
+She had told no one.
+
+"What you're asking me to do," she said carefully, "would end my career."
+
+"Yes," he said. Without softening it, without the journalistic hedge of well, not necessarily or there are ways to protect — just yes, with the same factual quality he had applied to I have exactly the right person.
+
+She looked at him.
+
+"You're not going to tell me it won't?" she said.
+
+"It would," he said. "If it came out. And it very likely would come out. I would protect your identity for as long as I could and I would mean it and there are limits to what I could guarantee." He paused. "I am not going to tell you the risk is smaller than it is. The risk is significant."
+
+She picked up her wine.
+
+"And the alternative," she said. "If I say nothing. If I walk away from this dinner and go back to my booth and interpret the final session next week and the agreement is signed as worded."
+
+He did not answer. He did not need to.
+
+She already knew the answer.
+
+She had known it for six weeks, in the private file in the back of her mind, organized by session and speaker and the precise, incremental, careful nature of the deviation.
+
+She had known and she had said nothing because saying nothing was the rule and the rule was the boundary and the boundary was the thing that had kept her career intact and her conscience manageable and her life organized around the belief that the conduit was not responsible for what flowed through it.
+
+She set the wine glass down.
+
+She thought about the village in the Donbas.
+
+She thought about the twenty-four-hour window.
+
+She thought about the final session, next week, and the agreement being signed, and the window existing inside it, sealed and unexamined, a door left open inside a document that the world would believe was a door left closed.
+
+She looked at James Okafor across the small table in the Italian restaurant far from the diplomatic quarter and she understood, with the clarity of someone who has been keeping a file for six weeks without admitting to themselves why they were keeping it, that she had not agreed to this dinner because of Article Seven.
+
+She had agreed to this dinner because she had been waiting for someone to knock.
+
+"I need," she said, "to think about this."
+
+"Yes," he said.
+
+"I need a week."
+
+"You have four days," he said. "The final session is Thursday."
+
+She looked at him.
+
+"You knew the timeline when you sat down," she said.
+
+"Yes," he said.
+
+"You knew all of this when you found me in the corridor."
+
+"Yes."
+
+"Then why the dinner?" she said. "Why not just tell me all of this in the corridor and give me four days to decide?"
+
+He was quiet for a moment.
+
+"Because," he said, "what I'm asking requires you to trust me. And trust is not built in a corridor." He looked at her directly, with the full attention of someone who is not managing what they say next. "And because I wanted you to know that I am not asking you to do this as an asset or as a source or as a means to a story. I'm asking you because you're the only person who was in every room, and because I believe you've been carrying this and I think the carrying of it has been —" he paused, finding the word, "— costly."
+
+She looked at him.
+
+He was right.
+
+It had been costly. Six weeks of interpreting correctly and noting privately and saying nothing, of being a perfect conduit for statements she knew were constructing something dangerous, of maintaining the professional boundary with the precise discipline of a woman who has built her entire identity on the maintenance of it, and feeling, underneath the discipline, the slow accumulation of a weight that did not have a name in the professional code because the professional code did not account for what happens when the conduit knows something the room does not.
+
+"How do I know," she said, "that you're who you say you are?"
+
+He reached into his jacket and placed a card on the table. Not a business card — a folded piece of paper. She opened it. It was a printed email, three months old, from an editor at a publication she respected deeply, confirming the commission of an investigation into the ceasefire negotiation process with a specific budget and a publication date that was, she noted, two weeks from now.
+
+She looked at the date.
+
+She looked at him.
+
+"You've been working this for eight months," she said.
+
+"Yes."
+
+"And you found me three hours ago."
+
+"I found your name eight months ago," he said. "I found you three hours ago." He paused. "You were the last piece."
+
+She did not sleep that night.
+
+She lay in the hotel room the ICC provided for interpreters during extended sessions — small, clean, aggressively neutral, the kind of room designed to have no personality that could distract from the work — and she ran the sessions back in her mind, all of them, the full fourteen months of this particular negotiation, every voice, every deviation, every moment where what was said in the room had diverged from what was in the document and she had interpreted it correctly and filed it away.
+
+She ran them back and she thought about James Okafor saying: you're a witness.
+
+She thought about her training, which had told her: you are a conduit.
+
+She thought about the difference between those two things and whether the difference was a philosophical distinction or a practical one and whether the answer to that question changed depending on what was at stake.
+
+She thought about what was at stake.
+
+At four in the morning she got up and she sat at the small desk by the window and she opened her laptop and she began to write.
+
+Not notes. Not a summary. A full account — session by session, deviation by deviation, the private file in the back of her mind transferred to a document with dates and direct quotations and the specific moments, named and timestamped, where she had heard something that did not match what the world had been told was said.
+
+She wrote for three hours.
+
+She read it back.
+
+She thought: this is fourteen years of career.
+
+She thought: this is also a record of what happened in those rooms, and without it, no such record exists, and the absence of it is itself a kind of lie.
+
+She saved the document.
+
+She did not send it yet.
+
+She had four days.
+
+On the second day she was called into the session coordinator's office.
+
+The coordinator was a Belgian woman named Liesbeth who had been running simultaneous interpretation logistics at the ICC for twenty-two years and who had the particular manner of someone who has seen everything and finds most of it unsurprising and some of it quietly distressing. She told Yemi, with the careful neutrality of someone delivering a message they did not compose, that there had been a request from the Russian delegation that the interpreter assigned to their proceedings be rotated.
+
+Standard rotation requests happened. They were uncommon but not unheard of. They were submitted for various stated reasons — preference, fatigue management, procedural consistency.
+
+This request, Liesbeth said, had been submitted at nine-fifteen that morning.
+
+Yemi had had dinner with James Okafor at seven the previous evening.
+
+She sat in Liesbeth's office with the institutional hum of the building around her and the specific, cold arithmetic of a coincidence that was not a coincidence and she understood that the window she had been given was not four days.
+
+It was narrower than that.
+
+Someone had seen her in the corridor.
+
+Someone had noted the conversation.
+
+Someone had moved, overnight, with the efficiency of a person who has spent six weeks building something careful and is not willing to let a journalist and an interpreter have dinner without consequence.
+
+She looked at Liesbeth.
+
+"Is the request approved?" she said.
+
+"It's under review," Liesbeth said. Carefully. "These things take time."
+
+Yemi heard what she was not saying.
+
+She said: "How much time?"
+
+Liesbeth looked at her for a moment with the expression of a woman who is being as helpful as she is permitted to be.
+
+"The final session," Liesbeth said, "is Thursday."
+
+She called James from a payphone.
+
+Not her mobile. A payphone, which she had located two streets from the hotel on her morning walk, which she had noted as the kind of thing you note when the professional instincts that have kept you accurate for fourteen years begin to apply themselves to your own situation rather than the work.
+
+He answered on the second ring.
+
+"They filed a rotation request," she said. "This morning. Nine-fifteen."
+
+A pause. Not surprise — the pause of a man absorbing a confirmation rather than a revelation.
+
+"Are you safe?" he said. The first question. Not what does this mean for the story, not does this change your timeline. Are you safe.
+
+She noted this.
+
+"Yes," she said. "I think it's a message rather than a threat. They want me out of the room before Thursday."
+
+"Which means they know you heard something," he said.
+
+"Which means," she said, "that my window is smaller than four days."
+
+Another pause.
+
+"I have the document," she said. "I wrote it last night. Everything. All fourteen months."
+
+He was quiet in a way she could not read through the phone.
+
+"Yemi," he said. Her first name. The first time. "You don't have to give me anything. I want you to understand that. The rotation request changes the risk calculation significantly. If they're already moving, whatever protection your anonymity provides is—"
+
+"I know," she said.
+
+"Then why are you calling from a payphone?"
+
+She stood in the cold of a Hague street with the phone in her hand and the institutional weight of the ICC building somewhere behind her and fourteen years of professional identity in one hand and three hours of documentation in the other.
+
+She thought about the conduit.
+
+She thought about the witness.
+
+She thought about the village.
+
+"Because," she said, "I want to know where to send it."
+
+The document went to James at eleven-forty on Wednesday morning.
+
+The final session was Thursday.
+
+She sat in her booth on Thursday and interpreted the final session with complete professional accuracy, rendering every word from Russian to English and from English to Russian with the fidelity that fourteen years had made automatic, and she watched Volkov deliver the final agreed language of the ceasefire agreement with the smooth, warm authority of a man who believes the room contains no one who knows what he has done.
+
+She interpreted his words.
+
+She did not look at him.
+
+She looked at the chamber. The delegates. The gray light coming through the high windows. The machinery of diplomacy arranged in its careful rows.
+
+She thought: this room will not remember me.
+
+She thought: the document will.
+
+She interpreted the last word of the session — which was, in both languages, peace, which was the word they always ended on, which was the word that meant different things in every language she had ever worked in and which meant, in this room, on this Thursday, something she was no longer willing to let pass through her without acknowledgement — and she set down her headset and she sat in the booth above the chamber and she let herself, for the first time in fourteen years, stop being a conduit.
+
+The story ran four days later.
+
+It ran in four languages simultaneously.
+
+By the end of the first day it had been read by the people who needed to read it, and the provision in Article Seven had been identified publicly for the first time, and the ceasefire agreement had been suspended pending review, and Yemi Adeyemi's name was not in it anywhere, and James Okafor's was, and Liesbeth had called her that morning with the voice of a woman who knows and is not saying she knows and is also, in some register beneath the professional, not entirely unsurprised.
+
+She was, as she had understood she would be, rotated off the assignment.
+
+She sat in her hotel room with her bag packed and her laptop open and the story on the screen, and she read it the way she had spent fourteen years listening to the words of other people — carefully, fully, without distortion — and she thought: this is accurate.
+
+She thought: this is what I heard.
+
+She thought about James, who had sent her a single message that morning, two words: thank you — and who had meant them, she knew, not for the story, not for the document, but for the decision itself, which was the harder thing and which he had understood was the harder thing from the moment he had found her in the corridor and said you are exactly the right person.
+
+She looked out the window at the Hague.
+
+She thought about the word conduit and the word witness and the distance between them, which she had spent fourteen years believing was professional and which she now understood was moral.
+
+She closed the laptop.
+
+She picked up the bag.
+
+She walked out of the hotel into the gray Dutch morning, and she did not know what the next thing was, and she found, unexpectedly, that the not-knowing felt less like loss than like the first honest breath she had taken in a very long time.
+
+When you are the only person who heard the truth — the only witness in a room full of people performing certainty — does your silence make you complicit? And if the answer is yes, at what point does professional loyalty stop being a virtue and start being the most sophisticated kind of cowardice?`
+},
+{
   id: "the-cartographers-wife",
   title: "The Cartographer's Wife",
   genre: "Suspense",
