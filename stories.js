@@ -1,4 +1,575 @@
 const stories = [
+  // Add this object to the stories array in stories.js
+
+{
+  id: "i-watched-my-mother-choose-heroin",
+  title: "I Watched My Mother Choose Heroin Over Me Every Single Day For Fifteen Years. Then One Tuesday She Knocked On My Door.",
+  genre: "True Story",
+  readTime: "3 hr",
+  trending: true,
+  excerpt: "I want to tell you about the smell first. Because when people talk about growing up with an addict parent they talk about the chaos, the unpredictability, the emotional violence of loving someone who loves something else more. But the thing no one tells you is that the chaos has a smell. And the smell is what the body keeps long after the mind has done its best to organize the story into something survivable.",
+  image: "https://images.unsplash.com/photo-1698239352007-d662cd302715?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1698239352007-d662cd302715?w=1920&q=80"
+  },
+  content: `Part One: The Before
+What Normal Looks Like When You Don't Know It Isn't
+
+I want to tell you about the smell first.
+
+Because when people talk about growing up with an addict parent they talk about the chaos, the unpredictability, the emotional violence of loving someone who loves something else more. And all of that is true. All of that is exactly true. But the thing no one tells you is that the chaos has a smell, and the smell is what the body keeps long after the mind has done its best to organize the story into something survivable.
+
+For me the smell is a combination of cigarettes and something sweet and chemical underneath that I did not have a name for until I was nineteen years old, sitting in a public health class at university, and the lecturer put up a slide about opiate addiction and described the particular metabolic odor of someone in active heroin use, and I sat in the third row of that lecture hall and felt the floor move beneath my feet because I had been smelling that smell my entire childhood and had simply believed, because children believe what they are given, that it was just what my mother smelled like.
+
+That it was just what home smelled like.
+
+My name is Adaeze. I am thirty-eight years old. I grew up in Peckham, in South London, in a flat on the fourteenth floor of a council block that had good bones when it was built in 1971 and had been slowly apologizing for its existence ever since. My mother's name is Ngozi. She was born in Enugu, Nigeria, in 1964, the third of five children, and she came to London in 1983 at nineteen years old with a suitcase and a cousin's address and the specific ambition of a woman who has been told her whole life that she is too much for the place she is in and has decided to find out if that is true.
+
+She was, by every account I have been able to gather from the people who knew her then, extraordinary.
+
+I want you to hold that. I want you to keep it in your hand for the whole of what I am about to tell you, because it matters in the way that origins always matter — because understanding who someone was before the thing happened to them is the only way to understand the full weight of the loss. Not just the loss to me. The loss to her. The loss of herself, by herself, which is the grief that no one talks about and which I spent thirty years not being able to name.
+
+She was extraordinary. She was funny and opinionated and had the laugh that filled rooms and narrowed the space between people. She got a job in a hospital — not nursing, she did not have the qualifications, but admin, the kind of indispensable structural work that hospitals require and chronically underpay and which my mother did with a precision and care that her supervisors noticed and promoted and which paid, by the time I was born in 1986, enough for us to live without the constant specific terror of the very poor, though not enough to live without the ambient lower-frequency anxiety of the almost-poor, which is its own kind of education.
+
+My father's name I will not give here. He was present for approximately three years of my life, which were the first three, which means I have no functional memory of him and have constructed what I know from a photograph my grandmother kept and from the specific silence my mother used whenever his name came near a conversation. The silence told me everything I needed to know about what his leaving had cost her, and I was six years old before I understood that not all children's fathers lived somewhere else and eight years old before I understood that not all children noticed the absence as a shape in the room, like a piece of furniture removed and the carpet still bearing its indentation.
+
+I am telling you this because the addiction did not arrive in a vacuum.
+
+I want you to understand that. I need you to understand that before we go any further, because the story I am telling is not a story about a bad mother or a weak person or a cautionary tale about the dangers of drugs, though it contains all of those elements. It is a story about a woman who was extraordinary, who was then broken by a series of events that would have broken most people, who then found the one thing that made the breaking bearable, and who then could not find her way back from it.
+
+The heroin arrived when I was four.
+
+I did not know this until I was twenty-six. I thought it arrived when I was seven, because seven was when things changed in the ways I could name — when the flat started to get untidy in ways it previously hadn't, when my mother started to sleep at strange hours, when food became less reliable, when I started to understand, without anyone explaining it to me, that I was responsible for certain things that I had previously not been responsible for.
+
+But she told me, years later, that it was four.
+
+A man at a party. She had been grieving my father's departure for a year with the contained, internal grief of a woman who has decided that being seen grieving is not something she will permit herself, and someone at a party had said: try this, it takes the edge off, just once, and she had said yes because the grief had been sitting on her chest for twelve months and she was tired of carrying it and just once had seemed like a reasonable, finite, manageable thing.
+
+It was not a finite thing.
+
+I want to be careful here, because the story of the first use is the part of addiction narratives that gets told with the most drama and the least accuracy, the after-school-special version where the trajectory from first use to destruction is immediate and visible and linear. It was not like that. For two years it was, as far as I can reconstruct, a managed thing — used occasionally, used in a way she believed was controlled, used in the specific self-deception of early addiction that every person who has ever been through it or loved someone through it recognizes: I can stop when I want to. I just don't want to yet.
+
+And in those two years, I had a mother.
+
+This is the part that is hardest to explain to people who have not lived it — the part where the before was real and good and present, and where the before is what you spend the entire after trying to get back to.
+
+I remember her hands.
+
+I know that sounds like a small thing. But she had very particular hands — long fingers, very dark at the knuckles, always slightly cool even in summer — and when I was small she had a habit of holding the back of my head when she kissed my forehead, her fingers in my hair, which I now understand is one of the primary ways the body encodes safety. I am thirty-eight years old and I can still feel those hands and I am aware, in the particular way of people who have spent time in therapy unpacking the architecture of their early childhood, that a significant portion of what I have spent my adult life looking for in other people is that specific, exact feeling.
+
+I was four when the heroin arrived and I did not know.
+
+I was six when things started to shift and I did not know why.
+
+I was seven when the flat started to become a different place, and I knew something was wrong but I did not have a name for it and no one gave me one, so I did what children do: I adapted. I reorganized my understanding of normal to include the new facts. I told myself the story that was available to me, which was: my mother is tired, my mother is sad sometimes, my mother needs help, and I am the one who can help her.
+
+I was seven years old and I had decided I was responsible for my mother's emotional survival.
+
+I want to pause here because I want you to understand what that decision costs a child. Not immediately — children are remarkable in their capacity to absorb impossible weights without immediately buckling — but over time, over years, in the slow accumulation of a life organized around someone else's crisis. What it costs is the self. The specific, central, irreplaceable self that is supposed to develop in the years between zero and eighteen in an environment where someone larger and more capable than you is responsible for you — not the other way around.
+
+I did not develop that self.
+
+I developed something else instead: a self that was exquisitely attuned to other people's needs and almost entirely blind to its own. A self that could read a room, read a face, read the specific quality of silence in a flat and know from it what kind of evening it was going to be and what was required of me to manage it safely. A self that was, in professional terms, hypervigilant — the body's adaptation to an environment where the threat could come at any time and from any direction, where safety was never guaranteed and so the nervous system simply stopped expecting it and went to permanent high alert instead.
+
+A self that was, in every way that matters, built for emergency.
+
+I did not understand any of this at seven.
+
+At seven I understood: make sure there is food. Make sure the door is locked. Make sure the gas is off. Make sure Mummy knows you love her. Make sure she knows you are here.
+
+At seven I understood: if I am good enough, it will get better.
+
+It did not get better.
+
+I need to tell you about a specific Wednesday when I was eight years old, because it is the Wednesday that everything I have subsequently understood about myself and about love and about the particular damage of loving an addict was poured into, like all of the before and after was waiting to be understood through a single ordinary moment on a school day in 1994.
+
+My class had a harvest festival assembly.
+
+You know the kind — the autumn one, where children bring tins of food and sing songs about abundance and the teacher chooses three children to speak at the front. I had been chosen to speak. I had a paragraph to say, which I had memorized three weeks in advance because I was that child — the early-finishing, double-checking, triple-rehearsing child, the child whose teachers described as remarkably self-sufficient, which they meant as a compliment and which was, as I now understand, a description of a profound deprivation.
+
+My mother had promised to come.
+
+She promised on the Monday and on the Tuesday and on the Wednesday morning over the bowl of cereal I had made for both of us, and each time she promised I felt the specific, cautious, hope-adjacent feeling that I had learned to keep behind a glass wall in case it needed to be contained quickly.
+
+The assembly was at ten.
+
+At ten o'clock I stood at the front of the school hall in my uniform and I looked out at the rows of parents and I found the seat where she was supposed to be and the seat was empty and I gave my paragraph, which I had memorized three weeks in advance, in the voice of a child who has decided not to let the empty seat cost her the paragraph, and I did not cry until I was in the girls' bathroom afterward, alone, with the tap running so no one could hear.
+
+I was eight years old and I was already expert at containing grief in small, private, water-covered places.
+
+I went home at three-fifteen.
+
+My mother was asleep on the sofa.
+
+I did not wake her. I made toast. I did my homework at the kitchen table. At some point I moved a blanket over her because she looked cold. I ate toast for dinner and went to bed at eight and lay in the dark thinking about the empty seat and the paragraph I had said to it anyway and I remember thinking, with the clarity of a child who has not yet learned to protect herself from her own honest thinking: she forgot.
+
+She did not forget.
+
+I know now that she did not forget. I know that she had likely intended to come, had likely thought about coming, had likely started to get ready and then the other thing had gotten in the way and the other thing, by the time I was eight, was always winning, and the me-shaped thing — the daughter-shaped gap in her life that she kept trying to show up for and kept failing — was always losing.
+
+But at eight I did not know that.
+
+At eight I knew: she forgot.
+
+And the knowledge settled into me in the specific way that early knowledge settles — not as information but as identity. Not: she forgot. But: I am the kind of person who gets forgotten.
+
+I carried that for twenty-six years before a therapist helped me see what it was.
+
+The years between eight and twelve are the years I remember least clearly, which my therapist tells me is not accidental. The mind protects itself from sustained damage by turning down the resolution on the unbearable stretches, keeping the edges and losing the middles. What I have are images, sensory fragments, a series of stills rather than a film.
+
+I have: the smell of the flat on a bad week and the different smell on the better ones.
+
+I have: the school uniform I learned to wash myself at nine because it needed washing and no one else was doing it.
+
+I have: the faces of teachers who looked at me with the expression I later learned to call concern and which at the time I experienced as a form of surveillance — a reminder that my situation was visible, which felt dangerous, because visible situations got investigated and investigated situations got disrupted and disrupted situations, however painful, were the ones I knew how to manage and the alternative — being removed, being placed somewhere else, losing even the unreliable variable of my mother — was not something I was willing to risk.
+
+I have: the sound of the front door at two in the morning and the specific way I had learned to tell from the sound of her key in the lock what state she was in.
+
+I have: a moment, I think I was ten, when she was clear — genuinely clear, the real her, the before her — for about three weeks, and she took me to the park and we fed the ducks and she held my hand and she said: I'm going to get better, Ada, I promise, and I believed her with the full faith of a child who has been waiting two years for those words, and she relapsed nine days later, and I did not fully believe a promise from her again until I was thirty-four years old.
+
+I want to be honest about that. I want to be honest about what repeated broken promises do to a child's capacity to trust, because the damage is not dramatic — it does not arrive with noise and announcement — it is quiet and structural and it changes the architecture of how you relate to every person you subsequently love. Every relationship I have ever had has been shaped by a ten-year-old girl learning, for the hundredth time, that love and reliability are not the same thing.
+
+That the people who love you the most can also be the ones who hurt you most consistently.
+
+That hope is a resource that depletes.
+
+And that the depleting of it is not failure.
+
+It is survival.
+
+Part Two: The Years of Managing
+What You Become When You Are Raised By Your Own Crisis
+
+At twelve, something shifted.
+
+Not in my mother — not yet, not in any sustainable direction. In me.
+
+At twelve I made a decision that I did not understand at the time was a decision, because the most consequential choices of our lives rarely feel like choices when we make them. They feel like the only available option, which is the same as no choice at all, except that they are not — except that somewhere in the making of them we are choosing something about who we are going to be and what we are going to allow and what we are going to survive and at what cost.
+
+The decision was: I am going to succeed.
+
+Not despite this. Through it. I was going to take the thing that was destroying my childhood and I was going to make it into fuel, and I was going to get out, and the getting out was going to be so thorough and so complete that nothing from the fourteenth floor of that council block was going to follow me.
+
+I became, in the language of the therapeutic tradition, an overachiever.
+
+Which sounds like a positive thing. Overachiever. The word has a competitive energy, a striving quality, the implication of someone going beyond what is required in the service of excellence. What it actually is, in the context I am describing, is someone working themselves to exhaustion to escape the feeling that if they stop for a single moment the thing they are running from will catch them.
+
+I was never studying because I loved the material.
+
+I was studying because my desk was the only place in the flat where I felt in control of the outcome.
+
+I got straight A's. I won prizes. My teachers wrote me recommendations that used words like exceptional and driven and rare, and I accepted these words and let them do the work they were designed to do — which was to construct a self that did not need the mother who wasn't there, a self that was validated by external achievement rather than by the warm, consistent, parental presence that had been withdrawn.
+
+I want to be honest about the cost of this strategy, because it worked — in the narrow sense that strategies designed for survival work, which is that I survived — and it also cost me something I am still, at thirty-eight, in the process of understanding the full price of.
+
+What it cost was the ability to be still.
+
+To be ordinary.
+
+To want something that didn't have a measurable outcome. To rest without guilt. To fail at something without the bottom dropping out of my sense of self. To be a person who was enough just by existing, not only by achieving.
+
+High-achieving children of addicts are the ones everyone worries about least and should worry about most. We look like success stories. We look like proof that adversity builds character, that what doesn't kill you makes you stronger, that the fire that burns you can also temper you. And some of that is true. Some of that is genuinely true.
+
+But underneath the grades and the prizes and the exceptional, driven, rare, there was a child who had not been reliably held, and that child does not go away when you get into university. She comes with you. She sits in every lecture. She influences every relationship. She is still there, still waiting to be held, still confusing achievement with worth, still flinching at the sound of a key in a lock.
+
+At twelve I also took on the first of what would become a series of part-time jobs that I told the school was for pocket money and that was actually for food.
+
+I am not going to linger here because the details of how I kept us eating between twelve and sixteen are the details I find hardest to revisit without the anger coming back in a form I have not yet fully made useful. I will say: I was resourceful. I will say: the children's services system touched our lives twice during this period, and both times my mother managed to present well enough and I managed to present normally enough that we were assessed as a household that was struggling but coping. I will say: I was, at fourteen, better at managing a home than most adults.
+
+I will say: I was a child.
+
+I should not have known how to do any of it.
+
+At fifteen I had a best friend named Chisom, whose mother made jollof rice on Sundays and who insisted I come every week, which I did, with the specific hunger of someone who is not only hungry for the food. Chisom's mother never asked direct questions. She never made the face. She just fed me and included me and touched my shoulder sometimes in the way of a woman who knows something is wrong and has decided that the most loving thing she can do is not name it but also not disappear.
+
+I owe Chisom's mother a debt that cannot be calculated in any currency.
+
+She showed me that adults could be consistent. That someone older could be relied upon. That a warm kitchen was not an accident or a performance but a choice that got made, weekly, and could be counted on.
+
+It sounds small. It was enormous.
+
+I want to say, for anyone reading this who has a child in their life who is living through something — a Chisom, a neighbor, a student, a kid on your street who seems too self-sufficient — that the single most powerful thing you can do for that child does not require you to intervene in their home or report anyone or take on any formal responsibility.
+
+It requires you to make the rice.
+
+And mean it.
+
+And do it again next week.
+
+At sixteen my mother had a period of sobriety that lasted eight months, which was the longest I had known. She got into a methadone program. She attended, consistently, for the first two months. She got a part-time job at a dry cleaners that was three streets away and that she went to four days a week and sometimes she was home when I got back from school and had made food, actual food, and those evenings had a quality I can only describe as fragile joy — the joy you feel when something you stopped letting yourself want suddenly, without warning, appears.
+
+I did not trust it.
+
+I am not proud of this but it is true. I did not trust it because I had learned, at ten, what it cost to trust it, and the learning had been thorough and efficient in the way that pain teaches. So I sat at those dinners and ate the food and talked about school and watched my mother be herself — the before-self, the funny, opinionated, room-filling self — and I held all of it at a slight distance, behind the glass wall, because the glass wall was the difference between surviving and not surviving when it ended.
+
+She relapsed at month nine.
+
+And the glass wall did the thing glass walls are designed to do.
+
+It kept the worst of it out.
+
+It also, as I would not understand for another decade, kept everything else out too.
+
+At seventeen I discovered that I had a gift for writing that was not the same as my gift for grades. The grades were performance. The writing was — I don't have a better word for this — leakage. The things that couldn't go anywhere else came out in the writing, not tidily, not with the organized precision of someone who has planned what they are going to say, but with the specific disorganized rush of someone who has been keeping a pressure vessel sealed for seventeen years and has finally found a valve.
+
+I wrote in the margins of textbooks. I wrote in notebooks I kept under my mattress with the instinct, not entirely unfounded, that their contents should not be visible. I wrote at the kitchen table late at night when my mother was — wherever she was — and the flat was quiet enough that I could hear the distant sound of the city and feel, for the space of an hour, like a person with an interior life rather than only an emergency response system.
+
+I wrote about her.
+
+I wrote about the harvest festival and the empty seat and the paragraph I said to the absence. I wrote about the smell and the sound of the key and the shape of the missing father and the hands with the cool fingers holding the back of my head. I wrote about Chisom's mother's kitchen and what rice tasted like when someone made it on purpose for you.
+
+I wrote the truth in the margins because the truth had nowhere else to go.
+
+At eighteen I left.
+
+I got a full scholarship to read English Literature at the University of Exeter, which was chosen specifically because it was far from London and which meant leaving my mother in the flat on the fourteenth floor, which I did with a guilt so heavy it had a physical location in my chest, somewhere just below the sternum, a specific dense point of weight that I carried through the three-hour train journey and the first week of term and the first month and the first year and have carried, in varying degrees of heaviness, every day since.
+
+I want to be honest about the guilt because it is the thing that survivors of addicted parents are least permitted to name publicly. The narrative available to us is: you did what you had to do. You got out. That's what she would have wanted for you. You couldn't save her. You have to save yourself.
+
+All of that is true.
+
+And the guilt does not care what's true.
+
+The guilt is not rational. It is the guilt of a child who was trained from the age of seven to believe that her presence was load-bearing — that if she stayed and managed and was good enough, the thing would hold. And that child does not stop believing that when you get on the train. She sits in your chest for thirty years pressing on the point below the sternum and whispering: you left her. Whatever happens now, you left her.
+
+I left her.
+
+I had to.
+
+Both of these things were true simultaneously and I have spent twenty years learning to hold them both without needing one to cancel out the other.
+
+Part Three: The Life I Built On Top Of It
+What Happens When You Are Successful And Still Not Okay
+
+Exeter was, in the way of things that are designed for people unlike you, both a revelation and an alienation.
+
+The revelation was the library.
+
+I want to tell you about the Exeter university library the way you tell someone about a place that saved your life, which is what it did. Not dramatically — nothing so far in this story has been dramatic in the cinematic sense, because real damage is rarely cinematic, it is domestic and ambient and accumulated — but genuinely and functionally. The library was the first place I had ever been that was consistently what it said it was. It was quiet when it said it would be quiet. It was open when it said it would be open. The books were where they were supposed to be. Nothing in it required managing.
+
+I spent my entire first year in it.
+
+The alienation was everything else.
+
+I was surrounded by people for whom university was a rite of passage rather than an escape route, people who called their parents on Sunday evenings with the easy, un-freighted intimacy of people who have always been able to rely on the person they are calling, people who described their childhoods with the comfortable nostalgia of someone looking back at something that was fundamentally safe. I sat in seminars and listened to people talk about their families and felt the specific, lonely alienation of someone for whom the word family has a different weight entirely — heavier, more complicated, laced with a grief that the word is not usually supposed to carry.
+
+I did not tell anyone about my mother for three years.
+
+I constructed a version of my background that was true in its facts and misleading in its texture. My mother worked in healthcare. We lived in London. It was just the two of us. I came from Peckham. All true. All arranged to tell a story in which the hard thing was the background and not the primary subject.
+
+In my second year I had a boyfriend named Tim who was kind in the way of people who have been well-loved and who want to extend that to others and who did not understand, because I had not let him see it, why I flinched at certain things and why the glass wall was always there behind my eyes in moments that should have been simply warm.
+
+He said to me, once, after a night when something had happened that I can no longer even remember but which had caused me to go somewhere very far away behind my eyes and not come back for several hours: I feel like I am always only getting some of you.
+
+I told him he was imagining it.
+
+He was not imagining it.
+
+I am sorry for that, Tim, in case you ever find this. You were right. And I did not have the tools then to give you more than I was giving you, and the fact that I didn't was not your failure, it was the cost of the glass wall, which was not something I had chosen and not something I knew how to take down.
+
+I graduated with a first class degree and went directly into a postgraduate program, because the alternative was returning to London and London meant the flat and the flat meant the smell and the smell meant everything I had built three hundred miles of distance from.
+
+My mother called, irregularly, from phone boxes and later from a mobile that was sometimes working and sometimes wasn't. The calls followed a pattern I learned quickly: the clear calls and the other calls. During the clear calls she was herself — the before-her, the extraordinary her — and she asked about my work and my friends and said Ada, I am so proud of you, I am so proud, in the specific voice of a woman who is proud and also drowning and knows it. During the other calls she was not fully present, a partly-there voice that said my name in the wrong way, a voice I had learned at seven to manage rather than respond to.
+
+I managed.
+
+I always managed.
+
+After the postgraduate degree I got a job at a newspaper in Bristol, writing features, which was not where I had aimed but was where I landed and which turned out to be, as the places you land often are, exactly right. I was good at it. I was good at finding the human story inside the institutional story, at sitting with people who were living through things and asking them the questions that got to the real version rather than the managed version, at listening in the way of someone who had spent a childhood becoming expert at understanding what wasn't being said.
+
+My mother's addiction had given me, among its many costly gifts, an absolutely precise ear for subtext.
+
+I covered crime, mostly. Then health. Then, with the specific gravitational pull of things that are unresolved in you, addiction. I wrote a series of features on the UK's approach to opiate addiction that won a regional press award and that required me to interview addicts and former addicts and the families of addicts and to sit with those interviews afterward and feel the very particular experience of professional competence and personal chaos occurring simultaneously, which is the experience of anyone who uses their work to approach the thing they cannot approach directly.
+
+I was writing about my mother without writing about my mother.
+
+This is, I now understand, extremely common. It is one of the ways that people who have been through things make use of what happened to them — they find a door that is slightly to the side of the actual thing, and they open that door, and they do important work on the other side of it, and they tell themselves that opening the door is the same as confronting the thing.
+
+It is not the same.
+
+The thing is still in the room.
+
+I turned thirty.
+
+I had a flat I owned. I had a career that was building toward something real. I had friends — good ones, the kind you build in your late twenties when you've stopped performing yourself and started letting people see the actual version — and one of those friends, a woman named Priya who had grown up in a household with an alcoholic father and who therefore spoke a dialect of experience that was closely related to mine, had been gently pushing me toward therapy for two years with the patient persistence of someone who has found the thing and wants to share it.
+
+I don't need therapy, I told her.
+
+I know you don't need it, she said. I'm talking about want. Do you want it?
+
+I thought about the point below my sternum.
+
+I thought about Tim and the glass wall and the version of myself I was giving to everyone and the version I was keeping behind it.
+
+I'll think about it, I said.
+
+I started therapy six months later, at thirty-one, with a woman named Dr. Amara Owusu who was the first therapist I had seen who was Black and who understood, without my having to explain it, the specific additional layers of shame and silence that come with being from a West African family where the idea of mental health support sits in cultural tension with the values of resilience and endurance and not airing what doesn't need airing.
+
+The first session I spent forty minutes giving her the managed version.
+
+She listened.
+
+Then she said: What are you not telling me?
+
+I looked at her.
+
+I told her about the harvest festival.
+
+I cried for approximately twenty-five minutes, which was the longest I had cried continuously since I was eight years old in the girls' bathroom with the tap running.
+
+This is what I want to say about that: I was thirty-one years old and I had been carrying the harvest festival for twenty-three years and I had never said it out loud to another person. Not in its real form — not as the thing it actually was, which was a small child standing at the front of a school hall finding an empty seat and deciding in that moment, silently, without language for it, that she was the kind of person who gets forgotten.
+
+And in the saying of it — in the giving of it to another person who received it without flinching, who looked at me with neither pity nor performance but simply with the full attention of someone who understood that this was the thing I had been managing around for twenty-three years — something moved.
+
+Not resolved. Not healed. Not the transformative breakthrough of the movies.
+
+Moved.
+
+A millimeter.
+
+In the right direction.
+
+I went back the following week.
+
+And the week after that.
+
+And the week after that.
+
+Part Four: The Phone Call
+What Happens When The Past Stops Waiting
+
+I need to tell you about a phone call I received when I was thirty-three.
+
+It was a social worker.
+
+His name was David, and he had a voice that was kind in the specific way of people who make calls like this regularly and have not let the regularity make them routine, and he said: Ms. Adaeze Eze? and I said yes, and he said: I'm calling about your mother, Ngozi Eze, and I said yes, and he said: She has been admitted to King's College Hospital. She is stable but I want you to know she is there.
+
+I sat in my Bristol flat with my work laptop open and my coffee going cold and the specific, absolute stillness of someone who has been expecting a call like this for fifteen years and who is now discovering that the expectation does not, in any way, prepare you for the actual receiving of it.
+
+What happened? I said.
+
+He told me.
+
+I will not tell you everything he told me, because some of what he told me belongs only to her and to me and to the gap between us that we have spent years slowly, carefully, attempting to cross. I will tell you that she had been found. That she had been alone. That she had been, by the time she was found, in a condition that I will describe only as one that required immediate medical intervention that she very nearly did not receive in time.
+
+I drove to London.
+
+I had not been in the same room as my mother for two years.
+
+Not from cruelty — I want to be clear about that, though I also want to be honest that the line between self-preservation and cruelty is one I have spent years examining and am still not certain I always drew in the right place. The two years of distance had been my therapist's gentlest recommendation and my own hardest decision: that the contact I had been maintaining — the irregular calls, the occasional visits that cost me a week of destabilization each time — was contact designed to manage my guilt rather than to genuinely connect, and that until I had done more of the work I needed to do, it was not actually helping either of us.
+
+I had been doing the work.
+
+I drove three hours to London with the radio off and the motorway unspooling in front of me and the point below my sternum making itself known in a way it had not in months.
+
+I walked into King's College Hospital on a Thursday evening in February, which is the worst month, the month that offers nothing, no holidays and no promise of spring and just the gray continuity of winter that has gone on too long.
+
+I found her room.
+
+I stood outside the door for a long time.
+
+I want to try to describe what I was feeling, though I am aware that the language available for this is inadequate. I was feeling grief that had no object, because the person I was grieving was alive on the other side of the door. I was feeling love that had no safe container, because the container I had built for it — the glass wall, the managed distance, the version of my mother that lived in my phone calls and my work and my therapy sessions but not in the same room as my actual body — was about to be required to hold the real thing.
+
+I was feeling the particular terror of the child inside the adult, which is the terror of: what if I walk through this door and I am seven again and she is the thing that breaks me.
+
+I walked through the door.
+
+She was smaller than I remembered.
+
+This is the thing about not seeing someone for two years — the image you carry is the last image, held at its original size, and the real person has changed and the change is physical and confronting and requires a rapid, wordless recalibration of every expectation your body had assembled.
+
+She was smaller. She was in a hospital bed with the specific vulnerability of someone who has been fought over by their own body and lost some ground. Her hair was shorter than I had seen it in years. Her hands — I looked at her hands immediately, I always look at her hands — were on top of the blanket and they were the same hands. Long fingers. Dark at the knuckles.
+
+She looked at me.
+
+She said: Ada.
+
+Just that. Just my name, in the voice she uses for my name that is different from her voice for everything else, the voice that contains the full weight of what I am to her and what she understands she has cost me.
+
+I sat down.
+
+I did not take her hand immediately. I am being honest. I sat in the chair next to the bed and I looked at her and we looked at each other across the space of everything, and then I took her hand, and her hand was cool the way it had always been, even in February in a hospital, and I held it and I did not say anything for a long time.
+
+She said: I'm sorry, Ada.
+
+Not for the specific incident that had put her here. For everything. The apology contained everything and we both knew it and it was not enough — one sentence cannot be enough for the harvest festival and the school uniform I washed myself and the glass wall and Tim and thirty-three years of a child becoming someone whose primary self was organized around someone else's emergency.
+
+It was not enough and it was real, and those were both true simultaneously, and I held both of them the way I had learned in therapy to hold things that did not resolve neatly.
+
+I know, I said.
+
+She stayed in the hospital for eleven days. I stayed in London for nine of them, sleeping on Chisom's sofa — Chisom who had grown up and become a nurse, which struck both of us as either obvious or remarkable, and who made jollof rice on the second evening and said nothing and meant everything.
+
+On the ninth day I sat with a hospital social worker and a specialist in addiction and my mother and we had a conversation that I had imagined having for twenty years, which was: what does the next thing look like. What support exists. What is available. What is she willing to try.
+
+My mother, in that room, on that day, was the before-her in a way I had not seen sustained for longer than a few weeks since I was six years old. Clear and present and looking at the thing directly. She said: I want to try. Not for you, Ada. I know I have asked you to hold too much for too long with that as the reason. For me. I want to try for me.
+
+I looked at her.
+
+I thought: I have heard versions of this.
+
+I thought: she means it right now and meaning it right now is not the same as it being true in six months.
+
+I thought: and it is also real, right now, in this room, and I am not going to protect myself from the realness of it.
+
+Okay, I said. Let's try.
+
+Part Five: The Work
+What Recovery Actually Looks Like From The Outside
+
+I need to dismantle a story that I believed for a long time because the culture gave it to me and because it was easier than the truth.
+
+The story was: if she really wanted to get better, she would get better.
+
+The story was: love should be enough. The knowledge of what the addiction is doing to the people who love you should be motivation enough. If my suffering was not motivation enough to make her stop, then something was wrong with the love, or with me, or with the nature of what I was to her.
+
+This story cost me years.
+
+The truth, which I learned slowly through therapy and through the addiction specialist and through the reading I threw myself into with the specific hunger of someone discovering that their experience has a literature — that other people have lived this and thought about it and written it down with precision — is this:
+
+Addiction is not a moral failure.
+
+It is not a choice, in the sense that the people who use that word mean it. It is a disease of the reward and stress circuitry of the brain, which is reorganized by sustained drug use in ways that fundamentally alter motivation, decision-making, and the capacity to imagine a future self distinct from the present-using self. The part of my mother that loved me — that held the back of my head with cool long-fingered hands and said Ada I am so proud of you — that part was always there. It never went anywhere. It did not absent itself because I was not enough.
+
+It was there, and it was in a cage built by sixteen years of neurological reorganization, and the key to that cage is not love. Love is not the key. Love cannot be the key, because if love were the key then every person with an addicted parent would be able to save their parent just by being loveable enough, and the children of addicts are the most desperately loveable children in the world, and the cages remain.
+
+The key is treatment.
+
+Sustained, evidence-based, non-judgmental, adequately funded treatment that understands the disease and addresses the biology and also addresses the original wound — because there is always an original wound, and in my mother's case it was a man at a party in 1990 who said try this, it takes the edge off, and behind that it was the grief of a man who left and behind that it was the specific loneliness of a brilliant woman in a country that kept telling her she was too much and not enough simultaneously and behind that it was everything her own childhood had given and not given her.
+
+The treatment my mother got after the hospital was the best she had ever had access to.
+
+This is important and I am angry about it in a way that is not personal but political: she was fifty-seven years old when she finally got into a residential rehabilitation program with a proper dual-diagnosis approach that treated both the addiction and the underlying depression that had been self-medicating itself into heroin for thirty years.
+
+She was fifty-seven.
+
+She had been addicted since she was twenty-six.
+
+For thirty-one years, the treatment available to her had been the minimum — harm reduction without rehabilitation, methadone programs without the psychological support, social workers without the resources to do more than assess and monitor. For thirty-one years she had been failed not by her own weakness but by a system that has never decided to fund addiction treatment as though the lives lost to it are lives that matter.
+
+I want to say that clearly because I know this story will be read by people who are inside it right now, whose parent or child or sibling or partner is in the cage, and I want them to know: the inadequacy of the available help is not a reflection of how much your person wants to get better. The system is underfunded and punitive and moralistic in ways that actively prevent recovery, and your person's continued use is not evidence that they don't want to stop.
+
+It is evidence that wanting to stop is not the same as having access to the tools to stop.
+
+My mother spent four months in the residential program.
+
+I did not visit during those four months, which was the program's recommendation and which was also mine. I used those four months to do the most intensive work of my own therapy — the work that I had been circling for two years and that the hospital visit had made urgent, which was the work of separating my own self from my role as my mother's crisis manager.
+
+This is the work that no one tells the children of addicts they need to do and which is arguably as important as anything else in this story.
+
+The work of understanding that your identity was formed in an emergency.
+
+That you are not the emergency.
+
+That the self that was built for crisis management is extraordinarily good at crisis management and extraordinarily bad at ordinary life — at sitting still, at receiving love without waiting for it to be withdrawn, at letting things be fine without scanning for the way they are about to become not fine.
+
+The work of learning that you are allowed to want things.
+
+Not just to manage things. To want things. For yourself. Not because they will make you more useful to someone else. Not because they will fill the gap that should have been filled by a consistent parent. Just because they are things you want and wanting them is enough justification.
+
+I was thirty-three years old when I learned this.
+
+I had never known it before.
+
+Part Six: The Knock
+What Happens When The Story Changes
+
+My mother knocked on my door on a Tuesday.
+
+Not a dramatic Tuesday. Not a Tuesday with any advance preparation or announcement, because she knew — she told me this later — that if she called ahead I would have time to build toward it and the building toward it would mean I would be managed rather than present when she arrived, and she needed me to be present.
+
+She had been sober for fourteen months.
+
+I want to tell you what it looked like, because this is the part of the story that people who haven't lived it always imagine as the redemption scene — the reunion, the reconciliation, the music-swelling moment where the years of pain are redeemed by the return of the person you've been waiting for.
+
+It did not look like that.
+
+She was standing on my doorstep in Bristol on a Tuesday morning with a bag that was too small to have traveled far — she had taken the train from London, I found out later, and had walked from Temple Meads station because she said she needed the walk to prepare herself — and she was wearing her good coat and her hair was done and she looked like herself in a way that was not the brief clear intervals of before, not the moments between relapses that I had learned to receive without trusting.
+
+She looked like someone who had been somewhere and come back. Not to where she was before — somewhere further than before. Like a person who had found something on the other side of the worst thing and was standing at my door holding it carefully.
+
+I looked at her.
+
+I thought of every version of this moment I had imagined. Every scenario, every possible approach, every managed, glass-walled way of receiving whatever this was without letting it cost me too much if it went wrong again.
+
+I did not use any of them.
+
+Mummy, I said.
+
+That was all. Just that word, in my actual voice, without the glass, without the management — the word a seven-year-old uses, not the word a thirty-four-year-old uses, not the carefully adult address I had been using for years to maintain the distance that was also the protection.
+
+Mummy.
+
+She said: Ada.
+
+And we stood in my doorway in Bristol on a Tuesday morning, the two of us, and the years were there between us — all of them, every one, the harvest festival and the nine days in the hospital and the cool long-fingered hands and the rice and the empty seat and the paragraph I gave to the absence and the point below my sternum and the glass wall and all of it — and we were both fully in it, without the management, and it was not the music-swelling scene because real things are not music-swelling.
+
+It was two women standing in a doorway.
+
+It was a mother and a daughter.
+
+It was, after thirty years, the actual thing.
+
+She came in.
+
+I made tea.
+
+We sat at my kitchen table and we talked for six hours and some of what was said was the hardest conversation of my life and some of it was the warmest and some of it will live only between us, in the private record of what two people can give each other when they decide, together, to stop managing and start being present.
+
+She told me about the residential program. She told me about the work she had done there, the specific, brutal work of understanding the original wound and what she had spent thirty years medicating it with and what it had cost — herself, and me, and the before-her that had existed in 1983 on a train from Enugu with a suitcase and a cousin's address and the ambition of someone who knows she is too much for the place she's been in.
+
+She told me she was in outpatient support. That she had a sponsor and a keyworker and a group and a therapist of her own. That she was attending every week. That she was, for the first time in thirty years, not managing the pain but looking at it.
+
+She told me she was proud of me and I let her say it without immediately deflecting it, without the quick dismissal I had always used when she said it because receiving it felt too dangerous when the person saying it might not be there to say it again next month.
+
+I received it.
+
+I held it.
+
+I said: I know. I said: I am proud of you too. I said: I don't know how to do this. I said: I want to try.
+
+She said: I don't know how to do this either. I said: I know. I said: we'll try together.
+
+We did not fix everything in six hours at a kitchen table in Bristol.
+
+I want to be honest about this because the culture of recovery narratives — the memoirs, the documentaries, the intervention programs — often ends with the reunion, as though the reunion is the resolution, as though the coming back is the same as the work being done. It is not. The reunion is the beginning of the hardest work, which is the work of rebuilding trust that was broken before you had language, of learning to be in the same room as someone without being in emergency mode, of allowing yourself to be seen as the actual you rather than the managed you by the person whose opinion of you was the first mirror you ever looked in.
+
+We have been doing that work for four years.
+
+It is the slowest work I have ever done.
+
+It is the most important.
+
+My mother is sixty now. She has been sober for four years and two months, which I know precisely because we both count. She has a flat in New Cross, near enough to Peckham to feel like a return but not the same flat — the council block was demolished in 2019 and I went to see the site and stood in front of the space where the fourteenth floor had been and felt something I am still not sure I have the right word for. Not relief. Not grief. Something between them, in the territory of: it is gone and I am still here.
+
+She works two days a week at a harm reduction charity. She sits with people who are inside what she was inside, and she talks to them without judgment and with the specific authority of someone who has been there, not the authority of someone who has been trained.
+
+She is, once a month, in my kitchen.
+
+I make the rice.
+
+She makes the tea.
+
+We talk like people who are still learning how to talk to each other, which is exactly what we are, and I have decided — after four years of therapy and evidence and the slow rebuilding of the thing that was damaged before I could name it — that the learning, ongoing, imperfect, never fully resolved, is its own kind of wholeness.
+
+I have decided that the story I was given — I am the kind of person who gets forgotten — is not the true story.
+
+The true story is longer and harder and does not resolve on a clear note.
+
+The true story contains: an extraordinary woman from Enugu who came to London in 1983 and was broken by grief and by circumstance and by the systematic failure of every support system that should have caught her. A child who learned to manage a crisis before she learned to read, who built herself out of grades and glass walls and other people's kitchens. A teenager who washed her own uniform and wrote in margins and kept the gas off and got on a train. A woman who wrote about her mother without writing about her mother for fifteen years. A therapist named Dr. Amara Owusu and a word called witness. A hospital in February. A knock on a door on a Tuesday.
+
+The true story contains: two women at a kitchen table.
+
+The true story is not finished.
+
+Neither am I.
+
+Neither is she.
+
+That is, I have come to understand, exactly as it should be.
+
+The child you were never fully gets the parent they needed — that window closes, and nothing in adult life can open it again. But some people do get a second thing: not the parent they needed then, but a real relationship now, built on the rubble of the first one. Is that enough? Can a repaired thing — a relationship reconstructed from damage, carrying every crack — ever be as valuable as something that was never broken? Or is the repair, itself, the point?`
+},
 {
   id: "the-interpreter",
   title: "The Interpreter",
