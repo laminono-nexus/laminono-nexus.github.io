@@ -2540,11 +2540,24 @@ window.addEventListener('scroll', () => {
 (function(){
     const el = document.getElementById('floating-book-trigger');
     let lastY = 0;
-    window.addEventListener('scroll', () => {
-        const y = window.scrollY;
+
+    function handleScroll(y) {
         el.style.top = (y > 60 && y >= lastY) ? '70px' : '-280px';
         lastY = y;
-    }, {passive:true});
+    }
+
+    // Main page scroll
+    window.addEventListener('scroll', () => {
+        handleScroll(window.scrollY);
+    }, {passive: true});
+
+    // Modal inner scroll — watch the modal content div
+    document.addEventListener('scroll', (e) => {
+        const target = e.target;
+        if (target && target.classList && target.classList.contains('modal-content')) {
+            handleScroll(target.scrollTop);
+        }
+    }, {passive: true, capture: true});
 })();
 
 // ── DEEP LINK ──
