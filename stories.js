@@ -6086,7 +6086,7 @@ What was the moment — the one conversation, the one decision, the one morning 
     trending: true,
     image: 'https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
 cover: {
-  image: 'https://images.pexels.com/photos/34191463/...'
+  image: 'https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=800&q=80',
 },
     excerpt: 'Every note he spent carried a price. He just did not know who was paying it.',
     content: `The morning Emeka found the money, his mother was already dead for six hours — and nobody had told him yet.
