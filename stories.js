@@ -1,5 +1,466 @@
 const stories = [
   {
+  id: "the-last-table-for-two",
+  title: "The Last Table for Two",
+  genre: "Romance",
+  readTime: "60 min",
+  trending: true,
+  excerpt: "The restaurant had one rule: the last table was reserved for a stranger. She arrived alone on a rainy Tuesday. So did he. They were not supposed to speak. They spoke anyway. By the final course, everything had changed.",
+  image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80"
+  },
+  content: `The restaurant did not appear on any map.
+
+This was not an accident. Le Dernier Couvert had existed on the Rue des Martyrs in Paris for sixty-one years, tucked between a florist that closed at noon and a bookshop whose owner had been dying slowly and contentedly for two decades, and in sixty-one years it had never advertised, never sought a review, never applied for a single award. You found it the way you found most things worth finding — because someone who loved you told you about it, or because you were lost and wet and the light through its window was the warmest thing on the street and your feet made the decision before your mind did.
+
+Adaeze Okonkwo found it the second way.
+
+She had been lost for forty minutes in the seventh arrondissement, which was her own fault — she had refused the map app on principle because she believed cities should be navigated by instinct and the seventh arrondissement had been systematically dismantling that belief for the better part of an hour. It was raining the way Paris rains in November, which is not the dramatic rain of films but the persistent, personal rain of a city that has decided to make things difficult for you specifically. Her coat was the wrong coat for this rain. Her shoes were entirely the wrong shoes. She had a reservation at a restaurant three streets away that she was forty minutes late for and had just decided to abandon, because Adaeze Okonkwo had been a food critic for seven years and she had learned that a restaurant that cannot forgive forty minutes of Paris rain in November is a restaurant with something to prove, and restaurants with something to prove almost never had anything worth eating.
+
+She stopped walking.
+
+She looked at the light.
+
+Le Dernier Couvert.
+
+The last table.
+
+There was a small card in the window, handwritten in ink that had faded to a warm brown, that read: Ce soir, la table du voyageur est libre.
+
+Tonight, the traveller's table is free.
+
+She had no idea what this meant. She pushed open the door anyway.
+
+The maître d' was a man of about seventy with the bearing of someone who had spent a lifetime being precisely as welcoming as was necessary and no more, which is a Parisian quality often mistaken for coldness and is actually a form of respect — the acknowledgement that you are a grown person who does not require performance.
+
+"Bonsoir," he said.
+
+"Bonsoir," Adaeze said. "I don't have a reservation. I saw the sign about the table."
+
+The maître d' looked at her for a moment with the particular attention of someone assessing a thing not for its surface but for something underneath.
+
+"The traveller's table," he said, in English that carried sixty years of French in it. "It is for one. Or for two, if the night decides. Are you alone?"
+
+"Yes," she said.
+
+"Have you eaten here before?"
+
+"No."
+
+He nodded once, as if this confirmed something.
+
+"There is one rule about the traveller's table," he said. "You do not choose it. It chooses you. If you are still here when I return in one minute, it has chosen you." He paused. "If you leave, we will not think less of you. Many people leave. The table is not for everyone."
+
+He walked away.
+
+Adaeze stood in the entrance of Le Dernier Couvert in her wrong coat and her wrong shoes with rain still in her hair and thought about this for exactly forty-five seconds and then stood there for the remaining fifteen without thinking about anything, which was unusual for her and felt, obscurely, like the point.
+
+The maître d' returned.
+
+"Bien," he said. "Follow me, please."
+
+The table was in the back corner of the restaurant, slightly separated from the other tables by what appeared to be a deliberate arrangement of space — not isolated, but distinct. It was set for two, with candles and a white cloth and two wine glasses that caught the light in a way that seemed designed by someone who understood that beauty is often just attention paid to the right things.
+
+Adaeze sat down.
+
+She looked at the second setting.
+
+"You said the table is for one," she said.
+
+"Or for two," the maître d' said, "if the night decides. Sometimes no one else comes. Tonight —" He paused and looked toward the door with the faint expression of a man who has seen this particular story before. "We will see."
+
+He left her with the menu.
+
+She had been reading it for four minutes — reading it in the way she read all menus, with the focused attention of someone for whom a menu is a text that reveals character, that tells you who the kitchen believes itself to be and whether that belief is earned — when the door opened and she heard footsteps and looked up.
+
+The man who sat down across from her was not what she expected.
+
+She had not, strictly speaking, expected anyone. But if she had assembled an expectation from the available data — Paris, rainy Tuesday, a table for strangers in a restaurant that did not advertise — she would not have assembled this. He was tall, with the build of someone who had once played a sport seriously and still carried the memory of it in his posture. He was dark-skinned, Nigerian in the specific architecture of his face in a way she recognized the way you recognize a country in someone's features before they say a word. He was wearing a coat that was the right coat for this rain, which she noted with the faint irritation of someone who has made the wrong choice and would like not to be reminded of it. He was, in the unhelpful way of certain people at certain moments, extremely good-looking in a way that seemed accidental rather than constructed, which was the most inconvenient kind.
+
+He sat down. He looked at the second menu. He looked up.
+
+He looked at her.
+
+"Bonsoir," he said.
+
+"Bonsoir," she said.
+
+The maître d' appeared from nowhere in the way of maîtres d' who have perfected the art.
+
+"The rule of the traveller's table," he said, with the ease of a man reciting something he has recited many times without it losing meaning, "is that you do not speak until the first course arrives. This is not a rule about silence — you may speak to me, to the sommelier. It is a rule about the specific silence between strangers, which is the last honest silence there is. Once the first course arrives, you may speak or you may not. The table does not require conversation. But the table" — and here the faint expression again, the one that had seen this before — "tends to produce it."
+
+He left.
+
+Adaeze looked across the table at the man who had sat down.
+
+He was looking at her with an expression that was, she thought, a mixture of amusement and the specific self-consciousness of someone who has just been told to be quiet in the presence of a stranger and finds the instruction both reasonable and extremely difficult.
+
+She looked back at her menu.
+
+He looked at his.
+
+The silence between them was not uncomfortable. This surprised her. Adaeze Okonkwo was a woman who was comfortable with silence in general — she had the journalist's and critic's relationship with silence, the understanding that silence is where the real information lives — but the silence between strangers was usually a different quality, loaded with the social anxiety of two people not knowing what they are to each other or what is expected. This silence was not that. It was closer to the silence of two people reading in the same room, aware of each other's presence in the peripheral way that is not intrusion but is not absence either.
+
+She found this mildly alarming.
+
+She read the menu.
+
+The first course arrived seventeen minutes later — a small plate of what the menu had described as velouté de céleri-rave with a truffle oil that had been applied with the restraint of a kitchen that understood that truffle is punctuation, not a sentence. The presentation was precise without being precious. The smell reached her before the plate did.
+
+She was a food critic. She noted these things the way other people breathe.
+
+The maître d' set down both plates and refilled the water glasses and left without speaking.
+
+The silence between them lifted.
+
+The man across the table looked at his plate and then looked at her.
+
+"I have been coming here for four months," he said, in English with a French-Nigerian architecture that matched his face, "and I have had the traveller's table six times. You are the first person who has sat across from me."
+
+Adaeze looked at him. "Why do you keep coming back if no one sits with you?"
+
+"The food," he said. Then, after a beat: "And I suppose I kept hoping someone would."
+
+She looked at him steadily. He returned the look with the directness of someone who has decided honesty is less exhausting than its alternative.
+
+"That is a very honest answer to give a stranger," she said.
+
+"The maître d' says the table does not require conversation," he said. "But since we are having it, it seems wasteful to make it dishonest." He picked up his spoon. "I'm Étienne."
+
+"Adaeze," she said.
+
+"Nigerian," he said. Not a question.
+
+"Lagos born," she said. "You?"
+
+"My mother is from Ibadan," he said. "My father is from Lyon. I grew up in both cities and belong entirely to neither, which is either a tragedy or a gift depending on the week."
+
+"Which week is this?"
+
+He considered the question with more seriousness than she had expected.
+
+"A gift week," he said. "Marginally."
+
+She tasted the velouté.
+
+It arrived in her mouth with the quiet authority of a thing made by someone who understood that celeriac is not a fashionable vegetable and had decided not to apologize for it — had instead made it into something that tasted like autumn converted to liquid, earthy and subtle and precisely warm enough. The truffle was there in the back of the finish, asking a question rather than making a statement.
+
+"Good?" Étienne said, watching her.
+
+"Don't," she said.
+
+"Don't what?"
+
+"Watch me eat and ask if it's good. I'm a food critic. Watching me eat and asking if it's good is like watching a surgeon operate and asking if it hurts."
+
+He laughed. It was a real laugh, the kind that comes from the chest, not performed.
+
+"A food critic," he said. "At the traveller's table."
+
+"I was lost," she said. "I had the wrong shoes."
+
+He looked at her shoes briefly, with the quick professional assessment of someone who notices structures.
+
+"What do you do?" she said.
+
+"I'm an architect," he said. "I design spaces." A pause. "Which means I spend a lot of time thinking about how physical space shapes the people inside it, how the height of a ceiling changes how honest a conversation can be, how light direction changes how safe a room feels." He looked around the restaurant. "Whoever designed this room understood all of that. Look at the ceiling height — just low enough to feel intimate without feeling oppressive. The candle placement creates pools of private light. The table spacing is precisely the distance at which you can hear the people beside you if they are loud but not if they speak normally." He paused. "It makes people feel that their conversation is contained. Private. Which makes them speak more honestly."
+
+Adaeze looked at him.
+
+"You have thought about this a lot," she said.
+
+"I have eaten here alone six times," he said. "I had time."
+
+The first course plates were removed by a server who moved with the specific silence of someone trained not to interrupt. The second course was announced by the maître d' — a seared scallop with a cauliflower purée and a reduction that smelled of white wine and something she identified as preserved lemon.
+
+"Why did your engagement end?" she said.
+
+The question arrived before she had decided to ask it. This happened to her sometimes — her journalist's instinct operating faster than her social filter, pulling the question that was actually underneath the conversation to the surface before she had consciously identified it. She had learned not to apologize for it because the apology always made things worse.
+
+Étienne looked at her.
+
+"That is a significant question for the second course," he said.
+
+"You said dishonesty would be wasteful," she said.
+
+He was quiet for a moment. Not the quiet of someone deciding whether to answer, she thought, but the quiet of someone deciding which version of the answer was the true one.
+
+"She said I was present everywhere except where she needed me," he said. "That I could give full attention to a building — to the problem of a building, the logic of a space — but that I gave her the remainder. The attention that was left over." He looked at the candle. "She was not wrong. I had no defense against it because it was accurate. I could have argued about the specifics — I was there, I attended things, I tried — but the essential complaint, which was that she felt the quality of my attention when I gave it to her and the quality when I gave it to a building and they were not the same — I could not argue with that."
+
+Adaeze was quiet.
+
+"When did you know she was right?" she said.
+
+"When she left," he said. "I felt the loss of her — genuinely, deeply — and then two weeks later I was in the middle of a design problem for a building in Bordeaux and I realized I had not thought about her in three days." He paused. "That told me everything. Not that I did not love her. I think I did. But that the shape of my attention — the deepest shape of it — was not built for what she needed." He looked up. "What about you?"
+
+"What about me what?"
+
+"You are at the traveller's table alone on a Tuesday in November," he said. "That is usually a story."
+
+She tasted the scallop. It was extraordinary — the sear on the outside creating a texture that contrasted with the tenderness inside in a way that felt almost architectural, she thought, and then felt slightly embarrassed for thinking this while sitting across from an architect. The cauliflower purée was silky and restrained and let the scallop be the sentence it wanted to be. The reduction was the punctuation.
+
+"I am very good at my work," she said. "I have been good at it since I was twenty-four. I have a column that is read by a significant number of people. I have opinions that restaurants take seriously and some that they take too seriously and I have learned to tell the difference." She paused. "Two years ago I was in a relationship with a man who also had work he was good at and opinions people took seriously. We understood each other professionally in the way that people who are good at the same kind of thing understand each other — the specific loneliness of caring intensely about something most people find trivial, the way you are always slightly translating yourself for people who do not share the obsession."
+
+"But?" Étienne said.
+
+"But we were in competition," she said. "We did not know we were, for a long time. We thought we were in collaboration. But what we were actually doing was measuring — comparing coverage, comparing reputation, comparing the quality of each other's attention to our work versus our attention to each other. And eventually the measurement became the relationship." She paused. "He left first. I was relieved. That told me everything."
+
+Étienne looked at her with the full quality of attention she had, she realized, been noticing since he sat down — the attention he had described giving to buildings, the quality that had cost him his engagement. He was giving it to her. She was not sure what to do with this information.
+
+"What does a food critic think of this restaurant?" he said.
+
+She looked at him. "I think the kitchen is run by someone who has nothing to prove, which is the highest compliment I give." She paused. "I think the menu is an argument — a coherent, intelligent argument about what French cooking is and what it owes to its influences and what it is allowed to let go of. Each course is a paragraph. They build." She paused again. "I think whoever owns this restaurant has been watching people fall in love across that table for sixty years and has strong feelings about it."
+
+"Fall in love," Étienne said.
+
+"Or something adjacent to it," she said. "The table is designed for it. You said so yourself — the intimacy, the contained light, the private acoustics. This is not accidental."
+
+"Are you always this analytical about your own experience while you are having it?"
+
+"Yes," she said. "It is a significant personal failing."
+
+"Or a gift," he said. "Depending on the week."
+
+She looked at him.
+
+"Which week is this for you?" he said.
+
+She thought about her wrong coat and her wrong shoes and forty minutes lost in the seventh arrondissement and the light through the window and the maître d' and his one minute and the second place setting and the quality of the silence before the first course arrived and the velouté and the scallop and the man across the table who gave his full attention to buildings and was, for reasons she did not entirely understand, giving it to her.
+
+"A gift week," she said. "Marginally."
+
+The third course arrived.
+
+A duck breast, sliced thin, with a cherry reduction and a root vegetable preparation that smelled of thyme and something she could not immediately identify and spent a pleasant thirty seconds identifying as a very small amount of star anise deployed with the confidence of a kitchen that trusted its own instincts.
+
+They talked about buildings. They talked about food. They talked about Lagos and Paris and Lyon and Ibadan and the specific quality of belonging to more than one place, which is not rootlessness — they agreed on this firmly, with the emphasis of two people who have had to defend it — but a different kind of rootedness, the kind that takes its reference from people rather than geography, that is portable in a way that has costs and advantages in roughly equal measure.
+
+Étienne talked about a building he had designed in Lyon that had started as an office complex and become, in the designing, something he could only describe as a conversation between the city's industrial past and its contemporary self. He talked about the problem of a staircase — not as a circulation element but as the moment in a building where you are between floors, between states, not yet arrived anywhere, which was either a problem to be solved or a condition to be honored. He had honored it, in that building. The staircase was the most reviewed element of the completed structure.
+
+"The space between things," Adaeze said.
+
+"Yes," he said. "That is where the interesting things live. Not at the destination. In the between."
+
+She told him about a meal she had eaten in a small restaurant in Oaxaca, Mexico, three years ago, where the chef had served a mole that had taken three days to make and contained twenty-six ingredients and tasted like nothing she had ever tasted and like everything she had ever tasted simultaneously, which should have been a contradiction and was instead the clearest example she had ever experienced of a cook who understood that complexity is not about the number of elements but about how honestly they speak to each other.
+
+"Twenty-six ingredients that were all telling the truth," she said.
+
+"Is that what good food is?" he said. "Honesty?"
+
+"Good anything," she said. "Good architecture, good food, good writing, good conversation." She paused. "The twenty-six ingredients that are all telling the truth, and the one cook who knew how to let them."
+
+Étienne looked at her in the contained candlelight of the traveller's table.
+
+"That is the best definition of craft I have heard," he said. "In any form."
+
+"I have been eating professionally for seven years," she said. "I have had time."
+
+He smiled. It was a different smile from the laugh — quieter, something in it that she noted and did not immediately classify.
+
+The third course plates were cleared.
+
+There was a pause before the fourth — a longer pause than between the other courses, a deliberate breath in the meal's architecture, which Adaeze recognized as intentional and Étienne confirmed without her asking.
+
+"Between the third and fourth course," he said, "the kitchen does this on purpose. Gives the table time to breathe. To catch up with itself." He looked at the candles. "I asked the maître d' about it once. He said the meal has its own pace and the table should not rush it."
+
+"What did you think of that?"
+
+"I thought it was the most French thing I had ever heard," he said. "And then I sat with it for a few minutes and thought it was one of the wisest things I had ever heard. Which is often how it goes with the most French things."
+
+Adaeze laughed. She had not, she realized, laughed in the genuine uncalculated way in some time. It felt like something she had set down a long time ago and was surprised to find was still where she had left it.
+
+"Can I ask you something direct?" she said.
+
+"You have been asking me direct things since the first course," he said. "Please do not stop now."
+
+"What are you hoping for?" she said. "From this dinner. From this table. From — whatever this is."
+
+He was quiet with the quality of genuine consideration.
+
+"Honest answer?" he said.
+
+"Please."
+
+"When I first started coming here," he said, "I was hoping for distraction. My engagement had ended and I needed to be somewhere that was not my apartment and was not a place that required me to perform being fine. This restaurant does not require you to perform anything." He paused. "After the second visit I was hoping for good food and the specific peace of eating somewhere that takes the act seriously." After the third —" He stopped.
+
+"After the third?" she said.
+
+"After the third I started hoping that the second chair would not be empty," he said. "Not for a specific reason. Not with a specific hope about what it would mean. Just — hoping that someone would sit there." He looked at her directly. "And now someone has and I find that I am hoping for something more specific. Which I am aware is a significant amount of feeling to have generated over a duck breast and three hours of conversation."
+
+"Two hours and forty minutes," she said.
+
+"Are you counting?"
+
+"I am a critic," she said. "I notice things."
+
+"What have you noticed?" he said.
+
+She looked at him in the contained amber light of the restaurant that had watched this exact thing happen for sixty years and considered the question with the seriousness it deserved.
+
+"I have noticed," she said, "that you give your full attention to things you find worth it. I have noticed that I have been the recipient of that attention for two hours and forty minutes and that I find it — uncomfortable."
+
+"Uncomfortable," he said.
+
+"In the way that honesty is uncomfortable," she said. "Not bad. Uncomfortable in the way of a thing that requires something from you. That sees you accurately enough that there is no comfortable place to hide." She paused. "I have spent two years being seen at the level of my professional competence, which is high and which I am glad to show. I have not been seen at any other level. I had started to suspect the other levels had gone somewhere."
+
+"Where had they gone?" he said.
+
+"I don't know," she said. "Somewhere quieter. Somewhere that didn't get much traffic." She paused. "They are apparently still there."
+
+The fourth course arrived — a cheese plate, chosen and arranged with the intelligence of a kitchen that understood that cheese is not an afterthought but a key change in the music of a meal, three cheeses that moved from mild to complex and were accompanied by a honeycomb and a small pile of walnuts and a bread that had been baked in the last hour.
+
+They ate it slowly, with the ease of people who have moved past the part of a conversation that requires careful navigation and arrived at the part that is simply two people being in the same place.
+
+Étienne told her about a project he was beginning — a community centre in a suburb of Paris where three different immigrant communities overlapped without, currently, much conversation between them. He had been commissioned to design a building. What he was trying to design, he said, was a reason to be in the same space. Architecture as a pretext for encounter. He described the entrance — an intentional ambiguity of space, not quite a threshold, not quite a room, a between-space where you were arrived but not yet committed, which he hoped would make the encounter feel optional enough to be genuine.
+
+"A traveller's table," she said.
+
+He looked at her.
+
+"A space that invites without requiring," she said. "That makes encounter feel chosen."
+
+"Yes," he said quietly. "Exactly that."
+
+She told him about a review she had written the previous year that had closed a restaurant — not intentionally, but with the accurate precision of a review that told the truth about food that was not what it claimed to be. The chef had written to her. Not angrily — with a kind of exhausted honesty that had cost her sleep. He had said: I knew. I knew the food had stopped being honest and I could not find my way back to it and your review said so and I am relieved someone said so even though the relief and the damage arrived together. She had never published that letter. She had kept it.
+
+"Why?" Étienne said.
+
+"Because it was between him and me," she said. "Because the review was public and had to be — the honesty of criticism is that it is public, that it serves the reader, not just the subject. But his response was private and deserved to stay that way." She paused. "I think about honesty in layers. There is the honesty that is owed to everyone. And there is the honesty that is owed to the specific person in front of you. They are not the same kind."
+
+"What kind is the honesty at this table?" he said.
+
+She looked at him.
+
+"The second kind," she said.
+
+The fifth course was dessert — a tarte tatin, individual, made with apples that had been cooked long enough to become something beyond apple, something richer and darker and more complex, with a pastry that had the quality of things made by hand by someone who has made the same thing for decades and whose hands know it better than their mind does. There was a small quenelle of crème fraîche beside it, cool against the warm tart, the contrast so simple and so right that it felt like an argument made in a single sentence.
+
+They ate slowly.
+
+The restaurant had emptied around them without either of them noticing. Two other tables remained — a couple who had been there when she arrived and who ate in the comfortable silence of people who have been having dinner together long enough that silence is the fullest expression of ease, and a single man at the bar who was reading a novel and drinking a glass of Burgundy with the complete satisfaction of a person who requires nothing more from the evening.
+
+"What happens after this?" Adaeze said.
+
+"After the dessert?"
+
+"After the dinner," she said.
+
+Étienne was quiet with the quality she had come to recognize as real consideration rather than performance.
+
+"I do not know," he said. "I know that I would like to find out. I know that this dinner has been — " he paused, searching for the word with the care of someone for whom the right word mattered. "Unexpectedly necessary. I came here tonight the way I have come here every Tuesday for four months, which is as a man who is recovering and who finds this specific environment helpful for the recovering. And I find that I am sitting here now as a different version of that man, and that you are the reason for the difference, and that I am not sure what to do with that information except be honest about having it."
+
+Adaeze looked at him in the last of the candlelight.
+
+"I came here because I had the wrong shoes," she said.
+
+"I know," he said.
+
+"I find that significant," she said.
+
+"The space between things," he said. "That is where the interesting things live."
+
+She looked at the last of the tarte tatin. At the candles. At the empty restaurant around them — the couple still sitting in their easy silence, the man at the bar turning a page. At the traveller's table with its two settings and its sixty years of watching and its maître d' who had given her one minute to decide and had known, she understood now, what would happen if she stayed.
+
+"I am in Paris for four more days," she said. "I have seven restaurants to visit for work and one afternoon that is not accounted for."
+
+"Which afternoon?"
+
+"Thursday," she said.
+
+"I know a building on Thursday," he said, "that has a staircase I have been wanting to show someone. Someone who would understand what I was trying to do with the between-space." He paused. "It requires approximately two hours and ends near a restaurant that is small and not famous and is run by a woman from Senegal who makes the best thiéboudienne in Paris, which is not a sentence I say lightly given that I am in Paris, and which is the honest food you described — twenty-six ingredients telling the truth."
+
+Adaeze looked at him.
+
+"That is a very long way to ask me to dinner," she said.
+
+"I am an architect," he said. "I take the approach of the building rather than the door."
+
+She was quiet for a moment. The candle between them had burned low, the flame small and steady and very gold.
+
+"Alright," she said.
+
+"Alright," he said.
+
+The maître d' appeared from nowhere.
+
+"The table hopes you have eaten well," he said.
+
+"The table has done significantly more than feed us," Adaeze said.
+
+The maître d' looked at them both with the expression she now recognized completely — the expression of a man who has seen this before, sixty years of Tuesdays and wrong shoes and strangers who stayed, and who finds it each time not routine but quietly, persistently wonderful.
+
+"The table tends to," he said.
+
+He left the bill on the white cloth between them.
+
+They reached for it at the same time.
+
+Their hands arrived together — not quite touching, close enough to be a question — and they both stopped and looked down at their hands and then looked up at each other in the low gold light of the last candle on the last table and the question that their hands were asking was the same question that the entire evening had been building toward with the patience and intelligence of a meal designed by someone who understood that the best things do not rush, that the approach is part of the architecture, that the between-space is where the interesting things live.
+
+Étienne picked up the bill.
+
+Adaeze did not argue.
+
+Outside, the rain had stopped. The Rue des Martyrs was wet and quiet and lit with the particular quality of Paris after rain, which is the quality of a city that has just been washed clean and is aware of it. The florist next door had, improbably, left a single bucket of white flowers outside — dahlias, she thought, though in the dark she could not be certain.
+
+They stood on the pavement outside Le Dernier Couvert.
+
+"Thursday," she said.
+
+"Thursday," he said. "I will text you the address of the building."
+
+"You don't have my number," she said.
+
+"No," he said.
+
+She took out her phone. He took out his. The exchange was brief and practical and felt, absurdly, like the most significant logistical transaction she had made in years.
+
+She started to walk.
+
+She had gone four steps when she turned around.
+
+He had not moved.
+
+He was standing outside the restaurant on the wet street in his right coat with his phone in his hand, watching her go with the full quality of his attention, and she looked at him looking at her and thought about twenty-six ingredients telling the truth and about the staircase between floors where you have not yet arrived anywhere and about the traveller's table that does not require conversation but tends to produce it and about the one minute the maître d' had given her and all the seconds within it during which she had stayed.
+
+"The building on Thursday," she said.
+
+"Yes?"
+
+"Is the staircase beautiful?"
+
+He considered this with the seriousness of an architect asked about a staircase.
+
+"It is honest," he said. "Which in architecture, as in food, is the same thing."
+
+She turned and walked into the washed Paris night.
+
+She was smiling before she reached the corner.
+
+She did not try to stop.
+
+The traveller's table at Le Dernier Couvert was set again the next morning — white cloth, two glasses, two settings, one candle waiting to be lit — as it had been set every morning for sixty-one years, ready for the next stranger who would push open the door with rain in their hair and uncertainty in their heart and find that the thing they had not known they were looking for had been waiting at the last table all along.
+
+The maître d' set it himself, as he always did.
+
+He smoothed the cloth.
+
+He straightened the second setting.
+
+He went to stand by the door and look out at the Rue des Martyrs, where the morning was beginning its slow grey Paris arrival, and he thought — as he thought every morning — about all the people who had sat at that table over sixty-one years and all the things that had begun there, the conversations and the confessions and the two people who had found in the space between a first course and a last one something they had not come in looking for and had left carrying carefully, the way you carry something fragile and new, with both hands, with full attention, with the specific hope of someone who has decided that this particular thing is worth being careful with.
+
+He unlocked the door.
+
+He turned the sign.
+
+Ouvert.
+
+Open.
+
+The morning came in.`
+},
+  {
   id: "i-watched-my-mother-choose-heroin",
   title: "I Watched My Mother Choose Heroin Over Me Every Single Day For Fifteen Years. Then One Tuesday She Knocked On My Door.",
   genre: "True Stories",
