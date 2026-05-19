@@ -1,5 +1,582 @@
 const stories = [
   {
+  id: "the-ward-that-remembers",
+  title: "The Ward That Remembers",
+  genre: "Sci-Fi",
+  readTime: "55 min",
+  trending: true,
+  excerpt: "He woke up in a hospital with no name, no past, and no explanation. The doctors smiled too perfectly. The other patients never blinked enough. And somewhere on the floor above him — the floor that did not exist on any map — something was calling his name.",
+  image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80"
+  },
+  content: `He woke up on a Tuesday.
+
+He knew it was Tuesday because the whiteboard on the wall across from his bed said TUESDAY in large blue marker, and below it, in smaller letters: You are safe. You are being cared for. This is normal.
+
+He looked at the whiteboard for a long time.
+
+The part that troubled him was not the day. The part that troubled him was the third sentence. Because in his experience — and he was aware, reaching for this experience, that it was thin and unreliable, a handful of facts rather than a life — in his experience, things that were normal did not require you to be told they were normal. Normal was the absence of the announcement. Normal did not need the whiteboard.
+
+He sat up.
+
+The room was private. Single bed, single window, single chair beside the bed that was empty. The window showed a sky that was the specific white of an overcast morning — no sun, no blue, just a flat bright nothing that gave no information about the time of day or the geography of wherever he was.
+
+He looked at his hands.
+
+They were his hands — he was certain of this in the way you are certain of things that are so fundamental they exist before memory — but they told him nothing. No rings. No calluses that indicated a profession. No scars that indicated a history. Clean, uninjured, the hands of a man who had either lived very carefully or had been very recently cleaned.
+
+He looked for a clock.
+
+There was no clock.
+
+This was the second thing that troubled him.
+
+The door opened.
+
+The woman who came in was wearing pale blue scrubs and a smile that was precisely calibrated — not too warm, not too clinical, the smile of someone trained to produce a specific effect. She was carrying a tablet and a small cup of water and she moved with the efficiency of someone who had done this exact sequence of actions many times.
+
+"Good morning," she said. "How are you feeling?"
+
+"I don't know my name," he said.
+
+She nodded. The nod was also calibrated — acknowledging, unsurprised, the nod of someone for whom this was expected information.
+
+"That's normal," she said.
+
+Third time now.
+
+"What is my name?" he said.
+
+"We call you Patient Eleven," she said. "Until your memory returns."
+
+"What if it doesn't return?"
+
+"It always returns," she said. The smile again. "Would you like some water?"
+
+"I would like to know where I am," he said.
+
+"Meridian General Hospital," she said. "You were brought in four days ago. You were found on Crestfall Road with no identification and no injuries. Your vitals are excellent. Your cognition is intact — you can speak, reason, read. The memory loss is temporary and expected given what you experienced."
+
+"What did I experience?"
+
+A pause. Fractional — barely a pause at all. The kind of pause you would not notice if you were not already looking for pauses.
+
+"We don't know yet," she said. "That's part of what we're helping you recover."
+
+She set the water on the bedside table.
+
+"My name is Nurse Callan," she said. "I'm your primary care contact. If you need anything, press the call button. Breakfast will come at eight. Doctor Solis will see you at ten." She moved toward the door. "Rest if you can. The memory usually begins to surface within the first week."
+
+"What floor is this?" he said.
+
+She paused at the door. Turned.
+
+"Four," she said.
+
+"How many floors does the hospital have?"
+
+The smile. The calibrated, precise smile.
+
+"Four," she said. "Rest well, Patient Eleven."
+
+She left.
+
+He looked at the door for a long time after it closed.
+
+Then he looked up.
+
+At the ceiling.
+
+At the faint, almost inaudible sound coming through it.
+
+Footsteps.
+
+He ate the breakfast that came at eight — eggs and toast and orange juice, all of it correct in the way of things assembled to specification, nothing wrong with it and nothing particular about it, the food equivalent of the smile. He ate it slowly and watched the window and tried to find his name in the flat bright sky and found nothing.
+
+He was not panicking.
+
+This was interesting to him. He had woken up with no memory of his identity in an unfamiliar hospital and he was not panicking, which suggested either that he was the kind of person who did not panic easily or that something was suppressing the response. He filed both possibilities and watched the sky.
+
+At nine-fifteen he got out of bed.
+
+His legs worked. He was wearing a hospital gown and beneath it he was physically unremarkable — no distinguishing marks, no surgical scars, the body of a man in his middle thirties who had been moderately active and was currently in good health. He stood at the window and looked out.
+
+The hospital was surrounded by a car park on one side and a tree line on the other. The trees were November-bare, black branches against the white sky. The car park had seventeen cars in it, which he counted twice. Ordinary cars. No ambulances visible. No emergency entrance visible from this angle.
+
+What was visible, if you looked at the building's reflection in the window of the structure opposite — a maintenance block of some kind, its windows acting as an imperfect mirror — was the exterior of the hospital.
+
+Five floors.
+
+He counted them in the reflection. Ground plus four above. Five floors total.
+
+Nurse Callan had said four.
+
+He went back to the bed and sat on it and thought about this carefully and without the panic he apparently did not have access to.
+
+At ten o'clock, Doctor Solis arrived.
+
+Doctor Solis was a man of about fifty with silver hair and the specific gravity of someone accustomed to being the most authoritative presence in a room. He was tall, unhurried, with the hands of a surgeon — precise and still, the hands of someone who had trained themselves out of unnecessary movement. He sat in the chair beside the bed and crossed one leg over the other and looked at Patient Eleven with an attention that was thorough and revealed nothing.
+
+"How are you feeling?" he said.
+
+"I counted five floors in the building's reflection," Patient Eleven said. "Nurse Callan told me there were four."
+
+Doctor Solis looked at him for a moment.
+
+"Nurse Callan is correct that your ward is on the fourth floor," he said. "The fifth floor is a mechanical and infrastructure level — HVAC systems, electrical. Not a patient floor. Not typically counted."
+
+"I heard footsteps from it this morning," Patient Eleven said.
+
+"Maintenance staff," Doctor Solis said. Without pause. Without the fractional hesitation. "We have overnight maintenance on a rotating schedule. Is there anything else?"
+
+Patient Eleven looked at him.
+
+"Yes," he said. "What is wrong with the patients on this floor?"
+
+"I'm sorry?"
+
+"I walked to the door of my room this morning," he said. "I opened it and looked down the corridor. There are six rooms on this wing. Four of them have patients — I could see through the observation windows. None of those patients were moving. Not sleeping — people shift when they sleep. They were completely still. The woman in room nine was sitting in a chair looking at the wall and she had not moved position in the forty minutes I was able to observe."
+
+Doctor Solis recrossed his legs.
+
+"Our patients are in various stages of neurological recovery," he said. "Reduced motor activity is expected and —"
+
+"Normal," Patient Eleven said.
+
+Doctor Solis looked at him.
+
+"Normal," Patient Eleven said again. "Everything here is normal. That is the word everyone uses for everything. The whiteboard says it. Nurse Callan said it twice. You were about to say it." He paused. "In my experience — which I acknowledge is limited and unreliable at the moment — normal things do not require the word normal applied to them repeatedly. The word normal is used to manage a response. It is deployed when the thing being described is, in fact, not normal and the speaker wants to prevent the listener from reaching that conclusion."
+
+Doctor Solis was quiet.
+
+Then he smiled.
+
+It was the same smile as Nurse Callan's. Precisely the same — the same calibration, the same warmth-to-clinical ratio. Patient Eleven had been looking for it and there it was and the finding of it was not reassuring.
+
+"You're clearly an intelligent man," Doctor Solis said. "That's going to serve you well in your recovery."
+
+"What is on the fifth floor?" Patient Eleven said.
+
+"I've told you," Doctor Solis said.
+
+"You've told me something," Patient Eleven said. "That is not the same thing."
+
+Doctor Solis stood. The interview was over — not because it had reached its natural conclusion but because he was ending it.
+
+"I'm going to recommend some rest and a session with our cognitive recovery specialist this afternoon," he said. "It's important not to overload the mind in the early stages of memory restoration. The hypervigilance you're experiencing is a known side effect of the type of event that brought you here. It will settle."
+
+He left.
+
+Patient Eleven sat on the edge of the bed.
+
+He thought: hypervigilance. A known side effect of the type of event that brought you here.
+
+He thought: they still have not told me what that event was.
+
+He thought: they are not going to.
+
+The cognitive recovery specialist was a woman named Dr. Venn who arrived at two in the afternoon with a laptop and a manner that was warmer than either Nurse Callan or Doctor Solis — warmer in a way that he identified immediately as deliberate, which meant it was deployed rather than natural, which meant it was a strategy.
+
+"Tell me what you remember," she said. "Anything. Images, feelings, fragments. Don't try to organize them."
+
+He looked at her.
+
+He had been doing this all day — going through what he had, sorting it, trying to find edges.
+
+"I remember the smell of something burning," he said. "Not a fire. Something electrical. The smell of circuits overheating."
+
+Dr. Venn typed.
+
+"I remember a number," he said. "Not my name. A number. Seven seven four."
+
+"Does it have a context?" she said.
+
+"No," he said. "It is simply present. Like it was printed rather than learned."
+
+"What else?"
+
+"A voice," he said. "Not a person I can picture. Just a voice, saying — " He stopped.
+
+"Saying what?" Dr. Venn said. Her typing had paused.
+
+"They will tell you it is normal," he said. "That is what the voice said. They will tell you it is normal. Do not believe the normal."
+
+The room was very quiet.
+
+Dr. Venn's hands were still on the keyboard.
+
+"That's very interesting," she said. The warmth in her voice had recalibrated — still present, but with something underneath it now, something that was tighter.
+
+"Whose voice was it?" she said.
+
+"I don't know," he said. "Mine, possibly. It had the quality of something I said to myself. A reminder left for later."
+
+"A reminder," she said.
+
+"Before I forgot," he said.
+
+Dr. Venn closed her laptop.
+
+"I think that's enough for today," she said. "This is very good progress. The fragments are surfacing. We'll continue tomorrow."
+
+She left faster than she had arrived.
+
+He sat with the room.
+
+He thought: I left myself a message before they took my memory.
+
+He thought: which means I knew this was going to happen.
+
+He thought: which means I was here before.
+
+The hospital at night was a different frequency.
+
+He had stayed awake through the eleven o'clock check — Nurse Callan again, still smiling, checking his vitals with the practiced efficiency of a machine — and through the twelve-thirty check, a different nurse whose name tag said ORDERLY MARSH and who did not speak and whose eyes, Patient Eleven noted, moved across him with the flat assessment of a camera rather than a person.
+
+At one forty-five in the morning the corridor outside his room was quiet.
+
+He got up.
+
+He had spent the previous hours in careful inventory. The room contained: his bed, the chair, the bedside table, the whiteboard, one wardrobe that held a change of clothes — standard issue, grey, no pockets — and a pair of shoes. The shoes were wrong. They were his size and they fit correctly but they were new — unworn, the soles unscratched — which meant they had not come with him. They had been provided.
+
+Which meant someone had thought about what size he wore.
+
+Which meant someone knew him.
+
+He dressed in the grey clothes and the new shoes and went to the door and listened.
+
+Nothing.
+
+He opened it.
+
+The corridor was lit by the low blue wash of night lighting — the kind that allowed monitoring without full illumination. Six doors, as he had observed. The nursing station at the end was unoccupied. A single monitor glowed on the desk, displaying what appeared to be vital sign readouts, all of them steady, all of them identical in their steadiness in a way that vital signs, which are organic and variable and slightly different from moment to moment, should not be.
+
+He walked to the nursing station.
+
+He looked at the monitor.
+
+Six patients. Six readouts. All of them perfectly flat-line steady — not flatlined, not dead, but steady with the consistency of a signal that has been smoothed. Produced. Generated to look like a living person's vitals while not being them.
+
+He looked at the stairwell door.
+
+It was marked STAIRS — FLOORS 1 THROUGH 4 in standard hospital signage.
+
+He pushed it open.
+
+The stairwell was concrete and fluorescent and smelled of the particular nothing of a space that is regularly cleaned. He looked up.
+
+Above the fourth floor landing, the stairwell continued.
+
+He climbed.
+
+The fifth floor door was different from the others. The others were standard fire doors — push bars, standard handles, painted the institutional cream of the rest of the hospital. This one was grey metal. No push bar. A keypad to the right with a card reader below it.
+
+And it was not fully closed.
+
+Not open — not obviously, not in a way that would read as negligence. But the latch had not caught. A millimeter of gap between door and frame. The gap of a door that had been closed by someone in a hurry who had not checked behind them.
+
+He pulled it open.
+
+The fifth floor was not a mechanical level.
+
+It was a ward.
+
+Identical in layout to the fourth floor below it — same corridor, same blue night lighting, same door configuration. But the doors here had no observation windows. And the sounds coming from behind them were not the sounds of a sleeping ward.
+
+They were the sounds of computers.
+
+Not loud — a low, constant hum, the sound of significant processing happening continuously, the sound of machines engaged in sustained and heavy work. And beneath it, beneath the hum, something else. A subsonic frequency, not quite sound, felt more than heard, a vibration in the sternum and the back of the teeth.
+
+He walked to the first door.
+
+It was unlocked.
+
+He opened it.
+
+The room was dark except for the screens.
+
+There were nine of them, arranged in a three-by-three grid on the wall opposite the door, each one displaying what appeared to be a first-person visual feed — a camera view, slightly fish-eye, the view of someone lying down looking at a ceiling. Each feed was different — different rooms, different ceiling types, different lighting conditions.
+
+He recognized one of the ceilings immediately.
+
+Room four. His room. His ceiling. Live feed, current.
+
+He was watching his own empty bed from the perspective of a camera he had not known was there.
+
+He looked at the other eight feeds.
+
+Six of them were patient rooms — the other patients on the ward below, each one visible from above, each one, he now saw on the screens, not sleeping but lying in a specific configuration, not the natural sprawl of sleep but the deliberate positioning of subjects in an experiment.
+
+Two feeds were different.
+
+One showed a room he had not seen — a laboratory, clearly, with equipment he did not have the vocabulary for, machines whose purpose he could not immediately identify, and a man in a white coat working at a bench, his back to the camera, doing something with his hands that was careful and precise.
+
+The last feed.
+
+He looked at it for a long time.
+
+It showed a corridor. A different part of the hospital — the walls were a different color, the lighting was different, warmer. And in the corridor, visible from a camera mounted near the ceiling, was a person.
+
+The person was standing very still, facing away from the camera.
+
+The person was wearing grey clothes.
+
+The person was his height, his build, his posture.
+
+He looked at his own hands.
+
+He looked at the screen.
+
+He thought, with the particular clarity that arrives when the mind reaches the edge of what it is prepared to accept: there are two of me.
+
+He heard the door behind him open.
+
+"Patient Eleven," said Doctor Solis.
+
+He turned.
+
+Doctor Solis was standing in the doorway without his clipboard, without his professional gravity, without the practiced calm of his daytime presentation. He looked, for the first time, like a man who was not performing something but simply being something, and what he was being was tired.
+
+"Sit down," Doctor Solis said. "Please."
+
+"Who is on that screen?" Patient Eleven said.
+
+"Sit down," Doctor Solis said again. "I am going to tell you something true. I want you to understand that everything I am about to say is true, which will be a change from the last four days, and I am aware of that, and I am not going to pretend otherwise."
+
+Patient Eleven sat.
+
+Doctor Solis pulled a chair from the corner of the room and sat across from him in the screen-lit dark.
+
+"Your name," Doctor Solis said, "is Idris Fale. You are thirty-six years old. You were, until eight months ago, the lead researcher on a project called the Meridian Continuity Initiative, which was funded by a consortium of private entities whose names you know and which I will not say here because this room is monitored in ways I can partially disable but not completely."
+
+Patient Eleven — Idris — looked at him.
+
+"The project," Doctor Solis said, "was developing a technology for memory transfer. Not storage — transfer. The complete migration of a human consciousness from one substrate to another. You understood it as a medical application — the treatment of neurological disease, the preservation of dying minds, the giving back of self to people whose selves were being taken by damage or age. That was the application as you understood it."
+
+"What was the actual application?" Idris said.
+
+Doctor Solis looked at the screens.
+
+"Replacement," he said. "The consortium was not interested in saving existing minds. It was interested in replacing them. Placing a selected consciousness — their consciousness, the consciousness of the people who paid for the project — into younger, healthier substrates." He paused. "Into younger, healthier bodies."
+
+Idris was quiet.
+
+"You discovered this eight months ago," Doctor Solis said. "You found documentation you were not meant to find. You understood immediately what it meant. You tried to leave. They brought you here."
+
+"They brought me here to use me," Idris said.
+
+"They brought you here to use your work," Doctor Solis said. "The process is not complete without you. You built it. You are the only one who fully understands its architecture. They needed your mind — which meant they could not simply migrate you out. They needed to keep you operable while removing your resistance."
+
+"My memory," Idris said.
+
+"They took it in stages," Doctor Solis said. "This is the third cycle. The first two times you recovered too quickly. You are, apparently, extremely good at leaving yourself instructions. The voice you told Dr. Venn about —"
+
+"Was me," Idris said. "A previous version of this. A previous time I woke up in this room."
+
+"Yes," Doctor Solis said.
+
+Idris looked at the screen. At the figure in the corridor. "Who is that?"
+
+Doctor Solis was quiet for a long moment.
+
+"That," he said, "is what they have built using your incomplete work. A version. Imperfect — the memory is thin, the affect is wrong, which is why Nurse Callan and the other staff are the way they are. They were among the first successful transfers. They function. But they are not — " He stopped.
+
+"Not normal," Idris said.
+
+"No," Doctor Solis said. "Not normal."
+
+Idris looked at the ceiling, at the camera he now knew was there, at the screens.
+
+He thought about seven seven four.
+
+"Seven seven four," he said. "What is it?"
+
+Doctor Solis looked at him sharply.
+
+"You remember that."
+
+"I remembered it when I woke up. I told Dr. Venn."
+
+Doctor Solis stood up. He moved to one of the machines against the wall — a console that Idris now saw was not hospital equipment at all but something else, something purpose-built, with an interface that his hands, he realized, recognized. His hands had been here before.
+
+"Seven seven four," Doctor Solis said quietly, "is the access code for the project's primary architecture. The failsafe you built." He turned. "You built a failsafe into the system that only you know. Something that stops the process. Shuts it down. Makes it irreversible — not the transfers already made, those cannot be undone. But every future transfer. Every future use of what you built."
+
+"And I hid the code in my own memory," Idris said. "In the place they kept clearing."
+
+"Because they cannot clear it completely," Doctor Solis said. "Whatever it is built on — the seven seven four — it is too fundamental. It comes back each time before anything else."
+
+"Because it is not a memory," Idris said slowly. "It is a reflex. I built it as a reflex. A muscle memory. Something below the level of conscious thought." He paused. "The body remembers what the mind is not allowed to."
+
+Doctor Solis looked at him.
+
+"Can you use it?" he said. "Right now. Tonight. The system is active — they are preparing the next transfer cycle. If the failsafe is engaged during active processing —"
+
+"It collapses the whole architecture," Idris said. He knew this with the certainty of a man who had written the architecture himself. "Every node. Every transfer queue. The entire system."
+
+"Then we need to move," Doctor Solis said. "We have approximately forty minutes before the night cycle shift."
+
+"Why are you helping me?" Idris said.
+
+Doctor Solis turned.
+
+In the screen light his face was tired and something else — something that was guilt, Idris thought, the specific guilt of a man who has been complicit in something and has been carrying it long enough that the carrying is the primary thing now, the primary weight of being alive.
+
+"Because I built the ward," Doctor Solis said. "I designed the systems. I told myself the application was medical. I told myself the consortium was funding research that would save lives." He paused. "I told myself it was normal."
+
+Idris stood up.
+
+The console was familiar under his hands in the way that the shoes had been wrong — familiar in a bone-deep way that did not require memory, only muscle. His fingers found the interface with the ease of someone returning to a language they learned before they learned to speak.
+
+Seven. Seven. Four.
+
+The screen light changed.
+
+The hum in the walls — the subsonic vibration he had felt in his sternum and the back of his teeth since he woke up — stopped.
+
+The silence that replaced it was the most absolute silence he had ever experienced, or the most absolute silence he could currently remember, which was not the same thing but was enough.
+
+One by one, the nine screens went dark.
+
+The last one to go was his room. His bed. His ceiling.
+
+His empty place on the fourth floor, visible from above, the room where he had woken up four days ago and been told it was Tuesday and that everything was normal.
+
+The screen went black.
+
+"What happens now?" he said.
+
+"Now we leave," Doctor Solis said. "There is a car. I have been preparing this for six weeks. There are people outside the hospital — people who know what this project is, who have been looking for you, who will know what to do with what you have given them tonight."
+
+"And the patients on the fourth floor?"
+
+Doctor Solis was quiet.
+
+"The ones who were transferred — Callan, Marsh, the others — they are what they are now. That cannot be undone." He paused. "The ones who are still themselves, still in their original substrate — the four patients in the rooms. They were being held as future candidates. They will wake up tomorrow morning themselves, fully, with no procedure having been performed. The failsafe closed the queue."
+
+Idris looked at the dark screens.
+
+He thought about a man who had known what was coming and had hidden the most important thing he possessed in the place that could not be taken from him — not in a memory, not in a thought, but in the deep wordless knowing of a body, the reflex that precedes consciousness, the thing that remains when everything that can be removed has been removed.
+
+He thought about waking up on a Tuesday.
+
+He thought about the whiteboard.
+
+You are safe. You are being cared for. This is normal.
+
+He thought about all the ways a person can be told not to look at what they are looking at, not to know what they know, not to trust the thing in the back of the teeth that says: this is wrong, this is not normal, something in this room is lying to you.
+
+He thought about the footsteps above him. The first morning. The thing that told him there was a floor that did not officially exist.
+
+He thought: I always knew.
+
+I just needed to remember that I knew.
+
+"Let's go," he said.
+
+They went down the stairs — four flights, then three, then two, then the ground floor corridor which was empty and blue-lit and silent in the way of the hospital at two in the morning. The exit was a side door that Doctor Solis opened with a card that he had been carrying, Idris realized, for six weeks. Prepared. Waiting.
+
+The night outside was cold and clear.
+
+A car was parked fifty meters from the door, its lights off, a figure in the driver's seat.
+
+They walked to it.
+
+The figure in the driver's seat turned as they approached. A woman, young, with the alert look of someone who has been waiting and is prepared for whatever comes next.
+
+She looked at Idris.
+
+"Seven seven four?" she said.
+
+"Engaged," he said.
+
+She exhaled once — a long, releasing breath, the breath of someone who has been holding something for a very long time.
+
+"Get in," she said.
+
+Idris looked back at the hospital. Five floors, visible in the dark — the bottom four lit with the low blue of the night ward, the fifth floor dark now, its screens all blank, its systems closed. From the outside it looked like any hospital. Like a place of healing. Like a place where the word normal was used accurately and without agenda.
+
+He got in the car.
+
+The driver pulled out of the car park and onto the road and into the dark.
+
+He looked at his hands in his lap.
+
+He still did not have most of his memory. The faces and the history and the texture of a life lived were still largely absent, still missing from the place where they should be, still somewhere in the process of returning. He did not know who had loved him or what had made him laugh or where he had been on the night before the night they brought him in. He did not know his mother's name.
+
+But he knew seven seven four.
+
+And he knew the smell of circuits overheating.
+
+And he knew the voice that had said: they will tell you it is normal. Do not believe the normal.
+
+And he knew — sitting in the back of a car driving away from a hospital that had five floors when it was only supposed to have four — that these were the things he had chosen to keep when he knew everything else was going to be taken. That somewhere in the architecture of his own mind he had looked at what was coming and had made a choice about what was essential.
+
+He had chosen the warning.
+
+He had chosen the code.
+
+He had chosen the distrust of the word normal in the mouths of people who were using it to manage him.
+
+These were, he thought, the correct things to choose.
+
+The car reached a junction. The driver signaled left.
+
+The hospital disappeared from the rear window.
+
+The road ahead was dark and long and full of the particular possibility of things that have not yet been decided.
+
+Idris Fale leaned his head against the window.
+
+He thought: I will remember the rest.
+
+Not yet.
+
+But soon.
+
+The body remembers what the mind is not allowed to.
+
+He closed his eyes.
+
+The car moved forward into the dark.
+
+Behind them, on the fifth floor of Meridian General Hospital, in a room with nine blank screens and silent machines and the absence of the hum that had been present for eleven months, the last indicator light on the primary console went from red to dark.
+
+The system was closed.
+
+What had been built in that room — the architecture of replacement, the machinery of taking one person out of themselves and putting another in — was finished. Not destroyed. Finished. Sealed. The work of a man who had hidden the key to his own work in the place that could not be reached, in the wordless knowing below the level of memory, in the seven seven four that came back every time before anything else came back because it was not a memory at all.
+
+It was a promise.
+
+A man making a promise to himself across the gap of forgetting.
+
+Saying: I will be here when you wake up.
+
+I will leave the door open.
+
+Find your way back.
+
+The last light went out.
+
+The fifth floor was dark.
+
+The hospital was quiet.
+
+In the morning, a nurse would arrive on the fourth floor and find four patients waking up confused and intact and entirely themselves, with no memory of how long they had been there or what had been planned for them, only the specific relief of people who have been somewhere wrong and are now, suddenly, somewhere that is simply a hospital, an ordinary hospital, a place where the word normal means what it is supposed to mean.
+
+She would not be Nurse Callan.
+
+Nurse Callan would not come in that morning.
+
+This too was normal.
+
+Or rather — this too was fine.
+
+Which is not the same word.
+
+And the difference, it turns out, is everything.`
+},
+  {
   id: "the-last-table-for-two",
   title: "The Last Table for Two",
   genre: "Romance",
