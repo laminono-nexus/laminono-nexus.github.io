@@ -1,5 +1,510 @@
 const stories = [
   {
+  id: "the-last-census",
+  title: "The Last Census",
+  genre: "Dystopian",
+  readTime: "65 min",
+  trending: true,
+  excerpt: "In the Republic of Nara, every citizen is assigned a Value Score at birth. The highest scores get everything. The lowest scores disappear. Mara Voss is a Census Officer — the woman who assigns the scores. Until the morning she opens her own file and finds her score has been changed to zero.",
+  image: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?w=1920&q=80"
+  },
+  content: `The Republic of Nara measured everything.
+
+It measured the oxygen consumption of its citizens against their economic productivity and found, with the clean satisfaction of a government that had replaced ideology with arithmetic, that sixteen percent of the population consumed more than they produced. It measured the correlation between genetic heritage and academic performance and published the findings in a document called the Clarity Report, which was distributed to every school in the country and which teachers were required to read aloud on the first day of each academic year. It measured the cost of compassion — hospitals, social welfare, mental health provision, the infrastructure of caring for people who could not fully care for themselves — and found the number unsatisfactory.
+
+It measured, most importantly, people.
+
+Every citizen of the Republic of Nara was assigned a Value Score at birth. The score was a composite: genetic potential, family productivity history, regional resource allocation, projected economic contribution over a standard lifetime of seventy years. It was calculated by the Bureau of Census and Population Integrity and was, the Bureau maintained, entirely objective. Numbers did not have feelings. Numbers did not have prejudice. Numbers simply were.
+
+The score ran from one to one hundred.
+
+Citizens scoring seventy and above received full Republic benefits — housing allocation, medical access, education priority, movement permits for the upper city tiers. Citizens between forty and sixty-nine received partial benefits, lived in the middle tiers, worked the jobs the upper tier citizens designed and managed. Citizens between twenty and thirty-nine lived in the lower tiers, worked the industrial and service sectors, had restricted movement and reduced medical access and children who would, statistically, score lower than their parents.
+
+Citizens scoring below twenty were flagged for review.
+
+Citizens who failed review were reclassified.
+
+No one spoke publicly about what reclassification meant because no one who had been reclassified had been available to describe it.
+
+Mara Voss had a score of eighty-one.
+
+She had worked for the Bureau of Census and Population Integrity for fourteen years. She was thirty-eight years old, unmarried by choice, childless by the same choice, and she lived in a clean apartment on the sixth tier of Nara City with a window that looked east over the lower tiers toward the industrial district where the air was the color of old brass and the buildings were the color of everything that had been given up. She drank her coffee in the mornings looking at that view and felt, in the way of someone who has arranged their feelings into careful compartments and keeps the lids on, nothing in particular about it.
+
+She was good at her work.
+
+This was important to her. Mara Voss had understood from a young age that in the Republic of Nara, being good at your work was the primary available identity, the main story you were permitted to tell about yourself, and she had told it cleanly and without interruption for fourteen years. She processed Census files with a precision that her supervisors noted in quarterly evaluations. She identified irregularities in score calculations — appeals submitted by lower-tier families, usually, desperate arithmetic attempting to find a point or two that would pull a child above a threshold — and she resolved them correctly, which meant she resolved them against the appeal in the majority of cases, because the mathematics were what they were and sentiment was not a valid input.
+
+She had never, in fourteen years, questioned the mathematics.
+
+She had told herself this was integrity.
+
+On a Tuesday morning in November she arrived at the Bureau at seven forty-five, made coffee in the staff room, exchanged three sentences with her colleague Davan about the weather and two sentences with her supervisor Rehn about the quarterly review schedule, and sat at her desk and opened the morning's file queue.
+
+The first file in the queue was her own.
+
+This was not normal. Census officers did not appear in their own queues. The system was designed to prevent it — a basic conflict-of-interest protocol that had been in place since the Bureau's founding. Mara looked at her own name on her screen with the specific attention of someone identifying an error, because it was an error, because there was no other category it could belong to.
+
+VOSS, MARA ELENA. CENSUS OFFICER GRADE IV. FILE REVIEW REQUESTED.
+
+She looked at the score field.
+
+Her score, which had been eighty-one since the recalculation at age twenty-five, which had not changed in thirteen years, which she had never had reason to look at because scores at her level did not change without notification and she had received no notification, was no longer eighty-one.
+
+It was zero.
+
+Not below twenty. Not flagged for review.
+
+Zero.
+
+Zero was not a score in the Republic of Nara's system. The system ran from one to one hundred. Zero did not exist as a valid output. Zero was not a reclassification. Zero was not a flag.
+
+Zero was an erasure.
+
+Mara Voss looked at her score of zero on the screen in front of her and felt the lids on all her careful compartments strain simultaneously, and then she did what she had been trained to do, which was nothing visible. She kept her face in the expression of a woman reading a routine file. She did not look around the office to see if anyone was watching her, because looking around the office to see if anyone was watching you was the behavior of someone who had something to hide, and the first rule of the Republic of Nara was that citizens with nothing to hide had no reason to look around.
+
+She closed the file.
+
+She stood up.
+
+She said to Davan, whose desk was three meters from hers: "I'm going to get more coffee."
+
+"It's going to rain," Davan said, still looking at his screen.
+
+"Probably," she said.
+
+She walked to the staff room. She stood at the counter. She did not make coffee. She stood with her hands flat on the counter and looked at the wall and thought with the focused urgency of someone who has been trained to think clearly under pressure and is discovering that the training was designed for other people's pressure, not their own.
+
+Zero.
+
+Someone had changed her score to zero.
+
+Changing a score required Bureau-level access. Not her level — Grade IV had read and write access for standard citizen files but not for staff files, which were processed at Grade VI and above. To change her score someone had needed access she did not have. Someone with Grade VI access or above had reached into the system and replaced eighty-one with zero.
+
+The question was: why.
+
+The secondary question, arriving immediately behind it, was: how long did she have before the zero generated an automatic review flag.
+
+She knew the answer to the secondary question. She had processed enough flagged files to know the system's timing. An unreviewed zero-score file generated an automatic Bureau Security alert at seventy-two hours. After the alert, a Security response team was dispatched within twenty-four hours.
+
+Ninety-six hours.
+
+She had ninety-six hours before Bureau Security came to her apartment, or her desk, or wherever the system said she was when the flag matured.
+
+She needed to understand why before that happened.
+
+Because here was what Mara Voss knew, with the clarity of a woman who had spent fourteen years inside the machinery of the Bureau and understood how it ran: if Bureau Security came for you, you did not explain your way out of it. There were no appeals at the zero level. There was no review process for someone who had been erased from the system by a Grade VI officer. There was simply the response team, and the reclassification, and the thing no one spoke about because no one who had experienced it was available to describe it.
+
+She went back to her desk.
+
+She spent the rest of the morning processing her file queue with the surface performance of a woman doing her job, and underneath the surface, in the part of her mind that ran parallel to the performance like a second program, she worked.
+
+She thought about who had access.
+
+Grade VI officers: her supervisor Rehn. Deputy Director Calla. Director Orin himself. Three technical architects whose names she knew by reputation but not personally.
+
+She thought about why now.
+
+She had not done anything different in the last weeks. She had processed her files. She had filed her quarterly evaluations. She had been to work and come home and looked at the view from her window. She had been, in every measurable sense, the same Census Officer Grade IV she had been for fourteen years.
+
+Unless.
+
+She opened her file archive. Her personal work records, accessible at her level, the documentation of fourteen years of file processing. Thousands of files. She was not looking for anything in particular. She was looking for the thing that was different — the anomaly, the file that was not like the others, the thing she had done recently that someone with Grade VI access had noticed.
+
+She found it at eleven forty-seven in the morning.
+
+Three weeks ago she had processed a routine recalculation request for a lower-tier family in District Nine. The Asha family — a father, a mother, two children. The recalculation had been triggered by the father's change in employment. Standard procedure. She had run the numbers.
+
+The youngest child, a girl of seven, had come out at nineteen.
+
+One point below the review threshold.
+
+Mara had looked at that number three weeks ago with her usual professional attention and had noted, in the way she always noted such cases, the specific quality of the number — not wrong, not an error, simply the exact product of the inputs. The girl was seven years old and her score was nineteen and she would be flagged for review at the next census cycle in eighteen months.
+
+And Mara had done something she had never done in fourteen years.
+
+She had changed it.
+
+Not dramatically — not enough to cross a major threshold, not enough to move the child between tiers, nothing that would generate a comparative audit flag. She had found a legitimate input variable — a maternal education credit that had been recorded incorrectly in the system, a data entry error in the original file, the kind of small clerical mistake that occurred in tens of thousands of files and was routinely corrected on review — and she had corrected it.
+
+The correction had moved the child's score from nineteen to twenty-one.
+
+Above the review threshold.
+
+Mara had processed the correction and filed the updated record and gone home that evening and looked at the view from her window and felt the lid on one of her compartments strain very slightly and had pressed it back down.
+
+Three weeks later, someone had changed her score to zero.
+
+She sat with this.
+
+The correction had been legitimate. The data error had been real — she had not invented it. She had found it because she was looking for it, which was different from inventing it, but only slightly, and only in the private accounting of a person who knows the difference between what they did and the formal description of what they did. She had found a legitimate correction because she had looked for one because she did not want a seven-year-old girl to be flagged for review.
+
+Someone had noticed.
+
+Someone with Grade VI access had looked at her correction and had understood what she had done and why — had understood that she had not found the error accidentally but had searched for it, that the motivation had been what the Republic called sentiment, that she had allowed a non-valid input to influence her processing.
+
+And they had erased her.
+
+She had ninety-three hours.
+
+Mara Voss went to District Nine at lunchtime.
+
+She had a movement permit for the lower tiers — Census Officers maintained cross-tier access as a professional requirement, one of the benefits of the work she did and had done for fourteen years without using it for anything except the work. She took the Bureau vehicle down through the tier checkpoints, showing her permit at each one, maintaining the surface performance of a woman on a site visit, which was a documented Bureau activity and required no explanation.
+
+District Nine was the color of the air above it. Brown-grey buildings in various stages of a deterioration that was not neglect — it was managed, the deterioration, kept at a level that was functional without being comfortable, the architecture of a space designed to be lived in but not enjoyed. The streets were clean in the mechanical way of streets that are cleaned by automated systems without the intervention of people who might make choices about what to prioritize.
+
+The people moved differently here.
+
+Mara had been to the lower tiers many times on Bureau business and she had noticed this each time and filed it in the compartment that she kept the lid on. The people in the lower tiers moved with the specific economy of people who had learned that drawing attention was a liability. Quiet. Heads at a particular angle. The practiced near-invisibility of people who understood that being noticed by the Republic's systems was almost never to their advantage.
+
+She found the Asha address in the Bureau record.
+
+A building on a cross street — four stories, grey, windows that were clean despite everything, which told her something about the people inside. She went to the second floor. Knocked.
+
+The woman who opened the door was in her mid-thirties, the age that looked older here, with the quality of someone who had been managing something difficult for long enough that the management had become her primary expression.
+
+She looked at Mara's Bureau identification with the expression of the lower tiers encountering Bureau personnel, which was the specific neutrality of fear presented as cooperation.
+
+"I'm not here officially," Mara said. She heard herself say it and understood, in the same moment, that saying this was the second thing she had done in her career that was not correct procedure. "I want to talk about your daughter's file."
+
+The woman looked at her for a long moment.
+
+"Come in," she said.
+
+The apartment was small and ordered with the precision of people who controlled what they could. The girl was home — it was lunchtime, the schools in District Nine ran half days to accommodate the shift work of the parents. She was sitting at a small table doing what appeared to be mathematics homework, her pencil moving with the focused energy of a child who had not yet learned the particular economy of attention that her mother had.
+
+She looked up when Mara came in.
+
+She had a gap between her front teeth and the mathematical worksheet in front of her had a star drawn in the corner in pencil, her own star, placed there by herself for reasons that were entirely her own.
+
+"Who are you?" the girl said.
+
+"Kessa," her mother said. "Homework."
+
+"I'm someone from the government," Mara said, to the girl, because the girl had asked directly and the girl deserved a direct answer. "I work with numbers."
+
+"I like numbers," Kessa said.
+
+"I know," Mara said. "Your file says so."
+
+Kessa looked at her with the uncomplicated interest of a seven-year-old who has not yet learned to be afraid of the people who keep her file.
+
+Her mother said: "What do you want?"
+
+Mara looked at the woman. "I corrected your daughter's score three weeks ago. A data error — legitimate, documented. Her score moved to twenty-one."
+
+The woman's expression did not change. But something in her eyes — some held thing, some weight that had been being carried — shifted slightly, the way a carried weight shifts when one hand is quietly offered.
+
+"I know," the woman said. "We were notified."
+
+"Someone noticed the correction," Mara said. "Someone at a level above me. I think they understood why I made it. Not just that I made it." She paused. "I wanted you to know that the correction stands. It is in the system. It is documented. Whatever happens to me, the correction is real and it is filed and Kessa's score is twenty-one."
+
+The woman looked at her.
+
+"Whatever happens to you," she said.
+
+"My score was changed this morning," Mara said. "To zero."
+
+The woman was quiet for a long time.
+
+"I'm sorry," she said. Not with the performance of sympathy — with the exhausted recognition of someone who has been in proximity to this mechanism for a long time and knows exactly what it means.
+
+"Don't be," Mara said. "I made a choice. I made it knowingly. I knew the rule and I decided the rule was wrong." She paused. "I have been deciding the rules were fine for fourteen years. It turns out that was also a choice. I just did not frame it that way."
+
+Kessa had gone back to her mathematics. The pencil moved across the worksheet with the confident small authority of a child doing something she is good at.
+
+"The star on her worksheet," Mara said. "Did she draw that herself?"
+
+"She does it on everything," the woman said. "Everything she finishes. Every assignment, every test. She says it means she did it well." A pause. "She does not wait for someone else to tell her."
+
+Mara looked at the star.
+
+She thought: twenty-one. I moved her one point at a time, in a legitimate documented correction, and the number that changed was not just a number. The number that changed was eighteen months of this woman not lying awake calculating whether her child would be flagged, eighteen months of Kessa drawing stars on her worksheets without the shadow of a review cycle coming for her.
+
+She thought: I have been processing files for fourteen years and I have been telling myself the files were numbers and the numbers were just the work, and I have been lying to myself with sufficient consistency that I mistook the lie for a professional ethic.
+
+She thought: I should have done this on the first day.
+
+She said to the woman: "There are people, I think, who will want to know what I know about the Bureau's internal systems. I have fourteen years of access. I know the architecture — the score calculation algorithm, the audit trail systems, the Grade VI access protocols. I know how the numbers are made and I know where the vulnerabilities are." She paused. "I have ninety-two hours."
+
+The woman looked at her for a long time.
+
+"Why are you telling me this?" she said.
+
+"Because you are in District Nine," Mara said. "And in my experience — which has been limited to the view from the sixth tier until approximately this morning — the people in District Nine know things about the lower systems of this Republic that the people on the sixth tier do not. Because knowledge pools at the bottom and is managed at the top. Because the people the system most wants invisible are the people who have had the longest time to understand how it actually works."
+
+The woman was quiet.
+
+Then she said: "Finish your homework, Kessa."
+
+Kessa looked up. "I already finished."
+
+"Then start the next one."
+
+The woman took a jacket from the hook by the door.
+
+"Come with me," she said to Mara.
+
+What followed was the education of a woman who had spent fourteen years believing she understood the Republic of Nara and now spent four hours understanding that she had understood it the way a hammer understands a nail — only the part of the thing that was relevant to her specific function.
+
+The woman's name was Senna. She took Mara through three streets and down a maintenance stairwell and along a sub-level corridor that appeared on no Bureau map and into a space that had been a water reclamation facility two decades ago and was now something else entirely, something that had no name in any Bureau documentation because the Bureau did not know it existed.
+
+There were eleven people in the room.
+
+They were from the lower tiers — all of them, every single one, carrying the specific economy of the lower-tier in their posture and their manner. A young man with engineer's hands. An older woman with the bearing of a former teacher, which was a thing that existed in the lower tiers because teachers who scored below forty were reassigned rather than elevated. A pair of men who were clearly brothers, close-faced, watchful. Others whose details Mara absorbed with the focused attention of a woman processing a new kind of file.
+
+They looked at her with the specific caution of people being asked to trust someone from the sixth tier.
+
+"She changed Kessa's score," Senna said. "They zeroed her this morning."
+
+The room looked at Mara.
+
+"What do you want?" the young man with the engineer's hands said.
+
+"The same thing you want," Mara said.
+
+"You don't know what we want," he said.
+
+"You want the census to end," she said. "Or you want it changed so fundamentally that it is no longer the same thing. You want the score system dismantled or redesigned or both. You want District Nine not to exist in this form. You want —" She paused. "You want Kessa to be able to put stars on her own work and have that mean something to someone besides herself."
+
+The room was quiet.
+
+The older woman spoke. "Why should we trust a Bureau officer?"
+
+"You shouldn't," Mara said. "You should use me. There is a difference." She paused. "I have fourteen years of Bureau access that expires in ninety-two hours. I know the score algorithm. I know how the audit trails work. I know that the Grade VI access protocol has a vulnerability in the override system that was patched for standard access but not for legacy file formats dating before the 2031 system update, because I found the vulnerability four years ago and reported it and the patch was applied incompletely and I filed a follow-up report that was acknowledged and never acted on." She looked at the engineer's hands man. "I think you understand what that means."
+
+He looked at her.
+
+"You can open every file," he said slowly. "Every legacy format file in the system."
+
+"Every file created before 2031," she said. "Which includes the foundational score calculations for every citizen currently in the forty-to-sixty-nine tier. The middle tier. The people who are compliant because they have something to lose — a partial benefit, a medical access card, a child in the education priority stream. The people who have been calculated into compliance." She paused. "If those foundational files were accessible. If the original calculation data — the genetic weighting coefficients, the regional resource adjustment factors, the specific inputs that were used to generate the scores — if those were visible —"
+
+"People would see how the number was made," Senna said.
+
+"People would see that the number is not objective," Mara said. "That it is not mathematics in the sense of a truth that exists independently of the people who built the system. It is mathematics in the service of a conclusion that was determined before the calculation began." She paused. "The scores are not discovered. They are designed."
+
+The room was very quiet.
+
+The older woman said: "You knew this."
+
+"I suspected it," Mara said. "I did not want to know it. There is a difference that I am not proud of."
+
+"No," the older woman said. "There is not a difference. You suspected it and you chose not to know it. That choice has a name."
+
+"Cowardice," Mara said.
+
+"Cowardice," the older woman agreed.
+
+"Yes," Mara said. "Cowardice. Fourteen years of it. I am telling you this because I think you deserve the honest account and not the managed version. The managed version would be that I was a good officer who found an error and corrected it and was punished for her integrity. The honest version is that I was a coward who found a small child with a score of nineteen and could not, in that specific moment, maintain the cowardice, and what I did was not brave — it was the minimum action available to a person who had just run out of the will to be complicit."
+
+The room looked at her.
+
+The engineer's hands man said: "What is the vulnerability. Exactly. The technical specification."
+
+She told him.
+
+He listened with the complete attention of a person who has been waiting for precisely this information.
+
+When she finished he looked at the older woman.
+
+The older woman looked at Senna.
+
+Senna said: "How long do you need?"
+
+"Twenty-four hours," the engineer said. "If the specification is accurate."
+
+"It is accurate," Mara said.
+
+"Then twenty-four hours," he said. "To build the extraction tool and push the data to the external distribution network." He looked at Mara. "You understand that when this happens there is no managed outcome. This is not a correction in the system. This is the system becoming visible."
+
+"I know," Mara said.
+
+"The Republic will not respond with review," he said. "When the foundational files are public — when the middle tier sees how its scores were made — the response will be security-level."
+
+"I know," Mara said.
+
+"You have sixty-eight hours before your file flags," he said. "By that time this will either be done or it will not matter."
+
+"I know," Mara said for the third time.
+
+He nodded once.
+
+He looked at her hands — not her Bureau identification, not her tier designation, not any of the things the system said she was. Her hands. The hands of a person in a room making a decision about what she was going to do with the time she had.
+
+"Welcome to District Nine," he said.
+
+His name, she learned later, was Casp. He had been an engineer before his recalculation at thirty — a data systems engineer, which was ironic in the way that the Republic's ironies always were, the way it consistently produced in its lower tiers the people best equipped to understand and dismantle the systems that had put them there. He had a score of twenty-three, which the Republic had calculated using the genetic weighting coefficient and the regional adjustment factor and the projected economic contribution model, and which had placed him in a maintenance role in the lower tier infrastructure where he had spent seven years becoming expert in the systems that kept the city running and learning, with the focused patience of a man with nothing to lose and a great deal of time, exactly how those systems were built.
+
+He built the extraction tool in nineteen hours.
+
+Mara stayed in the sub-level facility. She did not go back to her apartment, which the Bureau would be monitoring once the file anomaly was noted by overnight processing — she had perhaps until morning before her absence from her expected location generated a secondary flag. She slept three hours on a cot in a side room and woke up and drank bad coffee and sat with Senna and the older woman, whose name was Dael and who had been a secondary school mathematics teacher before her recalculation and who had, Mara discovered, been in the sub-level facility for two years, helping build the network through which the foundational files would be distributed when they were extracted.
+
+"How many people?" Mara asked.
+
+"In the network?" Dael said. "We don't count. It is safer not to count. People know who they know. Messages pass forward. When the files go out they will reach whoever they reach."
+
+"And then?"
+
+Dael looked at her with the patient expression of a teacher who has answered this question from many students and understands that no answer fully satisfies it.
+
+"And then people will know," she said. "That is not a small thing. It is possibly the only thing that has ever changed anything. People knowing — not being told by the people who benefit from the not-knowing, but finding the knowledge themselves and having the evidence in their hands." She paused. "The Republic has spent thirty years telling the middle tier that the scores are objective. That their children's futures are the mathematical product of their potential. That the people in the lower tiers are there because the numbers said so. When people see the numbers — the actual numbers, the inputs and the weightings and the coefficients and the specific choices embedded in the calculation — they will see that the objectivity was a story. A story told to keep them participating."
+
+"And when they stop participating?" Mara said.
+
+"Then we find out what comes next," Dael said. "Which is uncomfortable and uncertain and I cannot tell you it will be good. I can tell you it will be different. And different is the only direction out."
+
+Mara looked at the wall.
+
+She thought about fourteen years of her apartment window and the view of the industrial district and the brass-colored air. She thought about the distance between the sixth tier and District Nine — not the physical distance, which was measurable and small, but the other distance, the managed distance, the distance produced by a system that needed the people at the top not to see the people at the bottom clearly enough to recognize what they were seeing.
+
+She thought about a girl drawing a star on a mathematics worksheet.
+
+She thought: I have been the person who maintained that distance for fourteen years. I have been, in the precise and literal sense, the Bureau officer who calculated the numbers that produced the tiers. I have been the distance.
+
+She thought: the minimum action available to a person who has run out of the will to be complicit is not enough.
+
+But it is a beginning.
+
+Casp finished the tool at four in the morning.
+
+He tested it on a single legacy file — his own, he told Mara, because he wanted to see it, he had wanted to see the actual inputs of his own score since he was thirty years old and the number had come back at twenty-three and he had stood in the recalculation office and been told that the number was objective and had understood in his body, before his mind accepted it, that this was not true.
+
+He opened his own foundational file.
+
+The inputs were on the screen.
+
+He looked at them for a long time.
+
+The genetic weighting coefficient for his heritage category — District Nine, third generation, maternal line from the eastern agricultural region — was point six four. The national baseline was one point zero. Point six four meant his genetic inputs had been worth sixty-four percent of a baseline citizen's genetic inputs before any other calculation was performed.
+
+"Point six four," he said. His voice was level with the specific levelness of a man who is very angry and is very practiced at not showing it.
+
+"Yes," Mara said.
+
+"The coefficient is published?" he said.
+
+"It is in the technical appendix of the Clarity Report," she said. "The document that is read aloud in schools on the first day of the academic year. It is there. It has always been there. The Republic does not hide it — it is in the documentation, accessible to anyone who reads the appendix of a hundred-and-forty-page government report."
+
+"Which no one reads," he said.
+
+"Which everyone is told to trust," she said. "There is a difference."
+
+He looked at his score. At the point six four. At the number that had reorganized his life at the age of thirty and sent him to a maintenance role and brought him, eventually, to this room.
+
+"Push it," Mara said.
+
+He pushed the extraction.
+
+The foundational files — every score calculation for every citizen in the forty-to-sixty-nine tier, created before 2031, the mathematical spine of the Republic's compliance architecture — went out through the network in eleven minutes.
+
+Mara watched the transfer complete.
+
+She thought of nothing in particular.
+
+She thought of everything.
+
+Outside, the city of Nara was in the last hours of its night, the tiers lit in their gradient — the upper tiers bright, the lower tiers dim, the industrial district in its permanent brass-colored murk. The checkpoints between tiers were staffed by Republic Security, as they always were, as they had been for thirty years, the people in their blue-grey uniforms with their Bureau-issued scanners checking permits and logging movement with the automated regularity of a system that had never needed to be violent because it had never needed to be — the numbers had always been sufficient, the numbers had always been enough to make people stay where the numbers had put them.
+
+The city had no idea what had just happened to it.
+
+By morning it would.
+
+In the middle tiers, people would wake up and find in the network — the semi-official information network the Bureau tolerated because it could not fully suppress it — a document. A large document. The foundational calculations for their own scores and the scores of their children. The point six four. The regional adjustment factors. The genetic weighting coefficients that varied by heritage category in the specific way of a system built to produce particular outcomes and call the outcomes objective.
+
+Some of them would understand immediately.
+
+Some of them would need time.
+
+Some of them would not want to understand, because understanding would mean the number that had organized their life was not a truth but a choice, and that was a more difficult thing to live with than a truth, because a truth cannot be argued with and a choice — a choice made by specific people with specific interests who had needed the numbers to say specific things — a choice could be.
+
+A choice could be changed.
+
+Mara had thirty-one hours before her file flagged.
+
+She went above ground as the sun came up — the sun a pale disc behind the industrial haze, the early morning street quiet with the specific quality of a city that did not yet know it was on the edge of something.
+
+She walked.
+
+She walked through District Nine with its clean windows and its managed deterioration and its people beginning their early shifts, moving with the economy of the lower-tier, heads at their particular angle, the practiced near-invisibility of people the system needed not to be fully visible.
+
+She thought: I have walked these streets before on Bureau business and I have not seen them.
+
+She thought: I am seeing them now.
+
+A child came out of a building ahead of her — a girl of about seven, school bag on her back, her mother in the doorway behind her. Not Kessa. A different girl. But the same age, the same tier, the same morning, the same school bag.
+
+The girl looked at Mara as she passed.
+
+Mara looked back.
+
+The girl had a star drawn on her hand in blue pen. On the back of her right hand. A small five-pointed star, drawn carefully, in blue pen, in the specific location where you would see it if you looked at your own hand — if you needed, in the course of a day, to look at your own hand and be reminded of something.
+
+Mara stopped.
+
+"What is the star for?" she said.
+
+The girl looked at her with the uncomplicated directness of a child who has not yet learned to be afraid of questions from strangers.
+
+"It means I am enough," the girl said.
+
+Mara looked at the star.
+
+She thought about a number. About a calculation. About point six four and the genetic weighting coefficient and the mathematical spine of a system that had needed, thirty years ago, to produce particular outcomes and had built its numbers around those outcomes and called the building objectivity and taught the building to children as truth on the first day of every academic year.
+
+She thought about what it meant to be a woman who had maintained that building for fourteen years and had told herself it was integrity.
+
+She thought: the star on a seven-year-old's hand is more honest than everything I have processed in fourteen years.
+
+She thought: I know that now.
+
+She looked at the girl.
+
+"Yes," she said. "You are."
+
+The girl ran off down the street with the specific energy of a child late for school who is not yet worried enough to stop running.
+
+Her mother, in the doorway, looked at Mara.
+
+Not with the lower-tier neutrality. With something else. Something that was not yet trust — that would take longer, would take more than one night and one document distributed through a network, would take more than a Bureau officer who had spent fourteen years in the building and had finally, in the thirty-eighth year of her life, decided to stop — but was the thing that comes before trust.
+
+The willingness to look.
+
+Mara looked back.
+
+The morning settled around them — brass-colored, haze-filtered, the sun trying through the industrial murk of a tier that had been calculated into its dimness by a system that was, as of approximately four in the morning, no longer fully intact.
+
+Not destroyed.
+
+Not yet.
+
+But opened.
+
+The thing about a number, Mara had understood in the sub-level facility watching Casp look at point six four, was that it felt like a wall until you could see how it was built. Once you could see how it was built — the choices inside it, the interests that had made those choices, the specific human decisions embedded in what had been presented as mathematical inevitability — it stopped being a wall.
+
+It became a door.
+
+And a door, even a very heavy one, even one that had been called a wall for thirty years, could be opened.
+
+She turned and walked back into the city.
+
+She had thirty-one hours.
+
+She intended to use every one.
+
+Behind her, in District Nine, a woman stood in a doorway and watched a Bureau officer walk away and felt the first careful loosening of something that had been held very tightly for a very long time, and thought about her daughter drawing a star on her hand before school, and thought about a number that was twenty-one instead of nineteen, and thought about the document that would be in the network by the time her morning shift ended.
+
+She thought: something is different today.
+
+She did not yet know how different.
+
+But she thought: something is different today.
+
+And she went inside.
+
+And she got ready for what came next.`
+},
+  {
   id: "the-ward-that-remembers",
   title: "The Ward That Remembers",
   genre: "Sci-Fi",
