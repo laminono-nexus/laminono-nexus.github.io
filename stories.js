@@ -1,10 +1,8 @@
 const stories = [
-  // Add this object to the stories array in stories.js
-
-{
+  {
   id: "i-watched-my-mother-choose-heroin",
   title: "I Watched My Mother Choose Heroin Over Me Every Single Day For Fifteen Years. Then One Tuesday She Knocked On My Door.",
-  genre: "True Story",
+  genre: "True Stories",
   readTime: "3 hr",
   trending: true,
   excerpt: "I want to tell you about the smell first. Because when people talk about growing up with an addict parent they talk about the chaos, the unpredictability, the emotional violence of loving someone who loves something else more. But the thing no one tells you is that the chaos has a smell. And the smell is what the body keeps long after the mind has done its best to organize the story into something survivable.",
