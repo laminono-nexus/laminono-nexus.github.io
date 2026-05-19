@@ -2669,7 +2669,7 @@ function refreshSections() {
         { id: 'newReleasesRow',    stories: seededShuffle([...stories], seed + 1).slice(0, 6),                  fn: createStoryCard },
         { id: 'featuredGrid',      stories: seededShuffle([...stories], seed + 2).slice(0, 3),                  fn: createFeaturedCard },
         { id: 'suspenseRow',       stories: seededShuffle(stories.filter(s => s.genre === 'Suspense'), seed + 3).slice(0, 6),       fn: createStoryCard },
-        { id: 'trueStoriesRow',    stories: seededShuffle(stories.filter(s => s.genre === 'True Stories'), seed + 4).slice(0, 6),    fn: createStoryCard },
+        { id: 'trueStoriesRow',    stories: seededShuffle(stories.filter(s => s.genre === 'True Life Stories'), seed + 4).slice(0, 6),    fn: createStoryCard },
         { id: 'behindTheSceneRow', stories: seededShuffle(stories.filter(s => s.genre === 'Behind the Scene'), seed + 5).slice(0, 6), fn: createStoryCard },
         { id: 'storyTrailersRow',  stories: seededShuffle(stories.filter(s => s.genre === 'Story Trailers'), seed + 6).slice(0, 6),  fn: createStoryCard }
     ];
