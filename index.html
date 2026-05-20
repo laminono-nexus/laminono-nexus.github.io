@@ -2318,26 +2318,51 @@ function openStory(storyId) {
     saveToHistory(story);
     saveCurrentState();
     showCompactMenu();
+
+    // Haptic feedback on mobile
+    if (navigator.vibrate) navigator.vibrate(30);
+
     document.getElementById('modalTitle').innerText = story.title;
     document.getElementById('modalMeta').innerHTML = `
         <span>⏱ ${story.readTime} read</span>
         <span>📖 ${story.genre}</span>
         <span>👤 By Olamide Emmanuel Willoughby</span>`;
-    const heroImg = (story.cover && story.cover.image) ? story.cover.image : story.image;
+
+    const heroImg = (story.cover && story.cover.image)
+        ? story.cover.image : story.image;
     const modalHero = document.getElementById('modalHero');
     modalHero.style.backgroundImage = `url(${heroImg})`;
-    modalHero.style.height = "400px";
-    modalHero.style.backgroundSize = "cover";
-    const paragraphs = story.content.split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+    modalHero.style.height           = '400px';
+    modalHero.style.backgroundSize   = 'cover';
+
+    const paragraphs = story.content
+        .split('\n')
+        .filter(p => p.trim())
+        .map(p => `<p>${p}</p>`)
+        .join('');
     document.getElementById('storyText').innerHTML = paragraphs;
-    document.getElementById('storyModal').classList.add('active');
+
+    // Smooth open
+    const modal = document.getElementById('storyModal');
+    modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Trigger transition on next frame
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            modal.classList.add('visible');
+        });
+    });
+
     stopNarration();
     stopHeroRotation();
     currentRating = 0;
     highlightStars(0);
     updateAverageRating();
     renderComments();
+
+    // Start reading progress tracker
+    startReadingProgress(story);
 }
 
 function closeModal() {
