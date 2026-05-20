@@ -2270,10 +2270,13 @@ function createStoryCard(story) {
         : '';
 
     return `
-        <div class="story-card" onclick="openStory('${story.id}')">
+        <div class="story-card" onclick="openStory('${story.id}')"
+             onmouseenter="applyCardGlow(this, '${story.image}')"
+             onmouseleave="removeCardGlow(this)">
             <img src="${story.image}" alt="${story.title}" class="story-card-image"
                  onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
             <div class="story-card-vignette"></div>
+            <div class="story-card-glow"></div>
             ${badge}
             <div class="story-cover-time">⏱ ${story.readTime}</div>
             <div class="story-cover-title">${story.title}</div>
@@ -2281,9 +2284,15 @@ function createStoryCard(story) {
             <div class="story-card-overlay" onclick="event.stopPropagation()">
                 <p class="story-excerpt">${story.excerpt}</p>
                 <div class="story-actions">
-                    <button class="action-btn play" onclick="openStory('${story.id}');setTimeout(toggleNarration,400);" title="Narrate">▶</button>
-                    <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');toggleMyList();" title="Add to List">+</button>
-                    <button class="action-btn" onclick="currentStory=stories.find(s=>s.id==='${story.id}');openShareModal();" title="Share">↗</button>
+                    <button class="action-btn play"
+                        onclick="openStory('${story.id}');setTimeout(toggleNarration,400);"
+                        title="Narrate">▶</button>
+                    <button class="action-btn"
+                        onclick="currentStory=stories.find(s=>s.id==='${story.id}');toggleMyList();"
+                        title="Add to List">+</button>
+                    <button class="action-btn"
+                        onclick="currentStory=stories.find(s=>s.id==='${story.id}');openShareModal();"
+                        title="Share">↗</button>
                 </div>
             </div>
         </div>`;
