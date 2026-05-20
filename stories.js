@@ -4,7 +4,8 @@ const stories = [
     title: "The Last Translator",
     genre: "Literary Fiction",
     readTime: "60 min",
-    trending: false,
+    trending: true,
+    new: true,
     excerpt: "Maren Solberg was the last living person who spoke Kelvari — a language with no other speakers, no written literature, and seventeen words for the quality of light just before a storm. When a linguist arrived to record everything she remembered, she had to decide what a dying language was actually worth keeping.",
     image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80",
     cover: {
@@ -590,6 +591,7 @@ Has been waiting all this time to hear it said back?`
     genre: "Literary Fiction",
     readTime: "60 min",
     trending: false,
+          new: true,
     excerpt: "Nadia Voss spent twenty years drawing maps of places that no longer existed. Then she received, in the mail, a hand-drawn map of her own life — and realized someone had been charting her disappearances long before she knew she was disappearing.",
     image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80",
     cover: {
@@ -1093,6 +1095,7 @@ What happens to you when you finally decide to stay?`
   genre: "Dystopian",
   readTime: "65 min",
   trending: true,
+        new: true,
   excerpt: "In the Republic of Nara, every citizen is assigned a Value Score at birth. The highest scores get everything. The lowest scores disappear. Mara Voss is a Census Officer — the woman who assigns the scores. Until the morning she opens her own file and finds her score has been changed to zero.",
   image: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?w=800&q=80",
   cover: {
@@ -1598,6 +1601,7 @@ And she got ready for what came next.`
   genre: "Sci-Fi",
   readTime: "55 min",
   trending: true,
+        new: true,
   excerpt: "He woke up in a hospital with no name, no past, and no explanation. The doctors smiled too perfectly. The other patients never blinked enough. And somewhere on the floor above him — the floor that did not exist on any map — something was calling his name.",
   image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
   cover: {
