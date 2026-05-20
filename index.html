@@ -2366,11 +2366,22 @@ function openStory(storyId) {
 }
 
 function closeModal() {
-    document.getElementById('storyModal').classList.remove('active');
-    document.body.style.overflow = '';
-    stopNarration();
-    showAvatarOnHomepage();
-    startHeroRotation();
+    const modal = document.getElementById('storyModal');
+
+    // Haptic feedback
+    if (navigator.vibrate) navigator.vibrate(20);
+
+    // Fade out
+    modal.classList.remove('visible');
+
+    setTimeout(() => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        stopNarration();
+        showAvatarOnHomepage();
+        startHeroRotation();
+        stopReadingProgress();
+    }, 400);
 }
 
 // ── NARRATION ──
