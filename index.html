@@ -3007,6 +3007,46 @@ function searchStories(query) {
             <div class="story-cover-genre">${story.genre}</div>
         </div>`).join('');
 }
+    // ── AMBIENT GLOW ──
+function applyCardGlow(card, imageUrl) {
+    // Haptic on mobile
+    if (navigator.vibrate) navigator.vibrate(10);
+
+    const glow = card.querySelector('.story-card-glow');
+    if (!glow) return;
+
+    // Create a canvas to sample the dominant color from the image
+    const img = card.querySelector('.story-card-image');
+    if (!img || !img.complete) return;
+
+    try {
+        const canvas  = document.createElement('canvas');
+        canvas.width  = 10;
+        canvas.height = 10;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, 10, 10);
+        const pixel = ctx.getImageData(5, 5, 1, 1).data;
+        const r = pixel[0], g = pixel[1], b = pixel[2];
+
+        glow.style.boxShadow =
+            `0 0 40px 10px rgba(${r},${g},${b},0.35),
+             0 0 80px 20px rgba(${r},${g},${b},0.15)`;
+        glow.style.opacity = '1';
+    } catch(e) {
+        // Cross-origin image — fallback to red glow
+        glow.style.boxShadow =
+            '0 0 40px 10px rgba(229,9,20,0.3)';
+        glow.style.opacity = '1';
+    }
+}
+
+function removeCardGlow(card) {
+    const glow = card.querySelector('.story-card-glow');
+    if (glow) {
+        glow.style.opacity   = '0';
+        glow.style.boxShadow = 'none';
+    }
+}
 // ── TOAST ──
 function showToast(message) {
     const t = document.getElementById('toast');
