@@ -147,7 +147,50 @@ window.addEventListener('unhandledrejection', function(e) {
         .hero-meta span { display: flex; align-items: center; gap: 5px; }
         .hero-description { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px; max-width: 600px; }
         .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
-
+/* ── HERO ROTATION ── */
+.hero-dots {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+}
+.hero-dot.active {
+    background: var(--primary);
+    width: 24px;
+    border-radius: 4px;
+}
+.hero-dot:hover {
+    background: rgba(255,255,255,0.6);
+}
+.hero-content {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.hero-content.transitioning {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.hero-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary);
+    width: 0%;
+    transition: width 8s linear;
+    z-index: 3;
+}
+.hero-progress.running {
+    width: 100%;
+}
         /* ── BUTTONS ── */
         .btn {
             display: inline-flex; align-items: center; gap: 10px;
