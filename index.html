@@ -2332,6 +2332,114 @@ function filterStories(category) {
         </div>`).join('');
 }
 
+    // ── SEARCH ──
+let searchOpen = false;
+
+function toggleSearch() {
+    const input = document.getElementById('search-input');
+    const btn   = document.getElementById('search-toggle-btn');
+    searchOpen  = !searchOpen;
+
+    if (searchOpen) {
+        input.classList.add('open');
+        setTimeout(() => input.focus(), 400);
+        btn.textContent = '✕';
+        btn.title = 'Close Search';
+    } else {
+        closeSearch();
+    }
+}
+
+function closeSearch() {
+    const input = document.getElementById('search-input');
+    const btn   = document.getElementById('search-toggle-btn');
+
+    input.classList.remove('open');
+    input.value = '';
+    btn.textContent = '🔍';
+    btn.title = 'Search';
+    searchOpen = false;
+
+    // Hide results
+    document.getElementById('search-results-section').style.display = 'none';
+    document.getElementById('search-results-banner').style.display  = 'none';
+
+    // Show all normal sections again
+    document.querySelectorAll('.content-section').forEach(s => s.style.display = '');
+    document.querySelector('.hero').style.display      = '';
+    document.querySelector('.admin-section').style.display = '';
+    document.querySelector('footer').style.display     = '';
+}
+
+function searchStories(query) {
+    const trimmed = query.trim();
+    const resultsSection  = document.getElementById('search-results-section');
+    const resultsBanner   = document.getElementById('search-results-banner');
+    const resultsGrid     = document.getElementById('search-results-grid');
+    const resultsTitle    = document.getElementById('search-results-title');
+    const queryLabel      = document.getElementById('search-query-label');
+
+    if (!trimmed) {
+        closeSearch();
+        // Reopen input box since user just cleared text
+        const input = document.getElementById('search-input');
+        const btn   = document.getElementById('search-toggle-btn');
+        input.classList.add('open');
+        btn.textContent = '✕';
+        searchOpen = true;
+        return;
+    }
+
+    // Filter stories
+    const results = stories.filter(s =>
+        s.title.toLowerCase().includes(trimmed.toLowerCase()) ||
+        s.genre.toLowerCase().includes(trimmed.toLowerCase()) ||
+        (s.excerpt && s.excerpt.toLowerCase().includes(trimmed.toLowerCase()))
+    );
+
+    // Hide normal page content
+    document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+    document.querySelector('.hero').style.display          = 'none';
+    document.querySelector('.admin-section').style.display = 'none';
+    document.querySelector('footer').style.display         = 'none';
+
+    // Show results
+    resultsSection.style.display = 'block';
+    resultsBanner.style.display  = 'block';
+    queryLabel.textContent       = `"${trimmed}"`;
+
+    if (!results.length) {
+        resultsTitle.textContent = 'No stories found';
+        resultsGrid.innerHTML    = `
+            <div style="grid-column:1/-1;text-align:center;padding:60px 20px;">
+                <div style="font-size:3rem;margin-bottom:16px;">📭</div>
+                <p style="color:var(--text-secondary);font-size:1rem;">
+                    No stories match <strong style="color:#fff;">"${trimmed}"</strong>
+                </p>
+                <p style="color:var(--text-muted);font-size:0.85rem;margin-top:8px;">
+                    Try a different title or genre
+                </p>
+            </div>`;
+        return;
+    }
+
+    resultsTitle.textContent = `${results.length} ${results.length === 1 ? 'story' : 'stories'} found`;
+    resultsGrid.innerHTML    = results.map(story => `
+        <div class="story-card" onclick="openStory('${story.id}')"
+             style="width:100%;height:320px;flex:none;">
+            <img src="${story.image}" alt="${story.title}" class="story-card-image"
+                 onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+            <div class="story-card-vignette"></div>
+            ${story.new === true
+                ? '<div class="story-badge-new">New</div>'
+                : story.trending === true
+                ? '<div class="story-badge-hot">🔥 Hot</div>'
+                : ''}
+            <div class="story-cover-time">⏱ ${story.readTime}</div>
+            <div class="story-cover-title">${story.title}</div>
+            <div class="story-cover-genre">${story.genre}</div>
+        </div>`).join('');
+}
 // ── TOAST ──
 function showToast(message) {
     const t = document.getElementById('toast');
