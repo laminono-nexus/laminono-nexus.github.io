@@ -263,7 +263,70 @@ window.addEventListener('unhandledrejection', function(e) {
             padding: 20px 0; -webkit-overflow-scrolling: touch; scrollbar-width: none;
         }
         .story-row::-webkit-scrollbar { display: none; }
-
+/* ── CONTINUE READING ── */
+.continue-reading-section {
+    padding: 40px 4% 20px;
+    position: relative;
+    display: none;
+}
+.continue-card {
+    flex: 0 0 auto;
+    width: 280px;
+    height: 380px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    background: var(--bg-card);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.continue-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: var(--shadow-elevated);
+}
+.continue-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255,255,255,0.15);
+    z-index: 6;
+}
+.continue-progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 0 2px 2px 0;
+    transition: width 0.3s ease;
+}
+.continue-remove-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.continue-card:hover .continue-remove-btn {
+    opacity: 1;
+}
+.continue-remove-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
         /* ── STORY CARD — with Cover Art overlay ── */
         .story-card {
             flex: 0 0 auto; width: 280px; height: 380px; position: relative;
