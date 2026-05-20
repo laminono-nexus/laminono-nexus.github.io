@@ -2441,7 +2441,138 @@ function filterStories(category) {
             <div class="story-cover-genre">${story.genre}</div>
         </div>`).join('');
 }
+// ── HERO ROTATION ──
+let heroStories      = [];
+let heroIndex        = 0;
+let heroInterval     = null;
+let heroProgressTimer = null;
 
+function initHero() {
+    // Use trending stories for hero rotation
+    heroStories = stories.filter(s => s.trending);
+
+    // Fallback to all stories if no trending
+    if (!heroStories.length) heroStories = [...stories];
+
+    // Shuffle so it feels fresh each visit
+    heroStories = seededShuffle(heroStories, getHourlySeed());
+
+    // Build dots
+    const dotsContainer = document.getElementById('heroDots');
+    if (dotsContainer) {
+        dotsContainer.innerHTML = heroStories.map((_, i) => `
+            <button class="hero-dot ${i === 0 ? 'active' : ''}"
+                    onclick="goToHeroSlide(${i})"
+                    aria-label="Story ${i + 1}">
+            </button>`).join('');
+    }
+
+    // Show first story immediately
+    updateHero(0, false);
+
+    // Start auto rotation
+    startHeroRotation();
+}
+
+function updateHero(index, animate = true) {
+    const story   = heroStories[index];
+    if (!story) return;
+
+    const content     = document.getElementById('heroContent');
+    const section     = document.getElementById('home');
+    const title       = document.getElementById('heroTitle');
+    const meta        = document.getElementById('heroMeta');
+    const description = document.getElementById('heroDescription');
+    const readBtn     = document.getElementById('heroReadBtn');
+    const listBtn     = document.getElementById('heroListBtn');
+    const dots        = document.querySelectorAll('.hero-dot');
+
+    if (animate && content) {
+        // Fade out
+        content.classList.add('transitioning');
+
+        setTimeout(() => {
+            applyHeroContent(story, section, title, meta, description, readBtn, listBtn);
+            // Fade in
+            content.classList.remove('transitioning');
+        }, 600);
+    } else {
+        applyHeroContent(story, section, title, meta, description, readBtn, listBtn);
+    }
+
+    // Update dots
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+function applyHeroContent(story, section, title, meta, description, readBtn, listBtn) {
+    // Background image
+    const img = story.cover && story.cover.image ? story.cover.image : story.image;
+    section.style.background = `
+        linear-gradient(to top, #141414 0%, transparent 60%),
+        linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 50%),
+        url('${img}') center/cover`;
+
+    // Content
+    title.textContent       = story.title;
+    description.textContent = story.excerpt || '';
+    meta.innerHTML = `
+        <span>⏱ ${story.readTime} read</span>
+        <span>📖 ${story.genre}</span>
+        <span>🔥 Trending</span>`;
+
+    // Buttons
+    readBtn.onclick = () => openStory(story.id);
+    listBtn.onclick = () => {
+        currentStory = story;
+        toggleMyList();
+    };
+}
+
+function startHeroRotation() {
+    stopHeroRotation();
+
+    // Progress bar
+    const progress = document.getElementById('heroProgress');
+    if (progress) {
+        progress.style.transition = 'none';
+        progress.style.width      = '0%';
+        setTimeout(() => {
+            progress.style.transition = 'width 8s linear';
+            progress.style.width      = '100%';
+        }, 50);
+    }
+
+    heroInterval = setInterval(() => {
+        heroIndex = (heroIndex + 1) % heroStories.length;
+        updateHero(heroIndex, true);
+
+        // Reset progress bar
+        if (progress) {
+            progress.style.transition = 'none';
+            progress.style.width      = '0%';
+            setTimeout(() => {
+                progress.style.transition = 'width 8s linear';
+                progress.style.width      = '100%';
+            }, 50);
+        }
+    }, 8000);
+}
+
+function stopHeroRotation() {
+    if (heroInterval) {
+        clearInterval(heroInterval);
+        heroInterval = null;
+    }
+}
+
+function goToHeroSlide(index) {
+    heroIndex = index;
+    updateHero(index, true);
+    // Restart timer from this point
+    startHeroRotation();
+}
     // ── CONTINUE READING ──
 const CONTINUE_KEY = 'laminonoContinueReading';
 const MAX_CONTINUE = 6;
