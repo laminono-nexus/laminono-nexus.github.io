@@ -1918,8 +1918,6 @@ function goBack() {
     }
 
 function createStoryCard(story) {
-
-function createStoryCard(story) {
     const badge = story.new === true
         ? '<div class="story-badge-new">New</div>'
         : story.trending === true
@@ -1946,11 +1944,18 @@ function createStoryCard(story) {
         </div>`;
 }
 function createFeaturedCard(story) {
+    const badge = story.new === true
+        ? '<div class="story-badge-new" style="position:absolute;top:16px;left:16px;">New</div>'
+        : story.trending === true
+        ? '<div class="story-badge-hot" style="position:absolute;top:16px;left:16px;">🔥 Hot</div>'
+        : '';
+
     return `
         <div class="featured-card" onclick="openStory('${story.id}')">
             <img src="${story.image}" alt="${story.title}" class="featured-card-bg"
                  onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
             <div class="featured-vignette"></div>
+            ${badge}
             <div class="featured-content">
                 <span class="featured-badge">Featured</span>
                 <h3 class="featured-cover-title">${story.title}</h3>
