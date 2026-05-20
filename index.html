@@ -3051,11 +3051,12 @@ function showSkeletons() {
 // ── LOAD STORIES ──
 function loadStories() {
     showSkeletons();
+    renderContinueReading();
     setTimeout(() => {
         renderStories();
         checkDeepLink();
     }, 800);
-}
+    }
 // ── SHUFFLE UTILITY ──
 function shuffleArray(arr) {
     const a = [...arr];
