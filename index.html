@@ -2735,6 +2735,73 @@ function goToHeroSlide(index) {
     // Restart timer from this point
     startHeroRotation();
 }
+    // ── READING PROGRESS ──
+let readingProgressInterval = null;
+
+function startReadingProgress(story) {
+    stopReadingProgress();
+
+    // Create progress bar if not exists
+    let bar = document.getElementById('readingProgressBar');
+    if (!bar) {
+        bar = document.createElement('div');
+        bar.id        = 'readingProgressBar';
+        bar.className = 'reading-progress-bar';
+        document.body.appendChild(bar);
+    }
+
+    // Create time remaining badge if not exists
+    let badge = document.getElementById('readingTimeBadge');
+    if (!badge) {
+        badge = document.createElement('div');
+        badge.id        = 'readingTimeBadge';
+        badge.className = 'reading-time-remaining';
+        document.body.appendChild(badge);
+    }
+
+    // Parse read time — e.g. "15 min" → 15
+    const minutes = parseInt(story.readTime) || 5;
+    const totalMs = minutes * 60 * 1000;
+    const startTime = Date.now();
+
+    bar.style.width = '0%';
+    badge.classList.add('visible');
+
+    readingProgressInterval = setInterval(() => {
+        const modal = document.getElementById('storyModal');
+        if (!modal || !modal.classList.contains('active')) {
+            stopReadingProgress();
+            return;
+        }
+
+        const elapsed    = Date.now() - startTime;
+        const percent    = Math.min((elapsed / totalMs) * 100, 100);
+        const remaining  = Math.max(Math.ceil((totalMs - elapsed) / 60000), 0);
+
+        bar.style.width = percent + '%';
+
+        if (remaining <= 0) {
+            badge.innerHTML = '✅ <strong>Finished!</strong>';
+        } else if (remaining === 1) {
+            badge.innerHTML = '⏱ <strong>Less than 1 min</strong> left';
+        } else {
+            badge.innerHTML = `⏱ <strong>${remaining} min</strong> left`;
+        }
+
+        if (percent >= 100) stopReadingProgress();
+    }, 1000);
+}
+
+function stopReadingProgress() {
+    if (readingProgressInterval) {
+        clearInterval(readingProgressInterval);
+        readingProgressInterval = null;
+    }
+    const bar   = document.getElementById('readingProgressBar');
+    const badge = document.getElementById('readingTimeBadge');
+    if (bar)   bar.style.width = '0%';
+    if (badge) badge.classList.remove('visible');
+}
     // ── CONTINUE READING ──
 const CONTINUE_KEY = 'laminonoContinueReading';
 const MAX_CONTINUE = 6;
