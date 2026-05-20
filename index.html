@@ -224,13 +224,37 @@ window.addEventListener('unhandledrejection', function(e) {
             text-transform: uppercase; letter-spacing: 1.5px;
         }
 
-        /* Read-time tag */
-        .story-cover-time {
-            position: absolute; top: 12px; right: 12px;
-            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-            color: rgba(255,255,255,0.8); font-size: 0.7rem; padding: 4px 10px;
-            border-radius: 20px; border: 1px solid rgba(255,255,255,0.15);
-        }
+        /* Story badges */
+.story-badge-new {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #E50914;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(229,9,20,0.5);
+}
+.story-badge-hot {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #FF6B00;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(255,107,0,0.5);
+}
 
         /* Hover action bar */
         .story-card-overlay {
