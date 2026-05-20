@@ -3225,9 +3225,10 @@ function loadStories() {
     renderContinueReading();
     setTimeout(() => {
         renderStories();
+        initHero();
         checkDeepLink();
     }, 800);
-    }
+}
 // ── SHUFFLE UTILITY ──
 function shuffleArray(arr) {
     const a = [...arr];
