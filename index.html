@@ -2209,6 +2209,7 @@ function openStory(storyId) {
     document.getElementById('storyModal').classList.add('active');
     document.body.style.overflow = 'hidden';
     stopNarration();
+    stopHeroRotation();
     currentRating = 0;
     highlightStars(0);
     updateAverageRating();
