@@ -2550,18 +2550,17 @@ window.addEventListener('scroll', () => {
         lastY = y;
     }
 
-    // Main page scroll
     window.addEventListener('scroll', () => {
         handleScroll(window.scrollY);
     }, {passive: true});
 
-    // Modal inner scroll — watch the modal content div
     document.addEventListener('scroll', (e) => {
         const target = e.target;
-        if (target && target.classList && target.classList.contains('modal-content')) {
+        if (target && target.id === 'storyModal') {
             handleScroll(target.scrollTop);
         }
     }, {passive: true, capture: true});
+
 })();
 
 // ── DEEP LINK ──
