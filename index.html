@@ -2524,9 +2524,10 @@ function closeSearch() {
 
     // Show all normal sections again
     document.querySelectorAll('.content-section').forEach(s => s.style.display = '');
-    document.querySelector('.hero').style.display      = '';
+    document.querySelector('.hero').style.display          = '';
     document.querySelector('.admin-section').style.display = '';
-    document.querySelector('footer').style.display     = '';
+    document.querySelector('footer').style.display         = '';
+    renderContinueReading();
 }
 
 function searchStories(query) {
