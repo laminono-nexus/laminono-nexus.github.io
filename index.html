@@ -1202,8 +1202,35 @@ window.addEventListener('unhandledrejection', function(e) {
         <a href="#featured">Featured</a>
         <a href="#about">About</a>
     </div>
+    <div class="search-wrapper">
+        <input
+            type="text"
+            id="search-input"
+            class="search-input-box"
+            placeholder="Search stories..."
+            oninput="searchStories(this.value)"
+            onkeydown="if(event.key==='Escape')closeSearch()">
+        <button class="search-icon-btn" id="search-toggle-btn" onclick="toggleSearch()" title="Search">
+            🔍
+        </button>
+    </div>
 </nav>
 
+<!-- Search Results Banner -->
+<div class="search-results-banner" id="search-results-banner">
+    Showing results for <strong id="search-query-label"></strong>
+    <span onclick="closeSearch()">✕ Clear</span>
+</div>
+
+<!-- Search Results Section -->
+<div id="search-results-section">
+    <div class="content-section" style="padding-bottom:0;">
+        <div class="section-header">
+            <h2 class="section-title" id="search-results-title">Results</h2>
+        </div>
+    </div>
+    <div id="search-results-grid"></div>
+</div>
 <!-- Hero -->
 <section class="hero" id="home" style="background: var(--gradient-hero), url('https://images.pexels.com/photos/34191463/pexels-photo-34191463.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80') center/cover;">
     <div class="hero-content">
