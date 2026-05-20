@@ -2402,6 +2402,93 @@ function filterStories(category) {
         </div>`).join('');
 }
 
+    // ── CONTINUE READING ──
+const CONTINUE_KEY = 'laminonoContinueReading';
+const MAX_CONTINUE = 6;
+
+function saveToHistory(story) {
+    let history = getContinueHistory();
+
+    // Remove if already exists to re-add at front
+    history = history.filter(s => s.id !== story.id);
+
+    // Add to front with timestamp and random progress (40–90%)
+    history.unshift({
+        id:        story.id,
+        title:     story.title,
+        genre:     story.genre,
+        image:     story.image,
+        readTime:  story.readTime,
+        excerpt:   story.excerpt || '',
+        progress:  Math.floor(Math.random() * 50) + 40,
+        timestamp: Date.now()
+    });
+
+    // Keep only last MAX_CONTINUE
+    history = history.slice(0, MAX_CONTINUE);
+    localStorage.setItem(CONTINUE_KEY, JSON.stringify(history));
+}
+
+function getContinueHistory() {
+    try {
+        return JSON.parse(localStorage.getItem(CONTINUE_KEY) || '[]');
+    } catch(e) {
+        return [];
+    }
+}
+
+function renderContinueReading() {
+    const history = getContinueHistory();
+    const section = document.getElementById('continueReadingSection');
+    const row     = document.getElementById('continueReadingRow');
+
+    if (!history.length) {
+        section.style.display = 'none';
+        return;
+    }
+
+    section.style.display = 'block';
+
+    row.innerHTML = history.map(story => `
+        <div class="continue-card" onclick="openStory('${story.id}')">
+            <img src="${story.image}" alt="${story.title}"
+                 class="story-card-image"
+                 onerror="this.src='https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80'">
+            <div class="story-card-vignette"></div>
+
+            <!-- Remove button -->
+            <button class="continue-remove-btn"
+                onclick="event.stopPropagation();removeFromContinue('${story.id}')"
+                title="Remove">✕</button>
+
+            <!-- Time badge -->
+            <div class="story-cover-time">⏱ ${story.readTime}</div>
+
+            <!-- Title and genre -->
+            <div class="story-cover-title">${story.title}</div>
+            <div class="story-cover-genre">${story.genre}</div>
+
+            <!-- Progress bar -->
+            <div class="continue-progress-bar">
+                <div class="continue-progress-fill"
+                     style="width:${story.progress}%"></div>
+            </div>
+        </div>`).join('');
+}
+
+function removeFromContinue(storyId) {
+    let history = getContinueHistory();
+    history     = history.filter(s => s.id !== storyId);
+    localStorage.setItem(CONTINUE_KEY, JSON.stringify(history));
+    renderContinueReading();
+    showToast('Removed from Continue Reading');
+}
+
+function clearContinueReading() {
+    localStorage.removeItem(CONTINUE_KEY);
+    renderContinueReading();
+    showToast('Continue Reading cleared');
+}
     // ── SEARCH ──
 let searchOpen = false;
 
