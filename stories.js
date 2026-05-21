@@ -2,7 +2,7 @@ const stories = [
       {
   id: "what-the-hands-remember",
   title: "What the Hands Remember",
-  genre: "Psychological Thriller",
+  genre: "Suspense",
   readTime: "60 min",
   trending: true,
             new: true,
