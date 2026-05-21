@@ -1,5 +1,433 @@
 const stories = [
       {
+  id: "what-the-hands-remember",
+  title: "What the Hands Remember",
+  genre: "Psychological Thriller",
+  readTime: "60 min",
+  trending: true,
+            new: true,
+  excerpt: "In 1963 Havana, blind detective Catalina Reyes solves crimes no one else can. She does not need eyes. She reads walls, skin, fabric, bone — and the city speaks to her fingers like a confession. But when a government official is found dead and her hands tell her something that could get her killed, Catalina must choose between what she knows and what she is allowed to know.",
+  image: "https://images.unsplash.com/photo-1500759285222-a95626b934cb?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1500759285222-a95626b934cb?w=1920&q=80"
+  },
+  content: `Catalina Reyes had not seen the city of Havana since she was nine years old.
+
+She had heard it described many times since — by her mother, who described it the way people describe things they are afraid of losing, with excessive precision and a grief underneath the words that the words themselves never acknowledged. By her neighbor Doña Petra, who was seventy-three and had lived on the same street since before the revolution and described Havana the way old women describe everything, which is as a record of what it used to be and a complaint about what it had become. By the men who came to her small apartment on Calle Obispo with their problems, their crimes, their dead, and who described what they had seen in the particular halting language of people trying to translate the visual into something a blind woman could use.
+
+None of these descriptions were Catalina's Havana.
+
+Catalina's Havana was a city of surfaces.
+
+She knew the temperature of the walls on Calle Obispo at three in the afternoon in August — the specific heat of colonial stone that had been absorbing sun since morning, a heat that was different from the heat of the newer concrete buildings two streets over, which held warmth differently, with less history in it. She knew the texture of the wooden railing on the staircase of her building — every groove, every place where the wood had been repaired and the repair had been done slightly wrong so that the grain changed direction under her fingers for three centimeters before resuming. She knew the smell of the harbor before a storm, which arrived twenty minutes before any visual sign of the weather, a metallic heaviness in the air that was as legible to her as a newspaper headline.
+
+She knew the city the way no sighted person knew it.
+
+Because sighted people trusted what they could see.
+
+And what you could see in Havana in 1963 was what the city wanted you to see. The murals. The clean main avenues. The officials in their pressed shirts. The revolution's architecture of presentation, the careful staging of a government that understood that appearance was power and invested accordingly in the appearance.
+
+What the city did not want you to see was what Catalina found with her hands.
+
+The problem was placed in her apartment at seven in the morning by a man named Esteban Fuentes, who worked for the Interior Ministry and who had the specific smell of a man who had not slept and had been sweating through his fear for approximately eight hours. She identified the fear before he spoke — it was in his footstep, the weight falling slightly forward, off-balance, the posture of someone whose body was responding to threat before the mind had processed it into language.
+
+She was already making coffee when he knocked.
+
+"Come in," she said. "The door is open. Sit at the table. I will bring two cups."
+
+She heard him enter and pause in the way people always paused when they entered her apartment for the first time — the pause of someone recalibrating, adjusting their expectation of what a blind woman's living space would look like against the reality of a room that was organized with complete precision, every object in its specific location, nothing out of place, nothing suggesting the chaos that sighted people somehow expected blindness to produce.
+
+She set the cups on the table and sat across from him.
+
+"Catalina Reyes," he said. "I was told you find things."
+
+"I find the truth of things," she said. "Which is different from finding things. Some people find things and the things they find are not the truth." She poured the coffee by feel — the weight of the pot, the sound of the liquid, the heat on her wrist telling her when to stop. "What happened?"
+
+"Rodrigo Vasquez is dead," he said.
+
+She knew the name. Everyone in Havana knew the name. Rodrigo Vasquez was a senior official in the Ministry of Culture — a man who had been, depending on who was telling you, either a devoted servant of the revolution or a careful opportunist who had positioned himself on the correct side at the correct moment and had been rewarded for his positioning with increasing power and the specific invulnerability of someone the government had publicly praised.
+
+"When?" she said.
+
+"Last night. Between ten and midnight, the doctor says." He picked up his coffee cup. His hands were unsteady — she heard the slight rattle of cup against saucer. "He was found in his office at the Ministry. The door was locked from the inside. No sign of forced entry. No sign of struggle, the first officers said." He paused. "The official position is that it was a heart attack."
+
+"But," she said.
+
+"But Vasquez was forty-four years old and had the health of a man ten years younger," Esteban said. "He had a physical examination two weeks ago. The Ministry doctor signed off on everything. His heart was excellent."
+
+"What do the unofficial officers say?"
+
+A pause.
+
+"There are no unofficial officers," Esteban said carefully. "The case was closed this morning. Heart attack. Signed, filed, closed. His funeral is on Thursday."
+
+Catalina drank her coffee.
+
+She thought about the architecture of what she was being told. A man who did not want to be identified had come to her apartment before sunrise with a closed case and a fear he could not contain and a careful use of the word unofficial that meant he was telling her something he could not officially be telling her.
+
+"Why are you here?" she said.
+
+"Because Vasquez was my friend," Esteban said. The word friend arrived with a weight that was not simple — layered, complicated, the weight of a word that meant something specific between two men in a city where friendship between ministry officials had to be managed as carefully as everything else. "And because the man who signed the case closed this morning is the same man who was seen entering the Ministry building at nine forty-five last night."
+
+Catalina was very still.
+
+"His name?" she said.
+
+"I cannot say it in this room," Esteban said. "I cannot say it anywhere. If I say it and someone hears it then what happened to Rodrigo Vasquez will happen to me and will be called the same thing." He paused. "I want you to go to the office. I want you to tell me what happened. Not for a court — there will be no court. Not for a report — there will be no report. I want to know. I want to carry the truth of it rather than the story they are putting on top of it."
+
+Catalina set down her coffee cup.
+
+She thought about what she was being asked. Not the surface of it — the access to a Ministry building, the risk of a blind woman asking questions about a closed case involving a dead senior official in a city where the wrong question could close a case with your name on it. She thought about the deeper structure of it. About a man who smelled of eight hours of fear who had come to her before sunrise because he could not carry the not-knowing.
+
+She understood the not-knowing.
+
+She had been building her life in the dark for twenty-nine years. She understood the specific weight of the thing you could not see but knew was there.
+
+"I want to touch the room," she said. "The office where he was found. Everything in it. The body if it has not been moved."
+
+"The body is at the Ministry morgue," Esteban said. "I can get you access. The office has been sealed pending the funeral."
+
+"Sealed means the evidence is preserved," she said. "Good." She stood. "Give me ten minutes."
+
+She dressed in the dark that was not dark to her, the apartment organized around her body with the precision of a space that had been learned by touch rather than sight. She put on the cotton dress that was good for working — lightweight, nothing that would catch or drag on surfaces she needed to read. She put on flat shoes. She took her cane, which was not for navigation — she did not need it for navigation — but for other people, for the social function of the cane, the way it told the city she was blind and therefore unthreatening, a presentation she had learned to use the way the government used murals.
+
+She had been presenting as harmless for years.
+
+It was the most useful tool she owned.
+
+The Ministry of Culture was on the Malecón side of old Havana — a colonial building that had been a private residence before the revolution and had been converted with the specific Soviet aesthetic of function over beauty, the beautiful bones of the original architecture now carrying the weight of institutional purpose like a formal dress worn to dig a ditch.
+
+Esteban brought her in through a side entrance at nine in the morning, when the building was beginning its day and the traffic of officials and secretaries and Party functionaries created the kind of noise that was useful for moving through a space without being specifically noticed.
+
+She moved through the corridors with her hand lightly on the wall.
+
+She was reading.
+
+The walls of the Ministry told her the building's life in the way all walls did — the temperature variations that indicated windows and exterior walls and the structural load-bearing points, the texture changes where paint had been applied over older paint, the specific smoothness of the sections near the most-used doorways where hands had touched the wall repeatedly over years and the oils of skin had sealed the surface. She was building the floor plan in her mind the way she always built floor plans — not visually, not as a picture, but as a body-knowledge, a felt map of space that lived in her muscles and her balance rather than her eyes.
+
+They reached the office on the third floor.
+
+Esteban had a key.
+
+He opened the door.
+
+She went in.
+
+She stood for a moment just inside the door without moving, without touching anything, with her hands at her sides and her face slightly lifted.
+
+She was listening first.
+
+The room was quiet with the specific silence of a space that had been sealed — the particular quality of air that had not been circulated for hours, that was warmer than the corridor outside, that held the remnants of whatever had happened in it. She catalogued what the air told her. Sweat — not fresh, hours old, the dried salt of significant physical exertion or significant fear, more likely both. Something floral, very faint — a cologne or a pomade, the kind that senior Ministry officials used, the kind that cost more than most Havana residents made in a month. Underneath it, underneath everything, a chemical note she identified slowly, with the focused attention of a woman who had taught herself the smell of things that other people only knew visually.
+
+She identified it in thirty seconds.
+
+She said nothing.
+
+She began to move through the room.
+
+The desk first. A large mahogany desk — she read the surface with both hands, moving slowly from edge to edge, not looking for anything in particular but letting the surface tell her what it had. Paper — the specific texture of Ministry letterhead, the embossed Republic seal legible under her fingertips. A pen placed at an angle that was slightly wrong, slightly off the parallel with the desk edge, the pen of someone who had been using it when interrupted or of someone who had replaced it without knowing exactly where it had been. A glass — she lifted it, felt the residue at the bottom, brought it to her nose. Water. Just water. The glass had been moved recently — the ring it left on the desk surface was not centered under where the glass currently sat, suggesting it had been picked up and set back down in a slightly different position.
+
+Someone had moved the glass after it was last used.
+
+She set it down exactly where she had found it.
+
+She moved to the chair behind the desk.
+
+The chair was a heavy wooden chair with a leather seat and back — the leather worn in the specific pattern of a man who had sat in it for years, the wear concentrated on the right side of the seat cushion suggesting a man who sat slightly askew, who carried tension in his left hip, who had perhaps an old injury on that side. She read this and filed it. The arms of the chair — she ran her hands along the right arm first, then the left.
+
+She stopped.
+
+On the left arm of the chair, near the front edge, her fingers found something.
+
+She bent closer.
+
+The wood there was slightly tacky. Not wet — not fresh. Hours old, probably. But tacky in the specific way of a substance that had been applied and had mostly dried but not completely. She brought her fingers to her nose.
+
+The same chemical note she had identified in the air.
+
+She remained very still.
+
+She was thinking about a man found dead in a locked office. A man whose death had been officially attributed to his heart. A man who had been forty-four years old with an excellent heart.
+
+She moved to where the body had been found.
+
+Esteban had described the position — slumped in the chair, as if he had fallen asleep at his desk, which was the detail that had been used in the official account to support the heart attack narrative, the peaceful falling-asleep quality of a man whose heart had simply stopped.
+
+She knelt on the floor beside where the chair had been.
+
+She put her palm flat on the floor.
+
+The marble was cool and clean — it had been cleaned recently, more recently than the rest of the room, she could tell by the temperature differential between the cleaned section and the uncleaned edges, the cleaned section slightly cooler from the water used, the scrubbing motion legible in the microscopic texture of the surface.
+
+They had cleaned this specific section of floor.
+
+Not the whole room. Not a general cleaning. This section — roughly one meter by one meter, directly beside where the chair had stood, the section that would have been beneath Vasquez's left hand if his arm had dropped from the chair arm.
+
+She sat back on her heels.
+
+She thought: he fell to his left. His left arm dropped. Whatever was on his left hand — or whatever had come from his left hand — landed on the floor. And someone had cleaned that section specifically.
+
+She stood up.
+
+She went to the window.
+
+The window was sealed — she confirmed this with her hands, running the frame, finding the latch. Locked from the inside, as Esteban had said. She read the window frame with her fingertips — paint, old paint, the specific texture of a window that had been locked in the same position for many years, the paint slightly built up around the latch in the way of a latch rarely opened. She pressed on the frame.
+
+The lower right corner of the window frame moved.
+
+Not the window. The frame. A section of the frame, approximately twenty centimeters, that was not fixed to the wall but was — she tested it carefully, applying graduated pressure — hinged. Hinged at the top. A section of the window frame that could be swung inward by pressing at the bottom.
+
+Behind it, a space approximately the size of a man's fist.
+
+Empty now.
+
+But the edges of the space — she felt them carefully — were rough with the residue of something that had been stored there and removed. The same chemical note, stronger here, concentrated.
+
+She replaced the frame section exactly as she had found it.
+
+She went back to Esteban, who was standing near the door with the specific stillness of a man trying not to ask what she was finding.
+
+"The morgue," she said. "Now."
+
+The Ministry morgue was in the basement — a cold room with the specific smell of institutional preservation, the chemicals and the cold and underneath it the thing that was always underneath it in rooms that held the dead, the smell of a body becoming something other than what it had been.
+
+Rodrigo Vasquez was on a metal table covered by a sheet.
+
+Catalina moved to the table.
+
+She said: "Leave me alone with him."
+
+"I —" Esteban began.
+
+"Leave me alone with him," she said again. "Five minutes. Stand outside the door."
+
+He left.
+
+She pulled back the sheet from the upper half of the body.
+
+She worked quickly and methodically, the way she worked everything — not quickly meaning carelessly, but quickly meaning without hesitation, without the social discomfort that sighted people felt around the dead, which was partly about seeing the dead and which she therefore did not experience in the same way. She worked with her hands.
+
+She started at the hands.
+
+The right hand first — she lifted it, felt the surface, the fingers, the palm, the wrist. Nothing significant. The muscle tone was that of a man who had used his hands, not a sedentary man. A slight callus on the right index finger consistent with a man who wrote extensively with a pen.
+
+The left hand.
+
+She lifted it.
+
+Between the index and middle finger of the left hand — in the web of skin there, the thin skin between the fingers — she found a mark.
+
+She explored it with her fingertip.
+
+A puncture. Very small — not the size of a needle used for medical injection, smaller, the diameter of something finer. Not a medical needle. Something finer and more precise. The puncture was slightly raised around the edges — an inflammatory response, the skin's reaction to something introduced into it. The reaction was hours old, consistent with the time of death.
+
+She moved to his neck.
+
+She checked his neck with the systematic attention of a woman who had taught herself what to look for and where. Behind the left ear — another puncture. Smaller than the one between the fingers. And around it, barely perceptible, a slight discoloration of the skin that was not lividity, not the standard post-mortem color change. A local discoloration. The skin responding to something that had been applied topically, not injected.
+
+Two points of contact.
+
+She replaced the sheet.
+
+She stood at the table with her hands at her sides and assembled what she had.
+
+A chemical agent — she had the smell of it, distinct and specific, a smell she would not forget and could identify if she encountered it again. Applied at two points on the left side of the body. Traces of the same substance on the left arm of the desk chair. Traces in the hidden compartment behind the window frame — which was not a place for storage but a place of access. A window that appeared locked from the inside and was. But a window frame that contained a passage.
+
+Not a passage large enough for a person.
+
+Large enough for a device. For something mechanical. For something that could be positioned in the space behind the frame and extended — a fine needle, or something like a needle — into the room when the mechanism was triggered from outside.
+
+A man sitting at his desk in a locked room, writing with his right hand, his left hand resting on the left arm of his chair.
+
+The device extending through the frame. The contact point — between the fingers, then moments later, behind the ear. Not enough to cause immediate collapse — enough to be slow, the chemical entering the blood, the man continuing to work, feeling perhaps a slight dizziness that he attributed to tiredness or the heat, his body beginning to fail so gradually that it looked, to anyone who found him, like sleep.
+
+Like a heart.
+
+Like a perfectly natural death.
+
+She went to the door and opened it.
+
+Esteban looked at her face.
+
+"What did you find?" he said.
+
+She told him.
+
+She told him the window frame. The chemical substance. The two puncture marks. The cleaned floor. The moved glass — suggesting someone had been in the room after Vasquez died, staging the details of a natural death, moving the glass to where a man writing at his desk would have placed it, not knowing or not noticing that they had replaced it off-center.
+
+Esteban was completely still as she spoke.
+
+When she finished he said nothing for a long time.
+
+The basement corridor hummed with the building's ventilation. The cold room was silent.
+
+"You know what this means," he said.
+
+"Yes," she said.
+
+"If what you are describing is accurate —"
+
+"It is accurate."
+
+"Then what killed Rodrigo Vasquez is not something available to ordinary criminals," he said. "The mechanism you are describing — the precision of it — that is not a crime of passion. That is not even a sophisticated criminal. That is a government resource."
+
+"Yes," she said.
+
+"Which means the government killed Rodrigo Vasquez."
+
+"Someone with access to government resources killed Rodrigo Vasquez," she said carefully. "Which is not exactly the same statement but is close enough that the distinction may not matter in practice."
+
+Esteban looked at the ceiling.
+
+"And the man who signed the case closed this morning —" he said.
+
+"I do not know if he is the one who did it," Catalina said. "I know what the room tells me. The room does not tell me names. It tells me method and truth. The names are your work."
+
+"The names are work that will get me killed," he said.
+
+"Yes," she said. "Probably."
+
+He looked at her.
+
+"You knew that when you agreed to come here," he said.
+
+"I knew that when you knocked on my door," she said. "The smell of a man who has been afraid all night is legible to me. You were not coming with a problem I could solve safely. There is no such thing as a safe problem in this city in this year."
+
+"Why did you agree?"
+
+Catalina thought about this.
+
+She thought about a nine-year-old girl who had lost her sight in an accident on Calle Obispo and had woken up in a hospital to the specific darkness that was not darkness but the absence of a sense, the reorganization of a world that had previously been understood through the eyes. She thought about the years after — the learning, the slow building of a different way of knowing, the discovery that the world was more legible to her hands than it had ever been to her eyes. That her eyes had given her the surface of things and her hands gave her the truth of them.
+
+She thought about what sighted people trusted.
+
+What the world put in front of their eyes and called reality.
+
+She thought about Rodrigo Vasquez and the official story being written over his death like a coat of paint over old stone.
+
+She thought: I have been reading underneath the paint for twenty-nine years.
+
+She said: "Because the truth of what happened in that room is being buried under a story. And I have spent my entire adult life in this city watching stories placed on top of truths. The revolution placed a story on top of what the revolution actually did. The officials place stories on top of what the officials actually are. The living place stories on top of what the dead actually experienced." She paused. "I cannot see the stories. I can only feel what is underneath. And what is underneath Rodrigo Vasquez's death is a man who was killed deliberately and carefully and whose killer is walking through this building right now in a pressed shirt attending his morning meetings." She paused. "That is not a truth I am willing to leave buried."
+
+Esteban was quiet for a long time.
+
+"What do we do?" he said.
+
+"You do nothing," she said. "Not yet. Not until we have more than a blind woman's testimony." She paused. "I need to find the device. The mechanism. If it was used last night it was either destroyed or hidden. If it was hidden —"
+
+"It would be somewhere in the building," Esteban said. "They could not take it out — there are checkpoints on all exits after six in the evening, standard security."
+
+"Then it is here," she said. "And I need to find it." She paused. "Take me through every floor. Every room you have access to. I will do the rest."
+
+"What are you looking for?"
+
+"I will know it when I touch it," she said. "I always do."
+
+They spent four hours in the building.
+
+Esteban walked her through the floors, presenting her to the secretaries and functionaries they encountered as a visitor from the Bureau of Arts and Culture — a plausible enough reason for a blind woman to be in the Ministry of Culture, and Catalina had long understood that blindness was its own bureaucratic camouflage, that people underestimated what a blind woman was doing in a space even when she was doing the most important thing she had ever done in her life.
+
+She trailed her fingers on the walls as she walked.
+
+She was not looking for the device in the offices. She was looking for it in the spaces between the offices — the service corridors, the utility rooms, the storage spaces that accumulated in the lower floors of any institutional building, the spaces that were used for the mechanical life of the building and were therefore visited infrequently and monitored less carefully than the official spaces.
+
+She found it on the second floor, in a utility room behind the main staircase, inside a janitor's supply cabinet that smelled of cleaning fluid and old mops and, underneath both, the specific chemical note she had been following since the morning.
+
+The device was wrapped in cloth and placed at the back of the bottom shelf, behind a bucket.
+
+She unwrapped it carefully.
+
+She read it with her fingers for two full minutes, building a complete understanding of the object entirely through touch.
+
+It was approximately thirty centimeters long — a cylinder, thin, the diameter of a thick pen. Metal, smooth, with two moving components she identified by their temperature differential — the metal of the cylinder body and two sections at each end that were a slightly different alloy, slightly warmer, recently used. At one end, retracted but detectable under her fingertip, the point of the needle. Not a medical needle — custom, finer, designed for precision rather than speed.
+
+At the other end, a mechanism for remote triggering.
+
+She wrapped it in the cloth exactly as she had found it.
+
+She stood up.
+
+She thought about what she was holding.
+
+She thought about what would happen if she walked out of the building with this object and presented it to someone who could use it. She thought about who that person would be in Havana in 1963, in a city where the government was the law and the law was the government and the man who had signed Rodrigo Vasquez's death certificate a natural death was connected to forces that had access to objects like the one she was holding.
+
+She thought: there is no safe destination for this truth.
+
+There was never a safe destination for truth in this city. There had not been before the revolution and the revolution had changed the danger but not the presence of it, had simply rearranged who was dangerous to whom and for what reasons.
+
+She thought: but there are destinations that are less safe than others. And there are people outside this city — outside this country — for whom this object would mean something that it could not mean inside a room in Havana where the story of a heart attack had already been officially written.
+
+She thought about the foreign journalists who came through Havana. The specific ones — not the ones who came to write about the revolution's achievements, who ate the meals provided and attended the events arranged and wrote the stories they had been given. The others. The ones she had heard about from the people who came to her apartment with their problems. The ones who were looking underneath the paint.
+
+She thought: I know the smell of looking underneath the paint.
+
+She thought: I will recognize one of them.
+
+She rewrapped the device.
+
+She placed it back on the shelf behind the bucket.
+
+She memorized the cabinet, the shelf, the position.
+
+She would come back for it.
+
+But first she needed to make sure that when she came back, she was not coming back alone into a building where a man was already dead for knowing too much.
+
+She went out into the corridor.
+
+Esteban was waiting.
+
+"I found it," she said quietly.
+
+He exhaled.
+
+"We leave it where it is for now," she said. "I need two days. Can you keep yourself safe for two days?"
+
+"I have kept myself safe by knowing nothing for twenty years," he said. "Knowing something is — significantly more difficult."
+
+"I know," she said. "Two days. Tell no one. Go home, go to work, smile at the man who signed the certificate, give him nothing that looks like what you know."
+
+"And you?"
+
+"I have work to do," she said.
+
+She walked out of the Ministry of Culture onto the Malecón in the November afternoon, the sea air coming off the harbor with the specific salt and diesel and distance of it, the city humming around her in its frequency — the traffic and the voices and the music from a window somewhere above her and underneath all of it the political silence of a city that knew how to be publicly quiet about the things that mattered most.
+
+She put her hand on the wall of the building as she passed.
+
+The stone was warm from the afternoon sun.
+
+It told her nothing she did not already know.
+
+But she had learned, in twenty-nine years of reading the city with her hands rather than her eyes, that walls were patient. That they held what had happened in them. That the story being placed on top of the truth was always, always lighter than the truth underneath.
+
+Paint peels.
+
+Stone remains.
+
+She walked toward home with her cane in her hand and Rodrigo Vasquez's truth in her memory and the smell of a device she was going to use to bring down a man whose name she could not yet say in a room in Havana where the walls had ears and the dead were given acceptable stories and the blind were underestimated in ways that had always, in her experience, been precisely useful.
+
+She was thirty-eight years old and she had never seen the city she was about to set on fire.
+
+She did not need to.
+
+She had always known it better than that.
+
+The harbor smell reached her at the end of the block — the pre-storm metallic weight of it, the pressure change she could read in her sinuses before any sighted person would notice the sky darkening.
+
+Rain was coming.
+
+Good.
+
+Rain cleaned the streets of Havana the way nothing else did — washed the surface down to the stone.
+
+To the truth underneath.
+
+She walked faster.
+
+She had work to do.`
+},
+      {
     id: "the-last-translator",
     title: "The Last Translator",
     genre: "Literary Fiction",
