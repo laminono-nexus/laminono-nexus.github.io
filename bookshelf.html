@@ -17,10 +17,11 @@
       --gold-dim:rgba(245,198,160,0.55);
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html, body { height:100%; }
 
     body {
       font-family:'Inter',sans-serif;
-      background:#0A0A0A;
+      background:#000;
       color:var(--text-primary);
       overflow-x:hidden;
       min-height:100vh;
@@ -32,15 +33,15 @@
     ::-webkit-scrollbar-thumb{background:#333;border-radius:3px}
     ::-webkit-scrollbar-thumb:hover{background:var(--primary)}
 
-    /* TOP BAR */
+    /* ── TOP BAR ── */
     .back-bar {
       position:fixed; top:0; left:0; right:0;
       padding:14px 4%;
-      background:rgba(10,10,10,0.96);
+      background:rgba(0,0,0,0.96);
       backdrop-filter:blur(16px);
       z-index:9000;
       display:flex; align-items:center; gap:12px;
-      border-bottom:1px solid rgba(255,255,255,0.07);
+      border-bottom:1px solid rgba(255,255,255,0.06);
     }
     .back-bar a {
       color:var(--text-secondary); text-decoration:none;
@@ -48,569 +49,752 @@
       display:flex; align-items:center; gap:6px;
       transition:color 0.3s;
     }
-    .back-bar a:hover{color:var(--primary)}
+    .back-bar a:hover { color:var(--primary); }
     .back-bar .page-title {
       font-family:'Playfair Display',serif;
       font-size:1rem; color:var(--text-primary);
-      margin:0 auto; letter-spacing:0.5px;
+      margin:0 auto;
     }
 
-    .scene{padding-top:52px; min-height:100vh;}
-
-    .view { display:none !important; }
-    .view.active { display:block !important; animation:fadeUp 0.5s ease; }
-    #view-entrance.active { display:flex !important; }
+    /* ══════════════════════════════
+       VIEW SYSTEM
+    ══════════════════════════════ */
+    .scene { padding-top:52px; min-height:100vh; }
+    .view  { display:none !important; }
+    .view.active { display:block !important; }
+    #view-entrance.active  { display:flex !important; }
     #view-cinematic.active { display:flex !important; }
-    #view-library.active { display:block !important; }
 
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(20px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-
-    /* ═══════════════════════════
-       ENTRANCE VIEW
-    ═══════════════════════════ */
+    /* ══════════════════════════════
+       ENTRANCE
+    ══════════════════════════════ */
     #view-entrance {
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+      flex-direction:column; align-items:center; justify-content:center;
       min-height:calc(100vh - 52px);
-      background:radial-gradient(ellipse at 50% 60%,#1a0d05,#0A0A0A 70%);
-      text-align:center;
-      padding:40px 6%;
-      position:relative;
-      overflow:hidden;
+      background:radial-gradient(ellipse at 50% 70%, #1c0a00 0%, #000 65%);
+      text-align:center; padding:40px 6%; position:relative; overflow:hidden;
     }
-    #view-entrance::before {
+    /* animated dust particles */
+    #view-entrance::after {
       content:'';
-      position:absolute;
-      inset:0;
-      background:radial-gradient(ellipse at 50% 100%, rgba(229,9,20,0.04) 0%, transparent 70%);
+      position:absolute; inset:0;
+      background:
+        radial-gradient(1px 1px at 20% 30%, rgba(245,198,160,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 20%, rgba(245,198,160,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 70%, rgba(245,198,160,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 80%, rgba(245,198,160,0.25) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 60%, rgba(245,198,160,0.3) 0%, transparent 100%);
+      animation:dustFloat 8s ease-in-out infinite alternate;
       pointer-events:none;
+    }
+    @keyframes dustFloat {
+      0%  { transform:translateY(0) translateX(0); opacity:0.6; }
+      100%{ transform:translateY(-30px) translateX(10px); opacity:1; }
     }
     .entrance-title {
       font-family:'Playfair Display',serif;
-      font-size:clamp(1.8rem,5vw,3.2rem);
-      color:var(--text-primary); margin-bottom:10px; line-height:1.2;
+      font-size:clamp(1.8rem,5vw,3rem);
+      color:var(--gold);
+      text-shadow:0 0 40px rgba(245,198,100,0.5);
+      margin-bottom:10px; line-height:1.2; position:relative; z-index:2;
     }
     .entrance-sub {
-      color:var(--text-secondary);
-      font-size:clamp(0.88rem,2.5vw,1rem);
-      margin-bottom:50px; max-width:460px; line-height:1.6;
+      color:var(--text-secondary); font-size:0.95rem;
+      margin-bottom:50px; max-width:400px; line-height:1.7;
+      position:relative; z-index:2;
     }
 
-    /* ── ENTRANCE BOOK ── */
+    /* ── THE BOOK ── */
     .entrance-book-wrap {
-      position:relative;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      margin-bottom:30px;
+      position:relative; display:flex;
+      flex-direction:column; align-items:center;
+      margin-bottom:30px; z-index:2;
     }
     .big-book-btn {
-      width:clamp(140px,42vw,190px);
-      height:clamp(185px,56vw,250px);
+      width:150px; height:200px;
       position:relative; cursor:pointer;
       background:none; border:none; padding:0;
-      animation:floatBook 3s ease-in-out infinite;
+      animation:floatBook 4s ease-in-out infinite;
       touch-action:manipulation;
-      transform-style:preserve-3d;
     }
-    .big-book-btn:hover { animation:none; transform:rotateY(-28deg) scale(1.05); }
-    @keyframes floatBook{
-      0%,100%{transform:translateY(0) rotateY(-15deg)}
-      50%{transform:translateY(-12px) rotateY(-15deg)}
+    @keyframes floatBook {
+      0%,100% { transform:translateY(0) rotateY(-12deg) rotateX(2deg); }
+      50%     { transform:translateY(-14px) rotateY(-18deg) rotateX(-1deg); }
     }
-    .book-rope {
-      position:absolute; top:-22px; left:50%;
-      transform:translateX(-50%);
-      width:3px; height:28px;
-      background:repeating-linear-gradient(to bottom,#c8a96e 0,#a07040 4px,#c8a96e 8px);
-      border-radius:2px; z-index:2;
+    .big-book-btn:active { animation:none; transform:scale(0.95); }
+
+    /* Book pages (white inner) */
+    .book-pages {
+      position:absolute; inset:0;
+      background:linear-gradient(to right, #e8e0d0 0%, #f5f0e8 60%, #e8e0d0 100%);
+      border-radius:1px 8px 8px 1px;
+      transform:translateX(4px);
+      box-shadow:inset -3px 0 6px rgba(0,0,0,0.2);
     }
-    .book-rope::before {
-      content:''; position:absolute;
-      top:-8px; left:-6px; width:15px; height:10px;
-      background:#c8a96e;
-      border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+    /* Book spine */
+    .book-spine-3d {
+      position:absolute; left:0; top:4px; bottom:4px;
+      width:14px;
+      background:linear-gradient(to right, #3a0a0a, #6b1a1a, #3a0a0a);
+      border-radius:2px 0 0 2px;
     }
-    .book-cover {
+    /* Book cover */
+    .book-cover-3d {
       position:absolute; inset:0;
       border-radius:2px 10px 10px 2px;
-      background:linear-gradient(145deg,#8B1a1a,#4a0a0a);
-      box-shadow:6px 8px 28px rgba(0,0,0,0.7),
-                 inset -2px 0 8px rgba(0,0,0,0.3),
-                 0 0 0 rgba(229,9,20,0);
-      border:1px solid rgba(229,9,20,0.4);
+      background:linear-gradient(145deg, #8B0000 0%, #5a0a0a 40%, #3a0000 100%);
+      border:1px solid rgba(229,9,20,0.5);
+      box-shadow:
+        4px 6px 20px rgba(0,0,0,0.8),
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 0 0 rgba(255,140,0,0);
       display:flex; flex-direction:column;
-      align-items:center; justify-content:center; padding:18px 12px;
-      transition:box-shadow 0.3s ease;
+      align-items:center; justify-content:center;
+      padding:16px 12px;
+      transition:box-shadow 0.4s ease;
     }
-    .big-book-btn:hover .book-cover {
-      box-shadow:6px 8px 28px rgba(0,0,0,0.7),
-                 inset -2px 0 8px rgba(0,0,0,0.3),
-                 0 0 40px rgba(229,9,20,0.4),
-                 0 0 80px rgba(255,140,0,0.2);
+    .big-book-btn:hover .book-cover-3d {
+      box-shadow:
+        4px 6px 20px rgba(0,0,0,0.8),
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 0 50px rgba(255,100,0,0.5),
+        0 0 100px rgba(200,60,0,0.3);
     }
-    .book-cover-icon{font-size:clamp(2rem,8vw,2.8rem);margin-bottom:10px}
-    .book-cover-title {
-      font-family:'Playfair Display',serif;
-      font-size:clamp(0.7rem,2.5vw,0.88rem);
-      color:var(--gold); text-align:center; line-height:1.4;
+    /* Gold ornament lines on cover */
+    .book-cover-3d::before {
+      content:'';
+      position:absolute; inset:8px;
+      border:1px solid rgba(245,198,100,0.25);
+      border-radius:4px;
     }
-    .book-cover-sub {
-      font-size:clamp(0.55rem,1.8vw,0.65rem);
-      color:var(--gold-dim); margin-top:6px;
-      text-transform:uppercase; letter-spacing:1.5px;
+    .book-cover-3d::after {
+      content:'';
+      position:absolute; top:50%; left:12px; right:12px;
+      height:1px; background:rgba(245,198,100,0.2);
+      transform:translateY(-50%);
+    }
+    .book-icon { font-size:2.2rem; margin-bottom:8px; position:relative; z-index:1; }
+    .book-title-text {
+      font-family:'Playfair Display',serif; font-size:0.72rem;
+      color:var(--gold); text-align:center; line-height:1.5;
+      position:relative; z-index:1;
+    }
+    .book-sub-text {
+      font-size:0.52rem; color:var(--gold-dim); margin-top:5px;
+      text-transform:uppercase; letter-spacing:2px; position:relative; z-index:1;
+    }
+    /* Rope */
+    .book-rope {
+      position:absolute; top:-26px; left:50%; transform:translateX(-50%);
+      width:3px; height:32px;
+      background:repeating-linear-gradient(to bottom, #c8a96e 0, #906030 5px, #c8a96e 10px);
+      border-radius:2px;
+    }
+    .book-rope::before {
+      content:''; position:absolute; top:-9px; left:-5px;
+      width:13px; height:10px; background:#c8a96e;
+      border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+    /* Glow halo below book */
+    .book-halo {
+      position:absolute; bottom:-20px; left:50%; transform:translateX(-50%);
+      width:120px; height:20px;
+      background:radial-gradient(ellipse, rgba(255,100,0,0.4) 0%, transparent 70%);
+      animation:haloBreath 4s ease-in-out infinite;
+    }
+    @keyframes haloBreath {
+      0%,100% { opacity:0.4; transform:translateX(-50%) scaleX(1); }
+      50%     { opacity:0.8; transform:translateX(-50%) scaleX(1.2); }
     }
     .open-cta {
-      font-size:0.88rem; color:var(--text-secondary);
-      margin-top:14px; animation:blink 2s step-end infinite;
+      font-size:0.85rem; color:rgba(245,198,160,0.6);
+      margin-top:10px; letter-spacing:1px;
+      animation:blink 2.5s ease-in-out infinite;
     }
-    @keyframes blink{50%{opacity:0.25}}
+    @keyframes blink { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
-    /* Particle sparks around book */
-    .book-spark {
-      position:absolute;
-      width:4px; height:4px;
-      border-radius:50%;
-      background:var(--gold-bright);
-      pointer-events:none;
-      opacity:0;
-    }
-
-    /* ═══════════════════════════
-       CINEMATIC TRANSITION VIEW
-    ═══════════════════════════ */
+    /* ══════════════════════════════
+       CINEMATIC OVERLAY
+       Fixed, covers everything
+    ══════════════════════════════ */
     #view-cinematic {
-      position:fixed;
-      inset:0;
-      z-index:99999;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+      position:fixed; inset:0; z-index:99999;
       background:#000;
+      flex-direction:column; align-items:center; justify-content:center;
       overflow:hidden;
     }
-    #view-cinematic.active { display:flex !important; }
 
-    /* Stage 1: Ancient Lock Glow */
-    .cinematic-stage {
-      position:absolute;
-      inset:0;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      opacity:0;
-      transition:opacity 0.4s ease;
-    }
-    .cinematic-stage.show { opacity:1; }
-
-    /* LOCK STAGE */
-    #stage-lock {
-      background:radial-gradient(ellipse at 50% 50%, #1a0800, #000 70%);
-    }
-    .lock-book {
-      width:100px; height:130px;
-      border-radius:2px 10px 10px 2px;
-      background:linear-gradient(145deg,#8B1a1a,#4a0a0a);
-      border:2px solid rgba(229,9,20,0.6);
-      display:flex; align-items:center; justify-content:center;
-      font-size:2.5rem;
-      position:relative;
-      box-shadow:0 0 0 rgba(255,140,0,0);
-      transition:box-shadow 1s ease;
-    }
-    .lock-book.glowing {
-      box-shadow:
-        0 0 30px rgba(255,140,0,0.8),
-        0 0 60px rgba(255,80,0,0.5),
-        0 0 100px rgba(229,9,20,0.3);
-    }
-    .lock-ring {
-      position:absolute;
-      border-radius:50%;
-      border:2px solid rgba(255,140,0,0.4);
-      animation:none;
-    }
-    .lock-ring-1 { width:160px; height:160px; top:50%; left:50%; transform:translate(-50%,-50%); }
-    .lock-ring-2 { width:220px; height:220px; top:50%; left:50%; transform:translate(-50%,-50%); }
-    .lock-ring-3 { width:290px; height:290px; top:50%; left:50%; transform:translate(-50%,-50%); }
-    .lock-ring.pulse { animation:ringPulse 0.8s ease-out forwards; }
-    @keyframes ringPulse {
-      0%  { opacity:1; transform:translate(-50%,-50%) scale(0.8); }
-      100%{ opacity:0; transform:translate(-50%,-50%) scale(1.4); }
-    }
-    .lock-text {
-      position:absolute;
-      bottom:-50px; left:50%; transform:translateX(-50%);
-      font-family:'Playfair Display',serif;
-      font-size:1rem; color:rgba(255,140,0,0.8);
-      letter-spacing:3px; white-space:nowrap;
-      opacity:0; transition:opacity 0.5s ease;
-    }
-    .lock-text.show { opacity:1; }
-
-    /* FIRE STAGE */
-    #stage-fire {
-      background:#000;
-    }
-    .fire-book {
-      width:100px; height:130px;
-      position:relative;
-      display:flex; align-items:center; justify-content:center;
-      font-size:2.5rem;
-    }
-    .fire-container {
-      position:absolute;
-      inset:-20px -10px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      gap:4px;
-      overflow:hidden;
-    }
-    .flame {
-      width:18px;
-      border-radius:50% 50% 20% 20%;
-      background:linear-gradient(to top, #ff4500, #ff8c00, #ffd700);
-      transform-origin:bottom center;
-      opacity:0;
-    }
-    .flame.burning {
-      animation:flameBurn 0.3s ease-in forwards;
-    }
-    @keyframes flameBurn {
-      0%  { opacity:0; height:10px; transform:scaleX(1); }
-      50% { opacity:1; }
-      100%{ opacity:1; height:var(--h); transform:scaleX(var(--sx)); }
-    }
-    .flame.flicker {
-      animation:flameFlicker var(--dur) ease-in-out infinite alternate;
-    }
-    @keyframes flameFlicker {
-      0%  { height:var(--h); transform:scaleX(1) skewX(-3deg); opacity:0.9; }
-      100%{ height:calc(var(--h) * 1.3); transform:scaleX(0.85) skewX(3deg); opacity:1; }
-    }
-    .book-burning {
-      border-radius:2px 10px 10px 2px;
-      background:linear-gradient(145deg,#8B1a1a,#4a0a0a);
-      border:2px solid rgba(229,9,20,0.6);
-      width:100px; height:130px;
-      display:flex; align-items:center; justify-content:center;
-      font-size:2.5rem;
-      transition:opacity 1.2s ease, filter 1.2s ease, transform 1.2s ease;
-    }
-    .book-burning.burnt {
-      opacity:0;
-      filter:blur(10px) brightness(3);
-      transform:scale(0.6) translateY(-20px);
-    }
-    .ember {
-      position:absolute;
-      width:3px; height:3px;
-      border-radius:50%;
-      background:#ffd700;
-      pointer-events:none;
-    }
-
-    /* HOLE STAGE */
-    #stage-hole {
-      background:#000;
-    }
-    .hole-container {
-      position:relative;
-      width:200px; height:200px;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .hole-circle {
-      width:0; height:0;
-      border-radius:50%;
-      background:radial-gradient(circle, #0a0500 0%, #1a0d05 40%, #000 100%);
-      border:2px solid rgba(255,140,0,0.3);
-      transition:width 0.8s cubic-bezier(0.34,1.56,0.64,1),
-                 height 0.8s cubic-bezier(0.34,1.56,0.64,1);
-      overflow:hidden;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .hole-circle.open {
-      width:200px; height:200px;
-    }
-    .hole-glow {
-      position:absolute;
-      inset:-20px;
-      border-radius:50%;
-      background:radial-gradient(circle, transparent 40%, rgba(255,140,0,0.15) 70%, transparent 100%);
-      animation:holeGlow 2s ease-in-out infinite alternate;
-    }
-    @keyframes holeGlow {
-      0%  { opacity:0.5; transform:scale(1); }
-      100%{ opacity:1;   transform:scale(1.1); }
-    }
-
-    /* FALL STAGE */
-    #stage-fall {
-      background:#000;
-      overflow:hidden;
-    }
-    .sky-container {
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to bottom, #0a0f1a 0%, #1a2a3a 30%, #0e0804 70%, #1a0f07 100%);
-      display:flex; align-items:center; justify-content:center;
-      overflow:hidden;
-    }
-    .cloud {
-      position:absolute;
-      background:rgba(255,255,255,0.08);
-      border-radius:50px;
-      filter:blur(8px);
-    }
-    .fall-text {
-      position:absolute;
-      bottom:20%;
-      font-family:'Playfair Display',serif;
-      font-size:1.2rem;
-      color:rgba(245,198,160,0.8);
-      letter-spacing:3px;
-      text-align:center;
-      opacity:0;
-      animation:none;
-    }
-    .fall-text.show {
-      animation:fallTextAnim 1s ease forwards;
-    }
-    @keyframes fallTextAnim {
-      0%  { opacity:0; transform:translateY(20px); }
-      100%{ opacity:1; transform:translateY(0); }
-    }
-    .star-particle {
-      position:absolute;
-      width:2px; height:2px;
-      background:#fff;
-      border-radius:50%;
-      animation:starTwinkle var(--dur) ease-in-out infinite alternate;
-    }
-    @keyframes starTwinkle {
-      0%  { opacity:0.2; }
-      100%{ opacity:1; }
-    }
-    .fall-speed-lines {
-      position:absolute;
-      inset:0;
-      opacity:0;
-      background:repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 40px,
-        rgba(255,255,255,0.03) 40px,
-        rgba(255,255,255,0.03) 42px
-      );
+    .c-stage {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      opacity:0; pointer-events:none;
       transition:opacity 0.5s ease;
     }
-    .fall-speed-lines.show { opacity:1; }
+    .c-stage.on { opacity:1; pointer-events:auto; }
 
-    /* ═══════════════════════════
-       LIBRARY VIEW — REDESIGNED
-    ═══════════════════════════ */
-    #view-library {
-      min-height:calc(100vh - 52px);
-      background:linear-gradient(to bottom, #0e0804 0%, #1a0f07 50%, #0e0804 100%);
-      padding:0 0 80px;
-      position:relative;
+    /* ── STAGE 1: GOLD LOCK ── */
+    #cs-lock { background:radial-gradient(ellipse at 50% 50%, #120600 0%, #000 70%); }
+
+    .lock-wrap {
+      position:relative; width:320px; height:320px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    /* Concentric pulsing rings */
+    .c-ring {
+      position:absolute; border-radius:50%;
+      border:1.5px solid rgba(255,160,30,0.0);
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+    }
+    .c-ring-1 { width:100px; height:100px; }
+    .c-ring-2 { width:160px; height:160px; }
+    .c-ring-3 { width:230px; height:230px; }
+    .c-ring-4 { width:310px; height:310px; }
+    .c-ring.fire { animation:ringExpand 1s ease-out forwards; }
+    .c-ring-1.fire { animation-delay:0s; }
+    .c-ring-2.fire { animation-delay:0.15s; }
+    .c-ring-3.fire { animation-delay:0.3s; }
+    .c-ring-4.fire { animation-delay:0.45s; }
+    @keyframes ringExpand {
+      0%   { border-color:rgba(255,160,30,0.9); transform:translate(-50%,-50%) scale(0.6); }
+      100% { border-color:rgba(255,160,30,0); transform:translate(-50%,-50%) scale(1.6); }
+    }
+
+    .lock-book-visual {
+      width:90px; height:118px;
+      border-radius:2px 10px 10px 2px;
+      background:linear-gradient(145deg, #8B0000, #3a0000);
+      border:2px solid rgba(229,9,20,0.5);
+      display:flex; align-items:center; justify-content:center;
+      font-size:2.2rem; position:relative; z-index:2;
+      box-shadow:0 0 0px rgba(255,140,0,0);
+      transition:box-shadow 1.5s ease;
+    }
+    .lock-book-visual.lit {
+      box-shadow:
+        0 0 20px rgba(255,140,0,0.9),
+        0 0 50px rgba(255,80,0,0.6),
+        0 0 90px rgba(200,40,0,0.4),
+        0 0 140px rgba(150,20,0,0.2);
+    }
+    /* Rune symbols around book */
+    .rune {
+      position:absolute; font-size:1.1rem;
+      color:rgba(255,200,80,0); transition:color 0.6s ease, transform 0.6s ease;
+    }
+    .rune.glow { color:rgba(255,200,80,0.8); }
+    .rune-1 { top:0; left:50%; transform:translateX(-50%) translateY(-40px); }
+    .rune-2 { top:50%; right:0; transform:translate(40px,-50%); }
+    .rune-3 { bottom:0; left:50%; transform:translateX(-50%) translateY(40px); }
+    .rune-4 { top:50%; left:0; transform:translate(-40px,-50%); }
+    .rune.glow.rune-1 { transform:translateX(-50%) translateY(-40px) scale(1.3); }
+    .rune.glow.rune-2 { transform:translate(40px,-50%) scale(1.3); }
+    .rune.glow.rune-3 { transform:translateX(-50%) translateY(40px) scale(1.3); }
+    .rune.glow.rune-4 { transform:translate(-40px,-50%) scale(1.3); }
+
+    .lock-caption {
+      position:absolute; bottom:30px; left:0; right:0; text-align:center;
+      font-family:'Playfair Display',serif; font-size:0.9rem;
+      color:rgba(255,200,100,0); letter-spacing:4px;
+      transition:color 0.8s ease;
+    }
+    .lock-caption.show { color:rgba(255,200,100,0.75); }
+
+    /* ── STAGE 2: REAL CSS FIRE ── */
+    #cs-fire {
+      background:radial-gradient(ellipse at 50% 80%, #200800 0%, #000 60%);
+    }
+    .fire-scene {
+      position:relative; width:160px; height:240px;
+      display:flex; align-items:flex-end; justify-content:center;
+    }
+    /* The book being consumed */
+    .fire-book-body {
+      position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+      width:90px; height:118px;
+      border-radius:2px 10px 10px 2px;
+      background:linear-gradient(145deg, #8B0000, #3a0000);
+      border:2px solid rgba(229,9,20,0.5);
+      display:flex; align-items:center; justify-content:center;
+      font-size:2rem; z-index:2;
+      transition:all 1.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fire-book-body.consumed {
+      transform:translateX(-50%) translateY(20px) scale(0.5);
+      opacity:0; filter:blur(8px);
+    }
+
+    /* Pure CSS flames — no emoji */
+    .flames-wrap {
+      position:absolute; bottom:110px; left:50%; transform:translateX(-50%);
+      width:120px; height:0; overflow:visible;
+      display:flex; align-items:flex-end; justify-content:center; gap:3px;
+      z-index:3;
+    }
+    .fl {
+      border-radius:50% 50% 20% 20% / 60% 60% 30% 30%;
+      transform-origin:bottom center;
+      opacity:0; flex-shrink:0;
+    }
+    /* Each flame gets individual timing */
+    .fl-1  { width:12px; height:0; background:linear-gradient(to top,#ff2200,#ff6600,#ffaa00); animation:flGrow 0.4s 0.0s ease-out forwards, flWave 0.5s 0.4s ease-in-out infinite alternate; --fh:70px; }
+    .fl-2  { width:16px; height:0; background:linear-gradient(to top,#ff2200,#ff5500,#ffcc00); animation:flGrow 0.4s 0.1s ease-out forwards, flWave 0.55s 0.5s ease-in-out infinite alternate; --fh:100px; }
+    .fl-3  { width:20px; height:0; background:linear-gradient(to top,#ff1a00,#ff4400,#ffd000); animation:flGrow 0.4s 0.05s ease-out forwards, flWave 0.45s 0.45s ease-in-out infinite alternate; --fh:130px; }
+    .fl-4  { width:24px; height:0; background:linear-gradient(to top,#ff1100,#ff3300,#ffbb00); animation:flGrow 0.4s 0.0s ease-out forwards, flWave 0.5s 0.4s ease-in-out infinite alternate; --fh:150px; }
+    .fl-5  { width:22px; height:0; background:linear-gradient(to top,#ff1a00,#ff4400,#ffcc00); animation:flGrow 0.4s 0.08s ease-out forwards, flWave 0.6s 0.48s ease-in-out infinite alternate; --fh:140px; }
+    .fl-6  { width:18px; height:0; background:linear-gradient(to top,#ff2200,#ff5500,#ffaa00); animation:flGrow 0.4s 0.12s ease-out forwards, flWave 0.52s 0.52s ease-in-out infinite alternate; --fh:110px; }
+    .fl-7  { width:14px; height:0; background:linear-gradient(to top,#ff2200,#ff6600,#ffd000); animation:flGrow 0.4s 0.06s ease-out forwards, flWave 0.48s 0.46s ease-in-out infinite alternate; --fh:80px; }
+    .fl-8  { width:10px; height:0; background:linear-gradient(to top,#ff3300,#ff7700,#ffcc00); animation:flGrow 0.4s 0.15s ease-out forwards, flWave 0.56s 0.55s ease-in-out infinite alternate; --fh:55px; }
+
+    @keyframes flGrow {
+      0%   { height:0; opacity:0; }
+      60%  { opacity:1; }
+      100% { height:var(--fh); opacity:1; }
+    }
+    @keyframes flWave {
+      0%   { transform:scaleX(1.0) skewX(-4deg); filter:brightness(1); }
+      100% { transform:scaleX(0.75) skewX(5deg); filter:brightness(1.3); }
+    }
+    /* inner white/blue core */
+    .fl-core {
+      width:10px; height:0;
+      background:linear-gradient(to top, #fff 0%, #aaddff 40%, rgba(100,180,255,0) 100%);
+      border-radius:50% 50% 20% 20%;
+      transform-origin:bottom center; opacity:0;
+      animation:flGrow 0.4s 0.2s ease-out forwards, flWave 0.3s 0.6s ease-in-out infinite alternate;
+      --fh:60px;
+    }
+
+    /* Smoke wisps */
+    .smoke { position:absolute; border-radius:50%; background:rgba(80,50,30,0.4); filter:blur(6px); opacity:0; }
+    .sm-1 { width:30px; height:30px; bottom:200px; left:40%; animation:smokeRise 1.8s 0.6s ease-out infinite; }
+    .sm-2 { width:20px; height:20px; bottom:210px; left:55%; animation:smokeRise 2.2s 0.9s ease-out infinite; }
+    .sm-3 { width:25px; height:25px; bottom:220px; left:30%; animation:smokeRise 1.6s 1.2s ease-out infinite; }
+    @keyframes smokeRise {
+      0%   { transform:translateY(0) scale(1); opacity:0.5; }
+      100% { transform:translateY(-80px) scale(2.5); opacity:0; }
+    }
+
+    /* Sparks / embers */
+    .spark { position:absolute; width:3px; height:3px; border-radius:50%; background:#ffd700; }
+    .sp-1  { bottom:160px; left:45%; animation:sparkFly 1s 0.5s ease-out infinite; --sx:20px; --sy:80px; }
+    .sp-2  { bottom:140px; left:55%; animation:sparkFly 1.2s 0.7s ease-out infinite; --sx:-30px; --sy:100px; }
+    .sp-3  { bottom:150px; left:35%; animation:sparkFly 0.9s 0.9s ease-out infinite; --sx:15px; --sy:70px; }
+    .sp-4  { bottom:170px; left:60%; animation:sparkFly 1.1s 1.1s ease-out infinite; --sx:-20px; --sy:90px; }
+    .sp-5  { bottom:130px; left:50%; animation:sparkFly 1.3s 0.3s ease-out infinite; --sx:35px; --sy:110px; }
+    @keyframes sparkFly {
+      0%   { transform:translate(0,0) scale(1); opacity:1; }
+      100% { transform:translate(var(--sx),calc(var(--sy)*-1)) scale(0); opacity:0; }
+    }
+
+    /* Orange ambient light on background */
+    #cs-fire::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse at 50% 70%, rgba(255,80,0,0) 0%, transparent 60%);
+      transition:background 0.5s ease;
+      pointer-events:none;
+    }
+    #cs-fire.lit::before {
+      background:radial-gradient(ellipse at 50% 70%, rgba(255,80,0,0.18) 0%, transparent 60%);
+    }
+
+    /* ── STAGE 3: PORTAL / HOLE ── */
+    #cs-portal {
+      background:radial-gradient(ellipse at 50% 50%, #080300 0%, #000 70%);
+    }
+    .portal-wrap {
+      position:relative; width:300px; height:300px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    /* Outer glow ring */
+    .portal-outer-ring {
+      position:absolute; inset:0; border-radius:50%;
+      border:2px solid rgba(255,160,40,0);
+      box-shadow:0 0 0px rgba(255,160,40,0);
+      transition:border-color 0.8s ease, box-shadow 0.8s ease;
+    }
+    .portal-outer-ring.open {
+      border-color:rgba(255,160,40,0.5);
+      box-shadow:0 0 30px rgba(255,120,0,0.4), inset 0 0 30px rgba(255,80,0,0.2);
+    }
+    .portal-hole {
+      width:0; height:0; border-radius:50%;
+      background:radial-gradient(circle, #0a0300 0%, #1a0800 50%, #000 100%);
+      border:2px solid rgba(255,140,30,0);
+      overflow:hidden; position:relative;
+      transition:
+        width 1s cubic-bezier(0.34,1.4,0.64,1),
+        height 1s cubic-bezier(0.34,1.4,0.64,1),
+        border-color 0.5s ease;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .portal-hole.open {
+      width:240px; height:240px;
+      border-color:rgba(255,140,30,0.4);
+    }
+    .portal-inner-glow {
+      position:absolute; inset:0; border-radius:50%;
+      background:radial-gradient(circle, rgba(255,120,0,0.12) 0%, transparent 70%);
+      animation:innerPulse 2s ease-in-out infinite alternate;
+    }
+    @keyframes innerPulse {
+      0%  { transform:scale(0.9); opacity:0.6; }
+      100%{ transform:scale(1.1); opacity:1; }
+    }
+    /* Stars visible inside portal */
+    .portal-star {
+      position:absolute; width:2px; height:2px;
+      background:#fff; border-radius:50%;
+      animation:pStarTwinkle var(--d) ease-in-out infinite alternate;
+    }
+    @keyframes pStarTwinkle { 0%{opacity:0.1} 100%{opacity:0.9} }
+    .portal-caption {
+      position:absolute; bottom:20px; left:0; right:0; text-align:center;
+      font-family:'Playfair Display',serif; font-size:0.85rem;
+      color:rgba(255,200,100,0); letter-spacing:4px;
+      transition:color 1s ease;
+    }
+    .portal-caption.show { color:rgba(255,200,100,0.65); }
+
+    /* ── STAGE 4: SKY DESCENT ── */
+    #cs-sky {
+      background:#000;
       overflow:hidden;
     }
-    #view-library::before {
-      content:'';
-      position:absolute;
-      top:0; left:0; right:0; height:300px;
-      background:radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.08) 0%, transparent 70%);
+    .sky-bg {
+      position:absolute; inset:0;
+      background:linear-gradient(to bottom,
+        #020510 0%,
+        #040820 15%,
+        #061030 30%,
+        #0a1830 50%,
+        #0e1408 70%,
+        #1a0f07 85%,
+        #251408 100%);
+      opacity:0; transition:opacity 0.6s ease;
+    }
+    .sky-bg.show { opacity:1; }
+
+    /* Stars layer */
+    .sky-stars {
+      position:absolute; inset:0; overflow:hidden;
+    }
+    .sstar {
+      position:absolute; border-radius:50%; background:#fff;
+      animation:ssTwinkle var(--d) ease-in-out infinite alternate;
+    }
+    @keyframes ssTwinkle { 0%{opacity:0.1} 100%{opacity:var(--op)} }
+
+    /* Speed lines — the falling feeling */
+    .speed-lines {
+      position:absolute; inset:0; opacity:0;
+      transition:opacity 0.4s ease;
+    }
+    .speed-lines.show { opacity:1; }
+    .speed-line {
+      position:absolute; left:50%; background:rgba(255,255,255,0.06);
+      transform-origin:top center;
+      animation:speedStreak var(--dur) ease-in infinite;
+    }
+    @keyframes speedStreak {
+      0%   { height:0; opacity:0.8; top:0; }
+      100% { height:100vh; opacity:0; top:0; }
+    }
+
+    /* Cloud layers moving upward (sense of falling down) */
+    .sky-cloud {
+      position:absolute; border-radius:100px;
+      background:rgba(255,255,255,0.06); filter:blur(12px);
+      animation:cloudRise var(--dur) linear infinite;
+    }
+    @keyframes cloudRise {
+      0%   { transform:translateY(110vh); opacity:0; }
+      10%  { opacity:1; }
+      90%  { opacity:1; }
+      100% { transform:translateY(-20vh); opacity:0; }
+    }
+
+    /* Ground approaching */
+    .ground-approach {
+      position:absolute; bottom:0; left:0; right:0;
+      height:0; background:linear-gradient(to top, #1a0f07, transparent);
+      transition:height 2s ease;
+    }
+    .ground-approach.show { height:40%; }
+
+    .sky-caption {
+      position:absolute; bottom:15%; left:0; right:0; text-align:center;
+      font-family:'Playfair Display',serif; font-size:1.1rem;
+      color:rgba(245,198,160,0); letter-spacing:5px;
+      transition:color 0.8s ease;
+    }
+    .sky-caption.show { color:rgba(245,198,160,0.85); }
+
+    /* ══════════════════════════════
+       TOMB-ROLL TRANSITION
+       Plays between every view change
+    ══════════════════════════════ */
+    #tomb-roll {
+      position:fixed; inset:0; z-index:88888;
+      pointer-events:none; overflow:hidden;
+      display:none;
+    }
+    #tomb-roll.rolling { display:block; }
+    .tomb-panel {
+      position:absolute; left:0; right:0;
+      background:#0a0500;
+      transition:none;
+    }
+    .tomb-top    { top:0;   height:50%; transform:translateY(-100%); }
+    .tomb-bottom { bottom:0; height:50%; transform:translateY(100%); }
+    .tomb-center-line {
+      position:absolute; top:50%; left:0; right:0;
+      height:2px; margin-top:-1px;
+      background:linear-gradient(to right, transparent, rgba(245,198,100,0.6), transparent);
+      transform:scaleX(0); transform-origin:center;
+    }
+    /* Roll-in: panels slam together from top/bottom */
+    #tomb-roll.slam-in .tomb-top    { animation:tombTopIn    0.5s cubic-bezier(0.4,0,0.2,1) forwards; }
+    #tomb-roll.slam-in .tomb-bottom { animation:tombBottomIn 0.5s cubic-bezier(0.4,0,0.2,1) forwards; }
+    #tomb-roll.slam-in .tomb-center-line { animation:lineReveal 0.3s 0.4s ease-out forwards; }
+    @keyframes tombTopIn    { to { transform:translateY(0); } }
+    @keyframes tombBottomIn { to { transform:translateY(0); } }
+    @keyframes lineReveal   { to { transform:scaleX(1); } }
+    /* Roll-out: panels fly apart */
+    #tomb-roll.slam-out .tomb-top    { transform:translateY(0); animation:tombTopOut    0.5s cubic-bezier(0.4,0,0.2,1) forwards; }
+    #tomb-roll.slam-out .tomb-bottom { transform:translateY(0); animation:tombBottomOut 0.5s cubic-bezier(0.4,0,0.2,1) forwards; }
+    @keyframes tombTopOut    { to { transform:translateY(-100%); } }
+    @keyframes tombBottomOut { to { transform:translateY(100%);  } }
+
+    /* Dust/particles that shoot from center seam */
+    .tomb-dust {
+      position:absolute; top:50%; left:50%;
+      width:4px; height:4px; border-radius:50%;
+      background:rgba(245,198,100,0.8);
       pointer-events:none;
     }
 
-    /* Library Header */
-    .library-header {
-      text-align:center;
-      padding:50px 4% 40px;
-      position:relative;
+    /* ══════════════════════════════
+       BOOK-FLY TRANSITION
+       Plays when a book spine is tapped
+    ══════════════════════════════ */
+    #book-fly {
+      position:fixed; inset:0; z-index:88889;
+      pointer-events:none; display:none;
+      align-items:center; justify-content:center;
+      background:rgba(0,0,0,0);
     }
-    .library-header-glow {
+    #book-fly.flying { display:flex; }
+    .fly-book {
+      width:70px; height:90px;
+      border-radius:2px 8px 8px 2px;
+      background:linear-gradient(145deg, #8B0000, #3a0000);
+      border:1px solid rgba(229,9,20,0.5);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.6rem;
+      box-shadow:4px 4px 16px rgba(0,0,0,0.6);
       position:absolute;
-      top:0; left:50%; transform:translateX(-50%);
-      width:400px; height:200px;
-      background:radial-gradient(ellipse, rgba(255,140,0,0.12) 0%, transparent 70%);
+      transform-origin:center center;
+    }
+    .fly-book.drop-phase {
+      animation:bookDrop 0.5s cubic-bezier(0.4,0,0.6,1) forwards;
+    }
+    .fly-book.fly-phase {
+      animation:bookFly 0.7s cubic-bezier(0.2,0,0.4,1) forwards;
+    }
+    @keyframes bookDrop {
+      0%   { transform:translateY(0) rotate(0deg); }
+      60%  { transform:translateY(60px) rotate(-8deg); }
+      100% { transform:translateY(40px) rotate(-5deg); }
+    }
+    @keyframes bookFly {
+      0%   { transform:translateY(40px) rotate(-5deg) scale(1); opacity:1; }
+      40%  { transform:translateY(-30vh) rotate(15deg) scale(1.4); opacity:1; }
+      100% { transform:translateY(-100vh) rotate(30deg) scale(0.3); opacity:0; }
+    }
+    #book-fly .flash-overlay {
+      position:absolute; inset:0;
+      background:#fff; opacity:0;
       pointer-events:none;
+    }
+    #book-fly .flash-overlay.flash {
+      animation:pageFlash 0.4s ease-out forwards;
+    }
+    @keyframes pageFlash {
+      0%   { opacity:0.7; }
+      100% { opacity:0; }
+    }
+
+    /* ══════════════════════════════
+       LIBRARY VIEW
+    ══════════════════════════════ */
+    #view-library {
+      min-height:calc(100vh - 52px);
+      background:linear-gradient(160deg, #0c0600 0%, #1a0d05 40%, #0e0a02 100%);
+      padding:0 0 80px; position:relative; overflow:hidden;
+      animation:fadeUp 0.5s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(16px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    /* Ambient light from top */
+    #view-library::before {
+      content:''; position:absolute;
+      top:0; left:0; right:0; height:280px;
+      background:radial-gradient(ellipse at 50% 0%, rgba(255,160,40,0.1) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    /* Faint wood-grain texture */
+    #view-library::after {
+      content:''; position:absolute; inset:0;
+      background:repeating-linear-gradient(
+        90deg,
+        transparent 0px, transparent 80px,
+        rgba(255,255,255,0.01) 80px, rgba(255,255,255,0.01) 81px
+      );
+      pointer-events:none;
+    }
+    .library-header {
+      text-align:center; padding:50px 4% 40px; position:relative; z-index:2;
     }
     .library-header h2 {
       font-family:'Playfair Display',serif;
-      font-size:clamp(1.8rem,5vw,3rem);
-      color:var(--gold);
-      text-shadow:0 0 30px rgba(255,200,100,0.4);
-      margin-bottom:8px;
+      font-size:clamp(1.8rem,5vw,2.8rem); color:var(--gold);
+      text-shadow:0 0 40px rgba(245,198,100,0.5); margin-bottom:8px;
     }
-    .library-header p {
-      color:var(--text-secondary);
-      font-size:clamp(0.82rem,2.5vw,1rem);
-    }
-    .library-divider {
-      width:120px; height:2px;
-      background:linear-gradient(to right, transparent, var(--gold-bright), transparent);
-      margin:20px auto 0;
+    .library-header p { color:var(--text-secondary); font-size:0.92rem; }
+    .lib-divider {
+      width:140px; height:1px; margin:18px auto 0;
+      background:linear-gradient(to right, transparent, rgba(245,198,100,0.5), transparent);
     }
 
-    /* Genre Cards — CINEMATIC REDESIGN */
+    /* ── GENRE CARDS — HIGH END ── */
     .shelf-room {
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-      gap:24px;
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 4%;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:20px; max-width:1100px; margin:0 auto;
+      padding:0 4%; position:relative; z-index:2;
     }
-    .genre-shelf {
-      cursor:pointer;
-      position:relative;
-      border-radius:16px;
-      overflow:hidden;
-      transition:transform 0.4s cubic-bezier(0.4,0,0.2,1),
-                 box-shadow 0.4s ease;
+    .genre-card {
+      position:relative; height:220px;
+      border-radius:14px; overflow:hidden; cursor:pointer;
+      transition:transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease;
       touch-action:manipulation;
-      height:200px;
     }
-    .genre-shelf:hover {
-      transform:translateY(-8px) scale(1.02);
-      box-shadow:0 20px 60px rgba(0,0,0,0.8),
-                 0 0 40px rgba(255,140,0,0.15);
+    .genre-card:hover {
+      transform:translateY(-10px) scale(1.02);
+      box-shadow:0 24px 60px rgba(0,0,0,0.9), 0 0 50px var(--gc, rgba(255,140,0,0.2));
     }
-    .genre-shelf-bg {
+    /* Background layer — unique per genre */
+    .gc-bg {
       position:absolute; inset:0;
-      background-size:cover;
-      background-position:center;
-      transition:transform 0.4s ease;
+      transition:transform 0.5s ease;
     }
-    .genre-shelf:hover .genre-shelf-bg {
-      transform:scale(1.08);
-    }
-    .genre-shelf-overlay {
+    .genre-card:hover .gc-bg { transform:scale(1.06); }
+    /* Dark gradient overlay */
+    .gc-overlay {
       position:absolute; inset:0;
       background:linear-gradient(135deg,
-        rgba(0,0,0,0.85) 0%,
-        rgba(0,0,0,0.5) 50%,
-        rgba(0,0,0,0.3) 100%);
+        rgba(0,0,0,0.88) 0%,
+        rgba(0,0,0,0.55) 55%,
+        rgba(0,0,0,0.25) 100%);
       transition:background 0.4s ease;
     }
-    .genre-shelf:hover .genre-shelf-overlay {
+    .genre-card:hover .gc-overlay {
       background:linear-gradient(135deg,
-        rgba(0,0,0,0.75) 0%,
-        rgba(0,0,0,0.35) 50%,
-        rgba(0,0,0,0.15) 100%);
+        rgba(0,0,0,0.78) 0%,
+        rgba(0,0,0,0.4) 55%,
+        rgba(0,0,0,0.1) 100%);
     }
-    .genre-shelf-content {
+    /* Texture stripes */
+    .gc-texture {
       position:absolute; inset:0;
-      padding:24px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      background:repeating-linear-gradient(
+        45deg,
+        transparent 0px, transparent 20px,
+        rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px
+      );
     }
-    .genre-shelf-top {
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
+    /* Content */
+    .gc-content {
+      position:absolute; inset:0; padding:22px;
+      display:flex; flex-direction:column; justify-content:space-between;
     }
-    .genre-icon-badge {
-      width:52px; height:52px;
-      border-radius:12px;
-      background:rgba(0,0,0,0.5);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.15);
+    .gc-top { display:flex; justify-content:space-between; align-items:flex-start; }
+    .gc-icon {
+      width:54px; height:54px; border-radius:14px;
+      background:rgba(0,0,0,0.55); backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,0.12);
       display:flex; align-items:center; justify-content:center;
-      font-size:1.6rem;
-      box-shadow:0 4px 16px rgba(0,0,0,0.4);
+      font-size:1.7rem;
+      box-shadow:0 4px 14px rgba(0,0,0,0.5);
+      transition:transform 0.3s ease;
     }
-    .genre-book-count {
-      background:rgba(229,9,20,0.9);
-      color:#fff;
-      font-size:0.7rem;
-      font-weight:700;
-      padding:4px 10px;
-      border-radius:20px;
-      letter-spacing:0.5px;
-    }
-    .genre-shelf-bottom {}
-    .genre-shelf-name {
-      font-family:'Playfair Display',serif;
-      font-size:clamp(1.2rem,3vw,1.6rem);
-      color:#fff;
-      font-weight:600;
-      text-shadow:0 2px 10px rgba(0,0,0,0.8);
-      margin-bottom:6px;
-      line-height:1.2;
-    }
-    .genre-shelf-tagline {
-      font-size:0.8rem;
-      color:rgba(255,255,255,0.65);
-      letter-spacing:0.5px;
-    }
-    .genre-shelf-arrow {
-      position:absolute;
-      bottom:24px; right:24px;
-      width:36px; height:36px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.1);
-      border:1px solid rgba(255,255,255,0.2);
-      display:flex; align-items:center; justify-content:center;
-      color:#fff; font-size:1rem;
-      transition:all 0.3s ease;
+    .genre-card:hover .gc-icon { transform:scale(1.1) rotate(-5deg); }
+    .gc-badge {
+      background:rgba(229,9,20,0.85); color:#fff;
+      font-size:0.68rem; font-weight:700; padding:4px 10px;
+      border-radius:20px; letter-spacing:0.5px;
       backdrop-filter:blur(4px);
     }
-    .genre-shelf:hover .genre-shelf-arrow {
-      background:var(--primary);
-      border-color:var(--primary);
-      transform:translateX(4px);
+    .gc-bottom {}
+    .gc-name {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:600;
+      text-shadow:0 2px 12px rgba(0,0,0,0.8); margin-bottom:5px;
     }
-    /* Gold accent line */
-    .genre-shelf::after {
-      content:'';
-      position:absolute;
-      bottom:0; left:0; right:0;
-      height:3px;
+    .gc-tagline { font-size:0.78rem; color:rgba(255,255,255,0.6); letter-spacing:0.5px; }
+    /* Animated arrow */
+    .gc-arrow {
+      position:absolute; bottom:22px; right:22px;
+      width:38px; height:38px; border-radius:50%;
+      background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-size:1rem; backdrop-filter:blur(4px);
+      transition:all 0.3s ease;
+    }
+    .genre-card:hover .gc-arrow {
+      background:var(--primary); border-color:var(--primary);
+      transform:translateX(5px);
+    }
+    /* Gold shimmer line on hover */
+    .gc-shimmer {
+      position:absolute; bottom:0; left:0; right:0; height:3px;
       background:linear-gradient(to right, transparent, var(--gold-bright), transparent);
-      opacity:0;
-      transition:opacity 0.4s ease;
+      transform:scaleX(0); transform-origin:center;
+      transition:transform 0.4s ease;
     }
-    .genre-shelf:hover::after { opacity:1; }
+    .genre-card:hover .gc-shimmer { transform:scaleX(1); }
 
-    /* Genre-specific backgrounds */
-    .genre-bg-mystery {
-      background:linear-gradient(135deg,#1a0a2e,#2d1b4e,#0d1b2a);
-    }
-    .genre-bg-illusion {
-      background:linear-gradient(135deg,#0a1628,#1a2a4e,#0d2818);
-    }
-    .genre-bg-reality {
-      background:linear-gradient(135deg,#1a1a0a,#2e2a0a,#1a0a0a);
-    }
-    .genre-bg-royalty {
-      background:linear-gradient(135deg,#1a0d00,#2e1a00,#1a0000);
-    }
-    .genre-bg-romance {
-      background:linear-gradient(135deg,#1a0a14,#2e0a1e,#1a0a0a);
-    }
+    /* Genre-specific color themes */
+    .gc-mystery  .gc-bg { background:linear-gradient(135deg,#100520,#1e0a3e,#0a1020); }
+    .gc-illusion .gc-bg { background:linear-gradient(135deg,#051020,#0a2040,#051520); }
+    .gc-reality  .gc-bg { background:linear-gradient(135deg,#101005,#201e05,#100805); }
+    .gc-royalty  .gc-bg { background:linear-gradient(135deg,#150800,#2a1500,#100000); }
+    .gc-romance  .gc-bg { background:linear-gradient(135deg,#150510,#2a0518,#150505); }
+    .gc-mystery  { --gc:rgba(120,80,255,0.25); }
+    .gc-illusion { --gc:rgba(40,140,255,0.25); }
+    .gc-reality  { --gc:rgba(200,180,40,0.2); }
+    .gc-royalty  { --gc:rgba(255,160,40,0.25); }
+    .gc-romance  { --gc:rgba(255,60,120,0.25); }
 
-    /* SUB-SHELVES — REDESIGNED */
+    /* ── SUB-SHELVES ── */
     #view-subshelves {
       min-height:calc(100vh - 52px);
       padding:40px 4% 80px;
-      background:linear-gradient(to bottom,#0e0804,#1a0f07);
+      background:linear-gradient(160deg, #0c0600, #1a0d05);
+      animation:fadeUp 0.4s ease;
     }
-    .sub-heading { margin-bottom:30px; }
-    .sub-heading h2 {
-      font-family:'Playfair Display',serif;
-      font-size:clamp(1.4rem,4vw,2.2rem);
-      color:var(--gold);
+    .view-back-btn {
+      display:inline-flex; align-items:center; gap:8px;
+      color:var(--text-secondary); font-size:0.88rem; font-weight:500;
+      cursor:pointer; margin-bottom:28px;
+      background:none; border:none; padding:6px 0;
+      transition:color 0.3s; touch-action:manipulation;
     }
+    .view-back-btn:hover { color:var(--primary); }
     .breadcrumb {
       font-size:0.78rem; color:var(--text-secondary);
       margin-bottom:8px; display:flex; align-items:center;
@@ -618,146 +802,150 @@
     }
     .breadcrumb span { cursor:pointer; transition:color 0.3s; }
     .breadcrumb span:hover { color:var(--primary); }
+    .sub-heading { margin-bottom:32px; }
+    .sub-heading h2 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.4rem,4vw,2.2rem); color:var(--gold);
+    }
     .sub-shelf-grid {
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-      gap:20px; max-width:960px; margin:0 auto;
+      grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+      gap:18px; max-width:960px; margin:0 auto;
     }
-    .sub-shelf-card {
-      cursor:pointer;
-      border-radius:12px;
-      overflow:hidden;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-      transition:transform 0.3s ease,
-                 box-shadow 0.3s ease,
-                 border-color 0.3s ease;
+    /* Sub-shelf card — lantern style */
+    .sub-card {
+      cursor:pointer; border-radius:12px; overflow:hidden;
+      border:1px solid rgba(255,255,255,0.07);
+      background:rgba(255,255,255,0.03);
+      transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       touch-action:manipulation;
     }
-    .sub-shelf-card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 16px 40px rgba(0,0,0,0.6),
-                 0 0 20px rgba(255,140,0,0.1);
-      border-color:rgba(255,200,100,0.3);
+    .sub-card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 16px 40px rgba(0,0,0,0.7), 0 0 24px rgba(255,160,40,0.12);
+      border-color:rgba(245,198,100,0.3);
     }
-    .sub-shelf-visual {
-      height:120px;
-      position:relative;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      gap:4px;
-      padding:14px 10px 0;
-      overflow:hidden;
+    .sub-card-visual {
+      height:110px; position:relative;
+      display:flex; align-items:flex-end; justify-content:center;
+      gap:4px; padding:12px 10px 0; overflow:hidden;
     }
-    .sub-shelf-visual::after {
-      content:'';
-      position:absolute;
-      bottom:0; left:0; right:0;
-      height:8px;
+    /* Each sub-card has its own dark warm bg */
+    .sub-card:nth-child(1) .sub-card-visual { background:linear-gradient(160deg,#1e0a04,#0a0402); }
+    .sub-card:nth-child(2) .sub-card-visual { background:linear-gradient(160deg,#0a1a04,#040a02); }
+    .sub-card:nth-child(3) .sub-card-visual { background:linear-gradient(160deg,#04041a,#020208); }
+    .sub-card:nth-child(4) .sub-card-visual { background:linear-gradient(160deg,#1a0a00,#080400); }
+    .sub-card:nth-child(5) .sub-card-visual { background:linear-gradient(160deg,#1a0010,#080006); }
+    .sub-card:nth-child(n+6) .sub-card-visual { background:linear-gradient(160deg,#181004,#080600); }
+    /* plank */
+    .sub-card-visual::after {
+      content:''; position:absolute; bottom:0; left:0; right:0; height:8px;
+      background:linear-gradient(to bottom,#8B4513,#4a2008);
       border-radius:0 0 2px 2px;
     }
-    .sub-shelf-card:nth-child(odd)  .sub-shelf-visual { background:linear-gradient(160deg,#1a0d05,#2a1508); }
-    .sub-shelf-card:nth-child(even) .sub-shelf-visual { background:linear-gradient(160deg,#0d1a0d,#1a2a0d); }
-    .sub-shelf-card:nth-child(3n)   .sub-shelf-visual { background:linear-gradient(160deg,#0d0d1a,#1a1a2a); }
-    .sub-shelf-card:nth-child(odd)  .sub-shelf-visual::after { background:linear-gradient(to bottom,#8B4513,#5a2a0a); }
-    .sub-shelf-card:nth-child(even) .sub-shelf-visual::after { background:linear-gradient(to bottom,#A0522D,#6a3418); }
-    .sub-shelf-card:nth-child(3n)   .sub-shelf-visual::after { background:linear-gradient(to bottom,#C68642,#8a5620); }
     .sub-mini-book {
-      border-radius:1px 2px 2px 1px;
-      flex-shrink:0;
-      box-shadow:1px 0 4px rgba(0,0,0,0.4);
+      border-radius:1px 2px 2px 1px; flex-shrink:0;
+      box-shadow:1px 0 4px rgba(0,0,0,0.5);
+      transition:transform 0.3s ease;
     }
-    .sub-shelf-info {
-      padding:12px 14px 14px;
+    .sub-card:hover .sub-mini-book { transform:translateY(-4px); }
+    .sub-card-info { padding:12px 14px 14px; }
+    .sub-card-name {
+      font-family:'Playfair Display',serif; font-size:0.88rem;
+      color:var(--gold); font-weight:600; margin-bottom:3px;
     }
-    .sub-shelf-name {
-      font-family:'Playfair Display',serif;
-      font-size:0.9rem; color:var(--gold);
-      font-weight:600; margin-bottom:4px;
-    }
-    .sub-shelf-count {
-      font-size:0.72rem; color:var(--text-secondary);
-    }
+    .sub-card-count { font-size:0.7rem; color:var(--text-secondary); }
 
-    /* BOOKS VIEW */
+    /* ── BOOKS VIEW ── */
     #view-books {
       min-height:calc(100vh - 52px);
       padding:40px 4% 80px;
-      background:linear-gradient(to bottom,#0e0804,#1a0f07);
+      background:linear-gradient(160deg, #0c0600, #1a0d05);
+      animation:fadeUp 0.4s ease;
     }
-    .books-shelf-container { max-width:980px; margin:0 auto; }
-    .books-shelf-roll {
-      background:linear-gradient(160deg,#3d1f0d,#2a1508);
-      border:1px solid rgba(139,69,19,0.4);
-      border-radius:8px 8px 0 0;
-      padding:24px 16px 18px;
-      min-height:200px;
-      display:flex; flex-wrap:wrap; gap:6px; align-items:flex-end;
+    .shelf-container { max-width:980px; margin:0 auto; }
+
+    /* Decorative shelf unit */
+    .shelf-unit-wrap {
+      background:linear-gradient(160deg,#2a1205,#1a0c03);
+      border:1px solid rgba(139,69,19,0.35);
+      border-radius:10px 10px 0 0;
+      padding:20px 16px 16px;
+      min-height:220px;
+      display:flex; flex-wrap:wrap; gap:5px; align-items:flex-end;
       position:relative;
-      box-shadow:inset 0 0 30px rgba(0,0,0,0.4);
+      box-shadow:inset 0 0 40px rgba(0,0,0,0.5),
+                 inset 0 2px 0 rgba(255,255,255,0.04);
     }
-    .books-shelf-roll::before {
-      content:'';
-      position:absolute; top:0; left:0; right:0; height:4px;
-      background:linear-gradient(to right,transparent,rgba(255,200,100,0.2),transparent);
+    /* Top ambient light strip */
+    .shelf-unit-wrap::before {
+      content:''; position:absolute; top:0; left:10%; right:10%; height:1px;
+      background:linear-gradient(to right, transparent, rgba(245,198,100,0.2), transparent);
     }
-    .books-shelf-plank {
-      height:16px;
-      background:linear-gradient(to bottom,#8B4513,#5a2a0a);
-      border-radius:0 0 8px 8px;
-      margin-bottom:28px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.6);
+    .shelf-plank-bar {
+      height:18px;
+      background:linear-gradient(to bottom,#9B5523,#5a2a0a);
+      border-radius:0 0 8px 8px; margin-bottom:24px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.7),
+                 inset 0 1px 0 rgba(255,255,255,0.06);
     }
+
+    /* Book spines */
     .book-spine {
-      width:clamp(28px,7vw,38px); min-height:120px;
-      border-radius:2px 3px 3px 2px; cursor:pointer;
+      width:clamp(30px,7vw,42px); min-height:130px;
+      border-radius:2px 4px 4px 2px; cursor:pointer;
       display:flex; align-items:center; justify-content:center;
-      position:relative; transition:transform 0.25s,box-shadow 0.25s;
-      box-shadow:2px 0 6px rgba(0,0,0,0.4); flex-shrink:0;
+      position:relative; flex-shrink:0;
+      box-shadow:2px 0 8px rgba(0,0,0,0.5);
+      transition:transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s ease;
       touch-action:manipulation;
     }
-    .book-spine:hover,.book-spine:active {
-      transform:translateY(-16px) scaleY(1.04);
-      box-shadow:4px 0 24px rgba(0,0,0,0.7); z-index:5;
+    .book-spine:hover {
+      transform:translateY(-20px) scale(1.05);
+      box-shadow:4px 0 28px rgba(0,0,0,0.8), 0 0 16px rgba(255,255,255,0.1);
+      z-index:10;
+    }
+    /* Book spine highlight edge */
+    .book-spine::after {
+      content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+      background:rgba(255,255,255,0.15); border-radius:2px 0 0 2px;
     }
     .spine-title {
       writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg);
-      font-size:clamp(0.5rem,1.8vw,0.65rem); font-weight:600;
-      color:rgba(255,255,255,0.92); text-align:center; padding:5px 2px;
+      font-size:clamp(0.5rem,1.6vw,0.65rem); font-weight:600;
+      color:rgba(255,255,255,0.9); padding:6px 2px;
       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-      max-height:100px; letter-spacing:0.5px;
+      max-height:110px; letter-spacing:0.5px;
     }
-    .book-spine:nth-child(20n+1) {background:linear-gradient(to right,#e74c3c,#c0392b)}
-    .book-spine:nth-child(20n+2) {background:linear-gradient(to right,#3498db,#2980b9)}
-    .book-spine:nth-child(20n+3) {background:linear-gradient(to right,#2ecc71,#27ae60)}
-    .book-spine:nth-child(20n+4) {background:linear-gradient(to right,#f39c12,#e67e22)}
-    .book-spine:nth-child(20n+5) {background:linear-gradient(to right,#9b59b6,#8e44ad)}
-    .book-spine:nth-child(20n+6) {background:linear-gradient(to right,#1abc9c,#16a085)}
-    .book-spine:nth-child(20n+7) {background:linear-gradient(to right,#e91e8c,#c2185b)}
-    .book-spine:nth-child(20n+8) {background:linear-gradient(to right,#ff5722,#e64a19)}
-    .book-spine:nth-child(20n+9) {background:linear-gradient(to right,#607d8b,#455a64)}
-    .book-spine:nth-child(20n+10){background:linear-gradient(to right,#795548,#5d4037)}
-    .book-spine:nth-child(20n+11){background:linear-gradient(to right,#c0392b,#96281b)}
-    .book-spine:nth-child(20n+12){background:linear-gradient(to right,#27ae60,#1e8449)}
-    .book-spine:nth-child(20n+13){background:linear-gradient(to right,#3498db,#2471a3)}
-    .book-spine:nth-child(20n+14){background:linear-gradient(to right,#f39c12,#d68910)}
-    .book-spine:nth-child(20n+15){background:linear-gradient(to right,#8e44ad,#6c3483)}
-    .book-spine:nth-child(20n+16){background:linear-gradient(to right,#16a085,#0e6655)}
-    .book-spine:nth-child(20n+17){background:linear-gradient(to right,#d35400,#a04000)}
-    .book-spine:nth-child(20n+18){background:linear-gradient(to right,#2c3e50,#1a252f)}
-    .book-spine:nth-child(20n+19){background:linear-gradient(to right,#c0392b,#7b241c)}
-    .book-spine:nth-child(20n+20){background:linear-gradient(to right,#1e8bc3,#154360)}
+    .book-spine:nth-child(20n+1)  {background:linear-gradient(to right,#c0392b,#922b21)}
+    .book-spine:nth-child(20n+2)  {background:linear-gradient(to right,#2471a3,#1a5276)}
+    .book-spine:nth-child(20n+3)  {background:linear-gradient(to right,#1e8449,#196f3d)}
+    .book-spine:nth-child(20n+4)  {background:linear-gradient(to right,#d4ac0d,#b7950b)}
+    .book-spine:nth-child(20n+5)  {background:linear-gradient(to right,#7d3c98,#6c3483)}
+    .book-spine:nth-child(20n+6)  {background:linear-gradient(to right,#0e6655,#0b5345)}
+    .book-spine:nth-child(20n+7)  {background:linear-gradient(to right,#cb4335,#a93226)}
+    .book-spine:nth-child(20n+8)  {background:linear-gradient(to right,#e67e22,#ca6f1e)}
+    .book-spine:nth-child(20n+9)  {background:linear-gradient(to right,#2e86c1,#2874a6)}
+    .book-spine:nth-child(20n+10) {background:linear-gradient(to right,#566573,#4d5d6c)}
+    .book-spine:nth-child(20n+11) {background:linear-gradient(to right,#922b21,#7b241c)}
+    .book-spine:nth-child(20n+12) {background:linear-gradient(to right,#1d8348,#196f3d)}
+    .book-spine:nth-child(20n+13) {background:linear-gradient(to right,#1a5276,#154360)}
+    .book-spine:nth-child(20n+14) {background:linear-gradient(to right,#b7950b,#9a7d0a)}
+    .book-spine:nth-child(20n+15) {background:linear-gradient(to right,#6c3483,#5b2c6f)}
+    .book-spine:nth-child(20n+16) {background:linear-gradient(to right,#0b5345,#0a4538)}
+    .book-spine:nth-child(20n+17) {background:linear-gradient(to right,#d35400,#ba4a00)}
+    .book-spine:nth-child(20n+18) {background:linear-gradient(to right,#212f3c,#1c2833)}
+    .book-spine:nth-child(20n+19) {background:linear-gradient(to right,#78281f,#641e16)}
+    .book-spine:nth-child(20n+20) {background:linear-gradient(to right,#1a5276,#0e3460)}
     .empty-shelf-msg {
-      color:var(--text-secondary); font-style:italic;
-      font-size:0.88rem; padding:40px 0; text-align:center; width:100%;
+      color:var(--text-secondary); font-style:italic; font-size:0.88rem;
+      padding:40px 0; text-align:center; width:100%;
     }
 
-    /* STORY VIEW */
+    /* ── STORY VIEW ── */
     #view-story {
-      min-height:calc(100vh - 52px);
-      padding:40px 4% 80px;
-      background:var(--bg-dark);
+      min-height:calc(100vh - 52px); padding:40px 4% 80px;
+      background:var(--bg-dark); animation:fadeUp 0.4s ease;
     }
     .story-container { max-width:740px; margin:0 auto; }
     .story-genre-tag {
@@ -773,18 +961,13 @@
       background:var(--bg-card); border-left:4px solid var(--primary);
       border-radius:0 8px 8px 0; padding:18px 20px; margin-bottom:28px;
     }
-    .story-description-box p {
-      color:var(--text-secondary); font-size:clamp(0.9rem,2.5vw,1rem); line-height:1.75;
-    }
+    .story-description-box p { color:var(--text-secondary); font-size:0.98rem; line-height:1.75; }
     .read-cta {
-      color:var(--primary); font-size:0.82rem; font-weight:600;
-      margin-top:10px; display:flex; align-items:center; gap:5px;
-      animation:blink 2s step-end infinite;
+      color:var(--primary); font-size:0.82rem; font-weight:600; margin-top:10px;
+      display:flex; align-items:center; gap:5px; animation:blink 2s step-end infinite;
     }
     .story-divider { border:none; border-top:1px solid rgba(255,255,255,0.08); margin:32px 0; }
-    .story-full-text {
-      font-size:clamp(0.95rem,2.5vw,1.05rem); line-height:2; color:var(--text-secondary);
-    }
+    .story-full-text { font-size:clamp(0.95rem,2.5vw,1.05rem); line-height:2; color:var(--text-secondary); }
     .story-full-text p { margin-bottom:1.5em; text-align:justify; }
     .story-full-text p:first-child::first-letter {
       font-family:'Playfair Display',serif; font-size:3.8rem; float:left;
@@ -796,44 +979,30 @@
       color:var(--text-secondary); font-style:italic; margin-bottom:30px;
     }
     .story-placeholder .placeholder-icon { font-size:2.4rem; margin-bottom:12px; }
-
-    /* RATING */
     .rating-section { background:var(--bg-card); border-radius:12px; padding:24px; margin-bottom:22px; }
     .rating-section h4 { font-size:1rem; font-weight:600; margin-bottom:14px; }
     .stars { display:flex; gap:8px; flex-wrap:wrap; }
-    .star {
-      font-size:clamp(1.6rem,6vw,2rem); cursor:pointer; color:#444;
-      transition:color 0.2s,transform 0.2s; line-height:1; touch-action:manipulation;
-    }
+    .star { font-size:clamp(1.6rem,6vw,2rem); cursor:pointer; color:#444; transition:color 0.2s,transform 0.2s; touch-action:manipulation; }
     .star:hover,.star.active { color:#f5c642; transform:scale(1.2); }
     .rating-msg { font-size:0.85rem; color:var(--text-secondary); margin-top:10px; }
-
-    /* COMMENTS */
     .comment-section { background:var(--bg-card); border-radius:12px; padding:24px; margin-bottom:22px; }
     .comment-section h4 { font-size:1rem; font-weight:600; margin-bottom:14px; }
     .comment-textarea {
       width:100%; background:var(--bg-hover); border:1px solid rgba(255,255,255,0.1);
       border-radius:8px; padding:14px; color:#fff; font-family:'Inter',sans-serif;
-      font-size:0.9rem; resize:vertical; min-height:100px; outline:none;
-      transition:border-color 0.3s;
+      font-size:0.9rem; resize:vertical; min-height:100px; outline:none; transition:border-color 0.3s;
     }
     .comment-textarea:focus { border-color:var(--primary); }
     .comment-submit {
-      margin-top:12px; padding:10px 26px; background:var(--primary);
-      color:#fff; border:none; border-radius:6px; font-size:0.9rem;
-      font-weight:600; cursor:pointer; transition:background 0.3s,transform 0.2s;
-      touch-action:manipulation;
+      margin-top:12px; padding:10px 26px; background:var(--primary); color:#fff;
+      border:none; border-radius:6px; font-size:0.9rem; font-weight:600; cursor:pointer;
+      transition:background 0.3s,transform 0.2s; touch-action:manipulation;
     }
     .comment-submit:hover { background:var(--primary-dark); transform:scale(1.03); }
     .comments-list { margin-top:20px; display:flex; flex-direction:column; gap:14px; }
-    .comment-item {
-      background:var(--bg-hover); border-radius:8px;
-      padding:14px 16px; font-size:0.88rem; color:var(--text-secondary);
-    }
+    .comment-item { background:var(--bg-hover); border-radius:8px; padding:14px 16px; font-size:0.88rem; color:var(--text-secondary); }
     .comment-author { color:var(--text-primary); font-weight:600; margin-bottom:4px; font-size:0.82rem; }
     .no-comments { color:var(--text-secondary); font-style:italic; font-size:0.85rem; }
-
-    /* COIN SUPPORT */
     .support-section {
       background:linear-gradient(135deg,#1a0f05,#2a1a08);
       border:1px solid rgba(245,198,100,0.25); border-radius:12px;
@@ -846,29 +1015,18 @@
       padding:10px 22px; border:1px solid rgba(245,198,100,0.4);
       background:rgba(245,198,100,0.08); border-radius:50px;
       color:var(--gold); font-size:0.9rem; font-weight:600; cursor:pointer;
-      transition:all 0.3s; display:flex; align-items:center; gap:6px;
-      touch-action:manipulation;
+      transition:all 0.3s; display:flex; align-items:center; gap:6px; touch-action:manipulation;
     }
     .coin-btn:hover { background:rgba(245,198,100,0.2); border-color:var(--gold); transform:scale(1.05); }
     .coin-toast { display:none; margin-top:14px; font-size:0.82rem; color:var(--gold); }
 
-    /* BACK BUTTON */
-    .view-back-btn {
-      display:inline-flex; align-items:center; gap:8px;
-      color:var(--text-secondary); font-size:0.88rem; font-weight:500;
-      cursor:pointer; margin-bottom:28px; transition:color 0.3s;
-      background:none; border:none; padding:6px 0; touch-action:manipulation;
-    }
-    .view-back-btn:hover { color:var(--primary); }
-
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media(max-width:600px){
       .shelf-room { grid-template-columns:1fr; }
       .sub-shelf-grid { grid-template-columns:1fr 1fr; }
-      .book-spine { width:30px; min-height:100px; }
-      .spine-title { font-size:0.5rem; max-height:80px; }
-      .books-shelf-roll { padding:14px 10px 10px; gap:5px; }
-      .genre-shelf { height:160px; }
+      .genre-card { height:180px; }
+      .book-spine { width:28px; min-height:100px; }
+      .spine-title { font-size:0.48rem; }
     }
     @media(min-width:900px){
       .shelf-room { grid-template-columns:repeat(3,1fr); }
@@ -883,109 +1041,144 @@
   <span class="page-title">📚 Book Shelves</span>
 </nav>
 
+<!-- TOMB ROLL OVERLAY -->
+<div id="tomb-roll">
+  <div class="tomb-panel tomb-top"></div>
+  <div class="tomb-panel tomb-bottom"></div>
+  <div class="tomb-center-line"></div>
+</div>
+
+<!-- BOOK FLY OVERLAY -->
+<div id="book-fly">
+  <div class="fly-book" id="fly-book-el">📖</div>
+  <div class="flash-overlay" id="fly-flash"></div>
+</div>
+
 <div class="scene">
 
-  <!-- VIEW 1: ENTRANCE -->
+  <!-- ENTRANCE -->
   <div id="view-entrance" class="view active">
-    <h1 class="entrance-title">Welcome to the Library</h1>
-    <p class="entrance-sub">Thousands of stories wait between these walls. Open the book to begin your journey.</p>
+    <h1 class="entrance-title">The Grand Library</h1>
+    <p class="entrance-sub">Ancient stories wait between forgotten walls. Open the book — if you dare.</p>
     <div class="entrance-book-wrap">
+      <div class="book-rope"></div>
       <button class="big-book-btn" id="big-book-btn" aria-label="Open Library">
-        <div class="book-rope"></div>
-        <div class="book-cover">
-          <div class="book-cover-icon">📖</div>
-          <div class="book-cover-title">BOOK SHELVES<br>Unlimited Books</div>
-          <div class="book-cover-sub">Tap to Enter</div>
+        <div class="book-pages"></div>
+        <div class="book-spine-3d"></div>
+        <div class="book-cover-3d">
+          <div class="book-icon">📖</div>
+          <div class="book-title-text">BOOK SHELVES<br>Unlimited Stories</div>
+          <div class="book-sub-text">Tap to Enter</div>
         </div>
       </button>
+      <div class="book-halo"></div>
     </div>
-    <p class="open-cta">✨ Tap the book to open the library</p>
+    <p class="open-cta">✦ Tap the book to open the library ✦</p>
   </div>
 
-  <!-- VIEW 2: CINEMATIC TRANSITION -->
+  <!-- CINEMATIC INTRO -->
   <div id="view-cinematic" class="view">
 
-    <!-- Stage 1: Ancient Lock -->
-    <div class="cinematic-stage" id="stage-lock">
-      <div style="position:relative;display:flex;align-items:center;justify-content:center;width:300px;height:300px;">
-        <div class="lock-ring lock-ring-3"></div>
-        <div class="lock-ring lock-ring-2"></div>
-        <div class="lock-ring lock-ring-1"></div>
-        <div class="lock-book" id="lock-book">📖</div>
-        <div class="lock-text" id="lock-text">ANCIENT LOCK TRIGGERED</div>
-      </div>
-    </div>
-
-    <!-- Stage 2: Fire -->
-    <div class="cinematic-stage" id="stage-fire">
-      <div class="fire-book" id="fire-book-wrap">
-        <div class="fire-container" id="fire-container"></div>
-        <div class="book-burning" id="book-burning">📖</div>
-      </div>
-    </div>
-
-    <!-- Stage 3: Hole / Portal -->
-    <div class="cinematic-stage" id="stage-hole">
-      <div class="hole-container">
-        <div class="hole-glow"></div>
-        <div class="hole-circle" id="hole-circle">
-          <span style="font-size:2rem;opacity:0.6;">✨</span>
+    <!-- STAGE 1: Lock -->
+    <div class="c-stage" id="cs-lock">
+      <div class="lock-wrap">
+        <div class="c-ring c-ring-1"></div>
+        <div class="c-ring c-ring-2"></div>
+        <div class="c-ring c-ring-3"></div>
+        <div class="c-ring c-ring-4"></div>
+        <div class="lock-book-visual" id="lock-book-el">
+          <span class="rune rune-1" id="rune1">⚡</span>
+          <span class="rune rune-2" id="rune2">🔱</span>
+          <span class="rune rune-3" id="rune3">⚡</span>
+          <span class="rune rune-4" id="rune4">🔱</span>
+          📖
         </div>
       </div>
-      <p style="position:absolute;bottom:25%;font-family:'Playfair Display',serif;
-                font-size:1rem;color:rgba(255,200,100,0.7);letter-spacing:3px;
-                text-align:center;" id="hole-text"></p>
+      <div class="lock-caption" id="lock-caption">ANCIENT SEAL BROKEN</div>
     </div>
 
-    <!-- Stage 4: Fall from Sky -->
-    <div class="cinematic-stage" id="stage-fall">
-      <div class="sky-container" id="sky-container">
-        <div class="fall-speed-lines" id="fall-speed-lines"></div>
+    <!-- STAGE 2: Fire -->
+    <div class="c-stage" id="cs-fire">
+      <div class="fire-scene">
+        <div class="flames-wrap" id="flames-wrap">
+          <div class="fl fl-1"></div>
+          <div class="fl fl-2"></div>
+          <div class="fl fl-3"></div>
+          <div class="fl fl-4"></div>
+          <div class="fl fl-core"></div>
+          <div class="fl fl-5"></div>
+          <div class="fl fl-6"></div>
+          <div class="fl fl-7"></div>
+          <div class="fl fl-8"></div>
+        </div>
+        <div class="smoke sm-1"></div>
+        <div class="smoke sm-2"></div>
+        <div class="smoke sm-3"></div>
+        <div class="spark sp-1"></div>
+        <div class="spark sp-2"></div>
+        <div class="spark sp-3"></div>
+        <div class="spark sp-4"></div>
+        <div class="spark sp-5"></div>
+        <div class="fire-book-body" id="fire-book-body">📖</div>
       </div>
-      <p class="fall-text" id="fall-text">ENTERING THE LIBRARY</p>
+    </div>
+
+    <!-- STAGE 3: Portal -->
+    <div class="c-stage" id="cs-portal">
+      <div class="portal-wrap">
+        <div class="portal-outer-ring" id="portal-outer"></div>
+        <div class="portal-hole" id="portal-hole">
+          <div class="portal-inner-glow"></div>
+        </div>
+      </div>
+      <div class="portal-caption" id="portal-caption">THE WAY IS OPEN</div>
+    </div>
+
+    <!-- STAGE 4: Sky descent -->
+    <div class="c-stage" id="cs-sky">
+      <div class="sky-bg" id="sky-bg"></div>
+      <div class="sky-stars" id="sky-stars"></div>
+      <div class="speed-lines" id="speed-lines"></div>
+      <div class="ground-approach" id="ground-approach"></div>
+      <div class="sky-caption" id="sky-caption">ENTERING THE LIBRARY</div>
     </div>
 
   </div>
 
-  <!-- VIEW 3: LIBRARY -->
+  <!-- LIBRARY -->
   <div id="view-library" class="view">
     <div class="library-header">
-      <div class="library-header-glow"></div>
       <h2>📚 The Grand Library</h2>
-      <p>Choose a shelf — each holds a world of its own</p>
-      <div class="library-divider"></div>
+      <p>Choose your shelf — each world is different</p>
+      <div class="lib-divider"></div>
     </div>
     <div class="shelf-room" id="genre-shelf-room"></div>
   </div>
 
-  <!-- VIEW 4: SUB-SHELVES -->
+  <!-- SUB-SHELVES -->
   <div id="view-subshelves" class="view">
-    <button class="view-back-btn" onclick="goBack('view-library')">← Back to Library</button>
-    <div class="breadcrumb">
-      <span onclick="goBack('view-library')">Library</span>
-      <span>›</span>
-      <span id="subshelves-genre-name">Genre</span>
-    </div>
+    <button class="view-back-btn" id="sub-back-btn">← Back to Library</button>
+    <div class="breadcrumb" id="sub-breadcrumb"></div>
     <div class="sub-heading">
-      <h2 id="subshelves-title">Sub Shelves</h2>
+      <h2 id="subshelves-title">Shelves</h2>
     </div>
     <div class="sub-shelf-grid" id="sub-shelf-grid"></div>
   </div>
 
-  <!-- VIEW 5: BOOK SPINES -->
+  <!-- BOOKS -->
   <div id="view-books" class="view">
     <button class="view-back-btn" id="books-back-btn">← Back</button>
     <div class="breadcrumb" id="books-breadcrumb"></div>
-    <div class="books-shelf-container">
+    <div class="shelf-container">
       <h2 id="books-shelf-title"
-          style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,4vw,1.8rem);
-                 color:#f5c6a0;margin-bottom:22px;"></h2>
-      <div class="books-shelf-roll" id="books-shelf-roll"></div>
-      <div class="books-shelf-plank"></div>
+          style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,4vw,1.8rem);
+                 color:var(--gold);margin-bottom:20px;"></h2>
+      <div class="shelf-unit-wrap" id="books-shelf-roll"></div>
+      <div class="shelf-plank-bar"></div>
     </div>
   </div>
 
-  <!-- VIEW 6: STORY -->
+  <!-- STORY -->
   <div id="view-story" class="view">
     <div class="story-container">
       <button class="view-back-btn" id="story-back-btn">← Back to Shelf</button>
@@ -993,7 +1186,7 @@
       <h1 class="story-view-title" id="story-title"></h1>
       <div class="story-description-box">
         <p id="story-description"></p>
-        <div class="read-cta">👇 Tap below to read the full story</div>
+        <div class="read-cta">👇 Full story below</div>
       </div>
       <hr class="story-divider"/>
       <div class="story-full-text" id="story-full-text"></div>
@@ -1012,7 +1205,7 @@
       <div class="comment-section">
         <h4>💬 Leave a Comment</h4>
         <textarea class="comment-textarea" id="comment-input"
-                  placeholder="Share your thoughts about this story…"></textarea>
+                  placeholder="Share your thoughts…"></textarea>
         <button class="comment-submit" onclick="submitComment()">Post Comment</button>
         <div class="comments-list" id="comments-list">
           <p class="no-comments">No comments yet — be the first!</p>
@@ -1020,7 +1213,7 @@
       </div>
       <div class="support-section">
         <h4>🪙 Support the Author</h4>
-        <p>Show your appreciation with coins — we'll convert them to real rewards soon!</p>
+        <p>Every coin goes directly to the author.</p>
         <div class="coin-buttons">
           <button class="coin-btn" onclick="supportCoin(1)">🪙 1 Coin</button>
           <button class="coin-btn" onclick="supportCoin(5)">🪙 5 Coins</button>
@@ -1032,17 +1225,16 @@
     </div>
   </div>
 
-</div>
+</div><!-- /.scene -->
 
 <script>
 /* ═══════════════════════════════════════
-   LIBRARY DATA — same as before, unchanged
+   LIBRARY DATA
 ═══════════════════════════════════════ */
 const LIBRARY = [
   {
     id:'mystery', name:'Mystery', icon:'🔍',
-    tagline:'Secrets, twists & the unknown',
-    bgClass:'genre-bg-mystery',
+    tagline:'Secrets, twists & the unknown', cls:'gc-mystery',
     subShelves:[
       { id:'ms-detective', name:'Detective Files', desc:'Cases cracked in the dark',
         books:[
@@ -1066,8 +1258,7 @@ const LIBRARY = [
   },
   {
     id:'illusion', name:'Illusion', icon:'🌀',
-    tagline:'Nothing is what it seems',
-    bgClass:'genre-bg-illusion',
+    tagline:'Nothing is what it seems', cls:'gc-illusion',
     subShelves:[
       { id:'il-mind', name:'Mind Benders', desc:'Reality fractured',
         books:[
@@ -1084,13 +1275,12 @@ const LIBRARY = [
   },
   {
     id:'reality', name:'Reality', icon:'🌍',
-    tagline:'Raw, real, and relentless',
-    bgClass:'genre-bg-reality',
+    tagline:'Raw, real, and relentless', cls:'gc-reality',
     subShelves:[
       { id:'rl-life', name:'Everyday Lives', desc:'Stories from the street',
         books:[
-          {id:'b10',title:'The Long Walk Home',description:'A father walks 200 km to attend his daughter\'s graduation after his bus is cancelled.'},
-          {id:'b11',title:'Market Women',description:'Five market traders share one phone — and one dream — across five years.'}
+          {id:'b10',title:'The Long Walk Home',description:'A father walks 200 km to attend his daughter\'s graduation.'},
+          {id:'b11',title:'Market Women',description:'Five traders share one phone — and one dream — across five years.'}
         ]
       },
       { id:'rl-struggle', name:'Grit & Grace', desc:'Resilience in the storm',
@@ -1102,12 +1292,11 @@ const LIBRARY = [
   },
   {
     id:'royalty', name:'Royalty', icon:'👑',
-    tagline:'Crowns, courts & conquest',
-    bgClass:'genre-bg-royalty',
+    tagline:'Crowns, courts & conquest', cls:'gc-royalty',
     subShelves:[
       { id:'ry-palace', name:'Palace Intrigues', desc:'Power behind the throne',
         books:[
-          {id:'b13',title:'The Ivory Throne',description:'A princess discovers the kingdom\'s founding document is a forgery — signed by her ancestor.'},
+          {id:'b13',title:'The Ivory Throne',description:'A princess discovers the kingdom\'s founding document is a forgery.'},
           {id:'b14',title:'Blood Crown',description:'Three siblings. One crown. The eldest is already dead — or so everyone believes.'}
         ]
       },
@@ -1120,8 +1309,7 @@ const LIBRARY = [
   },
   {
     id:'romance', name:'Romance', icon:'🌹',
-    tagline:'Hearts, heat & longing',
-    bgClass:'genre-bg-romance',
+    tagline:'Hearts, heat & longing', cls:'gc-romance',
     subShelves:[
       { id:'ro-modern', name:'Modern Love', desc:'Love in the digital age',
         books:[
@@ -1143,303 +1331,386 @@ const LIBRARY = [
   }
 ];
 
-/* ── STATE ── */
-let currentGenreId = null, currentSubShelfId = null, currentBookId = null;
+/* ═══════════════════════════════════════
+   STATE
+═══════════════════════════════════════ */
+let currentGenreId    = null;
+let currentSubShelfId = null;
+let currentBookId     = null;
 
-/* ── VIEW SWITCHING ── */
+/* ═══════════════════════════════════════
+   VIEW SWITCHING (instant, no animation)
+═══════════════════════════════════════ */
 function showView(id) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  const el = document.getElementById(id);
+  el.classList.add('active');
   window.scrollTo(0,0);
 }
-function goBack(target) { showView(target); }
 
-/* ══════════════════════════════════════════
-   CINEMATIC SEQUENCE
-══════════════════════════════════════════ */
-function openLibrary() {
-  // Show cinematic view immediately
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  const cinematic = document.getElementById('view-cinematic');
-  cinematic.classList.add('active');
-  cinematic.style.display = 'flex';
+/* ═══════════════════════════════════════
+   TOMB ROLL — plays between shelf views
+═══════════════════════════════════════ */
+function tombRoll(callback) {
+  const roll = document.getElementById('tomb-roll');
+  roll.classList.remove('slam-in','slam-out');
 
-  // Hide all stages first
-  document.querySelectorAll('.cinematic-stage').forEach(s => {
-    s.classList.remove('show');
-  });
+  // Slam IN (panels close)
+  roll.classList.add('rolling','slam-in');
+  roll.style.pointerEvents = 'all';
 
-  // Run the sequence
-  runCinematicSequence();
+  setTimeout(() => {
+    // Content swap happens while screen is dark
+    if (callback) callback();
+
+    // Small pause at closed state
+    setTimeout(() => {
+      roll.classList.remove('slam-in');
+      roll.classList.add('slam-out');
+
+      // Slam OUT complete
+      setTimeout(() => {
+        roll.classList.remove('rolling','slam-out');
+        roll.style.pointerEvents = 'none';
+      }, 520);
+    }, 180);
+  }, 520);
 }
 
-function runCinematicSequence() {
-  // STAGE 1: Ancient Lock — 0ms
-  setTimeout(() => showStage('stage-lock', () => {
-    // Glow the book
+/* ═══════════════════════════════════════
+   BOOK FLY — plays when book is tapped
+═══════════════════════════════════════ */
+function bookFlyTransition(spineEl, callback) {
+  const flyEl    = document.getElementById('book-fly');
+  const flyBook  = document.getElementById('fly-book-el');
+  const flyFlash = document.getElementById('fly-flash');
+
+  // Position fly-book over the tapped spine
+  const rect = spineEl.getBoundingClientRect();
+  flyBook.style.left = rect.left + 'px';
+  flyBook.style.top  = rect.top + 'px';
+  flyBook.style.width  = rect.width + 'px';
+  flyBook.style.height = rect.height + 'px';
+  flyBook.style.animation = 'none';
+  flyBook.style.transform = 'none';
+  flyBook.style.opacity   = '1';
+
+  flyEl.style.display = 'flex';
+  flyEl.style.background = 'rgba(0,0,0,0)';
+
+  // Slight pause then DROP
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      flyBook.classList.add('drop-phase');
+    });
+  });
+
+  setTimeout(() => {
+    flyBook.classList.remove('drop-phase');
+    flyBook.classList.add('fly-phase');
+
+    // Darken background as book flies up
+    let alpha = 0;
+    const darkInterval = setInterval(() => {
+      alpha = Math.min(alpha + 0.06, 0.85);
+      flyEl.style.background = `rgba(0,0,0,${alpha})`;
+      if (alpha >= 0.85) clearInterval(darkInterval);
+    }, 30);
+
+  }, 500);
+
+  setTimeout(() => {
+    // Flash white — page turn reveal
+    flyFlash.classList.add('flash');
+    flyEl.style.background = 'rgba(0,0,0,0)';
+
     setTimeout(() => {
-      document.getElementById('lock-book').classList.add('glowing');
-    }, 300);
-    // Pulse rings
+      flyFlash.classList.remove('flash');
+      flyEl.style.display = 'none';
+      flyBook.classList.remove('fly-phase');
+      flyBook.style.animation = 'none';
+      if (callback) callback();
+    }, 400);
+  }, 1200);
+}
+
+/* ═══════════════════════════════════════
+   CINEMATIC INTRO SEQUENCE (~11 seconds)
+═══════════════════════════════════════ */
+function openLibrary() {
+  // Prevent double tap
+  document.getElementById('big-book-btn').style.pointerEvents = 'none';
+
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const cin = document.getElementById('view-cinematic');
+  cin.classList.add('active');
+
+  // Reset all stages
+  document.querySelectorAll('.c-stage').forEach(s => s.classList.remove('on'));
+  document.getElementById('lock-book-el').classList.remove('lit');
+  document.getElementById('lock-caption').classList.remove('show');
+  document.querySelectorAll('.rune').forEach(r => r.classList.remove('glow'));
+  document.querySelectorAll('.c-ring').forEach(r => r.classList.remove('fire'));
+  document.getElementById('fire-book-body').classList.remove('consumed');
+  document.getElementById('cs-fire').classList.remove('lit');
+  document.getElementById('portal-outer').classList.remove('open');
+  document.getElementById('portal-hole').classList.remove('open');
+  document.getElementById('portal-hole').style.width  = '0';
+  document.getElementById('portal-hole').style.height = '0';
+  document.getElementById('portal-caption').classList.remove('show');
+  document.getElementById('sky-bg').classList.remove('show');
+  document.getElementById('speed-lines').classList.remove('show');
+  document.getElementById('ground-approach').classList.remove('show');
+  document.getElementById('sky-caption').classList.remove('show');
+
+  runIntro();
+}
+
+function runIntro() {
+  /* ── STAGE 1: LOCK (0 – 3000ms) ── */
+  setTimeout(() => {
+    document.getElementById('cs-lock').classList.add('on');
+
+    // Rings pulse outward
     setTimeout(() => {
-      document.querySelectorAll('.lock-ring').forEach((r,i) => {
-        setTimeout(() => r.classList.add('pulse'), i * 200);
+      document.querySelectorAll('.c-ring').forEach((r,i) => {
+        setTimeout(() => {
+          r.classList.remove('fire');
+          void r.offsetWidth;
+          r.classList.add('fire');
+        }, i * 160);
       });
+    }, 300);
+
+    // Book ignites
+    setTimeout(() => {
+      document.getElementById('lock-book-el').classList.add('lit');
     }, 600);
-    // Show text
+
+    // Runes glow one by one
     setTimeout(() => {
-      document.getElementById('lock-text').classList.add('show');
+      ['rune1','rune2','rune3','rune4'].forEach((id,i) => {
+        setTimeout(() => document.getElementById(id).classList.add('glow'), i * 200);
+      });
     }, 900);
-    // Re-pulse rings
+
+    // Second ring burst
     setTimeout(() => {
-      document.querySelectorAll('.lock-ring').forEach(r => r.classList.remove('pulse'));
+      document.querySelectorAll('.c-ring').forEach((r,i) => {
+        setTimeout(() => {
+          r.classList.remove('fire');
+          void r.offsetWidth;
+          r.classList.add('fire');
+        }, i * 120);
+      });
+    }, 1700);
+
+    // Caption
+    setTimeout(() => {
+      document.getElementById('lock-caption').classList.add('show');
+    }, 2000);
+
+  }, 200);
+
+  /* ── STAGE 2: FIRE (3000 – 6500ms) ── */
+  setTimeout(() => {
+    document.getElementById('cs-lock').classList.remove('on');
+
+    setTimeout(() => {
+      document.getElementById('cs-fire').classList.add('on','lit');
+      // Flames are CSS-auto animated via their animation declarations
+      // Consume book after flames fully up
       setTimeout(() => {
-        document.querySelectorAll('.lock-ring').forEach((r,i) => {
-          setTimeout(() => r.classList.add('pulse'), i * 150);
-        });
-      }, 100);
-    }, 1400);
-  }), 100);
+        document.getElementById('fire-book-body').classList.add('consumed');
+      }, 1800);
+    }, 400);
+  }, 3000);
 
-  // STAGE 2: Fire — 2600ms
+  /* ── STAGE 3: PORTAL (6500 – 9000ms) ── */
   setTimeout(() => {
-    hideStage('stage-lock');
-    setTimeout(() => {
-      showStage('stage-fire', startFire);
-    }, 300);
-  }, 2600);
+    document.getElementById('cs-fire').classList.remove('on','lit');
 
-  // STAGE 3: Hole — 5200ms
+    setTimeout(() => {
+      document.getElementById('cs-portal').classList.add('on');
+      buildPortalStars();
+
+      setTimeout(() => {
+        document.getElementById('portal-outer').classList.add('open');
+      }, 200);
+      setTimeout(() => {
+        document.getElementById('portal-hole').classList.add('open');
+      }, 400);
+      setTimeout(() => {
+        document.getElementById('portal-caption').classList.add('show');
+      }, 1200);
+      // Expand portal wider
+      setTimeout(() => {
+        const h = document.getElementById('portal-hole');
+        h.style.width  = '300px';
+        h.style.height = '300px';
+        h.style.transition = 'width 0.7s ease, height 0.7s ease';
+      }, 1600);
+    }, 400);
+  }, 6500);
+
+  /* ── STAGE 4: SKY DESCENT (9000 – 11800ms) ── */
   setTimeout(() => {
-    hideStage('stage-fire');
-    setTimeout(() => {
-      showStage('stage-hole', () => {
-        // Open the hole
-        setTimeout(() => {
-          document.getElementById('hole-circle').classList.add('open');
-        }, 200);
-        // Show text
-        setTimeout(() => {
-          document.getElementById('hole-text').textContent = 'THE PASSAGE OPENS...';
-        }, 800);
-        // Widen more
-        setTimeout(() => {
-          const hole = document.getElementById('hole-circle');
-          hole.style.width  = '280px';
-          hole.style.height = '280px';
-          hole.style.transition = 'width 0.6s ease, height 0.6s ease';
-        }, 1200);
-      });
-    }, 300);
-  }, 5200);
+    document.getElementById('cs-portal').classList.remove('on');
 
-  // STAGE 4: Sky Fall — 7400ms
-  setTimeout(() => {
-    hideStage('stage-hole');
     setTimeout(() => {
-      showStage('stage-fall', () => {
-        buildStarField();
-        // Speed lines
-        setTimeout(() => {
-          document.getElementById('fall-speed-lines').classList.add('show');
-        }, 400);
-        // Text
-        setTimeout(() => {
-          document.getElementById('fall-text').classList.add('show');
-        }, 600);
-      });
-    }, 300);
-  }, 7400);
+      document.getElementById('cs-sky').classList.add('on');
+      buildSkyStars();
+      buildSpeedLines();
 
-  // REVEAL LIBRARY — 10000ms
+      setTimeout(() => { document.getElementById('sky-bg').classList.add('show'); }, 100);
+      setTimeout(() => { document.getElementById('speed-lines').classList.add('show'); }, 500);
+      setTimeout(() => { document.getElementById('sky-caption').classList.add('show'); }, 800);
+      setTimeout(() => { document.getElementById('ground-approach').classList.add('show'); }, 1500);
+    }, 400);
+  }, 9000);
+
+  /* ── REVEAL LIBRARY (11800ms) ── */
   setTimeout(() => {
     renderLibrary();
+    document.getElementById('cs-sky').classList.remove('on');
     showView('view-library');
-  }, 10000);
+    document.getElementById('big-book-btn').style.pointerEvents = '';
+  }, 11800);
 }
 
-function showStage(id, callback) {
-  const stage = document.getElementById(id);
-  stage.classList.add('show');
-  if (callback) callback();
-}
-
-function hideStage(id) {
-  document.getElementById(id).classList.remove('show');
-}
-
-function startFire() {
-  const container = document.getElementById('fire-container');
-  container.innerHTML = '';
-
-  const flames = [
-    {h:'60px', sx:'0.8', dur:'0.4s'},
-    {h:'90px', sx:'1.0', dur:'0.35s'},
-    {h:'110px',sx:'1.1', dur:'0.3s'},
-    {h:'130px',sx:'0.9', dur:'0.28s'},
-    {h:'120px',sx:'1.2', dur:'0.32s'},
-    {h:'100px',sx:'1.0', dur:'0.38s'},
-    {h:'75px', sx:'0.85',dur:'0.42s'},
-    {h:'55px', sx:'0.7', dur:'0.45s'},
-  ];
-
-  flames.forEach((f, i) => {
-    const flame = document.createElement('div');
-    flame.className = 'flame';
-    flame.style.cssText = `--h:${f.h};--sx:${f.sx};--dur:${f.dur};`;
-    container.appendChild(flame);
-    // Stagger ignition
-    setTimeout(() => {
-      flame.classList.add('burning');
-      setTimeout(() => {
-        flame.style.height = f.h;
-        flame.classList.remove('burning');
-        flame.classList.add('flicker');
-      }, 300);
-    }, i * 80);
-  });
-
-  // Burn the book away
-  setTimeout(() => {
-    document.getElementById('book-burning').classList.add('burnt');
-    spawnEmbers();
-  }, 1800);
-}
-
-function spawnEmbers() {
-  const stage = document.getElementById('stage-fire');
-  for (let i = 0; i < 20; i++) {
-    setTimeout(() => {
-      const ember = document.createElement('div');
-      ember.className = 'ember';
-      const x = 40 + Math.random() * 120;
-      const y = 40 + Math.random() * 80;
-      ember.style.cssText = `
-        left:calc(50% + ${(Math.random()-0.5)*80}px);
-        top:50%;
-        animation:emberFloat ${0.8+Math.random()*1.2}s ease-out forwards;
-      `;
-      stage.appendChild(ember);
-      setTimeout(() => ember.remove(), 2000);
-    }, i * 60);
-  }
-
-  // Add ember keyframe if not exists
-  if (!document.getElementById('ember-style')) {
-    const style = document.createElement('style');
-    style.id = 'ember-style';
-    style.textContent = `
-      @keyframes emberFloat {
-        0%   { transform:translate(0,0) scale(1); opacity:1; }
-        100% { transform:translate(${(Math.random()-0.5)*120}px, -${60+Math.random()*80}px) scale(0); opacity:0; }
-      }
+function buildPortalStars() {
+  const hole = document.getElementById('portal-hole');
+  hole.querySelectorAll('.portal-star').forEach(e => e.remove());
+  for (let i = 0; i < 30; i++) {
+    const s = document.createElement('div');
+    s.className = 'portal-star';
+    s.style.cssText = `
+      left:${10+Math.random()*80}%;
+      top:${10+Math.random()*80}%;
+      --d:${0.4+Math.random()*1.5}s;
     `;
-    document.head.appendChild(style);
+    hole.appendChild(s);
   }
 }
 
-function buildStarField() {
-  const sky = document.getElementById('sky-container');
-  // Remove old stars
-  sky.querySelectorAll('.star-particle,.cloud').forEach(e => e.remove());
-
-  // Clouds
-  const cloudData = [
-    {w:'180px',h:'50px',top:'20%',left:'10%',op:0.6},
-    {w:'220px',h:'60px',top:'35%',left:'55%',op:0.5},
-    {w:'150px',h:'40px',top:'55%',left:'20%',op:0.4},
-    {w:'200px',h:'55px',top:'65%',left:'60%',op:0.5},
-  ];
-  cloudData.forEach(c => {
-    const cloud = document.createElement('div');
-    cloud.className = 'cloud';
-    cloud.style.cssText = `width:${c.w};height:${c.h};top:${c.top};left:${c.left};opacity:${c.op};`;
-    sky.appendChild(cloud);
-  });
-
-  // Stars
-  for (let i = 0; i < 60; i++) {
-    const star = document.createElement('div');
-    star.className = 'star-particle';
-    star.style.cssText = `
+function buildSkyStars() {
+  const container = document.getElementById('sky-stars');
+  container.innerHTML = '';
+  const sizes = [1,1,1,2,1,1,2,1,1,3];
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'sstar';
+    const sz = sizes[Math.floor(Math.random()*sizes.length)];
+    s.style.cssText = `
+      width:${sz}px; height:${sz}px;
       left:${Math.random()*100}%;
       top:${Math.random()*60}%;
-      --dur:${0.5+Math.random()*2}s;
+      --d:${0.3+Math.random()*2}s;
+      --op:${0.4+Math.random()*0.6};
     `;
-    sky.appendChild(star);
+    container.appendChild(s);
   }
 }
 
-/* ── BOOK BUTTON ── */
+function buildSpeedLines() {
+  const container = document.getElementById('speed-lines');
+  container.innerHTML = '';
+  for (let i = 0; i < 20; i++) {
+    const l = document.createElement('div');
+    l.className = 'speed-line';
+    const angle = -85 + Math.random() * 10;
+    l.style.cssText = `
+      left:${Math.random()*100}%;
+      width:${1+Math.random()*2}px;
+      transform:rotate(${angle}deg);
+      --dur:${0.4+Math.random()*0.6}s;
+      animation-delay:${Math.random()*0.5}s;
+    `;
+    container.appendChild(l);
+  }
+}
+
+/* ═══════════════════════════════════════
+   BOOK BUTTON
+═══════════════════════════════════════ */
 document.getElementById('big-book-btn').addEventListener('click', openLibrary);
 document.getElementById('big-book-btn').addEventListener('touchend', function(e) {
-  e.preventDefault();
-  openLibrary();
+  e.preventDefault(); openLibrary();
 }, { passive:false });
 
-/* ── RENDER GENRE SHELVES — CINEMATIC CARDS ── */
+/* ═══════════════════════════════════════
+   RENDER LIBRARY
+═══════════════════════════════════════ */
 function renderLibrary() {
   const container = document.getElementById('genre-shelf-room');
   container.innerHTML = '';
-
   LIBRARY.forEach(genre => {
-    const totalBooks = genre.subShelves.reduce((sum,s) => sum + s.books.length, 0);
-    const el = document.createElement('div');
-    el.className = 'genre-shelf';
-
-    el.innerHTML = `
-      <div class="genre-shelf-bg ${genre.bgClass}"></div>
-      <div class="genre-shelf-overlay"></div>
-      <div class="genre-shelf-content">
-        <div class="genre-shelf-top">
-          <div class="genre-icon-badge">${genre.icon}</div>
-          <div class="genre-book-count">${totalBooks} ${totalBooks===1?'story':'stories'}</div>
+    const totalBooks = genre.subShelves.reduce((s,sh) => s + sh.books.length, 0);
+    const card = document.createElement('div');
+    card.className = `genre-card ${genre.cls}`;
+    card.innerHTML = `
+      <div class="gc-bg"></div>
+      <div class="gc-overlay"></div>
+      <div class="gc-texture"></div>
+      <div class="gc-content">
+        <div class="gc-top">
+          <div class="gc-icon">${genre.icon}</div>
+          <div class="gc-badge">${totalBooks} ${totalBooks===1?'story':'stories'}</div>
         </div>
-        <div class="genre-shelf-bottom">
-          <div class="genre-shelf-name">${genre.name}</div>
-          <div class="genre-shelf-tagline">${genre.tagline}</div>
+        <div class="gc-bottom">
+          <div class="gc-name">${genre.name}</div>
+          <div class="gc-tagline">${genre.tagline}</div>
         </div>
       </div>
-      <div class="genre-shelf-arrow">→</div>`;
-
-    el.addEventListener('click', () => openGenre(genre.id));
-    container.appendChild(el);
+      <div class="gc-arrow">→</div>
+      <div class="gc-shimmer"></div>`;
+    card.addEventListener('click', () => openGenre(genre.id));
+    container.appendChild(card);
   });
 }
 
-/* ── OPEN GENRE ── */
+/* ═══════════════════════════════════════
+   OPEN GENRE — tomb roll into sub-shelves
+═══════════════════════════════════════ */
 function openGenre(genreId) {
   currentGenreId = genreId;
-  renderSubShelves(genreId);
-  showView('view-subshelves');
+  tombRoll(() => {
+    renderSubShelves(genreId);
+    showView('view-subshelves');
+  });
 }
 
 function renderSubShelves(genreId) {
   const genre = LIBRARY.find(g => g.id === genreId);
-  document.getElementById('subshelves-title').textContent      = `${genre.icon} ${genre.name}`;
-  document.getElementById('subshelves-genre-name').textContent = genre.name;
+
+  document.getElementById('subshelves-title').textContent = `${genre.icon} ${genre.name}`;
+  document.getElementById('sub-breadcrumb').innerHTML = `
+    <span onclick="tombRoll(()=>{ renderLibrary(); showView('view-library'); })">Library</span>
+    <span> › </span>
+    <span>${genre.name}</span>`;
+  document.getElementById('sub-back-btn').onclick = () =>
+    tombRoll(() => showView('view-library'));
 
   const grid = document.getElementById('sub-shelf-grid');
   grid.innerHTML = '';
 
   genre.subShelves.forEach(sub => {
     const card = document.createElement('div');
-    card.className = 'sub-shelf-card';
+    card.className = 'sub-card';
 
-    // Mini books
-    const miniBooks = Array.from({length:6}, (_,i) => {
-      const h = 48 + Math.cos(i) * 14;
-      const hue = i * 45;
-      return `<div class="sub-mini-book"
-                   style="width:13px;height:${h}px;
-                          background:linear-gradient(to right,hsl(${hue},65%,45%),hsl(${hue+20},55%,35%));"></div>`;
+    const books = sub.books.slice(0,7);
+    const miniBooks = books.map((_, i) => {
+      const h = 44 + Math.sin(i * 1.2) * 16;
+      const hue = (i * 47 + genre.id.charCodeAt(0) * 3) % 360;
+      return `<div class="sub-mini-book" style="width:12px;height:${h}px;
+        background:linear-gradient(to right,hsl(${hue},65%,42%),hsl(${hue+15},55%,32%));"></div>`;
     }).join('');
 
     card.innerHTML = `
-      <div class="sub-shelf-visual">${miniBooks}</div>
-      <div class="sub-shelf-info">
-        <div class="sub-shelf-name">${sub.name}</div>
-        <div class="sub-shelf-count">${sub.books.length} ${sub.books.length===1?'story':'stories'}</div>
+      <div class="sub-card-visual">${miniBooks}</div>
+      <div class="sub-card-info">
+        <div class="sub-card-name">${sub.name}</div>
+        <div class="sub-card-count">${sub.books.length} ${sub.books.length===1?'story':'stories'}</div>
       </div>`;
 
     card.addEventListener('click', () => openSubShelf(genreId, sub.id));
@@ -1447,47 +1718,66 @@ function renderSubShelves(genreId) {
   });
 }
 
-/* ── OPEN SUB-SHELF ── */
+/* ═══════════════════════════════════════
+   OPEN SUB-SHELF — tomb roll into books
+═══════════════════════════════════════ */
 function openSubShelf(genreId, subShelfId) {
   currentSubShelfId = subShelfId;
+  tombRoll(() => {
+    renderBooks(genreId, subShelfId);
+    showView('view-books');
+  });
+}
+
+function renderBooks(genreId, subShelfId) {
   const genre = LIBRARY.find(g => g.id === genreId);
   const sub   = genre.subShelves.find(s => s.id === subShelfId);
 
   document.getElementById('books-shelf-title').textContent = sub.name;
   document.getElementById('books-breadcrumb').innerHTML = `
-    <span onclick="goBack('view-library')" style="cursor:pointer">Library</span>
+    <span onclick="tombRoll(()=>{ renderLibrary(); showView('view-library'); })">Library</span>
     <span> › </span>
-    <span onclick="goBack('view-subshelves')" style="cursor:pointer">${genre.name}</span>
+    <span onclick="tombRoll(()=>{ renderSubShelves('${genreId}'); showView('view-subshelves'); })">${genre.name}</span>
     <span> › </span>
     <span>${sub.name}</span>`;
-  document.getElementById('books-back-btn').onclick = () => goBack('view-subshelves');
+  document.getElementById('books-back-btn').onclick = () =>
+    tombRoll(() => { renderSubShelves(genreId); showView('view-subshelves'); });
 
   const roll = document.getElementById('books-shelf-roll');
   roll.innerHTML = '';
 
   if (!sub.books.length) {
-    roll.innerHTML = '<p class="empty-shelf-msg">No stories on this shelf yet — check back soon!</p>';
-  } else {
-    sub.books.forEach(book => {
-      const spine = document.createElement('div');
-      spine.className = 'book-spine';
-      spine.style.minHeight = (110 + (book.title.length % 5) * 14) + 'px';
-      spine.innerHTML = `<span class="spine-title">${book.title}</span>`;
-      spine.addEventListener('click', () => openStory(genreId, subShelfId, book.id));
-      roll.appendChild(spine);
-    });
+    roll.innerHTML = '<p class="empty-shelf-msg">No stories yet — check back soon!</p>';
+    return;
   }
-  showView('view-books');
+
+  sub.books.forEach(book => {
+    const spine = document.createElement('div');
+    spine.className = 'book-spine';
+    spine.style.minHeight = (120 + (book.title.length % 6) * 12) + 'px';
+    spine.innerHTML = `<span class="spine-title">${book.title}</span>`;
+    spine.addEventListener('click', () => {
+      // Book fly transition into story
+      bookFlyTransition(spine, () => {
+        openStory(genreId, subShelfId, book.id);
+      });
+    });
+    roll.appendChild(spine);
+  });
 }
 
-/* ── OPEN STORY ── */
+/* ═══════════════════════════════════════
+   OPEN STORY — after book fly
+═══════════════════════════════════════ */
 function openStory(genreId, subShelfId, bookId) {
   currentBookId = bookId;
   const genre = LIBRARY.find(g => g.id === genreId);
   const sub   = genre.subShelves.find(s => s.id === subShelfId);
   const book  = sub.books.find(b => b.id === bookId);
 
-  document.getElementById('story-back-btn').onclick     = () => goBack('view-books');
+  document.getElementById('story-back-btn').onclick = () =>
+    tombRoll(() => { renderBooks(genreId, subShelfId); showView('view-books'); });
+
   document.getElementById('story-genre-tag').textContent = `${genre.icon} ${genre.name} · ${sub.name}`;
   document.getElementById('story-title').textContent     = book.title;
   document.getElementById('story-description').textContent = book.description;
@@ -1508,7 +1798,9 @@ function openStory(genreId, subShelfId, bookId) {
   showView('view-story');
 }
 
-/* ── RATING ── */
+/* ═══════════════════════════════════════
+   RATING
+═══════════════════════════════════════ */
 let currentRating = 0;
 function resetRating() {
   currentRating = 0;
@@ -1518,15 +1810,16 @@ function resetRating() {
 document.querySelectorAll('.star').forEach(star => {
   star.addEventListener('click', () => {
     currentRating = parseInt(star.getAttribute('data-v'));
-    document.querySelectorAll('.star').forEach(s => {
-      s.classList.toggle('active', parseInt(s.getAttribute('data-v')) <= currentRating);
-    });
+    document.querySelectorAll('.star').forEach(s =>
+      s.classList.toggle('active', parseInt(s.getAttribute('data-v')) <= currentRating));
     const msgs = ['','Not for me','It was okay','Enjoyed it','Really good!','Absolutely brilliant! ⭐'];
     document.getElementById('rating-msg').textContent = msgs[currentRating];
   });
 });
 
-/* ── COMMENTS ── */
+/* ═══════════════════════════════════════
+   COMMENTS
+═══════════════════════════════════════ */
 function submitComment() {
   const input = document.getElementById('comment-input');
   const text  = input.value.trim();
@@ -1534,17 +1827,19 @@ function submitComment() {
   const list  = document.getElementById('comments-list');
   const noMsg = list.querySelector('.no-comments');
   if (noMsg) noMsg.remove();
-  const item  = document.createElement('div');
+  const item = document.createElement('div');
   item.className = 'comment-item';
   item.innerHTML = `<div class="comment-author">Anonymous Reader</div>${text.replace(/</g,'&lt;')}`;
   list.appendChild(item);
   input.value = '';
 }
 
-/* ── COIN SUPPORT ── */
+/* ═══════════════════════════════════════
+   COIN SUPPORT
+═══════════════════════════════════════ */
 function supportCoin(amount) {
   const toast = document.getElementById('coin-toast');
-  toast.textContent = `🪙 You sent ${amount} coin${amount > 1 ? 's' : ''}! Thank you! ✨`;
+  toast.textContent = `🪙 You sent ${amount} coin${amount>1?'s':''}! Thank you! ✨`;
   toast.style.display = 'block';
   setTimeout(() => { toast.style.display = 'none'; }, 4000);
 }
