@@ -2151,16 +2151,57 @@ document.getElementById('site-gate').addEventListener('click', function(e) {
 
 // ── GOOGLE SIGN IN ──
 async function signInWithGoogle() {
-    const { data, error } = await _supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-            redirectTo: 'https://laminono-nexus.github.io'
+    // Check network first
+    if (!navigator.onLine) {
+        showAuthError('No internet connection. Please check your network and try again.');
+        return;
+    }
+
+    try {
+        document.getElementById('auth-error').textContent = '';
+        // Show loading state
+        const btn = document.querySelector('.btn-google');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `<span style="display:flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Connecting...</span>`;
+        btn.disabled = true;
+
+        const { data, error } = await _supabase.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+                redirectTo: 'https://laminono-nexus.github.io'
+            }
+        });
+
+        if (error) {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            showAuthError('Could not connect. Please try again.');
         }
-    });
-    if (error) {
-        document.getElementById('auth-error').textContent = error.message;
+    } catch (err) {
+        showAuthError('Connection failed. Check your network and try again.');
+        const btn = document.querySelector('.btn-google');
+        if (btn) { btn.disabled = false; }
     }
 }
+
+function showAuthError(message) {
+    const el = document.getElementById('auth-error');
+    if (el) {
+        el.innerHTML = `<div style="display:flex;align-items:center;gap:8px;justify-content:center;">
+            <span style="font-size:1rem;">📶</span>
+            <span>${message}</span>
+        </div>`;
+    }
+}
+
+// Listen for network changes and update UI
+window.addEventListener('offline', () => {
+    showAuthError('You are offline. Please check your connection.');
+});
+window.addEventListener('online', () => {
+    const el = document.getElementById('auth-error');
+    if (el) el.textContent = '';
+});
 
 // ── SIGN OUT ──
 async function signOutUser() {
