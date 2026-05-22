@@ -1391,6 +1391,28 @@ window.addEventListener('unhandledrejection', function(e) {
     border-color: rgba(34,197,94,0.6);
     background: rgba(34,197,94,0.06);
 }
+        /* ── LANGUAGE TOGGLE ── */
+.lang-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    z-index: 9999;
+    background: rgba(20,20,20,0.9);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+.lang-toggle-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
     </style>
 </head>
 <body>
