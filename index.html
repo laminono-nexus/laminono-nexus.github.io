@@ -3338,26 +3338,15 @@ function resetTxnInputs() {
 function selectMethod(method) {
     selectedPaymentMethod = method;
 
-    document.getElementById('method-card').classList.toggle('selected', method === 'card');
-    document.getElementById('method-transfer').classList.toggle('selected', method === 'transfer');
-    document.getElementById('card-form').classList.toggle('visible', method === 'card');
+    document.getElementById('method-transfer').classList.add('selected');
+document.getElementById('transfer-info').classList.toggle('visible', selectedCurrency === 'NGN');
+document.getElementById('dollar-transfer-info').classList.toggle('visible', selectedCurrency === 'USD');
 
-    if (method === 'transfer') {
-        document.getElementById('transfer-info').classList.toggle('visible', selectedCurrency === 'NGN');
-        document.getElementById('dollar-transfer-info').classList.toggle('visible', selectedCurrency === 'USD');
-    } else {
-        document.getElementById('transfer-info').classList.remove('visible');
-        document.getElementById('dollar-transfer-info').classList.remove('visible');
-    }
-
-    const amount = formatAmount(currentCoinAmount);
-    const btn = document.getElementById('pay-btn');
-    btn.disabled = false;
-    document.getElementById('pay-btn-icon').textContent = method === 'card' ? '💳' : '✅';
-    document.getElementById('pay-btn-text').textContent = method === 'card'
-        ? `Pay ${amount} with Card`
-        : `I Have Sent ${amount}`;
-}
+const amount = formatAmount(currentCoinAmount);
+const btn = document.getElementById('pay-btn');
+btn.disabled = false;
+document.getElementById('pay-btn-icon').textContent = '✅';
+document.getElementById('pay-btn-text').textContent = `I Have Sent ${amount}`;
 
 function formatCardNumber(input) {
     let val = input.value.replace(/\D/g, '').substring(0, 16);
