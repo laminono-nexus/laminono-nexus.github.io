@@ -3367,29 +3367,7 @@ function copyAccount(e, value) {
 }
 
 function processPayment() {
-    if (!selectedPaymentMethod) return;
-
-    if (selectedPaymentMethod === 'card') {
-        const name = document.getElementById('card-name').value.trim();
-        const number = document.getElementById('card-number').value.replace(/\s/g,'');
-        const expiry = document.getElementById('card-expiry').value.trim();
-        const cvv = document.getElementById('card-cvv').value.trim();
-
-        if (!name) { showToast('Please enter cardholder name'); return; }
-        if (number.length < 16) { showToast('Please enter a valid 16-digit card number'); return; }
-        if (expiry.length < 7) { showToast('Please enter a valid expiry date'); return; }
-        if (cvv.length < 3) { showToast('Please enter a valid CVV'); return; }
-
-        const btn = document.getElementById('pay-btn');
-        btn.disabled = true;
-        document.getElementById('pay-btn-text').textContent = 'Processing...';
-        document.getElementById('pay-btn-icon').textContent = '⏳';
-
-        setTimeout(() => { showSuccessScreen(); }, 2000);
-
-    } else if (selectedPaymentMethod === 'transfer') {
-        showSuccessScreen();
-    }
+    showSuccessScreen();
 }
 
 function showSuccessScreen() {
