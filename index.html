@@ -43,18 +43,47 @@ const _supabase = supabase.createClient(
 <script src="stories.js"></script>
 <script src="trailers.js"></script>
 <script>
-let criticalErrorCount = 0;
+// Only show banner for real crashes — not minor/expected errors
+const ignoredErrors = [
+    'hideGate', 'ResizeObserver', 'Non-Error promise',
+    'NetworkError', 'Load failed', 'Script error',
+    'oembed', 'youtube', 'googleapis', 'fonts',
+    'supabase', 'gtag', 'translate'
+];
+
+function isCriticalError(msg) {
+    if (!msg) return false;
+    const m = msg.toLowerCase();
+    // Ignore known harmless errors
+    for (const ignored of ignoredErrors) {
+        if (m.includes(ignored.toLowerCase())) return false;
+    }
+    // Only show banner for these real crash types
+    return m.includes('is not defined') ||
+           m.includes('is not a function') ||
+           m.includes('cannot read') ||
+           m.includes('unexpected token') ||
+           m.includes('syntaxerror') ||
+           m.includes('cannot set');
+}
+
 window.onerror = function(msg, url, line, col, error) {
-    criticalErrorCount++;
-    if (criticalErrorCount >= 3) {
+    if (isCriticalError(msg)) {
         const banner = document.getElementById('maintenance-banner');
         if (banner) banner.style.display = 'flex';
     }
     return true;
 };
+
 window.addEventListener('unhandledrejection', function(e) {
+    const msg = e.reason?.message || String(e.reason) || '';
+    if (isCriticalError(msg)) {
+        const banner = document.getElementById('maintenance-banner');
+        if (banner) banner.style.display = 'flex';
+    }
     e.preventDefault();
 });
+</script>
 </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
