@@ -3692,43 +3692,6 @@ document.addEventListener('DOMContentLoaded', () => {
     scheduleHourlyRefresh();
 });
 
-    const nodesToProcess = [];
-    let node;
-    while ((node = walker.nextNode())) {
-        const text = node.nodeValue.trim();
-        if (text.length > 1 && node.parentElement &&
-            !['SCRIPT','STYLE','NOSCRIPT'].includes(node.parentElement.tagName)) {
-            nodesToProcess.push(node);
-        }
-    }
-
-    nodesToProcess.forEach(node => {
-        const text = node.nodeValue.trim();
-        if (lang === 'fr') {
-            if (translations[text]) {
-                node._originalText = node._originalText || text;
-                node.nodeValue = translations[text];
-            }
-        } else {
-            if (node._originalText) {
-                node.nodeValue = node._originalText;
-            }
-        }
-    });
-
-    // Also translate placeholders
-    document.querySelectorAll('[placeholder]').forEach(el => {
-        const ph = el.getAttribute('placeholder');
-        if (lang === 'fr' && translations[ph]) {
-            el._origPlaceholder = el._origPlaceholder || ph;
-            el.setAttribute('placeholder', translations[ph]);
-        } else if (lang === 'en' && el._origPlaceholder) {
-            el.setAttribute('placeholder', el._origPlaceholder);
-        }
-    });
-
-    document.documentElement.lang = lang;
-}
 </script>
 
 </body>
