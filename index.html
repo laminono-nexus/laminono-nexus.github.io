@@ -3347,7 +3347,8 @@ const btn = document.getElementById('pay-btn');
 btn.disabled = false;
 document.getElementById('pay-btn-icon').textContent = '✅';
 document.getElementById('pay-btn-text').textContent = `I Have Sent ${amount}`;
-
+}
+    
 function formatCardNumber(input) {
     let val = input.value.replace(/\D/g, '').substring(0, 16);
     input.value = val.replace(/(.{4})/g, '$1 ').trim();
