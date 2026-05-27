@@ -25,7 +25,13 @@ const _supabase = supabase.createClient(
         }
     }
 );
-
+        function openBookshelf() {
+    if (!currentUser) {
+        showGate();
+        return;
+    }
+    window.location.href = 'bookshelf.html';
+        }
 // Run BEFORE anything else loads
 (async () => {
     const { data } = await _supabase.auth.getSession();
