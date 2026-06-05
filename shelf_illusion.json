@@ -1,0 +1,66 @@
+{
+  "shelf_id": "illusion",
+  "shelf_name": "Illusion",
+  "icon": "🌀",
+  "tagline": "Nothing is what it seems",
+  "theme_class": "gc-illusion",
+  "gradient": "135deg,#040f20,#0a1f40,#040e18",
+  "accent_color": "rgba(40,140,255,0.3)",
+  "sub_shelves": [
+    {
+      "id": "il-mind",
+      "name": "Mind Benders",
+      "desc": "Reality fractured",
+      "books": [
+        {
+          "id": "b7",
+          "title": "The Second Sky",
+          "description": "A painter realises she has been painting places she will visit — in reverse.",
+          "full_story": [
+            "Elara Vane had painted the cathedral before she knew it existed. The spires, the stained glass, the particular angle of afternoon light that turned the dust into golden motes. She called it 'The Second Sky' and sold it to a collector in Prague for enough to pay three months' rent.",
+            "Two years later, she found the cathedral. Not in Prague. In a village in southern France that wasn't on any map she owned. The light fell exactly as she had painted it. The dust motes danced in the same pattern. And on the wall, beneath a peeling fresco, someone had carved her initials and a date: the day she had finished the painting, two years before she was born.",
+            "She painted her next piece in a fever. A bridge over black water, a city of towers that leaned impossibly, a sky with two moons. She called it 'The Return.' She didn't know where it was. She didn't want to know.",
+            "The dreams started that night. Walking through the painted city, feeling the cobblestones beneath bare feet, hearing a language that sounded like music but meant nothing. Each morning she woke with paint under her fingernails, though she had locked her studio.",
+            "The collector called on the third day. He had found the location of 'The Second Sky.' He wanted to commission a piece of the place she would visit next. He named a price that would buy a house. He named a condition: she had to paint it before she found it.",
+            "Elara looked at her canvas. The two moons were already there, waiting. And in the corner, barely visible, a figure stood watching. It wore her face. It was smiling."
+          ]
+        },
+        {
+          "id": "b8",
+          "title": "Hollow Twin",
+          "description": "Two strangers share the same dream every night until one of them wakes up inside it.",
+          "full_story": [
+            "Marcus and Sera had never met. They lived in different cities, worked different jobs, had different friends. But every night at 3:17 AM, they stood together on a beach that didn't exist.",
+            "The dream was always the same. Black sand, silver waves, a sky the color of bruises. They didn't speak at first. They simply stood, watching the horizon where something vast moved beneath the water.",
+            "On the fourteenth night, Marcus spoke. 'Do you know where this is?' Sera shook her head. 'I looked it up,' he said. 'Every map, every database, every satellite image. This coastline doesn't exist.'",
+            "They began to talk. About their days, their fears, their lives. They became friends in a way that waking people never could — honest, unguarded, stripped of the masks worn for survival. Marcus told Sera about his divorce. Sera told Marcus about the sister she had lost. They held hands once, on the thirty-second night, and both woke with the warmth still in their palms.",
+            "On the forty-seventh night, Sera didn't appear. Marcus waited until the sky lightened, until the silver waves turned gray, until he woke alone in his apartment with tears on his pillow.",
+            "He searched for her. Social media, public records, private investigators. Sera Kincaid, the name she had given him, existed in a small town in Oregon. She had stopped posting three days ago. Her employer said she had called in sick. Her neighbor said her car was in the driveway, her lights were on, but no one answered the door.",
+            "Marcus drove for twelve hours. He broke into her house through a window. The bed was made. The coffee was cold. And on her pillow, a single black grain of sand that shouldn't exist. That night, he dreamed of the beach alone. But the footprints in the sand were fresh, and they led into the water, and they were hers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "il-dream",
+      "name": "Dreamscapes",
+      "desc": "Sleep and its secrets",
+      "books": [
+        {
+          "id": "b9",
+          "title": "Lucid Street",
+          "description": "In a city that exists only at 3 AM, she looks for the door marked EXIT.",
+          "full_story": [
+            "The city appeared at 3:00 AM exactly. Not gradually — not fog rolling in or lights flickering on. One moment, the street was empty warehouses and closed bodegas. The next, a metropolis of impossible architecture stretched in every direction, buildings folded like origami, streets that climbed into clouds.",
+            "Juno had been visiting for six months. She didn't know how she got there. She only knew that every night she woke at 2:59 AM, heart racing, and found herself standing at the intersection of Nowhere and Never. The city had no other names for its streets. The signs changed when you looked at them.",
+            "She had rules. Don't eat the food. Don't talk to the people with too many shadows. Don't follow the music. And most importantly: find the door marked EXIT before the city fades at dawn.",
+            "Others searched too. She had seen them — regulars who had been visiting longer, who wore clothes from decades past, who spoke of the city as if it were home. Some had stopped searching. Some had forgotten they were looking. One woman, ancient and beautiful, had told Juno: 'The EXIT is a myth. There is only the city, and the city is hungry.'",
+            "On the hundred and first night, Juno found a door. It was ordinary. Wood, brass knob, a small window with frosted glass. The sign above read EXIT in letters that didn't shimmer or change. She touched the knob. It was warm.",
+            "Behind her, the city went silent. The buildings stopped their endless folding. The streets stopped their climbing. And a voice, soft as a lullaby, whispered: 'Are you sure you want to leave? You haven't seen the best part yet.'",
+            "Juno turned the knob. The door opened to her bedroom, her bed, her sleeping body. She stepped through. And woke up. But on her nightstand, where there had been nothing, sat a key. And outside her window, at 3:17 AM, the city hummed with a sound like breathing."
+          ]
+        }
+      ]
+    }
+  ]
+}
