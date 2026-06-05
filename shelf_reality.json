@@ -1,0 +1,72 @@
+{
+  "shelf_id": "reality",
+  "shelf_name": "Reality",
+  "icon": "🌍",
+  "tagline": "Raw, real, and relentless",
+  "theme_class": "gc-reality",
+  "gradient": "135deg,#0e0e04,#201e04,#0e0804",
+  "accent_color": "rgba(220,190,40,0.25)",
+  "sub_shelves": [
+    {
+      "id": "rl-life",
+      "name": "Everyday Lives",
+      "desc": "Stories from the street",
+      "books": [
+        {
+          "id": "b10",
+          "title": "The Long Walk Home",
+          "description": "A father walks 200 km to attend his daughter's graduation.",
+          "full_story": [
+            "The letter arrived on Tuesday. Admitted, it said. Full scholarship. The graduation ceremony would be on Saturday, in the capital, two hundred kilometers away. The bus fare was three hundred dollars. Thomas had forty-seven.",
+            "He told his wife he would walk. She laughed, then saw his face, then cried. 'You'll miss it,' she said. 'You can't walk two hundred kilometers in four days.'",
+            "Thomas packed a bag with two loaves of bread, a wheel of cheese, and his good shoes. He left at dawn on Wednesday, walking east where the sun rose over the mountains he had never crossed.",
+            "The first day he walked sixty kilometers. His feet blistered by noon. He wrapped them in strips of cloth from his shirt and kept walking. Farmers offered him water. A truck driver offered a ride; Thomas refused. 'I need to earn this,' he said. The driver gave him an apple instead.",
+            "The second day, the mountains began. The road climbed through pine forests where the air grew thin and cold. Thomas slept in a church doorway, waking to the sound of bells and the ache of muscles he didn't know he had. He walked fifty kilometers that day, limping the last ten.",
+            "The third day, he met others walking. A woman carrying her sick child to a hospital in the capital. An old man visiting his brother for the last time. They walked together, sharing food and stories, becoming a temporary family bound by the road. They walked forty kilometers, helping each other, stopping when one needed rest.",
+            "On Saturday morning, Thomas entered the capital at dawn. His feet were bandaged in rags, his clothes torn, his face burned by sun and wind. He reached the university gates at 8:47 AM. The ceremony began at 9:00.",
+            "His daughter saw him from the stage. She had been told he wouldn't make it. She had prepared herself to celebrate alone. When she saw him — dirty, limping, smiling — she forgot her speech. She walked down from the stage, through the crowd, and into his arms. The audience stood. Someone began to clap. Then everyone.",
+            "Thomas didn't hear the speech he missed. He didn't need to. He had walked two hundred kilometers to hold his daughter, and in that moment, he understood that some distances are measured in love, not miles."
+          ]
+        },
+        {
+          "id": "b11",
+          "title": "Market Women",
+          "description": "Five traders share one phone — and one dream — across five years.",
+          "full_story": [
+            "The phone was a Nokia 3310, gray, with a cracked screen and a battery that lasted three days. It belonged to no one and everyone. It sat in a wooden box at the center of the Oyingbo market, under a tarp that leaked when it rained.",
+            "Five women used it. Amina, who sold dried fish. Chioma, who traded fabrics. Fatima, who made the best jollof rice in three districts. Nkechi, who repaired shoes. And Zainab, who sold phone credit and managed the box.",
+            "The rules were simple. You could use the phone for ten minutes. You had to pay ten naira, which went to Zainab for maintenance. You couldn't use it for gossip. It was for business: calling suppliers, checking prices, arranging deliveries. For five years, this system worked.",
+            "But the phone became more than a tool. Amina used her minutes to call her son in university, though she always claimed she was checking fish prices. Chioma called her mother in the village, pretending to discuss textile orders. Fatima called a man she had met at a wedding, speaking in whispers that Zainab pretended not to hear.",
+            "The dream emerged gradually. One day, Amina mentioned she wanted to expand her stall. Chioma said she needed a proper shop. Fatima wanted a restaurant. Nkechi wanted a store with actual shelves. Zainab wanted to sell smartphones, not just credit for them.",
+            "They started a fund. Fifty naira each week, collected in the phone box. They called it 'The Nokia Fund,' laughing at the absurdity. For two years, they saved. They argued. They almost quit when Amina's son needed tuition and she withdrew her share. But Chioma covered her, and Amina paid her back in fish, and the fund survived.",
+            "In the fifth year, they had enough. Not for everything, but for something. They rented a small shop together, five businesses in one space, connected by the wall that separated them and the door that didn't. They bought a real smartphone, a shared one, and placed the Nokia in a frame above the register.",
+            "The Nokia doesn't work anymore. The battery finally died. But every morning, one of them dusts the frame. And every evening, they close the shop together, five women who shared a phone, a dream, and a friendship that outlasted both."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rl-struggle",
+      "name": "Grit & Grace",
+      "desc": "Resilience in the storm",
+      "books": [
+        {
+          "id": "b12",
+          "title": "Soil Season",
+          "description": "A drought forces a family to choose between harvest and forgiveness.",
+          "full_story": [
+            "The rains had come late for three years. The reservoir was a cracked bowl of mud. The wells were dry to the stone. And the corn, which had grown tall in Samuel's grandfather's time, now stood knee-high and yellow, waiting to die.",
+            "Samuel had a choice. The government offered drought relief: food, water, a temporary stipend. But accepting it meant leaving the land. The program required relocation to the city, where Samuel would work in a factory and his children would forget the names of crops.",
+            "Or he could stay. He could dig deeper wells, plant hardier crops, pray for rain that the forecast said wouldn't come. He could fail, and watch his family starve, and become another statistic in the agricultural reports.",
+            "His wife, Grace, had her own choice. Her brother owned a trucking business in the capital. He had offered Samuel a job, a house, a new life. 'We can come back,' she said. 'When the rains return.' But they both knew that land abandoned is land lost. The soil forgets those who leave it.",
+            "The decision came in a moment of violence. Their neighbor, old Mr. Okonkwo, had been caught stealing water from Samuel's last functioning well. Not much — a bucket, maybe two. But in drought, a bucket is life. Samuel confronted him with a shovel in his hand, shaking with rage and thirst and the exhaustion of watching everything die.",
+            "Mr. Okonkwo didn't beg. He simply said: 'My wife is sick. The water is for her medicine. I will pay you back when the rains come.' He said it with the certainty of a man who believes in rain more than he believes in justice.",
+            "Samuel lowered the shovel. He gave Mr. Okonkwo the bucket, and another, and walked him home. He came back to Grace and said: 'We stay. We dig deeper. And we help the Okonkwos, because next season it might be us needing the bucket.'",
+            "They stayed. They dug until their hands bled. They planted cassava, which needs less water than corn. They shared their well with three families, creating a network of debt and gratitude that held the community together. The rains came, eventually, not enough but enough. The cassava survived. The corn did not.",
+            "Years later, Samuel's daughter would write about that season. She called it 'The Year of the Shovel,' and she dedicated it to her father, who taught her that harvest is not just what you grow, but what you choose to forgive."
+          ]
+        }
+      ]
+    }
+  ]
+}
