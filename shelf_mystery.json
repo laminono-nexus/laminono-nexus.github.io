@@ -1,0 +1,110 @@
+{
+  "shelf_id": "mystery",
+  "shelf_name": "Mystery",
+  "icon": "🔍",
+  "tagline": "Secrets, twists & the unknown",
+  "theme_class": "gc-mystery",
+  "gradient": "135deg,#0d0520,#1e0a40,#080d20",
+  "accent_color": "rgba(120,60,255,0.3)",
+  "sub_shelves": [
+    {
+      "id": "ms-detective",
+      "name": "Detective Files",
+      "desc": "Cases cracked in the dark",
+      "books": [
+        {
+          "id": "b1",
+          "title": "The Shadow Witness",
+          "description": "A detective chases a ghost no one else can see — until the ghost chases back.",
+          "full_story": [
+            "The rain fell in sheets over Thornfield District, turning the cobblestones into mirrors of the gas lamps. Detective Mara Voss pulled her coat tighter, though the chill she felt had nothing to do with the weather.",
+            "She had been following the case for three weeks. Five witnesses to a murder that never happened, each describing the same perpetrator: a man in a charcoal suit who left no footprints, cast no shadow, and disappeared through locked doors.",
+            "The precinct called it mass hysteria. Mara called it Tuesday.",
+            "It was the third night of stakeout when she first saw him. Standing beneath the awning of the closed apothecary, watching her. His eyes reflected no light. His breath made no fog in the cold air.",
+            "She approached. He smiled. And then he spoke her name — not the one on her badge, but the one she had buried twelve years ago.",
+            "'You remember me, Mara,' he said. 'You were the only one who could see me then, too.'"
+          ]
+        },
+        {
+          "id": "b2",
+          "title": "Room 404",
+          "description": "A hotel room that does not exist holds the clue to three missing persons.",
+          "full_story": [
+            "The Grand Empress Hotel had 403 rooms. Everyone knew this. The elevator buttons went from 403 to the lobby. The fire inspection certificate listed 403 units. The property tax was calculated on 403 rooms.",
+            "But the master key unlocked 404.",
+            "Inspector Lin first heard about it from a bellhop who had worked the night shift for twenty years. The old man spoke of guests who asked for 'the quiet floor' and were never seen again. Of luggage that accumulated in the basement, tagged with room numbers that didn't exist.",
+            "Lin checked in on a Tuesday. By Thursday, she had found the door — unmarked, painted the same cream as the hallway, between the ice machine and a housekeeping closet. The keycard reader blinked green when she swiped her master.",
+            "Inside, three beds were made. Three toothbrushes stood in a glass. Three journals lay open on the desk, each entry ending mid-sentence on the same date: the day each missing person had vanished.",
+            "The fourth bed was unmade. And as Lin turned to leave, she heard the shower running."
+          ]
+        },
+        {
+          "id": "b3",
+          "title": "Cold Print",
+          "description": "An old photograph surfaces at a new crime scene — dated forty years in the future.",
+          "full_story": [
+            "The crime scene photographer was the first to notice. She had been developing film the old way — digital was faster, but film caught things digital missed. Shadows in shadows. The moment before a blink.",
+            "This particular roll came from the Mercer homicide. A simple case: businessman found in his study, locked from the inside, no forced entry. The photograph showed the body, the desk, the window. And on the desk, a photograph.",
+            "She enlarged it. The photograph within the photograph showed the same room. The same body. But the calendar on the wall read a date forty years from now. And the body was wearing different clothes.",
+            "The film technician called it a double exposure. The detective called it impossible. The coroner, when he finally examined the body, found something that made them both wrong.",
+            "The victim had died of a heart attack. But his heart was missing. Not removed — never there. Replaced with a device that had no name in any medical journal, stamped with a manufacturing date that hadn't happened yet."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ms-thriller",
+      "name": "Edge of Night",
+      "desc": "Pulse-racing suspense",
+      "books": [
+        {
+          "id": "b4",
+          "title": "Last Exit",
+          "description": "She boards the wrong bus and steps off in a town that erases you from existence.",
+          "full_story": [
+            "The 11:15 was always late. Elena knew this. She had taken it home from the hospital for three years, every night shift, every exhausted morning. She knew the driver's face, the regulars, even the graffiti scratched into the plastic seats.",
+            "This bus was different. The driver wore a uniform she'd never seen. The seats were fabric, not plastic. The route display showed a destination that didn't exist on any map she knew.",
+            "She should have gotten off at the next stop. But exhaustion is a drug, and she fell asleep against the window, watching streetlights blur into streaks of gold.",
+            "When she woke, the bus was empty. The doors stood open to a town square that smelled of lilacs and old stone. A clock tower read 3:33, though her watch insisted it was 6:15 AM.",
+            "The people moved slowly, deliberately, as if underwater. They smiled at her with recognition. 'You're early,' an old woman said, touching Elena's arm. 'But that's alright. We have your room ready.'",
+            "Elena reached for her phone. No signal. No contacts. The photo gallery showed pictures of this town, these people, a life she had apparently lived for years. The most recent was dated yesterday. She was standing in the square, waving, smiling. She had no memory of taking it."
+          ]
+        },
+        {
+          "id": "b5",
+          "title": "The Quiet Bomb",
+          "description": "A librarian discovers a code hidden in every book checked out this month.",
+          "full_story": [
+            "The return cart at Westbrook Public Library held thirty-seven books that morning. Normal for a Tuesday. What wasn't normal was the bookmark in each one.",
+            "Not a bookmark, exactly. A slip of paper, precisely cut, inserted at page numbers that followed a pattern: 3, 7, 15, 31, 63. Each doubling and adding one. The slips bore single words, handwritten in a careful script that looked identical in every copy.",
+            "Librarian Theo Marsh noticed because he was the one who checked them all out. Not to the same person — to thirty-seven different patrons, none of whom knew each other, none of whom had requested anything unusual.",
+            "The words, read in order, formed a message: THE / SILENCE / WILL / FALL / WHEN / THE / LAST / READER / CLOSES / THE / FINAL / BOOK / AND / THE / LIBRARY / BECOMES / A / TOMB / FOR / STORIES / THAT / NEVER / WERE / THE / DOOR / OPENS / AT / MIDNIGHT / ON / THE / FULL / MOON / BRING / THE / KEY / YOU / FOUND / IN / CHILDHOOD",
+            "Theo checked the checkout records. All thirty-seven patrons had moved away within the last week. Their forwarding addresses were the same: a PO box in a town that had burned down in 1987.",
+            "The next full moon was three days away. Theo had no memory of finding a key in childhood. But that night, he dreamed of his grandmother's house, and a loose floorboard he had forgotten for thirty years."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ms-paranormal",
+      "name": "Beyond the Veil",
+      "desc": "Where logic ends",
+      "books": [
+        {
+          "id": "b6",
+          "title": "Echo House",
+          "description": "Every mirror in the manor shows a different occupant — all of them afraid.",
+          "full_story": [
+            "The manor had been empty for sixty years when the restoration crew arrived. The foreman, a pragmatic man named Holt, didn't believe in ghosts. He believed in dry rot, asbestos, and foundation cracks.",
+            "The mirrors were the first anomaly. Not their presence — old houses had mirrors, it was expected. But their number. Forty-seven mirrors in a house with twelve rooms. Some as tall as doors, some small enough to hold in a palm, all of them facing each other in impossible geometries that created infinite reflections.",
+            "Holt stood before the largest, in what had been the master bedroom. The reflection showed a woman in Victorian dress, her back to him, staring into another mirror. He turned. The room was empty.",
+            "He moved to the next mirror. A child, maybe six, sat on the floor surrounded by toys that didn't exist in the real room. The child looked up, directly at Holt, and mouthed a single word: 'Run.'",
+            "The third mirror showed an old man weeping. The fourth, a soldier in a uniform Holt didn't recognize, holding a photograph of the house in flames. The fifth was dark, but something moved in the shadows, and Holt heard breathing that wasn't his own.",
+            "It was the forty-seventh mirror that broke him. It showed himself. But older, gaunt, dressed in rags, standing in the same spot. His reflection raised a hand and wrote on the glass in condensation: 'They come through when the moon is full. Board them up. Board them ALL up.'",
+            "Holt looked at the calendar. The moon would be full in four hours. He had forty-two mirrors left to cover."
+          ]
+        }
+      ]
+    }
+  ]
+}
