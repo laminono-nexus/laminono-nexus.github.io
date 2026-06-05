@@ -1410,6 +1410,12 @@ function bookFlyTransition(spineEl, callback) {
    CINEMATIC INTRO - SMOOTH & EFFICIENT (8s total)
 ============================================================ */
 function openLibrary() {
+  // Resume audio context (REQUIRED for Chrome/Safari)
+  AudioEngine.init();
+  if (AudioEngine.ctx && AudioEngine.ctx.state === 'suspended') {
+    AudioEngine.ctx.resume();
+  }
+
   const btn = document.getElementById('grand-book-btn');
   btn.style.pointerEvents = 'none';
 
