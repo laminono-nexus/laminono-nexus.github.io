@@ -1560,16 +1560,19 @@ function showShelfIntro() {
     document.getElementById('shelf-intro-cta').classList.add('show');
   }, 1500);
 
-  // Auto-transition to library after 4 seconds
+   // Auto-transition to library after 4 seconds
   setTimeout(() => {
     tombRoll(() => {
       renderLibrary();
       showView('view-library');
       showMusicDock();
+      
+      // Start music automatically
+      AudioEngine.playTrack1();
+      
       document.getElementById('grand-book-btn').style.pointerEvents = '';
     });
   }, 4000);
-}
 
 /* Add keyframe for intro book animation */
 const style = document.createElement('style');
