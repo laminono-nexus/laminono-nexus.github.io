@@ -979,7 +979,31 @@ const ShelfLoader = {
 
   async loadShelf(id) {
     try {
-      const response = await fetch(`shelf_${id}.json`);
+      // Try multiple paths for GitHub Pages compatibility
+      const urls = [
+        `./shelf_${id}.json`,
+        `shelf_${id}.json`
+      ];
+      
+      for (const url of urls) {
+        try {
+          const response = await fetch(url);
+          if (response.ok) {
+            const data = await response.json();
+            return data;
+          }
+        } catch (e) {
+          continue; // Try next URL
+        }
+      }
+      
+      // If all fail, use fallback
+      throw new Error('All URLs failed');
+    } catch (e) {
+      console.warn(`Could not load shelf_${id}.json:`, e);
+      return this.getFallbackShelf(id);
+    }
+  },
       if (!response.ok) throw new Error(`Failed to load shelf_${id}.json`);
       return await response.json();
     } catch (e) {
