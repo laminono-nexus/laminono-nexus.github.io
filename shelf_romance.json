@@ -1,0 +1,107 @@
+{
+  "shelf_id": "romance",
+  "shelf_name": "Romance",
+  "icon": "🌹",
+  "tagline": "Hearts, heat & longing",
+  "theme_class": "gc-romance",
+  "gradient": "135deg,#120408,#280415,#120404",
+  "accent_color": "rgba(255,60,120,0.3)",
+  "sub_shelves": [
+    {
+      "id": "ro-modern",
+      "name": "Modern Love",
+      "desc": "Love in the digital age",
+      "books": [
+        {
+          "id": "b16",
+          "title": "Signal & Noise",
+          "description": "They matched online. They hate each other in the office.",
+          "full_story": [
+            "The algorithm said they were 98% compatible. It based this on their music tastes (indie folk, obscure, melancholic), their reading habits (literary fiction, translated, dead authors), and their answers to the question 'What are you looking for?' (both had written 'someone who listens').",
+            "They messaged for three weeks before meeting. He called himself 'J' in the app. She called herself 'M.' They discussed philosophy, shared playlists, and gradually built a language that felt private, intimate, safe from the world's judgment. J was funny in a way that made M laugh out loud on the subway. M was perceptive in a way that made J feel seen for the first time in years.",
+            "They agreed to meet at a bookstore. Neutral ground, surrounded by stories, easy escape if the chemistry failed. M arrived first, nervous, wearing the dress she had debated for an hour. She browsed the fiction section, waiting.",
+            "J arrived. And M's heart stopped. Not from attraction. From recognition. J was James Chen. Her new boss. The man who had spent the last month criticizing her presentations, rewriting her reports, and making her feel simultaneously invisible and scrutinized.",
+            "James saw her. His expression shifted through several emotions too quickly to name, settling on a kind of horrified resignation. 'M,' he said. It wasn't a question.",
+            "They didn't leave. They moved to the café section, ordered coffee they didn't taste, and sat in silence that accumulated like snowfall. Finally, M spoke: 'The algorithm was wrong.' James nodded. Then, unexpectedly, he laughed. 'About which part? The music, or the listening?'",
+            "They agreed to never speak of it. To forget the messages, the playlists, the carefully constructed intimacy. They returned to the office, to the professional distance, to the careful avoidance of eye contact in hallways.",
+            "But the algorithm had been right about one thing. They did listen. In meetings, M noticed that James paused before criticizing, as if remembering something. In emails, James noticed that M chose her words with new precision, as if they mattered more. They never spoke of the bookstore. But they both changed, gradually, becoming versions of themselves that the other had first glimpsed through screens.",
+            "Six months later, James resigned. He left a note on M's desk, not a resignation letter, but a playlist. The first song was one they had shared. The last was one she had mentioned wanting to hear. Between them, a single line: 'The algorithm was 98% right. I was the 2% wrong. I'm sorry.'",
+            "M found him on the app again, six months after that. He had changed his name back to James. She messaged: 'Do you still listen?' He replied in minutes: 'Only to you.' They met at the same bookstore. This time, they stayed until closing."
+          ]
+        },
+        {
+          "id": "b17",
+          "title": "The Last Read Receipt",
+          "description": "She never replied. Three years later, a new message arrives.",
+          "full_story": [
+            "The message had been sent at 2:47 AM, three years and four months ago. 'I need to tell you something,' it read. The read receipt was blue. She had seen it. She had never replied.",
+            "Elara had reasons. They were good reasons, at the time. She was leaving for a job overseas. He was staying, building a life she couldn't be part of. The message arrived the night before her flight, when she was packing, panicking, pretending that distance wouldn't matter. She read it, felt the weight of what he might say, and chose silence. It was easier than goodbye.",
+            "Three years. She built the career. She learned the language. She dated people who didn't know her past, didn't ask about the messages she checked obsessively, didn't notice that she still searched his name sometimes, late at night, when the apartment was too quiet.",
+            "The new message arrived on an ordinary Tuesday. No notification, no alert. She found it when she opened the app to check something else, and there it was, at the top of a conversation she had archived but never deleted: 'I never got to say it. But I'm saying it now, in case you still read these. I loved you. I love you. I will probably love you until I forget how. I hope you forget faster than I do. It looks better on you.'",
+            "Elara read it in a café, surrounded by strangers speaking a language she now understood. She read it three times. Then she walked to the bathroom, locked the door, and cried for twenty minutes, not because she was sad, but because she was angry. Angry at herself for the silence, angry at him for waiting three years, angry at time for making everything feel both urgent and irrelevant.",
+            "She composed replies. Seventeen of them. Some angry, some apologetic, some simply stating facts: 'I'm here. I'm different. I'm sorry.' She deleted them all. She wrote an eighteenth: 'I read it. I read everything. I was scared. I'm still scared. But I'm here. And I remember.'",
+            "She didn't send it for three days. She told herself it was too late, that he had moved on, that the message was a closure, not an opening. But on the third night, she sent it. And she waited.",
+            "The read receipt turned blue in four minutes. The reply came in six: 'I know you're scared. I'm scared too. But I've been scared for three years, and I'm tired of being scared alone. Where are you? I'll come to you. This time, I'll be the one who travels.'",
+            "Elara sent her address. Then she panicked, cleaned her apartment, changed her clothes three times, and waited by the window. He arrived eighteen hours later, unshaven, carrying a bag too small for a three-year gap, looking exactly as she remembered and completely different.",
+            "They didn't embrace immediately. They stood in the doorway, studying each other, measuring the distance between memory and reality. Finally, he spoke: 'You still read receipts.' She laughed, the first real laugh in three years. 'I still read everything,' she said. 'Especially you.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ro-forbidden",
+      "name": "Forbidden Hearts",
+      "desc": "Love that dares",
+      "books": [
+        {
+          "id": "b18",
+          "title": "Between Two Fires",
+          "description": "Their families share a wall and a feud. Falling in love is an act of war.",
+          "full_story": [
+            "The wall was built in 1847, after the first killing. It stood three meters high, made of stone from the same quarry, mortared with the same bitterness. The Moreau family lived on the east side. The Vane family on the west. Between them, the wall, and three generations of silence.",
+            "No one remembered the original offense. Something about land, or livestock, or a marriage that never happened. The details had been lost, but the hatred remained, passed down like heirlooms, polished at family gatherings, renewed with each new generation.",
+            "Julien Moreau knew the rules. Don't look at the Vane house. Don't speak to Vane children. Don't acknowledge Vane existence. He had followed these rules for nineteen years, until the night he found someone climbing the wall from the other side.",
+            "She was caught on the top, balanced between two worlds, her dress snagged on the rough stone. She didn't call for help. She didn't look at him. She simply waited, motionless, as if becoming part of the wall itself.",
+            "Julien should have walked away. Instead, he found a ladder. He didn't speak as he helped her down. She didn't speak as she freed her dress. They stood in the narrow alley between the wall and his family's garden, two people who shouldn't exist in the same space.",
+            "'I'm not supposed to be here,' she said. Her voice was lower than he expected, rougher, as if she didn't use it often. 'I'm not supposed to help you,' he replied. But he didn't move away.",
+            "Her name was Seraphine Vane. She climbed the wall every Thursday night, she told him, to reach the library on the hill, the only one in the village that stayed open late. She couldn't use the main road — Vanes weren't allowed on Moreau streets after dark. The wall was her only path.",
+            "Julien started meeting her. Not regularly, not at first. Accidentally, he told himself, though he began waiting by the garden on Thursday nights. They talked about books, about the village beyond their families, about a world where walls were for keeping livestock in, not hatred.",
+            "The discovery was inevitable. His younger brother saw them once, didn't understand, mentioned it at dinner. His father understood immediately. The punishment was swift: Julien was forbidden from leaving the house after sunset, from speaking to anyone outside the family, from attending the university he had been planning for two years.",
+            "Seraphine's punishment was worse. Her family locked her in the house, canceled her education, arranged a marriage to a cousin in another village. The wall, they said, existed for a reason. Some boundaries must never be crossed.",
+            "Julien made a choice. He didn't climb the wall — that would be too obvious, too expected. He dug beneath it. Three nights of work with a stolen trowel, creating a tunnel narrow enough for a body, wide enough for hope. He emerged in the Vane garden, found Seraphine's window, tapped the code they had invented in their Thursday conversations.",
+            "They didn't run away. That would be surrender, an admission that the wall had won. Instead, they stood in the garden, visible from both houses, and waited for the families to discover them. Let them come, Julien thought. Let them see that their wall has a hole, and that love flows through it.",
+            "The confrontation was ugly. Shouts, threats, the ancient vocabulary of feud. But something had changed. The families, faced with the reality of their children standing together, found that their hatred had no script for this. They couldn't kill them — that would make martyrs. They couldn't imprison them — that would make them heroes. They could only watch, helpless, as Julien and Seraphine held hands in the space between two fires.",
+            "The wall came down six months later. Not because the families reconciled — they never truly did. But because the village demanded it. The young people refused to maintain the division. The old people died. And eventually, even the Moreaus and Vanes grew tired of being the last holdouts of a war no one else remembered.",
+            "Julien and Seraphine married in the garden where they had stood. They planted flowers where the wall had been. And every Thursday, they walk to the library together, taking the main road, holding hands, remembering that some walls exist only because we agree not to look at what's on the other side."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ro-second",
+      "name": "Second Chances",
+      "desc": "Love found again",
+      "books": [
+        {
+          "id": "b19",
+          "title": "The Same Station",
+          "description": "He missed his train. She missed hers. Ten years ago they made the same mistake.",
+          "full_story": [
+            "The station hadn't changed in ten years. The same blue tiles, the same flickering fluorescent lights, the same announcement system that garbled every other word. Thomas stood on the platform, watching the train he was supposed to be on disappear into the tunnel, and felt a strange sense of relief.",
+            "He had been running for fifteen years. From a marriage that had ended in silence, from a career that had consumed him without nourishing him, from a version of himself that had made all the right choices and still ended up miserable. The missed train was the first mistake he had made intentionally in a decade.",
+            "He sat on the bench, suddenly aware of how tired he was. The platform was empty except for a woman at the far end, reading a book he couldn't identify. She looked up, caught him staring, and smiled — not the polite smile of strangers, but something familiar, something that made his chest tighten.",
+            "'Thomas?' she said. He knew her voice before he knew her face. 'Elena?' It was impossible. They had met here, ten years ago, both missing the same train, both killing time on the same bench. They had talked for three hours, missed two more trains, and exchanged numbers that they both lost before the week ended.",
+            "They had searched for each other. Half-hearted attempts, Thomas admitted to himself. A Facebook search, a mutual acquaintance inquiry, a walk past the station hoping for coincidence. Then life had intervened, and the memory of that conversation had become a story he told at parties, a 'what if' that grew more romantic with each retelling.",
+            "But here she was. Older, lines around her eyes, hair shorter than he remembered. Here. 'I missed my train,' she said, as if explaining a miracle. 'On purpose,' he replied. 'Me too,' she said. And they both laughed, the same laugh from ten years ago, unchanged by time.",
+            "They didn't talk about the past decade. Not immediately. They talked about the book she was reading (a collection of essays about train stations, improbably), about the coffee shop that had replaced the newsstand, about the way the station smelled exactly the same — metal, electricity, and something else, something that might have been possibility.",
+            "Eventually, the past emerged. His divorce, her career change, the choices that had led them both to this platform, this moment, this second chance. 'Do you think we would have worked?' she asked. 'Ten years ago?' He considered. 'I think we would have been too young to know what we had. I think we needed to become the people who could appreciate this.'",
+            "The next train arrived. They didn't board. They sat on the bench, watching trains come and go, talking until the station closed. They exchanged numbers — real ones, saved in phones, backed up to clouds. They made plans for dinner, for the weekend, for a future that suddenly seemed less like fantasy and more like architecture.",
+            "Thomas went home that night and threw away his itinerary. The trip he had been planning, the escape he had been constructing, suddenly seemed unnecessary. He wasn't running anymore. He had missed his train, and found his destination.",
+            "They met at the same station a year later. Not by accident — by design. Thomas proposed on the bench where they had sat, with a ring he had bought from the jeweler who had replaced the newsstand. Elena said yes, and the station, which had heard a thousand goodbyes, finally witnessed a beginning.",
+            "They still miss trains, sometimes. On purpose. They sit on the bench, hold hands, and remember that the best journeys don't always take you where you planned to go. Sometimes, they bring you back to where you started, to find that someone has been waiting, just as long, just as patiently, for the same train that never comes."
+          ]
+        }
+      ]
+    }
+  ]
+}
