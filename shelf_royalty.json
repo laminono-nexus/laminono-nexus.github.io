@@ -1,0 +1,75 @@
+{
+  "shelf_id": "royalty",
+  "shelf_name": "Royalty",
+  "icon": "👑",
+  "tagline": "Crowns, courts & conquest",
+  "theme_class": "gc-royalty",
+  "gradient": "135deg,#120600,#281200,#0e0000",
+  "accent_color": "rgba(255,160,40,0.3)",
+  "sub_shelves": [
+    {
+      "id": "ry-palace",
+      "name": "Palace Intrigues",
+      "desc": "Power behind the throne",
+      "books": [
+        {
+          "id": "b13",
+          "title": "The Ivory Throne",
+          "description": "A princess discovers the kingdom's founding document is a forgery.",
+          "full_story": [
+            "The throne room of Aldermere had been built to intimidate. Forty meters of marble, a ceiling painted with the kingdom's history, and at the center, the Ivory Throne — carved from the tusk of a beast that had died a thousand years ago, or so the legends said.",
+            "Princess Celestine had sat beneath that throne for twenty years, learning the protocols, the alliances, the subtle language of power. She had memorized the Founding Charter, the document that established Aldermere's divine right to rule, that justified every war, every tax, every execution in the kingdom's history.",
+            "It was her tutor, an old man named Thorne who had served three monarchs, who first showed her the truth. Not in words — Thorne was too careful for words. He showed her the Charter itself, displayed in the Royal Museum under glass and guard. He asked her to look at the date. Then he asked her to look at the ink.",
+            "The date was 847. The ink, according to the royal chemists who had tested it at Thorne's quiet request, was manufactured in 1123. The Charter, the foundation of Aldermere's legitimacy, was a forgery created three hundred years after the kingdom it supposedly founded.",
+            "Celestine spent six months in secret research. She found the original documents, hidden in a monastery vault, written in a language that predated the kingdom. They told a different story: not of divine right, but of rebellion. Not of conquest, but of alliance. The first king of Aldermere had been a warlord who made a deal with twelve tribes, a deal he had broken within a generation.",
+            "She had a choice. Reveal the truth, and watch the kingdom fracture into civil war. Hide it, and continue the lie that had sustained her family for centuries. Or find a third path, one that Thorne had hinted at but never named: rewrite the kingdom's story without destroying it.",
+            "On the anniversary of her coronation, Celestine stood before the Ivory Throne. She held the original documents in one hand and the forged Charter in the other. She told the assembled court the truth — all of it, without sparing herself or her ancestors. Then she proposed a new Charter, based on the old alliance, offering the tribes representation, offering the people a voice, offering the kingdom a foundation that could bear its weight.",
+            "They called her the Liar Queen for a decade. Then they called her the Wise. The Ivory Throne still stands, but beneath it, in a sealed chamber, the original documents wait. Not as weapons, but as reminders. Every new monarch visits them, alone, before their coronation. They read the old words, and they remember: power is borrowed, and the debt comes due."
+          ]
+        },
+        {
+          "id": "b14",
+          "title": "Blood Crown",
+          "description": "Three siblings. One crown. The eldest is already dead — or so everyone believes.",
+          "full_story": [
+            "The funeral was magnificent. Prince Aldric, heir to the Obsidian Throne, dead at twenty-four from a fever that had swept through the palace like a silent tide. The kingdom mourned. The queen wept. The king stood silent, his face carved from the same stone as his throne.",
+            "Only Princess Seraphine didn't believe it. She had been the last to see Aldric alive, had held his hand as the fever took him, had watched the light leave his eyes. Or so she remembered. But in the weeks after the funeral, she found inconsistencies. The physician who had declared him dead had left the kingdom the next morning, traveling under a false name. The body, sealed in the royal crypt, had never been viewed by the family — tradition, the priests said, but Seraphine had never heard of such a tradition.",
+            "She broke into the crypt on the night of the new moon. The coffin was empty. Not recently emptied — the velvet lining was smooth, undisturbed, as if no body had ever lain there. In its place, she found a letter in Aldric's handwriting: 'I am not dead. I am hidden. Find me, sister. But trust no one. Not even the mirror.'",
+            "Seraphine had two brothers remaining. Prince Cassian, the soldier, who had been on the northern border when Aldric died. Prince Lucien, the scholar, who had been in the library, always in the library, surrounded by books that whispered secrets. One of them had helped Aldric disappear. Or both. Or neither.",
+            "She investigated quietly, using the skills Aldric had taught her: how to follow without being followed, how to listen without being seen, how to trust her instincts over her eyes. She found Cassian's letters to a general who commanded half the army. She found Lucien's research into poisons that mimicked fever. She found that both had been in the palace the night Aldric disappeared, despite their alibis.",
+            "The truth, when it came, was worse than she imagined. Aldric had staged his own death. The fever was real, but survivable. He had used it as cover to escape a conspiracy that reached the highest levels of the court — a conspiracy to assassinate the entire royal family and replace them with a distant cousin who had been raised in secret. Cassian had helped him, providing the escape route. Lucien had provided the poison that simulated death, and the antidote that restored life.",
+            "But the conspiracy was larger than they knew. The distant cousin was already in the palace, disguised as a servant, waiting for the moment to strike. And the moment was Seraphine's coronation, when all three siblings would be together, vulnerable, celebrating a reunion that was actually a trap.",
+            "Seraphine made a choice. She didn't expose the conspiracy. She didn't arrest the cousin. She invited him to the coronation as an honored guest, seating him beside the throne. And when the moment came, when he reached for the hidden blade, she spoke the words Aldric had taught her: 'The crown is heavy, cousin. Let me show you how we bear it.'",
+            "The Obsidian Throne has three seats now, carved from the same stone. Aldric, Cassian, Lucien, and Seraphine — four siblings who learned that blood is not just lineage, but choice. And the crown, they discovered, is large enough for all who are worthy to wear it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ry-exile",
+      "name": "Exiled & Chosen",
+      "desc": "Royals in the wild",
+      "books": [
+        {
+          "id": "b15",
+          "title": "Barefoot Queen",
+          "description": "Stripped of rank, she returns with an army made of sand.",
+          "full_story": [
+            "They took everything. Her crown, her name, her shoes. They marched her to the desert border in rags, with a waterskin that leaked and a knife that couldn't cut bread. 'Walk until you die,' the captain said. 'Or until you forget you were ever royal.'",
+            "Queen Malika — no, not queen, not anymore, just Malika — walked. She had been trained in diplomacy, in poetry, in the subtle art of courtly conversation. She had not been trained in thirst, in sunstroke, in the particular madness of sand that whispered voices.",
+            "On the third day, she found the tribe. Not because she was searching, but because she had collapsed, and they had found her. The Sand Speakers, they called themselves. Nomads who had refused the empire's rule for three generations, who moved through the desert like water, who spoke to the sand and claimed it answered.",
+            "Malika expected death. She received lessons. The tribe's elder, a woman named Sahra who had no teeth but more wisdom than any court philosopher, taught her to find water by listening to the sand. 'It sings,' Sahra said. 'Where water is, the song is deeper. You must learn to hear with your feet.'",
+            "She learned. She learned to read the desert as she had once read court documents, finding meaning in the shift of dunes, the pattern of lizard tracks, the color of the sky before a storm. She learned to fight with a staff, because swords were heavy and water was scarce and every ounce mattered. She learned that leadership was not about thrones, but about ensuring that the weakest member of the tribe survived the march.",
+            "For three years, she was not queen. She was Malika of the Sand Speakers, who could find water where maps showed none, who could navigate by stars that shifted with the seasons, who could negotiate with border guards using nothing but stories and dried fruit.",
+            "Then the empire came for the tribe. Not because of Malika — they had forgotten her, assumed her dead, erased her from history. They came because the desert had oil, and the empire needed oil more than it needed nomads. The Sand Speakers were to be relocated, 'for their own safety,' to camps where they would learn to be citizens.",
+            "Sahra was too old to fight. She gave Malika her staff, her water-finding secrets, and her blessing. 'You were always a queen,' she said. 'Now be one for us.'",
+            "Malika didn't raise an army of soldiers. She raised an army of sand. She taught the empire that the desert was not empty — it was full of tribes who had been displaced, of villages that had been burned, of people who had nothing left but memory and rage. She connected them, not with swords, but with water. She found wells for those who joined her. She shared Sahra's secrets. She made the desert bloom, briefly, impossibly, in the path of her march.",
+            "The empire sent ten thousand soldiers. They found an army that didn't fight like an army — that disappeared into sandstorms, that struck at water supplies, that whispered through the night and was gone by morning. They found a woman who wore no crown, no shoes, no uniform. Just a staff, a waterskin, and a voice that carried across the dunes.",
+            "She didn't take the throne. She broke it. Not with force, but with the weight of a people who had learned that power was not in gold, but in survival. The empire, faced with an endless war it couldn't win against an enemy it couldn't find, negotiated. Malika's terms were simple: the desert belongs to the desert. The tribes stay. The oil stays in the ground. And she would walk barefoot to the capital, not as a conqueror, but as a reminder.",
+            "They call her the Barefoot Queen now. She still has no shoes. She says the sand speaks to her, and she must be ready to listen."
+          ]
+        }
+      ]
+    }
+  ]
+}
