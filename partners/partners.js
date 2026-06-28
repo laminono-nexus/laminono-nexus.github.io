@@ -17,17 +17,3 @@ const partnerStories = [
         ctaSubInfo: "Download PocketFM to listen to this interesting story. 📡"
     }
 ];
-    // ── TEMPLATE: Copy from here to add more ──
-    // ,{
-    //     id: "partner-002",
-    //     title: "Your Next Partner Title",
-    //     description: "Description here...",
-    //     coverImage: "https://your-image-url.jpg",
-    //     partnerName: "Brand Name",
-    //     partnerLogo: "🎙️",
-    //     link: "https://partner-url.com",
-    //     badge: "Partner",
-    //     ctaText: "Visit Partner"
-    // }
-    // ── End template ──
-];
