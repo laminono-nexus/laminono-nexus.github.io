@@ -1687,15 +1687,15 @@ window.addEventListener('unhandledrejection', function(e) {
         <div class="modal-body">
             <h1 class="modal-title" id="modalTitle">Story Title</h1>
             <div class="modal-meta" id="modalMeta"></div>
-            <div class="modal-actions">
-                <button class="btn btn-primary" onclick="toggleNarration()">
-                    <span id="narrateIcon">▶</span> <span id="narrateText">Narrate Story</span>
-                </button>
-                <button class="btn btn-secondary" onclick="toggleMyList()">
-                    <span>+</span> <span id="mylist-btn-text">My List</span>
-                </button>
-                <button class="btn btn-outline" onclick="openShareModal()"><span>↗</span> Share</button>
-            </div>
+            <div class="modal-actions" style="display:flex;flex-direction:row;gap:10px;flex-wrap:nowrap;margin-bottom:24px;">
+    <button class="btn btn-primary" onclick="toggleNarration()" style="flex:1;padding:10px 12px;font-size:0.85rem;justify-content:center;">
+        <span id="narrateIcon">▶</span> <span id="narrateText">Narrate</span>
+    </button>
+    <button class="btn btn-secondary" onclick="toggleMyList()" style="flex:1;padding:10px 12px;font-size:0.85rem;justify-content:center;">
+        <span>+</span> <span id="mylist-btn-text">My List</span>
+    </button>
+    <button class="btn btn-outline" onclick="openShareModal()" style="flex:1;padding:10px 12px;font-size:0.85rem;justify-content:center;"><span>↗</span> Share</button>
+</div>
             <div class="narration-controls">
                 <span style="color:var(--text-secondary);font-size:0.9rem;">Voice:</span>
                 <div class="voice-selector">
