@@ -192,7 +192,7 @@ function sharePartnerStory() {
     const shareData = {
         title: partner.title,
         text: `Check out "${partner.title}" by ${partner.partnerName} on Laminono Nexus!`,
-        url: window.location.href
+        url: `https://laminono-nexus-github-io.vercel.app/?story=${partner.title.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')}`
     };
 
     if (navigator.share) {
