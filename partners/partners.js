@@ -169,6 +169,8 @@ function openPartnerDetail(partner) {
 
     // Slide in
     document.body.style.overflow = 'hidden';
+    const profileBar = document.getElementById('user-profile-bar');
+if (profileBar) profileBar.style.display = 'none';
     requestAnimationFrame(() => {
         page.style.transform = 'translateX(0)';
     });
@@ -179,6 +181,8 @@ function closePartnerDetail() {
     if (!page) return;
     page.style.transform = 'translateX(100%)';
     document.body.style.overflow = '';
+    const profileBar = document.getElementById('user-profile-bar');
+if (profileBar) profileBar.style.display = 'flex';
 }
 
 function sharePartnerStory() {
