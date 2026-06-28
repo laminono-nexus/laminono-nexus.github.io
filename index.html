@@ -3145,7 +3145,7 @@ function openShareModal() {
     const story = currentStory; if (!story) return;
     saveCurrentState();
     showCompactMenu();
-    const shareUrl = `https://laminono-nexus.github.io/?story=${story.title.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')}`;
+    const shareUrl = `https://laminono-nexus-github-io.vercel.app/?story=${story.title.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'')}`;
     const hookLine = story.excerpt || story.content.substring(0,120) + '…';
     document.getElementById('share-preview-img').style.backgroundImage = `url('${story.image}')`;
     document.getElementById('share-preview-genre').textContent = story.genre;
