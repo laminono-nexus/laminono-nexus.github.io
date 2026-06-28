@@ -3599,6 +3599,17 @@ function seededShuffle(arr, seed) {
     return a;
 }
 
+    // Auto-open story from URL parameter
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const storyParam = params.get('story');
+    if (storyParam) {
+        const story = stories.find(s =>
+            s.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') === storyParam
+        );
+        if (story) setTimeout(() => openStory(story.id), 800);
+    }
+})();
     // ── PARTNER STORIES ──
 function renderPartnerStories() {
     const row = document.getElementById('partnerStoriesRow');
