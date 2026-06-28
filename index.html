@@ -3152,6 +3152,14 @@ function openShareModal() {
     document.getElementById('share-preview-title').textContent = story.title;
     document.getElementById('share-preview-hook').textContent  = hookLine;
     window._shareData = { url: shareUrl, title: story.title, text: hookLine };
+    const ogTitle = document.getElementById('og-title');
+const ogDesc = document.getElementById('og-description');
+const ogImg = document.getElementById('og-image');
+const ogUrl = document.getElementById('og-url');
+if (ogTitle) ogTitle.setAttribute('content', story.title + ' | Laminono Nexus');
+if (ogDesc) ogDesc.setAttribute('content', hookLine);
+if (ogImg) ogImg.setAttribute('content', story.image);
+if (ogUrl) ogUrl.setAttribute('content', shareUrl);
     document.getElementById('share-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
