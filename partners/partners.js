@@ -169,6 +169,8 @@ function openPartnerDetail(partner) {
 
     // Slide in
     document.body.style.overflow = 'hidden';
+    window._savedScrollY = window.scrollY;
+window.scrollTo(0, 0);
     const profileBar = document.getElementById('user-profile-bar');
 if (profileBar) profileBar.style.display = 'none';
     requestAnimationFrame(() => {
@@ -181,6 +183,9 @@ function closePartnerDetail() {
     if (!page) return;
     page.style.transform = 'translateX(100%)';
     document.body.style.overflow = '';
+    if (window._savedScrollY !== undefined) {
+    window.scrollTo(0, window._savedScrollY);
+    }
     const profileBar = document.getElementById('user-profile-bar');
 if (profileBar) profileBar.style.display = 'flex';
 }
