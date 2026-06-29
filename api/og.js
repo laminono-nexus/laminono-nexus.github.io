@@ -33,7 +33,11 @@ module.exports = async function handler(req, res) {
 
     const title = found ? `${found.title} | Laminono Nexus` : 'Laminono Nexus - Premium Storytelling';
     const desc  = found ? (isPartner ? found.fullDescription?.substring(0, 160) + '…' : found.excerpt?.substring(0, 160) + '…') : 'Premium storytelling platform where words become cinematic experiences.';
-    const image = found ? (isPartner ? found.coverImage : found.image) : 'https://laminono-nexus.github.io/laminono.jpeg';
+    const image = found
+    ? (isPartner
+        ? found.coverImage
+        : (found.cover && found.cover.image ? found.cover.image : found.image))
+    : 'https://laminono-nexus.github.io/laminono.jpeg';
     const url   = `https://laminono-nexus-github-io.vercel.app/?story=${story}`;
 
     try {
