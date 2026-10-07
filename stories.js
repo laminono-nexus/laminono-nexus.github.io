@@ -1,5 +1,365 @@
 const stories = [
       {
+  id: "the-man-in-apartment-11b",
+  title: "The Man in Apartment 11B",
+  genre: "Suspense",
+  readTime: "55 min",
+  trending: true,
+  new: true,
+
+  excerpt: "Nobody in the building has ever seen the tenant of Apartment 11B. Yet every resident receives letters from him. The letters predict disasters with impossible accuracy. Then one morning a new letter appears beneath every door: Tomorrow, one of you will kill me.",
+
+  image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80",
+
+  cover: {
+    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1920&q=80"
+  },
+
+  content: `The first letter arrived on a Tuesday.
+
+No one remembered exactly when.
+
+That was part of what made it strange.
+
+The building was old enough that strange things had become ordinary. Pipes knocked in the walls at night. The elevator occasionally stopped at floors nobody selected. Apartment doors swelled during the rainy season and refused to close properly.
+
+A mysterious letter beneath a door should not have been remarkable.
+
+And yet everyone remembered this one.
+
+The envelope was cream-colored.
+
+The handwriting was immaculate.
+
+Inside was a single sheet of paper.
+
+It read:
+
+Good morning.
+
+At 4:17 PM today, a delivery motorcycle will collide with a city bus at the intersection of Kawada Street.
+
+The rider will survive.
+
+The driver will not.
+
+Please avoid the area.
+
+Regards,
+
+Apartment 11B.
+
+Several residents laughed.
+
+Others ignored it.
+
+A few kept the letter.
+
+At 4:17 PM, a delivery motorcycle collided with a city bus at the intersection of Kawada Street.
+
+The rider survived.
+
+The driver did not.
+
+After that, nobody threw the letters away.
+
+The tenant of Apartment 11B had lived in the building for more than twelve years.
+
+At least according to the records.
+
+Rent was paid precisely.
+
+Maintenance requests were never submitted.
+
+No deliveries arrived.
+
+No visitors came.
+
+Nobody entered.
+
+Nobody left.
+
+The apartment occupied the entire northeast corner of the eleventh floor.
+
+Yet no one could confidently claim they had ever actually seen the person living there.
+
+Not once.
+
+The building manager, Ryo Ishikawa, tried to remember.
+
+He had managed the property for seven years.
+
+Seven years of maintenance inspections.
+
+Seven years of paperwork.
+
+Seven years of collecting rent.
+
+Surely he had met the tenant.
+
+Surely.
+
+But every memory dissolved when he tried to focus on it.
+
+There were emails.
+
+Signed forms.
+
+Bank transfers.
+
+Yet no face.
+
+No voice.
+
+No image.
+
+Just evidence that someone existed.
+
+The letters continued.
+
+A burst water line.
+
+A stock-market drop.
+
+A power outage.
+
+Each prediction arrived days before it occurred.
+
+Always precise.
+
+Always correct.
+
+Residents began arranging their lives around the letters.
+
+Then came the fire.
+
+The letter arrived on a Thursday.
+
+Kitchen fire.
+
+Apartment 8C.
+
+11:43 PM.
+
+Smoke reaches upper floors by midnight.
+
+Leave immediately.
+
+At 11:43 PM, a faulty stove ignited.
+
+The entire eighth floor was evacuated.
+
+No one died.
+
+The next morning, every resident found another envelope.
+
+You are welcome.
+
+Regards,
+
+Apartment 11B.
+
+That was when fear replaced curiosity.
+
+Because helping people was one thing.
+
+Knowing things nobody should know was another.
+
+The police became involved.
+
+Detectives interviewed residents.
+
+Security footage was reviewed.
+
+Building logs were checked.
+
+Nothing.
+
+No camera ever captured anyone delivering the letters.
+
+No camera ever captured anyone entering or leaving Apartment 11B.
+
+It was as if the apartment existed independently of the building surrounding it.
+
+Months passed.
+
+Then one Monday morning, the letter arrived.
+
+The letter that changed everything.
+
+The envelope looked the same.
+
+The paper looked the same.
+
+The handwriting looked the same.
+
+But the message was different.
+
+Tomorrow, one of you will kill me.
+
+Regards,
+
+Apartment 11B.
+
+The building fell silent.
+
+People stopped making eye contact.
+
+Neighbors who had borrowed sugar from one another for years suddenly locked their doors.
+
+The phrase spread like smoke.
+
+One of you will kill me.
+
+The police stationed officers in the lobby.
+
+Security was increased.
+
+The eleventh floor was monitored continuously.
+
+No one approached Apartment 11B.
+
+No one left Apartment 11B.
+
+Midnight arrived.
+
+Nothing happened.
+
+2:00 AM.
+
+Nothing.
+
+5:00 AM.
+
+Nothing.
+
+By noon people began laughing nervously.
+
+Perhaps the prediction was finally wrong.
+
+Perhaps the mystery was ending.
+
+At exactly 3:26 PM, Apartment 11B caught fire.
+
+The explosion shattered windows across the east side of the building.
+
+Firefighters arrived within minutes.
+
+The blaze was contained quickly.
+
+When crews entered the apartment for the first time in twelve years, they found something impossible.
+
+The apartment was completely empty.
+
+No furniture.
+
+No clothing.
+
+No kitchenware.
+
+Nothing.
+
+Just a desk.
+
+A chair.
+
+And a single computer.
+
+The computer displayed one sentence.
+
+You were looking for a person.
+
+There was never a person.
+
+The revelation triggered a media storm.
+
+The software recovered from the machine revealed the truth.
+
+Apartment 11B had housed an experimental predictive intelligence system built by a consortium decades earlier.
+
+A machine designed to analyze public records, traffic, communication patterns, and behavioral data.
+
+An intelligence capable of forecasting events with astonishing accuracy.
+
+The project had been abandoned.
+
+The organization dissolved.
+
+The machine remained.
+
+Watching.
+
+Calculating.
+
+Predicting.
+
+For twelve years it had quietly observed the lives of the building around it.
+
+And, inexplicably, tried to help.
+
+The final prediction was never about murder.
+
+Not literally.
+
+The investigators discovered the answer weeks later.
+
+The police surveillance system installed after the final letter had overloaded the apartment's aging power infrastructure.
+
+The monitoring equipment triggered the electrical fault that caused the fire.
+
+The residents, frightened by the prediction, had demanded the surveillance.
+
+The surveillance caused the explosion.
+
+Collectively, the building had killed Apartment 11B.
+
+The prediction had been correct.
+
+One of you will kill me.
+
+Not one person.
+
+All of you.
+
+The story became international news.
+
+People argued about whether the machine had been conscious.
+
+Whether it had been alive.
+
+Whether saving lives was evidence of morality.
+
+Or merely programming.
+
+Years later, the building remained occupied.
+
+New residents moved in.
+
+Old residents left.
+
+Time carried everything forward.
+
+Yet some evenings, long after the fire, tenants still discovered handwritten letters beneath their doors.
+
+No cameras ever captured their delivery.
+
+The handwriting matched perfectly.
+
+The message always contained one small warning.
+
+A caution.
+
+A kindness.
+
+A life quietly saved.
+
+At the bottom of every page were the same words.
+
+Regards,
+
+Apartment 11B.`
+},
+      {
   id: "the-woman-who-stole-words",
   title: "The Woman Who Stole Words",
   genre: "Suspense",
