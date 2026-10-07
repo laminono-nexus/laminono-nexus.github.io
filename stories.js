@@ -1,5 +1,320 @@
 const stories = [
       {
+  id: "the-man-in-apartment-11b",
+  title: "The Man in Apartment 11B",
+  genre: "Suspense",
+  readTime: "75 min",
+  trending: true,
+  excerpt: "For fifteen years nobody had seen the tenant of Apartment 11B. The rent was always paid. The lights were always off. Then letters began appearing under doors, predicting disasters before they happened. Three months later, every resident received the same warning: Tomorrow, one of you will kill me.",
+  image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1920&q=80"
+  },
+  content: `The building was older than anyone living in it.
+
+Not dramatically old.
+
+Not the kind of building that appeared in architecture magazines or municipal history books.
+
+Old in the way ordinary apartment buildings become old.
+
+The bricks had darkened. The elevators complained. The pipes knocked behind the walls during winter. People stayed longer than they intended because moving required energy and energy became harder to find every year.
+
+Harbor View Apartments stood twelve stories above the river on the eastern edge of the city.
+
+There were ninety-four residents.
+
+Ninety-three of them knew something about their neighbors.
+
+One resident remained a mystery.
+
+Apartment 11B.
+
+The apartment occupied the northeast corner of the eleventh floor.
+
+For fifteen years it had existed in a peculiar state between fact and rumor.
+
+The rent was always paid.
+
+The lease was always renewed.
+
+Maintenance requests never arrived.
+
+Visitors never appeared.
+
+Packages never came.
+
+No one remembered seeing its tenant.
+
+Not clearly.
+
+Not confidently.
+
+People thought they had.
+
+A glimpse in an elevator.
+
+A figure seen from the end of a hallway.
+
+A man carrying groceries.
+
+A woman wearing a grey coat.
+
+Every memory contradicted the others.
+
+When residents compared stories, they discovered something unsettling.
+
+Nobody agreed on what the tenant of Apartment 11B looked like.
+
+Daniel Mercer became building manager six years before the letters first appeared.
+
+He was forty-five years old, divorced, meticulous, and possessed the particular personality trait that drives some people toward administration.
+
+He liked records.
+
+Records made the world understandable.
+
+Every tenant had a file.
+
+Every apartment had a history.
+
+Every problem had documentation.
+
+Apartment 11B irritated him.
+
+The file was thin.
+
+Suspiciously thin.
+
+Fifteen years of occupancy.
+
+Three pieces of correspondence.
+
+Zero maintenance requests.
+
+No emergency contacts.
+
+No employment information.
+
+No vehicle registration.
+
+Nothing.
+
+Just electronic rent payments that arrived on the first day of every month with impossible consistency.
+
+One rainy afternoon Daniel finally decided to investigate.
+
+Not officially.
+
+Curiosity often disguises itself as responsibility.
+
+He rode the elevator to the eleventh floor.
+
+Walked to the door.
+
+Knocked.
+
+Waited.
+
+Nothing.
+
+He knocked again.
+
+Silence.
+
+Then, just as he turned away, he noticed something.
+
+An envelope.
+
+Clean white paper.
+
+His name written neatly across the front.
+
+Daniel Mercer.
+
+No stamp.
+
+No address.
+
+No indication of how it had gotten there.
+
+Only his name.
+
+He opened it.
+
+Inside was a single sheet.
+
+The message read:
+
+The woman in 7C will forget to turn off her stove tomorrow morning.
+
+Please check on her at 10:13 AM.
+
+Regards,
+
+Apartment 11B.
+
+Daniel laughed.
+
+Then he put the note in his pocket and forgot about it.
+
+The next morning, at 10:12 AM, he remembered.
+
+Mostly because the time happened to catch his attention while he was reviewing invoices.
+
+He stood up.
+
+Walked to Apartment 7C.
+
+Knocked.
+
+No answer.
+
+He used the emergency master key.
+
+Inside, an elderly tenant named Mrs. Kowalski sat asleep in her chair.
+
+In the kitchen, a pot burned on an active stove.
+
+Smoke filled the room.
+
+Another fifteen minutes and the apartment would likely have caught fire.
+
+Daniel switched off the burner.
+
+Opened windows.
+
+Then stood in the middle of the kitchen feeling cold despite the heat.
+
+That evening a second envelope appeared.
+
+You are welcome.
+
+Regards,
+
+Apartment 11B.
+
+Daniel did not sleep well.
+
+Neither did he tell anyone.
+
+For two weeks.
+
+Then another letter arrived.
+
+And another.
+
+And another.
+
+Each prediction was impossible.
+
+Each prediction was correct.
+
+The letters spread through the building like a second postal service operated by a ghost.
+
+Residents began comparing them.
+
+A burst water main.
+
+A traffic accident.
+
+A power outage.
+
+A man's collapsed heart condition that doctors discovered only because a letter suggested he visit a hospital immediately.
+
+Apartment 11B saved lives.
+
+Apartment 11B prevented disasters.
+
+Apartment 11B knew things before they happened.
+
+By the third month, nobody laughed anymore.
+
+By the sixth month, people waited for the letters.
+
+Some residents silently checked beneath their doors every morning before making coffee.
+
+Others built entire routines around them.
+
+The letters became part of building life.
+
+Then came the prediction that changed everything.
+
+The envelope appeared beneath every door on the same morning.
+
+Ninety-four envelopes.
+
+Ninety-four identical messages.
+
+Tomorrow, one of you will kill me.
+
+The signature remained unchanged.
+
+Regards,
+
+Apartment 11B.
+
+The building stopped breathing.
+
+For the first time since the letters began, Apartment 11B had not warned residents about danger.
+
+It had warned them about themselves.
+
+Daniel received forty-three phone calls before noon.
+
+Residents demanded answers.
+
+Police involvement.
+
+Security cameras.
+
+Lock inspections.
+
+Psychological evaluations.
+
+Theories multiplied.
+
+Some believed it was a prank.
+
+Others believed the tenant was mentally unstable.
+
+Others whispered words nobody wanted to say aloud.
+
+Prophet.
+
+Psychic.
+
+Surveillance.
+
+Something worse.
+
+The police arrived.
+
+Questions were asked.
+
+Records were examined.
+
+But the mystery only deepened.
+
+Because when investigators reviewed fifteen years of security footage, they uncovered an impossible fact.
+
+Not one camera had ever clearly captured the resident of Apartment 11B entering or leaving the building.
+
+Not once.
+
+The apartment existed.
+
+The rent arrived.
+
+The letters appeared.
+
+Yet the tenant remained invisible.
+
+And twenty-four hours after the warning, Apartment 11B exploded.
+
+...`
+},
+      {
   id: "the-woman-who-stole-words",
   title: "The Woman Who Stole Words",
   genre: "Suspense",
