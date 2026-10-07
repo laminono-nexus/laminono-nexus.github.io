@@ -1,5 +1,462 @@
 const stories = [
       {
+  id: "the-seventh-floor",
+  title: "The Seventh Floor",
+  genre: "Suspense",
+  readTime: "70 min",
+  trending: true,
+  excerpt: "For nearly seventy years, patients at St. Augustine Hospital occasionally reported waking on a floor that did not exist. Hospital records dismissed the stories. The survivors never did. Then neurologist Elena Graves found evidence that all of them were telling the truth.",
+  image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80",
+  cover: {
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1920&q=80"
+  },
+  content: `St. Augustine Hospital stood on the northern ridge of the city where the land rose high enough that the upper windows overlooked the river and, beyond it, the industrial districts that glowed amber after sunset.
+
+The hospital had been there for seventy-five years.
+
+Long enough that generations of residents had been born there, healed there, and died there. Long enough that nurses told stories about doctors who were now memorial portraits in hallways. Long enough that rumors had accumulated inside the building the way dust accumulated on forgotten shelves.
+
+Most rumors disappeared.
+
+One never did.
+
+The rumor of the seventh floor.
+
+Officially the hospital had six floors.
+
+The blueprints said six.
+
+The elevators said six.
+
+The city archives said six.
+
+Every official document produced over seven decades said exactly the same thing.
+
+Six floors.
+
+Yet every few years someone insisted they had seen a seventh.
+
+Not imagined.
+
+Not dreamed.
+
+Seen.
+
+Most of those claims came from patients recovering from surgery, trauma, or severe illness. Doctors blamed medication. Nurses blamed exhaustion. Families blamed stress.
+
+The explanations were practical.
+
+The stories were not.
+
+Dr. Elena Graves first heard one during her second month at the hospital.
+
+She was thirty years old then and recently graduated from her neurology fellowship. She believed deeply in evidence, logic, and measurable facts. The brain fascinated her precisely because so many things that people described as supernatural could eventually be explained through chemistry, electrical impulses, and memory.
+
+At least that was what she believed then.
+
+The patient was an elderly woman recovering from cardiac surgery.
+
+The morning after the operation, the woman asked a nurse why the people on the seventh floor never spoke.
+
+The nurse laughed.
+
+"What seventh floor?"
+
+The woman frowned.
+
+"The one above intensive care."
+
+"There isn't one."
+
+"There is," the woman said calmly. "I spent all night there."
+
+The matter should have ended there.
+
+But it did not.
+
+Three days later the woman disappeared.
+
+No one saw her leave.
+
+Security footage showed her returning to her room after a routine scan.
+
+After that, there was nothing.
+
+No elevator footage.
+
+No exits.
+
+No sign of where she had gone.
+
+The hospital initiated a search.
+
+Police became involved.
+
+Nothing was ever found.
+
+Eventually the story joined dozens of similar stories resting quietly inside forgotten files.
+
+And life continued.
+
+Years passed.
+
+Elena advanced through the hospital.
+
+She built a reputation for intelligence and patience. Patients trusted her. Colleagues respected her.
+
+She married.
+
+She divorced.
+
+She buried her father.
+
+She learned that life rarely resembled the neat patterns people imagined when they were young.
+
+Still, she never forgot the woman who had spoken about the seventh floor.
+
+The memory lingered.
+
+Not because of the missing patient.
+
+Because of the certainty in the woman's voice.
+
+She had not sounded confused.
+
+She had sounded annoyed.
+
+As though everyone else was refusing to acknowledge something obvious.
+
+Six years later another patient mentioned it.
+
+Then another.
+
+Then another.
+
+Different ages.
+
+Different illnesses.
+
+Different backgrounds.
+
+The similarities were impossible to ignore.
+
+Each described a long corridor.
+
+Each described silence.
+
+Each described dozens of doors.
+
+And each described a clock at the end of the hallway.
+
+A large clock whose hands moved backward.
+
+The details never changed.
+
+One rainy evening Elena found herself unable to stop thinking about it.
+
+Hospitals generated myths.
+
+She knew that.
+
+But myths evolved.
+
+They changed over time.
+
+Every retelling altered details.
+
+The seventh-floor accounts did not.
+
+They remained strangely consistent.
+
+That consistency disturbed her.
+
+So she began investigating.
+
+Quietly.
+
+At first she searched internal records.
+
+What started as curiosity became obsession.
+
+The records stretched back decades.
+
+1958.
+
+1964.
+
+1979.
+
+1988.
+
+2003.
+
+2017.
+
+Patient after patient.
+
+The same corridor.
+
+The same silence.
+
+The same clock.
+
+Always the same.
+
+Then Elena discovered something else.
+
+Every missing patient had visited the same elevator shortly before disappearing.
+
+Elevator Three.
+
+The oldest elevator in the building.
+
+Maintenance crews hated it.
+
+Technicians repeatedly recommended replacing it.
+
+Administration always postponed the expense.
+
+The elevator continued operating.
+
+The hospital continued ignoring complaints.
+
+And the rumors continued growing.
+
+One night, while reviewing maintenance logs long after everyone else had gone home, Elena discovered a handwritten note attached to a report from 1981.
+
+The note contained only one sentence.
+
+If Elevator Three stops on Seven, do not get out.
+
+No signature.
+
+No explanation.
+
+Just the sentence.
+
+Elena stared at it for a very long time.
+
+Then she laughed.
+
+Not because it was funny.
+
+Because she suddenly realized she was frightened.
+
+And she disliked being frightened by things she did not understand.
+
+Three weeks later she was riding Elevator Three at 2:17 in the morning after completing a neurological consultation.
+
+Storm clouds covered the city.
+
+Rain hammered against the upper windows.
+
+The hospital felt unusually quiet.
+
+The elevator rose toward Floor Six.
+
+Then continued upward.
+
+Elena felt her stomach tighten.
+
+The indicator above the door displayed a number she had never seen before.
+
+7.
+
+For several seconds she simply stared.
+
+Then the elevator stopped.
+
+The doors opened.
+
+A corridor stretched before her.
+
+Long.
+
+Silent.
+
+Gray.
+
+Exactly as described.
+
+The clock stood at the far end.
+
+Its hands moved backward.
+
+A deep cold settled over her.
+
+Every patient had told the truth.
+
+The seventh floor existed.
+
+The realization should have felt triumphant.
+
+Instead it felt terrifying.
+
+Because reality had just become larger than the reality she understood.
+
+Elena stepped out.
+
+The doors closed behind her.
+
+The corridor remained silent.
+
+Rows of wooden doors lined both sides.
+
+Each bearing a brass nameplate.
+
+Not room numbers.
+
+Names.
+
+She moved slowly.
+
+Reading them.
+
+Some belonged to current patients.
+
+Some belonged to former patients.
+
+Some belonged to people listed in hospital death records.
+
+The deeper she walked, the colder the air became.
+
+Then she saw a familiar name.
+
+Her father's.
+
+Elena stopped.
+
+The blood drained from her face.
+
+Her father had died three years earlier.
+
+Yet his name gleamed from polished brass.
+
+Across from it stood another door.
+
+Her own name.
+
+ELENA GRAVES.
+
+A sudden sound echoed from the far end of the corridor.
+
+Footsteps.
+
+Measured.
+
+Calm.
+
+Approaching slowly.
+
+An old man emerged from the misty distance.
+
+Tall.
+
+Thin.
+
+Wearing an outdated hospital gown.
+
+His silver hair fell neatly against his forehead.
+
+His eyes carried the exhausted patience of someone who had been waiting a very long time.
+
+"You finally came," he said.
+
+Elena struggled to respond.
+
+"Who are you?"
+
+The old man smiled.
+
+"The same thing you are."
+
+"What does that mean?"
+
+"It means I was curious."
+
+The answer made no sense.
+
+For some reason that frightened her more.
+
+The old man began walking again.
+
+Elena followed.
+
+At the end of the corridor stood Door Thirty-Seven.
+
+Unlike the others, it had no name.
+
+Only a number.
+
+37.
+
+The old man rested his hand against it.
+
+"For seventy-five years," he said quietly, "this hospital has been built around something nobody understood."
+
+Elena looked at him.
+
+"What is behind that door?"
+
+He smiled sadly.
+
+"The reason the seventh floor exists."
+
+The hallway clock continued moving backward.
+
+Tick.
+
+Tick.
+
+Tick.
+
+The old man's expression changed.
+
+For the first time he looked afraid.
+
+"You need to leave."
+
+"Why?"
+
+"Because someone opened the door."
+
+Elena felt the corridor tremble.
+
+Far away, metal groaned.
+
+The lights above flickered.
+
+Every door along the hallway began opening at once.
+
+Slowly.
+
+Silently.
+
+The old man stepped backward.
+
+And Elena finally understood.
+
+The seventh floor was not part of the hospital.
+
+The hospital had been built around it.
+
+Like a fence built around a well.
+
+Like walls built around a fire.
+
+Not to create it.
+
+To contain it.
+
+And after seventy-five years, something inside had decided it no longer wished to remain contained.
+
+The corridor lights went dark.
+
+The clock stopped.
+
+And somewhere beyond Door Thirty-Seven, something took its first step toward the world.`
+},
+      {
   id: "the-man-in-apartment-11b",
   title: "The Man in Apartment 11B",
   genre: "Suspense",
