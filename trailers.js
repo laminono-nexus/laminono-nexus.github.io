@@ -8,7 +8,7 @@ const trailers = [
         title: ""
     },
     {
-        id: "b-eW0sUprrI",
+        id: "b-eW0sUprrI"
         title: ""
     }
 ];
